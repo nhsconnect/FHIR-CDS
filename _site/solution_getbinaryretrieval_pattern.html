@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Solution retrieval pattern">
+<meta name="keywords" content="overview,  engage, about">
+<title>Get Binary Retrieval Pattern | Clinical Triage Platform API</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="CareConnect-Unstructured-Document-API" href="http://localhost:4005/feed.xml">
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Clinical Triage Platform  API | FHIR&reg;</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Get Binary Retrieval Pattern">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+
+    <!--<img src="images/logo.png" alt="NHS Digital Logo"/>-->
+
+    <p>    <img src="images/logo.png" height="96px"  alt="NHS Digital Logo"/>
+    </p>
+
+
+    <li class="sidebarTitle">Clinical Triage Platform API</li>
+	<li class="sidebarTitle">0.1.0-experimental</li>
+    
+    
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Introduction</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="overview_guide_versioning.html">Guide Versioning</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="overview_release_notes.html">Release Notes</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="overview_glossary.html">Glossary</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Solution</a>
+        <ul>
+            
+            
+            
+            <li><a href="overview_concepts.html">Concepts</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="solution_getbinaryretrieval_pattern.html">Get Binary Retrieval Pattern</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="solution_interactions.html">Interactions</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Use Cases</a>
+        <ul>
+            
+            
+            
+            <li><a href="overview_context.html">Context</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Development Guidance</a>
+        <ul>
+            
+            
+            
+            <li><a href="api_overview.html">Overview</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">API Interactions</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="api_message_spec.html">Message Specification</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">API Guidance | FHIR&reg;</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="resources_api_codes.html">HTTP Response Codes</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Assure</a>
+        <ul>
+            
+            
+            
+            <li><a href="assure.html">Overview</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Help & Support</a>
+        <ul>
+            
+            
+            
+            <li><a href="support_faq.html">Frequently Asked Questions (FAQ)</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="support_communications.html">Communication Channels</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+    
+    <li>
+        <a href="#">Tags</a>
+        <ul>
+            
+            
+            
+            <li><a href="tag_overview.html">Introduction</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="tag_fhir.html">FHIR&reg;</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="tag_development.html">Development</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="tag_support.html">Support</a></li>
+            
+            
+            
+            
+        </ul>
+     </li>
+       
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+             
+
+<div class="post-header">
+   <h1 class="post-title-main">Get Binary Retrieval Pattern</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Solution retrieval pattern</div>
+   
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+<!-- removed h3 and h4 from toc KGM 10/JULY/2017 -->
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+  <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the NRLS API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis.</div>
+
+<h2 id="get-binary-retrieval-pattern">Get Binary Retrieval Pattern</h2>
+
+<p>The ‘Get Binary Retrieval Pattern’ supports retrieval of non-structured documents from remote systems.</p>
+
+<p>Non-Structured documents can be any content that is not represented using FHIR resources (e.g. PDFs, PNGs, text, Work Documents etc).</p>
+
+<p>As these PDFs, PNGs, text, Work documents cannot be expressed natively in FHIR, the FHIR standard and FHIR based APIs require that the FHIR Binary resource MUST be used to convey this content. The FHIR Binary resource represents the data of a single raw artefact as digital content accessible in its native format. When exposing FHIR Binary resources, servers MUST support a different response behaviour to Consumer Read requests than is done in standard FHIR.</p>
+
+<p>A non-structured document can be served on the FHIR REST interface in 2 ways:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">Native non-encoded form</code> - if no content type (mime type) is specified in the Read request a Consumer system is expected to retrieve a non-structured document in its native non-encoded form e.g. PDF (i.e. not contained within a FHIR resource).</li>
+  <li><code class="highlighter-rouge">FHIR resource</code> - if the Read request explicitly specifies the content type (expressed as mime type) i.e, XML/JSON then a Consumer system is expected to retrieve the non-structured document as a utility FHIR Binary resource.</li>
+</ol>
+
+<p>For detailed implementation guidance see the <a href="api_interaction_read.html">Binary Read Operations section</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Although out of scope for this API. when a FHIR Binary resource is initially created it must be encoded (XML/JSON). </div>
+
+<!--
+<p>The <code class="highlighter-rouge">Binary</code> whill be returned in a native format (i.e. not contained within a FHIR resource) if no MIME type is not specified, an appropriate MIME type is included or a wild card (<code class="highlighter-rouge">*/*</code>) is included within the request header.</p>
+-->
+
+<!--
+The Get Unstructured Document API must follow the FHIR STU3 standard. So although a Binary resource can be retrieved from any url, a Provider server (FHIR Binary endpoint) MUST serve up the resource either as a FHIR binary resource or in its native non-encoded form on the rest interface. The default behaviour is that of the latter.
+Read Request Headers
+
+
+
+TBA:
+
+There are situations where it is useful or required to handle pure binary content using the same framework as other resources. Typically, this is when the binary content is referred to from other FHIR Resources. Using the same framework means that the existing servers, security arrangements, code libraries etc. can handle additional related content. Typically, Binary resources are used for handling content such as:
+
+- PDF Documents
+- Images
+- HL7 Structured Documents (e.g. CDA or FHIR Documents)
+-->
+<!--
+<img src="images/solution/GetBinaryRetrievalRequest_Diagram.png" style="width:100%;max-width: 100%;">
+
+-->
+<!--
+Common health related MIME types are listed below:
+
+<table>
+  <thead>
+    <tr>
+       <th>Image/Document Type</th>
+       <th>MIME Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>html</td>
+      <td>text/html</td>
+    </tr>
+    <tr>
+      <td>pdf</td>
+      <td>application/pdf</td>
+    </tr>
+    <tr>
+      <td>dicom</td>
+      <td>application/dicom</td>
+    </tr>
+    <tr>
+      <td>png</td>
+      <td>image/png</td>
+    </tr>
+    <tr>
+      <td>jpg</td>
+      <td>image/jpeg</td>
+    </tr>
+    <tr>
+      <td>FHIR Documents</td>
+      <td>application/xml+fhir or application/json+fhir</td>
+    </tr>
+  <tr>
+      <td>openEHR</td>
+      <td>application/vnd.openehr+json</td>
+    </tr> 
+  </tbody>
+</table>
+-->
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_overview.html" class="btn btn-default navbar-btn cursorNorm" role="button">overview</a>
+        
+        
+        
+    </div>
+
+    
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+                    <img class="pull-left" src="images/explanatoryline.png" alt="NHS Digital Explanatory Line"/>
+                    <br/>
+                    &copy;2018 NHS Digital<br />
+                     Site last generated: Nov 12, 2018 <br />
+                    27f14e43800bdc68a1a6fc24f8ec65ece05c684c<br/>
+                    <br/>
+                    <!-- OGL Licence -->
+                    <div class="open-government-licence">
+                        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon"><img src="images/licence/ogl-symbol-41px-retina-black.png"></img></a>
+                        <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon">Open Government Licence v3.0</a>, except where otherwise stated</p>
+                    </div>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99659472-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+ 
+
+
+</body>
+
+</html>
