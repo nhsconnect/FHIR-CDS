@@ -1,0 +1,12 @@
+<h4 id="{{include.content}}">{{include.para}} {{include.content}}</h4>
+
+<div markdown="span" class="alert alert-success" role="alert">
+GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?{{include.content}}=[id]</div>
+
+<p>See <a href="http://hl7.org/fhir/stu3/search.html#id" >_id</a> for details on this parameter.</p>
+
+<div class="language-http highlighter-rouge">
+<pre class="highlight"><code><span class="err">GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?{{include.content}}={{include.example}}
+</span></code>
+Return {{include.resource}} resource where {{include.text1}} logical id matches {{include.example1}}.</pre>
+</div>

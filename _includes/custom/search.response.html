@@ -1,0 +1,10 @@
+<h3 id="searchresponse">2.2. Search Response</h3>
+
+<p>If the search succeeds, the returned content is a <a href="https://www.hl7.org/fhir/stu3/bundle.html">Bundle</a> with type = searchset containing the results of the search as a list of resources.</p>
+
+<script src="https://gist.github.com/IOPS-DEV/8b2fcff7e713390c402ee663b79e0fd5.js"></script>
+
+<p>If the search fails (cannot be executed, not that there are no matches), the return value is a status code 4xx or 5xx with an <a href="https://www.hl7.org/fhir/stu3/operationoutcome.html">OperationOutcome</a> that conforms to the <a href="https://fhir.nhs.uk/STU3/StructureDefinition/Spine-OperationOutcome-1">Spine-OperationOutcome-1</a> resource.</p>
+
+<p>A full set of response codes can be found here <a href="resources_api_codes.html">API Response Codes</a>.</p>
+

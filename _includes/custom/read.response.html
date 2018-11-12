@@ -1,0 +1,23 @@
+<p>Returns a single <code class="highlighter-rouge">{{include.resource}}</code> for the specified id{{include.content}}.</p>
+<p>By default the response will be returned in JSON, however XML is also supported.</p>
+
+<h3 id="readresponse">1.1. Response</h3>
+
+<p>A full set of response codes can be found here <a href="resources_api_codes.html">API Response Codes</a>. FHIR Servers SHALL support the following response codes:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>200</td>
+      <td>OK</td>
+    </tr>
+    <tr>
+      <td>404</td>
+      <td>Not Found</td>
+    </tr>
+	<tr>
+      <td>500</td>
+      <td>Internal Server Error</td>
+    </tr>
+  </tbody>
+</table>

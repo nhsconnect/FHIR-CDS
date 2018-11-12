@@ -1,0 +1,12 @@
+<h4 id="token{{include.content}}">{{include.para}} {{include.content}}</h4>
+
+<div markdown="span" class="alert alert-success" role="alert">
+GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?{{include.content}}=[code]</div>
+
+<p>See <a href="https://www.hl7.org/fhir/search.html#token" >token</a> for details on this parameter.</p>
+
+<div class="language-http highlighter-rouge">
+<pre class="highlight"><code><span class="err">GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?{{include.content}}={{include.example}}
+</span></code>
+Return all {{include.resource}} resources with {{include.text1}} value of {{include.text2}}.</pre>
+</div>

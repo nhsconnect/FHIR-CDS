@@ -1,0 +1,20 @@
+<h4 id="identifier">{{include.para}} {{include.content}} {{include.subtext}}</h4>
+
+<div markdown="span" class="alert alert-success" role="alert">
+GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?identifier=[system]|[code]<br>GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?identifier=[code]</div>
+
+<p>See <a href="https://www.hl7.org/fhir/stu3/search.html#token">token</a> for details on this parameter.</p>
+
+<div class="language-http highlighter-rouge">
+<pre class="highlight"><code><span class="err">GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?{{include.content}}={{include.example}}
+</span></code>
+
+Return the {{include.resource}} resource with {{include.text1}} of {{include.text2}}.</pre>
+</div>
+
+<div class="language-http highlighter-rouge">
+<pre class="highlight"><code><span class="err">GET https://directory.spineservices.nhs.uk/STU3/{{include.resource}}?{{include.content}}={{include.example2}}
+</span></code>
+
+Return the {{include.resource}} resource with {{include.text1}} of {{include.text2}}.</pre>
+</div>

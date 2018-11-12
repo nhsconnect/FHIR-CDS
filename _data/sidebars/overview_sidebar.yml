@@ -1,0 +1,188 @@
+entries:
+- title: Clinical Triage Platform API
+  product: Clinical Triage Platform API
+  version: 0.1.0-experimental
+  levels: one
+  folders:
+
+  - title: Overview
+    output: web
+    folderitems:
+    - title: Introduction
+      url: /index.html
+      output: web, pdf
+      type: homepage
+    - title: Guide Versioning
+      url: /overview_guide_versioning.html
+      output: web
+    - title: Release Notes
+      url: /overview_release_notes.html
+      output: web
+    - title: Glossary
+      url: /overview_glossary.html
+      output: web
+
+  - title: Solution
+    output: web
+    folderitems:
+    - title: Concepts
+      url: /overview_concepts.html
+      output: web
+    - title: Get Binary Retrieval Pattern
+      url: /solution_getbinaryretrieval_pattern.html
+      output: web
+    - title: Interactions
+      url: /solution_interactions.html
+      output: web 
+ # - title: Case Studies
+  #  output: web
+   # folderitems:
+
+   # - title: Overview
+   #   url: /engage_case_studies.html
+   #   output: web, pdf
+   #   type: homepage
+
+   #   subfolders:
+   #   - title: Case Studies
+   #     output: web
+    #    subfolderitems:
+    #    - title: "Placeholder for case study"
+    #      url: /engage_case_studies.html
+    #      output: web
+  - title: Use Cases
+    output: web
+    folderitems:
+    - title: Context
+      url: /overview_context.html
+      output: web
+  - title: Development Guidance
+    output: web
+    folderitems:
+    - title: Overview
+      url: /api_overview.html
+      output: web
+   # - title: Unstructured Document | Binary
+   #  url: /api_unstructureddocument_binary.html
+   #   output: web
+   # - title: CapabilityStatement
+    #  url: /api_foundation_capabilitystatement.html
+     # output: web
+   # - title: ValueSet
+    #  url: /api_foundation_valueset.html
+    #  output: web
+    #- title: CodeSystem
+    #  url: /api_foundation_codesystem.html
+    #  output: web
+      subfolders:
+      - title: API Interactions
+        output: web
+        subfolderitems:
+        - title: Message Specification
+          url: /api_message_spec.html
+          output: web
+      - title: API Guidance | FHIR&reg;
+        output: web
+        subfolderitems:
+        - title: HTTP Response Codes
+          url: /resources_api_codes.html
+          output: web     
+     #   - title: Reference
+      #    url: /resources_reference.html
+      #    output: web
+ # - title: Integrate With Spine
+  #  output: web
+   # folderitems:
+   # - title: Authentication & Authorisation
+    #  url: /integration_authentication_authorisation.html
+    #  output: web
+    #- title: Access Tokens and Audit (JWT)
+    # url: /integration_access_tokens_and_audit_JWT.html
+    #  output: web
+   #- title: Personal Demographic Service
+   #   url: /integration_personal_demographics_service.html
+   #   output: web
+   # - title: Spine Security Proxy
+   #   url: /integration_spine_security_proxy.html
+   #   output: web
+
+  #- title: Design & Build
+  #  output: web
+  #  folderitems:
+  #  - title: Overview
+  #    url: /design.html
+  #    output: web
+  #  - title: Open Source
+  #    url: /design_open_source.html
+   #   output: web
+   #   subfolders:
+   #   - title: Build
+   #     output: web
+   #     subfolderitems:
+   #       - title: Organization Search
+   #         url: /build_organization_search.html
+   #        output: web
+
+  #- title: Test
+  #  output: web
+  #  folderitems:
+  #  - title: Overview
+  #    url: /test.html
+  #    output: web
+ 
+  - title: Assure
+    output: web
+    folderitems:
+    - title: Overview
+      url: /assure.html
+      output: web
+
+ # - title: Deploy
+ #   output: web
+ #   folderitems:
+ #   - title: Overview
+ #     url: /deploy.html
+ #     output: web
+
+  - title: Help & Support
+    output: web
+    folderitems:
+    - title: Frequently Asked Questions (FAQ)
+      url: /support_faq.html
+      output: web
+    - title: Communication Channels
+      url: /support_communications.html
+      output: web
+   #   subfolders:
+   #   - title: Where Else Can I Look?
+   #     output: web
+   #     subfolderitems:
+   #     - title: Additional Information
+   #       url: /support_other.html
+   #       output: web
+
+
+  - title: Tags
+    output: web
+    folderitems:
+    - title: Introduction
+      url: /tag_overview.html
+      output: web
+    - title: FHIR&reg;
+      url: /tag_fhir.html
+      output: web
+  #  - title: User Stories
+  #    url: /tag_user_stories.html
+  #    output: web
+  #  - title: Case Studies
+  #    url: /tag_casestudies.html
+  #    output: web
+  #  - title: Design
+  #    url: /tag_design.html
+  #    output: web
+    - title: Development
+      url: /tag_development.html
+      output: web
+    - title: Support
+      url: /tag_support.html
+      output: web
