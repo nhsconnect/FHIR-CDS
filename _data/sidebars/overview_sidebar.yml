@@ -81,6 +81,15 @@ entries:
         - title: Message Specification
           url: /api_message_spec.html
           output: web
+        - title: Get Service Definition
+          url: /api_get_service_definition.html
+          output: web
+        - title: Post Service Definition
+          url: /api_post_service_definition.html
+          output: web
+        - title: Get Questionnaire
+          url: /api_get_questionnaire.html
+          output: web
       - title: API Guidance | FHIR&reg;
         output: web
         subfolderitems:

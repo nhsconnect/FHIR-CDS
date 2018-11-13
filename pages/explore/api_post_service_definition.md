@@ -1,14 +1,15 @@
 ---
-title: Unstructured Document | Binary
-keywords: getcarerecord, structured, rest, binary
-tags: [rest,fhir,documents,api,noccprofile]
-sidebar: accessrecord_rest_sidebar
-permalink: api_unstructureddocument_binary.html
-summary: A binary resource can contain any content, whether text, image, pdf, zip archive, etc.
+title: Clinical Triage Platform | Post Service Definition
+keywords: servicedefinition, rest,
+tags: [rest,fhir,api]
+sidebar: ctp_rest_sidebar
+permalink: api_post_service_definition.html
+summary: Post a Service Definition
 ---
+
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Binary" fhirlink="[Binary](https://www.hl7.org/fhir/STU3/binary.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
 
 <!--
 

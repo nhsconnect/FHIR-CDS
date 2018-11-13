@@ -12,5 +12,9 @@ summary: Solution interactions
 
 ## Interactions ##
 
+The key interactions for the Clinical Triage Platform are represented in the diagram below:-
+
+<img src="..\..\images\solution\message-sequence-diagrams-v08.jpg" style="width:75%;max-width: 75%; height:100%; max-height: 100%;">
+
 
 
