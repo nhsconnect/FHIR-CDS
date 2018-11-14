@@ -10,8 +10,4 @@ summary: To show the main API interactions
 
 ## Interactions ##
 
-The key interactions for this message specification are represented in the diagram below:-
-
-<img src="..\..\images\solution\message-sequence.png">
-
 
