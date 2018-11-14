@@ -28,9 +28,6 @@ entries:
     - title: Concepts
       url: /overview_concepts.html
       output: web
-    - title: Get Binary Retrieval Pattern
-      url: /solution_getbinaryretrieval_pattern.html
-      output: web
     - title: Interactions
       url: /solution_interactions.html
       output: web 
@@ -62,25 +59,13 @@ entries:
     - title: Overview
       url: /api_overview.html
       output: web
-   # - title: Unstructured Document | Binary
-   #  url: /api_unstructureddocument_binary.html
-   #   output: web
-   # - title: CapabilityStatement
-    #  url: /api_foundation_capabilitystatement.html
-     # output: web
-   # - title: ValueSet
-    #  url: /api_foundation_valueset.html
-    #  output: web
-    #- title: CodeSystem
-    #  url: /api_foundation_codesystem.html
-    #  output: web
+    - title: General API Guidance
+      url: /api_guidance.html
+      output: web
       subfolders:
       - title: API Interactions
         output: web
         subfolderitems:
-        - title: Message Specification
-          url: /api_message_spec.html
-          output: web
         - title: Get Service Definition
           url: /api_get_service_definition.html
           output: web
