@@ -1,4 +1,4 @@
----
+﻿---
 title: Clinical Triage Platform | Get Service Definition
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
@@ -14,17 +14,88 @@ summary: Retrieve a Service Definition
 
 
 ## Get ServiceDefinition Pattern ##
+The read interaction accesses the current contents of a resource, in this case of the ServiceDefinition. The interaction is performed by an HTTP GET command as shown:
 
-The Get Unstructured Document FHIR STU3 ‘Read Only’ API uses the ‘Get Binary Retrieval Pattern’ to support retrieval of non-structured documents such as a PDFs from remote systems.
+<div markdown="span" class="alert alert-success" role="alert">
+GET [baseUrl]/ServiceDefinition?[searchParameters]</div>  
 
-Non-structured documents can be served on the FHIR REST interface in 2 ways:
 
-1.  FHIR resource - the utility FHIR Binary resource is used to convey the non-structured document because it cannot be expressed natively in FHIR.
-2.  Native non-encoded form - when a FHIR Binary resource is initially created it must be encoded (XML/JSON), however a Consumer system can retrieve it in its native non-encoded form e.g. PDF. 
-The FHIR Binary resource represents the data of a single raw artefact as digital content accessible in its native format.
+<!--
+Add explanatory diagram here? Would they want the list of possible responses and error codes?
+-->
 
-‘Non-Structured’ documents can be any content that is not represented using FHIR resources (e.g. PDFs, PNGs, Work Documents etc).
 
+## Identification of the Service ##
+The parameters within the ServiceDefinition resource allow the general identification of the service, thus enabling it to be distinguished from other services, for example by a FHIR server receiving a GET request with a search parameter.
+
+<table style="min-width:100%;width:100%">
+<tr id="clinical">
+    <th style="width:25%;">Name</th>
+    <th style="width:5%;">Flags</th>
+    <th style="width:10%;">Cardinality</th>
+    <th style="width:15%;">Type</th>
+    <th style="width:45%;">Description and Constraints</th>
+</tr>
+<!--
+<tr>
+    <td><code class="highlighter-rouge">patient</code></td>
+    <td><code class="highlighter-rouge">reference</code></td>
+    <td>Who/what is the subject of the document</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.subject<br>(Patient)</td>
+</tr>
+
+<tr>
+    <td><code class="highlighter-rouge">period</code></td>
+    <td><code class="highlighter-rouge">date</code></td>
+    <td>Time of service that is being documented</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.context.period</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">type</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>Kind of document (SNOMED CT if possible)</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.type</td>
+</tr> 
+-->
+<tr>
+    <td><code class="highlighter-rouge">_id</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>The logical id of the resource</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.id</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">custodian</code></td>
+    <td><code class="highlighter-rouge">reference</code></td>
+    <td>Organization which maintains the document reference</td>
+    <td>MAY</td>
+    <td>DocumentReference.custodian(Organization)</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">subject</code></td>
+    <td><code class="highlighter-rouge">reference</code></td>
+    <td>Who/what is the subject of the document</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.subject<br>(Patient)</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">type</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>Kind of document (SNOMED CT)</td>
+    <td>MAY</td>
+    <td>DocumentReference.type</td>
+</tr> 
+<tr>
+    <td><code class="highlighter-rouge">_summary</code></td>
+    <td><code class="highlighter-rouge">Summary</code></td>
+    <td>Total number of matching results</td>
+    <td>MAY</td>
+    <td>N/A</td>
+</tr>
+</table>
 
 
 
