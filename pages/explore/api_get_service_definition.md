@@ -11,9 +11,9 @@ summary: Retrieve a Service Definition
 
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
 
-<!--
 
-## Get Binary Retrieval Pattern ##
+
+## Get ServiceDefinition Pattern ##
 
 The Get Unstructured Document FHIR STU3 ‘Read Only’ API uses the ‘Get Binary Retrieval Pattern’ to support retrieval of non-structured documents such as a PDFs from remote systems.
 
@@ -24,34 +24,6 @@ Non-structured documents can be served on the FHIR REST interface in 2 ways:
 The FHIR Binary resource represents the data of a single raw artefact as digital content accessible in its native format.
 
 ‘Non-Structured’ documents can be any content that is not represented using FHIR resources (e.g. PDFs, PNGs, Work Documents etc).
-
--->
-
-
-
-## FHIR Elements ##
-
-<p>The following FHIR elements have been identified as key to the implementation:</p>
-
-<table>
-<tr>
-<th>Element</th>
-<th>Cardinality</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Binary.id</td><td>0..1</td><td>id</td><td>Mandatory Logical id of Binary resource. Assigned by Provider. Uniquely identifies the document. Used by Consumers to retrieve document.</td>
-</tr>
-<tr>
-<td>Binary.contentType</td><td>1..1</td><td>code</td><td>MimeType of the binary content</td>
-</tr>
-<tr>
-<td>Binary.content</td><td>1..1</td><td>Base64Binary</td><td>The actual content</td>
-</tr>
-</table>
-
-
 
 
 
