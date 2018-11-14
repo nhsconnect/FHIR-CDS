@@ -36,64 +36,41 @@ The parameters within the ServiceDefinition resource allow the general identific
     <th style="width:15%;">Type</th>
     <th style="width:45%;">Description and Constraints</th>
 </tr>
-<!--
-<tr>
-    <td><code class="highlighter-rouge">patient</code></td>
-    <td><code class="highlighter-rouge">reference</code></td>
-    <td>Who/what is the subject of the document</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.subject<br>(Patient)</td>
-</tr>
 
 <tr>
-    <td><code class="highlighter-rouge">period</code></td>
-    <td><code class="highlighter-rouge">date</code></td>
-    <td>Time of service that is being documented</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.context.period</td>
+    <td><code class="highlighter-rouge">url</code></td>
+    <td><code class="highlighter-rouge">Σ</code></td>
+    <td>0..1</td>
+    <td>uri</td>
+    <td>Logical URI to reference this service definition (globally unique)</td>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge">type</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>Kind of document (SNOMED CT if possible)</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.type</td>
-</tr> 
--->
-<tr>
-    <td><code class="highlighter-rouge">_id</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>The logical id of the resource</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.id</td>
+    <td><code class="highlighter-rouge">identifier</code></td>
+    <td><code class="highlighter-rouge">Σ</code></td>
+    <td>0..*</td>
+    <td>identifier</td>
+    <td>Additional identifier for the service definition</td>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge">custodian</code></td>
-    <td><code class="highlighter-rouge">reference</code></td>
-    <td>Organization which maintains the document reference</td>
-    <td>MAY</td>
-    <td>DocumentReference.custodian(Organization)</td>
+    <td><code class="highlighter-rouge">version</code></td>
+    <td><code class="highlighter-rouge">Σ</code></td>
+    <td>0..1</td>
+    <td>string</td>
+    <td>Business version of the service definition</td>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge">subject</code></td>
-    <td><code class="highlighter-rouge">reference</code></td>
-    <td>Who/what is the subject of the document</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.subject<br>(Patient)</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">type</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>Kind of document (SNOMED CT)</td>
-    <td>MAY</td>
-    <td>DocumentReference.type</td>
+    <td><code class="highlighter-rouge">name</code></td>
+    <td><code class="highlighter-rouge">Σ</code></td>
+    <td>0..1</td>
+    <td>string</td>
+    <td>Name for this service definition (computer friendly)</td>
 </tr> 
 <tr>
-    <td><code class="highlighter-rouge">_summary</code></td>
-    <td><code class="highlighter-rouge">Summary</code></td>
-    <td>Total number of matching results</td>
-    <td>MAY</td>
-    <td>N/A</td>
+    <td><code class="highlighter-rouge">title</code></td>
+    <td><code class="highlighter-rouge">Σ</code></td>
+    <td>0..1</td>
+    <td>string</td>
+    <td>Name for this service definition (human friendly)</td>
 </tr>
 </table>
 
