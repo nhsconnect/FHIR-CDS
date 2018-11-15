@@ -13,16 +13,31 @@ summary: Retrieve a Service Definition
 
 
 
-## Get ServiceDefinition Pattern ##
-The read interaction accesses the current contents of a resource, in this case the ServiceDefinition. This action is performed by the Encounter Management System (EMS) in order to get a ServiceDefinition from a selected Clinical Decision Support System (CDSS).
-The EMS will select a preferred ServiceDefinition using a preferred search parameter. 
-The interaction is performed by an HTTP GET command as shown below:
+## Get ServiceDefinition Interaction ##
+<p>This action is performed by the Encounter Management System (EMS) in order to get a ServiceDefinition from a selected Clinical Decision Support System (CDSS).</p>
+
+## Search Request Headers ##
+<p>Provider API search requests support the following HTTP request headers:</p>
+
+
+| Header               | Value |Conformance |
+|----------------------|-------|-------|
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](development_general_api_guidance.html#content-types) section. | MAY |
+| `Authorization`      | The `Authorization` header will carry the base64url encoded JSON web token required for audit on the spine - see [Access Tokens and Audit (JWT)](integration_access_tokens_and_audit_JWT.html) for details. |  MUST |
+| `fromASID`           | Client System ASID | MUST |
+| `toASID`             | The Spine ASID | MUST |
+
+
+
+## Get ServiceDefinition ##
+<p>The EMS will select a preferred ServiceDefinition using a chosen search parameter(s).</p>
+<p>The interaction is performed by an HTTP GET command as shown:</p>
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition?[searchParameters]</div>  
 
-## Search Parameters ##
-This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:-
+### Search Parameters ###
+<p>This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:</p>
 
 <table style="min-width:100%;width:100%">
 <tr id="clinical">
