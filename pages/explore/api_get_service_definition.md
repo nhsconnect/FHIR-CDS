@@ -29,7 +29,7 @@ Add explanatory diagram here? Would they want the list of possible responses and
 The parameters within the ServiceDefinition resource allow the general identification of the service, thus enabling it to be distinguished from other services, for example by a FHIR server receiving a GET request with a search parameter.
 
 <table style="min-width:100%;width:100%">
-<tr id="clinical">
+<tr id="ServiceDefinition identification">
     <th style="width:25%;">Name</th>
     <th style="width:5%;">Flags</th>
     <th style="width:10%;">Cardinality</th>
@@ -39,7 +39,7 @@ The parameters within the ServiceDefinition resource allow the general identific
 
 <tr>
     <td><code class="highlighter-rouge">url</code></td>
-    <td><code class="highlighter-rouge">Σ</code></td>
+    <td>Σ</td>
     <td>0..1</td>
     <td>uri</td>
     <td>Logical URI to reference this service definition (globally unique)</td>
