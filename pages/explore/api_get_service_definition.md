@@ -77,6 +77,8 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
 </tr>
 </table>
 
+<p>When the <code class="highlighter-rouge">_id</code> search parameter is used by a client it SHALL only be used as a single search parameter and SHALL not be used in conjunction with any other search parameter to form part of a combination search query with the exception of ‘_format’ parameter.</p>
+
 {% include custom/search.id.html values="" content="DocumentReference" %}
 
 <!--
