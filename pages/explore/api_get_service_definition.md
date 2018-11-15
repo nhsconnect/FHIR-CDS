@@ -15,7 +15,7 @@ summary: Retrieve a Service Definition
 
 ## Get ServiceDefinition Pattern ##
 The read interaction accesses the current contents of a resource, in this case the ServiceDefinition. This action is performed by the Encounter Management System (EMS) in order to get a ServiceDefinition from a selected Clinical Decision Support System (CDSS).
-The EMS will select a preferred ServiceDefinition depending on context, for example the nature of the patient's complaint. 
+The EMS will select a preferred ServiceDefinition using a preferred search parameter. 
 The interaction is performed by an HTTP GET command as shown below:
 
 <div markdown="span" class="alert alert-success" role="alert">
@@ -76,6 +76,8 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
     <td>ServiceDefinition.title</td>
 </tr>
 </table>
+
+{% include custom/search.id.html values="" content="DocumentReference" %}
 
 <!--
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
