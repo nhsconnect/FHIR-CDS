@@ -12,7 +12,7 @@ summary: A brief introduction to the Clinical Decision Support API Implementatio
 
 ## Background ##
 
-This is the Clinical Decision Support (CDS) RESTful FHIR STU3 ‘Read Only’ experimental API implementation guide.
+This Clinical Decision Support (CDS) RESTful FHIR STU3 ‘Read Only’ experimental API implementation guide supports the initiatives set out by the Clinical Triage Platform programme.
 
 The Clinical Triage Platform programme supports the delivery of the key recommendations and drivers for change that resulted from a number of NHS strategies, policies, frameworks and reviews, including the National Information Board (NIB) Health and Care 2020 framework, 
 the Urgent and Emergency Care Review, and the Five Year Forward View. To achieve the transformation of Urgent and Emergency Care, patients must be directed to or connected with the right service to meet their needs and not be sent or conveyed to high end dispositions 
