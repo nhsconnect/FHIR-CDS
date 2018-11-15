@@ -96,7 +96,6 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 
 <p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.</p>
 
-<p>Further details relating to the <a href="https://www.w3schools.com">Visit W3Schools.com!</a><a href"_id search parameter](https://www.hl7.org/fhir/stu3/search.html#id)</p>
 <p>The <code class="highlighter-rouge">_id</code> parameter can be used as follows:</p>
 <p>This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.</p>
 <div markdown="span" class="alert alert-success" role="alert">
@@ -108,8 +107,8 @@ GET [baseUrl]/ServiceDefinition_id=3</div>
 
 <p>Further parameters can be added which may provide additional functionality on top of this base read equivalence (e.g. <code class="highlighter-rouge">_include</code>).</p>
 
-
-<p>Further information relating to [ServiceDefinition search parameters](http://hl7.org/fhir/servicedefinition.html#search) is available.</p>
+<p>Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id"><code class="highlighter-rouge">_id</code> search parameter</a> are available.</p>
+<p>Further information relating to <a href="http://hl7.org/fhir/servicedefinition.html#search">ServiceDefinition search parameters</a> can also be viewed.</p>
 
 
 <!--More information required on potential searches and search parameter combinations from the CTP programme-->
