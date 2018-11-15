@@ -60,7 +60,7 @@ entries:
       url: /api_overview.html
       output: web
     - title: General API Guidance
-      url: /api_guidance.html
+      url: /api_general_guidance.html
       output: web
       subfolders:
       - title: API Interactions
