@@ -81,20 +81,6 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
 -->
 
-{% include custom/search.warn.subject.custodian.html %}
-{% include note.html content="Please make sure that all query parameters are URL encoded. In particular the pipe (|) character must be URL encoded (%7C)." %}
-
-
-{% include custom/search._id.html values="" content="DocumentReference" %}
-
-{% include custom/search.patient.html content="DocumentReference" %}
-
-{% include custom/search.patient.custodian.html values="" content="DocumentReference" %}
-
-{% include custom/search.patient.type.html values="" content="DocumentReference" %}
-
-{% include custom/search._summary.html values="" content="DocumentReference" %}
-
 ## Read ##
 
 FHIR Binary resources behave differently to all other FHIR resources on the RESTful API. There are 2 ways clients can make FHIR Binary resource read requests:
