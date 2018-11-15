@@ -96,7 +96,7 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 
 <p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.</p>
 
-<p>[View further details on this parameter](<a href="https://www.hl7.org/fhir/stu3/search.html#id">_id)</p>
+<p>Further details relating to the <a href="https://www.w3schools.com">Visit W3Schools.com!</a><a href"_id search parameter](https://www.hl7.org/fhir/stu3/search.html#id)</p>
 <p>The <code class="highlighter-rouge">_id</code> parameter can be used as follows:</p>
 <p>This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.</p>
 <div markdown="span" class="alert alert-success" role="alert">
