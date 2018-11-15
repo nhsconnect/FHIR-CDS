@@ -77,9 +77,14 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
 </tr>
 </table>
 
-<p>When the <code class="highlighter-rouge">_id</code> search parameter is used by a client it SHALL only be used as a single search parameter and SHALL not be used in conjunction with any other search parameter to form part of a combination search query with the exception of ‘_format’ parameter.</p>
+<h4 id="_id"> _id</h4>
 
-{% include custom/search.id.html values="" content="DocumentReference" %}
+<p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the DocumentReference resource and can be used when the search context specifies the DocumentReference resource type.</p>
+
+<p>Functionally this search is the equivalent of a simple read operation.</p>
+
+<p>See <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id</a> for details on this parameter. The _id parameter can be used as follows:</p>
+
 
 <!--
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
