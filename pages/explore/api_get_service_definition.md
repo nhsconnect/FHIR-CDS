@@ -40,7 +40,7 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 <p>This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:</p>
 
 <table style="min-width:100%;width:100%">
-<tr id="clinical">
+<tr>
     <th style="width:15%;">Name</th>
     <th style="width:15%;">Type</th>
     <th style="width:30%;">Description</th>
@@ -97,15 +97,10 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 <p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.</p>
 
 <p>The <code class="highlighter-rouge">_id</code> parameter can be used as follows:</p>
-<p>This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.</p>
+
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition/3</div> 
-<p>The search below with the parameter <code class="highlighter-rouge">_id</code> returns a bundle with the requested resource, instead of just the resource itself.</p>
- 
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/ServiceDefinition_id=3</div> 
-
-<p>Further parameters can be added which may provide additional functionality on top of this base read equivalence (e.g. <code class="highlighter-rouge">_include</code>).</p>
+<p>This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.</p>
 
 <p>Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id"><code class="highlighter-rouge">_id</code> search parameter</a> are available.</p>
 <p>Further information relating to <a href="http://hl7.org/fhir/servicedefinition.html#search">ServiceDefinition search parameters</a> can also be viewed.</p>
@@ -116,89 +111,6 @@ GET [baseUrl]/ServiceDefinition_id=3</div>
 <!--
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
 -->
-
-## Read ##
-
-FHIR Binary resources behave differently to all other FHIR resources on the RESTful API. There are 2 ways clients can make FHIR Binary resource read requests:
-
-1) When a read request is made for the FHIR binary resource that doesn't explicitly specify a content type (expressed as mime type), then the content MUST be returned using the content type stated in the resource. e.g. if the content type in the resource is `application/pdf`, then the content MUST be returned as a PDF directly. This is referred to in this API as the native non-encoded form (i.e. the retrieved document is as a standard URL resource and not contained within a FHIR resource) and is implemented using the Default Read Operation.
-
-2) When a read request is made for the FHIR binary resource that explicitly specifies the content type (expressed as mime type) of the response either via a `_format` override on the query parameter or by using an `Accept` HTTP header in the request, then the content MUST be returned as a FHIR Binary resource - i.e. XML/JSON representation. This is implemented in a number of ways.
-
-The HL7 standard states that "the intent is that unless specifically requested, the FHIR XML/JSON representation is not returned". 
-
-The Get Unstructured Document API must follow the FHIR STU3 standard. So although a Binary resource can be retrieved from any url, a Provider server (FHIR Binary endpoint) MUST serve up the resource either as a `FHIR binary resource` or in its `native non-encoded form` on the rest interface. The default behaviour is that of the latter.
-
-### Read Request Headers ###
-
-Read requests support the following HTTP request headers:
-
-| Header               | Value |Conformance |
-|----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand. | MAY |
-| `Authorization`      | The `Authorization` header will carry the base64url encoded JSON web token. |  MUST |
-
-<!--
-, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](development_general_api_guidance.html#content-types) section.
--->
-
-<!--
-  required for audit on the spine - see [Access Tokens and Audit (JWT)](integration_access_tokens_and_audit_JWT.html) for details.
--->
-<!--
-| `fromASID`           | Client System ASID | MUST |
-| `toASID`             | The Spine ASID | MUST |
--->
-
-### Default Read Operation - with No HTTP Accept Header ###
-
-A client makes a read request for a FHIR binary resource that doesn't explicitly specify a content type. 
-
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]</div>
-
-The server returns the content using the `native mime type of the document` e.g. PDF – No FHIR Binary resource is returned.
-
-<font color="red"> Provider Systems <b>MUST</b> support this query construct.</font>
-
-### Read Operation Format Override (Method #1) - with No HTTP Accept Header###
-
-A client makes a read request for a FHIR binary resource using the `_format` override on the query parameter to specify a specific content type. 
-
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]?_format=[format] </div>
-
-The server returns a FHIR Binary resource in the requested format with the document `base64` encoded within the FHIR Binary content element. 
-
-<font color="red"> Provider Systems <b>MUST</b> support this query construct.</font>
-
-
-
-### Read Operation Format Override (Method #2) - with a HTTP Accept Header of [format]###
-
-A client makes a read request for a FHIR binary resource using the `Accept` HTTP Header to specify a specific content type.
-
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]</div>
-
-The server returns a FHIR Binary resource in the requested format with the document `base64` encoded within the FHIR Binary content element. 
-
-
-<font color="red"> Provider Systems <b>SHOULD</b> support this query construct.</font>
-
-
-
-### Read Operation Format Override (Method #3) - with a HTTP Accept Header of [format_2]###
-
-A client makes a read request for a FHIR binary resource using the `_format`=[format_1] override on the query parameter and a `Accept` HTTP Header =[format_2]. [format_1] and [format_2] specify different content types.
-
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]?_format=[format_1] </div>
-
-The server returns a FHIR Binary resource as per [format_1] as `_format` overrides the `Accept` HTTP Header. The document is `base64` encoded within the FHIR Binary content element. 
-
-
-<font color="red"> Provider Systems <b>SHOULD</b> support this query construct.</font>
 
 
 
