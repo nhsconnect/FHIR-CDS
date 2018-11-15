@@ -79,12 +79,17 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
 
 <h4 id="_id"> _id</h4>
 
-<p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the DocumentReference resource and can be used when the search context specifies the DocumentReference resource type.</p>
+<p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.</p>
 
 <p>Functionally this search is the equivalent of a simple read operation.</p>
 
 <p>See <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id</a> for details on this parameter. The _id parameter can be used as follows:</p>
 
+<p>This search finds the patient resource with the given id (there can only be one resource for a given id)</p>
+<div markdown="span" class="alert alert-success" role="alert">
+GET [baseUrl]/ServiceDefinition/3</div>  
+
+<!--More information required on potential searches and search parameter combinations from the CTP programme-->
 
 <!--
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
