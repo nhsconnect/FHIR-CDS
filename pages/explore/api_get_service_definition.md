@@ -32,64 +32,48 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
     <th style="width:5%;">Conformance</th>
     <th style="width:35%;">Path</th>
 </tr>
-<!--
-<tr>
-    <td><code class="highlighter-rouge">patient</code></td>
-    <td><code class="highlighter-rouge">reference</code></td>
-    <td>Who/what is the subject of the document</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.subject<br>(Patient)</td>
-</tr>
 
-<tr>
-    <td><code class="highlighter-rouge">period</code></td>
-    <td><code class="highlighter-rouge">date</code></td>
-    <td>Time of service that is being documented</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.context.period</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">type</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>Kind of document (SNOMED CT if possible)</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.type</td>
-</tr> 
--->
 <tr>
     <td><code class="highlighter-rouge">_id</code></td>
     <td><code class="highlighter-rouge">token</code></td>
     <td>The logical id of the resource</td>
     <td>SHOULD</td>
-    <td>DocumentReference.id</td>
+    <td>ServiceDefinition.id</td>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge">custodian</code></td>
-    <td><code class="highlighter-rouge">reference</code></td>
-    <td>Organization which maintains the document reference</td>
+    <td><code class="highlighter-rouge">url</code></td>
+    <td><code class="highlighter-rouge">uri</code></td>
+    <td>Logical URI to reference this service definition (globally unique)</td>
     <td>MAY</td>
-    <td>DocumentReference.custodian(Organization)</td>
+    <td>ServiceDefinition.url</td>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge">subject</code></td>
-    <td><code class="highlighter-rouge">reference</code></td>
-    <td>Who/what is the subject of the document</td>
-    <td>SHOULD</td>
-    <td>DocumentReference.subject<br>(Patient)</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">type</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>Kind of document (SNOMED CT)</td>
+    <td><code class="highlighter-rouge">identifier</code></td>
+    <td><code class="highlighter-rouge">identifier</code></td>
+    <td>Additional identifier for the service definition</td>
     <td>MAY</td>
-    <td>DocumentReference.type</td>
+    <td>ServiceDefinition.identifier</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">version</code></td>
+    <td><code class="highlighter-rouge">string</code></td>
+    <td>Business version of the service definition</td>
+    <td>MAY</td>
+    <td>ServiceDefinition.version</td>
 </tr> 
 <tr>
-    <td><code class="highlighter-rouge">_summary</code></td>
-    <td><code class="highlighter-rouge">Summary</code></td>
-    <td>Total number of matching results</td>
+    <td><code class="highlighter-rouge">name</code></td>
+    <td><code class="highlighter-rouge">string</code></td>
+    <td>Name for this service definition (computer friendly)</td>
     <td>MAY</td>
-    <td>N/A</td>
+    <td>ServiceDefinition.name</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">title</code></td>
+    <td><code class="highlighter-rouge">string</code></td>
+    <td>Name for this service definition (human friendly)</td>
+    <td>MAY</td>
+    <td>ServiceDefinition.title</td>
 </tr>
 </table>
 
@@ -97,57 +81,19 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
 -->
 
-
-## Identification of the Service ##
-The parameters within the ServiceDefinition resource allow the general identification of the service, thus enabling it to be distinguished from other services, for example by a FHIR server receiving a GET request with a search parameter.
-
-<table style="min-width:100%;width:100%">
-<tr id="ServiceDefinition identification">
-    <th style="width:25%;">Name</th>
-    <th style="width:5%;">Flags</th>
-    <th style="width:10%;">Cardinality</th>
-    <th style="width:15%;">Type</th>
-    <th style="width:45%;">Description and Constraints</th>
-</tr>
-
-<tr>
-    <td><code class="highlighter-rouge">url</code></td>
-    <td>Σ</td>
-    <td>0..1</td>
-    <td>uri</td>
-    <td>Logical URI to reference this service definition (globally unique)</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">identifier</code></td>
-    <td><code class="highlighter-rouge">Σ</code></td>
-    <td>0..*</td>
-    <td>identifier</td>
-    <td>Additional identifier for the service definition</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">version</code></td>
-    <td><code class="highlighter-rouge">Σ</code></td>
-    <td>0..1</td>
-    <td>string</td>
-    <td>Business version of the service definition</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">name</code></td>
-    <td><code class="highlighter-rouge">Σ</code></td>
-    <td>0..1</td>
-    <td>string</td>
-    <td>Name for this service definition (computer friendly)</td>
-</tr> 
-<tr>
-    <td><code class="highlighter-rouge">title</code></td>
-    <td><code class="highlighter-rouge">Σ</code></td>
-    <td>0..1</td>
-    <td>string</td>
-    <td>Name for this service definition (human friendly)</td>
-</tr>
-</table>
+{% include custom/search.warn.subject.custodian.html %}
+{% include note.html content="Please make sure that all query parameters are URL encoded. In particular the pipe (|) character must be URL encoded (%7C)." %}
 
 
+{% include custom/search._id.html values="" content="DocumentReference" %}
+
+{% include custom/search.patient.html content="DocumentReference" %}
+
+{% include custom/search.patient.custodian.html values="" content="DocumentReference" %}
+
+{% include custom/search.patient.type.html values="" content="DocumentReference" %}
+
+{% include custom/search._summary.html values="" content="DocumentReference" %}
 
 ## Read ##
 
