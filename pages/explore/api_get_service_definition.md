@@ -58,20 +58,20 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 <tr>
     <td><code class="highlighter-rouge">url</code></td>
     <td><code class="highlighter-rouge">uri</code></td>
-    <td>Logical URI to reference this service definition (globally unique)</td>
+    <td>The uri that identifies the service definition</td>
     <td>MAY</td>
     <td>ServiceDefinition.url</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">identifier</code></td>
-    <td><code class="highlighter-rouge">identifier</code></td>
-    <td>Additional identifier for the service definition</td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>External identifier for the service definition</td>
     <td>MAY</td>
     <td>ServiceDefinition.identifier</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">version</code></td>
-    <td><code class="highlighter-rouge">string</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
     <td>Business version of the service definition</td>
     <td>MAY</td>
     <td>ServiceDefinition.version</td>
@@ -79,14 +79,14 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 <tr>
     <td><code class="highlighter-rouge">name</code></td>
     <td><code class="highlighter-rouge">string</code></td>
-    <td>Name for this service definition (computer friendly)</td>
+    <td>Computationally friendly name of the service definition</td>
     <td>MAY</td>
     <td>ServiceDefinition.name</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">title</code></td>
     <td><code class="highlighter-rouge">string</code></td>
-    <td>Name for this service definition (human friendly)</td>
+    <td>The human-friendly name of the service definition</td>
     <td>MAY</td>
     <td>ServiceDefinition.title</td>
 </tr>
@@ -96,13 +96,21 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 
 <p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.</p>
 
-<p>Functionally this search is the equivalent of a simple read operation.</p>
-
-<p>See <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id</a> for details on this parameter. The _id parameter can be used as follows:</p>
-
-<p>This search finds the patient resource with the given id (there can only be one resource for a given id)</p>
+<p>[View further details on this parameter](<a href="https://www.hl7.org/fhir/stu3/search.html#id">_id)</p>
+<p>The <code class="highlighter-rouge">_id</code> parameter can be used as follows:</p>
+<p>This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.</p>
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/ServiceDefinition/3</div>  
+GET [baseUrl]/ServiceDefinition/3</div> 
+<p>The search below with the parameter <code class="highlighter-rouge">_id</code> returns a bundle with the requested resource, instead of just the resource itself.</p>
+ 
+<div markdown="span" class="alert alert-success" role="alert">
+GET [baseUrl]/ServiceDefinition_id=3</div> 
+
+<p>Further parameters can be added which may provide additional functionality on top of this base read equivalence (e.g. <code class="highlighter-rouge">_include</code>).</p>
+
+
+<p>Further information relating to [ServiceDefinition search parameters](http://hl7.org/fhir/servicedefinition.html#search) is available.</p>
+
 
 <!--More information required on potential searches and search parameter combinations from the CTP programme-->
 
