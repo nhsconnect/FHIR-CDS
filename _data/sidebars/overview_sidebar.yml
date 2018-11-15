@@ -1,6 +1,6 @@
 entries:
-- title: Clinical Triage Platform API
-  product: Clinical Triage Platform API
+- title: Clinical Decision Support API
+  product: Clinical Decision Support API
   version: 0.1.0-experimental
   levels: one
   folders:

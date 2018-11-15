@@ -1,6 +1,6 @@
 ---
 title: Development Overview
-keywords: ctp, rest, resource
+keywords: cDS, rest, resource
 tags: [rest,fhir,api]
 sidebar: foundations_sidebar
 permalink: api_overview.html
@@ -13,9 +13,9 @@ summary: "Overview of the Development section"
 {% include custom/api_overview.svg %}
 -->
 
-## 1. CTP API Overview ##
+## 1. CDS API Overview ##
 
-<!--This section provides CTP implementers with an overview of the Clinical Triage Platform API.-->
+<!--This section provides CDS implementers with an overview of the Clinical Decision Support API.-->
 
 The API supports the following interactions:
 
