@@ -14,11 +14,84 @@ summary: Retrieve a Service Definition
 
 
 ## Get ServiceDefinition Pattern ##
-The read interaction accesses the current contents of a resource, in this case of the ServiceDefinition. The interaction is performed by an HTTP GET command as shown:
+The read interaction accesses the current contents of a resource, in this case the ServiceDefinition. This action is performed by the Encounter Management System (EMS) in order to get a ServiceDefinition from a selected Clinical Decision Support System (CDSS).
+The EMS will select a preferred ServiceDefinition depending on context, for example the nature of the patient's complaint. 
+The interaction is performed by an HTTP GET command as shown below:
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition?[searchParameters]</div>  
 
+## Search Parameters ##
+This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:-
+
+<table style="min-width:100%;width:100%">
+<tr id="clinical">
+    <th style="width:15%;">Name</th>
+    <th style="width:15%;">Type</th>
+    <th style="width:30%;">Description</th>
+    <th style="width:5%;">Conformance</th>
+    <th style="width:35%;">Path</th>
+</tr>
+<!--
+<tr>
+    <td><code class="highlighter-rouge">patient</code></td>
+    <td><code class="highlighter-rouge">reference</code></td>
+    <td>Who/what is the subject of the document</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.subject<br>(Patient)</td>
+</tr>
+
+<tr>
+    <td><code class="highlighter-rouge">period</code></td>
+    <td><code class="highlighter-rouge">date</code></td>
+    <td>Time of service that is being documented</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.context.period</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">type</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>Kind of document (SNOMED CT if possible)</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.type</td>
+</tr> 
+-->
+<tr>
+    <td><code class="highlighter-rouge">_id</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>The logical id of the resource</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.id</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">custodian</code></td>
+    <td><code class="highlighter-rouge">reference</code></td>
+    <td>Organization which maintains the document reference</td>
+    <td>MAY</td>
+    <td>DocumentReference.custodian(Organization)</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">subject</code></td>
+    <td><code class="highlighter-rouge">reference</code></td>
+    <td>Who/what is the subject of the document</td>
+    <td>SHOULD</td>
+    <td>DocumentReference.subject<br>(Patient)</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">type</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>Kind of document (SNOMED CT)</td>
+    <td>MAY</td>
+    <td>DocumentReference.type</td>
+</tr> 
+<tr>
+    <td><code class="highlighter-rouge">_summary</code></td>
+    <td><code class="highlighter-rouge">Summary</code></td>
+    <td>Total number of matching results</td>
+    <td>MAY</td>
+    <td>N/A</td>
+</tr>
+</table>
 
 <!--
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
