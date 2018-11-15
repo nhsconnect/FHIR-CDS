@@ -102,7 +102,7 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 GET [baseUrl]/ServiceDefinition/3</div> 
 <p>This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.</p>
 
-<p>Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id"><code class="highlighter-rouge">_id</code> search parameter</a> are available.</p>
+<p>Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.</p>
 <p>Further information relating to <a href="http://hl7.org/fhir/servicedefinition.html#search">ServiceDefinition search parameters</a> can also be viewed.</p>
 
 
