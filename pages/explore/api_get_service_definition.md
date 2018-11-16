@@ -103,7 +103,7 @@ The <code class="highlighter-rouge">_id</code> parameter can be used as follows:
 GET [baseUrl]/ServiceDefinition/3</div> 
 This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.  
 
-Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.</p>
+Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.  
 Further information relating to <a href="http://hl7.org/fhir/servicedefinition.html#search">ServiceDefinition search parameters</a> can also be viewed.  
 
 
@@ -130,8 +130,8 @@ The following errors can be triggered when performing this operation:
 
 <!--More errors are likely to be needed once we are clear on which search parameters are defined-->
 
-* [Invalid parameter](development_general_api_guidance.html#parameters)
-* [No record found](development_general_api_guidance.html#resource-not-found)
+* [Invalid parameter](api_general_guidance.html#parameters)
+* [No record found](api_general_guidance.html#resource-not-found)
 
 ## Example Scenario ##
 <!--Placeholder -->
