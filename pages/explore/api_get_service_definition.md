@@ -14,10 +14,10 @@ summary: Retrieve a Service Definition
 
 
 ## Get ServiceDefinition Interaction ##
-<p>This action is performed by the Encounter Management System (EMS) in order to get a ServiceDefinition from a selected Clinical Decision Support System (CDSS).</p>
+This action is performed by the Encounter Management System (EMS) in order to get a ServiceDefinition from a selected Clinical Decision Support System (CDSS).  
 
 ## Search Request Headers ##
-<p>Provider API search requests support the following HTTP request headers:</p>
+Provider API search requests support the following HTTP request headers:  
 
 
 | Header               | Value |Conformance |
@@ -30,14 +30,15 @@ summary: Retrieve a Service Definition
 
 
 ## Get ServiceDefinition ##
-<p>The EMS will select a preferred ServiceDefinition using a chosen search parameter(s).</p>
-<p>The interaction is performed by an HTTP GET command as shown:</p>
+The EMS will select a preferred ServiceDefinition using a chosen search parameter(s).  
+The interaction is performed by an HTTP GET command as shown:  
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/ServiceDefinition?[searchParameters]</div>  
+GET [baseUrl]/ServiceDefinition?[searchParameters]</div> 
+
 
 ### Search Parameters ###
-<p>This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:</p>
+This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:  
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -92,18 +93,18 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 </tr>
 </table>
 
-<h4 id="_id"> _id</h4>
+#### _id ####
 
-<p>The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.</p>
+The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.  
 
-<p>The <code class="highlighter-rouge">_id</code> parameter can be used as follows:</p>
+The <code class="highlighter-rouge">_id</code> parameter can be used as follows:  
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition/3</div> 
-<p>This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.</p>
+This search finds the patient resource with the given id (there can only be one resource for a given id). Functionally this search is the equivalent of a simple read operation.  
 
-<p>Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.</p>
-<p>Further information relating to <a href="http://hl7.org/fhir/servicedefinition.html#search">ServiceDefinition search parameters</a> can also be viewed.</p>
+Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.</p>
+Further information relating to <a href="http://hl7.org/fhir/servicedefinition.html#search">ServiceDefinition search parameters</a> can also be viewed.  
 
 
 <!--More information required on potential searches and search parameter combinations from the CTP programme-->
@@ -115,103 +116,26 @@ Add explanatory diagram here? Would they want the list of possible responses and
 
 
 
-## Read Response ##
+## Search Response ##
 
-A full set of response codes can be found here <a href="profiles_api_codes.html">API Response Codes</a>. FHIR Servers SHALL support the following response codes:
+### Success ###
 
-<table>
-  <thead>
-    <tr>
-      <th>HTTP Response</th>
-      <th>Meaning</th>
-      <th>Cause</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>OK</td>
-      <td>Request processed successfully – Provider system returns Binary Resource matching the query criteria of the request.</td>
-    </tr>
-    <tr>
-      <td>403</td>
-      <td>Forbidden</td>
-     <td>Provider system refused to action request. This might be due to Consumer system not having the necessary permissions to access the Resource.</td>
-    </tr>
-    <tr>
-      <td>404</td>
-      <td>Not found</td>
-     <td>Unknown URI - Provider system unable to find requested Resource.</td>
-    </tr>
-    <tr>
-      <td>410</td>
-      <td>Gone</td>
-       <td>The requested Binary resource is no longer available at the server and no forwarding address is known.</td>
-    </tr>
-    <tr>
-      <td>415</td>
-      <td>Unsupported Media Type</td>
-     <td>The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method.</td>
-    </tr>
-    <tr>
-      <td>500</td>
-      <td>Unexpected internal server error</td>
-     <td>The server encountered an unexpected condition which prevented it from fulfilling the request.</td>
-    </tr>
-  </tbody>
-</table>
+* SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the interaction.
+* SHALL return a <code class="highlighter-rouge">Bundle</code> of type searchset, containing either:
+   - One <code class="highlighter-rouge">ServiceDefinition</code> resource or
+   - A '0' (zero) total value indicating no record was matched i.e. an empty <code class="highlighter-rouge">Bundle</code>.  
 
-<!--
-## 2. Search ##
+### Failure ###
+The following errors can be triggered when performing this operation:  
 
-The Get Unstructured Document API and FHIR STU3 Standard do not support searching on Binary resources. 
+<!--More errors are likely to be needed once we are clear on which search parameters are defined-->
 
-The binary is not searchable as the other API resources are, however, please refer to [DocumentReference](api_documents_documentreference.html){:target="_blank"} for a mechanism to gain access to Binary information through a API.
--->
+* [Invalid parameter](development_general_api_guidance.html#parameters)
+* [No record found](development_general_api_guidance.html#resource-not-found)
 
-## Example Scenarios ##
+## Example Scenario ##
+<!--Placeholder -->
 
-
-### Default Read Operation - with No HTTP Accept Header ###
-
-A client makes a read request for a FHIR binary resource that doesn't explicitly specify a content type. 
-
-<h3 id="32-response-headers">cURL</h3>
-
-
-{% include custom/embedcurl.html title="Get Binary" command="curl -X GET -H 'Authorisation: BEARER [token]' -v 'http://fhirtest.uhn.ca/baseDstu3/Binary/40059'" %}
-
-
-The server returns the content using the native mime type of the document e.g. PDF – No FHIR Binary resource is returned.
-
-
-### Read Operation Format Override (Method #1) - with No HTTP Accept Header ###
-
-A client makes a read request for a FHIR binary resource using the `_format` override on the query parameter to specify XML content type to be returned. 
-
-<h3 id="32-response-headers">cURL</h3>
-
-{% include custom/embedcurl.html title="Get Binary" command="curl -X GET -H 'Authorisation: BEARER [token]' -v 'http://fhirtest.uhn.ca/baseDstu3/Binary/40059?_format=application/fhir+xml'" %}
-
-The server returns a FHIR Binary resource in XML format with the document `base64` encoded within the FHIR Binary content element. 
-
-
-<script src="https://gist.github.com/swk003/5141f6185476d2197bc8bf5b3192b7d9.js"></script>
-
-
-
-### Read Operation Format Override (Method #2) - with a HTTP Accept Header [JSON format] ###
-
-A client makes a read request for a FHIR binary resource using the `Accept` HTTP Header to specify JSON content type to be returned.
-
-<h3 id="32-response-headers">cURL</h3>
-
-{% include custom/embedcurl.html title="Get Binary" command="curl -X GET -H 'Accept: application/json+fhir' -H 'Authorisation: BEARER [token]' -v 'http://fhirtest.uhn.ca/baseDstu3/Binary/40059'" %}
-
-The server returns a FHIR Binary resource in JSON format with the document `base64` encoded within the FHIR Binary content element. 
-
-
-<script src="https://gist.github.com/swk003/466c7832005af9b6930b4c21d1e7f459.js"></script>
 
 
 
