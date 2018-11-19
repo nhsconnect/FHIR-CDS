@@ -36,8 +36,6 @@ The interaction is performed by an HTTP GET command as shown:
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition?[searchParameters]</div> 
 
-<!--
-
 ### Search Parameters ###
 <!--This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:-->  
 
