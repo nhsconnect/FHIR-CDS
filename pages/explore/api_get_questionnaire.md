@@ -22,9 +22,9 @@ The following HTTP request headers are supported for this interaction:
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
 | `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](development_general_api_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header will carry the base64url encoded JSON web token required for audit on the spine - see [Access Tokens and Audit (JWT)](integration_access_tokens_and_audit_JWT.html) for details. |  MUST |
-| `fromASID`           | Client System ASID | MUST |
-| `toASID`             | The Spine ASID | MUST |
+| `Authorization`      | <!--The `Authorization` header will carry the base64url encoded JSON web token required for audit on the spine - see [Access Tokens and Audit (JWT)](integration_access_tokens_and_audit_JWT.html) for details.-->Placeholder |  <!--MUST-->Placeholder |
+| `fromASID`           | <!--Client System ASID-->Placeholder | <!--MUST-->Placeholder |
+| `toASID`             | <!--The Spine ASID-->Placeholder | <!--MUST-->Placeholder |
 
 
 
