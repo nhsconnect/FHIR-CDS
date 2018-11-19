@@ -35,7 +35,9 @@ The EMS will get the Questionnaire returned by the CDSS, using as a parameter th
 The interaction is performed by an HTTP GET command as shown:  
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/Questionnaire?_id=[id]</div> 
-This search finds the Questionnaire resource with the given id (there can only be one resource for a given id).    
+This search finds the Questionnaire resource with the given id (there can only be one resource for a given id).  
+The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.  
+Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.    
 
 <!--
 Add explanatory diagram here? 
