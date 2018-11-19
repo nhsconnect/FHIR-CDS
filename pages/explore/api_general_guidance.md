@@ -1,4 +1,4 @@
----
+﻿---
 title: General API Guidance
 keywords: rest, api
 tags: [rest,fhir,api]
@@ -88,18 +88,9 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
  [Unsupported Media Type](api_general_guidance.html#unsupported-media-type) - Used to inform the client that requested content types are not supported by CDS API.
 -->
 
-### <u>Resource not found</u> ###
-<!--
-There are two situations when Spine supports this behaviour:
+### Resource not found ###
 
-- When a request references a resource that cannot be resolved. For example This error should be expected when a request references the [unique id](explore_reference.html#2-nrls-pointer-fhir-profile) of a DocumentReference however the id is not known to the NRLS. There are two scenarios when the NRLS Service supports this exception:
-  - provider client retrieval of a DocumentReference by logical id
-  - provider client request to delete a DocumentReference by logical id
-
-- When a request supports an NHS Number where no Clinicals record exists in the Spine Clinicals data store for that NHS Number. The NRLS Service supports this exception scenario in the consumer and Provider Search API interface.
--->
-
-The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
+The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios, either for a ServiceDefinition or a Questionnaire.
 
 
 | HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
@@ -107,7 +98,18 @@ The below table summarises the HTTP response codes, along with the values to exp
 |404|error|not-found |NO_SERVICEDEFINITION_FOUND|No service definition found|No service definition found for supplied ServiceDefinition identifier - [id]|
 
 
-### <u>Headers</u> ###
+| HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
+|-----------|----------------|------------|--------------|-----------------|-------------------|
+|404|error|not-found |NO_QUESTIONNAIRE_FOUND|No questionnaire found|No questionnaire found for supplied Questionnaire identifier - [id]|
+
+
+### Resource deleted ###
+
+| HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
+|-----------|----------------|------------|--------------|-----------------|-------------------|
+|410|error|deleted |PLACEHOLDER|Placeholder|Placeholder - [id]|
+
+### Headers ###
 **TBC once Headers have been agreed**
 
 This error will be thrown in relation to the mandatory HTTP request headers. The scenarios when this error might be thrown:
@@ -138,7 +140,7 @@ Note that the header name is case-sensitive.
 |400|error|invalid| MISSING_OR_INVALID_HEADER|There is a required header missing or invalid|Authorization HTTP Header is missing|
 
 
-### <u>Parameters</u> ###
+### Parameters ###
 
 This error will be raised in relation to request parameters that the client may have specified. As such this error can be raised in a variety of circumstances:
 
@@ -190,7 +192,7 @@ The _summary parameter must have a value of “count”. If it is anything else 
 If the _summary parameter is provided then the only other param that it can be used with is the optional _format param. If any other parameters are provided then an error should be returned to the client.
 
 
-### <u>Payload business rules</u> ###
+### Payload business rules ###
 
 
 ### Invalid Resource ###
@@ -320,7 +322,7 @@ These exceptions are raised by the Spine Core common requesthandler and not the 
 |415|error|invalid|UNSUPPORTED_MEDIA_TYPE|Unsupported Media Type|Unsupported Media Type|
 
 
-### <u>Internal Error</u> ###
+### Internal Error ###
 
 Where the request cannot be processed but the fault is with the NRLS service and not the client then the NRLS service will return a 500 HTTP response code along with a descriptive message in the response body e.g:
 

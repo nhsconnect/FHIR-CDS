@@ -1,4 +1,4 @@
----
+﻿---
 title: Clinical Triage Platform | Post Service Definition
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
@@ -11,234 +11,237 @@ summary: Post a Service Definition
 
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
 
-<!--
 
-## Get Binary Retrieval Pattern ##
+## Post Service Definition Interaction ##
+This is an operation performed by the Encounter Management System (EMS). It is an evaluate operation to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).   
 
-The Get Unstructured Document FHIR STU3 ‘Read Only’ API uses the ‘Get Binary Retrieval Pattern’ to support retrieval of non-structured documents such as a PDFs from remote systems.
+## Request Headers ##
+The following HTTP request headers are supported for this interaction:  
 
-Non-structured documents can be served on the FHIR REST interface in 2 ways:
-
-1.  FHIR resource - the utility FHIR Binary resource is used to convey the non-structured document because it cannot be expressed natively in FHIR.
-2.  Native non-encoded form - when a FHIR Binary resource is initially created it must be encoded (XML/JSON), however a Consumer system can retrieve it in its native non-encoded form e.g. PDF. 
-The FHIR Binary resource represents the data of a single raw artefact as digital content accessible in its native format.
-
-‘Non-Structured’ documents can be any content that is not represented using FHIR resources (e.g. PDFs, PNGs, Work Documents etc).
-
--->
-
-
-
-## FHIR Elements ##
-
-<p>The following FHIR elements have been identified as key to the implementation:</p>
-
-<table>
-<tr>
-<th>Element</th>
-<th>Cardinality</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Binary.id</td><td>0..1</td><td>id</td><td>Mandatory Logical id of Binary resource. Assigned by Provider. Uniquely identifies the document. Used by Consumers to retrieve document.</td>
-</tr>
-<tr>
-<td>Binary.contentType</td><td>1..1</td><td>code</td><td>MimeType of the binary content</td>
-</tr>
-<tr>
-<td>Binary.content</td><td>1..1</td><td>Base64Binary</td><td>The actual content</td>
-</tr>
-</table>
-
-
-
-
-
-
-## Read ##
-
-FHIR Binary resources behave differently to all other FHIR resources on the RESTful API. There are 2 ways clients can make FHIR Binary resource read requests:
-
-1) When a read request is made for the FHIR binary resource that doesn't explicitly specify a content type (expressed as mime type), then the content MUST be returned using the content type stated in the resource. e.g. if the content type in the resource is `application/pdf`, then the content MUST be returned as a PDF directly. This is referred to in this API as the native non-encoded form (i.e. the retrieved document is as a standard URL resource and not contained within a FHIR resource) and is implemented using the Default Read Operation.
-
-2) When a read request is made for the FHIR binary resource that explicitly specifies the content type (expressed as mime type) of the response either via a `_format` override on the query parameter or by using an `Accept` HTTP header in the request, then the content MUST be returned as a FHIR Binary resource - i.e. XML/JSON representation. This is implemented in a number of ways.
-
-The HL7 standard states that "the intent is that unless specifically requested, the FHIR XML/JSON representation is not returned". 
-
-The Get Unstructured Document API must follow the FHIR STU3 standard. So although a Binary resource can be retrieved from any url, a Provider server (FHIR Binary endpoint) MUST serve up the resource either as a `FHIR binary resource` or in its `native non-encoded form` on the rest interface. The default behaviour is that of the latter.
-
-### Read Request Headers ###
-
-Read requests support the following HTTP request headers:
 
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand. | MAY |
-| `Authorization`      | The `Authorization` header will carry the base64url encoded JSON web token. |  MUST |
-
-<!--
-, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](development_general_api_guidance.html#content-types) section.
--->
-
-<!--
-  required for audit on the spine - see [Access Tokens and Audit (JWT)](integration_access_tokens_and_audit_JWT.html) for details.
--->
-<!--
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](development_general_api_guidance.html#content-types) section. | MAY |
+| `Authorization`      | The `Authorization` header will carry the base64url encoded JSON web token required for audit on the spine - see [Access Tokens and Audit (JWT)](integration_access_tokens_and_audit_JWT.html) for details. |  MUST |
 | `fromASID`           | Client System ASID | MUST |
 | `toASID`             | The Spine ASID | MUST |
--->
 
-### Default Read Operation - with No HTTP Accept Header ###
 
-A client makes a read request for a FHIR binary resource that doesn't explicitly specify a content type. 
+## POST ServiceDefinition ##
 
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]</div>
-
-The server returns the content using the `native mime type of the document` e.g. PDF – No FHIR Binary resource is returned.
-
-<font color="red"> Provider Systems <b>MUST</b> support this query construct.</font>
-
-### Read Operation Format Override (Method #1) - with No HTTP Accept Header###
-
-A client makes a read request for a FHIR binary resource using the `_format` override on the query parameter to specify a specific content type. 
+### Get first question ###
+Initially, the EMS retrieves the required first question from the CDSS.   
+The operation is performed by an HTTP POST command as shown:  
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]?_format=[format] </div>
+POST [base]/ServiceDefinition/[id]/$evaluate</div>  
+The EMS will provide further input parameters for the $evaluate operation, in addition to the requestID and patient parameters already populated, for example that the context is use by an NHS 111 Call Handler. 
+Further information about the [$evaluate operation](http://hl7.org/fhir/servicedefinition-operations.html#evaluate) is available.
 
-The server returns a FHIR Binary resource in the requested format with the document `base64` encoded within the FHIR Binary content element. 
+## Response from CDSS ##
 
-<font color="red"> Provider Systems <b>MUST</b> support this query construct.</font>
+### Success ###
 
+* SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the operation.
+* SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource with a reference to a question, using the <code class="highlighter-rouge">Questionnaire</code> resource with a particular questionnaire identifier (identifier generated by CDSS provider). 
 
+<!--What is the response in event of a failure?-->
 
-### Read Operation Format Override (Method #2) - with a HTTP Accept Header of [format]###
+## Get Questionnaire ##
+The [EMS retrieves the question](api_get_questionnaire.html) from the CDSS.  
 
-A client makes a read request for a FHIR binary resource using the `Accept` HTTP Header to specify a specific content type.
+### User interaction ###
+On receipt of the question from the CDSS, the EMS user obtains a response from the patient or his/her representative and this response is used to update the parameters to be sent for evaluation by the CDSS.
 
+## EMS returns response to first question to CDSS ##
+The EMS performs a further HTTP POST command to the CDSS  
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]</div>
+POST [base]/ServiceDefinition/[id]/$evaluate</div>
+In this interaction, the EMS sends the response to the previous question in the form of a QuestionnaireResponse as a reference within the inputData parameter of the $evaluate operation.  
 
-The server returns a FHIR Binary resource in the requested format with the document `base64` encoded within the FHIR Binary content element. 
+## Response from CDSS ##
 
+### Success ###
 
-<font color="red"> Provider Systems <b>SHOULD</b> support this query construct.</font>
+* SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the operation.
+* SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource with
+    * a reference to a question, using the <code class="highlighter-rouge">Questionnaire</code> resource with a particular questionnaire identifier (identifier generated by CDSS provider). 
+    * an assertion, based on the previous response given by the EMS to the first question, using the <code class="highlighter-rouge">Observation</code> resource (identifier generated by CDSS provider). 
 
+## Get next question interactions ##
+The cycle of interactions between the EMS and the CDSS continues, with parameters being continually updated and added to until all questions have been responded to.
 
+## Final EMS $evaluate interaction ##
+Once all data requirements have been fulfilled as described in the CDSS Service Definition, a final request is made for a disposition. 
+The final $evaluate request contains all the data requirements based on all the previous answers, as InputData parameters for this submission. 
+Each of the InputData parameters is an Observation resource where each flag is set to 'final'.
 
-### Read Operation Format Override (Method #3) - with a HTTP Accept Header of [format_2]###
+## Final CDSS Response ##
+* SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the operation.
+* SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource with
+    * a reference to a <code class="highlighter-rouge">CarePlan</code> resource describing how one or more practitioners intend to deliver care for a particular patient OR  
+    * a reference to a <code class="highlighter-rouge">RequestGroup</code> resource representing a group of optional activities that may be performed for a specific patient or context.
 
-A client makes a read request for a FHIR binary resource using the `_format`=[format_1] override on the query parameter and a `Accept` HTTP Header =[format_2]. [format_1] and [format_2] specify different content types.
+## Parameters ##
+The $evaluate operation has a number of parameters which may be optionally included in the operation:
 
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Binary/[id]?_format=[format_1] </div>
+### IN Parameters ###
 
-The server returns a FHIR Binary resource as per [format_1] as `_format` overrides the `Accept` HTTP Header. The document is `base64` encoded within the FHIR Binary content element. 
+<table style="min-width:100%;width:100%">
+<tr>
+    <th style="width:25%;">Name</th>
+    <th style="width:15%;">Cardinality</th>
+    <th style="width:20%;">Type</th>
+      <th style="width:40%;">Documentation</th>
+</tr>
 
+<tr>
+    <td><code class="highlighter-rouge">requestId</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>id</td>
+    <td>An optional client-provided identifier to track the request.</td>
 
-<font color="red"> Provider Systems <b>SHOULD</b> support this query construct.</font>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">evaluateAtDateTime</code></td>
+        <td><code class="highlighter-rouge">0..1</code></td>
+    <td>dateTime</td>
+    <td>An optional date and time specifying that the evaluation should be performed as though it was the given date and time. The most direct implication of this is that references to "Now" within the evaluation logic of the module should result in this value. In addition, wherever possible, the data accessed by the module should appear as though it was accessed at this time. The evaluateAtDateTime value may be any time in the past or future, enabling both retrospective and prospective scenarios. If no value is provided, the date and time of the request is assumed.</td>
 
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">inputParameters</code></td>
+        <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Parameters</td>
+    <td>The input parameters for a request, if any. These parameters are defined by the module that is the target of the evaluation, and typically supply patient-independent information to the module.</td>
 
-
-
-## Read Response ##
-
-A full set of response codes can be found here <a href="profiles_api_codes.html">API Response Codes</a>. FHIR Servers SHALL support the following response codes:
-
-<table>
-  <thead>
-    <tr>
-      <th>HTTP Response</th>
-      <th>Meaning</th>
-      <th>Cause</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>OK</td>
-      <td>Request processed successfully – Provider system returns Binary Resource matching the query criteria of the request.</td>
-    </tr>
-    <tr>
-      <td>403</td>
-      <td>Forbidden</td>
-     <td>Provider system refused to action request. This might be due to Consumer system not having the necessary permissions to access the Resource.</td>
-    </tr>
-    <tr>
-      <td>404</td>
-      <td>Not found</td>
-     <td>Unknown URI - Provider system unable to find requested Resource.</td>
-    </tr>
-    <tr>
-      <td>410</td>
-      <td>Gone</td>
-       <td>The requested Binary resource is no longer available at the server and no forwarding address is known.</td>
-    </tr>
-    <tr>
-      <td>415</td>
-      <td>Unsupported Media Type</td>
-     <td>The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method.</td>
-    </tr>
-    <tr>
-      <td>500</td>
-      <td>Unexpected internal server error</td>
-     <td>The server encountered an unexpected condition which prevented it from fulfilling the request.</td>
-    </tr>
-  </tbody>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">inputData</code></td>
+     <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Any</td>
+    <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
+   
+</tr> 
+<tr>
+    <td><code class="highlighter-rouge">patient</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference(Patient)</td>
+    <td>The patient in context, if any.</td>
+ </tr>
+<tr>
+   <td><code class="highlighter-rouge">encounter</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference(Encounter)</td>
+    <td>The encounter in context, if any.</td>
+  </tr>
+<tr>
+    <td><code class="highlighter-rouge">initiatingOrganization</code></td>
+        <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference(Organization)</td>
+    <td>The organization initiating the request.</td>
+  </tr>
+<tr>
+    <td><code class="highlighter-rouge">initiatingPerson</code></td>
+        <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference(Patient|Practitioner|RelatedPerson)</td>
+    <td>The person initiating the request.</td>
+  </tr>
+<tr>
+    <td><code class="highlighter-rouge">userType</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>CodeableConcept</td>
+    <td>The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.).</td>
+ </tr>
+<tr>
+    <td><code class="highlighter-rouge">userLanguage</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>CodeableConcept</td>
+    <td>Preferred language of the person using the system.</td>
+ </tr>
+<tr>
+   <td><code class="highlighter-rouge">userTaskContext</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+     <td>CodeableConcept</td>
+    <td>The task the system user is performing, e.g. laboratory results review, medication list review, etc. This information can be used to tailor decision support outputs, such as recommended information resources.</td>
+  </tr>
+<tr>
+    <td><code class="highlighter-rouge">receivingOrganization</code></td>
+        <td><code class="highlighter-rouge">0..1</code></td>
+  <td>Reference(Organization)</td>
+    <td>The organization that will receive the response.</td>
+  </tr>
+<tr>
+    <td><code class="highlighter-rouge">receivingPerson</code></td>
+        <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference(Patient|Practitioner|RelatedPerson)</td>
+    <td>The person in the receiving organization that will receive the response.</td>
+  </tr>
+<tr>
+    <td><code class="highlighter-rouge">recipientType</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>CodeableConcept</td>
+    <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient). E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.).</td>
+ </tr>
+<tr>
+   <td><code class="highlighter-rouge">recipientLanguage</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+     <td>CodeableConcept</td>
+    <td>Preferred language of the person that will consume the content.</td>
+  </tr>
+<tr>
+   <td><code class="highlighter-rouge">setting</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+     <td>CodeableConcept</td>
+    <td>The current setting of the request (inpatient, outpatient, etc).</td>
+  </tr>
+<tr>
+    <td><code class="highlighter-rouge">settingContext</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>CodeableConcept</td>
+    <td>Additional detail about the setting of the request, if any.</td>
+ </tr>
 </table>
 
+### OUT Parameters ###
+<table style="min-width:100%;width:100%">
+<tr>
+    <th style="width:25%;">Name</th>
+    <th style="width:15%;">Cardinality</th>
+    <th style="width:20%;">Type</th>
+      <th style="width:40%;">Documentation</th>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">return</code></td>
+      <td><code class="highlighter-rouge">1..1</code></td>
+    <td>GuidanceResponse</td>
+    <td>The result of the request as a GuidanceResponse resource.  
+Note: as this the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource</td>
+ </tr>
+</table>
+
+
 <!--
-## 2. Search ##
+### Failure ###
+The following errors can be triggered when performing this operation:  
 
-The Get Unstructured Document API and FHIR STU3 Standard do not support searching on Binary resources. 
+<!--More errors are likely to be needed once we are clear on which search parameters are defined-->
 
-The binary is not searchable as the other API resources are, however, please refer to [DocumentReference](api_documents_documentreference.html){:target="_blank"} for a mechanism to gain access to Binary information through a API.
--->
+* [Invalid parameter](api_general_guidance.html#parameters)
+* [No record found](api_general_guidance.html#resource-not-found---servicedefinition)-->
 
-## Example Scenarios ##
-
-
-### Default Read Operation - with No HTTP Accept Header ###
-
-A client makes a read request for a FHIR binary resource that doesn't explicitly specify a content type. 
-
-<h3 id="32-response-headers">cURL</h3>
-
-
-{% include custom/embedcurl.html title="Get Binary" command="curl -X GET -H 'Authorisation: BEARER [token]' -v 'http://fhirtest.uhn.ca/baseDstu3/Binary/40059'" %}
-
-
-The server returns the content using the native mime type of the document e.g. PDF – No FHIR Binary resource is returned.
-
-
-### Read Operation Format Override (Method #1) - with No HTTP Accept Header ###
-
-A client makes a read request for a FHIR binary resource using the `_format` override on the query parameter to specify XML content type to be returned. 
-
-<h3 id="32-response-headers">cURL</h3>
-
-{% include custom/embedcurl.html title="Get Binary" command="curl -X GET -H 'Authorisation: BEARER [token]' -v 'http://fhirtest.uhn.ca/baseDstu3/Binary/40059?_format=application/fhir+xml'" %}
-
-The server returns a FHIR Binary resource in XML format with the document `base64` encoded within the FHIR Binary content element. 
-
-
-<script src="https://gist.github.com/swk003/5141f6185476d2197bc8bf5b3192b7d9.js"></script>
+## Example Scenario ##
+<!--Placeholder -->
 
 
 
-### Read Operation Format Override (Method #2) - with a HTTP Accept Header [JSON format] ###
-
-A client makes a read request for a FHIR binary resource using the `Accept` HTTP Header to specify JSON content type to be returned.
-
-<h3 id="32-response-headers">cURL</h3>
-
-{% include custom/embedcurl.html title="Get Binary" command="curl -X GET -H 'Accept: application/json+fhir' -H 'Authorisation: BEARER [token]' -v 'http://fhirtest.uhn.ca/baseDstu3/Binary/40059'" %}
-
-The server returns a FHIR Binary resource in JSON format with the document `base64` encoded within the FHIR Binary content element. 
 
 
-<script src="https://gist.github.com/swk003/466c7832005af9b6930b4c21d1e7f459.js"></script>
+
+
+
+
+
 
 
 
