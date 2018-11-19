@@ -102,12 +102,14 @@ The below table summarises the HTTP response codes, along with the values to exp
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |404|error|not-found |NO_QUESTIONNAIRE_FOUND|No questionnaire found|No questionnaire found for supplied Questionnaire identifier - [id]|
 
-
+<!--
 ### Resource deleted ###
 
 | HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |410|error|deleted |PLACEHOLDER|Placeholder|Placeholder - [id]|
+
+-->
 
 ### Headers ###
 **TBC once Headers have been agreed**
