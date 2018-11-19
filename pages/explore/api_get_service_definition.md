@@ -41,6 +41,7 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 ### Search Parameters ###
 <!--This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:-->  
 
+<!--
 <table style="min-width:100%;width:100%">
 <tr>
     <th style="width:15%;">Name</th>
