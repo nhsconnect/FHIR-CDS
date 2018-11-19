@@ -137,7 +137,7 @@ The following errors can be triggered when performing this operation:
 
 ## Creation of parameters ##
 Once the EMS has got the selected ServiceDefinition, the EMS users will input relevant data for the scenario which will create the initial parameters to be passed to the CDSS.  
-The initial parameters will be the requestID and the patient.
+The initial parameters will be the requestId and the patient.
 
 ### Parameters ###
 
