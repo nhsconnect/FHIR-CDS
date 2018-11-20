@@ -37,9 +37,9 @@ The interaction is performed by an HTTP GET command as shown:
 GET [baseUrl]/ServiceDefinition?[searchParameters]</div> 
 
 ### Search Parameters ###
-<!--This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below:-->  
+This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below: 
 
-<!--
+
 <table style="min-width:100%;width:100%">
 <tr>
     <th style="width:15%;">Name</th>
@@ -91,7 +91,7 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
     <td>MAY</td>
     <td>ServiceDefinition.title</td>
 </tr>
-</table>-->
+</table>
 
 #### _id ####
 
@@ -104,8 +104,6 @@ GET [baseUrl]/ServiceDefinition?_id=[id]</div>
 This search finds the ServiceDefinition resource with the given id (there can only be one resource for a given id).   
 
 Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.  
-Further information relating to <a href="http://hl7.org/fhir/servicedefinition.html#search">ServiceDefinition search parameters</a> can also be viewed.  
-
 
 <!--More information required on potential searches and search parameter combinations from the CTP programme-->
 
@@ -133,6 +131,8 @@ The following errors can be triggered when performing this operation:
 * [Invalid parameter](api_general_guidance.html#parameters)
 * [No record found](api_general_guidance.html#resource-not-found)
 
+
+<!--
 ## Creation of parameters ##
 Once the EMS has got the selected ServiceDefinition, the EMS users will input relevant data for the scenario which will create the initial parameters to be passed to the CDSS.  
 The initial parameters will be the requestId and the patient.
@@ -162,6 +162,7 @@ The initial parameters will be the requestId and the patient.
     <td>The patient in context, if any.</td>
 </tr>
 </table>
+-->
 
 <!--Will there be any other parameters at this stage?-->
 ## Example Scenario ##
