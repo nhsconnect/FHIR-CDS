@@ -34,7 +34,6 @@ The operation is performed by an HTTP POST command as shown:
 
 <div markdown="span" class="alert alert-success" role="alert">
 POST [base]/ServiceDefinition/[id]/$evaluate</div>  
-Content surrounded by [] is mandatory, and will be replaced by the string literal identified.  
 Further information about the [$evaluate operation](http://hl7.org/fhir/servicedefinition-operations.html#evaluate) is available.  
 
 ## Parameters ##
