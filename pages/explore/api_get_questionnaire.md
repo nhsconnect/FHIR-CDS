@@ -36,7 +36,6 @@ The interaction is performed by an HTTP GET command as shown:
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseURL]/[Questionnaire]/[id]</div>  
 This read interaction accesses the current contents of the selected Questionnaire.  
-Content surrounded by [] is mandatory, and will be replaced by the string literal identified.  
  
 #### _id ####
 
