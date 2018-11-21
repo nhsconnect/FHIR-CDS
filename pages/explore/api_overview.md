@@ -1,6 +1,6 @@
 ---
 title: Development Overview
-keywords: cDS, Clinical Decision Suppport, rest, FHIR rest, FHIR resource, FHIR api
+keywords: CDS, Clinical Decision Suppport, rest, FHIR rest, FHIR resource, FHIR api
 tags: [rest,fhir,api]
 sidebar: foundations_sidebar
 permalink: api_overview.html
@@ -28,7 +28,7 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 |Consumer|![Cross](images/tick.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Cross](images/cross.png)|
 |Provider|![Cross](images/cross.png)|![Cross](images/cross.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Tick](images/cross.png)|
 
-## 2. Pre-Requisites for the CTP API ##
+## 2. Pre-Requisites for the CDS API ##
 
 ### 2.1 Consumer Server API Conformance ###
 
@@ -38,13 +38,13 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 - SHALL support XML **or** JSON formats for all API interactions.
 
-- SHALL expose a valid CTP FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
+- SHALL expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
 
-<!--See [CTP API FHIR Capability Statement profile](api_foundation_conformance.html).-->
+<!--See [CDS API FHIR Capability Statement profile](api_foundation_conformance.html).-->
 
 <!-- SHOULD identify the resource profiles supported as part of the FHIR meta.profile attribute for each instance.-->
 
-### 2.2 Provider API Conformance ###
+### 2.2 Provider Server API Conformance ###
 
 - SHALL support HL7 FHIR STU3 version 3.0.1.
 
@@ -52,9 +52,9 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 - SHALL support XML **or** JSON formats for all API interactions.
 
-- SHALL expose a valid FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
+- SHALL expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
 
-<!--See [CTP API FHIR Capability Statement profile](api_foundation_conformance.html).
+<!--See [CDS API FHIR Capability Statement profile](api_foundation_conformance.html).
 
 
 ## 3. API Structure ##
