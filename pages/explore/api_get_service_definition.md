@@ -37,9 +37,9 @@ The interaction is performed by an HTTP GET command as shown:
 GET [baseUrl]/ServiceDefinition?[searchParameters]</div>  
 
 ### Search Parameters ###
-This implementation guide outlines the search parameters for the ServiceDefinition resource in the table below: 
+This implementation guide outlines the search parameter(s) for the ServiceDefinition resource in the table below: 
 
-
+<!--
 <table style="min-width:100%;width:100%">
 <tr>
     <th style="width:15%;">Name</th>
@@ -91,13 +91,13 @@ This implementation guide outlines the search parameters for the ServiceDefiniti
     <td>MAY</td>
     <td>ServiceDefinition.title</td>
 </tr>
-</table>
+</table>-->
 
 #### _id ####
 
-The search parameter <code class="highlighter-rouge">_id</code> refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.  
+The search parameter `_id` refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.  
 
-The <code class="highlighter-rouge">_id</code> parameter can be used as follows:  
+The `_id` parameter can be used as follows:  
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition?_id=[id]</div> 
@@ -118,10 +118,10 @@ Add explanatory diagram here? Would they want the list of possible responses and
 
 ### Success ###
 
-* SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the interaction.
-* SHALL return a <code class="highlighter-rouge">Bundle</code> of type searchset, containing either:
-   - One <code class="highlighter-rouge">ServiceDefinition</code> resource or
-   - A '0' (zero) total value indicating no record was matched i.e. an empty <code class="highlighter-rouge">Bundle</code>.  
+* SHALL return a `200` **OK** HTTP status code on successful execution of the interaction.
+* SHALL return a `Bundle` of type searchset, containing either:
+   - One `ServiceDefinition` resource or
+   - A '0' (zero) total value indicating no record was matched i.e. an empty `Bundle`.  
 
 ### Failure ###
 The following errors can be triggered when performing this operation:  
@@ -134,7 +134,7 @@ The following errors can be triggered when performing this operation:
 
 <!--
 ## Creation of parameters ##
-Once the EMS has got the selected ServiceDefinition, the EMS users will input relevant data for the scenario which will create the initial parameters to be passed to the CDSS.  
+Once the EMS has got the selected `ServiceDefinition`, the EMS users will input relevant data for the scenario which will create the initial parameters to be passed to the CDSS.  
 The initial parameters will be the requestId and the patient.
 
 ### Parameters ###
