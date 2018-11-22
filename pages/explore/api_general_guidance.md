@@ -72,7 +72,7 @@ For further background, refer to principles of [resource identity as described i
 
 <!--- The CTP Server SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client system.-->
 
-- If neither the `Accept` header nor the `_format` parameter are supplied by the client system the CDS Server SHALL return data in the default format of `application/fhir+xml`.
+- If neither the `Accept` header nor the `_format` parameter are supplied by the client system the CDS Server SHALL return data in the default format of `application/fhir+json`.
 
 
 ## Error handling ##
