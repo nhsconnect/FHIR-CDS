@@ -156,15 +156,15 @@ entries:
    #       output: web
 
 
-  - title: Tags
-    output: web
-    folderitems:
-    - title: Introduction
-      url: /tag_overview.html
-      output: web
-    - title: FHIR&reg;
-      url: /tag_fhir.html
-      output: web
+#  - title: Tags
+#   output: web
+#  folderitems:
+#    - title: Introduction
+#      url: /tag_overview.html
+#      output: web
+#    - title: FHIR&reg;
+#      url: /tag_fhir.html
+#      output: web
   #  - title: User Stories
   #    url: /tag_user_stories.html
   #    output: web
@@ -174,9 +174,9 @@ entries:
   #  - title: Design
   #    url: /tag_design.html
   #    output: web
-    - title: Development
-      url: /tag_development.html
-      output: web
-    - title: Support
-      url: /tag_support.html
-      output: web
+ #   - title: Development
+ #     url: /tag_development.html
+ #     output: web
+ #  - title: Support
+ #     url: /tag_support.html
+ #     output: web
