@@ -14,7 +14,8 @@ summary: Solution interactions
 
 The key interactions for the Clinical Triage Platform are represented in the diagram below:-
 
-<img src="..\..\images\solution\message-sequence.png" alt="Diagram showing Clinical Triage Platform key interactions." title="Diagram showing Clinical Triage Platform key interactions.">
+<!--<img src="..\..\images\solution\message-sequence.png" alt="Diagram showing Clinical Triage Platform key interactions." title="Diagram showing Clinical Triage Platform key interactions.">-->
+![Diagram showing Clinical Triage Platform key interactions](images/solution/message-sequence.png)
 
 
 
