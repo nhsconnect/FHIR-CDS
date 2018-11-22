@@ -7,7 +7,7 @@ permalink: overview_context.html
 summary: Use Cases Context
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the NRLS API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
 
 ## Care Settings ##
 The triage and assessment use cases can both occur in multiple care settings within Urgent and Emergency Care.  
