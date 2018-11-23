@@ -170,11 +170,12 @@ When using the OPTIONAL `custodian` parameter the client is referring to an Orga
  - The business identifier. The identifier must meet the following requirements:
    - It must be a valid ODS code. 
    - The ODS code must be an organisation that is known to the NRLS.
-   - The ODS code must be in the Provider role.
+   - The ODS code must be in the Provider role.-->
 
 #### `_format` request parameter ####
-This parameter must specify one of the [mime types](development_general_api_guidance.html#restful-api) recognised by the NRLS.
+This parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by a CDS server.
 
+<!--
 #### Invalid Reference URL in Pointer Create Request ####
 This error is raised during a provider create interaction. There are two exception scenarios:
 - The DocumentReference in the request body specifies an incorrect URL of the FHIR server that hosts the Patient resource. 
