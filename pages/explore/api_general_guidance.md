@@ -89,9 +89,12 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 -->
 
 ### Resource not found ###
+A situation is outlined below when a CDS server would support this behaviour:
 
-The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios, either for a ServiceDefinition or a Questionnaire.
+- When a request references a resource that cannot be resolved. For example, this error should be expected when an EMS request references the unique id of a ServiceDefinition or a Questionnaire, but the id is not known by the receiving CDSS. Relevant scenarios would be as follows:-
+    - EMS retrieval of a ServiceDefinition or a Questionnaire by logical id from a CDSS.  
 
+The table below summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
 | HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
