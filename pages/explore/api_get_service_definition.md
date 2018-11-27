@@ -129,7 +129,7 @@ The following errors can be triggered when performing this operation:
 <!--More errors are likely to be needed once we are clear on which search parameters are defined-->
 
 * [Invalid parameter](api_general_guidance.html#parameters)
-* [No record found](api_general_guidance.html#resource-not-found)
+* [Resource not found - unknown resource](api_general_guidance.html#unknown-resource)
 
 
 <!--
