@@ -72,6 +72,9 @@ entries:
         - title: Post Service Definition
           url: /api_post_service_definition.html
           output: web
+        - title: Guidance Response
+          url: /api_guidance_response.html
+          output: web
         - title: Get Questionnaire
           url: /api_get_questionnaire.html
           output: web
