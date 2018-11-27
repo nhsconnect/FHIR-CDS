@@ -60,7 +60,10 @@ The following errors can be triggered when performing this operation:
 
 
 * [Invalid parameter](api_general_guidance.html#parameters)
-* [No record found](api_general_guidance.html#resource-not-found)
+* [Resource not found - unknown resource](api_general_guidance.html#unknown-resource)
+* [Resource not found - deleted resource](api_general_guidance.html#resource-deleted)
+
+
 <!--* [Deleted record](api_general_guidance.html#resource-deleted)  
 Note: Unknown resources and deleted resources are treated differently on a read: a GET for a deleted resource returns a 410 status code, whereas a GET for an unknown resource returns 404. Systems that do not track deleted records will treat deleted records as an unknown resource.  
 Since deleted resources may be brought back to life, servers MAY include an ETag on the error response when reading a deleted record to allow version contention management when a resource is brought back to life.-->
