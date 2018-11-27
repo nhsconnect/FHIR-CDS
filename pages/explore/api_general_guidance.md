@@ -89,10 +89,11 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 -->
 
 ### Resource not found ###
+#### Unknown resource ####
 A situation is outlined below when a CDS server would support this behaviour:
 
-- When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a ServiceDefinition or a Questionnaire, but the id is not known by the receiving CDSS. Relevant scenarios would be as follows:-
-    - EMS retrieval of a ServiceDefinition or a Questionnaire by logical id from a CDSS.   
+* When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a ServiceDefinition or a Questionnaire, but the id is not known by the receiving CDSS. Relevant scenarios would be as follows:-
+    * EMS retrieval of a ServiceDefinition or a Questionnaire by logical id from a CDSS.   
 
 The table below summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
@@ -105,14 +106,18 @@ The table below summarises the HTTP response codes, along with the values to exp
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |404|error|not-found |NO_QUESTIONNAIRE_FOUND|No questionnaire found|No questionnaire found for supplied Questionnaire identifier - [id]|
 
-<!--
-### Resource deleted ###
+
+#### Resource deleted ####
+A CDS server would support this behaviour:
+* When a Questionnaire requested by an EMS from a CDSS has been deleted by the CDSS.  
 
 | HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
-|410|error|deleted |PLACEHOLDER|Placeholder|Placeholder - [id]|
+|410|error|not-found |Placeholder|Placeholder|Questionnaire deleted for supplied Questionnaire identifier - [id]|
 
--->
+
+Note that systems that do not track deleted records will treat deleted records as an [unknown resource](#unknown-resource).
+
 
 ### Headers ###
 **TBC once Headers have been agreed**
@@ -173,7 +178,7 @@ When using the OPTIONAL `custodian` parameter the client is referring to an Orga
    - The ODS code must be in the Provider role.-->
 
 #### `_format` request parameter ####
-This parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by a CDS server.
+If used, this parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by a CDS server.
 
 <!--
 #### Invalid Reference URL in Pointer Create Request ####
