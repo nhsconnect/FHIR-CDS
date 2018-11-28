@@ -228,6 +228,11 @@ This is a trigger for the EMS and the relevant codes are as follows:-
     <td>The request was processed successfully</td>
  </tr>
 <tr>
+    <td><code class="highlighter-rouge">data-requested</code></td>
+      <td>Data Requested</td>
+    <td>The request was processed successfully, but more data may result in a more complete evaluation</td>
+ </tr>
+<tr>
     <td><code class="highlighter-rouge">data-required</code></td>
       <td>Data Required</td>
     <td>The request was processed, but more data is required to complete the evaluation</td>
