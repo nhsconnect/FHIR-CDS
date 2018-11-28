@@ -112,7 +112,7 @@ If no value is provided, the date and time of the request is assumed.</td>
         <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>The organisation initiating the request.</td>
-<td>This SHOULD be populated by the EMS with the organisation identifier for the UEC service provider. If this is an online (patient facing) system, then this MUST NOT be populated.</td>
+<td>This SHOULD be populated by the EMS using the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> for the UEC service provider. If this is an online (patient facing) system, then this MUST NOT be populated.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">initiatingPerson</code></td>
