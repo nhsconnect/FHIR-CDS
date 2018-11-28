@@ -12,14 +12,14 @@ summary: A brief introduction to the Clinical Decision Support API Implementatio
 
 ## Background ##
 
-This Clinical Decision Support (CDS) RESTful FHIR STU3 ‘Read Only’ experimental API implementation guide supports the initiatives set out by the Clinical Triage Platform programme.
+This Clinical Decision Support (CDS) RESTful FHIR STU3 ‘Read Only’ experimental API implementation guide supports the initiatives set out by the UEC Digital Integration Programme.
 
-The Clinical Triage Platform programme supports the delivery of the key recommendations and drivers for change that resulted from a number of NHS strategies, policies, frameworks and reviews, including the National Information Board (NIB) Health and Care 2020 framework, 
+The UEC Digital Integration Programme supports the delivery of the key recommendations and drivers for change that resulted from a number of NHS strategies, policies, frameworks and reviews, including the National Information Board (NIB) Health and Care 2020 framework, 
 the Urgent and Emergency Care Review, and the Five Year Forward View. To achieve the transformation of Urgent and Emergency Care, patients must be directed to or connected with the right service to meet their needs and not be sent or conveyed to high end dispositions 
 such as Accident and Emergency or GPs, unless absolutely necessary.  
 
 ## Context ##
-As part of the Clinical Triage Platform Programme, NHS Digital is looking to investigate future integration and deployment approaches for Clinical Decision Support Systems to support triage of NHS patients using 999 and 111 services and other urgent and emergency care settings. 
+As part of the UEC Digital Integration Programme, NHS Digital is looking to investigate future integration and deployment approaches for Clinical Decision Support Systems to support triage of NHS patients using 999 and 111 services and other urgent and emergency care settings. 
 
 Currently for triage support, many Urgent and Emergency Care triage solution providers make use of the NHS-provided Clinical Decision Support Systems in the form of the NHS Pathways product which is provided by periodic distribution of structured content in data file format. 
 NHS Digital is seeking to explore options for an alternative approach based on application programming interfaces (APIs) for the provision of a range of supporting capabilities for Urgent and Emergency Care solution providers and the provision of Clinical Decision Support System capabilities.  
