@@ -1,5 +1,5 @@
 ﻿---
-title: Clinical Triage Platform | Guidance Response
+title: UEC Digital Integration Programme | Guidance Response
 keywords: guidanceresponse, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
