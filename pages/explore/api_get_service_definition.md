@@ -1,5 +1,5 @@
 ﻿---
-title: Clinical Triage Platform | Get Service Definition
+title: UEC Digital Integration Programme | Get Service Definition
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
