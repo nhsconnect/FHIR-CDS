@@ -213,7 +213,7 @@ Note: as this the only out parameter, it is a resource, and it has the name 'ret
 * SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource.
 
 #### GuidanceResponse Statuses ####
-The returned [GuidanceResponse resource](api_guidance_response.html) will carry an appropriate code in its <code class="highlighter-rouge">status</code> element.    
+The returned [GuidanceResponse resource](api_guidance_response.html) MUST carry an appropriate code in its <code class="highlighter-rouge">status</code> element.    
 This is a trigger for the EMS and the relevant codes are as follows:-  
 
 <table style="min-width:100%;width:100%">
