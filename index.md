@@ -1,4 +1,4 @@
----
+﻿---
 title: Introduction to the Clinical Decision Support API
 keywords: homepage
 tags: [overview]
@@ -34,7 +34,7 @@ The following technical areas are specifically excluded
 * Authorisation
 * Audit  
 
-*Note that the process of predictive modelling of patient risk (PMPR) or other risk scoring methods to adjust the triage outcome are not currently well understood, and are not included in the specification.*
+*Note that the process of predictive modelling of patient risk (PMPR) or other risk scoring methods to adjust the triage outcome are not included in the specification.*
 
 *Note that the process by which a user can amend the outcome from CDSS is not part of the CDSS specification, but is left with the EMS.*
 
