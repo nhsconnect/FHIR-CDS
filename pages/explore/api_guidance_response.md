@@ -29,9 +29,120 @@ The following HTTP request headers are supported for this interaction:
 | `toASID`             | <!--The Spine ASID-->Placeholder | <!--MUST-->Placeholder |
 
 
-This resource has the following elements of note:  
+## Implementation Guidance ##
 
-### Status ###
+<table style="min-width:100%;width:100%">
+
+<tr>
+    <th style="width:10%;">Name</th>
+    <th style="width:5%;">Cardinality</th>
+    <th style="width:10%;">Type</th>
+      <th style="width:40%;">FHIR Documentation</th>
+   <th style="width:35%;">CDS Implementation Guidance</th>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">requestId</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>id</td>
+    <td>The id of the request associated with this response, if any.</td>
+<td>This MUST be populated by the CDSS and must replicate the requestId received by the CDSS as a parameter in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">identifier</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Identifier</td>
+    <td>Business identifier</td>
+<td>This MUST NOT be populated by the CDSS.</td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">module</code></td>
+      <td><code class="highlighter-rouge">1..1</code></td>
+    <td>Reference<br>(ServiceDefinition)</td>
+    <td>A reference to a knowledge module.</td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">ServiceDefinition</code> posted to the CDSS in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">status</code></td>
+      <td><code class="highlighter-rouge">1..1</code></td>
+    <td>code</td>
+    <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-guidance-response-status.html">GuidanceResponseStatus</a></td>
+<td>The status of the <code class="highlighter-rouge">GuidanceResponse</code> is a <a href="api_guidance_response.html#status-of-the-guidanceresponse"> trigger for the EMS</a>.</td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">subject</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference<br>(Patient |<br>Group)</td>
+    <td>Patient the request was performed for.</td>
+<td>This SHOULD be populated when known to the CDSS; it can be taken from the patient parameter received by the CDSS in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">context</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
+    <td>Encounter or Episode during which the response was returned.</td>
+<td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">occurrenceDateTime</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>dateTime</td>
+    <td>When the guidance response was processed.</td>
+<td>This MUST be populated by the CDSS and it represents the dateTime at which the <code class="highlighter-rouge">GuidanceResponse</code> is returned to the CDSS. (This may differ from the time the message is received).</td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">performer</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference<br>(Device)</td>
+    <td>Device returning the guidance.</td>
+<td></td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">reason[x]</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>CodeableConcept<br>Reference</td>
+    <td>Reason for the response.</td>
+<td>This MAY be populated by the CDSS, but not if the status element is populated with the values 'data-required' or 'failure'.</td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">note</code></td>
+      <td><code class="highlighter-rouge">0..*</code></td>
+    <td>CodeableConcept<br>Annotation</td>
+    <td>Additional notes about the response.</td>
+<td></td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">evaluationMessage</code></td>
+      <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Reference<br>(OperationOutcome)</td>
+    <td>Messages resulting from the evaluation of the artifact or artifacts.</td>
+<td>This MUST be populated in the case of error.</td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">outputParameters</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference<br>(Parameters)</td>
+    <td>The output parameters of the evaluation, if any.</td>
+<td>This MUST be populated with all assertions received by the CDSS contained in any <code class="highlighter-rouge">QuestionnaireResponse</code> sent from the EMS.</td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">result</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference<br>(CarePlan |<br>RequestGroup)</td>
+    <td>Proposed actions, if any.</td>
+<td>The result MUST be populated if the CDSS needs the EMS to take further actions. There are three acceptable 'types' of results.</td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">dataRequirement</code></td>
+      <td><code class="highlighter-rouge">0..*</code></td>
+    <td>DataRequirement</td>
+    <td>Additional required data.</td>
+<td>This MAY be populated with one or more <code class="highlighter-rouge">Questionnaires</code>. If populated, the status of the <code class="highlighter-rouge">GuidanceResponse</code> MUST be either 'data-requested' or 'data-required'.</td>
+ </tr>
+
+</table>
+
+
+### Status of the GuidanceResponse ###
 The status of the `GuidanceResponse` is a trigger for the Encounter Management System (EMS). It MUST contain one of the following values: 
 
 <table style="min-width:100%;width:100%">
@@ -62,18 +173,25 @@ The status of the `GuidanceResponse` is a trigger for the Encounter Management S
  </tr>
 </table>
 
-
-The status should be set to 'success' when the result is ready.  
-This means that the CDSS has all information possible (for this SD), and has provided a result.
-GuidanceResponse.result must be populated with at least one of ReferralRequest, TriggerDefinition or whatever we decide on for home care
+#### Status of success ####
+This means that the result is ready.  
+The CDSS has all information possible for the `ServiceDefinition` to which the `GuidanceResponse` is responding, and has provided a result.  
+The `result` element in `GuidanceResponse` MUST be populated with either a `CarePlan` or `RequestGroup`.  
  
-If more information is needed, the status must be 'data-required'.
+#### Status of data-requested ####
+This means that the CDSS has sufficient information to render a result, but additional information will provide a better result.  
+The `result` element in `GuidanceResponse` MUST be populated with either a `CarePlan` or `RequestGroup`.  
+The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
+
+#### Status of data-required ####
+This means that the CDSS has insufficient information to render an outcome.  
+The `result` element in `GuidanceResponse` MAY be populated with a `CarePlan`, for example representing a proposed plan.  
+The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
+
+#### Status of failure ####
+This means that the `ServiceDefinition` $evaluate operation was not processed successfully by the CDSS.
 
 
-
-
-
-## Example Scenario ##
 
 
 
