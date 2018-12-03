@@ -107,18 +107,6 @@ The table below summarises the HTTP response codes, along with the values to exp
 |404|error|not-found |NO_QUESTIONNAIRE_FOUND|No questionnaire found|No questionnaire found for supplied Questionnaire identifier - [id]|
 
 
-#### Resource deleted ####
-A CDS server would support this behaviour:
-* When a Questionnaire requested by an EMS from a CDSS has been deleted by the CDSS.  
-
-| HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
-|-----------|----------------|------------|--------------|-----------------|-------------------|
-|410|error|not-found |Placeholder|Placeholder|Questionnaire deleted for supplied Questionnaire identifier - [id]|
-
-
-Note that systems that do not track deleted records will treat deleted records as an [unknown resource](#unknown-resource).
-
-
 ### Headers ###
 **TBC once Headers have been agreed**
 
