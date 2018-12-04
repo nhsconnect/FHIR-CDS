@@ -71,14 +71,14 @@ The following HTTP request headers are supported for this interaction:
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(Patient |<br>Group)</td>
+    <td>Reference<br>(Patient|<br>Group)</td>
     <td>Patient the request was performed for.</td>
 <td>This SHOULD be populated when known to the CDSS; it can be taken from the patient parameter received by the CDSS in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
+    <td>Reference<br>(Encounter|<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which the response was returned.</td>
 <td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
  </tr>
@@ -87,7 +87,7 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>When the guidance response was processed.</td>
-<td>This MUST be populated by the CDSS and it represents the dateTime at which the <code class="highlighter-rouge">GuidanceResponse</code> is returned to the CDSS. (This may differ from the time the message is received).</td>
+<td>This MUST be populated by the CDSS and it represents the date/time at which the <code class="highlighter-rouge">GuidanceResponse</code> is returned to the CDSS. (This may differ from the time the message is received).</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">performer</code></td>
@@ -101,7 +101,7 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept<br>Reference</td>
     <td>Reason for the response.</td>
-<td>This MAY be populated by the CDSS, but not if the status element is populated with the values 'data-required' or 'failure'.</td>
+<td>This MAY be populated by the CDSS, but not if the status element is populated with the value of 'dataRequired'.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
@@ -127,7 +127,7 @@ The following HTTP request headers are supported for this interaction:
 <tr>
   <td><code class="highlighter-rouge">result</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(CarePlan |<br>RequestGroup)</td>
+    <td>Reference<br>(CarePlan|<br>RequestGroup)</td>
     <td>Proposed actions, if any.</td>
 <td>The result MUST be populated if the CDSS needs the EMS to take further actions. There are three acceptable 'types' of results.</td>
  </tr>
@@ -136,11 +136,13 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>Additional required data.</td>
-<td>This MAY be populated with one or more <code class="highlighter-rouge">Questionnaires</code>. If populated, the status of the <code class="highlighter-rouge">GuidanceResponse</code> MUST be either 'data-requested' or 'data-required'.</td>
+<td>This MAY be populated with one or more <code class="highlighter-rouge">Questionnaires</code>. If populated, the status MUST be either 'data-requested' or 'data-required'.</td>
  </tr>
 
 </table>
 
+## GuidanceResponse elements of note ##
+Elements in `GuidanceResponse` of particular significance to implementers are noted below:
 
 ### Status of the GuidanceResponse ###
 The status of the `GuidanceResponse` is a trigger for the Encounter Management System (EMS). It MUST contain one of the following values: 
@@ -166,11 +168,6 @@ The status of the `GuidanceResponse` is a trigger for the Encounter Management S
       <td>Data Required</td>
     <td>The request was processed, but more data is required to complete the evaluation</td>
  </tr>
-<tr>
-    <td><code class="highlighter-rouge">failure</code></td>
-      <td>Failure</td>
-    <td>The request was not processed successfully</td>
- </tr>
 </table>
 
 #### Status of success ####
@@ -188,8 +185,6 @@ This means that the CDSS has insufficient information to render an outcome.
 The `result` element in `GuidanceResponse` MAY be populated with a `CarePlan`, for example representing a proposed plan.  
 The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
 
-#### Status of failure ####
-This means that the `ServiceDefinition` $evaluate operation was not processed successfully by the CDSS.
 
 
 
