@@ -81,7 +81,7 @@ If no value is provided, the date and time of the request is assumed.</td>
      <td><code class="highlighter-rouge">0..1</code></td>
     <td>Any</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
-   <td>This MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
+   <td>The <a href="api_post_service_definition.html#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
 <ul>  
 <li><code class="highlighter-rouge">GuidanceResponse</code> outputParameters supplied by any CDSS and SHOULD include any relevant information taken from other (external) systems.</li> 
 <li>Any <code class="highlighter-rouge">QuestionnaireResponse(s)</code> available from the user. Note that this MAY include <code class="highlighter-rouge">QuestionnaireResponse(s)</code> which have been amended. These MUST be addressed by the CDSS and the assertions updated.</li>
@@ -117,7 +117,7 @@ If no value is provided, the date and time of the request is assumed.</td>
 <tr>
     <td><code class="highlighter-rouge">initiatingPerson</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(Patient|<br>Practitioner|<br>RelatedPerson)</td>
+    <td>Reference<br>(Patient |<br>Practitioner |<br>RelatedPerson)</td>
     <td>The person initiating the request.</td>
 <td>This MUST be populated by the EMS, based on the user. In the case of an online (patient-facing) system, this may be <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code>.</td>
   </tr>
@@ -152,7 +152,7 @@ If no value is provided, the date and time of the request is assumed.</td>
 <tr>
     <td><code class="highlighter-rouge">receivingPerson</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
-   <td>Reference<br>(Patient|<br>Practitioner|<br>RelatedPerson)</td>
+   <td>Reference<br>(Patient |<br>Practitioner |<br>RelatedPerson)</td>
     <td>The person in the receiving organization that will receive the response.</td>
 <td></td>
   </tr>
@@ -205,6 +205,12 @@ Note: as this the only out parameter, it is a resource, and it has the name 'ret
  </tr>
 </table>
 
+## ServiceDefinition $evaluate parameters of note ##
+Parameters passed in the `ServiceDefinition` $evaluate operation of particular significance to implementers are noted below:  
+
+### inputData element ###
+The contents of this element are significant because they are used by systems to filter `ServiceDefinitions`. For example, should a CDSS wish to filter `ServiceDefinitions` by patient age and gender, it will search the contents of this element.
+
 ## Response from CDSS ##
 
 ### Success ###
@@ -236,11 +242,6 @@ This is a trigger for the EMS and the relevant codes are as follows:-
     <td><code class="highlighter-rouge">data-required</code></td>
       <td>Data Required</td>
     <td>The request was processed, but more data is required to complete the evaluation</td>
- </tr>
-<tr>
-    <td><code class="highlighter-rouge">failure</code></td>
-      <td>Failure</td>
-    <td>The request was not processed successfully</td>
  </tr>
 </table>
 
