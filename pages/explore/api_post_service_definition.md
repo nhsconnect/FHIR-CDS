@@ -98,7 +98,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient)</td>
     <td>The patient in context, if any.</td>
-<td>This SHOULD be populated where the patient has been identified.</td>
+<td>This SHOULD be populated where the patient has been identified. Any data required by the CDSS MUST be codified in the inputData element even where it exists in the referenced <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">encounter</code></td>
@@ -140,28 +140,28 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The task the system user is performing, e.g. laboratory results review, medication list review, etc. This information can be used to tailor decision support outputs, such as recommended information resources.</td>
-<td>This MUST be provided by the EMS.</td>
+<td>This MUST be provided by the EMS, as it may be used to tailor decision support outputs.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingOrganization</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
   <td>Reference<br>(Organization)</td>
     <td>The organization that will receive the response.</td>
-<td></td>
+<td>This SHOULD be populated with the organisation identifier for the UEC service provider. If this is an online (patient facing) system, then this MUST NOT be populated</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingPerson</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
    <td>Reference<br>(Patient |<br>Practitioner |<br>RelatedPerson)</td>
-    <td>The person in the receiving organization that will receive the response.</td>
-<td></td>
+    <td>The person in the receiving organization who will receive the response.</td>
+<td>This MUST be populated by the EMS, based on the user. In the case of an online (patient-facing) system, this may be <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">recipientType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient). E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.).</td>
-<td></td>
+<td>This will be the patient (or a related person, if telephoning on behalf of the patient).</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">recipientLanguage</code></td>
@@ -175,7 +175,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The current setting of the request (inpatient, outpatient, etc).</td>
-<td>This SHOULD be provided by the EMS.</td>
+<td>This MUST be provided by the EMS to give context for decision support.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">settingContext</code></td>
@@ -201,7 +201,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>GuidanceResponse</td>
     <td>The result of the request as a GuidanceResponse resource.  
-Note: as this the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource</td>
+Note: as this the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource.</td>
  </tr>
 </table>
 
@@ -209,7 +209,10 @@ Note: as this the only out parameter, it is a resource, and it has the name 'ret
 Parameters passed in the `ServiceDefinition` $evaluate operation of particular significance to implementers are noted below:  
 
 ### inputData element ###
-The contents of this element are significant because they are used by systems to filter `ServiceDefinitions`. For example, should a CDSS wish to filter `ServiceDefinitions` by patient age and gender, it will search the contents of this element.
+The input data are the triage journey data for the decision. The EMS will populate this element with all assertions collected in a particular triage journey and any other assertions considered to be of relevance.  
+The CDSS is obliged to consider anything carried in the `ServiceDefinition` dataRequirement element, but can ignore resources posted in inputData which are not in the dataRequirement element.  
+In particular, where there are 'branching' or bundled `ServiceDefinition`s within a single journey, the last `ServiceDefinition` will have all assertions passed in inputData from prior `ServiceDefinition`s.  
+This may or may not affect the population of the result element in `GuidanceResponse` created by the CDSS.
 
 ## Response from CDSS ##
 
