@@ -12,7 +12,7 @@ summary: Post a Service Definition
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
 
 
-## Post Service Definition Interaction ##
+## Post ServiceDefinition Interaction ##
 This is an operation performed by the Encounter Management System (EMS). 
 It is an evaluate operation to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).   
 
@@ -83,7 +83,7 @@ If no value is provided, the date and time of the request is assumed.</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
    <td>The <a href="api_post_service_definition.html#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
 <ul>  
-<li><code class="highlighter-rouge">GuidanceResponse</code> outputParameters supplied by any CDSS and SHOULD include any relevant information taken from other (external) systems.</li> 
+<li><code class="highlighter-rouge">GuidanceResponse</code> outputParameters supplied by any CDSS. Any relevant information taken from other (external) systems SHOULD be included.</li> 
 <li>Any <code class="highlighter-rouge">QuestionnaireResponse(s)</code> available from the user. Note that this MAY include <code class="highlighter-rouge">QuestionnaireResponse(s)</code> which have been amended. These MUST be addressed by the CDSS and the assertions updated.</li>
 </ul>
 <ul>
@@ -205,13 +205,13 @@ Note: as this the only out parameter, it is a resource, and it has the name 'ret
  </tr>
 </table>
 
-## ServiceDefinition $evaluate parameters of note ##
+## ServiceDefinition $evaluate parameter of note ##
 Parameters passed in the `ServiceDefinition` $evaluate operation of particular significance to implementers are noted below:  
 
 ### inputData element ###
 The input data are the triage journey data for the decision. The EMS will populate this element with all assertions collected in a particular triage journey and any other assertions considered to be of relevance.  
 The CDSS is obliged to consider anything carried in the `ServiceDefinition` dataRequirement element, but can ignore resources posted in inputData which are not in the dataRequirement element.  
-In particular, where there are 'branching' or bundled `ServiceDefinition`s within a single journey, the last `ServiceDefinition` will have all assertions passed in inputData from prior `ServiceDefinition`s.  
+In particular, where there are 'branching' or bundled `ServiceDefinitions` within a single journey, the last `ServiceDefinition` will have all assertions passed in inputData from prior `ServiceDefinitions`.  
 This may or may not affect the population of the result element in `GuidanceResponse` created by the CDSS.
 
 ## Response from CDSS ##
