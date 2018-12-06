@@ -122,14 +122,14 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Parameters)</td>
     <td>The output parameters of the evaluation, if any.</td>
-<td>This MUST be populated with all assertions received by the CDSS contained in any <code class="highlighter-rouge">QuestionnaireResponse</code> sent from the EMS.</td>
+<td>This MUST be populated with current assertions received by the CDSS based on a <code class="highlighter-rouge">QuestionnaireResponse</code> sent from the EMS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">result</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(CarePlan|<br>RequestGroup)</td>
+    <td>Reference<br>(CarePlan |<br>RequestGroup)</td>
     <td>Proposed actions, if any.</td>
-<td>The result MUST be populated if the CDSS needs the EMS to take further actions. There are three acceptable 'types' of results.</td>
+<td>The <a href="api_guidance_response.html#result-of-the-guidanceresponse">result element</a>  MUST be populated if the CDSS needs the EMS to take further actions.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
@@ -179,8 +179,8 @@ Alternatively, `RequestGroup` will reference an `ActivityDefinition` carrying a 
  
 #### Status of data-requested ####
 This means that the CDSS has sufficient information to render a result, but additional information will provide a better result.  
-The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup`.  
-The `RequestGroup` will reference a `ReferralRequest`, for example relating to a proposed referral.
+The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
+The `RequestGroup` will reference a `ReferralRequest` in draft status.
 The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
 
 #### Status of data-required ####
@@ -188,9 +188,11 @@ This means that the CDSS has insufficient information to render an outcome.
 The `result` element in `GuidanceResponse` MAY be populated with a `RequestGroup`, for example referencing a `CarePlan` or `ReferralRequest`.  
 The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
 
-<!--
 ### Result of the GuidanceResponse ###
--->
+This carries the outcome of the triage journey. This element can contain up to three different concepts:  
+*  A recommendation as to where the patient should go next; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`.    
+*  Care advice for the patient (or third party) on actions that can be performed now to either assist the patient, or to assist the triage process; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference one or more `CarePlans`.
+*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference an `ActivityDefinition`. 
 
 
 
