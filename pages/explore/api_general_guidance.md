@@ -107,7 +107,7 @@ The table below summarises the HTTP response codes, along with the values to exp
 
 
 ### Headers ###
-**TBC once Headers have been agreed**
+<!--**TBC once Headers have been agreed**
 
 This error will be thrown in relation to the mandatory HTTP request headers. The scenarios when this error might be thrown:
 - The  mandatory `fromASID` HTTP Header is missing in the request
@@ -128,8 +128,10 @@ Note that the header name is case-sensitive.
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |400|error|invalid| MISSING_OR_INVALID_HEADER|There is a required header missing or invalid|toASID HTTP Header is missing|
 
+-->
 
-- The mandatory `Authorization` HTTP Header is missing in the request
+
+- The `Authorization` HTTP Header is missing in the request
   - The table details the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this scenario.
 
 | HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
