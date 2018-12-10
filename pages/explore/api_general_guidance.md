@@ -19,10 +19,10 @@ The keywords ‘**MUST**’, ‘**MUST NOT**’, ‘**REQUIRED**’, ‘**SHALL*
 
 ## RESTful API ##
 
-<!--
-The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`, and so on) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `DELETE /fhir/Patient/1` to remove the patient record.
 
-The FHIR RESTful API style guide defines the following URL conventions which are used throughout the remainder of this page:
+The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `READ`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `GET /fhir/Patient/1`.
+
+The FHIR RESTful API style guide defines the following URL conventions which are used in this specification:
 
 - URL pattern content surrounded by **[ ]** are mandatory
 - URL pattern content surrounded by **{ }** are optional
@@ -38,13 +38,13 @@ Clients and servers constructing URLs SHALL conform to [RFC 3986 Section 6 Appen
 
 ### HTTP verbs ###
 
-The following [HTTP verbs](http://hl7.org/fhir/STU3/valueset-http-verb.html) SHALL be supported to allow RESTful API interactions with the various FHIR resources:
+The following HTTP interactions SHALL be supported to allow RESTful API interactions with the various FHIR resources:
 
 - **GET**
 - **POST**
-- **PUT**
+- **READ**
 
-{% include tip.html content="Please see later sections for which HTTP verbs are expected to be available for specific FHIR resources." %}-->
+{% include tip.html content="Please see later sections for which HTTP verbs are expected to be available for specific FHIR resources." %}
 
 
 #### Resource ID ####
@@ -73,7 +73,6 @@ For further background, refer to principles of [resource identity as described i
 <!--- The CTP Server SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client system.-->
 
 - If neither the `Accept` header nor the `_format` parameter are supplied by the client system the CDS Server SHALL return data in the default format of `application/fhir+json`.
-
 
 ## Error handling ##
 
