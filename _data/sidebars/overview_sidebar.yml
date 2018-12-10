@@ -62,6 +62,9 @@ entries:
     - title: General API Guidance
       url: /api_general_guidance.html
       output: web
+    - title: Security
+      url: /api_security.html
+      output: web
       subfolders:
       - title: API Interactions
         output: web
