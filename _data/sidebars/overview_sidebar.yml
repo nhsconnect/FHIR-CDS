@@ -1,7 +1,7 @@
 entries:
 - title: Clinical Decision Support API
   product: Clinical Decision Support API
-  version: 0.2.0-experimental
+  version: 0.3.0-experimental
   levels: one
   folders:
 
