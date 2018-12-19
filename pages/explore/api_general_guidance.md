@@ -138,7 +138,7 @@ Note that the header name is case-sensitive.
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |400|error|invalid| MISSING_OR_INVALID_HEADER|There is a required header missing or invalid|Authorization HTTP Header is missing|
 
-
+<!--
 ### Parameters ###
 
 This error will be raised in relation to request parameters that the client may have specified. As such this error can be raised in a variety of circumstances:
@@ -149,7 +149,7 @@ The below table summarises the HTTP response codes, along with the values to exp
 |-----------|----------------|------------|--------------|-----------------|
 |400|error|invlid| INVALID_PARAMETER|Invalid parameter|
 
-<!--
+
 
 
 #### Subject parameter ####
@@ -166,10 +166,11 @@ When using the OPTIONAL `custodian` parameter the client is referring to an Orga
    - The ODS code must be an organisation that is known to the NRLS.
    - The ODS code must be in the Provider role.-->
 
+<!--
 #### `_format` request parameter ####
 If used, this parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by a CDS server.
 
-<!--
+
 #### Invalid Reference URL in Pointer Create Request ####
 This error is raised during a provider create interaction. There are two exception scenarios:
 - The DocumentReference in the request body specifies an incorrect URL of the FHIR server that hosts the Patient resource. 
