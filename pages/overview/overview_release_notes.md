@@ -6,6 +6,11 @@ sidebar: overview_sidebar
 permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
+## 0.3.0-experimental ##
+*  Added API guidance relating to security and use of JSON Web Tokens  
+*  Removed API guidance relating to Parameters pending further research on their implementation in the CDS context
+*  Added further API guidance relating to resource URLs and http verbs
+*  Added further API guidance relating to http headers
 
 ## 0.2.0-experimental ##
 
@@ -16,4 +21,4 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 
 ## 0.1.0-experimental ##
 
-Initial draft of the implementation guide.
+Initial draft of the implementation guide
