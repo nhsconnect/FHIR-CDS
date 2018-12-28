@@ -202,43 +202,6 @@ The following HTTP request headers are supported for this interaction:
 <td>This SHOULD be populated by the CDSS.</td>
  </tr>
 </table>
-<!--
-
-## GuidanceResponse elements of note ##
-Elements in `GuidanceResponse` of particular significance to implementers are noted below:
-
-### Status of the GuidanceResponse ###
-The status of the `GuidanceResponse` is a trigger for the Encounter Management System (EMS). It MUST contain one of the following values: 
-
-### Result of the GuidanceResponse ###
-This carries the outcome of the triage journey. This element can contain up to three different concepts:  
-*  A recommendation as to where the patient should go next; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`.    
-*  Care advice for the patient (or third party) on actions that can be performed now to either assist the patient, or to assist the triage process; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference one or more `CarePlans`.
-*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference an `ActivityDefinition`. 
-
-### Status of the GuidanceResponse ###
-
-#### Status of success ####
-This means that the result is ready.  
-The CDSS has all information possible for the `ServiceDefinition` to which the `GuidanceResponse` is responding and has provided a result.  
-The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
-If the CDSS is recommending a referral to another service, the `RequestGroup` will reference a `ReferralRequest` with a `status` of active. 
-If the CDSS is recommending care advice for a patient, the `RequestGroup` will reference a `CarePlan` with a `status` of active.  
-Alternatively, `RequestGroup` will reference one `ActivityDefinition` with a `status` of active which carries a recommendation to redirect to a different `ServiceDefinition`, as the current cycle of Clinical Decision Support has completed.  
- 
-#### Status of data-requested ####
-This means that the CDSS has sufficient information to render a result, but additional information will provide a better result.  
-The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
-If the CDSS is recommending an interim or initial recommendation relating to a referral to another service, the `RequestGroup` will reference a `ReferralRequest` in draft status.  
-If the CDSS is recommending an interim or initial recommendation relating to care advice for the patient, the `RequestGroup` will reference a `CarePlan` in draft status.
-The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
-
-#### Status of data-required ####
-This means that the CDSS has insufficient information to render an outcome.  
-The `result` element in `GuidanceResponse` MAY be populated with a `RequestGroup`, for example referencing one or more `CarePlan`s or one `ReferralRequest`.  
-The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
-
--->
 
 
 
