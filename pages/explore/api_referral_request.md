@@ -210,29 +210,6 @@ Elements in `GuidanceResponse` of particular significance to implementers are no
 ### Status of the GuidanceResponse ###
 The status of the `GuidanceResponse` is a trigger for the Encounter Management System (EMS). It MUST contain one of the following values: 
 
-<table style="min-width:100%;width:100%">
-<tr>
-    <th style="width:25%;">Code</th>
-    <th style="width:25%;">Display</th>
-    <th style="width:50%;">Definition</th>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">success</code></td>
-      <td>Success</td>
-    <td>The request was processed successfully</td>
- </tr>
-<tr>
-    <td><code class="highlighter-rouge">data-requested</code></td>
-      <td>Data Requested</td>
-    <td>The request was processed successfully, but more data may result in a more complete evaluation</td>
- </tr>
-<tr>
-    <td><code class="highlighter-rouge">data-required</code></td>
-      <td>Data Required</td>
-    <td>The request was processed, but more data is required to complete the evaluation</td>
- </tr>
-</table>
-
 ### Result of the GuidanceResponse ###
 This carries the outcome of the triage journey. This element can contain up to three different concepts:  
 *  A recommendation as to where the patient should go next; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`.    
