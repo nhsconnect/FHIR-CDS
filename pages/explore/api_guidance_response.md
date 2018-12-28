@@ -194,7 +194,7 @@ The `dataRequirement` element in `GuidanceResponse` MUST be populated with at le
 
 #### Status of data-required ####
 This means that the CDSS has insufficient information to render an outcome.  
-The `result` element in `GuidanceResponse` MAY be populated with a `RequestGroup`, for example referencing one or more `CarePlan`s or one `ReferralRequest`.  
+The `result` element in `GuidanceResponse` MAY be populated with a `RequestGroup`, for example referencing one or more `CarePlans` or one `ReferralRequest`.  
 The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
 
 
