@@ -1,7 +1,7 @@
 entries:
 - title: Clinical Decision Support API
   product: Clinical Decision Support API
-  version: 0.3.0-experimental
+  version: 0.4.0-experimental
   levels: one
   folders:
 
@@ -80,6 +80,9 @@ entries:
           output: web
         - title: Get Questionnaire
           url: /api_get_questionnaire.html
+          output: web
+       - title: Triage Recommendation
+          url: /api_referral_request.html
           output: web
       - title: API Guidance | FHIR&reg;
         output: web
