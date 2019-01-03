@@ -99,7 +99,7 @@ sidebars:
 - appointments_sidebar
 - tasks_sidebar
 
-description: "This implementation guide supports the publishing of Digital Child Health (DCH) event messages held across settings through the use of nationally defined messaging components."
+description: "This Clinical Decision Support (CDS) RESTful FHIR STU3 ‘Read Only’ experimental API implementation guide supports the initiatives set out by the UEC Digital Integration Programme."
 # the description is used in the feed.xml file
 
 sitemap: true
@@ -107,11 +107,11 @@ sitemap: true
 # needed for sitemap.xml file only
 #url: https://dxh73.github.io/IG-Templete-REST
 #url: https://dxh73.github.io/CareConnect-Unstructured-Document-API
-url: https://nhsconnect.github.io/CareConnect-Unstructured-Document-API
+url: https://developer.nhs.uk/apis/cds-api/index.html
 
 #repository: dxh73/IG-Template-REST
 #repository: dxh73/CareConnect-Unstructured-Document-API
-repository: nhsconnect/CareConnect-Unstructured-Document-API
+repository: nhsconnect/FHIR-CTP
 
 gist:
   noscript: false
