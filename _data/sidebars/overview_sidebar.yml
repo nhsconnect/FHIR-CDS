@@ -84,6 +84,9 @@ entries:
         - title: Triage Recommendation
           url: /api_referral_request.html
           output: web
+        - title: Care Advice Recommendation
+          url: /api_care_plan.html
+          output: web
       - title: API Guidance | FHIR&reg;
         output: web
         subfolderitems:
