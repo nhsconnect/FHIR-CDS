@@ -15,7 +15,7 @@ summary: Recommend care advice
 
 ## CarePlan Interaction##
 Within the Clinical Decision Support API implementation, the [CarePlan](http://hl7.org/fhir/stu3/careplan.html) resource will be used to carry the care advice recommendation given by the CDSS. This resource may also carry a recommendation of self-care.    
-A reference to the relevant `CarePlan` will be carried in the `resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `CarePlan`.
+A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource in its `result` element and a reference to the relevant `CarePlan` will be carried in the `resource` element of the `RequestGroup` resource.
 
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction:  
