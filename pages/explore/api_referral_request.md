@@ -72,7 +72,7 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Identifier</td>
     <td>Composite request this is part of</td>
-<td>This MUST be populated with the identifier from the <code class="highlighter-rouge">RequestGroup</code>.</td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> from the <code class="highlighter-rouge">RequestGroup</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
