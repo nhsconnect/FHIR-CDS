@@ -51,14 +51,14 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ActivityDefinition |<br>PlanDefinition)</td>
     <td>Instantiates protocol or definition</td>
-<td></td>
+<td>This COULD be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the ReferralRequest has been defined in the local implementation. An <code class="highlighter-rouge">ActivityDefinition</code> is a conceptual description of some specific action that should be taken, so does not imply any action by the EMS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">basedOn</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ReferralRequest |<br>Careplan |<br>ProcedureRequest)</td>
     <td>Request fulfilled by this request</td>
-<td></td>
+<td>This SHOULD be populated with a <code class="highlighter-rouge">ProcedureRequest</code>, where the <code class="highlighter-rouge">ProcedureRequest</code> contains the information on the next activity to be performed in order to identify the patient's health need. This <code class="highlighter-rouge">ProcedureRequest</code> will be a procedure that the current service is unable to perform, but that the recipient must be able to be perform.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">replaces</code></td>
@@ -72,21 +72,22 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Identifier</td>
     <td>Composite request this is part of</td>
-<td></td>
+<td>This MUST be populated with the identifier from the <code class="highlighter-rouge">RequestGroup</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-request-status.html">RequestStatus</a></td>
-<td>If the CDSS is recommending an interim or initial triage recommendation, the <code class="highlighter-rouge">status</code> will be draft.<br> If the CDSS is recommending triage to another service, the <code class="highlighter-rouge">status</code> will be active.</td>
+<td>If the CDSS is recommending a draft (initial) triage recommendation, the <code class="highlighter-rouge">status</code> will be draft.<br>
+If the CDSS is recommending triage to another service, the <code class="highlighter-rouge">status</code> will be active. This includes where the recommendation is an interim recommendation (that is, where the triage journey continues).</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-request-intent.html">RequestIntent</a></td>
-<td></td>
+<td>In most cases, this will be populated with the code 'plan', as the patient will need to take the next step.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">type</code></td>
@@ -100,14 +101,14 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
     <td>Urgency of referral/transfer of care request. This is a Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-request-priority.html">RequestPriority</a></td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This SHOULD be populated by the CDSS. In most cases, this will be populated with the code 'routine', indicating that the request is of normal priority.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">serviceRequested</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Actions requested as part of the referral</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This SHOULD be populated by the CDSS with the type of service which can normally satisfy the patient's health need.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
@@ -121,14 +122,15 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td></td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the encounter supplied in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime<br>| Period</td>
     <td>When the service(s) requested in the referral should occur</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This MUST be populated by the CDSS with a timeframe in which the attendance at the next service must occur (e.g. within three days, within four hours etc.).  
+This is represented as a start time (now) and end time (now+3 days, or now+four hours).</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">authoredOn</code></td>
@@ -150,7 +152,7 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..1</code></td>
         <td>CodeableConcept</td>
     <td>The clinical specialty (discipline) that the referral is requested for</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This SHOULD be populated by the CDSS with the clinical specialty related to the patient's identified health need.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">recipient</code></td>
@@ -164,7 +166,7 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..*</code></td>
         <td>CodeableConcept</td>
     <td>Reason for referral/transfer of care request</td>
-<td></td>
+<td>This SHOULD NOT be populated as the reasonReference element will carry the chief concern.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonReference</code></td>
