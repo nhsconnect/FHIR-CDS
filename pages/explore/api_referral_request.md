@@ -13,12 +13,12 @@ summary: Recommend a referral
 
 
 
-## ReferralRequest Interaction##
+## Triage Recommendation ##
 Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage recommendation to another service for a patient.  
 A reference to the relevant `ReferralRequest` will be carried in the `resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.
 
 ## Request Headers ##
-The following HTTP request headers are supported for this interaction:  
+The following HTTP request headers are supported in the event of the EMS requesting the referenced `ReferralRequest` from the CDSS:  
 
 
 | Header               | Value |Conformance |
