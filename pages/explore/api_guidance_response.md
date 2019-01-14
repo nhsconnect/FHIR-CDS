@@ -242,7 +242,7 @@ The table below gives additional information relating to outcome scenarios when 
 This means that the CDSS has sufficient information to render a result, but additional information will provide a better result.  
 The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
 If the CDSS is recommending an interim or initial recommendation relating to a referral to another service, the `RequestGroup` will reference a `ReferralRequest` in draft status.  
-Care advice may additionally be given alongside this interim referral recommendation. If the CDSS is additionally recommending care advice (not self-care), the ReferralRequest` will also reference a `CarePlan` in draft status.
+Care advice may additionally be given alongside this interim referral recommendation. If the CDSS is additionally recommending care advice (not self-care), the `ReferralRequest` will also reference a `CarePlan` in draft status.
 If the CDSS is recommending an interim or initial recommendation relating to care advice for the patient (self-care), the `RequestGroup` will reference a `CarePlan` in draft status.  
 The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
 
