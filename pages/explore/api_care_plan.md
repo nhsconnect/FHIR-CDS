@@ -13,12 +13,12 @@ summary: Recommend care advice
 
 
 
-## CarePlan Interaction##
+## Care Advice Recommendation ##
 Within the Clinical Decision Support API implementation, the [CarePlan](http://hl7.org/fhir/stu3/careplan.html) resource will be used to carry the care advice recommendation given by the CDSS. This resource may also carry a recommendation of self-care.    
-A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource in its `result` element and a reference to the relevant `CarePlan` will be carried in the `resource` element of the `RequestGroup` resource.
+A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource in its `result` element and a reference to the relevant `CarePlan` will be carried in the `action.resource` element of the `RequestGroup` resource.
 
 ## Request Headers ##
-The following HTTP request headers are supported for this interaction:  
+The following HTTP request headers are supported in the event of the EMS requesting the referenced `CarePlan` from the CDSS:  
 
 
 | Header               | Value |Conformance |
@@ -29,12 +29,16 @@ The following HTTP request headers are supported for this interaction:
 
 ## Implementation Guidance ##  
 
-## Self Care ##
+### Self Care ###
 When the outcome of triage is to recommend self care, this may be carried as a [PlanDefinition](http://hl7.org/fhir/stu3/plandefinition.html) which is referenced from the `definition` element in the `CarePlan`.  
 Identifying the `CarePlan` which specifically represents self-care as opposed to general care advice can be done by checking the `careTeam.participant` element within the `CarePlan`.  
 If there is only a single instance of `participant` and the `participant.role` is Patient (<a href="https://termbrowser.nhs.uk/?perspective=full&conceptId1=116154003&edition=uk-edition&release=v20181001&server=https://termbrowser.dataproducts.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104" target="_blank">Snomed CT code of 116154003</a>), then the recommendation is for self care.  
 
-<!--
+### Status of the CarePlan ###  
+The `status` element of the `CarePlan` should be populated as 'active' when the advice is given by the CDSS.  
+Once the advice has been given, the `CarePlan` resource should be updated by the EMS to show a value of 'completed'.  
+
+
 <table style="min-width:100%;width:100%">
 
 <tr>
@@ -56,7 +60,7 @@ If there is only a single instance of `participant` and the `participant.role` i
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ActivityDefinition |<br>PlanDefinition)</td>
     <td>Instantiates protocol or definition</td>
-<td></td>
+<td> <code class="highlighter-rouge">PlanDefinition</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">basedOn</code></td>
@@ -208,7 +212,6 @@ If there is only a single instance of `participant` and the `participant.role` i
  </tr>
 </table>
 
--->
 
 
 
