@@ -121,7 +121,8 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Parameters)</td>
     <td>The output parameters of the evaluation, if any.</td>
-<td>This MUST be populated with current assertions received by the CDSS based on a <code class="highlighter-rouge">QuestionnaireResponse</code> sent from the EMS.</td>
+<td>This MUST be populated with current assertions received by the CDSS based on a <code class="highlighter-rouge">QuestionnaireResponse</code> sent from the EMS.
+Where an outputParameter can be interpreted by a system, it should be published as an observation.  If the information can only be interpreted by a human, it should be published as a QuestionnaireResponse.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">result</code></td>
@@ -135,15 +136,32 @@ The following HTTP request headers are supported for this interaction:
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>Additional required data.</td>
-<td>This MAY be populated with one or more <code class="highlighter-rouge">Questionnaires</code>. If populated, the status MUST be either 'data-requested' or 'data-required'.</td>
+<td>The data carried in this element is how the CDSS tells the EMS what question to ask next. This MAY be populated with one or more <code class="highlighter-rouge">Questionnaires</code>. If populated, the status MUST be either 'data-requested' or 'data-required'.</td>
  </tr>
 
 </table>
 
 ## GuidanceResponse elements of note ##
-Elements in `GuidanceResponse` of particular significance to implementers are noted below:
+Elements in `GuidanceResponse` of particular significance to implementers are noted below:  
+
+### OutputParameters element of GuidanceResponse ###  
+This element carries questions and assertions (resulting from the EMS's responses to received questions) sent to the EMS by the CDSS.  
+Where the data carried in `outputParameters` can be interpreted by a system, it should be published as an [Observation](http://hl7.org/fhir/stu3/observation.html). This could be done by the CDSS when it receives responses to received questions from the EMS.  
+If the information can only be interpreted by a human, it should be published as a [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html). This resource could be published by the EMS as a response to questions received from the CDSS.  
+The <a href="http://hl7.org/fhir/STU3/resource.html#id">logical ID</a> of either or both of these resources can be returned to the EMS by the CDSS for persistence.
+
+### Result element of GuidanceResponse ###
+This carries the outcome of the triage journey. This element can contain up to three different concepts and in order that these can be represented, the `result` element will always reference a `RequestGroup` resource.  
+
+The different outcomes are described below:
+*  A recommendation as to where the patient should go next; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`.    
+*  Care advice for the patient (or third party) on actions that can be performed now to either assist the patient, or to assist the triage process. 
+    *  In the case of advice which is not self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest` in turn referencing one or more`CarePlans`.  
+    *  In the case of advice to the patient relating to self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a`CarePlan`.  
+*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference an `ActivityDefinition`.  
 
 ### Status of the GuidanceResponse ###
+
 The status of the `GuidanceResponse` is a trigger for the Encounter Management System (EMS). It MUST contain one of the following values: 
 
 <table style="min-width:100%;width:100%">
@@ -169,33 +187,134 @@ The status of the `GuidanceResponse` is a trigger for the Encounter Management S
  </tr>
 </table>
 
-### Result of the GuidanceResponse ###
-This carries the outcome of the triage journey. This element can contain up to three different concepts:  
-*  A recommendation as to where the patient should go next; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`.    
-*  Care advice for the patient (or third party) on actions that can be performed now to either assist the patient, or to assist the triage process; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference one or more `CarePlans`.
-*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference an `ActivityDefinition`. 
-
-### Status of the GuidanceResponse ###
-
 #### Status of success ####
 This means that the result is ready.  
 The CDSS has all information possible for the `ServiceDefinition` to which the `GuidanceResponse` is responding and has provided a result.  
 The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
-If the CDSS is recommending a referral to another service, the `RequestGroup` will reference a `ReferralRequest` with a `status` of active. 
+If the CDSS is recommending a referral to another service, the `RequestGroup` will reference a `ReferralRequest` with a `status` of active. This referral may be accompanied by care advice (not self-care) and/or information about a procedure which the recommended service is expected to provide.  
 If the CDSS is recommending care advice for a patient, the `RequestGroup` will reference a `CarePlan` with a `status` of active.  
 Alternatively, `RequestGroup` will reference one `ActivityDefinition` with a `status` of active which carries a recommendation to redirect to a different `ServiceDefinition`, as the current cycle of Clinical Decision Support has completed.  
+
+The table below gives additional information relating to outcome scenarios when the `status` element of the `GuidanceResponse` is set to 'success':  
+
+
+<table style="min-width:100%;width:100%">
+
+<tr>
+    <th style="width:35%;">Result</th>
+    <th style="width:10%;">Status of the GuidanceResponse</th>
+    <th style="width:30%;">Resource(s) referenced from GuidanceResponse</th>
+   <th style="width:25%;">Additional information</th>
+</tr>
+<tr>
+  <td>The CDSS has completed successfully with a recommendation of what service the patient should use next.</td>
+    <td>success</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which in turn references <code class="highlighter-rouge">ReferralRequest</code> to carry the information pertinent to the recommended referral.</td>
+<td>The <code class="highlighter-rouge">ReferralRequest</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>
+</tr>
+<tr>
+  <td>The CDSS has completed successfully with a recommendation of what service the patient should use next and there is a known procedure which the referring service is intended to perform.</td>
+    <td>success</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references <code class="highlighter-rouge">ReferralRequest</code> which in turn references <code class="highlighter-rouge">ProcedureRequest</code>.</td>
+    <td>The <code class="highlighter-rouge">ReferralRequest</code> and the <code class="highlighter-rouge">ProcedureRequest</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>
+</tr>
+<tr>
+  <td>The CDSS has completed successfully with a recommendation regarding what service the patient should use next and also some care advice (not self-care) for the patient. </td>
+    <td>success</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references <code class="highlighter-rouge">ReferralRequest</code> which in turn references one or more <code class="highlighter-rouge">CarePlans</code>.</td>
+    <td>The <code class="highlighter-rouge">ReferralRequest</code> and the <code class="highlighter-rouge">CarePlan</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>
+</tr>
+<tr>
+  <td>The CDSS has completed successfully with some recommended care advice (self-care) for the patient.</td>
+    <td>success</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references a <code class="highlighter-rouge">CarePlan</code>.</td>
+    <td>The <code class="highlighter-rouge">CarePlan</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>
+</tr>
+<tr>
+  <td>The CDSS has completed successfully and has re-directed the user to a new <code class="highlighter-rouge">ServiceDefinition</code>.</td>
+    <td>success</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references <code class="highlighter-rouge">ActivityDefinition</code>.</td>
+    <td>The <code class="highlighter-rouge">ActivityDefinition</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>
+</tr>
+</table>  
  
 #### Status of data-requested ####
 This means that the CDSS has sufficient information to render a result, but additional information will provide a better result.  
 The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
 If the CDSS is recommending an interim or initial recommendation relating to a referral to another service, the `RequestGroup` will reference a `ReferralRequest` in draft status.  
-If the CDSS is recommending an interim or initial recommendation relating to care advice for the patient, the `RequestGroup` will reference a `CarePlan` in draft status.
+Care advice (not self-care) may additionally be given alongside this interim referral recommendation. 
+If the CDSS is recommending an interim or initial recommendation relating to care advice for the patient (self-care), the `RequestGroup` will reference a `CarePlan` in draft status.  
 The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
+
+The table below gives additional information relating to outcome scenarios when the `status` element of the `GuidanceResponse` is set to 'data-requested':  
+
+
+<table style="min-width:100%;width:100%">
+
+<tr>
+    <th style="width:35%;">Result</th>
+    <th style="width:10%;">Status of the GuidanceResponse</th>
+    <th style="width:30%;">Resource(s) referenced from GuidanceResponse</th>
+   <th style="width:25%;">Additional information</th>
+</tr>
+<tr>
+  <td>The CDSS has sufficient information to recommend a referral, but additional information will provide a better result.</td>
+    <td>data-requested</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which in turn references <code class="highlighter-rouge">ReferralRequest</code> to carry the information pertinent to the recommended referral.</td>
+<td>The <code class="highlighter-rouge">ReferralRequest</code> will have a <code class="highlighter-rouge">status</code> of 'draft' updating to 'active' when the finalised score is available.  When the result is final, the <code class="highlighter-rouge">GuidanceResponse.status</code> should be 'success' as above.</td>
+</tr>
+<tr>
+  <td>The CDSS has sufficient information to make a recommendation regarding what service the patient should use next and there is also a recommendation relating to a care plan (not self-care).</td>
+    <td>data-requested</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references <code class="highlighter-rouge">ReferralRequest</code> which in turn references <code class="highlighter-rouge">CarePlan</code>.</td>
+<td>The <code class="highlighter-rouge">ReferralRequest</code> and the <code class="highlighter-rouge">CarePlan</code> will have a <code class="highlighter-rouge">status</code> of 'draft' updating to 'active' when the finalised score is available. When the result is final, the <code class="highlighter-rouge">GuidanceResponse.status</code> should be 'success' as above.</td>
+</tr>
+</table>
 
 #### Status of data-required ####
 This means that the CDSS has insufficient information to render an outcome.  
 The `result` element in `GuidanceResponse` MAY be populated with a `RequestGroup`, for example referencing one or more `CarePlans` or one `ReferralRequest`.  
+The CDSS can make a referral during the triage journey, and also wish to continue the triage process.  This is referred to as an inline referral, and is commonly done for Ambulance Despatch.  
+This can be represented by setting `GuidanceResponse.status` to 'data-required', but populating the `result` element with a `ReferralRequest` resource with a `status` of 'active'.  Care advice can be given with this inline referral (not self-care).
+The CDSS can also recommend inline care advice (self care).
 The `dataRequirement` element in `GuidanceResponse` MUST be populated with at least one `Questionnaire`.  
+
+The table below gives additional information relating to outcome scenarios when the `status` element of the `GuidanceResponse` is set to 'data-required':  
+
+
+<table style="min-width:100%;width:100%">
+
+<tr>
+    <th style="width:35%;">Result</th>
+    <th style="width:10%;">Status of the GuidanceResponse</th>
+    <th style="width:30%;">Resource(s) referenced from GuidanceResponse</th>
+   <th style="width:25%;">Additional information</th>
+</tr>
+<tr>
+  <td>The CDSS is requesting additional information from the EMS using a <code class="highlighter-rouge">Questionnaire</code> resource.</td>
+    <td>data-required</td>
+    <td>A <code class="highlighter-rouge">GuidanceResponse</code> is returned which references one or more <code class="highlighter-rouge">Questionnaires</code>.</td>
+<td></td>
+</tr>
+<tr>
+  <td>The CDSS is making an inline referral.</td>
+     <td>data-required</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references <code class="highlighter-rouge">ReferralRequest</code>.</td>
+<td>The <code class="highlighter-rouge">ReferralRequest</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>
+</tr>
+<tr>
+  <td>The CDSS is making an inline referral with care advice (not self-care).</td>
+     <td>data-required</td>
+    <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references <code class="highlighter-rouge">ReferralRequest</code> which in turn references <code class="highlighter-rouge">CarePlan</code>.</td>
+<td>The <code class="highlighter-rouge">ReferralRequest</code> and the <code class="highlighter-rouge">CarePlan</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>
+</tr>
+<tr>
+  <td>The CDSS is giving inline care advice (self-care).</td>
+     <td>data-required</td>
+	<td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references a <code class="highlighter-rouge">CarePlan</code>.</td>
+    <td>The <code class="highlighter-rouge">CarePlan</code> will have a <code class="highlighter-rouge">status</code> of 'active'.</td>    
+</tr>
+</table>
 
 
 
