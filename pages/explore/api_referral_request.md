@@ -15,7 +15,8 @@ summary: Recommend a referral
 
 ## Triage Recommendation ##
 Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage recommendation to another service for a patient.  
-A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.
+A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
+The `ReferralRequest` may also reference a `CarePlan` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient and/or a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.
 
 ## Request Headers ##
 The following HTTP request headers are supported in the event of the EMS requesting the referenced `ReferralRequest` from the CDSS:  
@@ -202,8 +203,24 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
      <td>Reference<br>(Provenance)</td>
     <td>Key events in history of request</td>
 <td>This SHOULD be populated by the CDSS.</td>
- </tr>
-</table>
+ </tr> 
+</table>  
+
+## Procedure Request ##  
+The `ProcedureRequest` is referenced from `ReferralRequest.basedOn`.  
+ This will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which should be carried out in the referee service to validate or eliminate the chief concern.  
+
+### ProcedureRequest elements of note ###  
+
+#### Status element of the ProcedureRequest ####  
+This shows the status of the `ProcedureRequest` and should carry the value 'active'.
+
+#### Intent element of the ProcedureRequest ####  
+The population of this element shows whether the request is a proposal, plan, an original order or a reflex order. It should carry the value 'proposal'.  
+
+#### Subject element of the ProcedureRequest #### 
+This element should always reference a `Patient` resource within a CDS implementation.
+
 
 
 
