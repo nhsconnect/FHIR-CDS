@@ -39,9 +39,19 @@ A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a
 Identifying the `CarePlan` which specifically represents self-care as opposed to general care advice can be done by checking the `careTeam.participant` element within the `CarePlan`.  
 If there is only a single instance of `participant` and the `participant.role` is 'Patient' (<a href="https://termbrowser.nhs.uk/?perspective=full&conceptId1=116154003&edition=uk-edition&release=v20181001&server=https://termbrowser.dataproducts.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104" target="_blank">Snomed CT code of 116154003</a>), then the recommendation is for self-care.  
 
-### Status of the CarePlan ###  
+### CarePlan Elements of Note ### 
+
+#### Status element of the CarePlan ####  
 The `status` element of the `CarePlan` should be populated as 'active' when the advice is given by the CDSS.  
 Once the advice has been given, the `CarePlan` resource should be updated by the EMS to show a value of 'completed'.  
+
+#### Activity.reference element of the CarePlan ####  
+This element carries details of the proposed activity represented in a specific referenced resource. For example, if care advice which is a component of a triage outcome involves advice about how to give CPR, this could be modelled as a `ProcedureRequest` which could be referenced from the element.
+
+#### Activity.detail.category element of the CarePlan ####  
+This element carries a high-level categorisation of the type of activity in a `CarePlan`, for example describing whether it relates to diet, drug, procedure, etc. An example could be care advice about administering epi-pens to a patient suffering an allergic reaction, which might be modelled as a drug category.  
+  
+**Note that the above two elements are mutually exclusive withiin a FHIR `CarePlan`, so it is not possible to populate both elements within one `CarePlan`.**
 
 <!--
 <table style="min-width:100%;width:100%">
