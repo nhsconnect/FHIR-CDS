@@ -6,6 +6,14 @@ sidebar: overview_sidebar
 permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
+## 0.4.0-experimental ##
+*  Added further details to GuidanceResponse status section
+*  Added further details relating to use of RequestGroup to GuidanceResponse page  
+*  Added Triage recommendation page
+*  Added initial details to Care Advice recommendation page 
+*  Added initial details to Redirect ServiceDefinition page  
+*  Added ProcedureRequest section to Triage recommendation page  
+
 ## 0.3.0-experimental ##
 *  Added API guidance relating to security and use of JSON Web Tokens  
 *  Removed API guidance relating to Parameters pending further research on their implementation in the CDS context
