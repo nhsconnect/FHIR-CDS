@@ -92,7 +92,7 @@ Search parameter(s) for the `ServiceDefinition` resource are outlined below:
 
 #### _id ####
 
-The search parameter `_id` refers to the logical id of the ServiceDefinition resource and can be used when the search context specifies the ServiceDefinition resource type.  
+The search parameter `_id` refers to the logical id of the `ServiceDefinition` resource and can be used when the search context specifies the ServiceDefinition resource type.  
 
 The `_id` parameter can be used as follows:  
 
@@ -128,7 +128,10 @@ The following errors can be triggered when performing this operation:
 * [Invalid parameter](api_general_guidance.html#parameters)
 * [Resource not found - unknown resource](api_general_guidance.html#unknown-resource)
 
-## Implementation Guidance ##
+## Implementation Guidance ##  
+The `ServiceDefinition` resource carries information describing the functionality made available by a specific service.  
+It does not carry details relating to how this functionality is performed, only about what the service module does plus its required inputs and the outputs it produces.  
+Details of how a `ServiceDefinition` should be implemented within the Clinical Decision Support context is outlined in the table below:
 
 <table style="min-width:100%;width:100%">
 
@@ -136,50 +139,50 @@ The following errors can be triggered when performing this operation:
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
-      <th style="width:45%;">FHIR Documentation</th>
-   <th style="width:30%;">CDS Implementation Guidance</th>
+      <th style="width:38%;">FHIR Documentation</th>
+   <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">url</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Logical URI to reference this service definition (globally unique)</td>
-<td></td>
+<td>This absolute URI would be used to locate a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. It SHALL be a URL, SHOULD be globally unique and SHOULD be an address at which the <code class="highlighter-rouge">ServiceDefinition</code> is (or will be) published. This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Identifier</td>
     <td>Additional identifier for the service definition</td>
-<td></td>
+<td>This is a business identifier and could be used to identify a <code class="highlighter-rouge">ServiceDefinition</code> where it is not possible to use the logical URI. This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">version</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Business version of the service definition</td>
-<td></td>
+<td>This is used to identify a specific version of a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. The version can be appended to the url to allow a reference to a particular business version of the service definition with the format [url]|[version]. This is generally used by FHIR servers.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">name</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (computer friendly)</td>
-<td></td>
+<td>The name is not expected to be globally unique. The name should be a simple alpha-numeric type name to ensure that it is computable friendly. This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">title</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (human friendly)</td>
-<td></td>
+<td>This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | retired | unknown - Code datatype with binding to <a href="https://www.hl7.org/fhir/stu3/valueset-publication-status.html">PublicationStatus (Required)</a>.</td>
-<td>This MUST be populated with the value 'active'.</td>
+<td>Alongside the <code class="highlighter-rouge">experimental</code> element, this is used to identify the lifecycle of a <code class="highlighter-rouge">ServiceDefinition</code>. This MUST be populated with the value 'active' in live service.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">experimental</code></td>
@@ -193,28 +196,28 @@ The following errors can be triggered when performing this operation:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>Date this was last changed</td>
-<td></td>
+<td>The date (and optionally time) when the <code class="highlighter-rouge">ServiceDefinition</code> was published. The date must change if and when the business version changes and it must change, if the status code changes. In addition, it should change when the substantive content of the <code class="highlighter-rouge">ServiceDefinition</code> changes.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">publisher</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name of the publisher (organization or individual)</td>
-<td></td>
+<td>This element SHOULD be populated unless the information is available from context. It usually carries the organisation which published the <code class="highlighter-rouge">ServiceDefinition</code>, but this may be an individual. The publisher is the primary contact for questions relating to the <code class="highlighter-rouge">ServiceDefinition</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">description</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Natural language description of the service definition</td>
-<td></td>
+<td>This element SHOULD be populated unless the information is available from context. It can carry details such as why the <code class="highlighter-rouge">ServiceDefinition</code> was built, comments about misuse, instructions for clinical use and interpretation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">purpose</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Messages resulting from the evaluation of the artifact or artifacts.</td>
-<td>Why this service definition is defined</td>
+<td>This carries an explanation of why this <code class="highlighter-rouge">ServiceDefinition</code> is needed and why it has been designed as it has.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">usage</code></td>
@@ -228,7 +231,7 @@ The following errors can be triggered when performing this operation:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>date</td>
     <td>When the service definition was approved by publisher</td>
-<td></td>
+<td>Approval happens once when the content is officially approved for usage.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">lastReviewDate</code></td>
@@ -242,14 +245,14 @@ The following errors can be triggered when performing this operation:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Period</td>
     <td>When the service definition is expected to be used</td>
-<td></td>
+<td>The effective period for a <code class="highlighter-rouge">ServiceDefinition</code> determines when the content is applicable for usage and is independent of publication and review dates.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">useContext</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>UsageContext</td>
     <td>This carries the context the content is intended to support. Examples include patient gender, age group</td>
-<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will include patient gender, patient age group, user role/type.</td>
+<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will include patient gender, patient age group, user role/type.  These terms may be used to assist with indexing and searching for appropriate <code class="highlighter-rouge">ServiceDefinition</code> instances.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">jurisdiction</code></td>
@@ -263,35 +266,35 @@ The following errors can be triggered when performing this operation:
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>E.g. Education, Treatment, Assessment, etc - CodeableConcept datatype with binding to <a href="https://www.hl7.org/fhir/stu3/valueset-definition-topic.html">DefinitionTopic valueset (Example)</a></td>
-<td></td>
+<td>Topics provide a high-level categorization of the module that can be useful for filtering and searching.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">contributor</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Contributor</td>
     <td>A content contributor</td>
-<td></td>
+<td>The information in this element could be used to assist consumers in quickly determining who contributed to the content of the knowledge module.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">contact</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>ContactDetail</td>
     <td>Contact details for the publisher</td>
-<td></td>
+<td>This may be a web site, an email address, a telephone number, etc.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">copyright</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Use and/or publishing restrictions</td>
-<td></td>
+<td>Consumers must be able to determine any legal restrictions on the use of the <code class="highlighter-rouge">ServiceDefinition</code> and/or its content.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relatedArtifact</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>RelatedArtifact</td>
     <td>Additional documentation, citations, etc</td>
-<td></td>
+<td>Each related resource is either an attachment, or a reference to another resource, but not both.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">trigger</code></td>
@@ -306,17 +309,18 @@ This is relevant when the <code class="highlighter-rouge">ServiceDefinition</cod
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>What data is used by the module</td>
-<td>This element MUST be populated with the set of assertions (see <a href="api_guidance_response.html#outputparameters-element-of-guidanceresponse">GuidanceResponse.<br>outputParameters</a>) which the CDSS requires in order to render the response fully.</td>
+<td>This element MUST be populated with the set of machine-processable assertions (see <a href="api_guidance_response.html#outputparameters-element-of-guidanceresponse">GuidanceResponse.<br>outputParameters</a>) which the CDSS requires in order to render the response fully.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">operationDefinition</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference |<br>(OperationDefinition)</td>
     <td>Operation to invoke</td>
-<td></td>
+<td>A reference to the operation that is used to invoke this service.</td>
  </tr>
-
 </table>
+
+
 
 <!--
 ## Creation of parameters ##
