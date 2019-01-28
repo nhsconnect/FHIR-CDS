@@ -161,7 +161,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Business version of the service definition</td>
-<td>This is used to identify a specific version of a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. The version can be appended to the url to allow a reference to a particular business version of the service definition with the format [url]|[version]. This is generally used by FHIR servers.</td>
+<td>This is used to identify a specific version of a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. This is generally used by FHIR servers.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">name</code></td>
@@ -245,28 +245,28 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Period</td>
     <td>When the service definition is expected to be used</td>
-<td>The effective period for a <code class="highlighter-rouge">ServiceDefinition</code> determines when the content is applicable for usage and is independent of publication and review dates.</td>
+<td>The effective period for a <code class="highlighter-rouge">ServiceDefinition</code> determines when the content is applicable for usage and is independent of publication and review dates. The contents of this element can assist an EMS in identifying the most appropriate service.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">useContext</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>UsageContext</td>
     <td>This carries the context the content is intended to support. Examples include patient gender, age group</td>
-<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will include patient gender, patient age group, user role/type.  These terms may be used to assist with indexing and searching for appropriate <code class="highlighter-rouge">ServiceDefinition</code> instances.</td>
+<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will include patient gender, patient age group, user role/type.  These terms may be used to assist with indexing and searching for appropriate <code class="highlighter-rouge">ServiceDefinition</code> instances and so can assist an EMS in identifying the most appropriate service.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">jurisdiction</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Intended jurisdiction for service definition (if applicable) - CodeableConcept datatype with binding to <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
-<td>Geographical jurisdiction</td>
+<td>Geographical jurisdiction only in a CDS context. The contents of this element can assist an EMS in identifying the most appropriate service.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">topic</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>E.g. Education, Treatment, Assessment, etc - CodeableConcept datatype with binding to <a href="https://www.hl7.org/fhir/stu3/valueset-definition-topic.html">DefinitionTopic valueset (Example)</a></td>
-<td>Topics provide a high-level categorization of the module that can be useful for filtering and searching.</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">contributor</code></td>
@@ -294,15 +294,14 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>RelatedArtifact</td>
     <td>Additional documentation, citations, etc</td>
-<td>Each related resource is either an attachment, or a reference to another resource, but not both.</td>
+<td>Any related resource is either an attachment, or a reference to another resource, but not both.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">trigger</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
-<td>This MAY be populated with the data requirements which must already be satisfied in order for this <code class="highlighter-rouge">ServiceDefinition</code> to be meaningfully evaluated.  
-This is relevant when the <code class="highlighter-rouge">ServiceDefinition</code> to be evaluated is chosen by the user in the User Interface.</td>
+<td>The contents of the trigger element are used to advertise when the module should be invoked. On encountering a specific trigger, a clinical application can invoke the modules associated with the trigger using the $evaluate operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
@@ -320,6 +319,11 @@ This is relevant when the <code class="highlighter-rouge">ServiceDefinition</cod
  </tr>
 </table>
 
+## ServiceDefinition elements of note ##  
+### Trigger element of ServiceDefinition ###
+The `trigger` element is of datatype <a href="https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition">TriggerDefinition</a> and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
+Within the CDS implementation, the Data Event trigger type has been chosen. This means that the evaluation of a `ServiceDefinition` will be triggered in response to a data-related activity within an implementation, for example by an addition or an update of a record.  
+The triggering data of the event is described in the `eventData` element of the `TriggerDefinition`. The element is of datatype <a href="https://www.hl7.org/fhir/stu3/metadatatypes.html#DataRequirement">DataRequirement</a> 
 
 
 <!--
@@ -354,8 +358,8 @@ The initial parameters will be the requestId and the patient.
 </table>
 -->
 
-<!--Will there be any other parameters at this stage?-->
-## Example Scenario ##
+<!--Will there be any other parameters at this stage?
+## Example Scenario ##-->
 <!--Placeholder -->
 
 
