@@ -301,7 +301,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
-<td>The contents of the trigger element are used to advertise when the module should be invoked. On encountering a specific trigger, a clinical application can invoke the modules associated with the trigger using the $evaluate operation.</td>
+<td>The contents of the <a href="api_get_service_definition.html#trigger-element-of-servicedefinition">trigger element</a> are used to advertise when the module should be invoked. On encountering a specific trigger, a clinical application can invoke the modules associated with the trigger using the $evaluate operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
