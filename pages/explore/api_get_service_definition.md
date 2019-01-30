@@ -181,7 +181,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
   <td><code class="highlighter-rouge">status</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
-    <td>draft | active | retired | unknown - Code datatype with binding to <a href="https://www.hl7.org/fhir/stu3/valueset-publication-status.html">PublicationStatus (Required)</a>.</td>
+    <td>draft | active | retired | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-publication-status.html">PublicationStatus (Required)</a>.</td>
 <td>Alongside the <code class="highlighter-rouge">experimental</code> element, this is used to identify the lifecycle of a <code class="highlighter-rouge">ServiceDefinition</code>. This MUST be populated with the value 'active' in live service.</td>
  </tr>
 <tr>
@@ -216,7 +216,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
   <td><code class="highlighter-rouge">purpose</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
-    <td>Messages resulting from the evaluation of the artifact or artifacts.</td>
+    <td>Why this service definition is defined</td>
 <td>This carries an explanation of why this <code class="highlighter-rouge">ServiceDefinition</code> is needed and why it has been designed as it has.</td>
  </tr>
 <tr>
@@ -231,7 +231,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>date</td>
     <td>When the service definition was approved by publisher</td>
-<td>Approval happens once when the content is officially approved for usage.</td>
+<td>The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">lastReviewDate</code></td>
@@ -251,21 +251,21 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
   <td><code class="highlighter-rouge">useContext</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>UsageContext</td>
-    <td>This carries the context the content is intended to support. Examples include patient gender, age group</td>
+    <td>Context the content is intended to support</td>
 <td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will include patient gender, patient age group, user role/type.  These terms may be used to assist with indexing and searching for appropriate <code class="highlighter-rouge">ServiceDefinition</code> instances and so can assist an EMS in identifying the most appropriate service.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">jurisdiction</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
-    <td>Intended jurisdiction for service definition (if applicable) - CodeableConcept datatype with binding to <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
+    <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
 <td>Geographical jurisdiction only in a CDS context. The contents of this element can assist an EMS in identifying the most appropriate service.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">topic</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
-    <td>E.g. Education, Treatment, Assessment, etc - CodeableConcept datatype with binding to <a href="https://www.hl7.org/fhir/stu3/valueset-definition-topic.html">DefinitionTopic valueset (Example)</a></td>
+    <td>E.g. Education, Treatment, Assessment, etc <a href="https://www.hl7.org/fhir/stu3/valueset-definition-topic.html">DefinitionTopic valueset (Example)</a></td>
 <td></td>
  </tr>
 <tr>
