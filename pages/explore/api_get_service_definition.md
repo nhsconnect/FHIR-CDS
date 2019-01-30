@@ -168,7 +168,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (computer friendly)</td>
-<td>The name is not expected to be globally unique. The name should be a simple alpha-numeric type name to ensure that it is computable friendly. This is generally used by FHIR servers.</td>
+<td>The name is not expected to be globally unique. The name should be a simple alpha-numeric type name. This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">title</code></td>
