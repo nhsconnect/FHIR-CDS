@@ -9,7 +9,7 @@ summary: Redirect to a new Service Definition
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Activity Definition" fhirlink="[Activity Definition](http://hl7.org/fhir/stu3/activitydefinition.html)" content="User Stories" userlink="" %}
 
 
 ## Redirect to a new ServiceDefinition ##
@@ -201,7 +201,7 @@ The table below gives implementation guidance in relation to the elements within
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>reference(Library)</td>
     <td>Logic used by the asset</td>
-<td>Implementers MUST populate the <code class="highlighter-rouge">Library.dataRequirement</code> to match the receiving <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element (which has a DataRequirement datatype).</td>
+<td>Implementers MUST populate the referenced <code class="highlighter-rouge">Library.dataRequirement</code> element to match the contents of the <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element for the <code class="highlighter-rouge">ServiceDefinition</code> selected for the re-direction.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">kind</code></td>
