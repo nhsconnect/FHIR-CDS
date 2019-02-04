@@ -201,7 +201,7 @@ The table below gives implementation guidance in relation to the elements within
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>reference(Library)</td>
     <td>Logic used by the asset</td>
-<td>Implementers MUST populate the referenced <code class="highlighter-rouge">Library.dataRequirement</code> element to match the contents of the <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element for the <code class="highlighter-rouge">ServiceDefinition</code> selected for the re-direction.</td>
+<td>Implementers MUST populate the referenced <code class="highlighter-rouge">Library.dataRequirement</code> element to match the contents of the <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element for the <code class="highlighter-rouge">ServiceDefinition</code> to which the EMS is to be re-directed.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">kind</code></td>
