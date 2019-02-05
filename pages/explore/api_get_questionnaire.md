@@ -64,9 +64,7 @@ The following errors can be triggered when performing this operation:
 
 ## Implementation Guidance ##
 
-### Questionnaire ###
-
-#### Usage ####
+### Usage ###
 The `Questionnaire` resource is used to send one or more questions from the CDSS to the EMS. The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process.  
 The responses to a `Questionnaire` sent by the CDSS are communicated back by the EMS using the `QuestionnaireResponse` resource.
 
