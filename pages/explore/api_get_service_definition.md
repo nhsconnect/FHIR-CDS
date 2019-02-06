@@ -323,7 +323,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
 ### Trigger element of ServiceDefinition ###
 The `trigger` element is of datatype <a href="https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition">TriggerDefinition</a> and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
 Within the CDS implementation, the Data Event trigger type has been chosen. This means that the evaluation of a `ServiceDefinition` will be triggered in response to a data-related activity within an implementation, for example by an addition or an update of a record.  
-The triggering data of the event is described in the `eventData` element of the `TriggerDefinition`. The element is of datatype <a href="https://www.hl7.org/fhir/stu3/metadatatypes.html#DataRequirement">DataRequirement</a> 
+The triggering data of the event is described in the `eventData` element of the `TriggerDefinition`. 
 
 
 <!--
