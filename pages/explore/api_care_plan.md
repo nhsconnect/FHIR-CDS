@@ -34,7 +34,7 @@ When the outcome of triage is to recommend care advice given by a third party (n
 A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource which will reference a `ReferralRequest`. This in turn will reference a `CarePlan`.  
 
 ### Self Care ###
-When the outcome of triage is to recommend self care, this will be carried as follows:
+When the outcome of triage is to recommend self care, this will be carried as follows:  
 A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource which will reference a relevant `CarePlan`.    
 Identifying the `CarePlan` which specifically represents self-care as opposed to general care advice can be done by checking the `careTeam.participant` element within the `CarePlan`.  
 If there is only a single instance of `participant` and the `participant.role` is 'Patient' (<a href="https://termbrowser.nhs.uk/?perspective=full&conceptId1=116154003&edition=uk-edition&release=v20181001&server=https://termbrowser.dataproducts.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104" target="_blank">Snomed CT code of 116154003</a>), then the recommendation is for self-care.  
