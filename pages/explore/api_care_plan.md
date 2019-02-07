@@ -39,6 +39,7 @@ The following HTTP request headers are supported in the event of the EMS request
 
 
 ## Implementation Guidance ##  
+<!--
 
 
 <table style="min-width:100%;width:100%">
@@ -143,7 +144,7 @@ The following HTTP request headers are supported in the event of the EMS request
 </tr>
 <tr>
   <td><code class="highlighter-rouge">requester</code>
-<table border="0">
+<br><table style="border: 0;">
         <tr>
           <td><code class="highlighter-rouge">agent</code></td>
  <td>1..1<br>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson |<br>Device)</td>
@@ -216,7 +217,7 @@ The following HTTP request headers are supported in the event of the EMS request
 <td>This SHOULD be populated by the CDSS.</td>
  </tr>
 </table>
-
+-->
 ### CarePlan Elements of Note ### 
 
 #### Activity.reference element of the CarePlan ####  
