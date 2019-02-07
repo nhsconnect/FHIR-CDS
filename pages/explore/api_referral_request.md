@@ -123,7 +123,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the encounter supplied in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
