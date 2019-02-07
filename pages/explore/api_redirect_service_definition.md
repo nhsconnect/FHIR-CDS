@@ -201,7 +201,7 @@ The table below gives implementation guidance in relation to the elements within
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>reference(Library)</td>
     <td>Logic used by the asset</td>
-<td>Implementers MUST populate the referenced <code class="highlighter-rouge">Library.dataRequirement</code> element to match the contents of the <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element for the <code class="highlighter-rouge">ServiceDefinition</code> to which the EMS is to be re-directed.</td>
+<td>A CDSS MUST populate the referenced <code class="highlighter-rouge">Library.dataRequirement</code> element to match the contents of the <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element for the <code class="highlighter-rouge">ServiceDefinition</code> to which the EMS is to be re-directed.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">kind</code></td>
@@ -309,6 +309,15 @@ The table below gives implementation guidance in relation to the elements within
 <td></td>
  </tr>
 </table>
+
+## ActivityDefinition elements of note ##
+Element(s) in `ActivityDefinition` of particular significance to implementers are noted below:  
+
+### Library element of ActivityDefinition ###
+This element references the [Library](http://hl7.org/fhir/stu3/library.html) resource and this resource will carry the formal logic utilised by the CDSS.  
+Thus at the stage in a triage journey when the CDSS is able to return a `GuidanceResponse` with a `status` of 'success' and recommending a referral to another service, it will populate the `ActivityDefinition.library` element with the contents of the `eventData` element of the selected `ServiceDefinition`.
+This logic will be used by the CDSS to choose an appropriate `ServiceDefinition` and it will be passed to the EMS to enable it to select that `ServiceDefinition` when re-directed in a triage journey.  
+In the event that the logic provided to an EMS yields more than one `ServiceDefinition`, a local process between implementers will determine which `ServiceDefinition` should be selected by the EMS.
 
 
 
