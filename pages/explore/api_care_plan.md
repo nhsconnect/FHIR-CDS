@@ -15,7 +15,18 @@ summary: Recommend care advice
 
 ## Care Advice Recommendation ##
 Within the Clinical Decision Support API implementation, the [CarePlan](http://hl7.org/fhir/stu3/careplan.html) resource will be used to carry the care advice recommendation given by the CDSS.  
-This resource may also carry a recommendation of self-care.    
+This resource may also carry a recommendation of self-care.  
+
+### Care advice to be actioned by a third party ###
+When the outcome of triage is to recommend care advice given by a third party (not self-care), this will be carried as follows:   
+A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource which will reference a `ReferralRequest`. This in turn will reference a `CarePlan`.  
+
+### Self Care ###
+When the outcome of triage is to recommend self care, this will be carried as follows:  
+A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource which will reference a relevant `CarePlan`.    
+Identifying the `CarePlan` which specifically represents self-care as opposed to general care advice can be done by checking the `careTeam.participant` element within the `CarePlan`.  
+If there is only a single instance of `participant` and the `participant.role` is 'Patient' (<a href="https://termbrowser.nhs.uk/?perspective=full&conceptId1=116154003&edition=uk-edition&release=v20181001&server=https://termbrowser.dataproducts.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104" target="_blank">Snomed CT code of 116154003</a>), then the recommendation is for self-care.  
+    
 
 ## Request Headers ##
 The following HTTP request headers are supported in the event of the EMS requesting the referenced `CarePlan` from the CDSS:  
@@ -29,31 +40,7 @@ The following HTTP request headers are supported in the event of the EMS request
 
 ## Implementation Guidance ##  
 
-### Care advice to be actioned by a third party ###
-When the outcome of triage is to recommend care advice given by a third party (not self-care), this will be carried as follows:   
-A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource which will reference a `ReferralRequest`. This in turn will reference a `CarePlan`.  
 
-### Self Care ###
-When the outcome of triage is to recommend self care, this will be carried as follows:  
-A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource which will reference a relevant `CarePlan`.    
-Identifying the `CarePlan` which specifically represents self-care as opposed to general care advice can be done by checking the `careTeam.participant` element within the `CarePlan`.  
-If there is only a single instance of `participant` and the `participant.role` is 'Patient' (<a href="https://termbrowser.nhs.uk/?perspective=full&conceptId1=116154003&edition=uk-edition&release=v20181001&server=https://termbrowser.dataproducts.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104" target="_blank">Snomed CT code of 116154003</a>), then the recommendation is for self-care.  
-
-### CarePlan Elements of Note ### 
-
-#### Status element of the CarePlan ####  
-The `status` element of the `CarePlan` should be populated as 'active' when the advice is given by the CDSS.  
-Once the advice has been given, the `CarePlan` resource should be updated by the EMS to show a value of 'completed'.  
-
-#### Activity.reference element of the CarePlan ####  
-This element carries details of the proposed activity represented in a specific referenced resource. For example, if care advice which is a component of a triage outcome involves advice about how to give CPR, this could be modelled as a `ProcedureRequest` which could be referenced from the element.
-
-#### Activity.detail.category element of the CarePlan ####  
-This element carries a high-level categorisation of the type of activity in a `CarePlan`, for example describing whether it relates to diet, drug, procedure, etc. An example could be care advice about administering epi-pens to a patient suffering an allergic reaction, which might be modelled as a drug category.  
-  
-**Note that the above two elements are mutually exclusive withiin a FHIR `CarePlan`, so it is not possible to populate both elements within one `CarePlan`.**
-
-<!--
 <table style="min-width:100%;width:100%">
 
 <tr>
@@ -67,92 +54,85 @@ This element carries a high-level categorisation of the type of activity in a `C
   <td><code class="highlighter-rouge">identifier</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Identifier</td>
-    <td>Business identifier</td>
+    <td>External Ids for this plan</td>
 <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">definition</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
-    <td>Reference<br>(ActivityDefinition |<br>PlanDefinition)</td>
-    <td>Instantiates protocol or definition</td>
-<td> <code class="highlighter-rouge">PlanDefinition</code></td>
+    <td>Reference<br>(PlanDefinition |<br>Questionnaire)</td>
+    <td>Protocol or definition</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">basedOn</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
-    <td>Reference<br>(ReferralRequest |<br>Careplan |<br>ProcedureRequest)</td>
-    <td>Request fulfilled by this request</td>
+    <td>Reference<br>(CarePlan)</td>
+    <td>Fulfills care plan</td>
 <td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">replaces</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
-    <td>Reference<br>(ReferralRequest)</td>
-    <td>Request(s) replaced by this request</td>
+    <td>Reference<br>(CarePlan)</td>
+    <td>CarePlan replaced by this CarePlan</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">groupIdentifier</code></td>
+  <td><code class="highlighter-rouge">partOf</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
-    <td>Identifier</td>
-    <td>Composite request this is part of</td>
+    <td>Reference<br>(CarePlan)</td>
+    <td>Part of referenced CarePlan</td>
 <td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
-    <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-request-status.html">RequestStatus</a></td>
-<td>If the CDSS is recommending an interim or initial triage recommendation, the <code class="highlighter-rouge">status</code> will be draft.<br> If the CDSS is recommending triage to another service, the <code class="highlighter-rouge">status</code> will be active.</td>
+    <td>draft | active | suspended | completed | entered-in-error | cancelled | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-status.html">CarePlanStatus (Required)</a></td>
+<td>This element should be populated with 'active' when the advice is given by the CDSS. Once the advice has been given, it should be updated by the EMS to show a value of 'completed'.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
-    <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-request-intent.html">RequestIntent</a></td>
+    <td>proposal | plan | order | option <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-intent.html">CarePlanIntent (Required)</a></td>
 <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">type</code></td>
+  <td><code class="highlighter-rouge">title</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>CodeableConcept</td>
-    <td>Referral/Transition of care request type</td>
+    <td>string</td>
+    <td>Human-friendly name for the CarePlan</td>
 <td></td>
  </tr>
-<tr>
-  <td><code class="highlighter-rouge">priority</code></td>
+ <tr>
+  <td><code class="highlighter-rouge">description</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>code</td>
-    <td>Urgency of referral/transfer of care request. This is a Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-request-priority.html">RequestPriority</a></td>
-<td>This SHOULD be populated by the CDSS.</td>
-</tr>
-<tr>
-  <td><code class="highlighter-rouge">serviceRequested</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
-    <td>CodeableConcept</td>
-    <td>Actions requested as part of the referral</td>
-<td>This SHOULD be populated by the CDSS.</td>
+    <td>string</td>
+    <td>Summary of nature of plan</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
-    <td>Reference<br>(Patient|<br>Group)</td>
-    <td>Patient referred to care or transfer</td>
+    <td>Reference<br>(Patient |<br>Group)</td>
+    <td>Who care plan is for</td>
 <td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Patient</code> resource.</td>
- </tr>
+</tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
-    <td>Originating encounter</td>
+    <td>Created in context of</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">occurrence[x]</code></td>
+  <td><code class="highlighter-rouge">period</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>dateTime<br>| Period</td>
-    <td>When the service(s) requested in the referral should occur</td>
-<td>This SHOULD be populated by the CDSS.</td>
+    <td>Period</td>
+    <td>Time period plan covers</td>
+<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">authoredOn</code></td>
@@ -227,6 +207,15 @@ This element carries a high-level categorisation of the type of activity in a `C
  </tr>
 </table>
 
--->
+### CarePlan Elements of Note ### 
+
+#### Activity.reference element of the CarePlan ####  
+This element carries details of the proposed activity represented in a specific referenced resource. For example, if care advice which is a component of a triage outcome involves advice about how to give CPR, this could be modelled as a `ProcedureRequest` which could be referenced from the element.
+
+#### Activity.detail.category element of the CarePlan ####  
+This element carries a high-level categorisation of the type of activity in a `CarePlan`, for example describing whether it relates to diet, drug, procedure, etc. An example could be care advice about administering epi-pens to a patient suffering an allergic reaction, which might be modelled as a drug category.  
+  
+**Note that the above two elements are mutually exclusive within a FHIR `CarePlan`, so it is not possible to populate both elements within one `CarePlan`.**
+
 
 
