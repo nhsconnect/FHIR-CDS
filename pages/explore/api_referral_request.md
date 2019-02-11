@@ -143,9 +143,22 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
 <tr>
   <td><code class="highlighter-rouge">requester</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td><code class="highlighter-rouge">agent</code><br>1..1<br>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson |<br>Device)<br>
-        <code class="highlighter-rouge">onBehalfOf</code><br>0..1<br>Reference(Organization)</td>
+    <td>BackboneElement</td>
     <td>Who/what is requesting service - onBehalfOf can only be specified if agent is practitioner or device</td>
+<td></td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">requester.agent</code></td>
+      <td><code class="highlighter-rouge">1..1</code></td>
+    <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson |<br>Device)</td>
+    <td>Individual making the request</td>
+<td></td>
+ </tr>
+<tr>
+  <td><code class="highlighter-rouge">requester.onBehalfOf</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Reference<br>(Organization)</td>
+    <td>Organization agent is acting for</td>
 <td></td>
  </tr>
 <tr>
