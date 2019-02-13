@@ -6,6 +6,13 @@ sidebar: overview_sidebar
 permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
+
+## 0.6.0-experimental ##
+*  Added implementation guidance for a `CarePlan`
+*  Added implementation guidance for a `Questionnaire`
+*  Added implementation guidance for an `ActivityDefinition`
+*  Added menu link for Result
+
 ## 0.5.0-experimental ##
 *  Added implementation guidance for a `ServiceDefinition`  
 
