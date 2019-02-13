@@ -1,7 +1,7 @@
 entries:
 - title: Clinical Decision Support API
   product: Clinical Decision Support API
-  version: 0.5.0-experimental
+  version: 0.6.0-experimental
   levels: one
   folders:
 
@@ -81,6 +81,9 @@ entries:
         - title: Get Questionnaire
           url: /api_get_questionnaire.html
           output: web
+      - title: Result
+        output: web
+        subfolderitems:
         - title: Triage Recommendation
           url: /api_referral_request.html
           output: web
@@ -95,7 +98,7 @@ entries:
         subfolderitems:
         - title: HTTP Response Codes
           url: /resources_api_codes.html
-          output: web     
+          output: web 
      #   - title: Reference
       #    url: /resources_reference.html
       #    output: web
