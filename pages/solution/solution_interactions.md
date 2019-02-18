@@ -4,7 +4,7 @@ keywords: engage, about
 tags: [overview]
 sidebar: overview_sidebar
 permalink: solution_interactions.html
-toc: true
+toc: false
 summary: Solution interactions
 ---
 
