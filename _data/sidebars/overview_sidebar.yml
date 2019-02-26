@@ -1,7 +1,7 @@
 entries:
 - title: Clinical Decision Support API
   product: Clinical Decision Support API
-  version: 0.6.0-experimental
+  version: 0.7.0-experimental
   levels: one
   folders:
 
@@ -69,37 +69,46 @@ entries:
       - title: API Interactions
         output: web
         subfolderitems:
-        - title: Get Service Definition
+        - title: Select ServiceDefinition
           url: /api_get_service_definition.html
           output: web
-        - title: Post Service Definition
+        - title: Evaluate ServiceDefinition
           url: /api_post_service_definition.html
           output: web
-        - title: Guidance Response
-          url: /api_guidance_response.html
-          output: web
-        - title: Get Questionnaire
+        - title: Questionnaire/Response
           url: /api_get_questionnaire.html
           output: web
-      - title: Result
+        - title: Result
+          url: /api_return_guidance_response.html
+          output: web  
+      - title: FHIR resources
         output: web
         subfolderitems:
-        - title: Triage Recommendation
-          url: /api_referral_request.html
+        - title: ActivityDefinition
+          url: /api_activity_definition.html
           output: web
-        - title: Care Advice Recommendation
+        - title: CarePlan
           url: /api_care_plan.html
           output: web
-        - title: Redirect Service Definition
-          url: /api_redirect_service_definition.html
+        - title: GuidanceResponse
+          url: /api_guidance_response.html
           output: web
+        - title: Questionnaire
+          url: /api_questionnaire.html
+          output: web
+        - title: ReferralRequest
+          url: /api_referral_request.html
+          output: web
+        - title: ServiceDefinition
+          url: /api_service_definition.html
+          output: web  
       - title: API Guidance | FHIR&reg;
         output: web
         subfolderitems:
         - title: HTTP Response Codes
           url: /resources_api_codes.html
           output: web 
-     #   - title: Reference
+     #  - title: Reference
       #    url: /resources_reference.html
       #    output: web
  # - title: Integrate With Spine
