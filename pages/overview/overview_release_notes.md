@@ -7,6 +7,15 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
+## 0.7.0-experimental ##
+*  Separated implementation guidance for resources from Interaction pages
+*  Created new menu link for FHIR resources to contain resource implementation guidance
+*  Amended menu titles for Interaction pages to reflect the main interactions
+*  Added updated interactions diagram
+*  Updated security page  
+*  Updated general API guidance page
+
+
 ## 0.6.0-experimental ##
 *  Added implementation guidance for a `CarePlan`
 *  Added implementation guidance for a `Questionnaire`
