@@ -4,7 +4,7 @@ keywords: careplan, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_care_plan.html
-summary: Recommend care advice
+summary: CarePlan resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -13,7 +13,8 @@ summary: Recommend care advice
 
 
 
-## Care Advice Recommendation ##
+## CarePlan: Implementation Guidance ##
+### Usage ###
 Within the Clinical Decision Support API implementation, the [CarePlan](http://hl7.org/fhir/stu3/careplan.html) resource will be used to carry the care advice recommendation given by the CDSS.  
 This resource may also carry a recommendation of self-care.  
 
@@ -27,20 +28,7 @@ A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a
 Identifying the `CarePlan` which specifically represents self-care as opposed to general care advice can be done by checking the `careTeam.participant` element within the `CarePlan`.  
 If there is only a single instance of `participant` and the `participant.role` is 'Patient' (<a href="https://termbrowser.nhs.uk/?perspective=full&conceptId1=116154003&edition=uk-edition&release=v20181001&server=https://termbrowser.dataproducts.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104" target="_blank">Snomed CT code of 116154003</a>), then the recommendation is for self-care.  
     
-
-## Request Headers ##
-The following HTTP request headers are supported in the event of the EMS requesting the referenced `CarePlan` from the CDSS:  
-
-
-| Header               | Value |Conformance |
-|----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header MUST carry a <a href="https://jwt.io/introduction/">base64url encoded JSON web token</a>. | MUST |  
-
-
-## Implementation Guidance ##  
-
-
+The table below gives implementation guidance in relation to the elements within a `CarePlan`:
 
 <table style="min-width:100%;width:100%">
 
