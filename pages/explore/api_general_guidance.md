@@ -78,7 +78,7 @@ For further background, refer to principles of [resource identity as described i
 
 The CDS API defines numerous categories of error, each of which encapsulates a specific part of the request that is sent to the CDSS. Each type of error will be discussed in its own section below with the relevant response code:
 - [Resource Not found](api_general_guidance.html#resource-not-found) - CDS supports this behaviour when a request references a resource that cannot be resolved.
-- [Headers](api_general_guidance.html#headers) - There are a number of HTTP headers that must be supplied with any request. In addition that values associated with those headers have their own validation rules. 
+- [Headers](api_general_guidance.html#headers) - The HTTP Authorization header must be supplied with any request and an error will be generated in the event of this header not being present. 
 - [Parameters](api_general_guidance.html#parameters) – Certain actions against the CDS allow a client to specify HTTP parameters. This class of error covers problems with the way that those parameters may have been presented
 
 <!--
@@ -138,12 +138,14 @@ Note that the header name is case-sensitive.
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |400|error|invalid| MISSING_OR_INVALID_HEADER|There is a required header missing or invalid|Authorization HTTP Header is missing|
 
-<!--
+
 ### Parameters ###
 
-This error will be raised in relation to request parameters that the client may have specified. As such this error can be raised in a variety of circumstances:
+This error will be raised in relation to request parameters that the client may have specified.
 
-The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.
+The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.  
+Relevant error scenarios in relation to request parameters are also listed.
+
 
 | HTTP Code | issue-severity | issue-type | Details.Code | Details.Display |
 |-----------|----------------|------------|--------------|-----------------|
@@ -151,7 +153,7 @@ The below table summarises the HTTP response codes, along with the values to exp
 
 
 
-
+<!--
 #### Subject parameter ####
 When using the MANDATORY `subject` parameter the client is referring to a Patient FHIR resource by reference. Two pieces of information are needed: 
 - the URL of the FHIR server that hosts the Patient resource.  If the URL of the server is not `https://demographics.spineservices.nhs.uk/STU3/Patient/` then this error will be thrown.
@@ -164,13 +166,13 @@ When using the OPTIONAL `custodian` parameter the client is referring to an Orga
  - The business identifier. The identifier must meet the following requirements:
    - It must be a valid ODS code. 
    - The ODS code must be an organisation that is known to the NRLS.
-   - The ODS code must be in the Provider role.-->
+   - The ODS code must be in the Provider role.
 
-<!--
+-->
 #### `_format` request parameter ####
 If used, this parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by a CDS server.
 
-
+<!--
 #### Invalid Reference URL in Pointer Create Request ####
 This error is raised during a provider create interaction. There are two exception scenarios:
 - The DocumentReference in the request body specifies an incorrect URL of the FHIR server that hosts the Patient resource. 
