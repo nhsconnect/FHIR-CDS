@@ -1,10 +1,10 @@
 ﻿---
-title: UEC Digital Integration Programme | Referral Request
+title: UEC Digital Integration Programme | Referral Request Implementation guidance
 keywords: referralrequest, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_referral_request.html
-summary: Recommend a referral
+summary: ReferralRequest resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -13,22 +13,13 @@ summary: Recommend a referral
 
 
 
-## Triage Recommendation ##
-Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage recommendation to another service for a patient.  
+## ReferralRequest: Implementation Guidance ##  
+### Usage ###
+Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage outcome of recommendation to another service for a patient.  
 A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
-The `ReferralRequest` may also reference a `CarePlan` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient and/or a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.
+The `ReferralRequest` may also reference a `CarePlan` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient and/or a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.  
 
-## Request Headers ##
-The following HTTP request headers are supported in the event of the EMS requesting the referenced `ReferralRequest` from the CDSS:  
-
-
-| Header               | Value |Conformance |
-|----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header MUST carry a <a href="https://jwt.io/introduction/">base64url encoded JSON web token</a>. | MUST |
-
-
-## Implementation Guidance ##  
+Detailed implementation guidance for a `ReferralRequest` resource in the CDS context is given below:  
 
 
 <table style="min-width:100%;width:100%">
