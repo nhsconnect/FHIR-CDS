@@ -15,7 +15,7 @@ summary: Solution interactions
 
 The key interactions for the Clinical Decision Support API are represented in the diagrams below.
 
-### Invoke ServiceDefinition.$evaluate and GuidanceResponse ###
+## Invoke ServiceDefinition.$evaluate and GuidanceResponse ##
 
 The triage journey starts with the user requesting decision support from the CDSS.
 
@@ -30,7 +30,7 @@ The `GuidanceResponse` carries or references all information relating to the CDS
 View the [Evaluate ServiceDefinition](/api_post_service_definition.html) and [GuidanceResponse](/api_guidance_response.html) sections for detailed guidance.
 
 
-### Questionnaire / QuestionnaireResponse interaction ###
+## Questionnaire / QuestionnaireResponse interaction ##
 
 The CDSS determines the next question to ask and populates a `Questionnaire` resource accordingly.
 A reference to this `Questionnaire` is included within the returned `GuidanceResponse`.
@@ -56,7 +56,7 @@ The `GuidanceResponse` returned to the EMS now contains references to both an `O
 View the [ServiceDefinition](/api_post_service_definition.html) and [GuidanceResponse](/api_guidance_response.html) sections for more information.
 
 
-### Arriving at a disposition ###
+## Arriving at a disposition ##
 The EMS invokes a `ServiceDefinition`.$evaluate operation referencing a `QuestionnaireResponse` and any previous `Observation` resources for the CDSS to evaluate.
 
 The CDSS creates another assertion from the `QuestionnaireResponse` and determines a disposition or result can be provided.
