@@ -32,13 +32,13 @@ The following HTTP request headers are supported for this interaction:
 
 ## POST ServiceDefinition ##
 
-The `$evaluate.ServiceDefinition` operation is performed by an HTTP POST command as shown:  
+The `ServiceDefinition.$evaluate` operation is performed by an HTTP POST command as shown:  
 
 <div markdown="span" class="alert alert-success" role="alert">
 POST [base]/ServiceDefinition/[id]/$evaluate</div>  
 
 ## Parameters ##
-The `$evaluate.ServiceDefinition` operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation.  
+The `ServiceDefinition.$evaluate` operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation.  
 The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the operation.  
 
 ### IN Parameters ###
