@@ -40,14 +40,15 @@ The different outcomes are described below:
 View [CDS implementation guidance for a ReferralRequest](api_referral_request.html)  
     
 *  Care advice for the patient (or third party) on actions that can be performed now to either assist the patient, or to assist the triage process. 
-    *  In the case of advice which is not self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest` in turn referencing one or more`CarePlans`.  
-    *  In the case of advice to the patient relating to self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a`CarePlan`.  
+    *  In the case of advice which is not self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`. The `RequestGroup` will also reference one or more `CarePlans`.  
+    *  In the case of advice to the patient relating to self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `CarePlan`.  
+Note that care advice can also be given at any point during a triage journey (even without a referral request). In this case, the `result` element MUST be populated with a `RequestGroup` which will reference a `CarePlan`.  
 	
 View [CDS implementation guidance for a CarePlan](api_care_plan.html)  
   
-*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference an `ActivityDefinition`.  
+*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` MUST be null and the <a href="api_guidance_response.html#datarequirement-element-of-the-guidanceresponse">GuidanceResponse.dataRequirement</a> element will be used to carry a redirection to a different `ServiceDefinition` where required by the CDSS.  
   
-View [CDS implementation guidance for an ActivityDefinition](api_activity_definition.html)    
+View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html)    
   
 The final result or outcome of a triage journey will be available only when the `GuidanceResponse.status` is set to 'success'.  
 
@@ -79,7 +80,7 @@ The status of the `GuidanceResponse` is a trigger for the Encounter Management S
 </table>
 
 #### Status of success ####
-This means that the result is ready.  
+This means that the result is ready and no further `Questionnaires` are posted in the `GuidanceResponse`.  
 The CDSS has all information possible for the `ServiceDefinition` to which the `GuidanceResponse` is responding and has provided a result.  
 The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
 If the CDSS is recommending a referral to another service, the `RequestGroup` will reference a `ReferralRequest` with a `status` of active. This referral may be accompanied by care advice (not self-care) and/or information about a procedure which the recommended service is expected to provide.  
@@ -130,7 +131,7 @@ The table below gives additional information relating to outcome scenarios when 
 </table>  
  
 #### Status of data-requested ####
-This means that the CDSS has sufficient information to render a result, but additional information will provide a better result.  
+This means that the CDSS has sufficient information to render a result, but additional information will provide a better result. There are additional `Questionnaire` resources in the `GuidanceResponse` which SHOULD be answered.  
 The `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource.  
 If the CDSS is recommending an interim or initial recommendation relating to a referral to another service, the `RequestGroup` will reference a `ReferralRequest` in draft status.  
 Care advice may additionally be given alongside this interim referral recommendation. If the CDSS is additionally recommending care advice (not self-care), the `ReferralRequest` will also reference a `CarePlan` in draft status.  
@@ -163,7 +164,7 @@ The table below gives additional information relating to outcome scenarios when 
 </table>
 
 #### Status of data-required ####
-This means that the CDSS has insufficient information to render an outcome.  
+This means that the CDSS has insufficient information to render an outcome.  There are additional `Questionnaire(s)` in the `GuidanceResponse` which MUST be answered.  
 The `result` element in `GuidanceResponse` MAY be populated with a `RequestGroup`, for example referencing one or more `CarePlans` or one `ReferralRequest`.  
 The CDSS can make a referral during the triage journey, and also wish to continue the triage process.  This is referred to as an inline referral, and is commonly done for Ambulance Despatch.  
 This can be represented by setting `GuidanceResponse.status` to 'data-required', but populating the `result` element with a `ReferralRequest` resource with a `status` of 'active'.  Care advice can be given with this inline referral (not self-care).
