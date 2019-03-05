@@ -25,8 +25,8 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 |Actor|Read|Search|Create|Update|Delete|
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
-|Consumer|![Cross](images/tick.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Cross](images/cross.png)|
-|Provider|![Cross](images/cross.png)|![Cross](images/cross.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Tick](images/cross.png)|
+|Consumer (EMS)|![Cross](images/tick.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Cross](images/cross.png)|
+|Provider (CDSS)|![Cross](images/cross.png)|![Cross](images/cross.png)|![Tick](images/tick.png)|![Tick](images/tick.png)|![Tick](images/cross.png)|
 
 ## 2. Pre-Requisites for the CDS API ##
 
