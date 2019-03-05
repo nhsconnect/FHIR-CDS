@@ -14,7 +14,7 @@ summary: Select a ServiceDefinition interaction
 
 
 ## Select ServiceDefinition Interaction ##
-This action is performed by the Encounter Management System (EMS) in order to get a `ServiceDefinition` from a selected Clinical Decision Support System (CDSS).  
+This action is performed by the Encounter Management System (EMS) in order to get a `ServiceDefinition` from one pre-selected Clinical Decision Support System (CDSS).  
 
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction: 
