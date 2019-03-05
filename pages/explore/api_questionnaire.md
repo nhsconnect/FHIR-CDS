@@ -132,14 +132,14 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>UsageContext</td>
     <td>Context the content is intended to support</td>
-<td></td>
+<td>The contents of this element MUST match the <code class="highlighter-rouge">useContext</code> of the current <code class="highlighter-rouge">ServiceDefinition</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">jurisdiction</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
-<td>Geographical jurisdiction only in a CDS context.</td>
+<td>Geographical jurisdiction only in a CDS context. The contents of this element MUST match the <code class="highlighter-rouge">jurisdiction</code> of the current <code class="highlighter-rouge">ServiceDefinition</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">contact</code></td>
@@ -160,7 +160,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Concept that represents the overall questionnaire <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-questions.html">Questionnaire Question Codes (Example)</a></td>
-<td>An identifier for this question or group of questions in a particular terminology such as SNOMED.</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subjectType</code></td>
