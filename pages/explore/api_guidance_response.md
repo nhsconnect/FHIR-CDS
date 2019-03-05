@@ -79,14 +79,14 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Device)</td>
     <td>Device returning the guidance.</td>
-<td></td>
+<td>This SHOULD be null.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reason[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept<br>Reference</td>
     <td>Reason for the response.</td>
-<td>This MAY be populated by the CDSS, but not if the status element is populated with the value of 'dataRequired'.</td>
+<td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
@@ -107,25 +107,45 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Parameters)</td>
     <td>The output parameters of the evaluation, if any.</td>
-<td>This MUST be populated with current assertions received by the CDSS based on a <code class="highlighter-rouge">QuestionnaireResponse</code> sent from the EMS.
-Where an outputParameter can be interpreted by a system, it should be published as an <code class="highlighter-rouge">Observation</code>. If the information can only be interpreted by a human, it should be published as a <code class="highlighter-rouge">QuestionnaireResponse</code>.</td>
+<td>This element carries the state of the patient triage. The state is managed through <code class="highlighter-rouge">QuestionnaireResponse</code> elements (as provided by the user), assertions based on these responses which can be interpreted by other systems, and any other resources provided by the EMS, typically from external system (e.g. known patient conditions). This MUST be populated with the current state. 
+Where an outputParameter can be interpreted by a system, it should be published as an <code class="highlighter-rouge">Observation</code>. If the information can only be interpreted by a human, it can be published as a <code class="highlighter-rouge">QuestionnaireResponse</code> only.
+
+
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">result</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(CarePlan |<br>RequestGroup)</td>
     <td>Proposed actions, if any.</td>
-<td>The <a href="api_guidance_response.html#result-of-the-guidanceresponse">result element</a>  MUST be populated with a RequestGroup resource, if the CDSS needs the EMS to take further actions.</td>
+<td>The <a href="api_guidance_response.html#result-element-of-the-guidanceresponse">result element</a> MUST be populated with a <code class="highlighter-rouge">RequestGroup</code> resource, if the CDSS has either a recommendation for a suitable next service, or some care advice. It will be null, if the CDSS recommends transfer to a different <code class="highlighter-rouge">ServiceDefinition</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>Additional required data.</td>
-<td>The data carried in this element is how the CDSS tells the EMS what question to ask next. This MAY be populated with one or more <code class="highlighter-rouge">Questionnaires</code>. If populated, the status MUST be either 'data-requested' or 'data-required'.</td>
+<td>The data carried in this element fulfils two purposes:-<br>
+How the CDSS tells the EMS what question to ask next for the current <code class="highlighter-rouge">ServiceDefinition</code>: in this scenario, this will be populated with one or more <code class="highlighter-rouge">Questionnaires</code> and the <code class="highlighter-rouge">status</code> MUST be either 'data-requested' or 'data-required'.<br>
+How the CDSS re-directs to another <code class="highlighter-rouge">ServiceDefinition</code>: the CDSS will populate the element to match the contents of the <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element for the <code class="highlighter-rouge">ServiceDefinition</code> to which the EMS is to be re-directed. In this case, the <code class="highlighter-rouge">status</code> MUST be 'success'.</td>
  </tr>
 
 </table>
+
+## GuidanceResponse Elements of note ##
+
+### Result element of the GuidanceResponse ###
+Further guidance about the population of this element can be viewed on the <a href="api_return_guidance_response.html">Result interaction</a> pages.  
+
+### DataRequirement element of the GuidanceResponse ###  
+The scenarios in which this element may be used are outlined below:-  
+#### Evaluation against the currently selected ServiceDefinition ####  
+If information is lacking for the evaluation to be completed or additional information could result in a more accurate response, this element will carry a description of the data required in order to proceed with the evaluation. A subsequent request to the service should include this data.  
+The `status` element of the `GuidanceResponse` would carry either of the values 'data-requested' (when the request was processed successfully, but more data may result in a more complete evaluation) or 'data-required' (when the request was processed, but more data is required to complete the evaluation).  
+#### Re-direction to a new ServiceDefinition ####
+In this scenario, the element will carry a description of the data required by the EMS to select the new `ServiceDefinition` to which it is being re-directed by the CDSS.  
+The `status` element of the `GuidanceResponse` would carry either of the value 'success' to indicate that the request was processed successfully.
+
 
 
 
