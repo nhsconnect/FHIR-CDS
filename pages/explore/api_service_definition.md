@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | ServiceDefinition implementatiom guidance
+title: UEC Digital Integration Programme | ServiceDefinition implementation guidance
 keywords: servicedefinition, rest, implementation guidance
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
