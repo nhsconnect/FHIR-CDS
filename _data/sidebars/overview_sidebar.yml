@@ -1,7 +1,7 @@
 entries:
 - title: Clinical Decision Support API
   product: Clinical Decision Support API
-  version: 0.7.0-experimental
+  version: 0.8.0-experimental
   levels: one
   folders:
 
@@ -62,6 +62,9 @@ entries:
     - title: General API Guidance
       url: /api_general_guidance.html
       output: web
+    - title: HTTP Response Codes
+      url: /resources_api_codes.html
+      output: web
     - title: Security
       url: /api_security.html
       output: web
@@ -102,12 +105,12 @@ entries:
         - title: ServiceDefinition
           url: /api_service_definition.html
           output: web  
-      - title: API Guidance | FHIR&reg;
-        output: web
-        subfolderitems:
-        - title: HTTP Response Codes
-          url: /resources_api_codes.html
-          output: web 
+     # - title: API Guidance | FHIR&reg;
+      #  output: web
+      #  subfolderitems:
+       # - title: HTTP Response Codes
+       #   url: /resources_api_codes.html
+      #    output: web 
      #  - title: Reference
       #    url: /resources_reference.html
       #    output: web
