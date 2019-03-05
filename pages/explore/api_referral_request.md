@@ -17,8 +17,8 @@ summary: ReferralRequest resource implementation guidance
 ### Usage ###
 Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage outcome of recommendation to another service for a patient.  
 A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
-The `ReferralRequest` may also reference a `CarePlan` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient and/or a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.  
-
+The `ReferralRequest` may reference a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.  
+`RequestGroup.action.resource` may also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
 Detailed implementation guidance for a `ReferralRequest` resource in the CDS context is given below:  
 
 
@@ -100,7 +100,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Actions requested as part of the referral</td>
-<td>This SHOULD be populated by the CDSS with the type of service which can normally satisfy the patient's health need.</td>
+<td>This SHOULD NOT be populated by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
@@ -136,7 +136,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>BackboneElement</td>
     <td>Who/what is requesting service - onBehalfOf can only be specified if agent is practitioner or device</td>
-<td></td>
+<td>This element SHOULD NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">requester.agent</code></td>
@@ -164,7 +164,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>HealthcareService)</td>
     <td>Receiver of referral/transfer of care request</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This SHOULD be populated with the <code class="highlighter-rouge">HealthcareService</code> resource by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonCode</code></td>
@@ -212,7 +212,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
 
 ## Procedure Request ##  
 The `ProcedureRequest` is referenced from `ReferralRequest.basedOn`.  
- This will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which should be carried out in the referee service to validate or eliminate the chief concern.  
+This will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which should be carried out in the referee service to validate or eliminate the chief concern.  
 
 ### ProcedureRequest elements of note ###  
 
@@ -221,6 +221,9 @@ This shows the status of the `ProcedureRequest` and should carry the value 'acti
 
 #### Intent element of the ProcedureRequest ####  
 The population of this element shows whether the request is a proposal, plan, an original order or a reflex order. It should carry the value 'proposal'.  
+
+#### Code element of the ProcedureRequest #### 
+This element carries a SNOMED code denoting the type of procedure being requested.
 
 #### Subject element of the ProcedureRequest #### 
 This element should always reference a `Patient` resource within a CDS implementation.
