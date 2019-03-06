@@ -20,7 +20,7 @@ The keywords ‘**MUST**’, ‘**MUST NOT**’, ‘**REQUIRED**’, ‘**SHALL*
 ## RESTful API ##
 
 
-The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `READ`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `GET /fhir/Patient/1`.
+The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `GET /fhir/Patient/1`.
 
 The FHIR RESTful API style guide defines the following URL conventions which are used in this specification:
 
@@ -40,7 +40,6 @@ Clients and servers constructing URLs SHALL conform to [RFC 3986 Section 6 Appen
 
 The following HTTP interactions SHALL be supported to allow RESTful API interactions with the various FHIR resources:
 
-- **GET**
 - **POST**
 - **READ**
 
@@ -91,8 +90,8 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 #### Unknown resource ####
 A situation is outlined below when a CDS server would support this behaviour:
 
-* When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a ServiceDefinition or a Questionnaire, but the id is not known by the receiving CDSS. Relevant scenarios would be as follows:-
-    * EMS retrieval of a ServiceDefinition or a Questionnaire by logical id from a CDSS.   
+* When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a `ServiceDefinition` or a `Questionnaire`, but the id is not known by the receiving CDSS. Relevant scenarios would be as follows:-
+    * EMS retrieval of a `ServiceDefinition` or a `Questionnaire` by logical id from a CDSS.   
 
 The table below summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
@@ -143,8 +142,8 @@ Note that the header name is case-sensitive.
 
 This error will be raised in relation to request parameters that the client may have specified.
 
-The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.  
-Relevant error scenarios in relation to request parameters are also listed.
+The below table summarises the HTTP response code, along with the value to expect in the `OperationOutcome` in the response body for this exception scenario.  
+Relevant error scenario(s) in relation to request parameter(s) are also listed.
 
 
 | HTTP Code | issue-severity | issue-type | Details.Code | Details.Display |
@@ -159,14 +158,6 @@ When using the MANDATORY `subject` parameter the client is referring to a Patien
 - the URL of the FHIR server that hosts the Patient resource.  If the URL of the server is not `https://demographics.spineservices.nhs.uk/STU3/Patient/` then this error will be thrown.
 
 - an identifier for the Patient resource being referenced. The identifier must be known to the server. In addition where NHS Digital own the business identifier scheme for a given type of FHIR resource then the logical and business identifiers will be the same. In this case the NHS number of a Patient resource is both a logical and business identifier meaning that it can be specified without the need to supply the identifier scheme. If the NHS number is missing from the patient parameter then this error will be thrown.
-
-#### Custodian parameter ####
-When using the OPTIONAL `custodian` parameter the client is referring to an Organisation by a business identifier, specifically its ODS code. Two pieces of information are needed:
- - The business identifier scheme. In this case it must be `https://fhir.nhs.uk/Id/ods-organization-code`
- - The business identifier. The identifier must meet the following requirements:
-   - It must be a valid ODS code. 
-   - The ODS code must be an organisation that is known to the NRLS.
-   - The ODS code must be in the Provider role.
 
 -->
 #### `_format` request parameter ####
