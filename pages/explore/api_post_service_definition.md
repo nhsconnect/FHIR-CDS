@@ -273,7 +273,12 @@ The relationship between these elements and the concepts they carry are outlined
 * SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the operation.
 * SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource.  
 
-<a href="api_return_guidance_response.html">View further information about the result of the triage journey</a>.
+<a href="api_return_guidance_response.html">View further information about the result of the triage journey</a>.  
+
+## Time out ##  
+It is recommended that the EMS sets a time out limit on the response back from the CDSS, appropriate to an interactive process (e.g. around 1000 milliseconds).  
+If the CDSS does not respond within the time out period, then it is recommended that the EMS retry the `$evaluate` operation. This is to allow for intermittent network errors.  
+After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is unavailable and should respond appropriately to the user.
 
 <!--
 #### GuidanceResponse Statuses ####
@@ -313,9 +318,9 @@ More errors are likely to be needed once we are clear on which search parameters
 * [Invalid parameter](api_general_guidance.html#parameters)
 * [No record found](api_general_guidance.html#resource-not-found---servicedefinition)
 -->
-
+<!--
 ## Example Scenario ##
-<!--Placeholder -->
+ Placeholder -->
 
 
 
