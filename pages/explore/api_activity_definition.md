@@ -14,7 +14,7 @@ summary: ActivityDefinition resource implementation guidance
 
 ## ActivityDefinition: Implementation Guidance ##
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [ActivityDefinition](http://hl7.org/fhir/stu3/activitydefinition.html) resource will be used to carry a redirection to a different `ServiceDefinition` as the current cycle of Clinical Decision Support has completed.
+Within the Clinical Decision Support API implementation, the [ActivityDefinition](http://hl7.org/fhir/stu3/activitydefinition.html) resource will be used to carry a redirection to a different `ServiceDefinition` where required by the CDSS.
 To achieve this, the `GuidanceResponse` will reference a `RequestGroup` which will reference an `ActivityDefinition` in its `action.resource` element in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ActivityDefinition`.
 
 The table below gives implementation guidance in relation to the elements within an `ActivityDefinition`:
