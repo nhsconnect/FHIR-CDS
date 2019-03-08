@@ -126,8 +126,10 @@ Where an outputParameter can be interpreted by a system, it should be published 
     <td>DataRequirement</td>
     <td>Additional required data.</td>
 <td>The data carried in this element fulfils two purposes:-<br>
-How the CDSS tells the EMS what question to ask next for the current <code class="highlighter-rouge">ServiceDefinition</code>: in this scenario, this will be populated with one or more <code class="highlighter-rouge">Questionnaires</code> and the <code class="highlighter-rouge">status</code> MUST be either 'data-requested' or 'data-required'.<br>
-How the CDSS re-directs to another <code class="highlighter-rouge">ServiceDefinition</code>: the CDSS will populate the element to match the contents of the <code class="highlighter-rouge">ServiceDefinition.trigger.eventData</code> element for the <code class="highlighter-rouge">ServiceDefinition</code> to which the EMS is to be re-directed. In this case, the <code class="highlighter-rouge">status</code> MUST be 'success'.</td>
+If the evaluation could not be completed due to lack of information, or additional information would potentially result in a more accurate response for the current <code class="highlighter-rouge">ServiceDefinition</code>, the type of the data required will be 'Questionnaire'.  
+The <code class="highlighter-rouge">status</code> of the <code class="highlighter-rouge">GuidanceResponse</code> MUST be either 'data-requested' or 'data-required'.<br>
+If the evaluation against the current <code class="highlighter-rouge">ServiceDefinition</code> has completed and the <a href="#re-direction-to-a-new-servicedefinition">CDSS re-directs the EMS</a> to another <code class="highlighter-rouge">ServiceDefinition</code>, the type of the data required will be 'TriggerDefinition'.  
+In this case, the <code class="highlighter-rouge">status</code> MUST be 'success'.</td>
  </tr>
 
 </table>
@@ -139,12 +141,14 @@ Further guidance about the population of this element can be viewed on the <a hr
 
 ### DataRequirement element of the GuidanceResponse ###  
 The scenarios in which this element may be used are outlined below:-  
+ 
 #### Evaluation against the currently selected ServiceDefinition ####  
 If information is lacking for the evaluation to be completed or additional information could result in a more accurate response, this element will carry a description of the data required in order to proceed with the evaluation. A subsequent request to the service should include this data.  
-The `status` element of the `GuidanceResponse` would carry either of the values 'data-requested' (when the request was processed successfully, but more data may result in a more complete evaluation) or 'data-required' (when the request was processed, but more data is required to complete the evaluation).  
+
 #### Re-direction to a new ServiceDefinition ####
 In this scenario, the element will carry a description of the data required by the EMS to select the new `ServiceDefinition` to which it is being re-directed by the CDSS.  
-The `status` element of the `GuidanceResponse` would carry either of the value 'success' to indicate that the request was processed successfully.
+The `dataRequirement.type` element will be 'TriggerDefinition' and the CDSS will populate this to match the contents of the `ServiceDefinition.trigger.eventData` for the `ServiceDefinition` to which the EMS is to be re-directed.
+
 
 
 
