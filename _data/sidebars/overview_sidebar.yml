@@ -87,9 +87,9 @@ entries:
       - title: FHIR resources
         output: web
         subfolderitems:
-        - title: ActivityDefinition
-          url: /api_activity_definition.html
-          output: web
+    #    - title: ActivityDefinition
+    #      url: /api_activity_definition.html
+   #       output: web
         - title: CarePlan
           url: /api_care_plan.html
           output: web
