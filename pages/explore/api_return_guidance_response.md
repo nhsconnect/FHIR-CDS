@@ -32,9 +32,13 @@ The following HTTP request headers are supported for this interaction:
 Key aspects of this interaction which are of particular significance to implementers are noted below:  
 
 ### Outcome of the Triage Journey ###
-This is carried in the `result` element of the `GuidanceResponse`. There are three main outcomes for a triage journey and these are outlined below:-  
+This is carried in the `result` element of the `GuidanceResponse`. The outcome of the triage journey is displayed to the user by the EMS.  
+
+There are three main outcomes for a triage journey and these are outlined below:-  
 
 *  A recommendation as to where the patient should go next; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`.  
+
+The details of the referral carried in the `ReferralRequest` may be displayed to the user by the EMS.
   
 View [CDS implementation guidance for a ReferralRequest](api_referral_request.html)  
     
@@ -42,6 +46,8 @@ View [CDS implementation guidance for a ReferralRequest](api_referral_request.ht
     *  In the case of advice which is not self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`. The `RequestGroup` will also reference one or more `CarePlans`.  
     *  In the case of advice to the patient relating to self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `CarePlan`.  
 Note that care advice can also be given at any point during a triage journey (even without a referral request). In this case, the `result` element MUST be populated with a `RequestGroup` which will reference a `CarePlan`.  
+
+Any care advice carried in a `CarePlan` may be displayed to the user by the EMS.
 	
 View [CDS implementation guidance for a CarePlan](api_care_plan.html)  
   
