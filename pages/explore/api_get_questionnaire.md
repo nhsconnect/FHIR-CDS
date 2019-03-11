@@ -106,6 +106,9 @@ The CDSS can request this resource from the EMS using the HTTP GET verb and `_id
 GET [baseURL]/[QuestionnaireResponse]/[id]</div>
 The read response for this interaction has the same features as that outlined above for the <a href="#read-response">read response of a Questionnaire</a> requested by the EMS from the CDSS.  
 
+## QuestionnaireResponse: Implementation Guidance ##
+View [CDS implementation guidance for a QuestionnaireResponse](api_questionnaire_response.html).
+
 ## Observation ##
 On receipt of the `QuestionnaireResponse`, the CDSS will use its contents to populate an `Observation` resource, a reference to which is added to the `GuidanceResponse.outputParameters` returned to the EMS.
 
