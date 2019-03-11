@@ -13,6 +13,8 @@ summary: Questionnaire/Response interaction
 
 
 ## Questionnaire/Response Interaction ## 
+As a response to a `ServiceDefinition.$evaluate` operation to request clinical support guidance, a selected CDSS returns a `GuidanceResponse` resource to the EMS.  
+If further evaluation is required in the current triage journey, the `GuidanceResponse` resource may contain a relevant question, carried by a referenced `Questionnaire` resource in its `outputParameters` element, based on information received from the EMS.  
 
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction:  
@@ -60,8 +62,6 @@ The following errors can be triggered when performing this operation:
 
 ## Get Questionnaire ##
 This action is performed by the EMS in order to get a Questionnaire from a selected CDSS.  
-As a response to a `ServiceDefinition.$evaluate` operation to request clinical support guidance, a selected CDSS returns a GuidanceResponse resource to the EMS.  
-Depending on the stage reached in the triage process, the `GuidanceResponse` resource may contain a relevant question, carried by a referenced `Questionnaire` resource, based on parameters received from the EMS.  
 The EMS will get the `Questionnaire` returned by the CDSS, using as a parameter its returned [logical id](http://hl7.org/fhir/STU3/resource.html#id).  
 The interaction is performed by an FHIR RESTful [read](https://www.hl7.org/fhir/stu3/http.html#read) interaction.  
 <div markdown="span" class="alert alert-success" role="alert">
@@ -92,11 +92,22 @@ Add explanatory diagram here?
 The following errors can be triggered when performing this operation:  
 
 
-* [Invalid parameter](api_general_guidance.html#parameters)
-* [Resource not found - unknown resource](api_general_guidance.html#unknown-resource)
+* [Invalid parameter](api_general_guidance.html#parameters) (if using the ‘_format’ parameter without a [mime type](api_general_guidance.html#content-types) recognised by a CDS server).  
+* [Resource not found](api_general_guidance.html#resource-not-found)
 
 ## Questionnaire: Implementation Guidance ##
 View [CDS implementation guidance for a Questionnaire](api_questionnaire.html).
+
+## QuestionnaireResponse ##
+On presenting the questions contained in the returned `Questionnaire` to the user, the EMS will create and populate an answering `QuestionnaireResponse` based upon the user's response(s).  
+The latter resource will be referenced in the `inputData` parameter of the next `ServiceDefinition.$evaluate` sent to the CDSS.  
+The CDSS can request this resource from the EMS using the HTTP GET verb and `_id` parameter as outlined above for the <a href="#get-questionnaire">request of a Questionnaire</a>. 
+<div markdown="span" class="alert alert-success" role="alert">
+GET [baseURL]/[QuestionnaireResponse]/[id]</div>
+The read response for this interaction has the same features as that outlined above for the <a href="#read-response">read response of a Questionnaire</a> requested by the EMS from the CDSS.  
+
+## Observation ##
+On receipt of the `QuestionnaireResponse`, the CDSS will use its contents to populate an `Observation` resource, a reference to which is added to the `GuidanceResponse.outputParameters` returned to the EMS.
 
 <!-- ## Example Scenario ##
 Placeholder -->
