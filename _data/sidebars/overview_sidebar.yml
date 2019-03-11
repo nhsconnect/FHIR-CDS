@@ -99,6 +99,9 @@ entries:
         - title: Questionnaire
           url: /api_questionnaire.html
           output: web
+        - title: QuestionnaireResponse
+          url: /api_questionnaire_response.html
+          output: web
         - title: ReferralRequest
           url: /api_referral_request.html
           output: web
