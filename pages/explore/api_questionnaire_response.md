@@ -84,7 +84,7 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>Date the answers were gathered</td>
-<td>This SHOULD be populated with the date and/or time that this set of answers was last changed.</td>
+<td>This SHOULD be populated with the date and/or time that this set of answers was entered or last changed.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">author</code></td>
