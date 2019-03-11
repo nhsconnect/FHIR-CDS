@@ -87,22 +87,21 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 -->
 
 ### Resource not found ###
-#### Unknown resource ####
-A situation is outlined below when a CDS server would support this behaviour:
+Example scenarios are outlined below when a CDS server would support this behaviour:
 
-* When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a `ServiceDefinition` or a `Questionnaire`, but the id is not known by the receiving CDSS. Relevant scenarios would be as follows:-
+* When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a `ServiceDefinition` or a `Questionnaire`, but the id is not known by the receiving CDSS as follows:-
     * EMS retrieval of a `ServiceDefinition` or a `Questionnaire` by logical id from a CDSS.   
 
-The table below summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
+The tables below summarise the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
 | HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
-|404|error|not-found |NO_SERVICEDEFINITION_FOUND|No service definition found|No service definition found for supplied ServiceDefinition identifier - [id]|
+|404|error|not-found |NO_RECORD_FOUND|No record found|No service definition found for supplied ServiceDefinition identifier - [id]|
 
 
 | HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
-|404|error|not-found |NO_QUESTIONNAIRE_FOUND|No questionnaire found|No questionnaire found for supplied Questionnaire identifier - [id]|
+|404|error|not-found |NO_RECORD_FOUND|No record found|No questionnaire found for supplied Questionnaire identifier - [id]|
 
 
 ### Headers ###
@@ -130,8 +129,8 @@ Note that the header name is case-sensitive.
 -->
 
 
-- The `Authorization` HTTP Header is missing in the request
-  - The table details the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this scenario.
+A scenario when this error would be thrown would be when the mandatory `Authorization` HTTP Header is missing in the request.  
+The table below details the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this scenario.
 
 | HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
