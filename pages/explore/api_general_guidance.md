@@ -58,27 +58,27 @@ For further background, refer to principles of [resource identity as described i
 
 ### Content types ###
 
-- The CDS Server SHALL support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
+- The CDSS and EMS Servers SHALL support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
   - XML: `application/fhir+xml`
   - JSON: `application/fhir+json`
   
-- The CDS Server SHALL also gracefully handle generic XML and JSON MIME types:
+- The CDSS and EMS Servers SHALL also gracefully handle generic XML and JSON MIME types:
   - XML: `application/xml`
   - JSON: `application/json`
   - JSON: `text/json`
   
-- The CDS Server SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
+- The CDSS and EMS Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
 <!--- The CTP Server SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client system.-->
 
-- If neither the `Accept` header nor the `_format` parameter are supplied by the client system the CDS Server SHALL return data in the default format of `application/fhir+json`.
+- If neither the `Accept` header nor the `_format` parameter are supplied by the client system, the CDSS and EMS Servers SHALL return data in the default format of `application/fhir+json`.
 
 ## Error handling ##
 
 The CDS API defines numerous categories of error, each of which encapsulates a specific part of the request that is sent to the CDSS. Each type of error will be discussed in its own section below with the relevant response code:
-- [Resource Not found](api_general_guidance.html#resource-not-found) - CDS supports this behaviour when a request references a resource that cannot be resolved.
+- [Resource Not found](api_general_guidance.html#resource-not-found) - this behaviour is supported when a request references a resource that cannot be resolved.
 - [Headers](api_general_guidance.html#headers) - The HTTP Authorization header must be supplied with any request and an error will be generated in the event of this header not being present. 
-- [Parameters](api_general_guidance.html#parameters) – Certain actions against the CDS allow a client to specify HTTP parameters. This class of error covers problems with the way that those parameters may have been presented
+- [Parameters](api_general_guidance.html#parameters) – Certain actions allow a server to specify HTTP parameters. This class of error covers problems with the way that those parameters may have been presented.
 
 <!--
  [Payload business rules](development_general_api_guidance.html#payload-business-rules) - Errors of this nature will arise when the request payload (ServiceDefinition) does not conform to the business rules associated with its use. 
@@ -87,7 +87,7 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 -->
 
 ### Resource not found ###
-Example scenarios are outlined below when a CDS server would support this behaviour:
+Example scenarios are outlined below which show when a CDSS Server would support this behaviour:
 
 * When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a `ServiceDefinition` or a `Questionnaire`, but the id is not known by the receiving CDSS as follows:-
     * EMS retrieval of a `ServiceDefinition` or a `Questionnaire` by logical id from a CDSS.   
@@ -139,7 +139,7 @@ The table below details the HTTP response code, along with the values to expect 
 
 ### Parameters ###
 
-This error will be raised in relation to request parameters that the client may have specified.
+This error will be raised in relation to request parameters that a CDSS or EMS Server may have specified.
 
 The below table summarises the HTTP response code, along with the value to expect in the `OperationOutcome` in the response body for this exception scenario.  
 Relevant error scenario(s) in relation to request parameter(s) are also listed.
@@ -160,7 +160,7 @@ When using the MANDATORY `subject` parameter the client is referring to a Patien
 
 -->
 #### `_format` request parameter ####
-If used, this parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by a CDS server.
+If used, this parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by CDSS and EMS Servers.
 
 <!--
 #### Invalid Reference URL in Pointer Create Request ####
