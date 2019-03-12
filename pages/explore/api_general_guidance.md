@@ -38,10 +38,10 @@ Clients and servers constructing URLs SHALL conform to [RFC 3986 Section 6 Appen
 
 ### HTTP verbs ###
 
-The following HTTP interactions SHALL be supported to allow RESTful API interactions with the various FHIR resources:
+The following HTTP verbs SHALL be supported to allow RESTful API interactions with the various FHIR resources:
 
+- **GET**
 - **POST**
-- **READ**
 
 {% include tip.html content="Please see later sections for which HTTP verbs are expected to be available for specific FHIR resources." %}
 
@@ -87,12 +87,11 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 -->
 
 ### Resource not found ###
-Example scenarios are outlined below which show when a CDSS Server would support this behaviour:
+Example scenarios are outlined below illustrating support for this behaviour during interactions between a CDSS and EMS Server:
 
-* When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS request references the unique id of a `ServiceDefinition` or a `Questionnaire`, but the id is not known by the receiving CDSS as follows:-
-    * EMS retrieval of a `ServiceDefinition` or a `Questionnaire` by logical id from a CDSS.   
+* When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS GET request uses as a parameter the unique logical id of a `ServiceDefinition` or a `Questionnaire`, but the id is not known by the receiving CDSS.
 
-The tables below summarise the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
+The tables below summarise the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
 | HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
