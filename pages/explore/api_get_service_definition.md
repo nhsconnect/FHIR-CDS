@@ -125,7 +125,7 @@ The following errors can be triggered when performing this operation:
 
 <!--More errors are likely to be needed once we are clear on which search parameters are defined-->
  
-* [Invalid parameter](api_general_guidance.html#parameters) (if using the ‘_format’ parameter without a [mime type](api_general_guidance.html#content-types) recognised by a CDS server). 
+* [Invalid parameter](api_general_guidance.html#parameters) (if using the ‘_format’ parameter without a [mime type](api_general_guidance.html#content-types) recognised by a CDSS or EMS server). 
 * [Resource not found](api_general_guidance.html#resource-not-found)
 
 
