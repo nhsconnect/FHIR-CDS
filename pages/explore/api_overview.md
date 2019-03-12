@@ -17,7 +17,7 @@ summary: "Overview of the Development section"
 
 <!--This section provides CDS implementers with an overview of the Clinical Decision Support API.-->
 
-The API supports the following interactions:
+The API supports the following interactions for both the EMS and the CDSS acting as either consumer or provider:
 
 <!--
 as detailed in the [Solution Interactions](overview_interactions.html) section of this implementation guide:
