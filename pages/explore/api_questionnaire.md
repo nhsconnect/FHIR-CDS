@@ -69,14 +69,14 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | retired | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-publication-status.html">PublicationStatus (Required)</a>.</td>
-<td>This will carry the value 'active' in a CDS implementation.</td>
+<td>This will carry the value 'active'.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">experimental</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
     <td>For testing purposes, not real usage</td>
-<td>This will carry the value 'false' in a CDS implementation.</td>
+<td>This will carry the value 'false'.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">date</code></td>
@@ -167,14 +167,14 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>code</td>
     <td>Resource that can be subject of QuestionnaireResponse <a href="https://www.hl7.org/fhir/stu3/valueset-resource-types.html">ResourceType (Required)</a></td>
-<td>This will be Patient in a CDS implementation.</td>
+<td>This will be Patient.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Questions and sections within the questionnaire</td>
-<td>A particular question, question grouping or display text that is part of the <code class="highlighter-rouge">Questionnaire</code>.</td>
+<td>A particular question, question grouping, answer option or display text that is part of the <code class="highlighter-rouge">Questionnaire</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.linkId</code></td>
@@ -279,14 +279,14 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference(ValueSet)</td>
   <td>Valueset containing permitted answers</td>
-<td></td>
+<td>This element MAY be populated by the CDSS, and if so, the EMS must provide the set of possible answers to the user who must choose one of the provided options. The use of this element is not recommended.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.option</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
   <td>Permitted answer</td>
-<td></td>
+<td>Where the question has multiple options, only one of which should be selected, these options can be enumerated in this element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.option.value[x]</code></td>
