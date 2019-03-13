@@ -167,7 +167,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>Preferred language of the person that will consume the content.</td>
-<td>This SHOULD be populated by the EMS where known for the recipient. Note that this should only be different to <code class="highlighter-rouge">userLanguage</code> if the EMS is communicating directly with the recipient who is different from the user.</td>
+<td>This SHOULD be populated by the EMS where known for the recipient and will be populated with the same value as contained in the <code class="highlighter-rouge">userLanguage</code> parameter.</td>
   </tr>
 <tr>
    <td><code class="highlighter-rouge">setting</code></td>
@@ -205,7 +205,7 @@ Note: as this the only out parameter, it is a resource, and it has the name 'ret
 </table>
 
 ## ServiceDefinition $evaluate parameters of note ##
-Parameters passed in the `ServiceDefinition` $evaluate operation of particular significance to implementers are noted below:  
+Parameters passed in the `ServiceDefinition.$evaluate` operation of particular significance to implementers are noted below:  
 
 ### inputData element ###
 This element carries the triage journey data for the decision. The EMS will populate this element with all assertions collected in a particular triage journey and any other assertions considered to be of relevance.  
