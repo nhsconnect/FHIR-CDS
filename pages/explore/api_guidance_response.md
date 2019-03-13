@@ -30,7 +30,7 @@ The table below details implementation guidance for this resource in the CDS con
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>The id of the request associated with this response, if any.</td>
-<td>This MUST be populated by the CDSS and must replicate the requestId received by the CDSS as a parameter in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+<td>This MUST be populated by the CDSS and must replicate the requestId received by the CDSS as a parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
@@ -44,7 +44,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(ServiceDefinition)</td>
     <td>A reference to a knowledge module.</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">ServiceDefinition</code> posted to the CDSS in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">ServiceDefinition</code> posted to the CDSS in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
@@ -58,14 +58,14 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient|<br>Group)</td>
     <td>Patient the request was performed for.</td>
-<td>This SHOULD be populated when known to the CDSS; it can be taken from the patient parameter received by the CDSS in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+<td>This SHOULD be populated when known to the CDSS; it can be taken from the patient parameter received by the CDSS in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter|<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which the response was returned.</td>
-<td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+<td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrenceDateTime</code></td>
@@ -100,7 +100,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(OperationOutcome)</td>
     <td>Messages resulting from the evaluation of the artifact or artifacts.</td>
-<td>This MUST be populated in the case of error.</td>
+<td>This SHOULD be populated in the case of error.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">outputParameters</code></td>
