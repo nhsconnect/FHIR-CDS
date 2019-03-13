@@ -75,7 +75,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
     <td>For testing purposes, not real usage</td>
-<td>This will carry the value 'false' in a CDS implementation.</td>
+<td>This will carry the value 'false'.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">date</code></td>
@@ -187,7 +187,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
-<td>The contents of the trigger element are used to advertise when the module should be invoked. On encountering a specific trigger, a clinical application can invoke the modules associated with the trigger using the $evaluate operation.</td>
+<td>The contents of the trigger element are used to advertise when the module should be invoked. On encountering a specific trigger, a clinical application can invoke the modules associated with the trigger using the <code class="highlighter-rouge">$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
