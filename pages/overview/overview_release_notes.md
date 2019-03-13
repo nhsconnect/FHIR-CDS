@@ -7,6 +7,17 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
+## 0.8.0-experimental ##
+*  Added further guidance relating to the `userType`, `initiatingPerson` and `recipientPerson` parameters for the `ServiceDefinition.$evaluate` operation.
+*  Removed FHIR API guidance from the menu and moved HTTP responses page
+*  Added recommendations arising from initial review of specification
+*  Updated Result page to reflect revised approach to re-directing to a new `ServiceDefinition`
+*  Updated implementation guidance on `GuidanceResponse` with revised guidance on population of the `dataRequirement` element 
+*  Removed page outlining implementation guidance on an `ActivityDefinition`
+*  Updated Questionnaire/Response interaction page with sections on `QuestionnaireResponse` and `Observation`
+*  Added page outlining implementation guidance on `QuestionnaireResponse`
+*  Updated API guidance to reflect amendments relating to Resource not found error
+
 ## 0.7.0-experimental ##
 *  Separated implementation guidance for resources from Interaction pages
 *  Created new menu link for FHIR resources to contain resource implementation guidance
