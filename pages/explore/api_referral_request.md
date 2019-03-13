@@ -43,7 +43,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ActivityDefinition |<br>PlanDefinition)</td>
     <td>Instantiates protocol or definition</td>
-<td>This COULD be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the ReferralRequest has been defined in the local implementation. An <code class="highlighter-rouge">ActivityDefinition</code> is a conceptual description of some specific action that should be taken, so does not imply any action by the EMS.</td>
+<td>This COULD be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the ReferralRequest has been defined in the local implementation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">basedOn</code></td>
@@ -114,7 +114,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
@@ -226,7 +226,7 @@ The population of this element shows whether the request is a proposal, plan, an
 This element carries a SNOMED code denoting the type of procedure being requested.
 
 #### Subject element of the ProcedureRequest #### 
-This element should always reference a `Patient` resource within a CDS implementation.
+This element should always reference a `Patient` resource.
 
 
 
