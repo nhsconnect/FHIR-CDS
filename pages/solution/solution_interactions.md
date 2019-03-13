@@ -19,7 +19,7 @@ The key interactions for the Clinical Decision Support API are represented in th
 
 The triage journey starts with the user requesting decision support from the CDSS.
 
-The core of the triage journey is invoking the `ServiceDefinition` via the $evaluate operation by the EMS. This will return a `GuidanceResponse` resource from the CDSS.
+The core of the triage journey is invoking the `ServiceDefinition` via the `$evaluate` operation by the EMS. This will return a `GuidanceResponse` resource from the CDSS.
 
 This interaction is expected to be repeated multiple times during the triage journey as the EMS presents responses to CDSS questions until a disposition is reached. 
 
@@ -37,7 +37,7 @@ A reference to this `Questionnaire` is included within the returned `GuidanceRes
 
 The EMS presents the question to the user and the user responds via the EMS.
 
-This response is used to populate a `QuestionnaireResponse` resource, a reference to which is returned to the CDSS within the next `ServiceDefinition`.$evaluate operation in the triage journey.
+This response is used to populate a `QuestionnaireResponse` resource, a reference to which is returned to the CDSS within the next `ServiceDefinition.$evaluate` operation in the triage journey.
 
 This interaction is expected to be repeated multiple times during the triage journey as different questions are presented to the user from the CDSS.
 
@@ -56,8 +56,8 @@ The `GuidanceResponse` returned to the EMS now contains references to both an `O
 View the [ServiceDefinition](/api_post_service_definition.html) and [GuidanceResponse](/api_guidance_response.html) sections for more information.
 
 
-## Arriving at a disposition ##
-The EMS invokes a `ServiceDefinition`.$evaluate operation referencing a `QuestionnaireResponse` and any previous `Observation` resources for the CDSS to evaluate.
+## Arriving at a result ##
+The EMS invokes a `ServiceDefinition.$evaluate` operation referencing a `QuestionnaireResponse` and any previous `Observation` resources for the CDSS to evaluate.
 
 The CDSS creates another assertion from the `QuestionnaireResponse` and determines a disposition or result can be provided.
 
