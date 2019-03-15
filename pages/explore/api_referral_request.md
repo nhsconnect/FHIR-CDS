@@ -223,7 +223,7 @@ This shows the status of the `ProcedureRequest` and should carry the value 'acti
 The population of this element shows whether the request is a proposal, plan, an original order or a reflex order. It should carry the value 'proposal'.  
 
 #### Code element of the ProcedureRequest #### 
-This element carries a SNOMED code denoting the type of procedure being requested.
+This element carries a code denoting the type of procedure being requested.
 
 #### Subject element of the ProcedureRequest #### 
 This element should always reference a `Patient` resource.
