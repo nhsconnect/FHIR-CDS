@@ -25,9 +25,9 @@ This interaction is expected to be repeated multiple times during the triage jou
 
 The `GuidanceResponse` carries or references all information relating to the CDSS response.
 
-[![Diagram showing UEC Digital Integration Programme invoke decision support interaction](images/solution/invoke-decision-support.png)](/api_get_service_definition.html)
+![Diagram showing UEC Digital Integration Programme invoke decision support interaction](images/solution/invoke-decision-support.png)
 
-View the [Evaluate ServiceDefinition](/api_post_service_definition.html) and [GuidanceResponse](/api_guidance_response.html) sections for detailed guidance.
+View the [Evaluate ServiceDefinition](api_post_service_definition.html) and [GuidanceResponse](api_guidance_response.html) sections for detailed guidance.
 
 
 ## Questionnaire / QuestionnaireResponse interaction ##
@@ -43,7 +43,7 @@ This interaction is expected to be repeated multiple times during the triage jou
 
 ![Diagram showing UEC Digital Integration Programme ask question interaction](images/solution/questionnaire-interaction.png)
 
-View the [Get Questionnaire](/api_get_questionnaire.html) section for more information.
+View the [Get Questionnaire](api_get_questionnaire.html) section for more information.
 
 The CDSS evaluates the returned `QuestionnaireResponse` and uses its content to create an assertion which is carried within an `Observation` resource.
 
@@ -53,18 +53,18 @@ The `GuidanceResponse` returned to the EMS now contains references to both an `O
 
 ![Diagram showing UEC Digital Integration Programme servicedefinition evaluate response interaction](images/solution/assertion-interaction.png)
 
-View the [ServiceDefinition](/api_post_service_definition.html) and [GuidanceResponse](/api_guidance_response.html) sections for more information.
+View the [ServiceDefinition](api_post_service_definition.html) and [GuidanceResponse](api_guidance_response.html) sections for more information.
 
 
 ## Arriving at a result ##
 The EMS invokes a `ServiceDefinition.$evaluate` operation referencing a `QuestionnaireResponse` and any previous `Observation` resources for the CDSS to evaluate.
 
-The CDSS creates another assertion from the `QuestionnaireResponse` and determines a disposition or result can be provided.
+The CDSS creates another assertion from the `QuestionnaireResponse` and determines that a result can be provided.
 
-The disposition is sent to the EMS within the `GuidanceResponse` and the EMS displays the disposition to the User.
+The `GuidanceResponse` is returned to the EMS carrying the result and is displayed to the user.
 
 ![Diagram showing UEC Digital Integration Programme display result interaction](images/solution/result-interaction.png)
 
-View the [Triage Recommendation](/api_referral_request.html), [Care Advice Recommendation](/api_care_plan.html) and [Redirect ServiceDefinition](api_redirect_service_definition.html) sections for more information.
+View the [Result](api_return_guidance_response.html) section for more information.
 
 
