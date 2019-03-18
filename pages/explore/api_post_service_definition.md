@@ -1,10 +1,10 @@
 ﻿---
-title: UEC Digital Integration Programme | Post Service Definition
+title: UEC Digital Integration Programme | Evaluate ServiceDefinition interaction
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_post_service_definition.html
-summary: Post a Service Definition
+summary: Evaluate ServiceDefinition interaction
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -12,9 +12,14 @@ summary: Post a Service Definition
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
 
 
-## Post ServiceDefinition Interaction ##
-This is an operation performed by the Encounter Management System (EMS). 
-It is an evaluate operation to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).   
+## Evaluate ServiceDefinition Interaction ##
+This is a [FHIR operation](https://www.hl7.org/fhir/stu3/operations.html) performed by the Encounter Management System (EMS). 
+It is an [evaluate operation](http://hl7.org/fhir/servicedefinition-operations.html#evaluate) to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).
+
+### Trigger for Evaluate ServiceDefinition Interaction ###  
+The `ServiceDefinition.trigger` element is of datatype <a href="https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition">TriggerDefinition</a> and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
+Within the CDS implementation, the Data Event trigger type has been chosen. This means that the EMS's evaluation of a `ServiceDefinition` will be triggered in response to a data-related activity within an implementation, for example by an addition or an update of a record such as a `QuestionnaireResponse` resource.  
+The triggering data of the event is described in the `trigger.eventData` element of the `ServiceDefinition` and this is populated by the CDSS.     
 
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction:  
@@ -23,21 +28,17 @@ The following HTTP request headers are supported for this interaction:
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
 | `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header MUST carry a <a href="https://jwt.io/introduction/">base64url encoded JSON web token</a>. | MUST |
-
-
-
+| `Authorization`      | The `Authorization` header MUST carry a <a href="https://jwt.io/introduction/">base64url encoded JSON web token</a>. | MUST |  
 
 ## POST ServiceDefinition ##
 
-The operation is performed by an HTTP POST command as shown:  
+The `ServiceDefinition.$evaluate` operation is performed by an HTTP POST command as shown:  
 
 <div markdown="span" class="alert alert-success" role="alert">
 POST [base]/ServiceDefinition/[id]/$evaluate</div>  
-Further information about the [$evaluate operation](http://hl7.org/fhir/servicedefinition-operations.html#evaluate) is available.  
 
 ## Parameters ##
-The $evaluate operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation.  
+The `ServiceDefinition.$evaluate` operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation.  
 The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the operation.  
 
 ### IN Parameters ###
@@ -56,7 +57,7 @@ The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the o
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>An optional client-provided identifier to track the request.</td>
-<td>MUST be provided by the EMS.</td>
+<td>MUST be provided by the EMS. This id must be persisted through a patient journey</td>
 </tr>
 <tr>
    <td><code class="highlighter-rouge">evaluateAtDateTime</code></td>
@@ -86,7 +87,6 @@ If no value is provided, the date and time of the request is assumed.</td>
 <li>Any <code class="highlighter-rouge">QuestionnaireResponse(s)</code> available from the user. Note that this MAY include <code class="highlighter-rouge">QuestionnaireResponse(s)</code> which have been amended. These MUST be addressed by the CDSS and the assertions updated.</li>
 </ul>
 <ul>
-<li>Where the patient has been identified, the inputData for age and gender MUST be populated.</li>  
 <li>The CDSS MUST filter the supplied inputData and disregard any information not relevant for the <code class="highlighter-rouge">ServiceDefinition</code>.</li> 
 <li>The EMS MUST NOT send duplicate items.</li>
 </ul>
@@ -104,56 +104,56 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter)</td>
     <td>The encounter in context, if any.</td>
-<td>The <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">Encounter</code> SHOULD be populated by the EMS for this unplanned care encounter.  This will either be generated by the EMS, or be taken from another EMS, if already generated.</td>
+<td>This MUST be populated by the EMS with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">Encounter</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">initiatingOrganization</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>The organisation initiating the request.</td>
-<td>This SHOULD be populated by the EMS using the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> for the UEC service provider. If this is an online (patient facing) system, then this MUST NOT be populated.</td>
+<td>This SHOULD be populated by the EMS using the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> for the UEC service provider. Note that this is the same as the <code class="highlighter-rouge">receivingOrganization</code>. If this is an online (patient facing) system, then this MUST NOT be populated.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">initiatingPerson</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient |<br>Practitioner |<br>RelatedPerson)</td>
     <td>The person initiating the request.</td>
-<td>This MUST be populated by the EMS, based on the user. In the case of an online (patient-facing) system, this may be <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code>.</td>
+<td>This MUST be populated by the EMS. The <code class="highlighter-rouge">initiatingPerson</code> is the user of the EMS. This will typically be a <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code> if the EMS is being used by a member of the public (e.g. a patient-facing public internet system) or a <code class="highlighter-rouge">Practitioner</code> where <code class="highlighter-rouge">initiatingOrganisation</code> is populated. Note that this is the same as the <code class="highlighter-rouge">receivingPerson</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">userType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.).</td>
-<td>This MUST be provided by the EMS.</td>
+<td>The <a href="#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS should use first person pronouns.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">userLanguage</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>Preferred language of the person using the system.</td>
-<td>This MUST be provided by the EMS, based on the user.</td>
+<td>This SHOULD be provided by the EMS, based on the user requirements.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">userTaskContext</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The task the system user is performing, e.g. laboratory results review, medication list review, etc. This information can be used to tailor decision support outputs, such as recommended information resources.</td>
-<td>This MUST be provided by the EMS, as it may be used to tailor decision support outputs.</td>
+<td>This SHOULD be provided by the EMS, as it may be used to tailor decision support outputs.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingOrganization</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
   <td>Reference<br>(Organization)</td>
     <td>The organization that will receive the response.</td>
-<td>This SHOULD be populated with the organisation identifier for the UEC service provider. If this is an online (patient facing) system, then this MUST NOT be populated</td>
+<td>This SHOULD be populated with the organisation identifier for the UEC service provider. If this is an online (patient facing) system, then this MUST NOT be populated. Note that this is the same as the <code class="highlighter-rouge">initiatingOrganisation</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingPerson</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
    <td>Reference<br>(Patient |<br>Practitioner |<br>RelatedPerson)</td>
     <td>The person in the receiving organization who will receive the response.</td>
-<td>This MUST be populated by the EMS, based on the user. In the case of an online (patient-facing) system, this may be <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code>.</td>
+<td>This MUST be populated by the EMS, based on the user. In the case of an online (patient-facing) system, this may be <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code>. Note that this is the same as the <code class="highlighter-rouge">initiatingPerson</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">recipientType</code></td>
@@ -167,7 +167,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>Preferred language of the person that will consume the content.</td>
-<td>This SHOULD be populated by the EMS where known for the recipient.</td>
+<td>This SHOULD be populated by the EMS where known for the recipient and will be populated with the same value as contained in the <code class="highlighter-rouge">userLanguage</code> parameter.</td>
   </tr>
 <tr>
    <td><code class="highlighter-rouge">setting</code></td>
@@ -204,22 +204,83 @@ Note: as this the only out parameter, it is a resource, and it has the name 'ret
  </tr>
 </table>
 
-## ServiceDefinition $evaluate parameter of note ##
-Parameters passed in the `ServiceDefinition` $evaluate operation of particular significance to implementers are noted below:  
+## ServiceDefinition $evaluate parameters of note ##
+Parameters passed in the `ServiceDefinition.$evaluate` operation of particular significance to implementers are noted below:  
 
 ### inputData element ###
-The input data are the triage journey data for the decision. The EMS will populate this element with all assertions collected in a particular triage journey and any other assertions considered to be of relevance.  
-The CDSS is obliged to consider anything carried in the `ServiceDefinition` dataRequirement element, but can ignore resources posted in inputData which are not in the dataRequirement element.  
-In particular, where there are 'branching' or bundled `ServiceDefinitions` within a single journey, the last `ServiceDefinition` will have all assertions passed in inputData from prior `ServiceDefinitions`.  
-This may or may not affect the population of the result element in `GuidanceResponse` created by the CDSS.
+This element carries the triage journey data for the decision. The EMS will populate this element with all assertions collected in a particular triage journey and any other assertions considered to be of relevance.  
+The CDSS is obliged to consider anything carried in the `ServiceDefinition.dataRequirement` element, but can ignore resources posted in `inputData` which are not in the `dataRequirement` element.  
+In particular, where there are 'branching' or bundled `ServiceDefinitions` within a single journey, the last `ServiceDefinition` will have all assertions passed in `inputData` from prior `ServiceDefinitions`.  
+This may or may not affect the population of the result element in `GuidanceResponse` created by the CDSS.  
+
+### userType element ###
+The `userType` element carries the type of user initiating the request to the CDSS. It MUST be populated by the EMS as it has an important relationship with two other optional parameters, the `initiatingPerson` and the `receivingPerson`.  
+The relationship between these elements and the concepts they carry are outlined below:
+
+<table style="min-width:100%;width:100%">
+<tr>
+    <th style="width:25%;">FHIR element</th>
+    <td style="width:25%;">userType</td>
+    <td style="width:25%;">initiatingPerson</td>
+      <td style="width:25%;">receivingPerson</td>
+</tr>
+<tr>
+    <th>Business concept</th>
+      <td>Type (role) of the EMS user</td>
+    <td>User of the EMS</td>
+    <td>Person acting next (receiving the result)</td>
+ </tr>
+ <tr>
+    <th>Scenarios</th>
+      <td></td>
+    <td></td>
+    <td></td>
+ </tr>
+  <tr>
+    <td>Patient using EMS on their own behalf</td>
+      <td>Patient</td>
+    <td>Reference(Patient)</td>
+    <td>Reference(Patient)</td>
+ </tr>
+   <tr>
+    <td>Person related to patient using EMS on behalf of the patient</td>
+      <td>Related person</td>
+    <td>Reference(RelatedPerson)</td>
+      <td>Reference(RelatedPerson)</td>
+ </tr>
+    <tr>
+    <td>Patient speaking to practitioner using EMS on behalf of the patient</td>
+      <td>Practitioner type</td>
+    <td>Reference(Practitioner)</td>
+      <td>Reference(Patient)</td>
+ </tr>
+ <tr>
+    <td>Person related to patient speaking to practitioner using EMS on behalf of the patient</td>
+      <td>Practitioner type</td>
+    <td>Reference(Practitioner)</td>
+      <td>Reference(RelatedPerson)</td>
+ </tr>
+</table>
+
+
+
+
 
 ## Response from CDSS ##
 
 ### Success ###
 
 * SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the operation.
-* SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource.
+* SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource.  
 
+<a href="api_return_guidance_response.html">View further information about the result of the triage journey</a>.  
+
+## Time out ##  
+It is recommended that the EMS sets a time out limit on the response back from the CDSS, appropriate to an interactive process (e.g. around 1000 milliseconds).  
+If the CDSS does not respond within the time out period, then it is recommended that the EMS retry the `$evaluate` operation. This is to allow for intermittent network errors.  
+After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is unavailable and should respond appropriately to the user.
+
+<!--
 #### GuidanceResponse Statuses ####
 The returned [GuidanceResponse resource](api_guidance_response.html) MUST carry an appropriate code in its <code class="highlighter-rouge">status</code> element.    
 This is a trigger for the EMS and the relevant codes are as follows:-  
@@ -246,7 +307,7 @@ This is a trigger for the EMS and the relevant codes are as follows:-
     <td>The request was processed, but more data is required to complete the evaluation</td>
  </tr>
 </table>
-
+-->
 
 <!--
 ### Failure ###
@@ -257,9 +318,9 @@ More errors are likely to be needed once we are clear on which search parameters
 * [Invalid parameter](api_general_guidance.html#parameters)
 * [No record found](api_general_guidance.html#resource-not-found---servicedefinition)
 -->
-
+<!--
 ## Example Scenario ##
-<!--Placeholder -->
+ Placeholder -->
 
 
 

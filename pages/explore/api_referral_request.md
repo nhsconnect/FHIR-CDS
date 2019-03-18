@@ -1,10 +1,10 @@
 ﻿---
-title: UEC Digital Integration Programme | Referral Request
+title: UEC Digital Integration Programme | Referral Request Implementation guidance
 keywords: referralrequest, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_referral_request.html
-summary: Recommend a referral
+summary: ReferralRequest resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -13,22 +13,13 @@ summary: Recommend a referral
 
 
 
-## Triage Recommendation ##
-Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage recommendation to another service for a patient.  
+## ReferralRequest: Implementation Guidance ##  
+### Usage ###
+Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage outcome of recommendation to another service for a patient.  
 A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
-The `ReferralRequest` may also reference a `CarePlan` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient and/or a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.
-
-## Request Headers ##
-The following HTTP request headers are supported in the event of the EMS requesting the referenced `ReferralRequest` from the CDSS:  
-
-
-| Header               | Value |Conformance |
-|----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header MUST carry a <a href="https://jwt.io/introduction/">base64url encoded JSON web token</a>. | MUST |
-
-
-## Implementation Guidance ##  
+The `ReferralRequest` may reference a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.  
+`RequestGroup.action.resource` may also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
+Detailed implementation guidance for a `ReferralRequest` resource in the CDS context is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -52,7 +43,7 @@ The following HTTP request headers are supported in the event of the EMS request
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ActivityDefinition |<br>PlanDefinition)</td>
     <td>Instantiates protocol or definition</td>
-<td>This COULD be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the ReferralRequest has been defined in the local implementation. An <code class="highlighter-rouge">ActivityDefinition</code> is a conceptual description of some specific action that should be taken, so does not imply any action by the EMS.</td>
+<td>This COULD be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the ReferralRequest has been defined in the local implementation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">basedOn</code></td>
@@ -109,7 +100,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Actions requested as part of the referral</td>
-<td>This SHOULD be populated by the CDSS with the type of service which can normally satisfy the patient's health need.</td>
+<td>This SHOULD NOT be populated by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
@@ -123,7 +114,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition</code> $evaluate operation.</td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
@@ -145,7 +136,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>BackboneElement</td>
     <td>Who/what is requesting service - onBehalfOf can only be specified if agent is practitioner or device</td>
-<td></td>
+<td>This element SHOULD NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">requester.agent</code></td>
@@ -173,7 +164,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>HealthcareService)</td>
     <td>Receiver of referral/transfer of care request</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This SHOULD be populated with the <code class="highlighter-rouge">HealthcareService</code> resource by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonCode</code></td>
@@ -221,7 +212,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
 
 ## Procedure Request ##  
 The `ProcedureRequest` is referenced from `ReferralRequest.basedOn`.  
- This will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which should be carried out in the referee service to validate or eliminate the chief concern.  
+This will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which should be carried out in the referee service to validate or eliminate the chief concern.  
 
 ### ProcedureRequest elements of note ###  
 
@@ -231,8 +222,11 @@ This shows the status of the `ProcedureRequest` and should carry the value 'acti
 #### Intent element of the ProcedureRequest ####  
 The population of this element shows whether the request is a proposal, plan, an original order or a reflex order. It should carry the value 'proposal'.  
 
+#### Code element of the ProcedureRequest #### 
+This element carries a code denoting the type of procedure being requested.
+
 #### Subject element of the ProcedureRequest #### 
-This element should always reference a `Patient` resource within a CDS implementation.
+This element should always reference a `Patient` resource.
 
 
 

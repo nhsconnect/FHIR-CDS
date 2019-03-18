@@ -1,10 +1,10 @@
 ﻿---
-title: UEC Digital Integration Programme | Redirect Service Definition
-keywords: servicedefinition, rest,
+title: UEC Digital Integration Programme | ActivityDefinition Implementation guidance
+keywords: activitydefinition, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_redirect_service_definition.html
-summary: Redirect to a new Service Definition
+permalink: api_activity_definition.html
+summary: ActivityDefinition resource implementation guidance 
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -12,23 +12,10 @@ summary: Redirect to a new Service Definition
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Activity Definition" fhirlink="[Activity Definition](http://hl7.org/fhir/stu3/activitydefinition.html)" content="User Stories" userlink="" %}
 
 
-## Redirect to a new ServiceDefinition ##
-Within the Clinical Decision Support API implementation, the [ActivityDefinition](http://hl7.org/fhir/stu3/activitydefinition.html) resource will be used to carry a redirection to a different `ServiceDefinition` where required by the CDSS.  
+## ActivityDefinition: Implementation Guidance ##
+### Usage ###
+Within the Clinical Decision Support API implementation, the [ActivityDefinition](http://hl7.org/fhir/stu3/activitydefinition.html) resource will be used to carry a redirection to a different `ServiceDefinition` where required by the CDSS.
 To achieve this, the `GuidanceResponse` will reference a `RequestGroup` which will reference an `ActivityDefinition` in its `action.resource` element in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ActivityDefinition`.
-
-## Request Headers ##
-The following HTTP request headers are supported in the event of the EMS requesting the referenced `ActivityDefinition` from the CDSS:  
-
-
-| Header               | Value |Conformance |
-|----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header MUST carry a <a href="https://jwt.io/introduction/">base64url encoded JSON web token</a>. | MUST |
-
-
-
-
-## Implementation Guidance ##
 
 The table below gives implementation guidance in relation to the elements within an `ActivityDefinition`:
 

@@ -17,7 +17,7 @@ summary: "Overview of the Development section"
 
 <!--This section provides CDS implementers with an overview of the Clinical Decision Support API.-->
 
-The API supports the following interactions:
+The API supports the following interactions for both the EMS and the CDSS acting as either consumer or provider:
 
 <!--
 as detailed in the [Solution Interactions](overview_interactions.html) section of this implementation guide:
@@ -34,7 +34,7 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 - SHALL support HL7 FHIR STU3 version 3.0.1.
 
-- SHALL Implement REST behavior according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
+- SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
 
 - SHALL support XML **or** JSON formats for all API interactions.
 
@@ -48,7 +48,7 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 - SHALL support HL7 FHIR STU3 version 3.0.1.
 
-- SHALL Implement REST behavior according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
+- SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
 
 - SHALL support XML **or** JSON formats for all API interactions.
 
