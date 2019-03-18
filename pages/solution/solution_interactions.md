@@ -17,7 +17,7 @@ The key interactions for the Clinical Decision Support API are represented in th
 
 ## Invoke ServiceDefinition.$evaluate and GuidanceResponse ##
 
-The triage journey starts with the user requesting decision support from the CDSS.
+The triage journey starts with the system user requesting decision support through the EMS.
 
 The core of the triage journey is invoking the `ServiceDefinition` via the `$evaluate` operation by the EMS. This will return a `GuidanceResponse` resource from the CDSS.
 
