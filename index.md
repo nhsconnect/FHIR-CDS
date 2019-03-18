@@ -18,12 +18,6 @@ The UEC Digital Integration Programme supports the delivery of the key recommend
 the Urgent and Emergency Care Review, and the Five Year Forward View. To achieve the transformation of Urgent and Emergency Care, patients must be directed to or connected with the right service to meet their needs and not be sent or conveyed to high end dispositions 
 such as Accident and Emergency or GPs, unless absolutely necessary.  
 
-## Context ##
-As part of the UEC Digital Integration Programme, NHS Digital is looking to investigate future integration and deployment approaches for Clinical Decision Support Systems to support triage of NHS patients using 999 and 111 services and other urgent and emergency care settings. 
-
-Currently for triage support, many Urgent and Emergency Care triage solution providers make use of the NHS-provided Clinical Decision Support Systems in the form of the NHS Pathways product which is provided by periodic distribution of structured content in data file format. 
-NHS Digital is seeking to explore options for an alternative approach based on application programming interfaces (APIs) for the provision of a range of supporting capabilities for Urgent and Emergency Care solution providers and the provision of Clinical Decision Support System capabilities.  
-
 ## In Scope ##
 The scope of the implementation guide is the interactions for selecting a `ServiceDefinition`, and evaluating a `ServiceDefinition`. Key resources in those interactions are further constrained in this guide. Any resources referenced in those interactions which are not specifically listed in this guide will be compliant with the HL7 STU3 international specification.
 
