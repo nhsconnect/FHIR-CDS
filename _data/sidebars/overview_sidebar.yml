@@ -157,12 +157,12 @@ entries:
   #    url: /test.html
   #    output: web
  
-  - title: Assure
-    output: web
-    folderitems:
-    - title: Overview
-      url: /assure.html
-      output: web
+  # - title: Assure
+  #   output: web
+  #   folderitems:
+  #   - title: Overview
+  #     url: /assure.html
+  #     output: web
 
  # - title: Deploy
  #   output: web

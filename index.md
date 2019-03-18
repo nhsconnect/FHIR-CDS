@@ -34,6 +34,7 @@ The following technical areas are specifically excluded
 * Authentication of users
 * Authorisation
 * Audit  
+* Assurance and system accreditation
 
 *Note that the process of predictive modelling of patient risk (PMPR) or other risk scoring methods to adjust the triage outcome are not included in the specification.*
 
