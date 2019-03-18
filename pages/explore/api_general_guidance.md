@@ -17,8 +17,11 @@ This implementation guide is intended for use by software developers looking to 
 
 The keywords ‘**MUST**’, ‘**MUST NOT**’, ‘**REQUIRED**’, ‘**SHALL**’, ‘**SHALL NOT**’, ‘**SHOULD**’, ‘**SHOULD NOT**’, ‘**RECOMMENDED**’, ‘**MAY**’, and ‘**OPTIONAL**’ in this implementation guide are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-## RESTful API ##
+### Resources ###
 
+Key FHIR resources have been included in this implementation guide. Any referenced resources in the interactions or key resources which are not explicitly included in this implementation guide will be the HL7 STU3 versions of these resources, following all constraints of that version"
+
+## RESTful API ##
 
 The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `GET /fhir/Patient/1`.
 

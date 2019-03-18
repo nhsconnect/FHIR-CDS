@@ -25,8 +25,9 @@ Currently for triage support, many Urgent and Emergency Care triage solution pro
 NHS Digital is seeking to explore options for an alternative approach based on application programming interfaces (APIs) for the provision of a range of supporting capabilities for Urgent and Emergency Care solution providers and the provision of Clinical Decision Support System capabilities.  
 
 ## In Scope ##
-This specification covers triage of patients by non-clinical staff (Health Advisors), triage of patients by clinicians and consultation by clinicians.
-It also covers CDSS delivered as a service (user interfaces only with the EMS) and also CDSS as an application (user interfaces directly with the CDSS).
+The scope of the implementation guide is the interactions for selecting a `ServiceDefinition`, and evaluating a `ServiceDefinition`. Key resources in those interactions are further constrained in this guide. Any resources referenced in those interactions which are not specifically listed in this guide will be compliant with the HL7 STU3 international specification.
+
+In addition to the named interactions, interactions for searching, creating or reading resources must be compliant with the HL7 STU3 international specification.
 
 ## Out of Scope ##
 The following technical areas are specifically excluded
