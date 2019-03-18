@@ -47,12 +47,12 @@ entries:
     #    - title: "Placeholder for case study"
     #      url: /engage_case_studies.html
     #      output: web
-  - title: Use Cases
-    output: web
-    folderitems:
-    - title: Context
-      url: /overview_context.html
-      output: web
+  # - title: Use Cases
+  #   output: web
+  #   folderitems:
+  #   - title: Context
+  #     url: /overview_context.html
+  #     output: web
   - title: Development Guidance
     output: web
     folderitems:
