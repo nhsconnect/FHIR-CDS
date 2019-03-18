@@ -21,7 +21,7 @@ The triage journey starts with the user requesting decision support from the CDS
 
 The core of the triage journey is invoking the `ServiceDefinition` via the `$evaluate` operation by the EMS. This will return a `GuidanceResponse` resource from the CDSS.
 
-This interaction is expected to be repeated multiple times during the triage journey as the EMS presents responses to CDSS questions until a disposition is reached. 
+This interaction is expected to be repeated multiple times during the triage journey as the EMS presents responses to CDSS questions until a result is reached. 
 
 The `GuidanceResponse` carries or references all information relating to the CDSS response.
 
@@ -47,7 +47,7 @@ View the [Get Questionnaire](api_get_questionnaire.html) section for more inform
 
 The CDSS evaluates the returned `QuestionnaireResponse` and uses its content to create an assertion which is carried within an `Observation` resource.
 
-The CDSS determines whether there is enough information to arrive at a disposition. If not, another `Questionnaire` is populated with the next question to be answered.
+The CDSS determines whether there is enough information to arrive at a result. If not, another `Questionnaire` is populated with the next question to be answered.
  
 The `GuidanceResponse` returned to the EMS now contains references to both an `Observation` and a `Questionnaire` resource.
 
