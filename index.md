@@ -21,6 +21,8 @@ such as Accident and Emergency or GPs, unless absolutely necessary.
 ## In Scope ##
 This guide covers triage of patients by non-clinical staff and triage of patients by clinicians. This guide is intended for use by developers who are making systems compliant with the guide.
 
+The Implementation Guide is based on initial discovery work, which informs Alpha v1.0 version of the Guide. The scope is expected to increase with more discovery work and as use cases are developed. Future versions of this Guide will include those updates as they are developed. Any resources not specifically mentioned in this Guide will follow the HL7 FHIR STU3 guidance.
+
 ## Out of Scope ##
 The following technical area is specifically excluded:
 * Assurance and system accreditation
