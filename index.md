@@ -24,13 +24,8 @@ The scope of the implementation guide is the interactions for selecting a `Servi
 In addition to the named interactions, interactions for searching, creating or reading resources must be compliant with the HL7 STU3 international specification.
 
 ## Out of Scope ##
-The following technical areas are specifically excluded
-* Authentication of users
-* Authorisation
-* Audit  
+The following technical area is specifically excluded:
 * Assurance and system accreditation
-
-*Note that the process of predictive modelling of patient risk (PMPR) or other risk scoring methods to adjust the triage outcome are not included in the specification.*
 
 *Note that the process by which a user can amend the outcome from CDSS is not part of the CDSS specification, but is left with the EMS.*
 
