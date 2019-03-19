@@ -58,7 +58,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient|<br>Group)</td>
     <td>Patient the request was performed for.</td>
-<td>This SHOULD be populated when known to the CDSS; it can be taken from the patient parameter received by the CDSS in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
