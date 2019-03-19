@@ -332,4 +332,9 @@ Where the request cannot be processed, but the fault is with the receiving syste
 
 `<html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>`
 
+### Time out ###
 
+It is recommended for any synchronous patterns that the client sets a time out limit on the response back from the server, appropriate to an interactive process (e.g. around 1000 milliseconds).
+
+If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors.
+After a limited number of retries (e.g. 3-5) the client may assume that the server is unavailable and should respond appropriately. If the EMS is acting as the client (for example, in the `$evaluate` operation), this may take the form of a user interaction. If the CDSS is acting as the client, then the response will be to the EMS.
