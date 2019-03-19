@@ -100,7 +100,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Actions requested as part of the referral</td>
-<td>This SHOULD NOT be populated by the CDSS.</td>
+<td>This SHOULD be populated with the recommended generic service type (e.g. GP or Emergency Department)</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
@@ -164,7 +164,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>HealthcareService)</td>
     <td>Receiver of referral/transfer of care request</td>
-<td>This SHOULD be populated with the <code class="highlighter-rouge">HealthcareService</code> resource by the CDSS.</td>
+<td>This SHOULD NOT be populated by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonCode</code></td>
