@@ -19,9 +19,7 @@ the Urgent and Emergency Care Review, and the Five Year Forward View. To achieve
 such as Accident and Emergency or GPs, unless absolutely necessary.  
 
 ## In Scope ##
-The scope of the implementation guide is the interactions for selecting a `ServiceDefinition`, and evaluating a `ServiceDefinition`. Key resources in those interactions are further constrained in this guide. Any resources referenced in those interactions which are not specifically listed in this guide will be compliant with the HL7 STU3 international specification.
-
-In addition to the named interactions, interactions for searching, creating or reading resources must be compliant with the HL7 STU3 international specification.
+This guide covers triage of patients by non-clinical staff and triage of patients by clinicians. This guide is intended for use by developers who are making systems compliant with the guide.
 
 ## Out of Scope ##
 The following technical area is specifically excluded:
