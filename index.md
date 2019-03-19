@@ -18,23 +18,14 @@ The UEC Digital Integration Programme supports the delivery of the key recommend
 the Urgent and Emergency Care Review, and the Five Year Forward View. To achieve the transformation of Urgent and Emergency Care, patients must be directed to or connected with the right service to meet their needs and not be sent or conveyed to high end dispositions 
 such as Accident and Emergency or GPs, unless absolutely necessary.  
 
-## Context ##
-As part of the UEC Digital Integration Programme, NHS Digital is looking to investigate future integration and deployment approaches for Clinical Decision Support Systems to support triage of NHS patients using 999 and 111 services and other urgent and emergency care settings. 
-
-Currently for triage support, many Urgent and Emergency Care triage solution providers make use of the NHS-provided Clinical Decision Support Systems in the form of the NHS Pathways product which is provided by periodic distribution of structured content in data file format. 
-NHS Digital is seeking to explore options for an alternative approach based on application programming interfaces (APIs) for the provision of a range of supporting capabilities for Urgent and Emergency Care solution providers and the provision of Clinical Decision Support System capabilities.  
-
 ## In Scope ##
-This specification covers triage of patients by non-clinical staff (Health Advisors), triage of patients by clinicians and consultation by clinicians.
-It also covers CDSS delivered as a service (user interfaces only with the EMS) and also CDSS as an application (user interfaces directly with the CDSS).
+This guide covers triage of patients by non-clinical staff and triage of patients by clinicians. This guide is intended for use by developers who are making systems compliant with the guide.
+
+The Implementation Guide is based on initial discovery work, which informs Alpha v1.0 version of the Guide. The scope is expected to increase with more discovery work and as use cases are developed. Future versions of this Guide will include those updates as they are developed. Any resources not specifically mentioned in this Guide will follow the HL7 FHIR STU3 guidance.
 
 ## Out of Scope ##
-The following technical areas are specifically excluded
-* Authentication of users
-* Authorisation
-* Audit  
-
-*Note that the process of predictive modelling of patient risk (PMPR) or other risk scoring methods to adjust the triage outcome are not included in the specification.*
+The following technical area is specifically excluded:
+* Assurance and system accreditation
 
 *Note that the process by which a user can amend the outcome from CDSS is not part of the CDSS specification, but is left with the EMS.*
 

@@ -97,7 +97,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient)</td>
     <td>The patient in context, if any.</td>
-<td>This SHOULD be populated where the patient has been identified. Any data required by the CDSS MUST be codified in the inputData element even where it exists in the referenced <code class="highlighter-rouge">Patient</code> resource.</td>
+<td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">encounter</code></td>

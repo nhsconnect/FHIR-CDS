@@ -17,8 +17,11 @@ This implementation guide is intended for use by software developers looking to 
 
 The keywords ‘**MUST**’, ‘**MUST NOT**’, ‘**REQUIRED**’, ‘**SHALL**’, ‘**SHALL NOT**’, ‘**SHOULD**’, ‘**SHOULD NOT**’, ‘**RECOMMENDED**’, ‘**MAY**’, and ‘**OPTIONAL**’ in this implementation guide are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-## RESTful API ##
+### Resources ###
 
+Key FHIR resources have been included in this implementation guide. Any referenced resources in the interactions or key resources which are not explicitly included in this implementation guide will be the HL7 STU3 versions of these resources, following all constraints of that version"
+
+## RESTful API ##
 
 The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `GET /fhir/Patient/1`.
 
@@ -329,4 +332,9 @@ Where the request cannot be processed, but the fault is with the receiving syste
 
 `<html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>`
 
+### Time out ###
 
+It is recommended for any synchronous patterns that the client sets a time out limit on the response back from the server, appropriate to an interactive process (e.g. around 1000 milliseconds).
+
+If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors.
+After a limited number of retries (e.g. 3-5) the client may assume that the server is unavailable and should respond appropriately. If the EMS is acting as the client (for example, in the `$evaluate` operation), this may take the form of a user interaction. If the CDSS is acting as the client, then the response will be to the EMS.

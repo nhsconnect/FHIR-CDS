@@ -17,7 +17,7 @@ The key interactions for the Clinical Decision Support API are represented in th
 
 ## Invoke ServiceDefinition.$evaluate and GuidanceResponse ##
 
-The triage journey starts with the user requesting decision support from the CDSS.
+The triage journey starts with the system user requesting decision support through the EMS.
 
 The core of the triage journey is invoking the `ServiceDefinition` via the `$evaluate` operation by the EMS. This will return a `GuidanceResponse` resource from the CDSS.
 
@@ -57,11 +57,11 @@ View the [ServiceDefinition](api_post_service_definition.html) and [GuidanceResp
 
 
 ## Arriving at a result ##
-The EMS invokes a `ServiceDefinition.$evaluate` operation referencing a `QuestionnaireResponse` and any previous `Observation` resources for the CDSS to evaluate.
+The EMS invokes a `ServiceDefinition.$evaluate` operation referencing a `QuestionnaireResponse` and any previous assertions (Observation resources) for the CDSS to evaluate.
 
-The CDSS creates another assertion from the `QuestionnaireResponse` and determines that a result can be provided.
+The CDSS creates another assertion from the `QuestionnaireResponse` and determines whether a result can be provided.
 
-The `GuidanceResponse` is returned to the EMS carrying the result and is displayed to the user.
+The result is sent to the EMS within the `GuidanceResponse` and the EMS displays the result to the User.
 
 ![Diagram showing UEC Digital Integration Programme display result interaction](images/solution/result-interaction.png)
 
