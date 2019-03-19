@@ -103,16 +103,15 @@ View [CDS implementation guidance for a Questionnaire](api_questionnaire.html).
 ## QuestionnaireResponse ##
 On presenting the questions contained in the returned `Questionnaire` to the user, the EMS will create and populate an answering `QuestionnaireResponse` based upon the user's response(s).  
 The latter resource will be referenced in the `inputData` parameter of the next `ServiceDefinition.$evaluate` sent to the CDSS.  
-The CDSS can request this resource from the EMS using the HTTP GET verb and `_id` parameter as outlined above for the <a href="#get-questionnaire">request of a Questionnaire</a>. 
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseURL]/[QuestionnaireResponse]/[id]</div>
-The read response for this interaction has the same features as that outlined above for the <a href="#read-response">read response of a Questionnaire</a> requested by the EMS from the CDSS.  
+The EMS will create the `QuestionnaireResponse` using the same FHIR RESTful create interaction as outlined above for the <a href="#create-questionnaire">creation of a Questionnaire</a>.
+The CDSS can request this resource from the EMS using the HTTP GET verb and `_id` parameter as outlined above for the <a href="#get-questionnaire">request of a Questionnaire</a>.  
 
 ## QuestionnaireResponse: Implementation Guidance ##
 View [CDS implementation guidance for a QuestionnaireResponse](api_questionnaire_response.html).
 
 ## Observation ##
-On receipt of the `QuestionnaireResponse`, the CDSS will use its contents to populate an `Observation` resource, a reference to which is added to the `GuidanceResponse.outputParameters` returned to the EMS.
+On receipt of the `QuestionnaireResponse`, the CDSS will use its contents to create and populate an `Observation` resource, a reference to which is added to the `GuidanceResponse.outputParameters` returned to the EMS.  
+The CDSS will create the `Observation` using the same FHIR RESTful create interaction as outlined above for the <a href="#create-questionnaire">creation of a Questionnaire</a>.
 
 <!-- ## Example Scenario ##
 Placeholder -->

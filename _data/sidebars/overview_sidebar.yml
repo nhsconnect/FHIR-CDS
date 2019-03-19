@@ -96,6 +96,9 @@ entries:
         - title: GuidanceResponse
           url: /api_guidance_response.html
           output: web
+        - title: Provenance
+          url: /api_provenance.html
+          output: web
         - title: Questionnaire
           url: /api_questionnaire.html
           output: web

@@ -195,7 +195,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Corresponding concept for this item in a terminology <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-questions.html">Questionnaire Question Codes (Example)</a></td>
-<td>This MUST NOT be populated by the CDSS as receipt of a SNOMED code for this element by the EMS may prompt it to populate an <code class="highlighter-rouge">Observation</code> with a corresponding SNOMED code. Only the CDSS has clinical decision authority within a CDS implementation.</td>
+<td>This MUST NOT be populated by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.prefix</code></td>
