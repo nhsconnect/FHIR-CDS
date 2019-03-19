@@ -38,5 +38,3 @@ Use cases for the CDS API are not included in this Implementation Guide. These w
 
 The following technical area is specifically excluded:
 * Assurance and system accreditation
-
-*Note that the process by which a user can amend the outcome from CDSS is not part of the CDSS specification, but is left with the EMS.*
