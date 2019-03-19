@@ -14,7 +14,8 @@ summary: Questionnaire/Response interaction
 ## Questionnaire/Response Interaction ## 
 As a response to a `ServiceDefinition.$evaluate` operation to request clinical support guidance, a selected CDSS returns a `GuidanceResponse` resource to the EMS.  
 If further evaluation is required in the current triage journey, the CDSS will <a href="#create-questionnaire">create a Questionnaire</a> resource to contain a relevant question based on information received from the EMS.  
-The `GuidanceResponse` resource will carry a reference to the `Questionnaire` resource in its `outputParameters` element in order to return it to the EMS.  
+The `GuidanceResponse` resource will carry a reference to the `Questionnaire` resource in its `dataRequirement` element in order to return it to the EMS.
+
 As a response to a `Questionnaire`, the EMS will <a href="#questionnaireresponse">create and populate a QuestionnaireResponse</a> to carry the answers from the EMS user.
 
 ## Request Headers ##
