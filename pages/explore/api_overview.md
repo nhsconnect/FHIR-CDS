@@ -30,21 +30,7 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 ## 2. Pre-Requisites for the CDS API ##
 
-### 2.1 Consumer Server API Conformance ###
-
-- MUST support HL7 FHIR STU3 version 3.0.1.
-
-- MUST Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
-
-- MUST support XML **or** JSON formats for all API interactions.
-
-- MUST expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
-
-<!--See [CDS API FHIR Capability Statement profile](api_foundation_conformance.html).-->
-
-<!-- SHOULD identify the resource profiles supported as part of the FHIR meta.profile attribute for each instance.-->
-
-### 2.2 Provider Server API Conformance ###
+Consumer / Provider Server API Conformance
 
 - MUST support HL7 FHIR STU3 version 3.0.1.
 

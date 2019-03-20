@@ -62,9 +62,6 @@ entries:
     - title: General API Guidance
       url: /api_general_guidance.html
       output: web
-    - title: HTTP Response Codes
-      url: /resources_api_codes.html
-      output: web
     - title: Security
       url: /api_security.html
       output: web
