@@ -42,7 +42,7 @@ A recommendation as to where the patient should go next; the `result` element in
 
 The details of the referral carried in the `ReferralRequest` may be displayed to the user by the EMS.
   
-   View [CDS implementation guidance for a ReferralRequest](api_referral_request.html)  
+View [CDS implementation guidance for a ReferralRequest](api_referral_request.html)  
 
 #### 2. Care Advice ####
 
@@ -53,13 +53,13 @@ Note that care advice can also be given at any point during a triage journey (ev
 
 Any care advice carried in a `CarePlan` may be displayed to the user by the EMS.
 	
-   View [CDS implementation guidance for a CarePlan](api_care_plan.html)  
+View [CDS implementation guidance for a CarePlan](api_care_plan.html)  
 
 #### 3. Redirection of the Service Definition ####
 
 A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` SHOULD NOT be populated. Additionally, the <a href="api_guidance_response.html#re-direction-to-a-new-servicedefinition">GuidanceResponse.dataRequirement</a> element will be used to carry a description of the data required by the EMS to enable it to select the new `ServiceDefinition` as directed by the CDSS.  
   
-   View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html)    
+View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html)    
   
 The final result or outcome of a triage journey will be available only when the `GuidanceResponse.status` is set to 'success'.  
 
