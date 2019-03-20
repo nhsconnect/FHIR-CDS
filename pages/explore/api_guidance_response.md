@@ -79,7 +79,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Device)</td>
     <td>Device returning the guidance.</td>
-<td>This SHOULD be null.</td>
+<td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reason[x]</code></td>
@@ -116,7 +116,7 @@ Where an <code class="highlighter-rouge">outputParameter</code> can be interpret
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(CarePlan |<br>RequestGroup)</td>
     <td>Proposed actions, if any.</td>
-<td>The <a href="api_guidance_response.html#result-element-of-the-guidanceresponse">result element</a> MUST be populated with a <code class="highlighter-rouge">RequestGroup</code> resource, if the CDSS has either a recommendation for a suitable next service, or some care advice. It will be null, if the CDSS recommends transfer to a different <code class="highlighter-rouge">ServiceDefinition</code>.</td>
+<td>The <a href="api_guidance_response.html#result-element-of-the-guidanceresponse">result element</a> MUST be populated with a <code class="highlighter-rouge">RequestGroup</code> resource, if the CDSS has either a recommendation for a suitable next service, or some care advice. It SHOULD NOT be populated if the CDSS recommends transfer to a different <code class="highlighter-rouge">ServiceDefinition</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
