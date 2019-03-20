@@ -67,7 +67,7 @@ The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the o
 In addition, wherever possible, the data accessed by the module should appear as though it was accessed at this time. 
 The evaluateAtDateTime value may be any time in the past or future, enabling both retrospective and prospective scenarios. 
 If no value is provided, the date and time of the request is assumed.</td>
- <td>MUST always be null</td>
+ <td>This SHOULD NOT be populated.</td>
 </tr>
 <tr>
    <td><code class="highlighter-rouge">inputParameters</code></td>
