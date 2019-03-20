@@ -18,24 +18,24 @@ A system used for workflow management and to record, manage and track a patient'
 The EMS is responsible for invoking the decision support process on the CDSS. The EMS will typically also manage elements like user authentication; workflow; user interactions.
 
 The Encounter Management System MUST be able to:
-* Initiate the selection of a ServiceDefinition
-* Initiate the evaluation of a ServiceDefintion
-* Read appropriate resources from the CDSS (e.g. Questionnaire)
-* Write appropriate resources (e.g. QuestionnaireResponse)
+* Initiate the selection of a `ServiceDefinition`
+* Initiate the evaluation of a `ServiceDefinition`
+* Read appropriate resources from the CDSS (e.g. `Questionnaire`)
+* Write appropriate resources (e.g. `QuestionnaireResponse`)
 
 The Encounter Management System MAY:
-* Write resources which are not core (e.g. Condition)
+* Write resources which are not core (e.g. `Condition`)
 
 
 ## Clinical Decision Support System (CDSS) ##
 
-A health information technology system that is designed to provide clinical and non-clinical UEC personnel undertaking triage or consultation, with clinical decision support (CDS), that is, assistance with clinical decision-making tasks.
+A health information technology system that is designed to provide clinical and non-clinical UEC personnel undertaking triage or consultation, with clinical decision support (CDS); that is, assistance with clinical decision-making tasks.
 
 The Clinical Decision Support System is responsible for making clinical decisions, and communicating these to the EMS.
 
 The Clinical Decision Support System MUST be able to:
-* Respond to filtered searches for ServiceDefinition
-* Respond to evaluation of a ServiceDefinition
-* Read appropriate resources from the EMS (e.g. QuestionnaireResponse)
-* Write appropriate resources (e.g. Questionnaire, Observation)
+* Respond to filtered searches for `ServiceDefinition`
+* Respond to evaluation of a `ServiceDefinition`
+* Read appropriate resources from the EMS (e.g. `QuestionnaireResponse`)
+* Write appropriate resources (e.g. `Questionnaire`, `Observation`)
 
