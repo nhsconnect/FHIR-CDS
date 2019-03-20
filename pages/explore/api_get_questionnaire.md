@@ -51,9 +51,9 @@ The new resource is created in a server-assigned location.
 The table below summarises the `create` interaction HTTP response code and the values expected to be conveyed in the successful response body `OperationOutcome` payload:
 
 
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics  |
-|-----------|----------------|------------|--------------|-----------------|--------------|
-|201|information|informational|RESOURCE_CREATED|New resource created | Successfully created resource Questionnaire
+| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display |
+|-----------|----------------|------------|--------------|-----------------|
+|201|information|informational|RESOURCE_CREATED|New resource created |
 
 ### Failure ###
 The following errors can be triggered when performing this operation:  
