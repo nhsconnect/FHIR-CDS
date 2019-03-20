@@ -270,8 +270,8 @@ The relationship between these elements and the concepts they carry are outlined
 
 ### Success ###
 
-* SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the operation.
-* SHALL return a <code class="highlighter-rouge">GuidanceResponse</code> resource.  
+* MUST return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the operation.
+* MUST return a <code class="highlighter-rouge">GuidanceResponse</code> resource.  
 
 <a href="api_return_guidance_response.html">View further information about the result of the triage journey</a>.  
 

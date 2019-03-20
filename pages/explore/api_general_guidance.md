@@ -37,11 +37,11 @@ The [Resource URL](http://www.hl7.org/implement/standards/fhir/STU3/http.html) w
 
 	VERB [base]/[type]/[id] {?_format=[mime-type]}
 
-Clients and servers constructing URLs SHALL conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A) which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
+Clients and servers constructing URLs MUST conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A) which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
 
 ### HTTP verbs ###
 
-The following HTTP verbs SHALL be supported to allow RESTful API interactions with the various FHIR resources:
+The following HTTP verbs MUST be supported to allow RESTful API interactions with the various FHIR resources:
 
 - **GET**
 - **POST**
@@ -53,7 +53,7 @@ The following HTTP verbs SHALL be supported to allow RESTful API interactions wi
 
 This is the [logical Id](http://hl7.org/fhir/STU3/resource.html#id) of the resource which is assigned by the server responsible for storing it. The logical identity is unique within the space of all resources of the same type on the same server, is case sensitive and can be up to 64 characters long.
 
-Once assigned, the identity SHALL never change; `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
+Once assigned, the identity MUST never change; `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
 {% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring a integer key (for example, 2345)." %} 
 
@@ -61,20 +61,20 @@ For further background, refer to principles of [resource identity as described i
 
 ### Content types ###
 
-- The CDSS and EMS Servers SHALL support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
+- The CDSS and EMS Servers MUST support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
   - XML: `application/fhir+xml`
   - JSON: `application/fhir+json`
   
-- The CDSS and EMS Servers SHALL also gracefully handle generic XML and JSON MIME types:
+- The CDSS and EMS Servers MUST also gracefully handle generic XML and JSON MIME types:
   - XML: `application/xml`
   - JSON: `application/json`
   - JSON: `text/json`
   
-- The CDSS and EMS Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
+- The CDSS and EMS Servers MUST support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
-<!--- The CTP Server SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client system.-->
+<!--- The CTP Server MUST prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client system.-->
 
-- If neither the `Accept` header nor the `_format` parameter are supplied by the client system, the CDSS and EMS Servers SHALL return data in the default format of `application/fhir+json`.
+- If neither the `Accept` header nor the `_format` parameter are supplied by the client system, the CDSS and EMS Servers MUST return data in the default format of `application/fhir+json`.
 
 ## Error handling ##
 
@@ -310,7 +310,7 @@ The below table summarises the HTTP response codes, along with the values to exp
 
 -->
 ### Unsupported Media Type ###
-There are three scenarios when an Unsupported Media Type business response code SHALL be returned to a client:
+There are three scenarios when an Unsupported Media Type business response code MUST be returned to a client:
 - Request contains an unsupported `Accept` header and an unsupported `_format` parameter.
 - Request contains a supported `Accept` header and an unsupported `_format` parameter.
 - Retrieval search query request parameters are valid however the URL contains an unsupported `_format` parameter value. 

@@ -33,7 +33,7 @@ Details of how a `ServiceDefinition` should be implemented within the Clinical D
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Logical URI to reference this service definition (globally unique)</td>
-<td>This absolute URI would be used to locate a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. It SHALL be a URL, SHOULD be globally unique and SHOULD be an address at which the <code class="highlighter-rouge">ServiceDefinition</code> is (or will be) published. This is generally used by FHIR servers.</td>
+<td>This absolute URI would be used to locate a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. It MUST be a URL, SHOULD be globally unique and SHOULD be an address at which the <code class="highlighter-rouge">ServiceDefinition</code> is (or will be) published. This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>

@@ -115,8 +115,8 @@ Add explanatory diagram here? Would they want the list of possible responses and
 
 ### Success ###
 
-* SHALL return a `200` **OK** HTTP status code on successful execution of the interaction.
-* SHALL return a `Bundle` of type searchset, containing either:
+* MUST return a `200` **OK** HTTP status code on successful execution of the interaction.
+* MUST return a `Bundle` of type searchset, containing either:
    - One `ServiceDefinition` resource or
    - A '0' (zero) total value indicating no record was matched i.e. an empty `Bundle`.  
 

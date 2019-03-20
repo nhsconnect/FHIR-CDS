@@ -32,13 +32,13 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 ### 2.1 Consumer Server API Conformance ###
 
-- SHALL support HL7 FHIR STU3 version 3.0.1.
+- MUST support HL7 FHIR STU3 version 3.0.1.
 
-- SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
+- MUST Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
 
-- SHALL support XML **or** JSON formats for all API interactions.
+- MUST support XML **or** JSON formats for all API interactions.
 
-- SHALL expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
+- MUST expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
 
 <!--See [CDS API FHIR Capability Statement profile](api_foundation_conformance.html).-->
 
@@ -46,13 +46,13 @@ as detailed in the [Solution Interactions](overview_interactions.html) section o
 
 ### 2.2 Provider Server API Conformance ###
 
-- SHALL support HL7 FHIR STU3 version 3.0.1.
+- MUST support HL7 FHIR STU3 version 3.0.1.
 
-- SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
+- MUST Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/STU3/http.html)
 
-- SHALL support XML **or** JSON formats for all API interactions.
+- MUST support XML **or** JSON formats for all API interactions.
 
-- SHALL expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
+- MUST expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
 
 <!--See [CDS API FHIR Capability Statement profile](api_foundation_conformance.html).
 

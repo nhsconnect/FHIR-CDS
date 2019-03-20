@@ -41,9 +41,9 @@ The new resource is created in a server-assigned location.
 
 ### Success ###
 
-- SHALL return a `201` **CREATED** HTTP status code on successful execution of the interaction.
-- SHALL return a response body containing a payload with an `OperationOutcome` resource that conforms to the ['Operation Outcome'](http://hl7.org/fhir/STU3/operationoutcome.html) FHIR resource. 
-- SHALL return an HTTP `Location` response header containing the full resolvable URL to the newly created `Questionnaire`. 
+- MUST return a `201` **CREATED** HTTP status code on successful execution of the interaction.
+- MUST return a response body containing a payload with an `OperationOutcome` resource that conforms to the ['Operation Outcome'](http://hl7.org/fhir/STU3/operationoutcome.html) FHIR resource. 
+- MUST return an HTTP `Location` response header containing the full resolvable URL to the newly created `Questionnaire`. 
   - The URL will contain the 'server' assigned `logical Id` of the new `Questionnaire` resource.
   - The URL format MUST be: `https://[host]/[path]?_id=[id]`. 
   - When a resource has been created it will have a `versionId` of 1.  
@@ -87,8 +87,8 @@ Add explanatory diagram here?
 
 ### Success ###
 
-* SHALL return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the interaction.
-* The returned resource SHALL have an <code class="highlighter-rouge">id</code> element with a value that is the [id].
+* MUST return a <code class="highlighter-rouge">200</code> **OK** HTTP status code on successful execution of the interaction.
+* The returned resource MUST have an <code class="highlighter-rouge">id</code> element with a value that is the [id].
 
 ### Failure ###
 The following errors can be triggered when performing this operation:  
