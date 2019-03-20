@@ -107,7 +107,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Parameters)</td>
     <td>The output parameters of the evaluation, if any.</td>
-<td>This element carries the state of the patient triage and MUST be populated with the current state. The state is managed through <code class="highlighter-rouge">QuestionnaireResponse</code> elements (as provided by the user), assertions based on these responses which can be interpreted by other systems, and any other resources provided by the EMS, typically from external systems (e.g. known patient conditions). <br><br>
+<td>This element carries the state of the patient triage and MUST be populated with the current state. The state is managed through <code class="highlighter-rouge">QuestionnaireResponse</code> elements (as provided by the user), assertions based on these responses which can be interpreted by other systems, and any other resources provided by the EMS, typically from external systems (e.g. known patient conditions).  
 Where an <code class="highlighter-rouge">outputParameter</code> can be interpreted by a system, it should be published as an Observation. If the information can only be interpreted by a human, it can be published as a <code class="highlighter-rouge">QuestionnaireResponse</code> only.
 </td>
  </tr>
