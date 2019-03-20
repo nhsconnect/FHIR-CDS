@@ -36,12 +36,15 @@ This is carried in the `result` element of the `GuidanceResponse`. The outcome o
 
 There are three main outcomes for a triage journey and these are outlined below:-  
 
+####Triage recommendation####
+
 *  A recommendation as to where the patient should go next; the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`.  
 
 The details of the referral carried in the `ReferralRequest` may be displayed to the user by the EMS.
   
 View [CDS implementation guidance for a ReferralRequest](api_referral_request.html)  
-    
+
+####Care Advice ####
 *  Care advice for the patient (or third party) on actions that can be performed now to either assist the patient, or to assist the triage process. 
     *  In the case of advice which is not self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `ReferralRequest`. The `RequestGroup` will also reference one or more `CarePlans`.  
     *  In the case of advice to the patient relating to self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `CarePlan`.  
@@ -50,8 +53,8 @@ Note that care advice can also be given at any point during a triage journey (ev
 Any care advice carried in a `CarePlan` may be displayed to the user by the EMS.
 	
 View [CDS implementation guidance for a CarePlan](api_care_plan.html)  
-  
-*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` MUST be null. Additionally, the <a href="api_guidance_response.html#re-direction-to-a-new-servicedefinition">GuidanceResponse.dataRequirement</a> element will be used to carry a description of the data required by the EMS to enable it to select the new `ServiceDefinition` as directed by the CDSS.  
+####Redirection of the Service Definition####
+*  A recommendation to redirect to a different `ServiceDefinition`; the `result` element in `GuidanceResponse` SHOULD NOT be populated. Additionally, the <a href="api_guidance_response.html#re-direction-to-a-new-servicedefinition">GuidanceResponse.dataRequirement</a> element will be used to carry a description of the data required by the EMS to enable it to select the new `ServiceDefinition` as directed by the CDSS.  
   
 View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html)    
   
