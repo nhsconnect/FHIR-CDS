@@ -9,12 +9,12 @@ summary: Select a ServiceDefinition interaction
 
 {% include custom/search.warnbanner.html %}
 
-
+<!--
 {% include custom/fhir.referencemin.html  resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
-
+-->
 
 ## Select ServiceDefinition Interaction ##
-This action is performed by the Encounter Management System (EMS) in order to get a `ServiceDefinition` from one pre-selected Clinical Decision Support System (CDSS).  
+This action is performed by the Encounter Management System (EMS) in order to get a [ServiceDefinition](http://hl7.org/fhir/stu3/servicedefinition.html) from one pre-selected Clinical Decision Support System (CDSS).  
 
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction: 
@@ -22,7 +22,7 @@ The following HTTP request headers are supported for this interaction:
 
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
 | `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |
 
 
@@ -92,7 +92,7 @@ Search parameter(s) for the `ServiceDefinition` resource are outlined below:
 
 #### _id ####
 
-The search parameter `_id` refers to the logical id of the `ServiceDefinition` resource and can be used when the search context specifies the ServiceDefinition resource type.  
+The search parameter `_id` refers to the logical id of the `ServiceDefinition` resource and can be used when the search context specifies the `ServiceDefinition` resource type.  
 
 The `_id` parameter can be used as follows:  
 
@@ -100,7 +100,7 @@ The `_id` parameter can be used as follows:
 GET [baseUrl]/ServiceDefinition?_id=[id]</div> 
 This search finds the ServiceDefinition resource with the given id (there can only be one resource for a given id).   
 
-Further details relating to the <a href="https://www.hl7.org/fhir/stu3/search.html#id">_id search parameter</a> are available.  
+Further details relating to the [_id search parameter](https://www.hl7.org/fhir/stu3/search.html#id) are available.  
 
 <!--More information required on potential searches and search parameter combinations from the CTP programme-->
 
