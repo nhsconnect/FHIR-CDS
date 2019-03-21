@@ -8,13 +8,13 @@ summary: ServiceDefinition implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
-
+-->
 ## ServiceDefinition: Implementation Guidance ##  
 
 ### Usage ###
-The `ServiceDefinition` resource carries information describing the functionality made available by a specific service.  
+The [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource carries information describing the functionality made available by a specific service.  
 It does not carry details relating to how this functionality is performed, only about what the service module does plus its required inputs and the outputs it produces.  
   
 Details of how a `ServiceDefinition` should be implemented within the Clinical Decision Support context is outlined in the table below:
