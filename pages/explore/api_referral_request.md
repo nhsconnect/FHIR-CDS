@@ -8,9 +8,9 @@ summary: ReferralRequest resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="ReferralRequest" fhirlink="[ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html)" content="User Stories" userlink="" %}
-
+-->
 
 
 ## ReferralRequest: Implementation Guidance ##  
