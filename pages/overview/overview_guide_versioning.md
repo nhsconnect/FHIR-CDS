@@ -1,4 +1,4 @@
----
+﻿---
 title: Guide Versioning
 keywords: development, versioning
 tags: [development]
@@ -23,9 +23,9 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-A pre-release version MAY be denoted by appending a hyphen and a series of dot separated identifiers immediately following patch version. Refer to [Semantic Versioning - Item 9](https://semver.org/#spec-item-9){:target="_blank"}) 
+A pre-release version MAY be denoted by appending a hyphen and a series of dot separated identifiers immediately following patch version.  
 
-For examples: 1.0.0-alpha.1 is a valid pre-release version.
+For example: 1.0.0-alpha.1 is a valid pre-release version.
 
 ### 1.2.0 Pre-release Labels ###
 
