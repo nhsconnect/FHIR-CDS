@@ -8,16 +8,16 @@ summary: Evaluate ServiceDefinition interaction
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
-
+-->
 
 ## Evaluate ServiceDefinition Interaction ##
 This is a [FHIR operation](https://www.hl7.org/fhir/stu3/operations.html) performed by the Encounter Management System (EMS). 
-It is an [evaluate operation](http://hl7.org/fhir/servicedefinition-operations.html#evaluate) to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).
+It is an [evaluate operation](http://hl7.org/fhir/servicedefinition-operations.html#evaluate) performed against the [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).
 
 ### Trigger for Evaluate ServiceDefinition Interaction ###  
-The `ServiceDefinition.trigger` element is of datatype <a href="https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition">TriggerDefinition</a> and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
+The `ServiceDefinition.trigger` element is of datatype [TriggerDefinition](https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition) and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
 Within the CDS implementation, the Data Event trigger type has been chosen. This means that the EMS's evaluation of a `ServiceDefinition` will be triggered in response to a data-related activity within an implementation, for example by an addition or an update of a record such as a `QuestionnaireResponse` resource.  
 The triggering data of the event is described in the `trigger.eventData` element of the `ServiceDefinition` and this is populated by the CDSS.     
 
@@ -27,7 +27,7 @@ The following HTTP request headers are supported for this interaction:
 
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following <code class="highlighter-rouge">application/fhir+json</code> or <code class="highlighter-rouge">application/fhir+xml</code>. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
 | `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |  
 
 ## POST ServiceDefinition ##
