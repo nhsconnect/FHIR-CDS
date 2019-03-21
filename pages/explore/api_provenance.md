@@ -8,14 +8,14 @@ summary: Provenance implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="GuidanceResponse" fhirlink="[Provenance](http://hl7.org/fhir/stu3/provenance.html)" content="User Stories" userlink="" %}
-
+-->
 
 ## Provenance: Implementation Guidance ##  
 
 ### Usage ###
-Within the Clinical Decision Support API implementation, the <a href="https://www.hl7.org/fhir/stu3/provenance.html">Provenance</a> resource will be used to carry key state transitions or updates from previous versions of a <a href="api_referral_request.html">ReferralRequest</a>  that are likely to be relevant to a user looking at the current version of the resource.  
+Within the Clinical Decision Support API implementation, the [Provenance](http://hl7.org/fhir/stu3/provenance.html) resource will be used to carry key state transitions or updates from previous versions of a [ReferralRequest](api_referral_request.html) that are likely to be relevant to a user looking at the current version of the resource.  
 The resource is used as a record-keeping assertion that gathers information about the context in which the information in the `ReferralRequest` was obtained. The resource's data are prepared by the application that initiates the create/update etc. of the `ReferralRequest`, in this case the CDSS.
 
 The table below details implementation guidance for this resource in the CDS context:
