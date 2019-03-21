@@ -8,13 +8,13 @@ summary: GuidanceResponse implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="GuidanceResponse" fhirlink="[GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html)" content="User Stories" userlink="" %}
 
-
+-->
 
 ## GuidanceResponse: Implementation Guidance ##  
-The table below details implementation guidance for this resource in the CDS context:
+The table below details implementation guidance for the [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource in the CDS context:
 
 <table style="min-width:100%;width:100%">
 
@@ -138,7 +138,7 @@ In this case, the <code class="highlighter-rouge">status</code> MUST be 'success
 This element contains the output parameters of the evaluation and is critical because it carries the current state of the triage journey.  
 
 ### Result element of the GuidanceResponse ###
-Further guidance about the population of this element can be viewed on the <a href="api_return_guidance_response.html">Result interaction</a> pages.  
+Further guidance about the population of this element can be viewed on the [Result interaction](api_return_guidance_response.html) page.  
 
 ### DataRequirement element of the GuidanceResponse ###  
 The scenarios in which this element may be used are outlined below:-  
