@@ -8,13 +8,13 @@ summary: Questionnaire resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Questionnaire" fhirlink="[Questionnaire](http://hl7.org/fhir/stu3/questionnaire.html)" content="User Stories" userlink="" %}
-
+-->
 ## Questionnaire: Implementation Guidance ##
 
 ### Usage ###
-The `Questionnaire` resource is used to send one or more questions from the CDSS to the EMS. The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process.  
+The [Questionnaire](http://hl7.org/fhir/stu3/questionnaire.html) resource is used to send one or more questions from the CDSS to the EMS. The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process.  
 The responses to a `Questionnaire` sent by the CDSS are communicated back by the EMS using the `QuestionnaireResponse` resource.  
 
 Detailed implementation guidance for a `Questionnaire` resource in the CDS context is given below:  
