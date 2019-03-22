@@ -107,7 +107,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(Patient|<br>Group)</td>
     <td>Patient referred to care or transfer</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Patient</code> resource.</td>
+<td>This SHOULD NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
