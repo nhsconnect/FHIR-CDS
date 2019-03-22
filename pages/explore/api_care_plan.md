@@ -115,7 +115,9 @@ The table below gives implementation guidance in relation to the elements within
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Created in context of</td>
-<td></td>
+<td>
+  This MUST be populated with the Encounter for this journey, from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">period</code></td>

@@ -65,7 +65,10 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter|<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which the response was returned.</td>
-<td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.
+<br>
+This MUST be populated with the Encounter for this journey, from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrenceDateTime</code></td>
