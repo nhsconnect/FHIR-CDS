@@ -57,7 +57,7 @@ The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the o
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>An optional client-provided identifier to track the request.</td>
-<td>MUST be provided by the EMS. This id must be persisted through a patient journey</td>
+<td>MUST be provided by the EMS. This id MUST be persisted through a patient journey</td>
 </tr>
 <tr>
    <td><code class="highlighter-rouge">evaluateAtDateTime</code></td>
@@ -125,7 +125,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.).</td>
-<td>The <a href="#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS should use first person pronouns.</td>
+<td>The <a href="#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">userLanguage</code></td>

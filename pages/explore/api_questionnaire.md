@@ -216,7 +216,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>group | display | boolean | decimal | integer | date | dateTime + <a href="https://www.hl7.org/fhir/stu3/valueset-item-type.html">QuestionnaireItemType (Required)</a></td>
-<td>The type of questionnaire item this is. If this is set to 'group', the EMS User interface must present all sub-items together to the user, with the group item description as the header.</td>
+<td>The type of questionnaire item this is. If this is set to 'group', the EMS User interface MUST present all sub-items together to the user, with the group item description as the header.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.enableWhen</code></td>
@@ -243,7 +243,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
   <td><code class="highlighter-rouge">item.enableWhen.answer[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean | decimal |<br>integer | date |<br>dateTime | time |<br>string | uri |<br>Attachment |<br> Coding |<br>Quantity | Reference(Any)</td>
-    <td>Value question must have <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
+    <td>Value question MUST have <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
 <td>This element will be populated by the CDSS and the EMS will display the value that it receives.</td>
  </tr>
 <tr>
@@ -251,14 +251,14 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
   <td>Whether the item must be included in data results</td>
-<td>If this element is true, then the EMS User interface must ensure the user provides an answer. If false, the User interface must allow the user to skip the question.</td>
+<td>If this element is true, then the EMS User interface MUST ensure the user provides an answer. If false, the User interface MUST allow the user to skip the question.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.repeats</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
   <td>Whether the item may repeat</td>
-<td>If this option is false, then the EMS User interface must only allow a single response to be selected. If the option is true, then multiple responses can be selected.</td>
+<td>If this option is false, then the EMS User interface MUST only allow a single response to be selected. If the option is true, then multiple responses can be selected.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.readOnly</code></td>
@@ -279,20 +279,20 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference(ValueSet)</td>
   <td>Valueset containing permitted answers</td>
-<td>This element MAY be populated by the CDSS, and if so, the EMS must provide the set of possible answers to the user who must choose one of the provided options. The use of this element is not recommended.</td>
+<td>This element MAY be populated by the CDSS, and if so, the EMS MUST provide the set of possible answers to the user who MUST choose one of the provided options. The use of this element is not recommended.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.option</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
   <td>Permitted answer</td>
-<td>Where the question has multiple options, only one of which should be selected, these options can be enumerated in this element.</td>
+<td>Where the question has multiple options, only one of which SHOULD be selected, these options can be enumerated in this element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.option.value[x]</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
      <td>integer | date |<br>time | string |<br> Coding</td>
-    <td>Value question must have <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
+    <td>Value question MUST have <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
 <td>This element will be populated by the CDSS and the EMS will display the value that it receives.</td>
  </tr>
 <tr>
