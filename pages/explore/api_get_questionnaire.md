@@ -111,8 +111,11 @@ The CDSS can request this resource from the EMS using the HTTP GET verb and `_id
 View [CDS implementation guidance for a QuestionnaireResponse](api_questionnaire_response.html).
 
 ## Observation ##
-On receipt of the `QuestionnaireResponse`, the CDSS will use its contents to create and populate an [Observation](http://hl7.org/fhir/stu3/observation.html) resource, a reference to which is added to the `GuidanceResponse.outputParameters` returned to the EMS.  
-The CDSS will create the `Observation` using the same FHIR RESTful create interaction as outlined above for the [creation of a Questionnaire](#create-questionnaire).
+
+On receipt of the `QuestionnaireResponse`, the CDSS will use its contents to create an assertion, typically as an [Observation](http://hl7.org/fhir/stu3/observation.html) resource, a reference to which is added to the `GuidanceResponse.outputParameters` returned to the EMS. Note that `QuestionnaireResponse` and assertions will typically be one to one, but do not have to be. A CDSS can create multiple assertions from a single `QuestionnaireResponse`, and may also use multiple `QuestionnaireResponses` to be sure of a single assertion.
+
+The CDSS will create the `Observation` (or other resource appropriate for the assertion) using the same FHIR RESTful create interaction as outlined above for the [creation of a Questionnaire](#create-questionnaire).
+
 
 <!-- ## Example Scenario ##
 Placeholder -->

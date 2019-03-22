@@ -83,12 +83,10 @@ If no value is provided, the date and time of the request is assumed.</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
    <td>The <a href="api_post_service_definition.html#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
 <ul>  
-<li><code class="highlighter-rouge">GuidanceResponse</code> outputParameters supplied by any CDSS. Any relevant information taken from other (external) systems SHOULD be included.</li> 
-<li>Any <code class="highlighter-rouge">QuestionnaireResponse(s)</code> available from the user. Note that this MAY include <code class="highlighter-rouge">QuestionnaireResponse(s)</code> which have been amended. These MUST be addressed by the CDSS and the assertions updated.</li>
-</ul>
-<ul>
-<li>The CDSS MUST filter the supplied inputData and disregard any information not relevant for the <code class="highlighter-rouge">ServiceDefinition</code>.</li> 
-<li>The EMS MUST NOT send duplicate items.</li>
+<li>All assertions current for this triage (typically Observation resources). This includes all <code class="highlighter-rouge">GuidanceResponse outputParameters</code> supplied by any CDSS. Any relevant information taken from other (external) systems SHOULD be included.</li> 
+<li>Any <code class="highlighter-rouge">QuestionnaireResponse(s)</code> available from the user. Note that this MAY include <code class="highlighter-rouge">QuestionnaireResponse(s)</code> which have been amended. These MUST be addressed by the CDSS and the assertions updated.
+<br>The CDSS MUST filter the supplied inputData and disregard any information not relevant for the <code class="highlighter-rouge">ServiceDefinition</code>.
+<br>The EMS MUST NOT send duplicate items.</li>
 </ul>
 </td>
 </tr> 

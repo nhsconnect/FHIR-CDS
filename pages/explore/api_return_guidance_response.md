@@ -219,18 +219,9 @@ The table below gives additional information relating to outcome scenarios when 
 </table>
 
 ### OutputParameters of the returned GuidanceResponse ###  
-The `GuidanceResponse.status` element carries questions and assertions (resulting from the EMS's responses to received questions) sent to the EMS by the CDSS.  
-Where the data carried in `outputParameters` can be interpreted by a system, it SHOULD be published as an [Observation](http://hl7.org/fhir/stu3/observation.html). This could be done by the CDSS when it receives responses to received questions from the EMS.  
+The `GuidanceResponse.outputParameters` element carries assertions (resulting from the EMS’s responses to received questions) sent to the EMS by the CDSS. It also carries the `QuestionnaireResponse` resources created by the EMS, from user input. Where the data carried in `outputParameters` can be interpreted by a system, it SHOULD be published as an assertion, typically by populating an  [Observation](http://hl7.org/fhir/stu3/observation.html) resource. This is done by the CDSS when it receives responses to received questions from the EMS.
 
-If the information can only be interpreted by a human, it SHOULD be published as a [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html). This resource could be published by the EMS as a response to questions received from the CDSS.  
-The [logical ID](http://hl7.org/fhir/STU3/resource.html#id) of either or both of these resources can be returned to the EMS by the CDSS for persistence and these IDs are carried as a reference in this element throughout the triage journey.
+If the information can only be interpreted by a human, it SHOULD be maintained as a [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html) only. The [logical ID](http://hl7.org/fhir/STU3/resource.html#id) of either or both of these resources can be returned to the EMS by the CDSS for persistence and these IDs are carried as a reference in this element throughout the triage journey.
 
 ## GuidanceResponse: Implementation Guidance ##
 View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html).
-
-
-
-
-
-
-
