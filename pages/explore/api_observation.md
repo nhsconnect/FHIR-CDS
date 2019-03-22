@@ -50,7 +50,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>registered | preliminary | final | amended + <a href="https://www.hl7.org/fhir/stu3/valueset-observation-status.html">ObservationStatus (Required)</a>.</td>
-<td>This will normally be 'final', but may be amended (where a user has amended their answers to a question).</td>
+<td>This will normally be 'final', but may be 'amended' (where a user has amended their answers to a question).</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">category</code></td>
@@ -63,7 +63,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
   <td><code class="highlighter-rouge">code</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>CodeableConcept</td>
-    <td>Type of observation (code/type)</td>
+    <td>Type of observation (code/type) <a href="https://www.hl7.org/fhir/stu3/valueset-observation-codes.html">LOINC Codes (Example)</a>.</td>
 <td>Snomed CT code for the <code class="highlighter-rouge">Observation</code>.</td>
  </tr>
 <tr>
