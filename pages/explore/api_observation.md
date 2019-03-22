@@ -240,7 +240,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">1..1</code></td>
  <td>CodeableConcept</td>
     <td>Type of component observation (code/type) <a href="https://www.hl7.org/fhir/stu3/valueset-observation-codes.html">LOINC Codes (Example)</a></td>
-    <td></td>
+    <td>Snomed CT code for the <code class="highlighter-rouge">Observation</code>.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">component.value[x]</code></td>
