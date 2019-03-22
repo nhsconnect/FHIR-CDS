@@ -59,6 +59,11 @@ Once assigned, the identity MUST never change; `logical Ids` are always opaque, 
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
 
+
+### Referenced Resources ###
+Resources will commonly be referred to as part of other resources (e.g. a `GuidanceResponse` may refer to a `Questionnaire`). This guide is agnostic about whether the referenced resource is contained, or only available through a `GET`.
+
+
 ### Content types ###
 
 - The CDSS and EMS Servers MUST support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
