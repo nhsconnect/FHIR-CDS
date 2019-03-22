@@ -14,8 +14,14 @@ summary: ServiceDefinition implementation guidance
 ## ServiceDefinition: Implementation Guidance ##  
 
 ### Usage ###
-The [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource carries information describing the functionality made available by a specific service.  
-It does not carry details relating to how this functionality is performed, only about what the service module does plus its required inputs and the outputs it produces.  
+The [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource is published by the CDSS, describing what decisions the CDSS is able to provide support for. The resource describes in what circumstances the CDSS is valid, and what information is needed to render the decision.
+A CDSS can publish one or many `ServiceDefinition` resources. The resources should form a logically complete set. All CDSS must publish at least one `ServiceDefinition`.
+
+
+A `ServiceDefinition` can encapsulate any amount of information – some CDSS may find it simpler to have a single `ServiceDefinition`, and routing of patients through the CDSS is managed entirely within that single `ServiceDefinition`. Other CDSS may publish a different `ServiceDefinition` for different areas – for example, a `ServiceDefinition` for each presenting complaint. It is also possible to be even more granular, with a CDSS having a different `ServiceDefintion` for different complaints, and also for different types of user (e.g. headache for adult females, and a separate `ServiceDefinition` for headache for male children).
+
+In general, more granular `ServiceDefinitions` will make change management simpler, as these can be updated without changing other `ServiceDefinitions`. Conversely, fewer `ServiceDefinitions` can make the triage journey simpler to control.
+
   
 Details of how a `ServiceDefinition` should be implemented within the Clinical Decision Support context is outlined in the table below:
 
