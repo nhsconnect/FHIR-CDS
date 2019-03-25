@@ -99,7 +99,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson)</td>
     <td>Who is responsible for the observation</td>
-<td>This SHOULD be populated with a reference to the organisation of the service provider which would be taken from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.inputParameters</code> element.</td>
+<td>This SHOULD be populated with a reference to the organisation of the service provider which would be taken from the <code class="highlighter-rouge">ServiceDefinition.<br>$evaluate.inputParameters</code> element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">value[x]</code></td>
