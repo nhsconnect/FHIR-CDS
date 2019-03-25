@@ -320,7 +320,7 @@ These exceptions are raised by the Spine Core common requesthandler and not the 
 The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
 
-| HTTP Code | issue-severity | issue-type | Details.System | Details.Code | Details.Display | Diagnostics |
+| HTTP Code | issue-severity | issue-type | Details.System | Details.Code | Details.Display |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |415|error|invalid|UNSUPPORTED_MEDIA_TYPE|Unsupported Media Type|Unsupported Media Type|
 
