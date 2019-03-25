@@ -33,7 +33,7 @@ The interaction is performed by the FHIR RESTful [search](https://www.hl7.org/fh
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition?[searchParameters]</div>  
 
-## Search Parameters ##
+## Search Parameters and Responses ##
 Detailed guidance relating to [searching for FHIR resources](https://www.hl7.org/fhir/stu3/search.html) can be viewed.  
 Two scenarios which may be used to search for a `ServiceDefinition` in the CDS context are outlined below:
 ### Searching for a ServiceDefinition by _id ###
@@ -52,7 +52,7 @@ Further details relating to the [_id search parameter](https://www.hl7.org/fhir/
 <!--
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
 -->
-## Search Response ##
+### Search Response ###
 
 ### Success ###
 
@@ -128,7 +128,7 @@ The recommended additional parameters for a `ServiceDefinition` are outlined bel
 </table>
   
 Servers will define their own named queries to meet the use case outlined above by using an [OperationDefinition](https://www.hl7.org/fhir/stu3/operationdefinition.html) resource.  
-## Search Response ##
+### Search Response ###
 
 ### Success ###
 
