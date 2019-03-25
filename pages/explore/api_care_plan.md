@@ -19,9 +19,6 @@ summary: CarePlan resource implementation guidance
 Within the Clinical Decision Support API implementation, the [CarePlan](http://hl7.org/fhir/stu3/careplan.html) resource will be used to carry the care advice recommendation given by the CDSS.  
 This resource may also carry a recommendation of self-care.  
 
-### Care advice to be actioned by a third party ###
-When the outcome of triage is to recommend care advice given by a third party (not self-care), this will be carried as follows:   
-A `GuidanceResponse` returned to the EMS by the CDSS will carry a reference to a `RequestGroup` resource which will reference a `ReferralRequest`. This in turn will reference a `CarePlan`.  
 
 ### Self-care ###
 When the outcome of triage is to recommend self care, this will be carried as follows:  
