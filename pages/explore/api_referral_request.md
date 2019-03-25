@@ -226,7 +226,7 @@ The population of this element shows whether the request is a proposal, plan, an
 This element carries a code denoting the type of procedure being requested.
 
 #### Subject element of the ProcedureRequest #### 
-This element SHOULD always reference a `Patient` resource.
+This element SHOULD NOT be populated.
 
 
 
