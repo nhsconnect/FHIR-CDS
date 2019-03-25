@@ -105,9 +105,9 @@ If the CDSS is recommending triage to another service, the <code class="highligh
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
-    <td>Reference<br>(Patient|<br>Group)</td>
+    <td>Reference<br>(Patient |<br>Group)</td>
     <td>Patient referred to care or transfer</td>
-<td>This SHOULD NOT be populated</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>

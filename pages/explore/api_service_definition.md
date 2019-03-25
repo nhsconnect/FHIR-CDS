@@ -200,7 +200,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>What data is used by the module</td>
-<td>This element MUST be populated with the set of machine-processable assertions (see <a href="api_guidance_response.html#outputparameters-element-of-guidanceresponse">GuidanceResponse.<br>outputParameters</a>) which the CDSS requires in order to render the response fully.</td>
+<td>This element MUST be populated with the set of machine-processable assertions (see <code class="highlighter-rouge">GuidanceResponse.</code><br><code class="highlighter-rouge">outputParameters</code>) which the CDSS requires in order to render the response fully.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">operationDefinition</code></td>
