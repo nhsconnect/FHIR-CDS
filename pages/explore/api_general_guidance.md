@@ -176,6 +176,9 @@ If the search request specifies unsupported parameter values in the request, thi
 #### effectivePeriod parameter ####
 If this parameter of type `date` has an incorrectly formatted date, this will also cause the error to be thrown.  
 
+General guidance on [handling errors arising from search requests](https://www.hl7.org/fhir/stu3/search.html#errors) is available.  
+
+<!--
 #### _summary parameter ####
 The _summary parameter MUST have a value of “count”. If it is anything else then an error SHOULD be returned to the client.
 
