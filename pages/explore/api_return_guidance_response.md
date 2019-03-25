@@ -51,7 +51,7 @@ Care advice for the patient (or third party) on actions that can be performed no
   *  In the case of advice to the patient relating to self-care, the `result` element in `GuidanceResponse` MUST be populated with a `RequestGroup` resource which will reference a `CarePlan`.  
 Note that care advice can also be given at any point during a triage journey (even without a referral request). In this case, the `result` element MUST be populated with a `RequestGroup` which will reference a `CarePlan`.  
 
-Any care advice carried in a `CarePlan` may be displayed to the user by the EMS.
+Any care advice carried in a `CarePlan` MUST be displayed to the user by the EMS.
 	
 View [CDS implementation guidance for a CarePlan](api_care_plan.html)  
 

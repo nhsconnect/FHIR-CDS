@@ -77,9 +77,7 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
       <td><code class="highlighter-rouge">0..1</code></td>
   <td>Reference |<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which questionnaire was completed</td>
-<td>This SHOULD be populated with the same details as those carried in the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code> element.
-<br>
-This MUST be populated with the Encounter for this journey, which is the same as the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
+<td>This MUST be populated with the Encounter for this journey, which is the same as the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
 </td>
  </tr>
 <tr>

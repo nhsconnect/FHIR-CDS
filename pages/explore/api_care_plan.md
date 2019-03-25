@@ -58,7 +58,7 @@ The table below gives implementation guidance in relation to the elements within
   <td><code class="highlighter-rouge">basedOn</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(CarePlan)</td>
-    <td>Fulfills care plan</td>
+    <td>Fulfils care plan</td>
 <td></td>
  </tr>
 <tr>

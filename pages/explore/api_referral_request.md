@@ -191,7 +191,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
   <td><code class="highlighter-rouge">supportingInfo</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
-    <td>Additonal information to support referral or transfer of care request</td>
+    <td>Additional information to support referral or transfer of care request</td>
 <td>This SHOULD be populated by the CDSS. Secondary concerns SHOULD be be carried in this element.</td>
  </tr>
 <tr>
@@ -226,7 +226,7 @@ The population of this element shows whether the request is a proposal, plan, an
 This element carries a code denoting the type of procedure being requested.
 
 #### Subject element of the ProcedureRequest #### 
-This element SHOULD always reference a `Patient` resource.
+This element SHOULD NOT be populated.
 
 
 

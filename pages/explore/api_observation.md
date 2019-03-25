@@ -42,7 +42,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
   <td><code class="highlighter-rouge">basedOn</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Careplan |<br>DeviceRequest |<br>Immunization<br>Recommendation |<br>MedicationRequest |<br>NutritionOrder |<br>ProcedureRequest |<br>ReferralRequest)</td>
-    <td>Fulfills plan, proposal or order</td>
+    <td>Fulfils plan, proposal or order</td>
 <td></td>
  </tr>
 <tr>
