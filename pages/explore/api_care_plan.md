@@ -80,7 +80,7 @@ The table below gives implementation guidance in relation to the elements within
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | suspended | completed | entered-in-error | cancelled | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-status.html">CarePlanStatus (Required)</a></td>
-<td>This element should be populated with 'active' when the advice is given by the CDSS. Once the advice has been given, it should be updated by the EMS to show a value of 'completed'.</td>
+<td>This element SHOULD be populated with 'active' when the advice is given by the CDSS. Once the advice has been given, it SHOULD be updated by the EMS to show a value of 'completed'.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
@@ -115,7 +115,9 @@ The table below gives implementation guidance in relation to the elements within
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Created in context of</td>
-<td></td>
+<td>
+  This MUST be populated with the Encounter for this journey, from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">period</code></td>

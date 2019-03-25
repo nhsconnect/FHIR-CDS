@@ -163,13 +163,13 @@ The table below gives additional information relating to outcome scenarios when 
   <td>The CDSS has sufficient information to recommend a referral, but additional information will provide a better result.</td>
     <td>data-requested</td>
     <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which in turn references <code class="highlighter-rouge">ReferralRequest</code> to carry the information pertinent to the recommended referral.</td>
-<td>The <code class="highlighter-rouge">ReferralRequest</code> will have a <code class="highlighter-rouge">status</code> of 'draft' updating to 'active' when the finalised score is available.  When the result is final, the <code class="highlighter-rouge">GuidanceResponse.status</code> should be 'success' as above.</td>
+<td>The <code class="highlighter-rouge">ReferralRequest</code> will have a <code class="highlighter-rouge">status</code> of 'draft' updating to 'active' when the finalised score is available.  When the result is final, the <code class="highlighter-rouge">GuidanceResponse.status</code> SHOULD be 'success' as above.</td>
 </tr>
 <tr>
   <td>The CDSS has sufficient information to make a recommendation regarding what service the patient should use next and there is also a recommendation relating to a care plan (not self-care).</td>
     <td>data-requested</td>
     <td><code class="highlighter-rouge">GuidanceResponse</code> references <code class="highlighter-rouge">RequestGroup</code> which references <code class="highlighter-rouge">ReferralRequest</code> which in turn references <code class="highlighter-rouge">CarePlan</code>.</td>
-<td>The <code class="highlighter-rouge">ReferralRequest</code> and the <code class="highlighter-rouge">CarePlan</code> will have a <code class="highlighter-rouge">status</code> of 'draft' updating to 'active' when the finalised score is available. When the result is final, the <code class="highlighter-rouge">GuidanceResponse.status</code> should be 'success' as above.</td>
+<td>The <code class="highlighter-rouge">ReferralRequest</code> and the <code class="highlighter-rouge">CarePlan</code> will have a <code class="highlighter-rouge">status</code> of 'draft' updating to 'active' when the finalised score is available. When the result is final, the <code class="highlighter-rouge">GuidanceResponse.status</code> SHOULD be 'success' as above.</td>
 </tr>
 </table>
 
@@ -219,17 +219,9 @@ The table below gives additional information relating to outcome scenarios when 
 </table>
 
 ### OutputParameters of the returned GuidanceResponse ###  
-The `GuidanceResponse.status` element carries questions and assertions (resulting from the EMS's responses to received questions) sent to the EMS by the CDSS.  
-Where the data carried in `outputParameters` can be interpreted by a system, it should be published as an [Observation](http://hl7.org/fhir/stu3/observation.html). This could be done by the CDSS when it receives responses to received questions from the EMS.  
-If the information can only be interpreted by a human, it should be published as a [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html). This resource could be published by the EMS as a response to questions received from the CDSS.  
-The [logical ID](http://hl7.org/fhir/STU3/resource.html#id) of either or both of these resources can be returned to the EMS by the CDSS for persistence and these IDs are carried as a reference in this element throughout the triage journey.
+The `GuidanceResponse.outputParameters` element carries assertions (resulting from the EMS’s responses to received questions) sent to the EMS by the CDSS. It also carries the `QuestionnaireResponse` resources created by the EMS, from user input. Where the data carried in `outputParameters` can be interpreted by a system, it SHOULD be published as an assertion, typically by populating an  [Observation](http://hl7.org/fhir/stu3/observation.html) resource. This is done by the CDSS when it receives responses to received questions from the EMS.
+
+If the information can only be interpreted by a human, it SHOULD be maintained as a [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html) only. The [logical ID](http://hl7.org/fhir/STU3/resource.html#id) of either or both of these resources can be returned to the EMS by the CDSS for persistence and these IDs are carried as a reference in this element throughout the triage journey.
 
 ## GuidanceResponse: Implementation Guidance ##
 View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html).
-
-
-
-
-
-
-

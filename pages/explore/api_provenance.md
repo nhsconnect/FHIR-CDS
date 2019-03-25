@@ -34,7 +34,7 @@ The table below details implementation guidance for this resource in the CDS con
     <td><code class="highlighter-rouge">1..*</code></td>
     <td>Reference(Any)</td>
     <td>Target Reference(s) (usually version specific)</td>
-<td>This MUST be populated by the CDSS and must carry the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical ID</a> of the <code class="highlighter-rouge">ReferralRequest</code> that was generated or updated by the activity described in this resource.</td>
+<td>This MUST be populated by the CDSS and MUST carry the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical ID</a> of the <code class="highlighter-rouge">ReferralRequest</code> that was generated or updated by the activity described in this resource.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">period</code></td>
@@ -118,7 +118,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>An entity used in this activity</td>
-<td>Multiple userIds may be associated with the same Practitioner or other individual across various appearances, each with distinct privileges.</td>
+<td>Multiple userIds MAY be associated with the same Practitioner or other individual across various appearances, each with distinct privileges.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">entity.role</code></td>
@@ -132,7 +132,7 @@ The table below details implementation guidance for this resource in the CDS con
      <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whatUri</code> uri <br><code class="highlighter-rouge">whatReference</code> <br> Reference(Any)<br><code class="highlighter-rouge">whatIdentifier</code> <br> Identifier</td>
     <td>Identity of entity</td>
-<td>Identity of the entity used. May be a logical or physical uri and maybe absolute or relative.</td>
+<td>Identity of the entity used. MAY be a logical or physical uri and maybe absolute or relative.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">entity.agent</code></td>
@@ -146,6 +146,6 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Signature</td>
     <td>Signature on target</td>
-<td>This element carries a digital signature on the target Reference(s). The signer should match a Provenance.agent.</td>
+<td>This element carries a digital signature on the target Reference(s). The signer SHOULD match a Provenance.agent.</td>
  </tr>
 </table>

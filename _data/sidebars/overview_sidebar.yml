@@ -66,7 +66,7 @@ entries:
       url: /api_security.html
       output: web
       subfolders:
-      - title: API Interactions
+      - title: Interactions
         output: web
         subfolderitems:
         - title: Select ServiceDefinition
@@ -81,7 +81,7 @@ entries:
         - title: Result
           url: /api_return_guidance_response.html
           output: web  
-      - title: FHIR resources
+      - title: Resources
         output: web
         subfolderitems:
     #    - title: ActivityDefinition

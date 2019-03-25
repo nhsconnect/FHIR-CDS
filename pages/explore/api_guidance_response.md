@@ -30,7 +30,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>The id of the request associated with this response, if any.</td>
-<td>This MUST be populated by the CDSS and must replicate the requestId received by the CDSS as a parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This MUST be populated by the CDSS and MUST replicate the requestId received by the CDSS as a parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
@@ -65,7 +65,10 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter|<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which the response was returned.</td>
-<td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This SHOULD be populated by the CDSS; if received by the CDSS, it is taken from the encounter parameter in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.
+<br>
+This MUST be populated with the Encounter for this journey, from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrenceDateTime</code></td>
@@ -107,8 +110,9 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Parameters)</td>
     <td>The output parameters of the evaluation, if any.</td>
-<td>This element carries the state of the patient triage and MUST be populated with the current state. The state is managed through <code class="highlighter-rouge">QuestionnaireResponse</code> elements (as provided by the user), assertions based on these responses which can be interpreted by other systems, and any other resources provided by the EMS, typically from external systems (e.g. known patient conditions).  
-Where an <code class="highlighter-rouge">outputParameter</code> can be interpreted by a system, it should be published as an Observation. If the information can only be interpreted by a human, it can be published as a <code class="highlighter-rouge">QuestionnaireResponse</code> only.
+<td>This element carries the state of the patient triage and MUST be populated with the current state. The state is managed through <code class="highlighter-rouge">QuestionnaireResponse</code> elements (as provided by the user); assertions (typically populated as <code class="highlighter-rouge">Observation</code> resources) based on these responses which can be interpreted by other systems; and any other resources provided by the EMS, typically from external systems (e.g. known patient conditions).
+<br>
+Where an <code class="highlighter-rouge">outputParameter</code> can be interpreted by a system, it SHOULD be published as an assertion, typically an <code class="highlighter-rouge">Observation</code>. If the information can only be interpreted by a human, it can be published as a <code class="highlighter-rouge">QuestionnaireResponse</code> only.
 </td>
  </tr>
 <tr>
@@ -141,10 +145,10 @@ This element contains the output parameters of the evaluation and is critical be
 Further guidance about the population of this element can be viewed on the [Result interaction](api_return_guidance_response.html) page.  
 
 ### DataRequirement element of the GuidanceResponse ###  
-The scenarios in which this element may be used are outlined below:-  
+The scenarios in which this element MAY be used are outlined below:-  
  
 #### Evaluation against the currently selected ServiceDefinition ####  
-If information is lacking for the evaluation to be completed or additional information could result in a more accurate response, this element will carry a description of the data required in order to proceed with the evaluation. A subsequent request to the service should include this data.  
+If information is lacking for the evaluation to be completed or additional information could result in a more accurate response, this element will carry a description of the data required in order to proceed with the evaluation. A subsequent request to the service SHOULD include this data.  
 
 #### Re-direction to a new ServiceDefinition ####
 In this scenario, the element will carry a description of the data required by the EMS to select the new `ServiceDefinition` to which it is being re-directed by the CDSS.  

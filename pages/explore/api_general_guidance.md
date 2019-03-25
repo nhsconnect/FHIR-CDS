@@ -53,11 +53,16 @@ The following HTTP verbs MUST be supported to allow RESTful API interactions wit
 
 This is the [logical Id](http://hl7.org/fhir/STU3/resource.html#id) of the resource which is assigned by the server responsible for storing it. The logical identity is unique within the space of all resources of the same type on the same server, is case sensitive and can be up to 64 characters long.
 
-Once assigned, the identity MUST never change; `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
+Once assigned, the identity MUST never change; `logical Ids` are always opaque, and external systems need not and SHOULD NOT attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring a integer key (for example, 2345)." %} 
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems SHOULD NOT attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring a integer key (for example, 2345)." %} 
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
+
+
+### Referenced Resources ###
+Resources will commonly be referred to as part of other resources (e.g. a `GuidanceResponse` may refer to a `Questionnaire`). This guide is agnostic about whether the referenced resource is contained, or only available through a `GET`.
+
 
 ### Content types ###
 
@@ -80,7 +85,7 @@ For further background, refer to principles of [resource identity as described i
 
 The CDS API defines numerous categories of error, each of which encapsulates a specific part of the request that is sent to the CDSS. Each type of error will be discussed in its own section below with the relevant response code:
 - [Resource Not found](api_general_guidance.html#resource-not-found) - this behaviour is supported when a request references a resource that cannot be resolved.
-- [Headers](api_general_guidance.html#headers) - The HTTP Authorization header must be supplied with any request and an error will be generated in the event of this header not being present. 
+- [Headers](api_general_guidance.html#headers) - The HTTP Authorization header MUST be supplied with any request and an error will be generated in the event of this header not being present. 
 - [Parameters](api_general_guidance.html#parameters) – Certain actions allow a server to specify HTTP parameters. This class of error covers problems with the way that those parameters may have been presented.
 
 <!--
@@ -152,7 +157,7 @@ Example error scenarios in relation to specified request parameters are also lis
 |400|error|invlid| INVALID_PARAMETER|Invalid parameter|
 
 #### `_format` request parameter ####
-If used, this parameter must specify one of the [mime types](api_general_guidance.html#content-types) recognised by CDSS and EMS Servers.
+If used, this parameter MUST specify one of the [mime types](api_general_guidance.html#content-types) recognised by CDSS and EMS Servers.
 
 <!--
 #### Invalid Reference URL in Pointer Create Request ####
@@ -171,14 +176,10 @@ If the search request specifies unsupported parameter values in the request, thi
 #### effectivePeriod parameter ####
 If this parameter of type `date` has an incorrectly formatted date, this will also cause the error to be thrown.  
 
-General guidance on [handling errors arising from search requests](https://www.hl7.org/fhir/stu3/search.html#errors) is available.  
-
-<!--
-
 #### _summary parameter ####
-The _summary parameter must have a value of “count”. If it is anything else then an error should be returned to the client.
+The _summary parameter MUST have a value of “count”. If it is anything else then an error SHOULD be returned to the client.
 
-If the _summary parameter is provided then the only other param that it can be used with is the optional _format param. If any other parameters are provided then an error should be returned to the client.
+If the _summary parameter is provided then the only other param that it can be used with is the optional _format param. If any other parameters are provided then an error SHOULD be returned to the client.
 
 -->
 ### Payload business rules ###
@@ -211,7 +212,7 @@ If the DocumentReference in the request body contains an ODS code on the custodi
 
 #### Attachment.creation ####
 This is an optional field but if supplied:
-- must be a valid FHIR [dateTime](https://www.hl7.org/fhir/STU3/datatypes.html#dateTime) 
+- MUST be a valid FHIR [dateTime](https://www.hl7.org/fhir/STU3/datatypes.html#dateTime) 
 
 
 #### DocumentReference.Status ####
@@ -231,7 +232,7 @@ This error is raised during a provider delete interaction. There is one exceptio
 - A provider delete pointer request contains a URL that resolves to a single DocumentReference however the custodian property does not match the ODS code in the fromASID header.
 
 #### relatesTo.code ####
-If the code is not set to the following values then an error must be returned: 
+If the code is not set to the following values then an error MUST be returned: 
 - replaces
 - transforms
 - signs
@@ -276,12 +277,12 @@ The below table summarises the HTTP response codes, along with the values to exp
 
 <!--
 ### Organisation not found ###
-These two Organisations are referenced in a DocumentReference. Therefore the references must point to a resolvable FHIR Organisation resource. If the URL being used to reference a given Organisation is invalid then this error will result. The URL must conform to the following rules:
-- Must be `https://directory.spineservices.nhs.uk/STU3/Organization`
-- Must supply a logical identifier which will be the organisation's ODS code:
-  - It must be a valid ODS code. 
-  - The ODS code must be an organisation that is known to the NRLS 
-  - The ODS code associated with the custodian property must be in the Provider role.
+These two Organisations are referenced in a DocumentReference. Therefore the references MUST point to a resolvable FHIR Organisation resource. If the URL being used to reference a given Organisation is invalid then this error will result. The URL MUST conform to the following rules:
+- MUST be `https://directory.spineservices.nhs.uk/STU3/Organization`
+- MUST supply a logical identifier which will be the organisation's ODS code:
+  - It MUST be a valid ODS code. 
+  - The ODS code MUST be an organisation that is known to the NRLS 
+  - The ODS code associated with the custodian property MUST be in the Provider role.
 
 If there is an exception then it should be displayed following the rules, along with the values
 to expect in the `OperationOutcome` shown in the table below.
@@ -331,4 +332,4 @@ Where the request cannot be processed, but the fault is with the receiving syste
 It is recommended for any synchronous patterns that the client sets a time out limit on the response back from the server, appropriate to an interactive process (e.g. around 1000 milliseconds).
 
 If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors.
-After a limited number of retries (e.g. 3-5) the client may assume that the server is unavailable and should respond appropriately. If the EMS is acting as the client (for example, in the `$evaluate` operation), this may take the form of a user interaction. If the CDSS is acting as the client, then the response will be to the EMS.
+After a limited number of retries (e.g. 3-5) the client MAY assume that the server is unavailable and SHOULD respond appropriately. If the EMS is acting as the client (for example, in the `$evaluate` operation), this may take the form of a user interaction. If the CDSS is acting as the client, then the response will be to the EMS.

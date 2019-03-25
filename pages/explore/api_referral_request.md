@@ -17,8 +17,8 @@ summary: ReferralRequest resource implementation guidance
 ### Usage ###
 Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage outcome of recommendation to another service for a patient.  
 A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
-The `ReferralRequest` may reference a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.  
-`RequestGroup.action.resource` may also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
+The `ReferralRequest` MAY reference a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.  
+`RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
 Detailed implementation guidance for a `ReferralRequest` resource in the CDS context is given below:  
 
 
@@ -50,7 +50,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ReferralRequest |<br>Careplan |<br>ProcedureRequest)</td>
     <td>Request fulfilled by this request</td>
-<td>This SHOULD be populated with a <code class="highlighter-rouge">ProcedureRequest</code>, where the <code class="highlighter-rouge">ProcedureRequest</code> contains the information on the next activity to be performed in order to identify the patient's health need. This <code class="highlighter-rouge">ProcedureRequest</code> will be a procedure that the current service is unable to perform, but that the recipient must be able to be perform.</td>
+<td>This SHOULD be populated with a <code class="highlighter-rouge">ProcedureRequest</code>, where the <code class="highlighter-rouge">ProcedureRequest</code> contains the information on the next activity to be performed in order to identify the patient's health need. This <code class="highlighter-rouge">ProcedureRequest</code> will be a procedure that the current service is unable to perform, but that the recipient MUST be able to be perform.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">replaces</code></td>
@@ -107,7 +107,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(Patient|<br>Group)</td>
     <td>Patient referred to care or transfer</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Patient</code> resource.</td>
+<td>This SHOULD NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
@@ -178,7 +178,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Condition |<br>Observation)</td>
     <td>Why is service needed?</td>
-<td>This SHOULD be populated by the CDSS. The chief concern should be carried in this element.</td>
+<td>This SHOULD be populated by the CDSS. The chief concern SHOULD be carried in this element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">description</code></td>
@@ -192,7 +192,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additonal information to support referral or transfer of care request</td>
-<td>This SHOULD be populated by the CDSS. Secondary concerns should be be carried in this element.</td>
+<td>This SHOULD be populated by the CDSS. Secondary concerns SHOULD be be carried in this element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
@@ -212,21 +212,21 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
 
 ## Procedure Request ##  
 The `ProcedureRequest` is referenced from `ReferralRequest.basedOn`.  
-This will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which should be carried out in the referee service to validate or eliminate the chief concern.  
+This will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which SHOULD be carried out in the referee service to validate or eliminate the chief concern.  
 
 ### ProcedureRequest elements of note ###  
 
 #### Status element of the ProcedureRequest ####  
-This shows the status of the `ProcedureRequest` and should carry the value 'active'.
+This shows the status of the `ProcedureRequest` and SHOULD carry the value 'active'.
 
 #### Intent element of the ProcedureRequest ####  
-The population of this element shows whether the request is a proposal, plan, an original order or a reflex order. It should carry the value 'proposal'.  
+The population of this element shows whether the request is a proposal, plan, an original order or a reflex order. It SHOULD carry the value 'proposal'.  
 
 #### Code element of the ProcedureRequest #### 
 This element carries a code denoting the type of procedure being requested.
 
 #### Subject element of the ProcedureRequest #### 
-This element should always reference a `Patient` resource.
+This element SHOULD always reference a `Patient` resource.
 
 
 
