@@ -90,6 +90,9 @@ entries:
         - title: CarePlan
           url: /api_care_plan.html
           output: web
+        - title: Encounter
+          url: /api_encounter.html
+          output: web
         - title: GuidanceResponse
           url: /api_guidance_response.html
           output: web
