@@ -149,23 +149,13 @@ The table below details the HTTP response code, along with the values to expect 
 This error will be raised in relation to request parameters that a CDSS or EMS Server may have specified.
 
 The below table summarises the HTTP response code, along with the value to expect in the `OperationOutcome` in the response body for this exception scenario.  
-Relevant error scenario(s) in relation to request parameter(s) are also listed.
+Example error scenarios in relation to specified request parameters are also listed.
 
 
 | HTTP Code | issue-severity | issue-type | Details.Code | Details.Display |
 |-----------|----------------|------------|--------------|-----------------|
 |400|error|invlid| INVALID_PARAMETER|Invalid parameter|
 
-
-
-<!--
-#### Subject parameter ####
-When using the MANDATORY `subject` parameter the client is referring to a Patient FHIR resource by reference. Two pieces of information are needed: 
-- the URL of the FHIR server that hosts the Patient resource.  If the URL of the server is not `https://demographics.spineservices.nhs.uk/STU3/Patient/` then this error will be thrown.
-
-- an identifier for the Patient resource being referenced. The identifier MUST be known to the server. In addition where NHS Digital own the business identifier scheme for a given type of FHIR resource then the logical and business identifiers will be the same. In this case the NHS number of a Patient resource is both a logical and business identifier meaning that it can be specified without the need to supply the identifier scheme. If the NHS number is missing from the patient parameter then this error will be thrown.
-
--->
 #### `_format` request parameter ####
 If used, this parameter MUST specify one of the [mime types](api_general_guidance.html#content-types) recognised by CDSS and EMS Servers.
 
@@ -174,17 +164,17 @@ If used, this parameter MUST specify one of the [mime types](api_general_guidanc
 This error is raised during a provider create interaction. There are two exception scenarios:
 - The DocumentReference in the request body specifies an incorrect URL of the FHIR server that hosts the Patient resource. 
 - The DocumentReference in the request body specifies an incorrect URL of the author and custodian Organization resource. 
+-->
 
+#### Status parameter ####
+When using the `status` parameter, two pieces of information are needed: 
+- the identity of the terminology system
+- the chosen value from the terminology system e.g. 'active'
 
-#### Type parameter ####
-When using the MANDATORY `type` parameter the client is referring to a pointer by record type. Two pieces of information are needed: 
-- the Identity of the [SNOMED URI](http://snomed.info/sct) terminology system
-- the pointer record type SNOMED concept e.g. 736253002
+If the search request specifies unsupported parameter values in the request, this error will be thrown.  
 
-If the search request specifies unsupported parameter values in the request, this error will be thrown. 
-
-#### masterIdentifier parameter ####
-Where masterIdentifier is a search term both the system and value parameters MUST be supplied.
+#### effectivePeriod parameter ####
+If this parameter of type `date` has an incorrectly formatted date, this will also cause the error to be thrown.  
 
 #### _summary parameter ####
 The _summary parameter MUST have a value of “count”. If it is anything else then an error SHOULD be returned to the client.

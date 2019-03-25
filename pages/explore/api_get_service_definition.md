@@ -35,78 +35,23 @@ The following HTTP request headers are supported for this interaction:
 
 
 ## Get ServiceDefinition ##
-The EMS will select a preferred `ServiceDefinition` using a chosen parameter(s).  
-The interaction is performed by an HTTP GET command as shown:  
+The EMS will select a preferred `ServiceDefinition` using chosen parameter(s).  
+The interaction is performed by the FHIR RESTful [search](https://www.hl7.org/fhir/stu3/http.html#search) interaction as shown:  
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition?[searchParameters]</div>  
 
-### Search Parameters ###
-Search parameter(s) for the `ServiceDefinition` resource are outlined below: 
-
-<!--
-<table style="min-width:100%;width:100%">
-<tr>
-    <th style="width:15%;">Name</th>
-    <th style="width:15%;">Type</th>
-    <th style="width:30%;">Description</th>
-    <th style="width:5%;">Conformance</th>
-    <th style="width:35%;">Path</th>
-</tr>
-
-<tr>
-    <td><code class="highlighter-rouge">_id</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>The logical id of the resource</td>
-    <td>SHOULD</td>
-    <td>ServiceDefinition.id</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">url</code></td>
-    <td><code class="highlighter-rouge">uri</code></td>
-    <td>The uri that identifies the service definition</td>
-    <td>MAY</td>
-    <td>ServiceDefinition.url</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">identifier</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>External identifier for the service definition</td>
-    <td>MAY</td>
-    <td>ServiceDefinition.identifier</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">version</code></td>
-    <td><code class="highlighter-rouge">token</code></td>
-    <td>Business version of the service definition</td>
-    <td>MAY</td>
-    <td>ServiceDefinition.version</td>
-</tr> 
-<tr>
-    <td><code class="highlighter-rouge">name</code></td>
-    <td><code class="highlighter-rouge">string</code></td>
-    <td>Computationally friendly name of the service definition</td>
-    <td>MAY</td>
-    <td>ServiceDefinition.name</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">title</code></td>
-    <td><code class="highlighter-rouge">string</code></td>
-    <td>The human-friendly name of the service definition</td>
-    <td>MAY</td>
-    <td>ServiceDefinition.title</td>
-</tr>
-</table>-->
-
-#### _id ####
-
-The search parameter `_id` refers to the logical id of the `ServiceDefinition` resource and can be used when the search context specifies the `ServiceDefinition` resource type.  
-
+## Search Parameters and Responses ##
+Detailed guidance relating to [searching for FHIR resources](https://www.hl7.org/fhir/stu3/search.html) can be viewed.  
+Two scenarios which may be used to search for a `ServiceDefinition` in the CDS context are outlined below:
+### Searching for a ServiceDefinition by _id ###
+The search parameter `_id` refers to the logical id of the `ServiceDefinition` resource and would be used when the EMS already knows the `_id` of the required `ServiceDefinition`.  
+When the `_id` search parameter is used by the EMS it SHALL only be used as a single search parameter and SHALL not be used in conjunction with any other search parameter to form part of a combination search query with the exception of the `_format` parameter.  
 The `_id` parameter can be used as follows:  
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ServiceDefinition?_id=[id]</div> 
-This search finds the ServiceDefinition resource with the given id (there can only be one resource for a given id).   
+This search finds the `ServiceDefinition` resource with the given id (there can only be one resource for a given id).   
 
 Further details relating to the [_id search parameter](https://www.hl7.org/fhir/stu3/search.html#id) are available.  
 
@@ -115,11 +60,7 @@ Further details relating to the [_id search parameter](https://www.hl7.org/fhir/
 <!--
 Add explanatory diagram here? Would they want the list of possible responses and error codes?
 -->
-
-
-
-
-## Search Response ##
+### Search Response ###
 
 ### Success ###
 
@@ -130,46 +71,84 @@ Add explanatory diagram here? Would they want the list of possible responses and
 
 ### Failure ###
 The following errors can be triggered when performing this operation:  
-
-<!--More errors are likely to be needed once we are clear on which search parameters are defined-->
  
 * [Invalid parameter](api_general_guidance.html#parameters) (if using the ‘_format’ parameter without a [mime type](api_general_guidance.html#content-types) recognised by a CDSS or EMS server). 
 * [Resource not found](api_general_guidance.html#resource-not-found)
 
-
-<!--
-## Creation of parameters ##
-Once the EMS has got the selected `ServiceDefinition`, the EMS users will input relevant data for the scenario which will create the initial parameters to be passed to the CDSS.  
-The initial parameters will be the requestId and the patient.
-
-### Parameters ###
-
-#### IN Parameters ####
+### Searching for a ServiceDefinition using a named query ###  
+A second scenario would occur when an EMS needs to search for a `ServiceDefinition` which corresponds to selected search criteria. This would require a search using a customised search profile. Such [advanced search operations](https://www.hl7.org/fhir/stu3/search.html#query) of this type are specified by the `_query` parameter.  
+This parameter is used as follows:  
+<div markdown="span" class="alert alert-success" role="alert">
+GET [base]/Patient?_query=name&parameters...</div> 
+The `_query` parameter will define additional named parameters to be used with the named query and these will be used in combination where criteria for all of them must be satisfied.  
+The recommended additional parameters for a `ServiceDefinition` are outlined below:
 
 <table style="min-width:100%;width:100%">
 <tr>
-    <th style="width:25%;">Name</th>
-    <th style="width:15%;">Cardinality</th>
-    <th style="width:20%;">Type</th>
-      <th style="width:40%;">Documentation</th>
-</tr>
-
-<tr>
-    <td><code class="highlighter-rouge">requestId</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
-    <td>id</td>
-    <td>An optional client-provided identifier to track the request.</td>
+    <th style="width:20%;">Name</th>
+   <th style="width:15%;">Type</th> 
+    <th style="width:35%;">Description</th>
+    <th style="width:5%;">Conformance</th>
+    <th style="width:40%;">Path</th>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge">patient</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference(Patient)</td>
-    <td>The patient in context, if any.</td>
+    <td><code class="highlighter-rouge">status</code></td>
+    <td><code class="highlighter-rouge">token</code></td>
+    <td>The status of this service definition</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.status</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">experimental</code></td>
+    <td><code class="highlighter-rouge">token</code></td> 
+    <td>For testing purposes, not real usage</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.experimental</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">effectivePeriod</code></td>
+    <td><code class="highlighter-rouge">date</code></td> 
+    <td>When the service definition is expected to be used</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.effectivePeriod</code></td>
+</tr> 
+<tr>
+    <td><code class="highlighter-rouge">useContext</code></td>
+  <td><code class="highlighter-rouge">token/quantity</code></td> 
+    <td>Context the content is intended to support</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.useContext</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">jurisdiction</code></td>
+ <td><code class="highlighter-rouge">token</code></td>
+    <td>Intended jurisdiction for service definition (if applicable)</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.jurisdiction</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">trigger</code></td>
+ <td><code class="highlighter-rouge">Multiple types, depending on element</code></td> 
+    <td>"when" the module should be invoked</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.trigger</code></td>
 </tr>
 </table>
--->
+  
+Servers will define their own named queries to meet the use case outlined above by using an [OperationDefinition](https://www.hl7.org/fhir/stu3/operationdefinition.html) resource.  
+### Search Response ###
 
-<!-- Will there be any other parameters at this stage? -->
+### Success ###
+
+* MUST return a `200` **OK** HTTP status code on successful execution of the interaction.
+* MUST return a `Bundle` of type searchset, containing either:
+   - One or more `ServiceDefinition` resources 
+   - A '0' (zero) total value indicating no record was matched i.e. an empty `Bundle`.  
+
+### Failure ###
+The following errors can be triggered when performing this operation:  
+ 
+* [Invalid parameter](api_general_guidance.html#parameters)  
 
 ## ServiceDefinition: Implementation Guidance ##
 View [CDS implementation guidance for a ServiceDefinition](api_service_definition.html).
