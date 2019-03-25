@@ -39,5 +39,5 @@ Use cases for the CDS API are not included in this Implementation Guide. These w
 The following technical area is specifically excluded:
 * Assurance and system accreditation
 
-## Note for Implementors ##
-This specification is issued as an alpha, and we welcome feedback (see [Communication Channels](support_communications.html) for ways to contact us) on the specification. In particular, note that the identity of the patient is NOT part of the specification - that is to say, the CDSS will never know who the patient is, in order to deliver a recommendation. We particularly welcome any views on this from implementors.
+## Note for Implementers ##
+This specification is issued as an alpha, and we welcome feedback (see [Communication Channels](support_communications.html) for ways to contact us) on the specification. In particular, note that the identity of the patient is NOT part of the specification - that is to say, the CDSS will never know who the patient is, in order to deliver a recommendation. We particularly welcome any views on this from implementers.
