@@ -46,8 +46,6 @@
   definition: A collection of interoperability standards and tools produced by NHS Digital to support interoperability in healthcare.
 - keyword: IUC CAS 
   definition: Physical and/or virtual hub providing clinical advice to patients contacting the 111 or 999 services, as well as providing clinical support to clinicians (particularly ambulance staff such as paramedics and emergency technicians) to ensure that no decision is made in isolation. Also known as Care Advice Service or Clinical Assessment Service, previously known as a Clinical Navigation Hub.
-- keyword: WIC
-  definition: NHS walk-in centres (WICs) offer convenient access to a range of treatments. WICs are managed by Clinical Commissioning Groups (CCGs), dealing with minor illnesses and injuries
 - keyword: Patient 
   definition: Patient Generic term used in Commissioning Standards for citizens / public using the service
 - keyword: PMPR  
@@ -70,3 +68,5 @@
 - keyword: UTC
   expansion: Urgent Treatment Centres
   definition: Medical treatment facility where patients can be treated for minor emergencies and injury.
+- keyword: WIC
+  definition: NHS walk-in centres (WICs) offer convenient access to a range of treatments. WICs are managed by Clinical Commissioning Groups (CCGs), dealing with minor illnesses and injuries
