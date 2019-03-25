@@ -15,8 +15,12 @@ summary: Provenance implementation guidance
 ## Provenance: Implementation Guidance ##  
 
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [Provenance](http://hl7.org/fhir/stu3/provenance.html) resource will be used to carry key state transitions or updates from previous versions of a [ReferralRequest](api_referral_request.html) that are likely to be relevant to a user looking at the current version of the resource.  
-The resource is used as a record-keeping assertion that gathers information about the context in which the information in the `ReferralRequest` was obtained. The resource's data are prepared by the application that initiates the create/update etc. of the `ReferralRequest`, in this case the CDSS.
+
+The [Provenance](http://hl7.org/fhir/stu3/provenance.html) resource is used to carry the relevant history of the triage journey. The full history of the journey will be available in the `GuidanceResponse.outputParameters` and the `ServiceDefinition.$evaluate.inputData`, but the key steps in the journey will be carried as the relevant history. It will be the decision of the CDSS which assertions are most relevant, and only these will be added to the `Provenance` resource. In general, it is expected that positive statements driving the result will be captured as the relevant history. The CDSS should consider whether a particular assertion has value for another clinical user - only if it does, should it be added to the relevant history (and so to the `Provenance` resource).
+
+Each assertion which is relevant to the history of the `ReferralRequest` will be carried as an independent `Provenance` resource, so the `relevantHistory` may have multiple `Provenance` resources, each identifying a key step.
+
+The target of the `Provenance` will be the assertion. The agent will always be the CDSS, and the entity will be whichever `QuestionnaireResponses` drove the assertion.
 
 The table below details implementation guidance for this resource in the CDS context:
 
@@ -34,7 +38,7 @@ The table below details implementation guidance for this resource in the CDS con
     <td><code class="highlighter-rouge">1..*</code></td>
     <td>Reference(Any)</td>
     <td>Target Reference(s) (usually version specific)</td>
-<td>This MUST be populated by the CDSS and MUST carry the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical ID</a> of the <code class="highlighter-rouge">ReferralRequest</code> that was generated or updated by the activity described in this resource.</td>
+<td>This MUST be populated by the CDSS and must carry the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical ID</a> of the assertion (typically Observation) that was generated or updated as a key step in this triage journey.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">period</code></td>
@@ -48,7 +52,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>instant</td>
     <td>When the activity was recorded/updated</td>
-<td>This MUST be populated by the CDSS with the instant of time at which the activity was recorded. It can be different from the time stamp on the <code class="highlighter-rouge">ReferralRequest</code>, if there is a delay between recording the event and updating the provenance and target resource.</td>
+<td>This MUST be populated by the CDSS with the time at which the assertion was recorded.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">policy</code></td>
@@ -69,21 +73,21 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Reason the activity is occurring <a href="https://www.hl7.org/fhir/stu3/v3/PurposeOfUse/vs.html">PurposeOfUse (Extensible)</a></td>
-<td>This SHOULD be populated by the CDSS with the value 'TREAT'.</td>
+<td>This SHOULD be NULL</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">activity</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Coding</td>
     <td>Activity that occurred <a href="https://www.hl7.org/fhir/stu3/valueset-provenance-activity-type.html">ProvenanceActivityType (Extensible)</a></td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This SHOULD be NULL</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">agent</code></td>
       <td><code class="highlighter-rouge">1..*</code></td>
     <td>BackboneElement</td>
     <td>Actor involved</td>
-<td>This MUST be populated by the CDSS with a reference to the actor(s) taking a role in an activity where the agent can be assigned a degree of responsibility for the activity taking place. Note that an agent can be a person, an organisation, software, device or other entities that may be ascribed responsibility.</td>
+<td>This MUST be the CDSS (a software device)</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">agent.role</code></td>
@@ -118,14 +122,14 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>An entity used in this activity</td>
-<td>Multiple userIds MAY be associated with the same Practitioner or other individual across various appearances, each with distinct privileges.</td>
+<td>The <code class="highlighter-rouge">QuestionnaireResponse</code> resources which contributed to the creation (or update) of this assertion, where applicable</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">entity.role</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>derivation | revision | quotation | source | removal <a href="https://www.hl7.org/fhir/stu3/valueset-provenance-entity-role.html">ProvenanceEntityRole (Required)</a></td>
-<td></td>
+<td>This SHOULD be populated with the value 'derivation'</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">entity.what[x]</code></td>
