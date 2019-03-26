@@ -95,7 +95,7 @@ If no value is provided, the date and time of the request is assumed.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient)</td>
     <td>The patient in context, if any.</td>
-<td>This SHOULD NOT be populated.</td>
+<td>This MUST be populated with a reference to a <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">encounter</code></td>
