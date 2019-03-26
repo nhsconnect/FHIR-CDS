@@ -144,7 +144,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>UsageContext</td>
     <td>Context the content is intended to support</td>
-<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will include patient gender, patient age group, user role/type.  These terms MAY be used to assist with indexing and searching for appropriate <code class="highlighter-rouge">ServiceDefinition</code> instances and so can assist an EMS in identifying the most appropriate service.</td>
+<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will be determined by the EMS and CDSS specific to each implementation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">jurisdiction</code></td>
