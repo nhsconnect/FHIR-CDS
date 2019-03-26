@@ -9,12 +9,15 @@
   definition: A development stage in iterative delivery to build a basic working system with limited functionality used to demonstrate to users 
 - keyword: Care Advice
   definition: Advice provided to the patients for management of symptoms
+- keyword: CCG
+  expansion: Clinical Commissioning Group
+  definition: Clinical Commissioning Groups (CCGs) commission most of the hospital and community NHS services in the local areas for which they are responsible. Commissioning involves deciding what services are needed for diverse local populations, and ensuring that they are provided. At its simplest, commissioning is the process of planning, agreeing and monitoring services. 
 - keyword: CDA
   expansion: Clinical Document Architecture
   definition: CDA is an information and messaging standard by HL7.
 - keyword: CDSS
   expansion: Clinical Decision Support System
-  definition: A health information technology system that is designed to provide Clinical Assessors and Health Advisors with clinical decision support (CDS), that is, assistance with clinical decision-making tasks. 
+  definition: A clinical decision support system (CDSS) is a health information technology system that is designed to provide physicians and other health professionals with clinical decision support (CDS) with clinical decision-making tasks. 
 - keyword: Clinician
   definition: Medically qualified system users who triage patients through the CDSS
 - keyword: Clinical outcome
@@ -23,6 +26,7 @@
   definition: The entity responsible for the process of planning, contracting and monitoring services. 
 - keyword: CTI
   expansion: Computer Telephony Integration 
+  definition: Also called computer–telephone integration, CTI is a common name for any technology that allows interactions on a telephone and a computer to be integrated or coordinated. The term is predominantly used to describe desktop-based interaction for helping users be more efficient, though it can also refer to server-based functionality such as automatic call routing.  
 - keyword: Disposition
   definition: The perceived clinical need of a patient in the form of a skillset and time frame
 - keyword: EMS
@@ -45,6 +49,7 @@
   expansion: Interoperability Tool Kit
   definition: A collection of interoperability standards and tools produced by NHS Digital to support interoperability in healthcare.
 - keyword: IUC CAS 
+  expansion: Integrated Urgent Care Clinical Assessment Service
   definition: Physical and/or virtual hub providing clinical advice to patients contacting the 111 or 999 services, as well as providing clinical support to clinicians (particularly ambulance staff such as paramedics and emergency technicians) to ensure that no decision is made in isolation. Also known as Care Advice Service or Clinical Assessment Service, previously known as a Clinical Navigation Hub.
 - keyword: Patient 
   definition: Patient Generic term used in Commissioning Standards for citizens / public using the service.
@@ -53,6 +58,7 @@
   definition: Using historical data to identify the patient-level variables that predict over-triage and under-triage for different Pathways or symptom groups. These patient-level variables can then be used to identify future service users who are at high risk of over- and under-triage.
 - keyword: POC 
   expansion: Proof of Concept
+  definition: A proof of concept is a demonstration, the purpose of which is to verify that certain concepts or theories have the potential for real-world application. POC is therefore a prototype that is designed to determine feasibility, but does not represent deliverables.
 - keyword: Provider 
   definition: Entity contracted by a commissioner to provide a service
 - keyword: SNOMED CT 
@@ -69,4 +75,5 @@
   expansion: Urgent Treatment Centres
   definition: Medical treatment facility where patients can be treated for minor emergencies and injury.
 - keyword: WIC
-  definition: NHS walk-in centres (WICs) offer convenient access to a range of treatments. WICs are managed by Clinical Commissioning Groups (CCGs), dealing with minor illnesses and injuries
+  expansion: Walk-in centre
+  definition: NHS walk-in centres offer convenient access to a range of treatments. WICs are managed by Clinical Commissioning Groups (CCGs), dealing with minor illnesses and injuries
