@@ -50,7 +50,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>registered | preliminary | final | amended + <a href="https://www.hl7.org/fhir/stu3/valueset-observation-status.html">ObservationStatus (Required)</a>.</td>
-<td>This will normally be 'final', but may be 'amended' (where a user has amended their answers to a question).</td>
+<td>This will normally be 'final', but may be 'amended' (where a user has amended his/her answers to a question).</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">category</code></td>
@@ -71,7 +71,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>Reference<br>(Patient |<br>Group |<br>Device |<br>Location)</td>
     <td>Who and/or what this is about</td>
-<td>This SHOULD NOT be populated.</td>
+<td>This SHOULD be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
