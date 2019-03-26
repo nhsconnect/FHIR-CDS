@@ -52,7 +52,7 @@
   expansion: Integrated Urgent Care Clinical Assessment Service
   definition: Physical and/or virtual hub providing clinical advice to patients contacting the 111 or 999 services, as well as providing clinical support to clinicians (particularly ambulance staff such as paramedics and emergency technicians) to ensure that no decision is made in isolation. Also known as Care Advice Service or Clinical Assessment Service, previously known as a Clinical Navigation Hub.
 - keyword: Patient 
-  definition: Patient Generic term used in Commissioning Standards for citizens / public using the service.
+  definition: Generic term used in Commissioning Standards for citizens / public using the service.
 - keyword: PMPR  
   expansion: Predictive Modelling of Patient Risk
   definition: Using historical data to identify the patient-level variables that predict over-triage and under-triage for different Pathways or symptom groups. These patient-level variables can then be used to identify future service users who are at high risk of over- and under-triage.
