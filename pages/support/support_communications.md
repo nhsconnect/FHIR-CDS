@@ -8,8 +8,6 @@ permalink: support_communications.html
 summary: "Communication channels used for the FHIR&reg; Clinical Decision Support API."
 ---
 
-## Contact Us ##
-For general enquiries please send an email to the NHS Digital Interoperability Team at [interoperabilityteam@nhs.net](mailto:interoperabilityteam@nhs.net).
 
 ## Useful links ##
 
@@ -19,7 +17,7 @@ Helping to deliver the national urgent and emergency care strategy by providing 
 
 These programmes will improve telephone and online triage and provide improved technology to support clinicians, so that treatment is better targeted and patients are referred to the right place, first time.
 
-Visit the [NHS Digital Urgent and Emergency Care Corporate Website](https://digital.nhs.uk/about-nhs-digital/our-work/transforming-health-and-care-through-technology/urgent-and-emergency-care-domain-b) for more information.
+Visit [NHS Digital Urgent and Emergency Care](https://digital.nhs.uk/about-nhs-digital/our-work/transforming-health-and-care-through-technology/urgent-and-emergency-care-domain-b) for more information.
 
 
 ### Urgent and Emergency Care Digital Integration (UECDI) Programme ###
@@ -30,3 +28,7 @@ NHS Digital’s Urgent and Emergency Care Digital Integration (UECDI) programme 
 
 Learn about the different technical systems and standards used in Urgent and Emergency Care and how to implement them.
 [Urgent and Emergency Care Interoperability and Technical Standards](https://developer.nhs.uk/apis/uec-tech-standards)
+
+
+## Contact Us ##
+For general enquiries please send an email to the NHS Digital Interoperability Team at [interoperabilityteam@nhs.net](mailto:interoperabilityteam@nhs.net).
