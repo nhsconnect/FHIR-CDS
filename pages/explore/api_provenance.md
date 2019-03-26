@@ -132,7 +132,7 @@ The table below details implementation guidance for this resource in the CDS con
      <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whatUri</code> uri <br><code class="highlighter-rouge">whatReference</code> <br> Reference(Any)<br><code class="highlighter-rouge">whatIdentifier</code> <br> Identifier</td>
     <td>Identity of entity</td>
-<td>Identity of the entity used. MAY be a logical or physical uri and maybe absolute or relative.</td>
+<td>Identity of the entity used. MAY be a logical or physical uri and may be absolute or relative.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">entity.agent</code></td>
