@@ -70,7 +70,7 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference(Any)</td>
     <td>The subject of the questions</td>
-<td>This SHOULD NOT be populated.</td>
+<td>This MAY be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
