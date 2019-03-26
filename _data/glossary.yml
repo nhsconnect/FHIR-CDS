@@ -1,14 +1,14 @@
 - keyword: 111
-  definition: Free to call telephone number (Easy to remember three digit telephone number); also an online service for non-emergency care used for single point of entry access Integrated Urgent Care services.
+  definition: Free to call telephone number (Easy to remember three digit telephone number); also an online service for non-emergency care used for single point of entry access to Integrated Urgent Care services.
 - keyword: 999
   definition: The emergency telephone number used across England to access emergency services in a medical emergency  when someone is seriously ill or injured and their life is at risk.
 - keyword: A&E
   expansion: Accident and Emergency
   definition: An A&E department (also known as emergency department or casualty) deals with genuine life-threatening emergencies.
 - keyword: Alpha
-  definition: A development stage in iterative delivery to build a basic working system with limited functionality used to demonstrate to users 
+  definition: A development stage in iterative delivery to build a basic working system with limited functionality used to demonstrate to users. 
 - keyword: Care Advice
-  definition: Advice provided to the patients for management of symptoms
+  definition: Advice provided to the patients for management of symptoms.
 - keyword: CDA
   expansion: Clinical Document Architecture
   definition: CDA is an information and messaging standard by HL7.
@@ -16,7 +16,7 @@
   expansion: Clinical Decision Support System
   definition: A health information technology system that is designed to provide Clinical Assessors and Health Advisors with clinical decision support (CDS), that is, assistance with clinical decision-making tasks. 
 - keyword: Clinician
-  definition: Medically qualified system users who triage patients through the CDSS
+  definition: Medically qualified system users who triage patients through the CDSS.
 - keyword: Clinical outcome
   definition: The result of receiving medical advice or treatment, and can be measured through subsequent patient activity data such as hospital admission or re-admission.
 - keyword: Commissioner
@@ -24,7 +24,7 @@
 - keyword: CTI
   expansion: Computer Telephony Integration 
 - keyword: Disposition
-  definition: The perceived clinical need of a patient in the form of a skillset and time frame
+  definition: The perceived clinical need of a patient in the form of a skillset and time frame.
 - keyword: EMS
   expansion: Encounter Management System
   definition: A system used for workflow management and to record, manage and track a patient's episode of care through UEC settings. The EMS enables the triage and clinical assessment of patients to determine their health needs and signpost them to the appropriate care setting or support the provision of clinical consultation and treatment; this is expected to be achieved through integration with one or more supporting systems and services.
@@ -32,36 +32,36 @@
   expansion: General Practitioner
   definition: Doctors who can deal with a whole range of health problems. They also provide health education, offer advice on smoking and diet, run clinics, give vaccinations and carry out simple surgical operations.
 - keyword: Health Information 
-  definition: General information provided about health and care with the absence of triage or symptoms
+  definition: General information provided about health and care with the absence of triage or symptoms.
 - keyword: HL7
   expansion: Health Level 7
   definition: HL7.org is an international organisation responsible for the creation and maintenance of information and interoperability standards for healthcare.
 - keyword: Health Outcome 
-  definition: Refers to impact of over triage or under triage to patient well being, as well as the impact on patients when they follow advice given or the impact of not following the advice e.g. mortality, hospitalization, or re-presentation of symptoms. Health outcomes require longer term monitoring of the patient than immediate clinical outcomes ; the health outcome is not always immediately obvious
+  definition: Refers to impact of over triage or under triage to patient well being, as well as the impact on patients when they follow advice given or the impact of not following the advice e.g. mortality, hospitalisation, or re-presentation of symptoms. Health outcomes require longer term monitoring of the patient than immediate clinical outcomes ; the health outcome is not always immediately obvious.
 - keyword: HTTP  
   expansion: Hyper Text Transfer protocol
-  definition: Hypertext Transfer Protocol is an application protocol used for data communication in World Wide Web. It provides a standard for web browsers that facilitates users to exchange information over internet.
+  definition: Hypertext Transfer Protocol is an application protocol used for data communication in the World Wide Web. It provides a standard for web browsers that facilitates users to exchange information over the internet.
 - keyword: ITK
   expansion: Interoperability Tool Kit
   definition: A collection of interoperability standards and tools produced by NHS Digital to support interoperability in healthcare.
 - keyword: IUC CAS 
   definition: Physical and/or virtual hub providing clinical advice to patients contacting the 111 or 999 services, as well as providing clinical support to clinicians (particularly ambulance staff such as paramedics and emergency technicians) to ensure that no decision is made in isolation. Also known as Care Advice Service or Clinical Assessment Service, previously known as a Clinical Navigation Hub.
 - keyword: Patient 
-  definition: Patient Generic term used in Commissioning Standards for citizens / public using the service
+  definition: Patient Generic term used in Commissioning Standards for citizens / public using the service.
 - keyword: PMPR  
   expansion: Predictive Modelling of Patient Risk
   definition: Using historical data to identify the patient-level variables that predict over-triage and under-triage for different Pathways or symptom groups. These patient-level variables can then be used to identify future service users who are at high risk of over- and under-triage.
 - keyword: POC 
   expansion: Proof of Concept
 - keyword: Provider 
-  definition: Entity contracted by a commissioner to provide a service
+  definition: Entity contracted by a commissioner to provide a service.
 - keyword: SNOMED CT 
   expansion: Systemised Nomenclature of Medicine (Clinical Terms). 
   definition: A structured clinical vocabulary for use in an electronic health record. It is the most comprehensive and precise clinical health terminology product in the world.
 - keyword: Supplier 
-  definition: An entity providing a system or system components to Providers or the System user Person interacting with the system
+  definition: An entity providing a system or system components to Providers or the System user person interacting with the system.
 - keyword: Triage 
-  definition: The process of determining the priority of patients' treatments based on the severity of their condition
+  definition: The process of determining the priority of patients' treatments based on the severity of their condition.
 - keyword: UEC
   expansion: Urgent and Emergency Care 
   definition: An area of Health Care services that primarily deals with urgent same day outpatient contacts for patient needs such as minor illness and injuries, and involves sign-posting and treatment of patients in settings such as 111, 999, OOH (Out Of Hours) GPs, A&E and minor injuries units, or through arrangement of urgent appointments (GP and Dental).
@@ -69,4 +69,4 @@
   expansion: Urgent Treatment Centres
   definition: Medical treatment facility where patients can be treated for minor emergencies and injury.
 - keyword: WIC
-  definition: NHS walk-in centres (WICs) offer convenient access to a range of treatments. WICs are managed by Clinical Commissioning Groups (CCGs), dealing with minor illnesses and injuries
+  definition: NHS walk-in centres (WICs) offer convenient access to a range of treatments. WICs are managed by Clinical Commissioning Groups (CCGs), dealing with minor illnesses and injuries.
