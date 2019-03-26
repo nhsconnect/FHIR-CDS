@@ -22,7 +22,7 @@ The `ServiceDefinition.trigger` will typically be defined through Observation re
 
 Each CDSS SHOULD provide a `ServiceDefinition` where the trigger is NULL (i.e. no information is required).
 
-During a given patient journey, there may be points where there is more than one `ServiceDefinition` available. Any one CDSS should avoid this situation, but if a provider has more than one CDSS available, there may be situations where more than one CDSS can provide an appropriate `ServiceDefinition`. In this case, it will be up to local providers on how to choose between the available ServiceDefinitions. 
+During a given patient journey, there may be points where there is more than one `ServiceDefinition` available. Any one CDSS should avoid this situation, but if a provider has more than one CDSS available, there may be situations where more than one CDSS can provide an appropriate `ServiceDefinition`. In this case, it will be up to local providers on how to choose between the available `ServiceDefinitions`. 
 
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction: 
