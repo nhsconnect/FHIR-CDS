@@ -20,11 +20,11 @@ the [Urgent and Emergency Care Review](https://www.england.nhs.uk/wp-content/upl
 ## In Scope ##
 This guide covers triage of patients by non-clinical staff and triage of patients by clinicians. This guide is intended for use by developers who are making systems compliant with the guide.
 
-The Implementation Guide is based on initial discovery work, which informs 1.0.0-alpha version of the Guide. The scope is expected to increase with more discovery work and as use cases are developed. Future versions of this Guide will include those updates as they are developed. Any resources not specifically mentioned in this Guide will follow the [HL7 FHIR STU3 guidance](https://www.hl7.org/fhir/stu3/index.html).
+The Implementation Guide is based on initial discovery work, which informs the 1.0.0-alpha version of the Guide. The scope is expected to increase with more discovery work and as use cases are developed. Future versions of this Guide will include those updates as they are developed. Any resources not specifically mentioned in this Guide will follow the [HL7 FHIR STU3 guidance](https://www.hl7.org/fhir/stu3/index.html).
 
 ## Out of Scope ##
 ### Profiles and Value Sets ###
-Profiles for the resources in this Implementation Guide are not included in the scope of 1.0.0-alpha. These are being developed and will be added to the Guide as they become available. As a result, value sets are also not part of the guide in this version.
+Profiles for the resources in this Implementation Guide are not included in the scope of 1.0.0-alpha. These are being developed and will be added to the Guide as they become available. As a result, value sets are also not part of the Guide in this version.
 
 ### Examples ###
 Normative example messages and resources are not included in this version of the Implementation Guide but will be added when available.
@@ -39,4 +39,4 @@ The following technical area is specifically excluded:
 * Assurance and system accreditation
 
 ## Note for Implementers ##
-This specification is issued as an alpha, and we welcome feedback (see [Communication Channels](support_communications.html) for ways to contact us) on the specification. In particular, note that the identity of the patient is NOT part of the specification - that is to say, the CDSS will never know who the patient is, in order to deliver a recommendation. We particularly welcome any views on this from implementers.
+This specification is issued as an alpha, and we welcome feedback (see [Communication Channels](support_communications.html) for ways to contact us) on the specification.
