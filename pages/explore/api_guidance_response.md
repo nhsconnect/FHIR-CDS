@@ -56,14 +56,14 @@ The table below details implementation guidance for the [GuidanceResponse](http:
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(Patient|<br>Group)</td>
+    <td>Reference<br>(Patient |<br>Group)</td>
     <td>Patient the request was performed for.</td>
 <td>This SHOULD be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(Encounter|<br>EpisodeOfCare)</td>
+    <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which the response was returned.</td>
 <td>This MUST be populated with the Encounter for this journey, from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
 </td>
@@ -85,14 +85,14 @@ The table below details implementation guidance for the [GuidanceResponse](http:
 <tr>
   <td><code class="highlighter-rouge">reason[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
-    <td>CodeableConcept<br>Reference</td>
+    <td>CodeableConcept |<br>Reference</td>
     <td>Reason for the response.</td>
 <td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
-    <td>CodeableConcept<br>Annotation</td>
+    <td>CodeableConcept |<br>Annotation</td>
     <td>Additional notes about the response.</td>
 <td></td>
  </tr>
