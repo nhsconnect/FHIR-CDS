@@ -57,7 +57,7 @@ View the [ServiceDefinition](api_post_service_definition.html) and [GuidanceResp
 
 
 ## Arriving at a result ##
-The EMS invokes a `ServiceDefinition.$evaluate` operation referencing a `QuestionnaireResponse` and any previous assertions (Observation resources) for the CDSS to evaluate.
+The EMS invokes a `ServiceDefinition.$evaluate` operation referencing a `QuestionnaireResponse` and any previous assertions (`Observation` resources) for the CDSS to evaluate.
 
 The CDSS creates another assertion from the `QuestionnaireResponse` and determines whether a result can be provided.
 

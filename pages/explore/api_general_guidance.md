@@ -19,7 +19,7 @@ The keywords ‘**MUST**’, ‘**MUST NOT**’, ‘**REQUIRED**’, ‘**SHALL*
 
 ### Resources ###
 
-Key FHIR resources have been included in this implementation guide. Any referenced resources in the interactions or key resources which are not explicitly included in this implementation guide will be the HL7 STU3 versions of these resources, following all constraints of that version"
+Key FHIR resources have been included in this implementation guide. Any referenced resources in the interactions or key resources which are not explicitly included in this implementation guide will be the HL7 STU3 versions of these resources, following all constraints of that version.
 
 ## RESTful API ##
 
@@ -57,7 +57,7 @@ Once assigned, the identity MUST never change; `logical Ids` are always opaque, 
 
 {% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems SHOULD NOT attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring a integer key (for example, 2345)." %} 
 
-For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
+For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id).  
 
 
 ### Referenced Resources ###
@@ -166,14 +166,14 @@ This error is raised during a provider create interaction. There are two excepti
 - The DocumentReference in the request body specifies an incorrect URL of the author and custodian Organization resource. 
 -->
 
-#### Status parameter ####
-When using the `status` parameter, two pieces of information are needed: 
+#### ServiceDefinition.status parameter ####
+When using this `status` parameter, two pieces of information are needed: 
 - the identity of the terminology system
 - the chosen value from the terminology system e.g. 'active'
 
 If the search request specifies unsupported parameter values in the request, this error will be thrown.  
 
-#### effectivePeriod parameter ####
+#### ServiceDefinition.effectivePeriod parameter ####
 If this parameter of type `date` has an incorrectly formatted date, this will also cause the error to be thrown.  
 
 General guidance on [handling errors arising from search requests](https://www.hl7.org/fhir/stu3/search.html#errors) is available.  
@@ -311,7 +311,7 @@ The below table summarises the HTTP response codes, along with the values to exp
 There are three scenarios when an Unsupported Media Type business response code MUST be returned to a client:
 - Request contains an unsupported `Accept` header and an unsupported `_format` parameter.
 - Request contains a supported `Accept` header and an unsupported `_format` parameter.
-- Retrieval search query request parameters are valid however the URL contains an unsupported `_format` parameter value. 
+- Retrieval search query request parameters are valid, however the URL contains an unsupported `_format` parameter value. 
 
 <!--
 These exceptions are raised by the Spine Core common requesthandler and not the NRLS Service so are supported by the default Spine OperationOutcome [spine-operationoutcome-1-0](https://fhir.nhs.uk/StructureDefinition/spine-operationoutcome-1-0) profile which binds to the default Spine valueSet [spine-response-code-1-0](https://fhir.nhs.uk/ValueSet/spine-response-code-1-0).  

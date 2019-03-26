@@ -226,7 +226,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">1..1</code></td>
  <td>Reference<br>(Observation |<br>Questionnaire<br>Response |<br>Sequence)</td>
     <td>Resource that is related to this one</td>
-<td></td>
+<td>This SHOULD only be populated with a reference to the <code class="highlighter-rouge">QuestionnaireResponse</code> resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">component</code></td>

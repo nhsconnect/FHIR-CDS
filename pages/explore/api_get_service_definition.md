@@ -22,7 +22,7 @@ The `ServiceDefinition.trigger` will typically be defined through Observation re
 
 Each CDSS SHOULD provide a `ServiceDefinition` where the trigger is NULL (i.e. no information is required).
 
-During a given patient journey, there may be points where there is more than one `ServiceDefinition` available. Any one CDSS should avoid this situation, but if a provider has more than one CDSS available, there may be situations where more than one CDSS can provide an appropriate `ServiceDefinition`. In this case, it will be up to local providers on how to choose between the available ServiceDefinitions. 
+During a given patient journey, there may be points where there is more than one `ServiceDefinition` available. Any one CDSS should avoid this situation, but if a provider has more than one CDSS available, there may be situations where more than one CDSS can provide an appropriate `ServiceDefinition`. In this case, it will be up to local providers on how to choose between the available `ServiceDefinitions`. 
 
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction: 
@@ -103,21 +103,42 @@ The recommended additional parameters for a `ServiceDefinition` are outlined bel
     <td><code class="highlighter-rouge">token</code></td> 
     <td>For testing purposes, not real usage</td>
     <td>SHOULD</td>
-    <td><code class="highlighter-rouge">ServiceDefinition.experimental</code></td>
+    <td><code class="highlighter-rouge">ServiceDefinition.</code><br><code class="highlighter-rouge">experimental</code></td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">effectivePeriod</code></td>
     <td><code class="highlighter-rouge">date</code></td> 
     <td>When the service definition is expected to be used</td>
     <td>SHOULD</td>
-    <td><code class="highlighter-rouge">ServiceDefinition.effectivePeriod</code></td>
+    <td><code class="highlighter-rouge">ServiceDefinition.</code><br><code class="highlighter-rouge">effectivePeriod</code></td>
 </tr> 
 <tr>
-    <td><code class="highlighter-rouge">useContext</code></td>
-  <td><code class="highlighter-rouge">token/quantity</code></td> 
-    <td>Context the content is intended to support</td>
+    <td><code class="highlighter-rouge">useContext.code</code></td>
+  <td><code class="highlighter-rouge">token</code></td> 
+    <td>Type of context being specified</td>
     <td>SHOULD</td>
-    <td><code class="highlighter-rouge">ServiceDefinition.useContext</code></td>
+    <td><code class="highlighter-rouge">ServiceDefinition.</code><br><code class="highlighter-rouge">useContext.code</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">useContext.valueCodeableConcept</code></td>
+  <td><code class="highlighter-rouge">token</code></td> 
+    <td>Value that defines the context</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueCodeableConcept</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">useContext.valueQuantity</code></td>
+  <td><code class="highlighter-rouge">quantity</code></td> 
+    <td>Value that defines the context</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueQuantity</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">useContext.valueRange</code></td>
+  <td><code class="highlighter-rouge">quantity</code></td> 
+    <td>Value that defines the context</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueRange</code></td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">jurisdiction</code></td>
@@ -127,12 +148,27 @@ The recommended additional parameters for a `ServiceDefinition` are outlined bel
     <td><code class="highlighter-rouge">ServiceDefinition.jurisdiction</code></td>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge">trigger</code></td>
- <td><code class="highlighter-rouge">Multiple types, depending on element</code></td> 
-    <td>"when" the module should be invoked</td>
-    <td>SHOULD</td>
-    <td><code class="highlighter-rouge">ServiceDefinition.trigger</code></td>
+    <td><code class="highlighter-rouge">trigger.type</code></td>
+ <td><code class="highlighter-rouge">token</code></td> 
+    <td>The type of triggering event</td>
+    <td>MUST</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.trigger.type</code></td>
 </tr>
+<tr>
+    <td><code class="highlighter-rouge">trigger.eventData.type</code></td>
+ <td><code class="highlighter-rouge">token</code></td> 
+    <td>The type of the required data</td>
+    <td>MUST</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.type</code></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge">trigger.eventData.profile</code></td>
+ <td><code class="highlighter-rouge">uri</code></td> 
+    <td>The profile of the required data</td>
+    <td>MUST</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.profile</code></td>
+</tr>
+
 </table>
   
 Servers will define their own named queries to meet the use case outlined above by using an [OperationDefinition](https://www.hl7.org/fhir/stu3/operationdefinition.html) resource.  

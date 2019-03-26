@@ -41,10 +41,10 @@
   expansion: Health Level 7
   definition: HL7.org is an international organisation responsible for the creation and maintenance of information and interoperability standards for healthcare.
 - keyword: Health Outcome 
-  definition: Refers to impact of over triage or under triage to patient well being, as well as the impact on patients when they follow advice given or the impact of not following the advice e.g. mortality, hospitalization, or re-presentation of symptoms. Health outcomes require longer term monitoring of the patient than immediate clinical outcomes ; the health outcome is not always immediately obvious
+  definition: Refers to impact of over triage or under triage to patient well being, as well as the impact on patients when they follow advice given or the impact of not following the advice e.g. mortality, hospitalisation, or re-presentation of symptoms. Health outcomes require longer term monitoring of the patient than immediate clinical outcomes ; the health outcome is not always immediately obvious
 - keyword: HTTP  
   expansion: Hyper Text Transfer protocol
-  definition: Hypertext Transfer Protocol is an application protocol used for data communication in World Wide Web. It provides a standard for web browsers that facilitates users to exchange information over internet.
+  definition: Hypertext Transfer Protocol is an application protocol used for data communication in the World Wide Web. It provides a standard for web browsers that facilitates users to exchange information over the internet.
 - keyword: ITK
   expansion: Interoperability Tool Kit
   definition: A collection of interoperability standards and tools produced by NHS Digital to support interoperability in healthcare.
@@ -52,7 +52,7 @@
   expansion: Integrated Urgent Care Clinical Assessment Service
   definition: Physical and/or virtual hub providing clinical advice to patients contacting the 111 or 999 services, as well as providing clinical support to clinicians (particularly ambulance staff such as paramedics and emergency technicians) to ensure that no decision is made in isolation. Also known as Care Advice Service or Clinical Assessment Service, previously known as a Clinical Navigation Hub.
 - keyword: Patient 
-  definition: Patient Generic term used in Commissioning Standards for citizens / public using the service
+  definition: Patient Generic term used in Commissioning Standards for citizens / public using the service.
 - keyword: PMPR  
   expansion: Predictive Modelling of Patient Risk
   definition: Using historical data to identify the patient-level variables that predict over-triage and under-triage for different Pathways or symptom groups. These patient-level variables can then be used to identify future service users who are at high risk of over- and under-triage.
