@@ -58,7 +58,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient|<br>Group)</td>
     <td>Patient the request was performed for.</td>
-<td>This SHOULD NOT be populated.</td>
+<td>This SHOULD be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
