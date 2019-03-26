@@ -111,7 +111,7 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>Reference<br>(Patient |<br>Group)</td>
     <td>The patient or group present at the encounter</td>
-<td>This SHOULD NOT be populated.</td>
+<td>This SHOULD be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">episodeOfCare</code></td>
