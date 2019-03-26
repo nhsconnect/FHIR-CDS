@@ -16,15 +16,15 @@ It also provides a more standard mechanism for authorising access to FHIR resour
 The guidance below provides implementers of the Clinical Decision Support API with guidelines relating to the NHS Digital approach to security.
 
 ## Use of Bearer Tokens ##
-A consuming system MUST include an Access token in the HTTP authorisation header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749)). This will be in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).  
+A consuming system MUST include an Access token in the HTTP authorization header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749)). This will be in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).  
 [Guidance on OAuth2 using the Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4) in this way is available.  
 This allows the receiving system to verify the details of the sending system and authorises access to system(s) and resource(s) permitted with that token. 
 Currently, as the new [NHS IdentityService](https://developer.nhs.uk/apis/national-authentication/) is not yet in place, the process outlined below should be followed:-  
 ### Process ###
-NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the NHS Digital Authorisation server.  
+NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory acting as the NHS Digital Authorisation server.  
 After passing an appropriate NHS Digital assurance process, a consuming system would be placed in an appropriate group created on the Authorisation server in order to be trusted by providers.  
 The Authorisation server will issue a JWT on receiving a consumer system request and the JWT will contain attributes of the consuming system, including the groups it is a member of.  
-The consuming system can then include the JWT in the HTTP authorisation header when a request is made to the provider.  
+The consuming system can then include the JWT in the HTTP authorization header when a request is made to the provider.  
 On receipt of the request with the JWT, the provider requests a public key from the Authorisation server and uses this to verify the signature of the JWT.  
 The provider system can then makes a number of checks, including checking the validity (e.g. expiry time) of the JWT and that the consumer is a member of the necessary group(s) which indicates that the consumer system has gone through the assurance process mentioned above. This verification indicates that the request can be trusted and should be honoured.  
 Once the provider has verified the JWT, access to the required resources will be given.  
