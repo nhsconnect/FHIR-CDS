@@ -111,7 +111,7 @@ url: https://developer.nhs.uk/apis/cds-api/index.html
 
 #repository: dxh73/IG-Template-REST
 #repository: dxh73/CareConnect-Unstructured-Document-API
-repository: nhsconnect/FHIR-CTP
+repository: nhsconnect/FHIR-CDS
 
 gist:
   noscript: false
