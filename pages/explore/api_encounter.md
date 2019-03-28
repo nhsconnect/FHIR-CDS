@@ -181,14 +181,14 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Reason the encounter takes place (code) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-reason.html">Encounter Reason Codes (Preferred)</a></td>
-<td>This COULD be populated, but is not expected to be for unscheduled care.</td>
+<td>This MAY be populated, but is not expected to be for unscheduled care.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">diagnosis</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>The list of diagnoses relevant to this encounter</td>
-<td>This COULD be populated, but is not expected to be for unscheduled care.</td>
+<td>This MAY be populated, but is not expected to be for unscheduled care.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">diagnosis.condition</code></td>
