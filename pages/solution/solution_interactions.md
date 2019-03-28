@@ -25,7 +25,7 @@ This interaction is expected to be repeated multiple times during the triage jou
 
 The `GuidanceResponse` carries or references all information relating to the CDSS response.
 
-![Diagram showing UEC Digital Integration Programme invoke decision support interaction](images/solution/invoke-decision-support.png)
+![Diagram showing invoke decision support and ServiceDefinition.$evaluate interactions](images/solution/invoke-decision-support.png "Diagram showing invoke decision support and ServiceDefinition.$evaluate interactions")
 
 View the [Evaluate ServiceDefinition](api_post_service_definition.html) and [GuidanceResponse](api_guidance_response.html) sections for detailed guidance.
 
@@ -41,7 +41,7 @@ This response is used to populate a `QuestionnaireResponse` resource, a referenc
 
 This interaction is expected to be repeated multiple times during the triage journey as different questions are presented to the user from the CDSS.
 
-![Diagram showing UEC Digital Integration Programme ask question interaction](images/solution/questionnaire-interaction.png)
+![Diagram showing Questionnaire/Response interaction](images/solution/questionnaire-interaction.png "Diagram showing Questionnaire/Response interaction")
 
 View the [Get Questionnaire](api_get_questionnaire.html) section for more information.
 
@@ -51,7 +51,7 @@ The CDSS determines whether there is enough information to arrive at a result. I
  
 The `GuidanceResponse` returned to the EMS now contains references to both an `Observation` and a `Questionnaire` resource.
 
-![Diagram showing UEC Digital Integration Programme servicedefinition evaluate response interaction](images/solution/assertion-interaction.png)
+![Diagram showing response from ServiceDefinition.$evaluate interaction](images/solution/assertion-interaction.png "Diagram showing response from ServiceDefinition.$evaluate interaction")
 
 View the [ServiceDefinition](api_post_service_definition.html) and [GuidanceResponse](api_guidance_response.html) sections for more information.
 
@@ -63,7 +63,7 @@ The CDSS creates another assertion from the `QuestionnaireResponse` and determin
 
 The result is sent to the EMS within the `GuidanceResponse` and the EMS displays the result to the User.
 
-![Diagram showing UEC Digital Integration Programme display result interaction](images/solution/result-interaction.png)
+![Diagram showing display of result of ServiceDefinition.$evaluate to user](images/solution/result-interaction.png "Diagram showing display of result of ServiceDefinition.$evaluate to user")
 
 View the [Result](api_return_guidance_response.html) section for more information.
 
