@@ -80,7 +80,7 @@ The following errors can be triggered when performing this operation:
 A second scenario would occur when an EMS needs to search for a `ServiceDefinition` which corresponds to selected search criteria. This would require a search using a customised search profile. Such [advanced search operations](https://www.hl7.org/fhir/stu3/search.html#query) of this type are specified by the `_query` parameter.  
 This parameter is used as follows:  
 <div markdown="span" class="alert alert-success" role="alert">
-GET [base]/Patient?_query=name&parameters...</div> 
+GET [base]/ServiceDefinition?_query=name&parameters...</div> 
 The `_query` parameter will define additional named parameters to be used with the named query and these will be used in combination where criteria for all of them must be satisfied.  
 The recommended additional parameters for a `ServiceDefinition` are outlined below:
 
