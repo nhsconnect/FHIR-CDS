@@ -43,7 +43,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ActivityDefinition |<br>PlanDefinition)</td>
     <td>Instantiates protocol or definition</td>
-<td>This COULD be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the ReferralRequest has been defined in the local implementation.</td>
+<td>This MAY be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the ReferralRequest has been defined in the local implementation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">basedOn</code></td>
