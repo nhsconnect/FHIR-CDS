@@ -7,6 +7,10 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
+## 1.0.0-alpha ##
+*  Updated COULD to MAY in guidance
+*  Removed GDS Stage - Experimental section from Guide versioning page
+
 ## 0.10.0-experimental ##
 *  Updated Select `ServiceDefinition` page to show greater detail on how an EMS would select a `ServiceDefinition` from a CDSS
 *  Made inclusion of reference to patient mandatory in the `ServiceDefinition.$evaluate` operation so a CDSS can create a `CarePlan` and `ReferralRequest` without error
