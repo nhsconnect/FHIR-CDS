@@ -12,7 +12,7 @@ summary: A brief introduction to the Clinical Decision Support API Implementatio
 
 ## Background ##
 
-This Clinical Decision Support (CDS) RESTful FHIR STU3 ‘Read Only’ experimental API implementation guide supports the initiatives set out by the [UEC Digital Integration Programme](https://digital.nhs.uk/about-nhs-digital/our-work/transforming-health-and-care-through-technology/urgent-and-emergency-care-domain-b/urgent-and-emergency-care-digital-integration).
+This Clinical Decision Support (CDS) RESTful FHIR STU3 ‘Read Only’ API implementation guide supports the initiatives set out by the [UEC Digital Integration Programme](https://digital.nhs.uk/about-nhs-digital/our-work/transforming-health-and-care-through-technology/urgent-and-emergency-care-domain-b/urgent-and-emergency-care-digital-integration).
 
 The UEC Digital Integration Programme supports the delivery of the key recommendations and drivers for change that resulted from a number of NHS strategies, policies, frameworks and reviews, including the [National Information Board (NIB) Health and Care 2020 framework]( https://www.gov.uk/government/publications/personalised-health-and-care-2020), 
 the [Urgent and Emergency Care Review](https://www.england.nhs.uk/wp-content/uploads/2015/06/trans-uec.pdf), and the [Five Year Forward View](https://www.england.nhs.uk/five-year-forward-view/). To achieve the transformation of Urgent and Emergency Care, patients must be directed to or connected with the right service to meet their needs and not be sent or conveyed to high end dispositions such as Accident and Emergency or GPs, unless absolutely necessary.  
