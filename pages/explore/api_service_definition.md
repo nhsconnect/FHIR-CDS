@@ -14,7 +14,7 @@ summary: ServiceDefinition implementation guidance
 ## ServiceDefinition: Implementation Guidance ##  
 
 ### Usage ###
-The [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource is published by the CDSS, describing what decisions the CDSS is able to provide support for. The resource describes in what circumstances the CDSS is valid, and what information is needed to render the decision.
+The [ServiceDefinition](http://hl7.org/fhir/stu3/servicedefinition.html) resource is published by the CDSS, describing what decisions the CDSS is able to provide support for. The resource describes in what circumstances the CDSS is valid, and what information is needed to render the decision.
 A CDSS can publish one or many `ServiceDefinition` resources. The resources SHOULD form a logically complete set. All CDSS MUST publish at least one `ServiceDefinition`.
 
 
@@ -46,7 +46,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Identifier</td>
     <td>Additional identifier for the service definition</td>
-<td>This is a business identifier and COULD be used to identify a <code class="highlighter-rouge">ServiceDefinition</code> where it is not possible to use the logical URI. This is generally used by FHIR servers.</td>
+<td>This is a business identifier and MAY be used to identify a <code class="highlighter-rouge">ServiceDefinition</code> where it is not possible to use the logical URI. This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">version</code></td>
@@ -165,7 +165,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Contributor</td>
     <td>A content contributor</td>
-<td>The information in this element COULD be used to assist consumers in quickly determining who contributed to the content of the knowledge module.</td>
+<td>The information in this element MAY be used to assist consumers in quickly determining who contributed to the content of the knowledge module.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">contact</code></td>
