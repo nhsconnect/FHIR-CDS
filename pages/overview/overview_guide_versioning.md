@@ -39,6 +39,7 @@ The labels documented in the GDS development process stages are:
 - <b>Live:</b> Release live APIs
 - <b>Discontinued:</b> APIs which have been discontinued and should not be used for new development.
 
+<!--
 ### 1.3.0 GDS Stage - Experimental ###
 This implementation guide is in currently in the “Experimental” stage. This means it is undergoing significant changes and will have regular releases.
-
+-->
