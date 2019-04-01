@@ -223,7 +223,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..*</code></td>
      <td>BackboneElement</td>
     <td>Only allow data when</td>
-<td>A conditional constraint on this item which allows <code class="highlighter-rouge">Questionnaires</code> to adapt based on answers to other questions. e.g. If a patient confirms that they s/he has had trouble sleeping, s/he will be asked "When did this start?".</td>
+<td>A conditional constraint on this item which allows <code class="highlighter-rouge">Questionnaires</code> to adapt based on answers to other questions e.g. if a patient confirms that s/he has had trouble sleeping, s/he will be asked "When did this start?".</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">item.enableWhen.question</code></td>
