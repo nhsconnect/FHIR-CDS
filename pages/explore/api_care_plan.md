@@ -322,7 +322,7 @@ The table below gives implementation guidance in relation to the elements within
  </tr>
 </table>
 
-### CarePlan Elements of Note ### 
+### CarePlan Elements of note ### 
 
 #### Activity.reference element of the CarePlan ####  
 This element carries details of the proposed activity represented in a specific referenced resource. For example, if care advice which is a component of a triage outcome involves advice about how to give CPR, this could be modelled as a `ProcedureRequest` which could be referenced from the element.
