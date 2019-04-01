@@ -18,7 +18,7 @@ The [ServiceDefinition](http://hl7.org/fhir/stu3/servicedefinition.html) resourc
 A CDSS can publish one or many `ServiceDefinition` resources. The resources SHOULD form a logically complete set. All CDSS MUST publish at least one `ServiceDefinition`.
 
 
-A `ServiceDefinition` can encapsulate any amount of information – some CDSS may find it simpler to have a single `ServiceDefinition`, and routing of patients through the CDSS is managed entirely within that single `ServiceDefinition`. Other CDSS may publish a different `ServiceDefinition` for different areas – for example, a `ServiceDefinition` for each presenting complaint. It is also possible to be even more granular, with a CDSS having a different `ServiceDefintion` for different complaints, and also for different types of user (e.g. headache for adult females, and a separate `ServiceDefinition` for headache for male children).
+A `ServiceDefinition` can encapsulate any amount of information – some CDSS may find it simpler to have a single `ServiceDefinition`, and routing of patients through the CDSS is managed entirely within that single `ServiceDefinition`. Other CDSS may publish a different `ServiceDefinition` for different areas – for example, a `ServiceDefinition` for each presenting complaint. It is also possible to be even more granular, with a CDSS having a different `ServiceDefinition` for different complaints, and also for different types of user (e.g. headache for adult females, and a separate `ServiceDefinition` for headache for male children).
 
 In general, more granular `ServiceDefinitions` will make change management simpler, as these can be updated without changing other `ServiceDefinitions`. Conversely, fewer `ServiceDefinitions` can make the triage journey simpler to control.
 
