@@ -14,7 +14,10 @@ summary: GuidanceResponse implementation guidance
 -->
 
 ## GuidanceResponse: Implementation Guidance ##  
-The table below details implementation guidance for the [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource in the CDS context:
+### Usage ###
+The [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource carries the result of invoking a decision support service and is returned by a CDSS in response to the `ServiceDefinition.$evaluate` operation.  
+
+The table below details implementation guidance for the `GuidanceResponse` resource in the CDS context:
 
 <table style="min-width:100%;width:100%">
 
