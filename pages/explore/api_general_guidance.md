@@ -77,7 +77,7 @@ Resources will commonly be referred to as part of other resources (e.g. a `Guida
   
 - The CDSS and EMS Servers MUST support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
-<!--- The CTP Server MUST prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client system.-->
+- The CDSS and EMS Servers MUST prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client system.
 
 - If neither the `Accept` header nor the `_format` parameter are supplied by the client system, the CDSS and EMS Servers MUST return data in the default format of `application/fhir+json`.
 
@@ -87,12 +87,10 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 - [Resource Not found](api_general_guidance.html#resource-not-found) - this behaviour is supported when a request references a resource that cannot be resolved.
 - [Headers](api_general_guidance.html#headers) - The HTTP Authorization header MUST be supplied with any request and an error will be generated in the event of this header not being present. 
 - [Parameters](api_general_guidance.html#parameters) – Certain actions allow a server to specify HTTP parameters. This class of error covers problems with the way that those parameters may have been presented.
+- [Payload business rules](api_general_guidance.html#payload-business-rules) - Errors of this nature will arise when the request payload does not conform to the business rules associated with its use. 
+- [Payload syntax](api_general_guidance.html#payload-syntax) - Used to inform the client that the syntax of the request payload is invalid. For example, if using JSON, then the structure of the payload may not conform to JSON notation
+- [Unsupported Media Type](api_general_guidance.html#unsupported-media-type) - Used to inform the client that requested content types are not supported by the CDS API
 
-<!--
- [Payload business rules](api_general_guidance.html#payload-business-rules) - Errors of this nature will arise when the request payload (ServiceDefinition) does not conform to the business rules associated with its use. 
- [Payload syntax](api_general_guidance.html#payload-syntax) - Used to inform the client that the syntax of the request payload (ServiceDefinition) is invalid. For example, if using JSON to carry the ServiceDefinition then the structure of the payload may not conform to JSON notation
- [Unsupported Media Type](api_general_guidance.html#unsupported-media-type) - Used to inform the client that requested content types are not supported by CDS API.
--->
 
 ### Resource not found ###
 Example scenarios are outlined below illustrating support for this behaviour during interactions between a CDSS and EMS Server:
@@ -101,45 +99,21 @@ Example scenarios are outlined below illustrating support for this behaviour dur
 
 The tables below summarise the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
-| HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |404|error|not-found |NO_RECORD_FOUND|No record found|No service definition found for supplied ServiceDefinition identifier - [id]|
 
 
-| HTTP Code | issue-severity | issue-type |  Details.Code | Details.Display | Diagnostics |
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |404|error|not-found |NO_RECORD_FOUND|No record found|No questionnaire found for supplied Questionnaire identifier - [id]|
 
 
 ### Headers ###
-<!--**TBC once Headers have been agreed**
-
-This error will be thrown in relation to the mandatory HTTP request headers. The scenarios when this error might be thrown:
-- The  mandatory `fromASID` HTTP Header is missing in the request
-  - The table details the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this scenario.
-
-Note that the header name is case-sensitive.
-
-
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
-|-----------|----------------|------------|--------------|-----------------|-------------------|
-|400|error|invalid| MISSING_OR_INVALID_HEADER|There is a required header missing or invalid|fromASID HTTP Header is missing|
-
-
-- The mandatory `toASID` HTTP Header is missing in the request
-  - The table details the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this scenario.
-
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
-|-----------|----------------|------------|--------------|-----------------|-------------------|
-|400|error|invalid| MISSING_OR_INVALID_HEADER|There is a required header missing or invalid|toASID HTTP Header is missing|
-
--->
-
-
 A scenario when this error would be thrown would be when the mandatory `Authorization` HTTP Header is missing in the request.  
 The table below details the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this scenario.
 
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |400|error|invalid| MISSING_OR_INVALID_HEADER|There is a required header missing or invalid|Authorization HTTP Header is missing|
 
@@ -152,19 +126,12 @@ The below table summarises the HTTP response code, along with the value to expec
 Example error scenarios in relation to specified request parameters are also listed.
 
 
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display |
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display |
 |-----------|----------------|------------|--------------|-----------------|
-|400|error|invlid| INVALID_PARAMETER|Invalid parameter|
+|400|error|invalid| INVALID_PARAMETER|Invalid parameter|
 
 #### `_format` request parameter ####
 If used, this parameter MUST specify one of the [mime types](api_general_guidance.html#content-types) recognised by CDSS and EMS Servers.
-
-<!--
-#### Invalid Reference URL in Pointer Create Request ####
-This error is raised during a provider create interaction. There are two exception scenarios:
-- The DocumentReference in the request body specifies an incorrect URL of the FHIR server that hosts the Patient resource. 
-- The DocumentReference in the request body specifies an incorrect URL of the author and custodian Organization resource. 
--->
 
 #### ServiceDefinition.status parameter ####
 When using this `status` parameter, two pieces of information are needed: 
@@ -178,15 +145,7 @@ If this parameter of type `date` has an incorrectly formatted date, this will al
 
 General guidance on [handling errors arising from search requests](https://www.hl7.org/fhir/stu3/search.html#errors) is available.  
 
-<!--
-#### _summary parameter ####
-The _summary parameter MUST have a value of “count”. If it is anything else then an error SHOULD be returned to the client.
-
-If the _summary parameter is provided then the only other param that it can be used with is the optional _format param. If any other parameters are provided then an error SHOULD be returned to the client.
-
--->
 ### Payload business rules ###
-
 
 ### Invalid Resource ###
 This error code may surface when creating a resource, for example when the business rules associated with a specific resource are violated. 
@@ -194,9 +153,9 @@ This error code may surface when creating a resource, for example when the busin
 The table below summarises the HTTP response code, along with the value to expect in the `OperationOutcome` in the response body for this exception scenario.
 
 
-| HTTP Code | issue-severity | issue-type | Details.Code | 
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | 
 |-----------|----------------|------------|--------------|
-|400|error|invalid| INVALID_RESOURCE|
+|400|error|invalid| INVALID_RESOURCE|Invalid validation of resource|
 
 Examples of business rules which may cause this error to be thrown when violated are given below:
 
@@ -206,64 +165,7 @@ If one or more mandatory fields are missing then this error will be thrown.
 #### mandatory field values ####
 If one or more mandatory fields are missing values then this error will be thrown.   
 
-<!--
 
-#### custodian ODS code ####
-
-If the DocumentReference in the request body contains an ODS code on the custodian element that is not tied to the ASID supplied in the HTTP request header fromASID then this error will result. 
-
-
-#### Attachment.creation ####
-This is an optional field but if supplied:
-- MUST be a valid FHIR [dateTime](https://www.hl7.org/fhir/STU3/datatypes.html#dateTime) 
-
-
-#### DocumentReference.Status ####
-
-If the DocumentReference in the request body specifies a status code that is not supported by the required HL7 FHIR [document-reference-status](http://hl7.org/fhir/ValueSet/document-reference-status) valueset then this error will be thrown. 
-
-
-#### DocumentReference.Type ####
-If the DocumentReference in the request body specifies a type that is not part of the valueset defined in the [NRLS-DocumentReference-1](https://fhir.nhs.uk/STU3/StructureDefinition/NRLS-DocumentReference-1) FHIR profile this error will be thrown. 
-
-#### DocumentReference.Indexed ####
-If the DocumentReference in the request body specifies an indexed element that is not a valid [instant](http://hl7.org/fhir/STU3/datatypes.html#instant) as per the FHIR specification this error will be thrown. 
-
-
-#### Delete Request - Provider ODS Code does not match Custodian ODS Code ####
-This error is raised during a provider delete interaction. There is one exception scenario:
-- A provider delete pointer request contains a URL that resolves to a single DocumentReference however the custodian property does not match the ODS code in the fromASID header.
-
-#### relatesTo.code ####
-If the code is not set to the following values then an error MUST be returned: 
-- replaces
-- transforms
-- signs
-- appends
-
-#### Incorrect permissions to modify ####
-
-When the NRLS resolves a DocumentReference through the relatesTo property before modifying its status the NRLS should check that 
-the ODS code associated with the fromASID HTTP header is associated with the ODS code specified on the custodian property of the 
-DocumentReference. If not then the NRLS should roll back all changes and an error returned.
-
-#### DocumentReference does not exist ####
-
-When the NRLS fails to resolve a DocumentReference through the relatesTo property then the NRLS should roll back all changes and an error returned.  
-
-
-### Duplicate Resource ###
-
-When the NRLS persists a DocumentReference with a masterIdentifier it should ensure that no other DocumentReference exists 
-for that patient with the same masterIdentifier.
-
-The below table summarises the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.
-
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display |Diagnostics |
-|-----------|----------------|------------|--------------|-----------------|-------------------|
-|400|error|duplicate| DUPLICATE_REJECTED|Duplicate DocumentReference|Duplicate masterIdentifier <br/> value: [masterIdentifier.value] system: [masterIdentifier.system]|  
-
--->
 
 ### Payload syntax ###
 
@@ -274,53 +176,21 @@ This kind of error will be created in response to problems with the request payl
 The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.
 
 
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
-|400|error|value| INVALID_REQUEST_MESSAGE|Invalid Request Message|Invalid Request Message|
-
-<!--
-### Organisation not found ###
-These two Organisations are referenced in a DocumentReference. Therefore the references MUST point to a resolvable FHIR Organisation resource. If the URL being used to reference a given Organisation is invalid then this error will result. The URL MUST conform to the following rules:
-- MUST be `https://directory.spineservices.nhs.uk/STU3/Organization`
-- MUST supply a logical identifier which will be the organisation's ODS code:
-  - It MUST be a valid ODS code. 
-  - The ODS code MUST be an organisation that is known to the NRLS 
-  - The ODS code associated with the custodian property MUST be in the Provider role.
-
-If there is an exception then it should be displayed following the rules, along with the values
-to expect in the `OperationOutcome` shown in the table below.
+|400|error|structure| INVALID_REQUEST_MESSAGE|Invalid Request Message|Invalid Request Message|
 
 
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
-|-----------|----------------|------------|--------------|-----------------|-------------------|
-|400|error|not-found| ORGANISATION_NOT_FOUND|Organisation record not found|The ODS code in the custodian and/or author element is not resolvable – [ods code].|
-
-
-### Invalid NHS Number ###
-Used to inform a client that the the NHS Number used in a provider pointer create or consumer search interaction is invalid.
-
-The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.
-
-
-| HTTP Code | issue-severity | issue-type | Details.Code | Details.Display | Diagnostics |
-|-----------|----------------|------------|--------------|-----------------|-------------------|
-|400|error|invalid| INVALID_NHS_NUMBER|Invalid NHS number|The NHS number does not conform to the NHS Number format: [nhs number].|
-
--->
 ### Unsupported Media Type ###
 There are three scenarios when an Unsupported Media Type business response code MUST be returned to a client:
 - Request contains an unsupported `Accept` header and an unsupported `_format` parameter.
 - Request contains a supported `Accept` header and an unsupported `_format` parameter.
 - Retrieval search query request parameters are valid, however the URL contains an unsupported `_format` parameter value. 
 
-<!--
-These exceptions are raised by the Spine Core common requesthandler and not the NRLS Service so are supported by the default Spine OperationOutcome [spine-operationoutcome-1-0](https://fhir.nhs.uk/StructureDefinition/spine-operationoutcome-1-0) profile which binds to the default Spine valueSet [spine-response-code-1-0](https://fhir.nhs.uk/ValueSet/spine-response-code-1-0).  
-
--->
 The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
 
-| HTTP Code | issue-severity | issue-type | Details.System | Details.Code | Details.Display |
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |415|error|invalid|UNSUPPORTED_MEDIA_TYPE|Unsupported Media Type|Unsupported Media Type|
 
