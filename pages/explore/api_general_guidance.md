@@ -140,7 +140,7 @@ When using this `status` parameter, two pieces of information are needed:
 
 If the search request specifies unsupported parameter values in the request, this error will be thrown.  
 
-#### ServiceDefinition.effectivePeriod parameter ####
+#### ServiceDefinition.effective parameter ####
 If this parameter of type `date` has an incorrectly formatted date, this will also cause the error to be thrown.  
 
 General guidance on [handling errors arising from search requests](https://www.hl7.org/fhir/stu3/search.html#errors) is available.  
