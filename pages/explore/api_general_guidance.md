@@ -198,7 +198,7 @@ The below table summarises the HTTP response codes, along with the values to exp
 
 Where the request cannot be processed, but the fault is with the receiving system and not the client, then the receiving system will return a 500 HTTP response code along with a descriptive message in the response body e.g:
 
-`<html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>`
+`<html><title>500: Internal Server Error</title><body>Unable to persist message - table extend failure</body></html>`
 
 ### Time out ###
 
