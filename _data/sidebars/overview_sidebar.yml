@@ -99,6 +99,9 @@ entries:
         - title: Observation
           url: /api_observation.html
           output: web
+        - title: ProcedureRequest
+          url: /api_procedure_request.html
+          output: web
         - title: Provenance
           url: /api_provenance.html
           output: web
@@ -113,7 +116,7 @@ entries:
           output: web
         - title: SearchParameter
           url: /api_searchparameter.html
-          output: web 
+          output: web
         - title: ServiceDefinition
           url: /api_service_definition.html
           output: web  
