@@ -111,6 +111,9 @@ entries:
         - title: ReferralRequest
           url: /api_referral_request.html
           output: web
+        - title: SearchParameter
+          url: /api_searchparameter.html
+          output: web 
         - title: ServiceDefinition
           url: /api_service_definition.html
           output: web  
