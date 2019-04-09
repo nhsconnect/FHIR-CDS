@@ -76,7 +76,7 @@ The table below details implementation guidance for the `GuidanceResponse` resou
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>When the guidance response was processed.</td>
-<td>This MUST be populated by the CDSS and it represents the date/time at which the <code class="highlighter-rouge">GuidanceResponse</code> is returned to the CDSS. (This may differ from the time the message is received).</td>
+<td>This MUST be populated by the CDSS and it represents the date/time at which the <code class="highlighter-rouge">GuidanceResponse</code> is returned to the EMS. (This may differ from the time the message is received).</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">performer</code></td>
