@@ -7,6 +7,16 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
+## 1.1.0-alpha ##
+*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters` 
+*  Added guidance on usage to the `GuidanceResponse` page
+*  Added implementation guidance on a `ProcedureRequest`
+*  Updated HTTP 500 error with a more descriptive error message
+*  `GuidanceResponse` page updated to show `occurrenceDateTime` represents date/time at which a `GuidanceResponse` is returned to an EMS
+*  Updated valueset text and links on `ReferralRequest` page
+*  Corrected name of `ServiceDefinition.effective` parameter in API general guidance
+*  Updated API general guidance to align errors more closely to an `OperationOutcome`
+
 ## 1.0.0-alpha ##
 *  Updated COULD to MAY in guidance
 *  Removed GDS Stage - Experimental section from Guide versioning page
