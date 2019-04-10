@@ -200,7 +200,6 @@ To search for `ServiceDefinition(s)` by the quantity or range that defines its c
 <div markdown="span" class="alert alert-success" role="alert">
 GET [base]/ServiceDefinition?useContext-code=age&useContext-valuequantityrange=le50</div>  
 In the above scenario, the `ServiceDefinition.useContext.value[x]` element would have a datatype of `Quantity` or `Range`.  
-
 See [quantity](https://www.hl7.org/fhir/stu3/search.html#quantity) for details relating to the type of this parameter.  
 
 #### jurisdiction ####
