@@ -175,9 +175,10 @@ GET [base]/ServiceDefinition?experimental=false</div>
 See [token](https://www.hl7.org/fhir/stu3/search.html#token) for details relating to the type of this parameter.
 
 #### effective ####
-To search for `ServiceDefinition(s)` whose content was planned to be in active use over a three month period in the year 2019, the following search would be executed:  
+To search for `ServiceDefinition(s)` whose content was effective at the time of the search.  
+If the date when the search was executed was 31-03-2019, the following search would be executed: 
 <div markdown="span" class="alert alert-success" role="alert">
-GET [base]/ServiceDefinition?effective=ge2019-01-01&effective=le2019-03-31</div> 
+GET [base]/ServiceDefinition?effective=ge2019-03-31&effective=le2019-03-31</div> 
 
 See [date](https://www.hl7.org/fhir/stu3/search.html#date) for details relating to the type of this parameter.
 
@@ -185,6 +186,10 @@ See [date](https://www.hl7.org/fhir/stu3/search.html#date) for details relating 
 To search for a `ServiceDefinition` by its context type as specified in the `ServiceDefinition.useContext.code` element, for example a context of 'gender', the following search could be executed:
 <div markdown="span" class="alert alert-success" role="alert">
 GET [base]/ServiceDefinition?useContext-code=gender</div> 
+
+You can also search using more than one context code. For example to search using the context code of 'gender' and 'workflow' then the following search would be executed:
+<div markdown="span" class="alert alert-success" role="alert">
+GET [base]/ServiceDefinition?useContext-code=gender&useContext-code=workflow</div> 
 
 See [token](https://www.hl7.org/fhir/stu3/search.html#token) for details relating to the type of this parameter.
 
