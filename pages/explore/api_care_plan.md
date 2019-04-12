@@ -164,7 +164,7 @@ The table below gives implementation guidance in relation to the elements within
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Action to occur as part of plan - provide a reference or detail, not both</td>
-<td>This SHOULD be populated by the CDSS using either the reference or the detail element. For example, it could carry a medication to be used, self-monitoring activities, laboratory tests planned.</td>
+<td>This SHOULD be populated by the CDSS using the detail element. If required, the reference element can be used. For example, it could carry a medication to be used, self-monitoring activities, laboratory tests planned.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">activity.<br>outcomeCodeableConcept</code></td>
