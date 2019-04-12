@@ -31,11 +31,11 @@ The Encounter Management System MAY:
 
 A health information technology system that is designed to provide clinical and non-clinical UEC personnel undertaking triage or consultation, with clinical decision support (CDS); that is, assistance with clinical decision-making tasks.
 
-The Clinical Decision Support System is responsible for making clinical decisions, and communicating these to the EMS.
+The Clinical Decision Support System is responsible for helping clinicians in making the decisions and then communicating these to the EMS.
 
 The Clinical Decision Support System MUST be able to:
 * Respond to filtered searches for `ServiceDefinition`
-* Respond to evaluation of a `ServiceDefinition`
+* Respond to evaluation of a `ServiceDefinition` with a `GuidanceResponse`
 * Read appropriate resources from the EMS (e.g. `QuestionnaireResponse`)
 * Write appropriate resources (e.g. `Questionnaire`, `Observation`)
 
