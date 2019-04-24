@@ -79,7 +79,7 @@ If the CDSS is recommending triage to another service, the <code class="highligh
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
    <td>proposal | plan | order <a href="https://www.hl7.org/fhir/stu3/valueset-request-intent.html">RequestIntent (Required)</a></td>
-<td>In most cases, this will be populated with the code 'plan', as the patient will need to take the next step.</td>
+<td>In most cases, this will be populated with the code 'plan', as the patient may need to take the next step.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">type</code></td>
