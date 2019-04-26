@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | Encounter implementation guidance
+title: Encounter Implementation Guidance
 keywords: encounter, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar

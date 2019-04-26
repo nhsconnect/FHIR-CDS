@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | Result interaction
+title: Result Interaction
 keywords: guidanceresponse, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar

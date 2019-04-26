@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | Observation implementation guidance
+title: Observation Implementation Guidance
 keywords: observation, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar

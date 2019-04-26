@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | Guidance Response implementation guidance
+title: Guidance Response Implementation Guidance
 keywords: guidanceresponse, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar

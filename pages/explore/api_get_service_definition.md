@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | Select ServiceDefinition interaction
+title: Select ServiceDefinition Interaction
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar

@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | QuestionnaireResponse implementation guidance
+title: QuestionnaireResponse Implementation Guidance
 keywords: questionnaireresponse, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar

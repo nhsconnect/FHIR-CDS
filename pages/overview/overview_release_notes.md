@@ -1,5 +1,5 @@
 ---
-title: UEC Digital Integration Programme | Release Notes
+title: Release Notes
 keywords: development, versioning
 tags: [development]
 sidebar: overview_sidebar

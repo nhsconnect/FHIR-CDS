@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | Redirect Service Definition
+title: Redirect Service Definition
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar

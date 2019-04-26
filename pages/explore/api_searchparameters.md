@@ -1,5 +1,5 @@
 ﻿---
-title: UEC Digital Integration Programme | SearchParameter
+title: SearchParameter Implementation Guidance
 keywords: servicedefinition, rest, searchParameters
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
@@ -13,7 +13,7 @@ summary: SearchParameter
 {% include custom/fhir.referencemin.html  resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
 -->
 
-## SearchParameter ##
+## SearchParameter : Implementation Guidance##
 
 ### Usage ###
 
