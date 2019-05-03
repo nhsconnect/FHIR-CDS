@@ -54,3 +54,7 @@ Search Parameters are referred to by CapabilityStatement resources via the canon
 ### Search using *trigger-eventdata-profile* element ###
 
 <script src="https://gist.github.com/IOPS-DEV/e0959e0022596fb155f4442936ecff1e.js"></script>
+
+### Search using *trigger-eventdata-valuecoding* element ###
+
+<script src="https://gist.github.com/IOPS-DEV/383759845f7ecca35cd397b30e4e891b.js"></script>

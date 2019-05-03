@@ -107,6 +107,15 @@ This section outlines the search parameter syntax used, with some examples provi
     <td><code class="highlighter-rouge">ServiceDefinition.</code><br><code class="highlighter-rouge">effectivePeriod</code></td>
 </tr> 
 <tr>
+    <td><code class="highlighter-rouge"><a href="#jurisdiction">jurisdiction</a></code></td>
+ <td><code class="highlighter-rouge">token</code></td>
+    <td>Intended jurisdiction for service definition (if applicable)</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.jurisdiction</code></td>
+</tr>
+<tr><td colspan="5">The following search parameters have been defined using the SearchParameter resource. More details can be found <a href="api_searchparameter.html">
+	here.</a></td></tr>
+<tr>
     <td><code class="highlighter-rouge"><a href="#usecontext-code">useContext-code</a></code></td>
   <td><code class="highlighter-rouge">token</code></td> 
     <td>Type of context being specified</td>
@@ -129,13 +138,7 @@ This section outlines the search parameter syntax used, with some examples provi
 <code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueRange</code>
 </td>
 </tr>
-<tr>
-    <td><code class="highlighter-rouge"><a href="#jurisdiction">jurisdiction</a></code></td>
- <td><code class="highlighter-rouge">token</code></td>
-    <td>Intended jurisdiction for service definition (if applicable)</td>
-    <td>SHOULD</td>
-    <td><code class="highlighter-rouge">ServiceDefinition.jurisdiction</code></td>
-</tr>
+
 <tr>
     <td><code class="highlighter-rouge"><a href="#trigger-type">trigger-type</a></code></td>
  <td><code class="highlighter-rouge">token</code></td> 
@@ -157,7 +160,13 @@ This section outlines the search parameter syntax used, with some examples provi
     <td>MUST</td>
     <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.profile</code></td>
 </tr>
-
+<tr>
+    <td><code class="highlighter-rouge"><a href="#trigger-eventdata-valuecoding">trigger-eventdata-valuecoding</a></code></td>
+ <td><code class="highlighter-rouge">code</code></td> 
+    <td>The code of the required data</td>
+    <td>MUST</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.valueCoding.code</code></td>
+</tr>
 </table>
 
 #### status ####
@@ -234,6 +243,19 @@ To search for `ServiceDefinition(s)` using the profile uri for the profile of th
 GET [base]/ServiceDefinition?trigger-type=data-added&trigger-eventdata-type=Observation&trigger-eventdata-profile=[profile name]</div> 
 
 See [uri](https://www.hl7.org/fhir/stu3/search.html#uri) for details relating to the type of this parameter.  
+
+#### trigger-eventdata-valuecoding ####
+To search for `ServiceDefinition(s)` using the value code of the required data (where the trigger is a data trigger), the following search could be executed:  
+<div markdown="span" class="alert alert-success" role="alert">
+GET [base]/ServiceDefinition?trigger-eventdata-valuecoding=[code]</div> 
+
+<div class="language-http highlighter-rouge">
+<pre class="highlight"><code><span class="err">GET [baseUrl]/ServiceDefinition?trigger-eventdata-valuecoding=125602001
+</span></code>
+Search for a ServiceDefinition which is triggered where the event data code is 125602001.</pre>
+</div>
+
+See [Coding](https://www.hl7.org/fhir/stu3/datatypes.html#Coding) for details relating to the type of this parameter.  
 
 ### Combination of search parameters ###
 If required, a search could be executed to return `ServiceDefinition(s)` using a combination of the above search parameters. An example request is shown below: 
