@@ -54,7 +54,8 @@ The table below details implementation guidance for the `GuidanceResponse` resou
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-guidance-response-status.html">GuidanceResponseStatus</a></td>
-<td>The status of the <code class="highlighter-rouge">GuidanceResponse</code> is a <a href="api_return_guidance_response.html#status-of-the-returned-guidanceresponse"> trigger for the EMS</a>.</td>
+<td>Allowable values are <code class="highlighter-rouge">success</code>, <code class="highlighter-rouge">data-requested</code>, <code class="highlighter-rouge">data-required</code>.<br/>
+The status of the <code class="highlighter-rouge">GuidanceResponse</code> is a <a href="api_return_guidance_response.html#status-of-the-returned-guidanceresponse"> trigger for the EMS</a>.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>

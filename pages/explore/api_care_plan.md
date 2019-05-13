@@ -16,7 +16,7 @@ summary: CarePlan resource implementation guidance
 
 ## CarePlan: Implementation Guidance ##
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [CarePlan](http://hl7.org/fhir/stu3/careplan.html) resource will be used to carry the care advice recommendation given by the CDSS.  
+Within the Clinical Decision Support API implementation, the [CareConnect-CarePlan-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-CarePlan-1) profile will be used to carry the care advice recommendation given by the CDSS.
 This resource may also carry a recommendation of self-care.  
 
 

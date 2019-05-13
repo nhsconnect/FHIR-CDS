@@ -7,11 +7,6 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
-## 1.2.0-alpha ##
-*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters` 
-*  Guidance amended regarding the ReferralRequest.intent element
-*  SearchParameters resource page added with examples of SearchParameter definitions
-
 ## 1.1.0-alpha ##
 *  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters` 
 *  Added guidance on usage to the `GuidanceResponse` page
@@ -21,6 +16,10 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 *  Updated valueset text and links on `ReferralRequest` page
 *  Corrected name of `ServiceDefinition.effective` parameter in API general guidance
 *  Updated API general guidance to align errors more closely to an `OperationOutcome`
+*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters` 
+*  Guidance amended regarding the ReferralRequest.intent element
+*  SearchParameters resource page added with examples of SearchParameter definitions
+
 
 ## 1.0.0-alpha ##
 *  Updated COULD to MAY in guidance
