@@ -16,7 +16,7 @@ summary: Provenance implementation guidance
 
 ### Usage ###
 
-The [Provenance](http://hl7.org/fhir/stu3/provenance.html) resource is used to carry the relevant history of the triage journey. The full history of the journey will be available in the `GuidanceResponse.outputParameters` and the `ServiceDefinition.$evaluate.inputData`, but the key steps in the journey will be carried as the relevant history. It will be the decision of the CDSS which assertions are most relevant, and only these will be added to the `Provenance` resource. In general, it is expected that positive statements driving the result will be captured as the relevant history. The CDSS should consider whether a particular assertion has value for another clinical user - only if it does, should it be added to the relevant history (and so to the `Provenance` resource).
+The [CareConnect-Provenance-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Provenance-1) profile is used to carry the relevant history of the triage journey. The full history of the journey will be available in the `GuidanceResponse.outputParameters` and the `ServiceDefinition.$evaluate.inputData`, but the key steps in the journey will be carried as the relevant history. It will be the decision of the CDSS which assertions are most relevant, and only these will be added to the `Provenance` resource. In general, it is expected that positive statements driving the result will be captured as the relevant history. The CDSS should consider whether a particular assertion has value for another clinical user - only if it does, should it be added to the relevant history (and so to the `Provenance` resource).
 
 Each assertion which is relevant to the history of the `ReferralRequest` will be carried as an independent `Provenance` resource, so the `relevantHistory` may have multiple `Provenance` resources, each identifying a key step.
 
@@ -108,7 +108,7 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..1</code></td>
     <td><code class="highlighter-rouge">onBehalfOfUri</code> uri <br><code class="highlighter-rouge">onBehalfOfReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
-<td>The CDSS MUST populate this with the details of the individual, device or organisation that participated in the event.</td>
+<td>This SHOULD be NULL.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">agent.relatedAgentType</code></td>
@@ -141,8 +141,16 @@ The table below details implementation guidance for this resource in the CDS con
 <tr>
   <td><code class="highlighter-rouge">entity.agent</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
-    <td>see agent</td>
+	   <td>BackboneElement</td>
     <td>Entity is attributed to this agent</td>
+   <td></td>
+ </tr>
+ <tr>
+  <td><code class="highlighter-rouge">entity.agent.who</code></td>
+      <td><code class="highlighter-rouge">0..*</code></td>
+	   <td>BackboneElement</td>
+    <td><code class="highlighter-rouge">whoUri</code> uri <br><code class="highlighter-rouge">whoReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
+    <td>This MUST be populated with the identity of the person providing the answers to the Questionnaire - either Patient or ResponsiblePerson.</td>
 <td></td>
  </tr>
 <tr>

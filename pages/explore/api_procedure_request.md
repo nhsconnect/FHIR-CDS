@@ -81,7 +81,7 @@ Detailed implementation guidance for a `ProcedureRequest` resource in the CDS co
   <td><code class="highlighter-rouge">priority</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
-    <td>routine | urgent | asap | ~~stat~~ <a href="http://hl7.org/fhir/stu3/valueset-request-priority.html">RequestPriority (Required)</a></td>
+    <td>routine | <s>urgent</s> | <s>asap</s> | <s>stat</s> <a href="http://hl7.org/fhir/stu3/valueset-request-priority.html">RequestPriority (Required)</a></td>
 <td>This SHOULD be populated by the CDSS. In most cases, this will be populated with the code 'routine', indicating that the request is of normal priority.</td>
 </tr>
 <tr>

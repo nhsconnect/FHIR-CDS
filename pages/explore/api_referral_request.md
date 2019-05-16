@@ -15,7 +15,7 @@ summary: ReferralRequest resource implementation guidance
 
 ## ReferralRequest: Implementation Guidance ##  
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html) resource will be used to carry the triage outcome of recommendation to another service for a patient.  
+Within the Clinical Decision Support API implementation, the [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1) profile will be used to carry the triage outcome of recommendation to another service for a patient.  
 A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
 The `ReferralRequest` MAY reference a `ProcedureRequest`, where there is a known [requested procedure](#procedure-request) which the referring service is intended to perform.  
 `RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
@@ -61,7 +61,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the CDS con
  </tr>
 <tr>
   <td><code class="highlighter-rouge">groupIdentifier</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
     <td>Identifier</td>
     <td>Composite request this is part of</td>
 <td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> from the <code class="highlighter-rouge">RequestGroup</code>.</td>

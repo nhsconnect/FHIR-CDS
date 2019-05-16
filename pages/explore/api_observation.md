@@ -9,12 +9,12 @@ summary: Observation resource implementation guidance
 
 {% include custom/search.warnbanner.html %}
 <!--
-{% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Questionnaire" fhirlink="[Questionnaire](http://hl7.org/fhir/stu3/questionnaire.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="[CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)" userlink="" page="" fhirname="Observation" fhirlink="[CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)" content="User Stories" userlink="" %}
 -->
 ## Observation: Implementation Guidance ##
 
 ### Usage ###
-The [Observation](http://hl7.org/fhir/stu3/observation.html) resource is used to carry a clinical assertion in a CDS context and is created and populated by a CDSS, which will work from clinical assertions to reach decisions.  
+The [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) profile is used to carry a clinical assertion in a CDS context and is created and populated by a CDSS, which will work from clinical assertions to reach decisions.  
 Due to the nature of triage in unscheduled care, these assertions are often time-bounded and limited, so are appropriate to capture as `Observations`. The assertions are normally based on input from the patient, captured as `QuestionnaireResponses`.  
 A single `QuestionnaireResponse` can drive a single assertion, or multiple assertions.  
 Similarly, an assertion may need multiple `QuestionnaireResponses` to be validated.
