@@ -122,14 +122,14 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>An entity used in this activity</td>
-<td>The <code class="highlighter-rouge">QuestionnaireResponse</code> resources which contributed to the creation (or update) of this assertion, where applicable</td>
+<td>The <code class="highlighter-rouge">QuestionnaireResponse</code> resources which contributed to the creation (or update) of this assertion, where applicable.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">entity.role</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>derivation | revision | quotation | source | removal <a href="https://www.hl7.org/fhir/stu3/valueset-provenance-entity-role.html">ProvenanceEntityRole (Required)</a></td>
-<td>This SHOULD be populated with the value 'derivation'</td>
+<td>This SHOULD be populated with the value 'derivation'.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">entity.what[x]</code></td>

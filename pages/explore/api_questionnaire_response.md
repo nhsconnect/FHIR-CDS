@@ -14,7 +14,7 @@ summary: QuestionnaireResponse resource implementation guidance
 ## QuestionnaireResponse: Implementation Guidance ##
 
 ### Usage ###
-The responses to a `Questionnaire` sent by the CDSS are communicated back by the EMS using the [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html) resource. 
+The responses to a `Questionnaire` sent by the CDSS are communicated back by the EMS using the [CareConnect-QuestionnaireResponse-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-QuestionnaireResponse-1) profile. 
 The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process and any answers from the user will be used to populate a `QuestionnaireResponse`.  
  
 
