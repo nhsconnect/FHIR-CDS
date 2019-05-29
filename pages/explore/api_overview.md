@@ -40,6 +40,8 @@ Consumer / Provider Server API Conformance
 
 - MUST expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
 
+- MUST be able to support `Bundle` resource for interactions with multiple resources.
+
 <!--See [CDS API FHIR Capability Statement profile](api_foundation_conformance.html).
 
 
