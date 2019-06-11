@@ -78,7 +78,7 @@ If no value is provided, the date and time of the request is assumed.</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">inputData</code></td>
-     <td><code class="highlighter-rouge">0..1</code></td>
+     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Any</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
    <td>The <a href="api_post_service_definition.html#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
