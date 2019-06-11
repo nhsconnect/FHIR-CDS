@@ -178,7 +178,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Condition |<br>Observation)</td>
     <td>Why is service needed?</td>
-<td>This SHOULD be populated by the CDSS. The chief concern SHOULD be carried in this element.</td>
+<td>This SHOULD be populated by the CDSS. The chief concern SHOULD be carried in this element using the <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1">CareConnect-Observation-1</a> profile.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">description</code></td>
@@ -192,7 +192,7 @@ This is represented as a start time (now) and end time (now+3 days, or now+four 
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional information to support referral or transfer of care request</td>
-<td>This SHOULD be populated by the CDSS. Secondary concerns SHOULD be be carried in this element.</td>
+<td>This SHOULD be populated by the CDSS. Secondary concerns SHOULD be be carried in this element using the <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1">CareConnect-Observation-1</a> profile.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
