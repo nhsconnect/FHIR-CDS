@@ -15,6 +15,7 @@ summary: Encounter resource implementation guidance
 
 ### Usage ###
 The [Encounter](http://hl7.org/fhir/stu3/encounter.html) resource is used to carry information arising from an interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
+
 In the CDS context, an encounter occurs for the duration of a patient’s interaction with a single service provider.
 
 Detailed implementation guidance for an `Encounter` resource in the CDS context is given below:  

@@ -14,10 +14,10 @@ summary: Observation resource implementation guidance
 ## Observation: Implementation Guidance ##
 
 ### Usage ###
-The [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1) profile is used to carry a clinical assertion in a CDS context and is created and populated by a CDSS, which will work from clinical assertions to reach decisions.  
-Due to the nature of triage in unscheduled care, these assertions are often time-bounded and limited, so are appropriate to capture as `Observations`. The assertions are normally based on input from the patient, captured as `QuestionnaireResponses`.  
-A single `QuestionnaireResponse` can drive a single assertion, or multiple assertions.  
-Similarly, an assertion may need multiple `QuestionnaireResponses` to be validated.
+The [Observation](http://hl7.org/fhir/stu3/observation.html) resource is used to carry a clinical assertion in a CDS context and is created and populated by a CDSS, which will work from clinical assertions to reach decisions.
+Due to the nature of triage in unscheduled care, these assertions are often time-bounded and limited, so are appropriate to capture as Observations. The assertions are normally based on input from the patient, captured as QuestionnaireResponses.
+A single `QuestionnaireResponse` can drive a single assertion, or multiple assertions.
+Similarly, an assertion may need multiple QuestionnaireResponses to be validated.
 
 Detailed implementation guidance for an `Observation` resource in the CDS context is given below:  
 
@@ -32,6 +32,62 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
 <tr>
+  <td><code class="highlighter-rouge">id</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>id</td>
+    <td>Logical id of this artifact</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">meta</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Meta</td>
+    <td>Metadata about the resource</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">implicitRules</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>uri</td>
+    <td>A set of rules under which this content was created</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">language</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>code</td>
+    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">text</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Narrative</td>
+    <td>Text summary of the resource, for human interpretation</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">contained</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Resource</td>
+    <td>Contained, inline Resources</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">extension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Additional Content defined by implementations</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">modifierExtension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Extensions that cannot be ignored</td>
+	<td></td>
+</tr>
+<tr>
   <td><code class="highlighter-rouge">identifier</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Identifier</td>
@@ -43,7 +99,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Careplan |<br>DeviceRequest |<br>Immunization<br>Recommendation |<br>MedicationRequest |<br>NutritionOrder |<br>ProcedureRequest |<br>ReferralRequest)</td>
     <td>Fulfils plan, proposal or order</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
@@ -71,14 +127,14 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>Reference<br>(Patient |<br>Group |<br>Device |<br>Location)</td>
     <td>Who and/or what this is about</td>
-<td>This SHOULD be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
+<td>This MUST be populated with the Patient.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Healthcare event during which this observation is made</td>
-<td></td>
+<td>This MUST be populated with the Encounter.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">effective[x]</code></td>

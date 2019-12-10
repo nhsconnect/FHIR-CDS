@@ -15,10 +15,8 @@ summary: GuidanceResponse implementation guidance
 
 ## GuidanceResponse: Implementation Guidance ##  
 ### Usage ###
-The [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource carries the result of invoking a decision support service and is returned by a CDSS in response to the `ServiceDefinition.$evaluate` operation.  
 
-The table below details implementation guidance for the `GuidanceResponse` resource in the CDS context:
-
+The table below details implementation guidance for the [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource in the CDS context:
 <table style="min-width:100%;width:100%">
 
 <tr>
@@ -27,6 +25,62 @@ The table below details implementation guidance for the `GuidanceResponse` resou
     <th style="width:10%;">Type</th>
       <th style="width:40%;">FHIR Documentation</th>
    <th style="width:35%;">CDS Implementation Guidance</th>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">id</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>id</td>
+    <td>Logical id of this artifact</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">meta</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Meta</td>
+    <td>Metadata about the resource</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">implicitRules</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>uri</td>
+    <td>A set of rules under which this content was created</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">language</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>code</td>
+    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">text</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Narrative</td>
+    <td>Text summary of the resource, for human interpretation</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">contained</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Resource</td>
+    <td>Contained, inline Resources</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">extension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Additional Content defined by implementations</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">modifierExtension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Extensions that cannot be ignored</td>
+	<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">requestId</code></td>
@@ -54,15 +108,14 @@ The table below details implementation guidance for the `GuidanceResponse` resou
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-guidance-response-status.html">GuidanceResponseStatus</a></td>
-<td>Allowable values are <code class="highlighter-rouge">success</code>, <code class="highlighter-rouge">data-requested</code>, <code class="highlighter-rouge">data-required</code>.<br/>
-The status of the <code class="highlighter-rouge">GuidanceResponse</code> is a <a href="api_return_guidance_response.html#status-of-the-returned-guidanceresponse"> trigger for the EMS</a>.</td>
+<td>This MUST be populated with either `success`, `data-requested`, `data-required` or `failure`. Other statuses are not valid.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient |<br>Group)</td>
     <td>Patient the request was performed for.</td>
-<td>This SHOULD be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
+<td>This MUST be populated with a reference to the `Patient` resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
@@ -77,43 +130,51 @@ The status of the <code class="highlighter-rouge">GuidanceResponse</code> is a <
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>When the guidance response was processed.</td>
-<td>This MUST be populated by the CDSS and it represents the date/time at which the <code class="highlighter-rouge">GuidanceResponse</code> is returned to the EMS. (This may differ from the time the message is received).</td>
+<td>This MUST be populated by the CDSS. It represents the date/time at which the GuidanceResponse is processed by the CDSS. (This may differ from the time the message is received).</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">performer</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Device)</td>
     <td>Device returning the guidance.</td>
-<td>This SHOULD NOT be populated.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reason[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept |<br>Reference</td>
     <td>Reason for the response.</td>
-<td>This SHOULD NOT be populated.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept |<br>Annotation</td>
     <td>Additional notes about the response.</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">evaluationMessage</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(OperationOutcome)</td>
     <td>Messages resulting from the evaluation of the artifact or artifacts.</td>
-<td>This SHOULD be populated in the case of error.</td>
+<td>This MUST ONLY be populated in the case of error.<br/>
+Where populated this MUST be processed appropriately </td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">outputParameters</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Parameters)</td>
     <td>The output parameters of the evaluation, if any.</td>
-<td>This element carries the state of the patient triage and MUST be populated with the current state. The state is managed through <code class="highlighter-rouge">QuestionnaireResponse</code> elements (as provided by the user); assertions (typically populated as <code class="highlighter-rouge">Observation</code> resources) based on these responses which can be interpreted by other systems; and any other resources provided by the EMS, typically from external systems (e.g. known patient conditions).
-<br>
+<td>
+This element carries the state of the patient triage and MUST be populated with the current state.
+The state is managed through: <br/>
+<ul>
+    <li><code class="highlighter-rouge">QuestionnaireResponse</code> elements (as provided by the user)</li>
+    <li>assertions (typically populated as <code class="highlighter-rouge">Observation</code> resources) based on these responses which can be interpreted by other systems</li>
+    <li>and any other resources provided by the EMS, typically from external systems (e.g. known patient conditions).</li>
+</ul>
+
 Where an <code class="highlighter-rouge">outputParameter</code> can be interpreted by a system, it SHOULD be published as an assertion, typically an <code class="highlighter-rouge">Observation</code>. If the information can only be interpreted by a human, it can be published as a <code class="highlighter-rouge">QuestionnaireResponse</code> only.
 </td>
  </tr>
@@ -122,18 +183,24 @@ Where an <code class="highlighter-rouge">outputParameter</code> can be interpret
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(CarePlan |<br>RequestGroup)</td>
     <td>Proposed actions, if any.</td>
-<td>The <a href="api_guidance_response.html#result-element-of-the-guidanceresponse">result element</a> MUST be populated with a <code class="highlighter-rouge">RequestGroup</code> resource, if the CDSS has either a recommendation for a suitable next service, or some care advice. It SHOULD NOT be populated if the CDSS recommends transfer to a different <code class="highlighter-rouge">ServiceDefinition</code>.</td>
+<td>This MUST only be populated by a RequestGroup resource, and MUST NOT be populated with a CarePlan.
+<br/>
+This MUST ONLY be populated if the CDS has either a recommendation for next service, or care advice for the patient. This MUST NOT be populated for a redirection.<br/>
+
+This SHOULD NOT be populated with a final result or care advice when recommending transfer to another <code class="highlighter-rouge">ServiceDefinition</code>, but can be populated with an interim result.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>Additional required data.</td>
-<td>The data carried in this element fulfils two purposes:-<br>
-If the evaluation could not be completed due to lack of information, or additional information would potentially result in a more accurate response for the current <code class="highlighter-rouge">ServiceDefinition</code>, the type of the data required will be 'Questionnaire'.  
-The <code class="highlighter-rouge">status</code> of the <code class="highlighter-rouge">GuidanceResponse</code> MUST be either 'data-requested' or 'data-required'.<br>
-If the evaluation against the current <code class="highlighter-rouge">ServiceDefinition</code> has completed and the <a href="#re-direction-to-a-new-servicedefinition">CDSS re-directs the EMS</a> to another <code class="highlighter-rouge">ServiceDefinition</code>, the type of the data required will be 'TriggerDefinition'.  
-In this case, the <code class="highlighter-rouge">status</code> MUST be 'success'.</td>
+<td>
+This MUST ONLY be populated with a <code class="highlighter-rouge">Questionnaire</code> if the <code class="highlighter-rouge">GuidanceResponse.status</code> is set to data-requested or data-required.
+
+This MUST ONLY be populated with a Trigger Definition if the <code class="highlighter-rouge">GuidanceResponse.status</code> is  set to 'Success' and the <code class="highlighter-rouge">GuidanceResponse.result</code> is NOT set to 'Final Result'
+
+This MUST NOT be populated if <code class="highlighter-rouge">GuidanceResponse.status</code> is set to Success and GuidanceResponse.result is set to 'Final Result'
+</td>
  </tr>
 
 </table>

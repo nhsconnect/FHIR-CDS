@@ -17,11 +17,11 @@ summary: ServiceDefinition implementation guidance
 The [ServiceDefinition](http://hl7.org/fhir/stu3/servicedefinition.html) resource is published by the CDSS, describing what decisions the CDSS is able to provide support for. The resource describes in what circumstances the CDSS is valid, and what information is needed to render the decision.
 A CDSS can publish one or many `ServiceDefinition` resources. The resources SHOULD form a logically complete set. All CDSS MUST publish at least one `ServiceDefinition`.
 
-
 A `ServiceDefinition` can encapsulate any amount of information – some CDSS may find it simpler to have a single `ServiceDefinition`, and routing of patients through the CDSS is managed entirely within that single `ServiceDefinition`. Other CDSS may publish a different `ServiceDefinition` for different areas – for example, a `ServiceDefinition` for each presenting complaint. It is also possible to be even more granular, with a CDSS having a different `ServiceDefinition` for different complaints, and also for different types of user (e.g. headache for adult females, and a separate `ServiceDefinition` for headache for male children).
 
 In general, more granular `ServiceDefinitions` will make change management simpler, as these can be updated without changing other `ServiceDefinitions`. Conversely, fewer `ServiceDefinitions` can make the triage journey simpler to control.
 
+CDSS Suppliers MUST ensure that all `ServiceDefinitions` end in the provision of `CareAdvice`, a `ReferralRequest` or redirection to another `ServiceDefinition` to reduce the risk of triage failing to complete. `ServiceDefinitions` that end with a redirection to another `ServiceDefinition` MUST NOT redirect to the initiating `ServiceDefinition` either directly or indirectly.
   
 Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical Decision Support context is outlined in the table below:
 
@@ -35,11 +35,68 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
 <tr>
+  <td><code class="highlighter-rouge">id</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>id</td>
+    <td>Logical id of this artifact</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">meta</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Meta</td>
+    <td>Metadata about the resource</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">implicitRules</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>uri</td>
+    <td>A set of rules under which this content was created</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">language</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>code</td>
+    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">text</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Narrative</td>
+    <td>Text summary of the resource, for human interpretation</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">contained</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Resource</td>
+    <td>Contained, inline Resources</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">extension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Additional Content defined by implementations</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">modifierExtension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Extensions that cannot be ignored</td>
+	<td></td>
+</tr>
+<tr>
   <td><code class="highlighter-rouge">url</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Logical URI to reference this service definition (globally unique)</td>
-<td>This absolute URI would be used to locate a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. It MUST be a URL, SHOULD be globally unique and SHOULD be an address at which the <code class="highlighter-rouge">ServiceDefinition</code> is (or will be) published. This is generally used by FHIR servers.</td>
+<td>This MUST be populated except when the ServiceDefinition is being CREATED.<br/>
+This absolute URI would be used to locate a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. It MUST be a URL, SHOULD be globally unique and SHOULD be an address at which the <code class="highlighter-rouge">ServiceDefinition</code> is published. <br/>This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
@@ -53,70 +110,72 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Business version of the service definition</td>
-<td>This is used to identify a specific version of a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. This is generally used by FHIR servers.</td>
+<td>This SHOULD be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">name</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (computer friendly)</td>
-<td>The name is not expected to be globally unique. The name SHOULD be a simple alpha-numeric type name. This is generally used by FHIR servers.</td>
+	<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">title</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (human friendly)</td>
-<td></td>
+	<td>This MUST be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | retired | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-publication-status.html">PublicationStatus (Required)</a>.</td>
-<td>Alongside the <code class="highlighter-rouge">experimental</code> element, this is used to identify the lifecycle of a <code class="highlighter-rouge">ServiceDefinition</code>. This MUST be populated with the value 'active' in live service.</td>
+<td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate to any/all <code class="highlighter-rouge">status</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">experimental</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
     <td>For testing purposes, not real usage</td>
-<td>This will carry the value 'false'.</td>
+<td>This SHOULD be populated.<br/>
+Where populated this MUST be true for draft or experimental ServiceDefinitions which are not to be used in LIVE operation.  This MUST be FALSE if the ServiceDefinition is for use in LIVE operation.<br/>
+Where not populated, this means the ServiceDefinition is appropriate for both experimental and live operation.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">date</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>Date this was last changed</td>
-<td></td>
+	<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">publisher</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name of the publisher (organization or individual)</td>
-<td></td>
+<	td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">description</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Natural language description of the service definition</td>
-<td></td>
+	<td>This MUST be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">purpose</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Why this service definition is defined</td>
-<td></td>
+	<td>This MUST be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">usage</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Describes the clinical usage of the module</td>
-<td></td>
+	<td>This MUST be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">approvalDate</code></td>
@@ -137,21 +196,23 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Period</td>
     <td>When the service definition is expected to be used</td>
-<td></td>
+<td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any period.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">useContext</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>UsageContext</td>
     <td>Context the content is intended to support</td>
-<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will be determined by the EMS and CDSS specific to each implementation.</td>
+<td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will be determined by the EMS and CDSS specific to each implementation.<br/>
+If no useContext is specified, this means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any useContext.
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">jurisdiction</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
-<td>Geographical jurisdiction only in a CDS context. The contents of this element can assist an EMS in identifying the most appropriate service.</td>
+<td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any/all <code class="highlighter-rouge">jurisdictions.</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">topic</code></td>
@@ -165,7 +226,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Contributor</td>
     <td>A content contributor</td>
-<td>The information in this element MAY be used to assist consumers in quickly determining who contributed to the content of the knowledge module.</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">contact</code></td>
@@ -179,7 +240,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Use and/or publishing restrictions</td>
-<td>Consumers MUST be able to determine any legal restrictions on the use of the <code class="highlighter-rouge">ServiceDefinition</code> and/or its content.</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relatedArtifact</code></td>
@@ -193,21 +254,23 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
-<td>The contents of the trigger element are used to advertise when the module should be invoked. On encountering a specific trigger, a clinical application can invoke the modules associated with the trigger using the <code class="highlighter-rouge">$evaluate</code> operation.</td>
+<td>If populated, this MUST be populated with DataRequirements for the clinical assertions required for this ServiceDefinition to be valid.<br/>
+
+It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>What data is used by the module</td>
-<td>This element MUST be populated with the set of machine-processable assertions (see <code class="highlighter-rouge">GuidanceResponse.</code><br><code class="highlighter-rouge">outputParameters</code>) which the CDSS requires in order to render the response fully.</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">operationDefinition</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference |<br>(OperationDefinition)</td>
     <td>Operation to invoke</td>
-<td>A reference to the operation that is used to invoke this service.</td>
+<td></td>
  </tr>
 </table>
 
