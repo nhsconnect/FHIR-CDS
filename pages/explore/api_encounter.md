@@ -14,8 +14,8 @@ summary: Encounter resource implementation guidance
 ## Encounter: Implementation Guidance ##
 
 ### Usage ###
-The [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) profile is used to carry information arising from an interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.  
-In the CDS context, an encounter occurs for the duration of a patient’s interaction with a single service provider. 
+The [Encounter](http://hl7.org/fhir/stu3/encounter.html) resource is used to carry information arising from an interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
+In the CDS context, an encounter occurs for the duration of a patient’s interaction with a single service provider.
 
 Detailed implementation guidance for an `Encounter` resource in the CDS context is given below:  
 
@@ -28,6 +28,63 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
     <th style="width:10%;">Type</th>
       <th style="width:38%;">FHIR Documentation</th>
    <th style="width:37%;">CDS Implementation Guidance</th>
+</tr>
+
+<tr>
+  <td><code class="highlighter-rouge">id</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>id</td>
+    <td>Logical id of this artifact</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">meta</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Meta</td>
+    <td>Metadata about the resource</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">implicitRules</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>uri</td>
+    <td>A set of rules under which this content was created</td>
+		<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">language</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>code</td>
+    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">text</code></td>
+    <td><code class="highlighter-rouge">0..1</code></td>
+    <td>Narrative</td>
+    <td>Text summary of the resource, for human interpretation</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">contained</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Resource</td>
+    <td>Contained, inline Resources</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">extension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Additional Content defined by implementations</td>
+	<td></td>
+</tr>
+<tr>
+  <td><code class="highlighter-rouge">modifierExtension</code></td>
+    <td><code class="highlighter-rouge">0..*</code></td>
+    <td>Extension</td>
+    <td>Extensions that cannot be ignored</td>
+	<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
