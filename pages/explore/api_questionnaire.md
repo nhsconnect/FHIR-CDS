@@ -62,7 +62,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Narrative</td>
     <td>Text summary of the resource, for human interpretation</td>
-	<td>This MUST NOT be populated.</td>
+	<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">contained</code></td>
@@ -227,7 +227,7 @@ If the content of this element does not match the jurisdiction of the current <c
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Concept that represents the overall questionnaire <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-questions.html">Questionnaire Question Codes (Example)</a></td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subjectType</code></td>
