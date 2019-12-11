@@ -15,7 +15,7 @@ summary: ProcedureRequest resource implementation guidance
 
 ## ProcedureRequest: Implementation Guidance ##  
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [CareConnect-ProcedureRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ProcedureRequest-1) profile will be used to carry details of a request for a procedure to be planned, proposed or performed with or on a patient.  
+Within the Clinical Decision Support API implementation, the [ProcedureRequest](http://hl7.org/fhir/stu3/procedurerequest.html) resource will be used to carry details of a request for a procedure to be planned, proposed or performed with or on a patient.  
 The `ProcedureRequest` is referenced from `ReferralRequest.basedOn` and will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which SHOULD be carried out in the referee service to validate or eliminate the chief concern.   
 Detailed implementation guidance for a `ProcedureRequest` resource in the CDS context is given below:  
 

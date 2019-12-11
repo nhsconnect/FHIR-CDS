@@ -90,6 +90,9 @@ entries:
         - title: CarePlan
           url: /api_care_plan.html
           output: web
+        - title: Condition
+          url: /api_condition.html
+          output: web          
         - title: Encounter
           url: /api_encounter.html
           output: web
@@ -117,6 +120,9 @@ entries:
         - title: ReferralRequest
           url: /api_referral_request.html
           output: web
+        - title: RequestGroup
+          url: /api_requestgroup.html
+          output: web    
         - title: SearchParameter
           url: /api_searchparameter.html
           output: web

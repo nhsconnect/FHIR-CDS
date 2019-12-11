@@ -141,7 +141,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>dateTime |<br>Period</td>
     <td>Clinically relevant time/time-period for observation</td>
-<td>This SHOULD be populated.</td>
+<td>This SHOULD be populated where available. If populated it MUST be a Period.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">issued</code></td>
@@ -155,21 +155,22 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson)</td>
     <td>Who is responsible for the observation</td>
-<td>This SHOULD be populated with a reference to the organisation of the service provider which would be taken from the <code class="highlighter-rouge">ServiceDefinition.<br>$evaluate.inputParameters</code> element.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">value[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
       <td>Quantity | CodeableConcept | string | boolean | Range | Ratio | SampledData | Attachment | time | dateTime | Period</td>
 <td>Actual result</td>
-<td>This may be of any type, but will often be of type <code class="highlighter-rouge">valueBoolean</code> to indicate the presence or absence of the Observation type recorded in the <code class="highlighter-rouge">Observation.code</code> element.</td>
+<td>This MUST be populated with type valueCodableConcept.<br/>
+This is to enable the appropriate definition of DataRequirements.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataAbsentReason</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
     <td>Why the result is missing <a href="https://www.hl7.org/fhir/stu3/valueset-observation-valueabsentreason.html">Observation Value Absent Reason (Extensible)</a></td>
-<td></td>
+	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">interpretation</code></td>
@@ -183,21 +184,23 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Comments about result</td>
-<td></td>
+	<td>This MUST NOT be populated.
+	<br/>
+	If there is information about the Observation to be communicated, it must be communicated in a structured form.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">bodySite</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
     <td>Observed body part <a href="https://www.hl7.org/fhir/stu3/valueset-body-site.html">SNOMED CT Body Structures (Example)</a></td>
-<td></td>
+	<td>This SHOULD be populated where available.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">method</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
     <td>How it was done <a href="https://www.hl7.org/fhir/stu3/valueset-observation-methods.html">Observation Methods (Example)</a></td>
-<td></td>
+	<td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specimen</code></td>
@@ -289,7 +292,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Component results</td>
-<td></td>
+<	td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">component.code</code></td>

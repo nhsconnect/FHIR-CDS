@@ -62,7 +62,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Narrative</td>
     <td>Text summary of the resource, for human interpretation</td>
-	<td></td>
+	<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">contained</code></td>
