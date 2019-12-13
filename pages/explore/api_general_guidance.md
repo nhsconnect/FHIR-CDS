@@ -87,10 +87,6 @@ The CDS API defines numerous categories of error, each of which encapsulates a s
 - [Resource Not found](api_general_guidance.html#resource-not-found) - this behaviour is supported when a request references a resource that cannot be resolved.
 - [Headers](api_general_guidance.html#headers) - The HTTP Authorization header MUST be supplied with any request and an error will be generated in the event of this header not being present. 
 - [Parameters](api_general_guidance.html#parameters) – Certain actions allow a server to specify HTTP parameters. This class of error covers problems with the way that those parameters may have been presented.
-- [Payload business rules](api_general_guidance.html#payload-business-rules) - Errors of this nature will arise when the request payload does not conform to the business rules associated with its use. 
-- [Payload syntax](api_general_guidance.html#payload-syntax) - Used to inform the client that the syntax of the request payload is invalid. For example, if using JSON, then the structure of the payload may not conform to JSON notation
-- [Unsupported Media Type](api_general_guidance.html#unsupported-media-type) - Used to inform the client that requested content types are not supported by the CDS API
-
 
 ### Resource not found ###
 Example scenarios are outlined below illustrating support for this behaviour during interactions between a CDSS and EMS Server:
@@ -140,7 +136,7 @@ When using this `status` parameter, two pieces of information are needed:
 
 If the search request specifies unsupported parameter values in the request, this error will be thrown.  
 
-#### ServiceDefinition.effective parameter ####
+#### ServiceDefinition.effectivePeriod parameter ####
 If this parameter of type `date` has an incorrectly formatted date, this will also cause the error to be thrown.  
 
 General guidance on [handling errors arising from search requests](https://www.hl7.org/fhir/stu3/search.html#errors) is available.  

@@ -46,35 +46,18 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 Detailed guidance relating to [searching for FHIR resources](https://www.hl7.org/fhir/stu3/search.html) can be viewed.  
 Guidance on [search parameters for a ServiceDefinition](https://www.hl7.org/fhir/stu3/servicedefinition.html#search) is available.
 Two scenarios which may be used to search for a `ServiceDefinition` in the CDS context are outlined below:
-### Searching for a ServiceDefinition by _id ###
-The search parameter `_id` refers to the logical id of the `ServiceDefinition` resource and would be used when the EMS already knows the `_id` of the required `ServiceDefinition`.  
-When the `_id` search parameter is used by the EMS it SHALL only be used as a single search parameter and SHALL not be used in conjunction with any other search parameter to form part of a combination search query with the exception of the `_format` parameter.  
-The `_id` parameter can be used as follows:  
 
+
+### Searching for a ServiceDefinition using a named query ###  
+
+A scenario would occur when an EMS needs to search for a `ServiceDefinition` which corresponds to selected search criteria. This would require a search using a customised search profile. Such [advanced search operations](https://www.hl7.org/fhir/stu3/search.html#query) of this type are specified by the `_query` parameter. The parameters can be used independently or in combination to help refine the search results returned.
+
+The _query parameter is used as follows:
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/ServiceDefinition?_id=[id]</div> 
-This search finds the `ServiceDefinition` resource with the given id (there can only be one resource for a given id).   
+GET [base]/ServiceDefinition?_query=triage&parameters…</div>
 
-Further details relating to the [_id search parameter](https://www.hl7.org/fhir/stu3/search.html#id) are available.  
+The _query parameter will define additional named parameters to be used with the named query (triage) and these will be used in combination where criteria for all of them must be satisfied.
 
-### Search Response ###
-
-### Success ###
-
-* MUST return a `200` **OK** HTTP status code on successful execution of the interaction.
-* MUST return a `Bundle` of type searchset, containing either:
-   - One `ServiceDefinition` resource or
-   - A '0' (zero) total value indicating no record was matched e.g. an empty `Bundle`.  
-
-### Failure ###
-The following errors can be triggered when performing this operation:  
- 
-* [Invalid parameter](api_general_guidance.html#parameters) (if using the '_format' parameter without a [mime type](api_general_guidance.html#content-types) recognised by a CDSS or EMS server). 
-* [Resource not found](api_general_guidance.html#resource-not-found)
-
-### Searching for a ServiceDefinition using defined search parameters ###  
-A second scenario would occur when an EMS searches for a `ServiceDefinition` using a combination of the search parameters listed below.  
-The parameters can be used independently or in combination to help refine the search results returned.  
 This section outlines the search parameter syntax used, with some examples provided.
 
 <table style="min-width:100%;width:100%">
@@ -113,38 +96,61 @@ This section outlines the search parameter syntax used, with some examples provi
     <td>SHOULD</td>
     <td><code class="highlighter-rouge">ServiceDefinition.jurisdiction</code></td>
 </tr>
-<tr><td colspan="5">The following search parameters have been defined using the SearchParameter resource. More details can be found <a href="api_searchparameter.html">
-	here.</a></td></tr>
+</table>
+The following search parameters have been defined using the SearchParameter resource. More details can be found <a href="api_searchparameter.html">
+	here.</a><br/>
+	A CDS MUST implement the additional parameters for a ServiceDefinition triage query as outlined below:
+
+<table style="min-width:100%;width:100%">
 <tr>
-    <td><code class="highlighter-rouge"><a href="#usecontext-code">useContext-code</a></code></td>
-  <td><code class="highlighter-rouge">token</code></td> 
-    <td>Type of context being specified</td>
-    <td>SHOULD</td>
-    <td><code class="highlighter-rouge">ServiceDefinition.</code><br><code class="highlighter-rouge">useContext.code</code></td>
+    <th style="width:15%;">Name</th>
+   <th style="width:15%;">Type</th> 
+    <th style="width:35%;">Description</th>
+    <th style="width:2%;">Conformance</th>
+    <th style="width:20%;">Path</th>
+    <th style="width:40%;">Guidance</th>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge"><a href="#usecontext-valueconcept">useContext-valueconcept</a></code></td>
-  <td><code class="highlighter-rouge">token</code></td> 
+    <td><code class="highlighter-rouge"><a href="#usecontext-code">useContext-code</a></code></td>
+	<td><code class="highlighter-rouge">token</code></td> 
+    <td>Type of context being specified</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition</code><br/><code class="highlighter-rouge">.useContext.code</code></td>
+	<td>Must always be used if filtering for a specific usage context.</td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge"><a href="#usecontext-valueconcept">useContext-valueCodeableConcept</a></code></td>
+  <td><code class="highlighter-rouge">CodeableConcept</code></td> 
     <td>Value that defines the context</td>
     <td>SHOULD</td>
     <td><code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueCodeableConcept</code></td>
+	<td>Only one of the value options will be used for each code.  It will normally be the valueCodeableConcept</td>
 </tr>
 <tr>
-    <td><code class="highlighter-rouge"><a href="#usecontext-valuequantityrange">useContext-valuequantityrange</a></code></td>
+    <td><code class="highlighter-rouge"><a href="#usecontext-valuequantityrange">useContext-valueQuantity</a></code></td>
   <td><code class="highlighter-rouge">quantity</code></td> 
     <td>Value that defines the context</td>
     <td>SHOULD</td>
-    <td><code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueQuantity</code><br>
-<code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueRange</code>
+    <td><code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueQuantity</code>
+	<td>Only one of the value options will be used for each code.  It will normally be the valueQuantity</td>
 </td>
 </tr>
-
+<tr>
+    <td><code class="highlighter-rouge"><a href="#usecontext-valuequantityrange">useContext-valueRange</a></code></td>
+  <td><code class="highlighter-rouge">range</code></td> 
+    <td>Value that defines the context</td>
+    <td>SHOULD</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.useContext.</code><br><code class="highlighter-rouge">valueRange</code>
+	<td>Only one of the value options will be used for each code.  It will normally be the valueRange</td>
+</td>
+</tr>
 <tr>
     <td><code class="highlighter-rouge"><a href="#trigger-type">trigger-type</a></code></td>
  <td><code class="highlighter-rouge">token</code></td> 
     <td>The type of triggering event</td>
     <td>MUST</td>
     <td><code class="highlighter-rouge">ServiceDefinition.trigger.type</code></td>
+	<td></td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge"><a href="#trigger-eventdata-type">trigger-eventdata-type</a></code></td>
@@ -152,6 +158,7 @@ This section outlines the search parameter syntax used, with some examples provi
     <td>The type of the required data</td>
     <td>MUST</td>
     <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.type</code></td>
+	<td></td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge"><a href="#trigger-eventdata-profile">trigger-eventdata-profile</a></code></td>
@@ -159,6 +166,7 @@ This section outlines the search parameter syntax used, with some examples provi
     <td>The profile of the required data</td>
     <td>MUST</td>
     <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.profile</code></td>
+	<td></td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge"><a href="#trigger-eventdata-valuecoding">trigger-eventdata-valuecoding</a></code></td>
@@ -166,6 +174,15 @@ This section outlines the search parameter syntax used, with some examples provi
     <td>The code of the required data</td>
     <td>MUST</td>
     <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.valueCoding.code</code></td>
+	<td></td>
+</tr>
+<tr>
+    <td><code class="highlighter-rouge"><a href="#trigger-eventdata-id">trigger-eventdata-id</a></code></td>
+ <td><code class="highlighter-rouge">token</code></td> 
+    <td>The id of the triggering event</td>
+    <td>MUST</td>
+    <td><code class="highlighter-rouge">ServiceDefinition.trigger.</code><br><code class="highlighter-rouge">eventData.id</code></td>
+	<td>This is the id of the matching dataRequirement.</td>
 </tr>
 </table>
 
@@ -173,6 +190,8 @@ This section outlines the search parameter syntax used, with some examples provi
 To search for `ServiceDefinition(s)` with a `status` of 'active', the following search would be executed:
 <div markdown="span" class="alert alert-success" role="alert">
 GET [base]/ServiceDefinition?status=active</div> 
+
+Where a ServiceDefinition has not set the status element, this means the ServiceDefinition is appropriate to any status.
 
 See [token](https://www.hl7.org/fhir/stu3/search.html#token) for details relating to the type of this parameter.
 
@@ -202,17 +221,17 @@ GET [base]/ServiceDefinition?useContext-code=gender&useContext-code=workflow</di
 
 See [token](https://www.hl7.org/fhir/stu3/search.html#token) for details relating to the type of this parameter.
 
-#### useContext-valueconcept ####
+#### useContext-valueCodeableConcept ####
 To search for `ServiceDefinition(s)` by the value that defines its context specified in the `ServiceDefinition.useContext.value[x]` element, for example a value of 'female' within a context type of 'gender', the following search could be executed:
 <div markdown="span" class="alert alert-success" role="alert">
-GET [base]/ServiceDefinition?useContext-code=gender&useContext-valueconcept=http://hl7.org/fhir/administrative-gender|female</div> 
+GET [base]/ServiceDefinition?useContext-code=gender&useContext-valueCodeableConcept=http://hl7.org/fhir/administrative-gender|female</div> 
 In the above scenario, the `ServiceDefinition.useContext.value[x]` element would have a datatype of `CodeableConcept`.  
 See [token](https://www.hl7.org/fhir/stu3/search.html#token) for details relating to the type of this parameter.  
 
-#### useContext-valuequantityrange ####
+#### useContext-valueQuantity and useContext-valueRange ####
 To search for `ServiceDefinition(s)` by the quantity or range that defines its context specified in the `ServiceDefinition.useContext.value[x]` element, for example a value of '<50' within a context type of 'age', the following search could be executed:
 <div markdown="span" class="alert alert-success" role="alert">
-GET [base]/ServiceDefinition?useContext-code=age&useContext-valuequantityrange=le50</div>  
+GET [base]/ServiceDefinition?useContext-code=age&useContext-valueRange=le50</div>  
 In the above scenario, the `ServiceDefinition.useContext.value[x]` element would have a datatype of `Quantity` or `Range`.  
 See [quantity](https://www.hl7.org/fhir/stu3/search.html#quantity) for details relating to the type of this parameter.  
 
