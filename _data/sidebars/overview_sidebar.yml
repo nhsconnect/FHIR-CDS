@@ -105,9 +105,6 @@ entries:
         - title: ProcedureRequest
           url: /api_procedure_request.html
           output: web
-        - title: Patient
-          url: /api_patient.html
-          output: web          
         - title: Provenance
           url: /api_provenance.html
           output: web
