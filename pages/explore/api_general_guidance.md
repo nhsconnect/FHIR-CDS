@@ -202,3 +202,9 @@ It is recommended for any synchronous patterns that the client sets a time out l
 
 If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors.
 After a limited number of retries (e.g. 3-5) the client MAY assume that the server is unavailable and SHOULD respond appropriately. If the EMS is acting as the client (for example, in the `$evaluate` operation), this may take the form of a user interaction. If the CDSS is acting as the client, then the response will be to the EMS.
+
+## General API considerations ##
+
+### note element ###
+
+The note element appears in several resources in scope of the CDS API. A general view has been taken that notes made by EMS users are not taken into consideration by the CDSS. If there is information to be communicated, it MUST be communicated in a structured form. This is to reduce the risk of inappropritae triage due to end users assuming notes will be considered. Accordingly, the note element where it occurs MUST NOT be populated. 

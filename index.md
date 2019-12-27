@@ -38,5 +38,9 @@ Use cases for the CDS API are not included in this Implementation Guide. These w
 The following technical area is specifically excluded:
 * Assurance and system accreditation
 
+### Group triage of patients ###
+
+All published guidance in this version of the Implementation Guide is in reference to the triage of a single patient. Group triage of patients is out of scope.
+
 ## Note for Implementers ##
 This specification is issued as an alpha, and we welcome feedback (see [Communication Channels](support_communications.html) for ways to contact us) on the specification.

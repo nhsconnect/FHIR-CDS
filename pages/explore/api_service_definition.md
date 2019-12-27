@@ -110,7 +110,10 @@ This absolute URI would be used to locate a <code class="highlighter-rouge">Serv
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Business version of the service definition</td>
-<td>This SHOULD be populated.</td>
+<td>This SHOULD be populated.
+<br/>Click <a href="#version">here</a> for more information.
+
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">name</code></td>
@@ -124,7 +127,7 @@ This absolute URI would be used to locate a <code class="highlighter-rouge">Serv
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (human friendly)</td>
-	<td>This MUST be populated.</td>
+	<td>This MUST be populated. <br/>Click <a href="#title-description-usage">here</a> for more information.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
@@ -154,14 +157,16 @@ Where not populated, this means the ServiceDefinition is appropriate for both ex
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name of the publisher (organization or individual)</td>
-<	td></td>
+	<td><br/>Click <a href="#publisher">here</a> for more information.
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">description</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Natural language description of the service definition</td>
-	<td>This MUST be populated.</td>
+	<td>This MUST be populated. <br/>Click <a href="#title-description-usage">here</a> for more information.
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">purpose</code></td>
@@ -175,7 +180,7 @@ Where not populated, this means the ServiceDefinition is appropriate for both ex
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Describes the clinical usage of the module</td>
-	<td>This MUST be populated.</td>
+	<td>This MUST be populated. <br/>Click <a href="#title-description-usage">here</a> for more information.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">approvalDate</code></td>
@@ -205,6 +210,7 @@ Where not populated, this means the ServiceDefinition is appropriate for both ex
     <td>Context the content is intended to support</td>
 <td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will be determined by the EMS and CDSS specific to each implementation.<br/>
 If no useContext is specified, this means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any useContext.
+<br/>Click <a href="#usecontext">here</a> for more information.
 </td>
  </tr>
 <tr>
@@ -212,7 +218,11 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
-<td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any/all <code class="highlighter-rouge">jurisdictions.</code></td>
+<td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any/all <code class="highlighter-rouge">jurisdictions.</code>
+<br/>Click <a href="#jurisdiction">here</a> for more information.
+
+</td>
+
  </tr>
 <tr>
   <td><code class="highlighter-rouge">topic</code></td>
@@ -274,42 +284,88 @@ It is valid for this not to be populated - a NULL trigger means that the Service
  </tr>
 </table>
 
-<!--
-## Creation of parameters ##
-Once the EMS has got the selected `ServiceDefinition`, the EMS users will input relevant data for the scenario which will create the initial parameters to be passed to the CDSS.  
-The initial parameters will be the requestId and the patient.
+## ServiceDefinition: Element Guidance ##
 
-### Parameters ###
+### useContext ###
+The useContext element is used to describe the expected usage of the ServiceDefinition. This SHOULD be populated where available to reduce the risk of using a ServiceDefinition that is inappropriate for the context, for example the service type, patient type or user role (which may lead to inappropriate triage).
 
-#### IN Parameters ####
+The EMS will typically use the ServiceDefinition.useContext to filter available ServiceDefinitions in the [Select ServiceDefinition](api_get_service_definition.html) interaction.
 
-<table style="min-width:100%;width:100%">
-<tr>
-    <th style="width:25%;">Name</th>
-    <th style="width:15%;">Cardinality</th>
-    <th style="width:20%;">Type</th>
-      <th style="width:40%;">Documentation</th>
-</tr>
+The following json code block shows how to define the useContext in a ServiceDefinition.
 
-<tr>
-    <td><code class="highlighter-rouge">requestId</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
-    <td>id</td>
-    <td>An optional client-provided identifier to track the request.</td>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">patient</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference(Patient)</td>
-    <td>The patient in context, if any.</td>
-</tr>
-</table>
--->
+```
+"useContext": [
+  {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "age",
+      "display": "Age Range"
+    },
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "133936004",
+          "display": "Adult (person)"
+        }
+      ]
+    }
+  },
+  {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "user",
+      "display": "User Type"
+    },
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/valueset-provider-taxonomy.html",
+          "code": "103GC0700X",
+          "display": "Clinical"
+        }
+      ]
+    }
+  }
+],
+```
 
-<!--Will there be any other parameters at this stage?
-## Example Scenario ##-->
-<!--Placeholder -->
+### jurisdiction ###
 
+The jurisdiction element is used to describe the intended usage jurisdiction of the ServiceDefinition. If no jurisdiction is defined as part of the ServiceDefinition then it is deemed to be appropriate for any/all jurisdictions.
 
+The EMS will typically use the ServiceDefinition.jurisdiction to filter available ServiceDefinitions in the [Select ServiceDefinition](api_get_service_definition.html) interaction.
 
+The following json code block shows how to define the jurisdiction in a ServiceDefinition.
 
+```
+"jurisdiction": [
+  {
+    "coding": [
+      {
+        "system": "urn:iso:std:iso:3166",
+        "code": "GB",
+        "display": "United Kingdom of Great Britain and Northern Ireland (the)"
+      }
+    ]
+  }
+]
+```
+
+### version ###
+
+If a CDS decides not to populate the version element, then there is deemed to be only a single version in existence.
+
+In practice this SHOULD be populated where available although not mandatory.
+
+### publisher ###
+
+Population of the publisher element is optional.
+
+The EMS will always know (and be able to log) exactly which ServiceDefinition was 'called' for any patient journey - at a minimum, through the url which was invoked during evaluation.
+
+### title, description, usage ###
+
+The human readable title, description and usage elements MUST be populated by the CDSS to help mitigate the risks of selecting an inappropriate ServiceDefinition.
+
+It is the decision of the EMS how and when, if ever to display this information.

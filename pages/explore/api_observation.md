@@ -292,7 +292,7 @@ This is to enable the appropriate definition of DataRequirements.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Component results</td>
-<	td>This MUST NOT be populated.</td>
+	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">component.code</code></td>
