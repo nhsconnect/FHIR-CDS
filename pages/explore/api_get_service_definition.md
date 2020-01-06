@@ -16,7 +16,7 @@ summary: Select a ServiceDefinition interaction
 ## Select ServiceDefinition Interaction ##
 This action is performed by the Encounter Management System (EMS) in order to get a `ServiceDefinition` from a Clinical Decision Support System (CDSS).
 
-When the CDSS publishes a `ServiceDefinition`, the `ServiceDefinition` will have elements which describe how the `ServiceDefinition` can be used, for example the `ServiceDefinition.useContext` element could carry patient gender, age group.  
+When the CDSS publishes a `ServiceDefinition`, the `ServiceDefinition` will have elements which describe how the `ServiceDefinition` can be used, for example the `ServiceDefinition.useContext` element could carry patient gender, age group.  Note: It is the responsibility of the EMS to set the Service Type context and useContext at the start of the triage and only consume context appropriate ServiceDefinitions.
 The description of where in the clinical process a `ServiceDefinition` sits is described in the `ServiceDefinition.trigger`. This element will hold all the data conditions which need to be satisfied for the `ServiceDefinition` to be chosen.
 
 The `ServiceDefinition.trigger` will typically be defined through Observation resources which MUST be true in order for the `ServiceDefinition` to be suitable for evaluation. For a given CDSS, these will typically be aligned to the `ServiceDefinition.dataRequirements` of a prior `ServiceDefinition`.
@@ -191,7 +191,7 @@ To search for `ServiceDefinition(s)` with a `status` of 'active', the following 
 <div markdown="span" class="alert alert-success" role="alert">
 GET [base]/ServiceDefinition?status=active</div> 
 
-Where a ServiceDefinition has not set the status element, this means the ServiceDefinition is appropriate to any status.
+Where a ServiceDefinition has not set the status element, then it is deemed to be appropriate to any status.
 
 See [token](https://www.hl7.org/fhir/stu3/search.html#token) for details relating to the type of this parameter.
 

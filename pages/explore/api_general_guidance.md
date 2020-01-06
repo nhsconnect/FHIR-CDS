@@ -198,10 +198,10 @@ Where the request cannot be processed, but the fault is with the receiving syste
 
 ### Time out ###
 
-It is recommended for any synchronous patterns that the client sets a time out limit on the response back from the server, appropriate to an interactive process (e.g. around 1000 milliseconds).
+It is recommended for any synchronous patterns that the client sets a time out limit on the response back from the server, appropriate to an interactive process (e.g. around 1000 milliseconds).  This timing should take into account any processing or interactions that will be performed, such as the retrieval of externally-held data by the EMS.
 
 If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors.
-After a limited number of retries (e.g. 3-5) the client MAY assume that the server is unavailable and SHOULD respond appropriately. If the EMS is acting as the client (for example, in the `$evaluate` operation), this may take the form of a user interaction. If the CDSS is acting as the client, then the response will be to the EMS.
+After a limited number of retries (e.g. 3-5) the client MAY assume that the server is unavailable and SHOULD respond appropriately by making it clear to the user that a triage cannot be currently performed. If the EMS is acting as the client (for example, in the `$evaluate` operation), it should present the message or interaction to the user. If the CDSS is acting as the client, then the response will be to the EMS.
 
 ## General API considerations ##
 
