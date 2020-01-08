@@ -68,13 +68,13 @@ The requestId MUST be locally unique</td>
     <td>
 	An optional date and time specifying that the evaluation should be performed as though it was the given date and time. The most direct implication of this is that references to "Now" within the evaluation logic of the module should result in this value. In addition, wherever possible, the data accessed by the module should appear as though it was accessed at this time. The evaluateAtDateTime value may be any time in the past or future, enabling both retrospective and prospective scenarios. If no value is provided, the date and time of the request is assumed.
 	</td>
- <td></td>
+ <td>This SHOULD NOT be populated.</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">inputParameters</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Parameters</td>
-    <td></td>
+    <td>These will be determined by the EMS and CDSS specific to each implementation.</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">inputData</code></td>
@@ -96,84 +96,84 @@ The EMS MUST NOT send duplicate items.</li>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient)</td>
     <td>The patient in context, if any.</td>
-	<td></td>
+	<td>This MUST be populated with a reference to a <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
 	<td><code class="highlighter-rouge">encounter</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter)</td>
     <td>The encounter in context, if any.</td>
-	<td></td>
+	<td>This MUST be populated by the EMS with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">Encounter</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">initiatingOrganization</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>The organisation initiating the request.</td>
-	<td></td>
+	<td>This SHOULD be populated by the EMS using the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> for the UEC service provider. Note that this is the same as the <code class="highlighter-rouge">receivingOrganization</code>. If this is an online (patient facing) system, then this MUST NOT be populated.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">initiatingPerson</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient |<br>Practitioner |<br>RelatedPerson)</td>
     <td>The person initiating the request.</td>
-	<td></td>
+	<td>This MUST be populated by the EMS. The <code class="highlighter-rouge">initiatingPerson</code> is the user of the EMS. This will typically be a <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code> if the EMS is being used by a member of the public (e.g. a patient-facing public internet system) or a <code class="highlighter-rouge">Practitioner</code> where <code class="highlighter-rouge">initiatingOrganisation</code> is populated. Note that this is the same as the <code class="highlighter-rouge">receivingPerson</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">userType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.).</td>
-	<td></td>
+	<td>The <a href="https://developer.nhs.uk/apis/cds-api-1-0-0/api_post_service_definition.html#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">userLanguage</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>Preferred language of the person using the system.</td>
-	<td></td>
+	<td>This SHOULD be provided by the EMS, based on the user requirements.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">userTaskContext</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The task the system user is performing, e.g. laboratory results review, medication list review, etc. This information can be used to tailor decision support outputs, such as recommended information resources.</td>
-	<td></td>
+	<td>This SHOULD be provided by the EMS, as it may be used to tailor decision support outputs.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingOrganization</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
 	<td>Reference<br>(Organization)</td>
     <td>The organization that will receive the response.</td>
-	<td></td>
+	<td>This SHOULD be populated with the organisation identifier for the UEC service provider. If this is an online (patient facing) system, then this MUST NOT be populated. Note that this is the same as the <code class="highlighter-rouge">initiatingOrganisation</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingPerson</code></td>
         <td><code class="highlighter-rouge">0..1</code></td>
    <td>Reference<br>(Patient |<br>Practitioner |<br>RelatedPerson)</td>
     <td>The person in the receiving organization who will receive the response.</td>
-	<td></td>
+	<td>This MUST be populated by the EMS, based on the user. In the case of an online (patient-facing) system, this may be <code class="highlighter-rouge">Patient</code> or <code class="highlighter-rouge">RelatedPerson</code>. Note that this is the same as the <code class="highlighter-rouge">initiatingPerson</code>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">recipientType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient). E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.).</td>
-	<td></td>
+	<td>This will be the patient (or a related person, if telephoning on behalf of the patient).</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">recipientLanguage</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>Preferred language of the person that will consume the content.</td>
-	<td></td>
+	<td>This SHOULD be populated by the EMS where known for the recipient and will be populated with the same value as contained in the <code class="highlighter-rouge">userLanguage</code> parameter.</td>
   </tr>
 <tr>
    <td><code class="highlighter-rouge">setting</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The current setting of the request (inpatient, outpatient, etc).</td>
-	<td></td>
+	<td>This MUST be provided by the EMS to give context for decision support.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">settingContext</code></td>
