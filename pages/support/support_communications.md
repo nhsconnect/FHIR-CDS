@@ -31,4 +31,4 @@ Learn about the different technical systems and standards used in Urgent and Eme
 
 
 ## Contact Us ##
-For general enquiries please send an email to the NHS Digital Interoperability Team at [interoperabilityteam@nhs.net](mailto:interoperabilityteam@nhs.net).
+For general enquiries please send an email to the Urgent and Emergency Care Digital Integration at [uecdi@nhs.net](mailto:uecdi@nhs.net).

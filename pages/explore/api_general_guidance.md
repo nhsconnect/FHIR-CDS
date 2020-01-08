@@ -6,7 +6,7 @@ sidebar: ctp_rest_sidebar
 permalink: api_general_guidance.html
 summary: Implementation guidance for developers - focusing on general API implementation guidance
 ---
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
 
 
 ## Purpose ##
@@ -98,10 +98,6 @@ The tables below summarise the HTTP response code, along with the values to expe
 | HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |404|error|not-found |NO_RECORD_FOUND|No record found|No service definition found for supplied ServiceDefinition identifier - [id]|
-
-
-| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
-|-----------|----------------|------------|--------------|-----------------|-------------------|
 |404|error|not-found |NO_RECORD_FOUND|No record found|No questionnaire found for supplied Questionnaire identifier - [id]|
 
 
@@ -141,10 +137,8 @@ If this parameter of type `date` has an incorrectly formatted date, this will al
 
 General guidance on [handling errors arising from search requests](https://www.hl7.org/fhir/stu3/search.html#errors) is available.  
 
-### Payload business rules ###
-
 ### Invalid Resource ###
-This error code may surface when creating a resource, for example when the business rules associated with a specific resource are violated. 
+This error code may surface when creating a resource, for example when the business rules associated with a specific resource are violated. If a mandatory field (based on the element cardinality) is missing then this error will be thrown.
 
 The table below summarises the HTTP response code, along with the value to expect in the `OperationOutcome` in the response body for this exception scenario.
 
@@ -152,15 +146,6 @@ The table below summarises the HTTP response code, along with the value to expec
 | HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | 
 |-----------|----------------|------------|--------------|
 |400|error|invalid| INVALID_RESOURCE|Invalid validation of resource|
-
-Examples of business rules which may cause this error to be thrown when violated are given below:
-
-#### mandatory fields ####
-If one or more mandatory fields are missing then this error will be thrown. 
-
-#### mandatory field values ####
-If one or more mandatory fields are missing values then this error will be thrown.   
-
 
 
 ### Payload syntax ###
@@ -175,6 +160,17 @@ The below table summarises the HTTP response codes, along with the values to exp
 | HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
 |-----------|----------------|------------|--------------|-----------------|-------------------|
 |400|error|structure| INVALID_REQUEST_MESSAGE|Invalid Request Message|Invalid Request Message|
+
+
+### Invalid Operation message ###
+
+This kind of error will be created where an attempt was made to run an operation that is invalid/not supported.
+
+The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.
+
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
+|-----------|----------------|------------|--------------|-----------------|-------------------|
+|400|error|invalid| INVALID_OPERATION|Invalid Operation|Invalid Operation|
 
 
 ### Unsupported Media Type ###
@@ -194,7 +190,9 @@ The below table summarises the HTTP response codes, along with the values to exp
 
 Where the request cannot be processed, but the fault is with the receiving system and not the client, then the receiving system will return a 500 HTTP response code along with a descriptive message in the response body e.g:
 
-`<html><title>500: Internal Server Error</title><body>Unable to persist message - table extend failure</body></html>`
+| HTTP Code | issue.severity | issue.code | issue.details.coding.code | issue.details.coding.display | issue.diagnostics |
+|-----------|----------------|------------|--------------|-----------------|-------------------|
+|500|error|exception|INTERNAL_ERROR|Internal Error|Internal Error|
 
 ### Time out ###
 
@@ -202,9 +200,3 @@ It is recommended for any synchronous patterns that the client sets a time out l
 
 If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors.
 After a limited number of retries (e.g. 3-5) the client MAY assume that the server is unavailable and SHOULD respond appropriately by making it clear to the user that a triage cannot be currently performed. If the EMS is acting as the client (for example, in the `$evaluate` operation), it should present the message or interaction to the user. If the CDSS is acting as the client, then the response will be to the EMS.
-
-## General API considerations ##
-
-### note element ###
-
-The note element appears in several resources in scope of the CDS API. A general view has been taken that notes made by EMS users are not taken into consideration by the CDSS. If there is information to be communicated, it MUST be communicated in a structured form. This is to reduce the risk of inappropritae triage due to end users assuming notes will be considered. Accordingly, the note element where it occurs MUST NOT be populated. 

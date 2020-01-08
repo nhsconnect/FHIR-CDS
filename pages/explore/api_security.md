@@ -6,7 +6,7 @@ sidebar: ctp_rest_sidebar
 permalink: api_security.html
 summary: Implementation guidance for developers - focusing on security guidance
 ---
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
 
 
 ## Background ##
@@ -19,7 +19,7 @@ The guidance below provides implementers of the Clinical Decision Support API wi
 A consuming system MUST include an Access token in the HTTP authorization header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749)). This will be in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).  
 [Guidance on OAuth2 using the Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4) in this way is available.  
 This allows the receiving system to verify the details of the sending system and authorises access to system(s) and resource(s) permitted with that token. 
-Currently, as the new [NHS IdentityService](https://developer.nhs.uk/apis/national-authentication/) is not yet in place, the process outlined below should be followed:-  
+The process outlined below should be followed:-  
 ### Process ###
 NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory acting as the NHS Digital Authorisation server.  
 After passing an appropriate NHS Digital assurance process, a consuming system would be placed in an appropriate group created on the Authorisation server in order to be trusted by providers.  

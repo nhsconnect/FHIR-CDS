@@ -7,11 +7,7 @@ permalink: api_overview.html
 summary: "Overview of the Development section"
 ---
 
-<!--
-{% include custom/search.warnbanner.html %}
 
-{% include custom/api_overview.svg %}
--->
 
 ## 1. CDS API Overview ##
 

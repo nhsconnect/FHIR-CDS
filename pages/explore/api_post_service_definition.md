@@ -38,7 +38,7 @@ The `ServiceDefinition.$evaluate` operation is performed by an HTTP POST command
 POST [base]/ServiceDefinition/[id]/$evaluate</div>  
 
 ## Parameters ##
-The `ServiceDefinition.$evaluate` operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation. The [Parameters](https://fhir.nhs.uk/STU3/StructureDefinition/CDS-EvaluateServiceDefinition-Parameters-1) profile should be used to carry the parameter values.
+The `ServiceDefinition.$evaluate` operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation. The [Parameters](http://hl7.org/fhir/stu3/parameters.html) resource should be used to carry the parameter values.
 The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the operation.  
 
 ### IN Parameters ###

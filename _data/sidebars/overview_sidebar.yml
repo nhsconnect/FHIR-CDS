@@ -78,7 +78,7 @@ entries:
         - title: Questionnaire/Response
           url: /api_get_questionnaire.html
           output: web
-        - title: Result Interaction
+        - title: Evaluate Response
           url: /api_return_guidance_response.html
           output: web  
       - title: Resources
