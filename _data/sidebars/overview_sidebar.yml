@@ -56,9 +56,12 @@ entries:
   - title: Development Guidance
     output: web
     folderitems:
-    - title: Overview
-      url: /api_overview.html
+    - title: Pre requisites
+      url: /api_prerequisites.html
       output: web
+    - title: Error handling
+      url: /api_errorhandling.html
+      output: web      
     - title: General API Guidance
       url: /api_general_guidance.html
       output: web

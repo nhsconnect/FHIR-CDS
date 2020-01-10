@@ -16,7 +16,7 @@ It also provides a more standard mechanism for authorising access to FHIR resour
 The guidance below provides implementers of the Clinical Decision Support API with guidelines relating to the NHS Digital approach to security.
 
 ## Use of Bearer Tokens ##
-A consuming system MUST include an Access token in the HTTP authorization header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749)). This will be in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).  
+A consuming system MAY include an Access token in the HTTP authorization header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749)). This will be in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).  
 [Guidance on OAuth2 using the Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4) in this way is available.  
 This allows the receiving system to verify the details of the sending system and authorises access to system(s) and resource(s) permitted with that token. 
 The process outlined below should be followed:-  

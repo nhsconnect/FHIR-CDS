@@ -13,7 +13,8 @@ This guide uses the terms Encounter Management System and Clinical Decision Supp
 
 ## Encounter Management System (EMS) ##
 
-A system used for workflow management and to record, manage and track a patient's episode of care through UEC settings. The EMS enables the triage and clinical assessment of patients to determine their health needs and signpost them to the appropriate care setting or support the provision of clinical consultation and treatment; this is expected to be achieved through integration with one or more supporting systems and services. 
+A system used for workflow management and to record, manage and track a patient's episode of care through UEC settings. The EMS enables the triage and clinical assessment of patients to determine their health needs and signpost them to the appropriate care setting or support the provision of clinical consultation and treatment; this is expected to be achieved through integration with one or more supporting systems and services. Examples of an EMS include a GP system, a 111 telephony system, or an ED system.
+
 
 The EMS is responsible for invoking the decision support process on the CDSS. The EMS will typically also manage elements like user authentication, workflow and user interactions.
 
