@@ -16,7 +16,7 @@ summary: Evaluate ServiceDefinition interaction
 This is a [FHIR operation](https://www.hl7.org/fhir/stu3/operations.html) performed by the Encounter Management System (EMS). 
 It is an [evaluate operation](https://www.hl7.org/fhir/stu3/servicedefinition-operations.html#evaluate) performed against the [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).
 
-### Pre-requisite for Evaluate ServiceDefinition Interaction ###  
+### Trigger for Evaluate ServiceDefinition Interaction ###  
 The `ServiceDefinition.trigger` element is of datatype [TriggerDefinition](https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition) and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
 Within the CDS implementation, the Data Event trigger type has been chosen. This means that the EMS's evaluation of a `ServiceDefinition` will be triggered in response to a data-related activity within an implementation, for example by an addition or an update of a record such as a `QuestionnaireResponse` resource.  
 The triggering data of the event is described in the `trigger.eventData` element of the `ServiceDefinition` and this is populated by the CDSS.     
@@ -38,7 +38,7 @@ The `ServiceDefinition.$evaluate` operation is performed by an HTTP POST command
 POST [base]/ServiceDefinition/[id]/$evaluate</div>  
 
 ## Parameters ##
-The `ServiceDefinition.$evaluate` operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation. The [Parameters](http://hl7.org/fhir/stu3/parameters.html) resource should be used to carry the parameter values.
+The `ServiceDefinition.$evaluate` operation has a number of parameters and the EMS will select appropriate IN parameters to include in the operation. 
 The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the operation.  
 
 ### IN Parameters ###
@@ -74,6 +74,7 @@ The requestId MUST be locally unique</td>
     <td><code class="highlighter-rouge">inputParameters</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Parameters</td>
+	<td>The input parameters for a request, if any. These parameters are defined by the module that is the target of the evaluation, and typically supply patient-independent information to the module.</td>
     <td>These will be determined by the EMS and CDSS specific to each implementation.</td>
 </tr>
 <tr>
@@ -220,56 +221,7 @@ This may or may not affect the population of the result element in `GuidanceResp
 This element carries reference to the `Patient` currently undergoing triage. It is the responsibility of the EMS to identify the correct patient in each `$evaluate` interaction with the CDSS to reduce the risk of inappropriate triage.
 
 ### userType element ###
-The `userType` element carries the type of user initiating the request to the CDSS. It MUST be populated by the EMS as it has an important relationship with two other optional parameters, the `initiatingPerson` and the `receivingPerson`.  
-The relationship between these elements and the concepts they carry are outlined below:
-
-<table style="min-width:100%;width:100%">
-<tr>
-    <th style="width:25%;">FHIR element</th>
-    <td style="width:25%;">userType</td>
-    <td style="width:25%;">initiatingPerson</td>
-      <td style="width:25%;">receivingPerson</td>
-</tr>
-<tr>
-    <th>Business concept</th>
-      <td>Type (role) of the EMS user</td>
-    <td>User of the EMS</td>
-    <td>Person acting next (receiving the result)</td>
- </tr>
- <tr>
-    <th>Scenarios</th>
-      <td></td>
-    <td></td>
-    <td></td>
- </tr>
-  <tr>
-    <td>Patient using EMS on their own behalf</td>
-      <td>Patient</td>
-    <td>Reference(Patient)</td>
-    <td>Reference(Patient)</td>
- </tr>
-   <tr>
-    <td>Person related to patient using EMS on behalf of the patient</td>
-      <td>Related person</td>
-    <td>Reference(RelatedPerson)</td>
-      <td>Reference(RelatedPerson)</td>
- </tr>
-    <tr>
-    <td>Patient speaking to practitioner using EMS on behalf of the patient</td>
-      <td>Practitioner type</td>
-    <td>Reference(Practitioner)</td>
-      <td>Reference(Patient)</td>
- </tr>
- <tr>
-    <td>Person related to patient speaking to practitioner using EMS on behalf of the patient</td>
-      <td>Practitioner type</td>
-    <td>Reference(Practitioner)</td>
-      <td>Reference(RelatedPerson)</td>
- </tr>
-</table>
-
-
-
+The userType element carries the type of user initiating the request to the CDSS. It MUST be populated by the EMS and can have the values Patient, RelatedPerson, or Practitioner.
 
 
 ## Response from CDSS ##
@@ -286,47 +238,6 @@ It is recommended that the EMS sets a time out limit on the response back from t
 If the CDSS does not respond within the time out period, then it is recommended that the EMS retry the `$evaluate` operation. This is to allow for intermittent network errors.  
 After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is unavailable and should respond appropriately to the user.
 
-<!--
-#### GuidanceResponse Statuses ####
-The returned [GuidanceResponse resource](api_guidance_response.html) MUST carry an appropriate code in its <code class="highlighter-rouge">status</code> element.    
-This is a trigger for the EMS and the relevant codes are as follows:-  
-
-<table style="min-width:100%;width:100%">
-<tr>
-    <th style="width:25%;">Code</th>
-    <th style="width:25%;">Display</th>
-    <th style="width:50%;">Definition</th>
-</tr>
-<tr>
-    <td><code class="highlighter-rouge">success</code></td>
-      <td>Success</td>
-    <td>The request was processed successfully</td>
- </tr>
-<tr>
-    <td><code class="highlighter-rouge">data-requested</code></td>
-      <td>Data Requested</td>
-    <td>The request was processed successfully, but more data may result in a more complete evaluation</td>
- </tr>
-<tr>
-    <td><code class="highlighter-rouge">data-required</code></td>
-      <td>Data Required</td>
-    <td>The request was processed, but more data is required to complete the evaluation</td>
- </tr>
-</table>
--->
-
-<!--
-### Failure ###
-The following errors can be triggered when performing this operation:  
-
-More errors are likely to be needed once we are clear on which search parameters are defined
-
-* [Invalid parameter](api_general_guidance.html#parameters)
-* [No record found](api_general_guidance.html#resource-not-found---servicedefinition)
--->
-<!--
-## Example Scenario ##
- Placeholder -->
 
 
 

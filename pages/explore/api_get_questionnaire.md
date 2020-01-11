@@ -3,7 +3,7 @@ title: Questionnaire/Response Interaction
 keywords: questionnaire, questionnaireresponse, observation, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_get_questionnaire.html
+permalink: api_get_questionnaire_old.html
 summary: Questionnaire/Response interaction
 ---
 

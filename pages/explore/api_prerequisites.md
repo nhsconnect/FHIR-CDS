@@ -1,13 +1,11 @@
 ---
 title: Pre requisites
-keywords: CDS, Clinical Decision Suppport, rest, FHIR rest, FHIR resource, Fprerequisites
+keywords: CDS, Clinical Decision Suppport, rest, FHIR rest, FHIR resource, prerequisites
 tags: [rest,fhir,api]
 sidebar: foundations_sidebar
 permalink: api_prerequisites.html
-summary: "Development pre requisites"
+summary: "Development pre-requisites"
 ---
-
-
 
 ## Pre-Requisites for the CDS API ##
 
@@ -19,6 +17,14 @@ Consumer / Provider Server API Conformance
 
 * MUST support XML **or** JSON formats for all API interactions.
 
-* MUST expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
+* SHOULD expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
 
-* MUST be able to support `Bundle` resource for interactions with multiple resources.
+### Consumer Conformance ###
+
+- MUST support bundled and referenced resources
+- MAY support contained resources
+
+### Provider Conformance ###
+
+- MUST support bundled or referenced resources
+- MAY support contained resources, but this is not a preferred option
