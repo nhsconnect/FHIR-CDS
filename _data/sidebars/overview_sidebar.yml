@@ -78,9 +78,6 @@ entries:
         - title: Evaluate ServiceDefinition
           url: /api_post_service_definition.html
           output: web
-        - title: Questionnaire/Response
-          url: /api_get_questionnaire.html
-          output: web
         - title: Evaluate Response
           url: /api_return_guidance_response.html
           output: web  
