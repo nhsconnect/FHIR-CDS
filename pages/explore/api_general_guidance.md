@@ -84,10 +84,10 @@ Each of the EMS and CDSS act as both provider and consumer in different interact
 - A consuming system MUST support both formal MIME-types for FHIR resources:
 	- XML: application/fhir+xml
 	- JSON: application/fhir+json
-- A consuming system MUST also gracefully handle generic XML and JSON MIME types:
+- A consuming system MUST also gracefully handle generic XML or JSON MIME types:
 	- XML: application/xml
 	- JSON: application/json
-	-JSON: text/json
+	- JSON: text/json
 - A consuming system MUST support the optional _format parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the _format parameter overrides the Accept header value in the request.
 - If neither the Accept header nor the _format parameter are supplied by the client system, the provider and consuming systems MUST return data in the default format of application/fhir+json.
 

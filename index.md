@@ -51,8 +51,8 @@ The note element appears in several resources in scope of the CDS API. A general
 
 
 ### De-scoped resources ###
-The 'ProcedureRequest' has been removed as of V1.1.0-alpha and will therefore follow [HL7 FHIR STU3](https://www.hl7.org/fhir/stu3/index.html) guidance
-CareConnect guidance will be used for Encounter and Patient resources, and therefore our guidance pages on these resources have been unpublished as of V1.1.0-alpha.
+- ProcedureRequest has been removed as of V1.1.0-alpha and will therefore follow [HL7 FHIR STU3](https://www.hl7.org/fhir/stu3/index.html) guidance.
+- CareConnect guidance will be used for [Encounter](https://nhsconnect.github.io/CareConnectAPI/api_workflow_encounter.html) and [Patient](https://nhsconnect.github.io/CareConnectAPI/api_entity_patient.html) resources, and therefore our guidance pages on these resources have been unpublished as of V1.1.0-alpha.
 
 
 ## Note for Implementers ##

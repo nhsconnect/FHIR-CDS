@@ -93,17 +93,11 @@ entries:
         - title: Condition
           url: /api_condition.html
           output: web          
-        - title: Encounter
-          url: /api_encounter.html
-          output: web
         - title: GuidanceResponse
           url: /api_guidance_response.html
           output: web
         - title: Observation
           url: /api_observation.html
-          output: web
-        - title: ProcedureRequest
-          url: /api_procedure_request.html
           output: web
         - title: Provenance
           url: /api_provenance.html

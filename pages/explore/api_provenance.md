@@ -8,9 +8,37 @@ summary: Provenance implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-<!--
-{% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="GuidanceResponse" fhirlink="[Provenance](http://hl7.org/fhir/stu3/provenance.html)" content="User Stories" userlink="" %}
--->
+
+<style>
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+td.sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 30px 10px;
+    padding-left: 50px; 
+}
+td.sub-sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 50px 10px;
+    padding-left: 70px;
+}
+</style>
+
 
 ## Provenance: Implementation Guidance ##  
 
@@ -38,7 +66,7 @@ The table below details implementation guidance for this resource in the CDS con
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>Logical id of this artifact</td>
-	<td></td>
+	<td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">meta</code></td>
@@ -58,7 +86,7 @@ The table below details implementation guidance for this resource in the CDS con
   <td><code class="highlighter-rouge">language</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+    <td>Language of the resource content. <br/> <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 	<td></td>
 </tr>
 <tr>
@@ -73,7 +101,7 @@ The table below details implementation guidance for this resource in the CDS con
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td></td>
+	<td>This should not be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -143,17 +171,17 @@ The table below details implementation guidance for this resource in the CDS con
       <td><code class="highlighter-rouge">1..*</code></td>
     <td>BackboneElement</td>
     <td>Actor involved</td>
-<td>This MUST be populated with the Organisation of the ServiceProvider</td>
- </tr>
-<tr>
-  <td><code class="highlighter-rouge">agent.role</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
-    <td>CodeableConcept</td>
-    <td>What the agent's role was <a href="https://www.hl7.org/fhir/stu3/valueset-security-role-type.html">SecurityRoleType (Extensible)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">agent.who[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">agent.role</code></td>
+      <td><code class="highlighter-rouge">0..*</code></td>
+    <td>CodeableConcept</td>
+    <td>What the agent's role was <a href="https://www.hl7.org/fhir/stu3/valueset-security-role-type.html">SecurityRoleType (Extensible)</a></td>
+<td>This MUST NOT be populated.</td>
+ </tr>
+<tr>
+  <td class="sub"><code class="highlighter-rouge">agent.who[x]</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whoUri</code> uri <br><code class="highlighter-rouge">whoReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
@@ -162,14 +190,14 @@ The table below details implementation guidance for this resource in the CDS con
 The device MUST be the CDSS.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">agent.onBehalfOf[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">agent.onBehalfOf[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td><code class="highlighter-rouge">onBehalfOfUri</code> uri <br><code class="highlighter-rouge">onBehalfOfReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
-<td>This SHOULD be NULL.</td>
+<td>MUST be populated with Organization of ServiceProvider</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">agent.relatedAgentType</code></td>
+  <td class="sub"><code class="highlighter-rouge">agent.relatedAgentType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
      <td>Type of relationship between agents <a href="https://www.hl7.org/fhir/stu3/v3/RoleLinkType/vs.html">v3 Code System RoleLinkType (Example)</a></td>
@@ -183,21 +211,21 @@ The device MUST be the CDSS.</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">entity.role</code></td>
+  <td class="sub"><code class="highlighter-rouge">entity.role</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>derivation | revision | quotation | source | removal <a href="https://www.hl7.org/fhir/stu3/valueset-provenance-entity-role.html">ProvenanceEntityRole (Required)</a></td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">entity.what[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">entity.what[x]</code></td>
      <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whatUri</code> uri <br><code class="highlighter-rouge">whatReference</code> <br> Reference(Any)<br><code class="highlighter-rouge">whatIdentifier</code> <br> Identifier</td>
     <td>Identity of entity</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">entity.agent</code></td>
+  <td class="sub"><code class="highlighter-rouge">entity.agent</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
 	   <td>BackboneElement</td>
     <td>Entity is attributed to this agent</td>
@@ -208,6 +236,6 @@ The device MUST be the CDSS.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Signature</td>
     <td>Signature on target</td>
-	<td></td>
+	<td>This element carries a digital signature on the target Reference(s). The signer SHOULD match a <code class="highlighter-rouge">Provenance.agent</code></td>
  </tr>
 </table>

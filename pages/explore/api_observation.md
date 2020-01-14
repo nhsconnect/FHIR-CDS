@@ -8,9 +8,37 @@ summary: Observation resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-<!--
-{% include custom/fhir.referencemin.html resource="[CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)" userlink="" page="" fhirname="Observation" fhirlink="[CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)" content="User Stories" userlink="" %}
--->
+
+<style>
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+td.sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 30px 10px;
+    padding-left: 50px; 
+}
+td.sub-sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 50px 10px;
+    padding-left: 70px;
+}
+</style>
+
 ## Observation: Implementation Guidance ##
 
 ### Usage ###
@@ -36,7 +64,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>Logical id of this artifact</td>
-	<td></td>
+	<td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">meta</code></td>
@@ -56,7 +84,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
   <td><code class="highlighter-rouge">language</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+    <td>Language of the resource content. <br/> <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,7 +99,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td></td>
+	<td>This should not be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -177,7 +205,8 @@ This is to enable the appropriate definition of DataRequirements.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
     <td>High, low, normal, etc. <a href="https://www.hl7.org/fhir/stu3/valueset-observation-interpretation.html">Observation Interpretation Codes (Extensible)</a></td>
-<td></td>
+<td>Valueset should be restricted to A (Abnormal) and N (Normal) and 'null'.
+Null means no interpretation given.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">comment</code></td>
@@ -225,42 +254,42 @@ This is to enable the appropriate definition of DataRequirements.</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">referenceRange.low</code></td>
+  <td class="sub"><code class="highlighter-rouge">referenceRange.low</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>SimpleQuantity</td>
     <td>Low Range, if relevant</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">referenceRange.high</code></td>
+  <td class="sub"><code class="highlighter-rouge">referenceRange.high</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>SimpleQuantity</td>
     <td>High Range, if relevant</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">referenceRange.type</code></td>
+  <td class="sub"><code class="highlighter-rouge">referenceRange.type</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>CodeableConcept</td>
     <td>Reference range qualifier <a href="https://www.hl7.org/fhir/stu3/valueset-referencerange-meaning.html">Observation Reference Range Meaning Codes (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">referenceRange.appliesTo</code></td>
+  <td class="sub"><code class="highlighter-rouge">referenceRange.appliesTo</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
  <td>CodeableConcept</td>
     <td>Reference range population <a href="https://www.hl7.org/fhir/stu3/valueset-referencerange-appliesto.html">Observation Reference Range Applies To Codes (Example)</a></td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">referenceRange.age</code></td>
+  <td class="sub"><code class="highlighter-rouge">referenceRange.age</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>Range</td>
     <td>Applicable age range, if relevant</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">referenceRange.text</code></td>
+  <td class="sub"><code class="highlighter-rouge">referenceRange.text</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>string</td>
     <td>Text based reference range in an observation</td>
@@ -274,14 +303,14 @@ This is to enable the appropriate definition of DataRequirements.</td>
 <td>This SHOULD be populated with the <code class="highlighter-rouge">QuestionnaireResponse</code> resources which affected the population of this <code class="highlighter-rouge">Observation</code>.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">related.type</code></td>
+  <td class="sub"><code class="highlighter-rouge">related.type</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>code</td>
     <td>has-member | derived-from | sequel-to | replaces | qualified-by | interfered-by <a href="https://www.hl7.org/fhir/stu3/valueset-observation-relationshiptypes.html">ObservationRelationshipType (Required)</a></td>
     <td>This should be populated with the value 'derived-from'.</td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">related.target</code></td>
+  <td class="sub"><code class="highlighter-rouge">related.target</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
  <td>Reference<br>(Observation |<br>Questionnaire<br>Response |<br>Sequence)</td>
     <td>Resource that is related to this one</td>
@@ -295,39 +324,39 @@ This is to enable the appropriate definition of DataRequirements.</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">component.code</code></td>
+  <td class="sub"><code class="highlighter-rouge">component.code</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
  <td>CodeableConcept</td>
     <td>Type of component observation (code/type) <a href="https://www.hl7.org/fhir/stu3/valueset-observation-codes.html">LOINC Codes (Example)</a></td>
-    <td>Snomed CT code for the <code class="highlighter-rouge">Observation</code>.</td>
+    <td>This MUST NOT be populated.</td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">component.value[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">component.value[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
       <td>Quantity | CodeableConcept | string | Range | Ratio | SampledData | Attachment | time | dateTime | Period</td>
 <td>Actual component result</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">component.dataAbsentReason</code></td>
+  <td class="sub"><code class="highlighter-rouge">component.dataAbsentReason</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
     <td>Why the component result is missing <a href="https://www.hl7.org/fhir/stu3/valueset-observation-valueabsentreason.html">Observation Value Absent Reason (Extensible)</a></td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">component.interpretation</code></td>
+  <td class="sub"><code class="highlighter-rouge">component.interpretation</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
     <td>High, low, normal, etc. <a href="https://www.hl7.org/fhir/stu3/valueset-observation-interpretation.html">Observation Interpretation Codes (Extensible)</a></td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">component.referenceRange</code></td>
+  <td class="sub"><code class="highlighter-rouge">component.referenceRange</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
    <td>see referenceRange</td>
     <td>Provides guide for interpretation of component result</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 </table>
 

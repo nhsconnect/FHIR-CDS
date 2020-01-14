@@ -3,7 +3,7 @@ title: Procedure Request Implementation Guidance
 keywords: procedurerequest, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_procedure_request.html
+permalink: api_procedure_request_na.html
 summary: ProcedureRequest resource implementation guidance
 ---
 

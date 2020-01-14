@@ -8,6 +8,8 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 ---
 
 ## 1.1.0-alpha ##
+*  Removed Encounter resource
+*  Removed Patient resource
 *  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters` 
 *  Added guidance on usage to the `GuidanceResponse` page
 *  Added implementation guidance on a `ProcedureRequest`

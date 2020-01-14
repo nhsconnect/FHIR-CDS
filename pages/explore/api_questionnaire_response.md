@@ -11,10 +11,40 @@ summary: QuestionnaireResponse resource implementation guidance
 <!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="QuestionnaireResponse" fhirlink="[QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html)" content="User Stories" userlink="" %}
 -->
+<style>
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+td.sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 30px 10px;
+    padding-left: 50px; 
+}
+td.sub-sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 50px 10px;
+    padding-left: 70px;
+}
+</style>
+
 ## QuestionnaireResponse: Implementation Guidance ##
 
 ### Usage ###
-The responses to a `Questionnaire` sent by the CDSS are communicated back by the EMS using the [QuestionnaireResponse] (http://hl7.org/fhir/stu3/questionnaireresponse.html) resource. The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process and any answers from the user will be used to populate a `QuestionnaireResponse`.
+The responses to a `Questionnaire` sent by the CDSS are communicated back by the EMS using the <a href="http://hl7.org/fhir/stu3/questionnaireresponse.html">QuestionnaireResponse</a> resource. The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process and any answers from the user will be used to populate a `QuestionnaireResponse`.
 
 Detailed implementation guidance for a `QuestionnaireResponse` resource in the CDS context is given below:  
 
@@ -33,7 +63,7 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>Logical id of this artifact</td>
-	<td></td>
+	<td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">meta</code></td>
@@ -53,7 +83,7 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
   <td><code class="highlighter-rouge">language</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+   	<td>Language of the resource content. <br/> <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 	<td></td>
 </tr>
 <tr>
@@ -68,7 +98,7 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td></td>
+	<td>This should not be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -117,13 +147,12 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>in-progress | completed | amended | entered-in-error | stopped <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers-status.html">QuestionnaireResponseStatus (Required)</a>.</td>
-<td></td>This MUST be populated with either 'completed', 'amended' or 'entered-in-error'.
-<br/>
-Other statuses are not valid.
+<td>This MUST be populated with either 'completed', 'amended' or 'entered-in-error'.
+<br/>Other statuses are not valid.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+   <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference(Any)</td>
     <td>The subject of the questions</td>
 <td>This MUST be populated with the Patient.</td>
@@ -133,7 +162,7 @@ Other statuses are not valid.
       <td><code class="highlighter-rouge">0..1</code></td>
   <td>Reference |<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which questionnaire was completed</td>
-<td></td>
+<td>This MUST be populated with the Encounter for this journey, which is the same as the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">authored</code></td>
@@ -166,56 +195,56 @@ This MUST NOT be the practitioner.</td>
 <td>The population of this element and its children MUST reflect the item nesting in the <code class="highlighter-rouge">Questionnaire</code> to which this <code class="highlighter-rouge">QuestionnaireResponse</code> is responding.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">item.linkId</code></td>
+  <td class="sub"><code class="highlighter-rouge">item.linkId</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
  <td>string</td>
     <td>Pointer to specific item from Questionnaire</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">item.definition</code></td>
+  <td class="sub"><code class="highlighter-rouge">item.definition</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>uri</td>
     <td>ElementDefinition - details for the item</td>
     <td>This MUST NOT be populated.</td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">item.text</code></td>
+  <td class="sub"><code class="highlighter-rouge">item.text</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for group or question text</td>
 <td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">item.subject</code></td>
+  <td class="sub"><code class="highlighter-rouge">item.subject</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
      <td>Reference | (Any)</td>
     <td>The subject this group's answers are about</td>
-<td></td>
- </tr>
-<tr>
-  <td><code class="highlighter-rouge">item.answer</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
- <td>BackboneElement</td>
-    <td>The response(s) to the question</td>
 <td>This MUST be populated with the Patient.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">item.answer.value[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">item.answer</code></td>
+      <td><code class="highlighter-rouge">0..*</code></td>
+ <td>BackboneElement</td>
+    <td>The response(s) to the question</td>
+<td></td>
+ </tr>
+<tr>
+  <td class="sub-sub"><code class="highlighter-rouge">item.answer.value[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean | decimal |<br>integer | date |<br>dateTime | time |<br>string | uri |<br>Attachment |<br> Coding |<br>Quantity | Reference(Any)</td>
     <td>Single-valued answer to the question <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">answer.item</code></td>
+  <td class="sub"><code class="highlighter-rouge">answer.item</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Nested groups and questions</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">item.item</code></td>
+  <td class="sub"><code class="highlighter-rouge">item.item</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Nested questionnaire response items</td>

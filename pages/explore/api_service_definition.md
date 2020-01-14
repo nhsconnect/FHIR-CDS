@@ -11,6 +11,7 @@ summary: ServiceDefinition implementation guidance
 <!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Service Definition" fhirlink="[Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html)" content="User Stories" userlink="" %}
 -->
+
 ## ServiceDefinition: Implementation Guidance ##  
 
 ### Usage ###
@@ -39,7 +40,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>Logical id of this artifact</td>
-	<td></td>
+	<td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">meta</code></td>
@@ -59,7 +60,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
   <td><code class="highlighter-rouge">language</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+    <td>Language of the resource content. <br/> <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 	<td></td>
 </tr>
 <tr>
@@ -74,7 +75,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td></td>
+	<td>Text summary of the resource, for human interpretation</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -120,7 +121,7 @@ This absolute URI would be used to locate a <code class="highlighter-rouge">Serv
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (computer friendly)</td>
-	<td></td>
+	<td>The name is not expected to be globally unique. The name SHOULD be a simple alpha-numeric type name. This is generally used by FHIR servers.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">title</code></td>
@@ -134,7 +135,7 @@ This absolute URI would be used to locate a <code class="highlighter-rouge">Serv
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | retired | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-publication-status.html">PublicationStatus (Required)</a>.</td>
-<td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate to any/all <code class="highlighter-rouge">status</code>.</td>
+<td>This MUST be populated with the value 'active' in live service</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">experimental</code></td>
@@ -236,7 +237,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Contributor</td>
     <td>A content contributor</td>
-<td></td>
+<td>The information in this element MAY be used to assist consumers in quickly determining who contributed to the content of the knowledge module.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">contact</code></td>
@@ -250,7 +251,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Use and/or publishing restrictions</td>
-<td></td>
+<td>Consumers MUST be able to determine any legal restrictions on the use of the ServiceDefinition and/or its content.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relatedArtifact</code></td>
@@ -273,14 +274,15 @@ It is valid for this not to be populated - a NULL trigger means that the Service
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>DataRequirement</td>
     <td>What data is used by the module</td>
-<td></td>
+<td>This element MUST be populated with the set of machine-processable assertions (see <code class="highlighter-rouge">GuidanceResponse.
+outputParameters</code>) which the CDSS requires in order to render the response fully.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">operationDefinition</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference |<br>(OperationDefinition)</td>
     <td>Operation to invoke</td>
-<td></td>
+<td>A reference to the operation that is used to invoke this service.</td>
  </tr>
 </table>
 
