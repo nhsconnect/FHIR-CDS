@@ -19,9 +19,9 @@ This action is performed by the Encounter Management System (EMS) in order to ge
 When the CDSS publishes a `ServiceDefinition`, the `ServiceDefinition` will have elements which describe how the `ServiceDefinition` can be used, for example the `ServiceDefinition.useContext` element could carry patient gender, age group.  Note: It is the responsibility of the EMS to set the Service Type context and useContext at the start of the triage and only consume context appropriate ServiceDefinitions.
 The description of where in the clinical process a `ServiceDefinition` sits is described in the `ServiceDefinition.trigger`. This element will hold all the data conditions which need to be satisfied for the `ServiceDefinition` to be chosen.
 
-The `ServiceDefinition.trigger` will typically be defined through Observation resources which MUST be true in order for the `ServiceDefinition` to be suitable for evaluation. For a given CDSS, these will typically be aligned to the `ServiceDefinition.dataRequirements` of a prior `ServiceDefinition`.
+The `ServiceDefinition.trigger` will typically be defined through Observation resources which MUST be satisfied in order for the `ServiceDefinition` to be suitable for evaluation. For a given CDSS, these will typically be aligned to the `ServiceDefinition.dataRequirements` of a prior `ServiceDefinition`.
 
-Each CDSS SHOULD provide a `ServiceDefinition` where the trigger is NULL (e.g. no information is required).
+Each CDSS SHOULD provide a `ServiceDefinition` where the trigger is NULL (i.e. no information is required).
 
 During a given patient journey, there may be points where there is more than one `ServiceDefinition` available. Any one CDSS should avoid this situation, but if a provider has more than one CDSS available, there may be situations where more than one CDSS can provide an appropriate `ServiceDefinition`. In this case, it will be up to local providers on how to choose between the available `ServiceDefinitions`. 
 

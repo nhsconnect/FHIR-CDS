@@ -28,7 +28,7 @@ The following HTTP request headers are supported for this interaction:
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
 | `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |  
+| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | SHOULD |  
 
 ## POST ServiceDefinition ##
 
@@ -219,6 +219,16 @@ This may or may not affect the population of the result element in `GuidanceResp
 ### patient element ###
 
 This element carries reference to the `Patient` currently undergoing triage. It is the responsibility of the EMS to identify the correct patient in each `$evaluate` interaction with the CDSS to reduce the risk of inappropriate triage.
+
+It should be noted that within a number of triage scenarios it may not be possible to accurately establish the identity of a patient. In some cases it may be possible to establish their identity, but only at a later stage in their triage.
+Some scenarios where this might apply:
+- when dealing with an unconscious patient
+- when a patient does not wish to disclose their identity
+- during an online journey for a system does not establish identity/ only establishes identity later in the journey
+
+In these types of scenario the EMS MUST still populate the Patient resource (.subject).  The Patient resource will be populated as appropriate for the EMS.  This may be generating a temporary patient identifier, suitably identified, with appropriate information for an unidentified patient.
+The manner in which an EMS uses anonymous and interim identifiers is outside the scope of this Implementation Guide.
+
 
 ### userType element ###
 The userType element carries the type of user initiating the request to the CDSS. It MUST be populated by the EMS and can have the values Patient, RelatedPerson, or Practitioner.

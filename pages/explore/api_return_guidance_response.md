@@ -238,11 +238,14 @@ The table below gives additional information relating to outcome scenarios when 
 </table>
 
 ### OutputParameters of the returned GuidanceResponse ###  
-As a triage is performed, the CDSS will relay questions to the EMS, and in turn the EMS will return the user's answers to these questions back to the CDSS. The CDSS will use these answers to generate assertions, which are then sent them to the EMS. 
+As users input answers to triage questions, the EMS will relay them to the CDSS within the `QuestionnaireResponse` element. 
+In response the CDSS will generate assertions, which will be captured in the `GuidanceResponse.outputParameters` element. Within this message the CDSS SHOULD also return the `QuestionnaireResponse` answers originally gathered by the EMS. This allows both the CDSS assertions and the user  answers that generated the assertions to be fully traceable.
 
-The `GuidanceResponse.outputParameters` element carries assertions (resulting from the EMS’s responses to received questions) sent to the EMS by the CDSS. It also carries the `QuestionnaireResponse` resources created by the EMS, from user input. Where the data carried in `outputParameters` can be interpreted by a system, it SHOULD be published as an assertion, typically by populating an  [Observation](http://hl7.org/fhir/stu3/observation.html) resource. This is done by the CDSS when it receives responses to received questions from the EMS.
+Given the broad and complex nature of performing a triage, there may be a number of different question and answer formats. For example, a triage journey may require free-text responses for some questions and tick-box responses for others.. This may produce a mixture of information that can be interpreted by a system and information that can only be interpreted by a human. These two differing types of information should be handled in the following ways: 
 
-If the information can only be interpreted by a human, it SHOULD be maintained as a [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html) only. The [logical ID](http://hl7.org/fhir/STU3/resource.html#id) of either or both of these resources can be returned to the EMS by the CDSS for persistence and these IDs are carried as a reference in this element throughout the triage journey.
+- Where the data carried in `outputParameters` can be interpreted by a system, it SHOULD be published as an assertion, typically by populating an [Observation](http://hl7.org/fhir/stu3/observation.html) resource. This is done by the CDSS when it receives responses to the questions it had sent to the EMS.
+- If the information can only be interpreted by a human, it SHOULD be maintained as a [QuestionnaireResponse](http://hl7.org/fhir/stu3/questionnaireresponse.html) only. The [logical ID](http://hl7.org/fhir/STU3/resource.html#id) of either or both of these resources can be returned to the EMS by the CDSS for persistence and these IDs are carried as a reference in this element throughout the triage journey.
+
 
 ## GuidanceResponse: Implementation Guidance ##
 View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html).
