@@ -158,7 +158,8 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(OperationOutcome)</td>
     <td>Messages resulting from the evaluation of the artifact or artifacts.</td>
-<td>Where populated this must be populated appropriately by the EMS</td>
+<td>This MUST ONLY be populated in the case of error.
+Where populated this MUST be processed appropriately by the EMS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">outputParameters</code></td>

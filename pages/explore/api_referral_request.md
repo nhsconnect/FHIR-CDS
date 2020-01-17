@@ -234,7 +234,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>Organization agent is acting for</td>
-<td></td>
+<td>This SHOULD be populated with the Organisation in the `ServiceDefinition$evaluate`</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specialty</code></td>

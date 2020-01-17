@@ -162,7 +162,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
     <td>For testing purposes, not real usage</td>
-<td>This will carry the value 'false' in Live deployments.</td>
+<td>This MUST carry the value 'false' in Live deployments.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">date</code></td>
