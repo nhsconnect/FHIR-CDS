@@ -155,7 +155,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | retired | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-publication-status.html">PublicationStatus (Required)</a>.</td>
-<td>This will carry the value 'active'.</td>
+<td>In live, this MUST carry the value 'active'.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">experimental</code></td>
