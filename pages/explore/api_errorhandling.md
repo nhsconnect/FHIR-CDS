@@ -28,42 +28,42 @@ The most common use-case for this is to provide error messages back when an oper
 
 Example scenarios are outlined below illustrating support for this behaviour during interactions between a CDSS and EMS Server:
 
-- When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS GET request uses as a parameter the unique logical id of a ServiceDefinition or a Questionnaire, but the id is not known by the receiving CDSS.
+- When a request references a resource that cannot be resolved; for example, this error should be expected when an EMS GET request uses as a parameter the unique logical id of a `ServiceDefinition` or a `Questionnaire`, but the id is not known by the receiving CDSS.
 
-The tables below summarise the HTTP response code, along with the values to expect in the OperationOutcome in the response body for these exception scenarios.
+The tables below summarise the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
 |HTTP Code|issue-severity|issue-type|Details.code|Details.display|Diagnostics|
 |---|---|---|---|---|---|
-|404	|error	|not-found	|NO_RECORD_FOUND|	No record found	No service definition found for supplied ServiceDefinition identifier| - [id]
-|404	|error	|not-found	|NO_RECORD_FOUND|	No record found	No questionnaire found for supplied Questionnaire identifier - [id]|
+|404	|error	|not-found	|NO_RECORD_FOUND|	No record found	|No service definition found for supplied ServiceDefinition identifier - [id]|
+|404	|error	|not-found	|NO_RECORD_FOUND|	No record found	|No questionnaire found for supplied Questionnaire identifier - [id]|
 
 
 ### Headers ###
 
-A scenario when this error would be thrown would be when the mandatory Authorization HTTP Header is missing in the request.
-The table below details the HTTP response code, along with the values to expect in the OperationOutcome in the response body for this scenario.
+A scenario when this error would be thrown would be when the mandatory `Authorization` HTTP Header is missing in the request.
+The table below details the HTTP response code, along with the values to expect in the `OperationOutcome` in the response body for this scenario.
 
 |HTTP Code|issue-severity|issue-type|Details.code|Details.display|Diagnostics|
 |---|---|---|---|---|---|
-|400|	error	|invalid	MISSING_OR_INVALID_HEADER	|There is a required header missing or invalid	|Authorization HTTP Header is missing|
+|400|	error	|invalid|	MISSING_OR_INVALID_HEADER	|There is a required header missing or invalid	|Authorization HTTP Header is missing|
 
 
 ### Parameters ###
 
 This error will be raised in relation to request parameters that a CDSS or EMS Server may have specified.
 
-The below table summarises the HTTP response code, along with the value to expect in the OperationOutcome in the response body for this exception scenario.
+The below table summarises the HTTP response code, along with the value to expect in the `OperationOutcome` in the response body for this exception scenario.
 
 |HTTP Code|issue-severity|issue-type|Details.code|Details.display|
 |---|---|---|---|---|
-|400	|error	|invlid	|INVALID_PARAMETER|	Invalid parameter|
+|400	|error	|invalid	|INVALID_PARAMETER|	Invalid parameter|
 
 
 ### Invalid Resource ###
 
 This error code may surface when creating a resource, for example when the business rules associated with a specific resource are violated.
 
-The table below summarises the HTTP response code, along with the value to expect in the OperationOutcome in the response body for this exception scenario.
+The table below summarises the HTTP response code, along with the value to expect in the `OperationOutcome` in the response body for this exception scenario.
 
 |HTTP Code|issue-severity|issue-type|Details.code|
 |---|---|---|
@@ -84,7 +84,7 @@ If one or more mandatory fields are missing values then this error will be throw
 
 This kind of error will be created in response to problems with the request payload. However the kind of errors that trigger this error are distinct from those that cause the INVALID_RESOURCE error which is intended to convey a problem that relates to the business rules associated with the creation of a resource. The INVALID_REQUEST_MESSAGE error is triggered when there is a problem with the format of a resource in terms of the XML or JSON syntax that has been used.
 
-The below table summarises the HTTP response codes, along with the values to expect in the OperationOutcome in the response body for this exception scenario.
+The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.
 
 |HTTP Code|issue-severity|issue-type|Details.code|Details.display|
 |---|---|---|---|---|
@@ -95,7 +95,7 @@ The below table summarises the HTTP response codes, along with the values to exp
 
 This kind of error will be created where an attempt was made to run an operation that is invalid/not supported.
 
-The below table summarises the HTTP response codes, along with the values to expect in the OperationOutcome in the response body for this exception scenario.
+The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for this exception scenario.
 
 |HTTP Code|issue-severity|issue-type|Details.code|Details.display|Diagnostics|
 |---|---|---|---|---|---|
@@ -109,7 +109,7 @@ There are three scenarios when an Unsupported Media Type business response code 
 - Request contains a supported Accept header and an unsupported _format parameter.
 - Retrieval search query request parameters are valid, however the URL contains an unsupported _format parameter value.
 
-The below table summarises the HTTP response codes, along with the values to expect in the OperationOutcome in the response body for these exception scenarios.
+The below table summarises the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body for these exception scenarios.
 
 |HTTP Code|issue-severity|issue-type|Details.code|Details.display|
 |---|---|---|---|---|

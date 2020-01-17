@@ -18,9 +18,9 @@ The UEC Digital Integration Programme supports the delivery of the key recommend
 the [Urgent and Emergency Care Review](https://www.england.nhs.uk/wp-content/uploads/2015/06/trans-uec.pdf), and the [Five Year Forward View](https://www.england.nhs.uk/five-year-forward-view/). To achieve the transformation of Urgent and Emergency Care, patients must be directed to or connected with the right service to meet their needs and not be sent or conveyed to high end dispositions such as Accident and Emergency or GPs, unless absolutely necessary.  
 
 ## In Scope ##
-This guide covers triage of patients by non-clinical staff and triage of patients by clinicians. This guide is intended for use by developers who are making systems compliant with the guide.
+This guide covers self-triage, triage of patients by non-clinical staff and triage of patients by clinicians. This guide is intended for use by developers who are making systems compliant with the guide.
 
-The Implementation Guide is based on initial discovery work, which informs the 1.1.0-alpha version of the Guide. The scope is expected to increase with more discovery work and as use cases are developed. Future versions of this Guide will include those updates as they are developed. Any resources not specifically mentioned in this Guide will follow the [HL7 FHIR STU3 guidance](https://www.hl7.org/fhir/stu3/index.html), with the noted exceptions of the [Encounter](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) and [Patient](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) profiles, which follow CareConnect guidance as of V1.1.0.
+The Implementation Guide is based on initial discovery work, which informs the 1.1.0-alpha version of the Guide. The scope is expected to increase with more discovery work and as use cases are developed. Future versions of this Guide will include those updates as they are developed. Any resources not specifically mentioned in this Guide will follow the [HL7 FHIR STU3 guidance](https://www.hl7.org/fhir/stu3/index.html), with the noted exceptions of the [Encounter](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) and [Patient](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) resources, which follow CareConnect guidance as of V1.1.0.
 
 As of V1.1.0-alpha the solution has been amended so that all assertions must be observations.
 
@@ -47,7 +47,7 @@ All published guidance in this version of the Implementation Guide is in referen
 Methods for sourcing medical records are out of scope of the Implementation Guide.
 
 ### note element ###
-The note element appears in several resources in scope of the CDS API. A general view has been taken that notes made by EMS users are not taken into consideration by the CDSS. If there is information to be communicated, it MUST be communicated in a structured form. This is to reduce the risk of inappropritae triage due to end users assuming notes will be considered. Accordingly, the note element where it occurs MUST NOT be populated. 
+The note element appears in several resources in scope of the CDS API. A general view has been taken that notes made by EMS users are not taken into consideration by the CDSS. If there is information to be communicated, it MUST be communicated in a structured form. This is to reduce the risk of inappropriate triage due to end users assuming notes will be considered. Accordingly, the note element where it occurs MUST NOT be populated. 
 
 
 ### De-scoped resources ###

@@ -108,9 +108,9 @@ All attributes defined in FHIR have cardinality as part of their definition - a 
 
 |Syntax of cardinality|
 |------|
-|1:1|	One to one	Mandatory|	Not Repeatable|
-|0:1|	Zero to one	Optional|	Not Repeatable|
-|1:*|	One to many	Mandatory|	Repeatable|
-|0:*|	Zero to many	Optional|	Repeatable|
+|1:1|One to one	|Mandatory|	Not Repeatable|
+|0:1|Zero to one |Optional|	Not Repeatable|
+|1:*|One to many |Mandatory|	Repeatable|
+|0:*|Zero to many |Optional|	Repeatable|
 
 Resources created violating the business rules may generate an HTTP 400 Error INVALID_RESOURCE.

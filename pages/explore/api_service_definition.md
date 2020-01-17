@@ -75,7 +75,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>Text summary of the resource, for human interpretation</td>
+	<td>This should not be populated.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>

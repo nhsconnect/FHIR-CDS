@@ -7,21 +7,26 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
+## 2.0-Release Candidate (proposed) ##
+
+The next version of the CDS API Implemenation Guide will introduce additional guidance and introduce the UEC Encounter Report. It is proposed as a Release Candidate to be published in spring 2020.
+
+
 ## 1.1.0-alpha ##
-*  ProcedureRequest Resource has been deprecated
-*  Added guidance to state that all Assertions are to be Observation resources
-*  Removed guidance pages regarding Encounter and Patient resources as they now follow CareConnect guidance
-*  Further guidance and updates added on searching for a ServiceDefinition using additional customised SearchParameters
+*  `ProcedureRequest` Resource has been deprecated
+*  Added guidance to state that all Assertions are to be `Observation` resources
+*  Removed guidance pages regarding `Encounter` and `Patient` resources as they now follow CareConnect guidance
+*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters`
 *  Added guidance on usage to the GuidanceResponse page
 *  Updated HTTP 500 error with a more descriptive error message
-*  GuidanceResponse page updated to show occurrenceDateTime represents date/time at which a GuidanceResponse is returned to an EMS
-*  Updated valueset text and links on ReferralRequest page
-*  Corrected name of ServiceDefinition.effective parameter in API general guidance
-*  Updated API general guidance to align errors more closely to an OperationOutcome
-*  Further guidance and updates added on searching for a ServiceDefinition using additional customised SearchParameters
-*  Guidance amended regarding the ReferralRequest.intent element
-*  SearchParameters resource page added with examples of SearchParameter definitions
-*  RequestGroup resouce page added
+*  GuidanceResponse page updated to show occurrenceDateTime represents date/time at which a `GuidanceResponse` is returned to an EMS
+*  Updated valueset text and links on `ReferralRequest` page
+*  Corrected name of `ServiceDefinition.effective` parameter in API general guidance
+*  Updated API general guidance to align errors more closely to an `OperationOutcome`
+*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised SearchParameters
+*  Guidance amended regarding the `ReferralRequest.intent` element
+*  SearchParameters resource page added with examples of `SearchParameter` definitions
+*  `RequestGroup` resouce page added
 
 
 ## 1.0.0-alpha ##

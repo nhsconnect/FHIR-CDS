@@ -22,7 +22,7 @@ Visit [NHS Digital Urgent and Emergency Care](https://digital.nhs.uk/about-nhs-d
 
 ### Urgent and Emergency Care Digital Integration (UECDI) Programme ###
 
-NHS Digital’s Urgent and Emergency Care Digital Integration (UECDI) programme is helping people get the right care, first time by improving the flow of information through the urgent and emergency care system. This Clinical Decision Support API implementation guide supports the initiatives set out by the [Urgent and Emergency Care Digital Integration (UECDI) Programme](https://digital.nhs.uk/about-nhs-digital/our-work/transforming-health-and-care-through-technology/urgent-and-emergency-care-domain-b/urgent-and-emergency-care-digital-integration).
+NHS Digital's Urgent and Emergency Care Digital Integration (UECDI) programme is helping people get the right care, first time by improving the flow of information through the urgent and emergency care system. This Clinical Decision Support API implementation guide supports the initiatives set out by the [Urgent and Emergency Care Digital Integration (UECDI) Programme](https://digital.nhs.uk/about-nhs-digital/our-work/transforming-health-and-care-through-technology/urgent-and-emergency-care-domain-b/urgent-and-emergency-care-digital-integration).
 
 ### Urgent and Emergency Care Interoperability and Technical Standards ###
 
@@ -30,5 +30,8 @@ Learn about the different technical systems and standards used in Urgent and Eme
 [Urgent and Emergency Care Interoperability and Technical Standards](https://developer.nhs.uk/apis/uec-tech-standards)
 
 
-## Contact Us ##
-For general enquiries please send an email to the Urgent and Emergency Care Digital Integration at [uecdi@nhs.net](mailto:uecdi@nhs.net).
+### UECDI Technology Supplier Group (TSG) ###
+
+The TSG is a forum for the UECDI Programme to talk to technology suppliers in the urgent and emergency care space and strengthen our working relationships. The TSG hosts regular online broadcasts and interactive workshop events relating to our projects and products, including the CDS API Implementation Guide.
+
+By joining the TSG you can get the latest updates on the API Guide and hear about potential opportunities to attend workshop sessions. To register your interest please contact us via <a href="mailto:uecdi@nhs.net">uecdi@nhs.net</a>.

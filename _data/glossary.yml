@@ -9,6 +9,8 @@
   definition: A development stage in iterative delivery to build a basic working system with limited functionality used to demonstrate to users 
 - keyword: Care Advice
   definition: Advice provided to the patients for management of symptoms
+- keyword: Care Connect
+  definition: A number of RESTful APIs that have been collaboratively developed to support the delivery of care through interoperability. The CDS API Implementation Guide uses aspects of [CareConnect](https://nhsconnect.github.io/CareConnectAPI/index.html) to govern the functionality of certain Resources.
 - keyword: CCG
   expansion: Clinical Commissioning Group
   definition: Clinical Commissioning Groups (CCGs) commission most of the hospital and community NHS services in the local areas for which they are responsible. Commissioning involves deciding what services are needed for diverse local populations, and ensuring that they are provided. At its simplest, commissioning is the process of planning, agreeing and monitoring services. 

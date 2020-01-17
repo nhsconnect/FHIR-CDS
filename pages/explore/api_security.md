@@ -25,14 +25,13 @@ This allows the receiving system to verify the details of the sending system and
 
 ### Process ###
 
-NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory acting as the NHS Digital Authorisation server.  
-After passing an appropriate NHS Digital assurance process, a consuming system would be placed in an appropriate group created on the Authorisation server in order to be trusted by providers.  
-The Authorisation server will issue a JWT on receiving a consumer system request and the JWT will contain attributes of the consuming system, including the groups it is a member of.  
-The consuming system can then include the JWT in the HTTP authorization header when a request is made to the provider.  
-On receipt of the request with the JWT, the provider requests a public key from the Authorisation server and uses this to verify the signature of the JWT.  
-The provider system can then makes a number of checks, including checking the validity (e.g. expiry time) of the JWT and that the consumer is a member of the necessary group(s) which indicates that the consumer system has gone through the assurance process mentioned above. This verification indicates that the request can be trusted and should be honoured.  
-Once the provider has verified the JWT, access to the required resources will be given.  
-
+- NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory     NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory acting as the NHS Digital Authorisation server.
+- After passing an appropriate NHS Digital assurance process, a consuming system would be placed in an appropriate group created on the Authorisation server in order to be trusted by providers.
+- The Authorisation server will issue a JWT on receiving a consumer system request and the JWT will contain attributes of the consuming system, including the groups it is a member of.
+- The consuming system can then include the JWT in the HTTP authorization header when a request is made to the provider.
+- On receipt of the request with the JWT, the provider requests a public key from the Authorisation server and uses this to verify the signature of the JWT.
+- The provider system can then makes a number of checks, including checking the validity (e.g. expiry time) of the JWT and that the consumer is a member of the necessary group(s) which indicates that the consumer system has gone through the assurance process mentioned above. This verification indicates that the request can be trusted and should be honoured.
+- Once the provider has verified the JWT, access to the required resources will be given.
 
 
 
