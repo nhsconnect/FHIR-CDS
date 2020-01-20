@@ -75,7 +75,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated.</td>
+	<td>This SHOULD NOT be populated.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -293,7 +293,7 @@ The useContext element is used to describe the expected usage of the ServiceDefi
 
 The EMS will typically use the ServiceDefinition.useContext to filter available ServiceDefinitions in the [Select ServiceDefinition](api_get_service_definition.html) interaction.
 
-The following json code block shows how to define the useContext in a ServiceDefinition.
+The following json code block shows how to define the useContext in a ServiceDefinition. Note that useContext can only use key value pairs.
 
 ```
 "useContext": [

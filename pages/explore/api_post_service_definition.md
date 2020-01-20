@@ -21,6 +21,8 @@ The `ServiceDefinition.trigger` element is of datatype [TriggerDefinition](https
 Within the CDS implementation, the Data Event trigger type has been chosen. This means that the EMS's evaluation of a `ServiceDefinition` will be triggered in response to a data-related activity within an implementation, for example by an addition or an update of a record such as a `QuestionnaireResponse` resource.  
 The triggering data of the event is described in the `trigger.eventData` element of the `ServiceDefinition` and this is populated by the CDSS.     
 
+Note: It is the responsibility of the CDSS to ensure the triggering requirements have been met for this journey based on the assertions passed by the EMS.
+
 ## Request Headers ##
 The following HTTP request headers are supported for this interaction:  
 
