@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
-## 2.0-Release Candidate (proposed) ##
+## 2.0-Release Candidate (proposed). ##
 
 The next version of the CDS API Implemenation Guide will introduce additional guidance and introduce the UEC Encounter Report. It is proposed as a Release Candidate to be published in spring 2020.
 
@@ -119,3 +119,6 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 ## 0.1.0-experimental ##
 
 Initial draft of the implementation guide
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTI2MDk5Nzc1OF19
+-->
