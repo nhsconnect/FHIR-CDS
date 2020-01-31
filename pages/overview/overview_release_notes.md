@@ -11,6 +11,9 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 
 The next version of the CDS API Implemenation Guide will introduce additional guidance and introduce the UEC Encounter Report. It is proposed as a Release Candidate to be published in spring 2020.
 
+## 1.1.1-alpha ##
+* Added Clinical Safety Case Report and associated Hazard Log
+
 
 ## 1.1.0-alpha ##
 *  `ProcedureRequest` Resource has been deprecated

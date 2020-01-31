@@ -12,6 +12,10 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
+    - title: Clinical Safety
+      url: /clinical_safety.html
+      output: web, pdf
+      type: homepage
     - title: Guide Versioning
       url: /overview_guide_versioning.html
       output: web
