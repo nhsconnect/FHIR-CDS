@@ -81,7 +81,7 @@ The requestId MUST be locally unique</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">inputData</code></td>
-     <td><code class="highlighter-rouge">0..1</code></td>
+     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Any</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
    <td>The <a href="api_post_service_definition.html#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
@@ -263,3 +263,6 @@ After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTExNDg0MjQzMjZdfQ==
+-->

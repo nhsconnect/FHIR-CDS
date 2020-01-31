@@ -23,7 +23,6 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 *  Updated valueset text and links on `ReferralRequest` page
 *  Corrected name of `ServiceDefinition.effective` parameter in API general guidance
 *  Updated API general guidance to align errors more closely to an `OperationOutcome`
-*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised SearchParameters
 *  Guidance amended regarding the `ReferralRequest.intent` element
 *  SearchParameters resource page added with examples of `SearchParameter` definitions
 *  `RequestGroup` resouce page added
@@ -119,3 +118,6 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 ## 0.1.0-experimental ##
 
 Initial draft of the implementation guide
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjgxNzEyNjc3XX0=
+-->
