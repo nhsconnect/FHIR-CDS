@@ -21,6 +21,12 @@ The Encounter will also link to  [Task](https://teams.microsoft.com/l/entity/com
 The Encounter Report can be sent on the wire as a single Message, or as a [Bundle](https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.wiki/tab::2849bd15-ebe7-42e7-ab52-e3609dc8bcd6?context=%7B%22subEntityId%22%3A%22%7B%5C%22pageId%5C%22%3A5%2C%5C%22origin%5C%22%3A2%7D%22%2C%22channelId%22%3A%2219%3A75aa7034b31c47f5b2fbcb575436de04%40thread.skype%22%7D&tenantId=50f6071f-bbfe-401a-8803-673748e629e2 "https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.wiki/tab::2849bd15-ebe7-42e7-ab52-e3609dc8bcd6?context=%7b%22subentityid%22%3a%22%7b%5c%22pageid%5c%22%3a5%2c%5c%22origin%5c%22%3a2%7d%22%2c%22channelid%22%3a%2219%3a75aa7034b31c47f5b2fbcb575436de04%40thread.skype%22%7d&tenantid=50f6071f-bbfe-401a-8803-673748e629e2"). It can also be composed by the recipient after receiving just the Encounter. The server which 'owns' the Encounter must also be able to resolve a search request for the Composition/Document, ReferralRequest or Task, based on the Encounter identifier.
 
 ### Appointment ###
+Used to represent represent a appointment that has been generated via the EMS as a result of the triage process.
+
+This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.html](http://hl7.org/fhir/STU3/Appointment.html "http://hl7.org/fhir/stu3/appointment.html"))
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTU3OTEzMjBdfQ==
+eyJoaXN0b3J5IjpbLTQyODA4ODAwMF19
 -->
