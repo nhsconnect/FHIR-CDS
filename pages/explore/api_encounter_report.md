@@ -54,6 +54,31 @@ Flags are identified by searching for all Flags for an Encounter
 |--|--|--|--|--|--|--|
 ||||||||
 ### Bundle ###
+Used to define a "document" that represents a triage journey, this document holds a bundle of resources that are collected throughout the triage process i.e.
+
+-   All Questionnaire, QuestionnaireResponse and Observation resources collected during the triage process.
+-   Patient and Practitioner (Patients GP) resources.
+-   A Composition resources that provides a summary of what the document is about in the form of an Encounter resource.
+
+This will be carried in a Bundle ([http://hl7.org/fhir/STU3/bundle.html](http://hl7.org/fhir/STU3/bundle.html "http://hl7.org/fhir/stu3/bundle.html"))
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
+### Encounter ###
+Used to represent represent a summary of the triage encounter.
+
+This will be carried in a Encounter ([http://hl7.org/fhir/STU3/Encounter.html](http://hl7.org/fhir/STU3/Encounter.html "http://hl7.org/fhir/stu3/encounter.html"))
+
+The patient and practitioner will be CareConnect profiles, and will follow the rules for those profiles
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
+### ReferralRequest ###
+The ReferralRequest ([https://www.hl7.org/fhir/stu3/referralrequest.html](https://www.hl7.org/fhir/stu3/referralrequest.html "https://www.hl7.org/fhir/stu3/referralrequest.html")) at handover contains directions to an actual service to which the patient has been referred.
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
+### HealthcareService ###
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzIwNjU3M119
+eyJoaXN0b3J5IjpbLTE4OTY5MzQxMjldfQ==
 -->
