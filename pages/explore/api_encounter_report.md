@@ -18,10 +18,10 @@ The Encounter will also optionally link to `ReferralRequest`(s) which models the
 
 The Encounter will also link to `Task`(s), which identifies the next action to be taken, and who is responsible for that action. Tasks belong to the Encounter. The Task will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
 ### Transport ###
-The Encounter Report can be sent on the wire as a single Message, or as a Bundle. It can also be composed by the recipient after receiving just the Encounter. The server which 'owns' the Encounter must also be able to resolve a search request for the Composition/Document, ReferralRequest or Task, based on the Encounter identifier.
+The Encounter Report can be sent on the wire as a single Message, or as a `Bundle`. It can also be composed by the recipient after receiving just the Encounter. The server which 'owns' the Encounter must also be able to resolve a search request for the Composition/Document, ReferralRequest or Task, based on the Encounter identifier.
 
 ### Appointment ###
-Used to represent represent a appointment that has been generated via the EMS as a result of the triage process.
+Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.
 
 This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.html](http://hl7.org/fhir/STU3/Appointment.html "http://hl7.org/fhir/stu3/appointment.html"))
 | Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
@@ -98,5 +98,5 @@ There will normally (always) be a Task at the end of triage -either for a profes
 |--|--|--|--|--|--|--|
 ||||||||
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3NzY4NDQxMV19
+eyJoaXN0b3J5IjpbLTc0ODY4ODg1XX0=
 -->
