@@ -17,7 +17,21 @@ Each `Operation` is defined by:
 -   `$check-services`    
 -   A list of parameters along with their definitions
 
+#### Parameter - referralRequest ####
+For each parameter, the following information is needed:
+-   Name - the name of the parameter. For implementer convenience, the name should be a valid token (see below)
+    -   referralRequest 
+-   Use - In | Out | Both
+    -   in
+-   Type - a data type or a Resource type
+    -   resource::ReferralRequest
+-   Search Type - for string search parameters, what kind of search parameter they are (& and what kind of modifiers they have)
+    -   N/A
+-   Profile - a  [StructureDefinition](https://www.hl7.org/fhir/stu3/structuredefinition.html "https://www.hl7.org/fhir/stu3/structuredefinition.html")  that applies additional restrictions about the resource
+    -   N/A
+-   Documentation - a description of the parameter's use
+    -   The outcome of the triage process, as a ReferralRequest. This will have a chief concern, next activity, and acuity
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzM1NzA1ODFdfQ==
+eyJoaXN0b3J5IjpbMTI1NzU0MDUwXX0=
 -->
