@@ -25,8 +25,11 @@ Used to represent represent a appointment that has been generated via the EMS as
 
 This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.html](http://hl7.org/fhir/STU3/Appointment.html "http://hl7.org/fhir/stu3/appointment.html"))
 | Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyODA4ODAwMF19
+eyJoaXN0b3J5IjpbMTY0OTM1MjQyNl19
 -->
