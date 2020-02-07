@@ -24,7 +24,7 @@ The Encounter Report can be sent on the wire as a single Message, or as a `Bundl
 Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.
 
 This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.html](http://hl7.org/fhir/STU3/Appointment.html "http://hl7.org/fhir/stu3/appointment.html"))
-| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+| [Name](https://www.hl7.org/fhir/stu3/formats.html#table) |  |  **[Flags](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Card.](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Type](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Description & Constraint](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | UEC DI Guidance Notes |
 |--|--|--|--|--|--|--|
 ||||||||
 
@@ -98,5 +98,6 @@ There will normally (always) be a Task at the end of triage -either for a profes
 |--|--|--|--|--|--|--|
 ||||||||
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0ODY4ODg1LC03NDg2ODg4NV19
+eyJoaXN0b3J5IjpbMTA3NzM2NjcyNywtNzQ4Njg4ODUsLTc0OD
+Y4ODg1XX0=
 -->
