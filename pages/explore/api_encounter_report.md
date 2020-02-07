@@ -26,10 +26,13 @@ Used to represent represent a appointment that has been generated via the EMS as
 This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.html](http://hl7.org/fhir/STU3/Appointment.html "http://hl7.org/fhir/stu3/appointment.html"))
 | Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
 |--|--|--|--|--|--|--|
-
+|[Appointment](http://hl7.org/fhir/STU3/appointment-definitions.html#Appointment "http://hl7.org/fhir/stu3/appointment-definitions.html#appointment")||I||[DomainResource](http://hl7.org/fhir/STU3/domainresource.html "http://hl7.org/fhir/stu3/domainresource.html")|A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s)  
+Only proposed or cancelled appointments can be missing start/end dates  
++ Either start and end are specified, or neither  
+Elements defined in Ancestors: [id](http://hl7.org/fhir/STU3/resource.html#Resource "http://hl7.org/fhir/stu3/resource.html#resource"), [meta](http://hl7.org/fhir/STU3/resource.html#Resource "http://hl7.org/fhir/stu3/resource.html#resource"), [implicitRules](http://hl7.org/fhir/STU3/resource.html#Resource "http://hl7.org/fhir/stu3/resource.html#resource"), [language](http://hl7.org/fhir/STU3/resource.html#Resource "http://hl7.org/fhir/stu3/resource.html#resource"), [text](http://hl7.org/fhir/STU3/domainresource.html#DomainResource "http://hl7.org/fhir/stu3/domainresource.html#domainresource"), [contained](http://hl7.org/fhir/STU3/domainresource.html#DomainResource "http://hl7.org/fhir/stu3/domainresource.html#domainresource"), [extension](http://hl7.org/fhir/STU3/domainresource.html#DomainResource "http://hl7.org/fhir/stu3/domainresource.html#domainresource"), [modifierExtension](http://hl7.org/fhir/STU3/domainresource.html#DomainResource "http://hl7.org/fhir/stu3/domainresource.html#domainresource")||
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0OTM1MjQyNl19
+eyJoaXN0b3J5IjpbLTY5OTI0NzcxNV19
 -->
