@@ -10,14 +10,14 @@ summary: $check-services implementation guidance
 
 ## $check-services: Implementation Guidance ##
 ### Operation ###
-Each Operation is defined by:
--   A context for the Operation -  _system_,  _resource type_, or  _resource instance_
+Each `Operation` is defined by:
+-   A context for the `Operation` -  _system_,  _resource type_, or  _resource instance_
 -   resource instance 
 -   A name for the Operation
--   $check-services    
+-   `$check-services`    
 -   A list of parameters along with their definitions
-    
- _see below_
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMDg1OTI2OV19
+eyJoaXN0b3J5IjpbLTEwMzM1NzA1ODFdfQ==
 -->
