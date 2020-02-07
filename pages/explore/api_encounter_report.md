@@ -79,6 +79,24 @@ The ReferralRequest ([https://www.hl7.org/fhir/stu3/referralrequest.html](https:
 |--|--|--|--|--|--|--|
 ||||||||
 ### HealthcareService ###
+The hl7 specification is located here: [http://hl7.org/fhir/STU3/healthcareservice.html](http://hl7.org/fhir/STU3/healthcareservice.html "http://hl7.org/fhir/stu3/healthcareservice.html")
+
+Once a provider organisation is selected from a directory, the instance is populated as a HealthcareService
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes | Mapping Notes (ITL) |
+|--|--|--|--|--|--|--|--|
+|||||||||
+### Provenance ###
+[https://www.hl7.org/fhir/stu3/provenance.html](https://www.hl7.org/fhir/stu3/provenance.html "https://www.hl7.org/fhir/stu3/provenance.html")
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
+### Task ###
+The Task ([https://www.hl7.org/fhir/stu3/task.html](https://www.hl7.org/fhir/stu3/task.html "https://www.hl7.org/fhir/stu3/task.html")) for the Encounter is linked by Task.context - the Encounter during which the Task originated.
+
+There will normally (always) be a Task at the end of triage -either for a professional, or for the patient, to carry out
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTY5MzQxMjldfQ==
+eyJoaXN0b3J5IjpbOTgwMTU4MzYyXX0=
 -->
