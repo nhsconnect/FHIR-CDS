@@ -29,7 +29,31 @@ This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.htm
 ||||||||
 
 ### Composition ###
+Used to represent represent a summary of the triage journey for a patient.
 
+This will be carried in a Composition ([http://hl7.org/fhir/STU3/Composition.html](http://hl7.org/fhir/STU3/Composition.html "http://hl7.org/fhir/stu3/composition.html")). Note that the actual history is collected in a [Bundle](https://confluence.digital.nhs.uk/display/TOM/Bundle "https://confluence.digital.nhs.uk/display/tom/bundle"), of which the composition is the first element. The composition associated with an encounter is linked through the Composition.encounter. The Encounter resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
+
+The resources presented in the Composition (e.g. Questionnaire, QuestionnaireResponse, ReferralRequest, CarePlan, assertions) will follow the CDS API exactly, so are not re-presented here:
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
+### Consent ###
+[https://www.hl7.org/fhir/stu3/consent.html](https://www.hl7.org/fhir/stu3/consent.html "https://www.hl7.org/fhir/stu3/consent.html")
+
+Patient consent of different types can be carried in this object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
+
+Linked to the triage journey by patient and data.
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
+### Flag ###
+[https://www.hl7.org/fhir/stu3/flag.html](https://www.hl7.org/fhir/stu3/flag.html "https://www.hl7.org/fhir/stu3/flag.html")
+
+Flags are identified by searching for all Flags for an Encounter
+| Name |  |  Flags | Card. | Type | Description & Constraints | UEC DI Guidance Notes |
+|--|--|--|--|--|--|--|
+||||||||
+### Bundle ###
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NTcyNTE3NF19
+eyJoaXN0b3J5IjpbLTEyNzIwNjU3M119
 -->
