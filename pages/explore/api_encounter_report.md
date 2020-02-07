@@ -7,7 +7,6 @@ permalink: api_encounter_report.html
 summary: Encounter Report implementation guidance 
 ---
 
-
 ## Encounter Report: Implementation Guidance ##
 ### Structure ###
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS
@@ -98,6 +97,6 @@ There will normally (always) be a Task at the end of triage -either for a profes
 |--|--|--|--|--|--|--|
 ||||||||
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk5MjE1MTU2LC03NDg2ODg4NSwtNzQ4Nj
-g4ODVdfQ==
+eyJoaXN0b3J5IjpbNDMxNzgwOTYyLDI5OTIxNTE1NiwtNzQ4Nj
+g4ODUsLTc0ODY4ODg1XX0=
 -->
