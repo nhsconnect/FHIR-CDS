@@ -81,7 +81,7 @@ Patient consent of different types can be carried in a [Consent](https://www.hl7
 Linked to the triage journey by patient and data.
 
 <table style="min-width:100%;width:100%">
-<tbody>
+<thead>
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
@@ -89,6 +89,8 @@ Linked to the triage journey by patient and data.
       <th style="width:38%;">FHIR Documentation</th>
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
+</thead>
+<tbody>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
