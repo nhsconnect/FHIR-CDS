@@ -65,7 +65,7 @@ The table below gives implementation guidance in relation to the elements within
 <tr><td><code class="highlighter-rouge">basedOn</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference (CarePlan)</td><td>Fulfils care plan</td><td>This element MUST NOT be populated.</td></tr>
 <tr><td><code class="highlighter-rouge">replaces</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference CarePlan)</td><td>CarePlan replaced by this CarePlan</td><td>&nbsp;</td></tr>
 <tr><td><code class="highlighter-rouge">partOf</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference (CarePlan)</td><td>Part of referenced CarePlan</td><td>This element MUST NOT be populated.</td></tr>
-<tr><td><code class="highlighter-rouge">status</code></td><td><code class="highlighter-rouge">1..1</code></td><td>code</td><td>draft | active | suspended | completed | entered-in-error | cancelled | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-status.html">CarePlanStatus (Required)</a></td><td>This MUST be populated with either 'active', 'completed' or 'cancelled'. Other statuses are not valid.  The status of the CarePlan MUST match the status of the RequestGroup which references this CarePlan
+<tr><td><code class="highlighter-rouge">status</code></td><td><code class="highlighter-rouge">1..1</code></td><td>code</td><td>draft | active | suspended | completed | entered-in-error | cancelled | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-status.html">CarePlanStatus (Required)</a></td><td>This MUST be populated with either 'active', 'completed' or 'cancelled'. Other statuses are not valid.  The status of the `CarePlan` MUST match the status of the `RequestGroup` which references this `CarePlan`
 When created by the CDS and 'sent' to the EMS, the plan has a status of 'active'. After acknowledgement by the user, the status of the plan is 'completed'. If a plan is displayed to the user, but not acknowledged, and the user goes back in the process (answers a question differently) so that the plan is no longer on screen, this should be 'cancelled'.</td></tr>
 <tr><td><code class="highlighter-rouge">intent</code></td><td><code class="highlighter-rouge">1..1</code></td><td>code</td><td>proposal | plan | order | option <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-intent.html">CarePlanIntent (Required)</a></td><td>This MUST be populated with the value 'plan'.</td></tr>
 <tr><td><code class="highlighter-rouge">title</code></td><td><code class="highlighter-rouge">0..1</code></td><td>string</td><td>Human-friendly name for the CarePlan</td><td>&nbsp;</td></tr>
@@ -103,5 +103,5 @@ When created by the CDS and 'sent' to the EMS, the plan has a status of 'active'
 </tbody></table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkzMDE2ODk5XX0=
+eyJoaXN0b3J5IjpbLTE5MzY0MzYzODFdfQ==
 -->
