@@ -132,7 +132,7 @@ Detailed implementation guidance for a `RequestGroup` resource in the CDS contex
  <tr><td class="sub"><code class="highlighter-rouge">reason.reasonCodeableConcept</code></td><td>&nbsp;</td><td>CodeableConcept</td><td>&nbsp;</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">reason.reasonReference</code></td><td>&nbsp;</td><td>Reference(Any)</td><td>&nbsp;</td><td>This MUST NOT be populated.</td></tr>
  <tr><td><code class="highlighter-rouge">note</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Annotation</td><td>Additional notes about the response</td><td>This MUST NOT be populated.</td></tr>
- <tr><td><code class="highlighter-rouge">action</code></td><td><code class="highlighter-rouge">0..*</code></td><td>BackboneElement</td><td>Proposed actions, if any <br/>+ Must have resource or action but not both</td><td>This MUST NOT be populated.</td></tr>
+ <tr><td><code class="highlighter-rouge">action</code></td><td><code class="highlighter-rouge">0..*</code></td><td>BackboneElement</td><td>Proposed actions, if any <br/>+ Must have resource or action but not both</td><td>Where, populated, this MUST only be populated with a resource.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.label</code></td><td><code class="highlighter-rouge">0..1</code></td><td>String</td><td>User-visible label for the action (e.g. 1. or A.)</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.title</code></td><td><code class="highlighter-rouge">0..1</code></td><td>String</td><td>User-visible title</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.description</code></td><td><code class="highlighter-rouge">0..1</code></td><td>String</td><td>Short description of the action</td><td>This MUST NOT be populated.</td></tr>
@@ -164,5 +164,5 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDM2NTk1OTBdfQ==
+eyJoaXN0b3J5IjpbMTYxNjQzNzE3MSwtMTM0MzY1OTU5MF19
 -->
