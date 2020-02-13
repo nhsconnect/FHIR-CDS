@@ -1,4 +1,4 @@
----
+﻿---
 title: Introduction to the Clinical Decision Support API
 keywords: homepage
 tags: [overview]
@@ -58,5 +58,6 @@ The note element appears in several resources in scope of the CDS API. A general
 ## Note for Implementers ##
 This specification is issued as an alpha, and we welcome feedback (see [Communication Channels](support_communications.html) for ways to contact us) on the specification.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIwMDcxMTI5LDEzMzcxODg5NDBdfQ==
+eyJoaXN0b3J5IjpbMjE0MjAzNjA4Niw3MjAwNzExMjksMTMzNz
+E4ODk0MF19
 -->
