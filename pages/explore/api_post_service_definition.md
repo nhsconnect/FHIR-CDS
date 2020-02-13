@@ -127,7 +127,7 @@ The EMS MUST NOT send duplicate items.</li>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.).</td>
-	<td>The <a href="https://developer.nhs.uk/apis/cds-api-1-0-0/api_post_service_definition.html#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns.</td>
+	<td>The <a href="/api_post_service_definition.html#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">userLanguage</code></td>
@@ -264,6 +264,6 @@ After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDg0MjQzMjYsLTE3NzYyODU1NzcsLT
-ExNDg0MjQzMjZdfQ==
+eyJoaXN0b3J5IjpbLTE2MDcyNDM4OTYsLTExNDg0MjQzMjYsLT
+E3NzYyODU1NzcsLTExNDg0MjQzMjZdfQ==
 -->
