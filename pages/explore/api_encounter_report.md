@@ -7,8 +7,8 @@ permalink: api_encounter_report.html
 summary: Encounter Report implementation guidance 
 ---
 
-## Encounter Report: Implementation Guidance ##
-### Structure ###
+## Encounter Report: Implementation Guidance
+### Structure
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS
 
 The base resource for the Encounter Report is the `Encounter`. The Encounter has a history of the triage journey as a  `Composition`/Document(s) (linked by Composition.encounter). The Composition/Document is composed of assertions (normally Observations), QuestionnaireResponses (which will in turn link to Questionnaires) and CarePlans presented during the journey. If the journey concluded with a request for a type of service, this will be part of the Composition/Document. The Encounter will also link to a Patient (through Encounter.subject).
@@ -16,8 +16,9 @@ The base resource for the Encounter Report is the `Encounter`. The Encounter has
 The Encounter will also optionally link to `ReferralRequest`(s) which models the next service the patient needs. This will include a specific `HealthcareService`, and may include an `Appointment`.
 
 The Encounter will also link to `Task`(s), which identifies the next action to be taken, and who is responsible for that action. Tasks belong to the Encounter. The Task will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
+
 ### Transport ###
-The Encounter Report can be sent on the wire as a single Message, or as a `Bundle`. It can also be composed by the recipient after receiving just the Encounter. The server which 'owns' the Encounter must also be able to resolve a search request for the Composition/Document, ReferralRequest or Task, based on the Encounter identifier.
+The Encounter Report can be sent on the wire as a single Message, or as a `Bundle`. It can also be composed by the recipient after receiving just the Encounter. The server which 'owns' the Encounter must also be able to resolve a search request for the Composition/Document, ReferralRequest, Flag or Task, based on the Encounter identifier.
 
 ### Appointment ###
 Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.
@@ -97,6 +98,6 @@ There will normally (always) be a Task at the end of triage -either for a profes
 |--|--|--|--|--|--|--|
 ||||||||
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMxNzgwOTYyLDI5OTIxNTE1NiwtNzQ4Nj
-g4ODUsLTc0ODY4ODg1XX0=
+eyJoaXN0b3J5IjpbLTIyMzEwOTg2Myw0MzE3ODA5NjIsMjk5Mj
+E1MTU2LC03NDg2ODg4NSwtNzQ4Njg4ODVdfQ==
 -->
