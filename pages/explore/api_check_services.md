@@ -255,177 +255,91 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>CodeableConcept</td>
 <td>Type of service that may be delivered or performed <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-service-type.html">ServiceType (Example)</a></td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">specialty</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>CodeableConcept</td>
-
 <td>Specialties handled by the HealthcareService <br />
-
 <a  href="http://hl7.org/fhir/stu3/valueset-c80-practice-codes.html">Practice Setting Code Value Set (Preferred)</a>
-
 </td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">location</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>Reference(Location)</td>
-
 <td>Location(s) where service may be provided</td>
-
 <td>This MUST be populated</td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">name</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>string</td>
-
 <td>Description of service as presented to a consumer while searching</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">comment</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>string</td>
-
 <td>Additional description and/or any specific issues not covered elsewhere</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">extraDetails</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>string</td>
-
 <td>Extra details about the service that can't be placed in the other fields</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">photo</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>Attachment</td>
-
 <td>Facilitates quick identification of the service</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">telecom</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>ContactPoint</td>
-
 <td>Contacts related to the healthcare service</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">coverageArea</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>Reference(Location)</td>
-
 <td>Location(s) service is inteded for/available to</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">serviceProvisionCode</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>CodeableConcept</td>
-
 <td>Conditions under which service is available/offered <br />
-
 <a  href="http://hl7.org/fhir/stu3/valueset-service-provision-conditions.html">ServiceProvisionConditions (Example)</a>
-
 </td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">eligibility</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>CodeableConcept</td>
-
 <td>Specific eligibility requirements required to use the service</td>
-
 <td></td>
-
 </tr>
 
   
@@ -706,7 +620,7 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjQwMTk2NDUsLTIxMjQ1NzM4NTIsMz
-AxMzU3MjA1LC01NTEwMzkzNTcsLTU3MTA1MjQ0MywxOTE3NTI0
-MDIsMTI1NjI1ODA3MCwxMTQ1NDI1ODMsMTAzODU5MzE3OF19
+eyJoaXN0b3J5IjpbLTY2MzY1ODY2NSwtMjEyNDU3Mzg1MiwzMD
+EzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQw
+MiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
 -->
