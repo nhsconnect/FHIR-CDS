@@ -152,7 +152,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">id</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>id</td>
 <td>Logical id of this artifact</td>
 <td>Note that this will always be populated except when the resource is being created (initial creation call)
@@ -161,7 +161,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">meta</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>Meta</td>
 <td>Metadata about the resource</td>
 <td></td>
@@ -169,7 +169,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">implicitRules</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>uri</td>
 <td>A set of rules under which this content was created</td>
 <td></td>
@@ -177,7 +177,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">language</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>code</td>
 <td>Language of the resource content. <br/> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 <td></td>
@@ -185,7 +185,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">text</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>Narrative</td>
 <td>Text summary of the resource, for human interpretation</td>
 <td></td>
@@ -193,7 +193,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">contained</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>Resource</td>
 <td>Contained, inline Resources</td>
 <td>This should not be populated</td>
@@ -201,7 +201,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">extension</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>Extension</td>
 <td>Additional Content defined by implementations</td>
 <td></td>
@@ -209,7 +209,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">modifierExtension</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>Extension</td>
 <td>Extensions that cannot be ignored</td>
 <td></td>
@@ -217,7 +217,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">idenfitier</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>Identifier</td>
 <td>External identifiers for this item</td>
 <td></td>
@@ -225,7 +225,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 <tr>
 <td><code  class="highlighter-rouge">active</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>boolean</td>
 <td>Whether this healthcareservice is in active use</td>
 <td>
@@ -236,7 +236,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">providedBy</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>Reference(Organization)</td>
 <td>Organization that provides this service</td>
 <td>This MUST be populated with a reference to a CareConnectOrganization</td>
@@ -244,7 +244,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">category</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>CodeableConcept</td>
 <td>Broad category of service being performed or delivered <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-service-category.html">ServiceCategory (Example)</a></td>
@@ -253,7 +253,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">type</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>CodeableConcept</td>
 <td>Type of service that may be delivered or performed <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-service-type.html">ServiceType (Example)</a></td>
@@ -262,7 +262,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">specialty</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>CodeableConcept</td>
 <td>Specialties handled by the HealthcareService <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-c80-practice-codes.html">Practice Setting Code Value Set (Preferred)</a>
@@ -272,7 +272,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">location</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Location)</td>
 <td>Location(s) where service may be provided</td>
 <td>This MUST be populated</td>
@@ -280,7 +280,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">name</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>string</td>
 <td>Description of service as presented to a consumer while searching</td>
 <td></td>
@@ -288,7 +288,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">comment</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>string</td>
 <td>Additional description and/or any specific issues not covered elsewhere</td>
 <td></td>
@@ -296,7 +296,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">extraDetails</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>string</td>
 <td>Extra details about the service that can't be placed in the other fields</td>
 <td></td>
@@ -304,7 +304,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">photo</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>Attachment</td>
 <td>Facilitates quick identification of the service</td>
 <td></td>
@@ -312,7 +312,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">telecom</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>ContactPoint</td>
 <td>Contacts related to the healthcare service</td>
 <td></td>
@@ -320,7 +320,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">coverageArea</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Location)</td>
 <td>Location(s) service is inteded for/available to</td>
 <td></td>
@@ -328,7 +328,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">serviceProvisionCode</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>CodeableConcept</td>
 <td>Conditions under which service is available/offered <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-service-provision-conditions.html">ServiceProvisionConditions (Example)</a>
@@ -338,7 +338,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">eligibility</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>CodeableConcept</td>
 <td>Specific eligibility requirements required to use the service</td>
 <td></td>
@@ -346,7 +346,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">eligibilityNote</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>string</td>
 <td>Describes the eligibility conditions for the service</td>
 <td></td>
@@ -354,7 +354,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">programName</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>string</td>
 <td>Program Names that categorize the service</td>
 <td></td>
@@ -362,7 +362,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">characteristic</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>CodeableConcept</td>
 <td>Collection of characteristics (attributes)</td>
 <td></td>
@@ -370,7 +370,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">referralMethod</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>CodeableConcept</td>
 <td>Ways that the service accepts referrals <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-service-referral-method.html">ReferralMethod (Example)</a>
@@ -380,7 +380,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">appointmentRequired</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>boolean</td>
 <td>If an appointment is required for access to this service</td>
 <td></td>
@@ -388,7 +388,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">availableTime</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>BackboneElement</td>
 <td>Times the Service Site is available</td>
 <td></td>
@@ -430,7 +430,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">notAvailable</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>BackboneElement</td>
 <td>Not available during this time due to provided reason</td>
 <td></td>
@@ -454,7 +454,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">availabilityExceptions</code></td>
-<td><code  class="highlighter-rouge">0..1</td>
+<td><code  class="highlighter-rouge">0..1</code></td>
 <td>string</td>
 <td>Description of availability exceptions</td>
 <td></td>
@@ -462,7 +462,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 
 <tr>
 <td><code  class="highlighter-rouge">endpoint</code></td>
-<td><code  class="highlighter-rouge">0..*</td>
+<td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Endpoint)</td>
 <td>Technical endpoints providing access to services operated for the location</td>
 <td>This MUST be populated with the invocation details suitable for warm transfer. <br />
@@ -496,8 +496,8 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjU4MjcwNDksLTQ2NjUxMzE4MSwtMj
-EyNDU3Mzg1MiwzMDEzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUy
-NDQzLDE5MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMD
-M4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbMTAxODk2OTYyMSwtMTEyNTgyNzA0OSwtND
+Y2NTEzMTgxLC0yMTI0NTczODUyLDMwMTM1NzIwNSwtNTUxMDM5
+MzU3LC01NzEwNTI0NDMsMTkxNzUyNDAyLDEyNTYyNTgwNzAsMT
+E0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
 -->
