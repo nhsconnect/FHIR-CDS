@@ -793,9 +793,8 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 
 </tr>
 
-  
-
 </table>
+
 
 
 ## Response from DoS
@@ -820,7 +819,7 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MT
-c1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4
-XX0=
+eyJoaXN0b3J5IjpbMzAxMzU3MjA1LC01NTEwMzkzNTcsLTU3MT
+A1MjQ0MywxOTE3NTI0MDIsMTI1NjI1ODA3MCwxMTQ1NDI1ODMs
+MTAzODU5MzE3OF19
 -->
