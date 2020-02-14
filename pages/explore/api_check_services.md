@@ -342,206 +342,105 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td></td>
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">eligibilityNote</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>string</td>
-
 <td>Describes the eligibility conditions for the service</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">programName</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>string</td>
-
 <td>Program Names that categorize the service</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">characteristic</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>CodeableConcept</td>
-
 <td>Collection of characteristics (attributes)</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">referralMethod</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>CodeableConcept</td>
-
 <td>Ways that the service accepts referrals <br />
-
 <a  href="http://hl7.org/fhir/stu3/valueset-service-referral-method.html">ReferralMethod (Example)</a>
-
 </td>
-
 <td>If populated MUST include the current service type</td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">appointmentRequired</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>boolean</td>
-
 <td>If an appointment is required for access to this service</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">availableTime</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>BackboneElement</td>
-
 <td>Times the Service Site is available</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">availableTime.daysOfWeek</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>code</td>
-
 <td>mon | tue | wed | thu | fri | sat | sun <br/>
-
 <a  href="http://hl7.org/fhir/stu3/valueset-days-of-week.html">DaysOfWeek (Required)</a>
-
 </td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">availableTime.allDay</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>boolean</td>
-
 <td>Always available? e.g. 24 hour service</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">availableTime.availableStartTime</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>time</td>
-
 <td>Opening time of day (ignored if allDay = true)</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">availableTime.availableEndTime</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>time</td>
-
 <td>Closing time of day (ignored if allDay = true)</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">notAvailable</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>BackboneElement</td>
-
 <td>Not available during this time due to provided reason</td>
-
 <td></td>
-
 </tr>
-
-  
 
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">notAvailable.description</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>string</td>
-
 <td>Reason presented to the user explaining why time not available</td>
-
 <td></td>
-
 </tr>
-
   
 
 <tr>
@@ -620,7 +519,7 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MzY1ODY2NSwtMjEyNDU3Mzg1MiwzMD
-EzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQw
-MiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbOTE2NTk4ODY1LC0yMTI0NTczODUyLDMwMT
+M1NzIwNSwtNTUxMDM5MzU3LC01NzEwNTI0NDMsMTkxNzUyNDAy
+LDEyNTYyNTgwNzAsMTE0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
 -->
