@@ -10,6 +10,14 @@ summary: Encounter Report implementation guidance
 {% include custom/search.warnbanner.html %}
 
 <style>
+table {
+  width: 100%;
+}
+
+td:nth-child(1), td:nth-child(2) {
+  white-space; nowrap;
+}
+
 td.sub{
     content: '';
     display: block;
@@ -89,7 +97,7 @@ Linked to the triage journey by patient and data.
 |`text`|`0..1`|Narrative|Text summary of the resource, for human interpretation||
 |`contained`|`0..*`|Resource|Contained, inline Resources|This should not be populated|
 |`extension`|`0..*`|Extension|Additional Content defined by implementations||
-|`modifierExtension`|0..*|Extension|Extensions that cannot be ignored||
+|`modifierExtension`|`0..*`|Extension|Extensions that cannot be ignored||
 
 <table style="min-width:100%;width:100%">
 <thead>
