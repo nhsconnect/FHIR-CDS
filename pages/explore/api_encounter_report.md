@@ -158,15 +158,18 @@ Linked to the triage journey by patient and data.
   <td><code class="highlighter-rouge">status</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
-    <td>draft | proposed | active | rejected | inactive | entered-in-error</td>
-    <td>ConsentState (Required)	This will normally be active</td>
+    <td>draft | proposed | active | rejected | inactive | entered-in-error<br>
+    <a href="https://www.hl7.org/fhir/stu3/valueset-consent-state-codes.html">ConsentState (Required)</a></td>
+    <td>
+    This will normally be active</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">category</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
-    <td>Classification of the consent statement - for indexing/retrieval</td>
-    <td>Consent Category Codes (Example)</td>
+    <td>Classification of the consent statement - for indexing/retrieval<br>
+    <a href="https://www.hl7.org/fhir/stu3/valueset-consent-category.html">Consent Category Codes (Example)</a></td>
+    <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">patient</code></td>
@@ -208,7 +211,7 @@ Linked to the triage journey by patient and data.
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>CodeableConcept</td>
     <td>How the actor is involved<br>
-    SecurityRoleType (Extensible)</td>
+    <a href="https://www.hl7.org/fhir/stu3/valueset-security-role-type.html">SecurityRoleType (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -223,7 +226,7 @@ Linked to the triage journey by patient and data.
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Actions controlled by this consent<br>
-Consent Action Codes (Example)</td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-consent-action.html">Consent Action Codes (Example)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -294,7 +297,7 @@ Consent Action Codes (Example)</td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Security Labels that define affected resources<br>
-    All Security Labels (Extensible)</td>
+    <a href="https://www.hl7.org/fhir/stu3/valueset-security-labels.html">All Security Labels (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -302,7 +305,7 @@ Consent Action Codes (Example)</td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Context of activities for which the agreement is made<br>
-    PurposeOfUse (Extensible)</td>
+    <a href="https://www.hl7.org/fhir/stu3/v3/PurposeOfUse/vs.html">PurposeOfUse (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -324,7 +327,7 @@ Consent Action Codes (Example)</td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>instance | related | dependents | authoredby<br>
-ConsentDataMeaning (Required)</td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-consent-data-meaning.html">ConsentDataMeaning (Required)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -346,7 +349,7 @@ ConsentDataMeaning (Required)</td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>deny | permit<br>
-ConsentExceptType (Required)</td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-consent-except-type.html">ConsentExceptType (Required)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -368,7 +371,7 @@ ConsentExceptType (Required)</td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>CodeableConcept</td>
     <td>How the actor is involved<br>
-    SecurityRoleType (Extensible)</td>
+    <a href="https://www.hl7.org/fhir/stu3/valueset-security-role-type.html">SecurityRoleType (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -383,7 +386,7 @@ ConsentExceptType (Required)</td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Actions controlled by this exception<br>
-Consent Action Codes (Example)</td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-consent-action.html">Consent Action Codes (Example)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -391,7 +394,7 @@ Consent Action Codes (Example)</td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Security Labels that define affected resources<br>
-All Security Labels (Extensible)</td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-security-labels.html">All Security Labels (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -399,7 +402,7 @@ All Security Labels (Extensible)</td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Context of activities covered by this exception<br>
-PurposeOfUse (Extensible)</td>
+<a href="https://www.hl7.org/fhir/stu3/v3/PurposeOfUse/vs.html">PurposeOfUse (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -407,7 +410,7 @@ PurposeOfUse (Extensible)</td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>e.g. Resource Type, Profile, or CDA etc<br>
-Consent Content Class (Extensible)</td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-consent-content-class.html">Consent Content Class (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -415,7 +418,7 @@ Consent Content Class (Extensible)</td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>e.g. LOINC or SNOMED CT code, etc in the content<br>
-Consent Content Codes (Example)	 </td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-consent-content-code.html">Consent Content Codes (Example)</a></td>
     <td></td>
 </tr>
 <tr>
@@ -437,7 +440,7 @@ Consent Content Codes (Example)	 </td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>instance | related | dependents | authoredby<br>
-ConsentDataMeaning (Required)</td>
+<a href="https://www.hl7.org/fhir/stu3/valueset-consent-data-meaning.html">ConsentDataMeaning (Required)</a></td>
     <td></td>
 </tr>
 <tr>
