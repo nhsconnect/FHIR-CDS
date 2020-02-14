@@ -80,6 +80,17 @@ Patient consent of different types can be carried in a [Consent](https://www.hl7
 
 Linked to the triage journey by patient and data.
 
+|Name|Cardinality|Type|FHIR Documentation|CDS Implementation Guidance|
+|--- |--- |--- |--- |--- |
+|`id`|`0..1`|id|Logical id of this artifact|Note that this will always be populated except when the resource is being created (initial creation call)|
+|`meta`|`0..1`|Meta|Metadata about the resource||
+|`implicitRules`|`0..1`|uri|A set of rules under which this content was created||
+|`language`|`0..1`|code|Language of the resource content.  Common Languages (Extensible but limited to All Languages)||
+|`text`|`0..1`|Narrative|Text summary of the resource, for human interpretation||
+|`contained`|`0..*`|Resource|Contained, inline Resources|This should not be populated|
+|`extension`|`0..*`|Extension|Additional Content defined by implementations||
+|`modifierExtension`|0..*|Extension|Extensions that cannot be ignored||
+
 <table style="min-width:100%;width:100%">
 <thead>
 <tr>
