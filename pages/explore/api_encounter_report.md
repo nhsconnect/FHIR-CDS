@@ -11,10 +11,15 @@ summary: Encounter Report implementation guidance
 
 <style>
 table {
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
 }
 
-td:nth-child(1), td:nth-child(2) {
+td:nth-child(3) {
+  min-width: 10%;
+}
+
+td code {
   white-space; nowrap;
 }
 
