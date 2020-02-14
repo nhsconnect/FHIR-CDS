@@ -6,26 +6,6 @@ sidebar: ctp_rest_sidebar
 permalink: api_check_services.html
 summary: $check-services implementation guidance 
 ---
-
-
-
----
-
-title: $check-services Implementation Guidance
-
-keywords: checkservices, rest,
-
-tags: [rest,fhir,api]
-
-sidebar: ctp_rest_sidebar
-
-permalink: api_check_services.html
-
-summary: $check-services implementation guidance
-
----
-
-  
   
 
 ## Check Services Interaction ##
@@ -173,5 +153,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
+eyJoaXN0b3J5IjpbMTI1NjI1ODA3MCwxMTQ1NDI1ODMsMTAzOD
+U5MzE3OF19
 -->
