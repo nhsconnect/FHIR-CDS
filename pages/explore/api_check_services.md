@@ -139,6 +139,8 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 ### HealthcareService ###
 
+
+
 <table  style="min-width:100%;width:100%">
 <tr>
 <th  style="width:10%;">Name</th>
@@ -472,7 +474,7 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 
 
 
-## Response from DoS
+## Response from DoS ##
 
   
 
@@ -494,7 +496,8 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NjUxMzE4MSwtMjEyNDU3Mzg1MiwzMD
-EzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQw
-MiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbLTExMjU4MjcwNDksLTQ2NjUxMzE4MSwtMj
+EyNDU3Mzg1MiwzMDEzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUy
+NDQzLDE5MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMD
+M4NTkzMTc4XX0=
 -->
