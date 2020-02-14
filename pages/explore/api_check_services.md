@@ -441,56 +441,31 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Reason presented to the user explaining why time not available</td>
 <td></td>
 </tr>
-  
 
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">notAvailable.during</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Period</td>
-
 <td>Service not availablefrom this date</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">availabilityExceptions</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>string</td>
-
 <td>Description of availability exceptions</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">endpoint</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>Reference(Endpoint)</td>
-
 <td>Technical endpoints providing access to services operated for the location</td>
-
 <td>This MUST be populated with the invocation details suitable for warm transfer. <br />
-
 Ordering of endpoints has meaning and SHOULD be maintained by the end user system when trying to connect
-
 </td>
-
 </tr>
 
 </table>
@@ -519,7 +494,7 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE2NTk4ODY1LC0yMTI0NTczODUyLDMwMT
-M1NzIwNSwtNTUxMDM5MzU3LC01NzEwNTI0NDMsMTkxNzUyNDAy
-LDEyNTYyNTgwNzAsMTE0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
+eyJoaXN0b3J5IjpbLTQ2NjUxMzE4MSwtMjEyNDU3Mzg1MiwzMD
+EzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQw
+MiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
 -->
