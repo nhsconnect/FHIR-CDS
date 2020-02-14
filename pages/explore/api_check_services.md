@@ -15,10 +15,10 @@ This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) perfor
 ## Request Headers ##
 
 The following HTTP request headers are supported for this interaction:
-|Header|Value  |Conformance|
-|--|--|--|
-|`Accept`|The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section.|MAY|
-|Authorization|The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API|MUST|
+| Header               | Value |Conformance |
+|----------------------|-------|-------|
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
+| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MAY |
 
 ## POST Operation
 
@@ -153,6 +153,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1NjI1ODA3MCwxMTQ1NDI1ODMsMTAzOD
-U5MzE3OF19
+eyJoaXN0b3J5IjpbMTkxNzUyNDAyLDEyNTYyNTgwNzAsMTE0NT
+QyNTgzLDEwMzg1OTMxNzhdfQ==
 -->
