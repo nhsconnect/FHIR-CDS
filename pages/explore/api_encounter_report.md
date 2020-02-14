@@ -241,21 +241,21 @@ Consent Action Codes (Example)</td>
     <td>Typically from a QuestionnaireResponse ("Are you happy for your GP to see this call?")</td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">&nbsp;sourceAttachment</code></td>
+  <td class="sub"><code class="highlighter-rouge">sourceAttachment</code></td>
     <td><code class="highlighter-rouge"></code></td>
     <td>Attachment</td>
     <td></td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">&nbsp;sourceIdentifier</code></td>
+  <td class="sub"><code class="highlighter-rouge">sourceIdentifier</code></td>
     <td><code class="highlighter-rouge"></code></td>
     <td>Identifier</td>
     <td></td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">&nbsp;sourceReference</code></td>
+  <td class="sub"><code class="highlighter-rouge">sourceReference</code></td>
     <td><code class="highlighter-rouge"></code></td>
     <td>Reference(Consent | DocumentReference | Contract | QuestionnaireResponse)</td>
     <td></td>
@@ -269,14 +269,14 @@ Consent Action Codes (Example)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">policy.authority</code></td>
+  <td class="sub"><code class="highlighter-rouge">policy.authority</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Enforcement source for policy</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">policy.uri</code></td>
+  <td class="sub"><code class="highlighter-rouge">policy.uri</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Specific policy covered by this consent</td>
@@ -320,7 +320,7 @@ Consent Action Codes (Example)</td>
     <td>The Encounter(s) to which this consent applies</td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">data.meaning</code></td>
+  <td class="sub"><code class="highlighter-rouge">data.meaning</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>instance | related | dependents | authoredby<br>
@@ -328,7 +328,7 @@ ConsentDataMeaning (Required)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">data.reference</code></td>
+  <td class="sub"><code class="highlighter-rouge">data.reference</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference(Any)</td>
     <td>Encounter</td>
@@ -342,7 +342,7 @@ ConsentDataMeaning (Required)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.type</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.type</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>deny | permit<br>
@@ -350,21 +350,21 @@ ConsentExceptType (Required)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.period</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.period</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Period</td>
     <td>Timeframe for this exception</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.actor</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.actor</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Who|what controlled by this exception (or group, by role)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.actor.role</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">except.actor.role</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>CodeableConcept</td>
     <td>How the actor is involved<br>
@@ -372,14 +372,14 @@ ConsentExceptType (Required)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.actor.reference</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">except.actor.reference</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference(Device | Group | CareTeam | Organization | Patient | Practitioner | RelatedPerson)</td>
     <td>Resource for the actor (or group, by role)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.action</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.action</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Actions controlled by this exception<br>
@@ -387,7 +387,7 @@ Consent Action Codes (Example)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.securityLabel</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.securityLabel</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Security Labels that define affected resources<br>
@@ -395,7 +395,7 @@ All Security Labels (Extensible)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.purpose</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.purpose</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Context of activities covered by this exception<br>
@@ -403,7 +403,7 @@ PurposeOfUse (Extensible)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.class</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.class</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>e.g. Resource Type, Profile, or CDA etc<br>
@@ -411,7 +411,7 @@ Consent Content Class (Extensible)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.code</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.code</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>e.g. LOINC or SNOMED CT code, etc in the content<br>
@@ -419,22 +419,21 @@ Consent Content Codes (Example)	 </td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.dataPeriod</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.dataPeriod</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Period</td>
     <td>Timeframe for data controlled by this exception</td>
     <td></td>
 </tr>
-</tr>
 <tr>
-  <td><code class="highlighter-rouge">except.data</code></td>
+  <td class="sub"><code class="highlighter-rouge">except.data</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Data controlled by this exception</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.data.meaning</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">except.data.meaning</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>instance | related | dependents | authoredby<br>
@@ -442,7 +441,7 @@ ConsentDataMeaning (Required)</td>
     <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">except.data.reference</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">except.data.reference</code></td>
     <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference(Any)</td>
     <td>The actual data reference</td>
