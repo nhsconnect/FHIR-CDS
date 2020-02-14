@@ -131,6 +131,8 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 </table>
 
+
+
 ## Resources ##
 
   
@@ -138,86 +140,45 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 ### HealthcareService ###
 
 <table  style="min-width:100%;width:100%">
-
-  
-
 <tr>
-
 <th  style="width:10%;">Name</th>
-
 <th  style="width:10%;">Cardinality</th>
-
 <th  style="width:10%;">Type</th>
-
 <th  style="width:35%;">FHIR Documentation</th>
-
 <th  style="width:35%;">CDS Implementation Guidance</th>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">id</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>id</td>
-
 <td>Logical id of this artifact</td>
-
 <td>Note that this will always be populated except when the resource is being created (initial creation call)
-
 </td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">meta</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>Meta</td>
-
 <td>Metadata about the resource</td>
-
 <td></td>
-
 </tr>
-  
 
 <tr>
-
 <td><code  class="highlighter-rouge">implicitRules</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>uri</td>
-
 <td>A set of rules under which this content was created</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">language</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>code</td>
-
-<td>Language of the resource content. <br/> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td></td>
-
+<td>Language of the resource content. <br/> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 <td></td>
-
 </tr>
 
   
@@ -820,7 +781,7 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjQ1NzM4NTIsMzAxMzU3MjA1LC01NT
-EwMzkzNTcsLTU3MTA1MjQ0MywxOTE3NTI0MDIsMTI1NjI1ODA3
-MCwxMTQ1NDI1ODMsMTAzODU5MzE3OF19
+eyJoaXN0b3J5IjpbMTk4Njk0MTI0NSwtMjEyNDU3Mzg1MiwzMD
+EzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQw
+MiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
 -->
