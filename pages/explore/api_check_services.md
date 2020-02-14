@@ -7,7 +7,7 @@ permalink: api_check_services.html
 summary: $check-services implementation guidance 
 ---
   
-
+{% include custom/search.warnbanner.html %}
 ## Check Services Interaction ##
 
 This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by a Directory of Services (DoS). It is performed at a server level at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can deal with the patient.
@@ -153,6 +153,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNzUyNDAyLDEyNTYyNTgwNzAsMTE0NT
-QyNTgzLDEwMzg1OTMxNzhdfQ==
+eyJoaXN0b3J5IjpbLTU3MTA1MjQ0MywxOTE3NTI0MDIsMTI1Nj
+I1ODA3MCwxMTQ1NDI1ODMsMTAzODU5MzE3OF19
 -->
