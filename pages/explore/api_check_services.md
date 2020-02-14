@@ -37,17 +37,12 @@ This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) perfor
 ## Request Headers ##
 
 The following HTTP request headers are supported for this interaction:
-|HEader|  |
-|--|--|
-|  |  |
+|Header|Value  |Conformance|
+|--|--|--|
+|`Accept`|The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section.|MAY|
+|`Authorization`|
 
-| Header | Value |Conformance |
-
-|----------------------|-------|-------|
-
-| `Accept` | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-
-| `Authorization` | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |
+| `` |  [Security](api_security.html) section. | MUST |
 
   
   
@@ -261,5 +256,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNjQ1MTIxNSwxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbMjAyMDUwNzUwMiwxMDM4NTkzMTc4XX0=
 -->
