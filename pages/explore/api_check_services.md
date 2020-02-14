@@ -32,20 +32,13 @@ summary: $check-services implementation guidance
 
 This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by a Directory of Services (DoS). It is performed at a server level at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can deal with the patient.
 
-  
-
 ## Request Headers ##
 
 The following HTTP request headers are supported for this interaction:
 |Header|Value  |Conformance|
 |--|--|--|
 |`Accept`|The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section.|MAY|
-|`Authorization`|
-
-| `` |  [Security](api_security.html) section. | MUST |
-
-  
-  
+|Authorization|The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API|MUST|
 
 ## POST Operation
 
@@ -72,91 +65,50 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 <!-- Table Header -->
 
 <tr>
-
 <th  style="width:10%;">Name</th>
-
 <th  style="width:5%;">Type</th>
-
 <th  style="width:35%;">Description</th>
-
 <th  style="width:15%;">Conformance</th>
-
 <th  style="width:35%;">Implementation Guidance</th>
-
 </tr>
 
 <!-- Table Body -->
 
 <tr>
-
 <td><code  class="highlighter-rouge">requestId</code></td>
-
 <td>id</td>
-
 <td>An optional client-provided identifier to track the request.</td>
-
 <td>This SHOULD be populated</td>
-
 <td>
-
 Each invocation of the $check-services method MUST use a unique requestId<br/>
-
 The requestId MUST be locally unique
-
 </td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">referralRequest</code></td>
-
 <td>ReferralRequest</td>
-
 <td>
-
 The core of the $check-services operation is based on the outcome ot triage, represented as a chief concern, next activity and acuity. These are all captured in the ReferralRequest, so this resource contains all that is required for the outcome of triage.
-
 </td>
-
 <td>This MUST be populated with the Referral Request the EMS received from the CDSS</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">patient</code></td>
-
 <td>Patient</td>
-
 <td>
-
 There patient for whom the triage took place.<br/>
-
 There are a number of patient elements which are used by some of the directories such as age and gender.
-
 </td>
-
 <td>This MUST be populated</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">location</code></td>
-
 <td>Location</td>
-
 <td>
 
 The location represents the patient's current location.
@@ -256,5 +208,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyMDUwNzUwMiwxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbMTU2NDU0NjAwNiwxMDM4NTkzMTc4XX0=
 -->
