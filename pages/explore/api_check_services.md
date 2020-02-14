@@ -181,154 +181,79 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 <td></td>
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">text</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>Narrative</td>
-
 <td>Text summary of the resource, for human interpretation</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">contained</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>Resource</td>
-
 <td>Contained, inline Resources</td>
-
 <td>This should not be populated</td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>Extension</td>
-
 <td>Additional Content defined by implementations</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">modifierExtension</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>Extension</td>
-
 <td>Extensions that cannot be ignored</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">idenfitier</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>Identifier</td>
-
 <td>External identifiers for this item</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">active</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>boolean</td>
-
 <td>Whether this healthcareservice is in active use</td>
-
 <td>
-
 SHOULD always be <code  class="highlighter-rouge">true</code><br />
-
 When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code>
-
 </td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">providedBy</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>Reference(Organization)</td>
-
 <td>Organization that provides this service</td>
-
 <td>This MUST be populated with a reference to a CareConnectOrganization</td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">category</code></td>
-
 <td><code  class="highlighter-rouge">0..1</td>
-
 <td>CodeableConcept</td>
-
 <td>Broad category of service being performed or delivered <br />
-
 <a  href="http://hl7.org/fhir/stu3/valueset-service-category.html">ServiceCategory (Example)</a></td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">type</code></td>
-
 <td><code  class="highlighter-rouge">0..*</td>
-
 <td>CodeableConcept</td>
-
 <td>Type of service that may be delivered or performed <br />
-
 <a  href="http://hl7.org/fhir/stu3/valueset-service-type.html">ServiceType (Example)</a></td>
 
 <td></td>
@@ -781,7 +706,7 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4Njk0MTI0NSwtMjEyNDU3Mzg1MiwzMD
-EzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQw
-MiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbLTIwNjQwMTk2NDUsLTIxMjQ1NzM4NTIsMz
+AxMzU3MjA1LC01NTEwMzkzNTcsLTU3MTA1MjQ0MywxOTE3NTI0
+MDIsMTI1NjI1ODA3MCwxMTQ1NDI1ODMsMTAzODU5MzE3OF19
 -->
