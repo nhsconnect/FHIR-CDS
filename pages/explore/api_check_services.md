@@ -62,8 +62,6 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 
 <table  style="min-width:100%;width:100%">
 
-<!-- Table Header -->
-
 <tr>
 <th  style="width:10%;">Name</th>
 <th  style="width:5%;">Type</th>
@@ -71,8 +69,6 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 <th  style="width:15%;">Conformance</th>
 <th  style="width:35%;">Implementation Guidance</th>
 </tr>
-
-<!-- Table Body -->
 
 <tr>
 <td><code  class="highlighter-rouge">requestId</code></td>
@@ -110,42 +106,23 @@ There are a number of patient elements which are used by some of the directories
 <td><code  class="highlighter-rouge">location</code></td>
 <td>Location</td>
 <td>
-
 The location represents the patient's current location.
-
 </td>
-
 <td>This COULD be populated</td>
-
 <td></td>
-
 </tr>
-
-  
 
 <tr>
-
 <td><code  class="highlighter-rouge">requester</code></td>
-
 <td>Practitioner | Patient | RelatedPerson</td>
-
 <td>
-
 The person initiating the the $check-services request.
-
 </td>
-
 <td>This COULD be populated</td>
-
 <td>
-
 The <code  class="highlighter-rouge">requester</code> is the user of the EMS. This will typically be a <code  class="highlighter-rouge">Patient</code> or <code  class="highlighter-rouge">RelatedPerson</code> if the EMS is being used by a member of the public (e.g. a patient-facting public internet system) or a <code  class="highlighter-rouge">Practitioner</code> where there has been an <code  class="highlighter-rouge">initiatingOrganisation</code> as part of the triage.
-
 </td>
-
 </tr>
-
-  
 
 </table>
 
@@ -154,32 +131,20 @@ The <code  class="highlighter-rouge">requester</code> is the user of the EMS. Th
 
 ### OUT Parameters ###
 
-  
-
 <table  style="min-width:100%;width:100%">
 
 <tr>
-
 <th  style="width:25%;">Name</th>
-
 <th  style="width:20%;">Type</th>
-
 <th  style="width:40%;">Documentation</th>
-
 </tr>
 
 <tr>
-
 <td><code  class="highlighter-rouge">return</code></td>
-
 <td>Bundle</td>
-
 <td>
-
 The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  class="highlighter-rouge">HealthcareService</code> resources which can deliver the patient's health needs.
-
 </td>
-
 </tr>
 
 </table>
@@ -208,5 +173,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NDU0NjAwNiwxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbMTE0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
 -->
