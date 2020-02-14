@@ -69,7 +69,7 @@ The Encounter Report can be sent on the wire as a single Message, or as a `Bundl
 ### Appointment ###
 Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.
 
-This will be carried in an [Appointment](http://hl7.org/fhir/STU3/Appointment.html)
+This will be carried in ann [Appointment)
 
 | Name |  |  Flags | Card. | Type | Description & Constraint | UEC DI Guidance Notes |
 |--|--|--|--|--|--|--|
@@ -84,17 +84,17 @@ Note that the actual history is collected in a [Bundle](#Bundle), of which the c
 
 The resources presented in the Composition (e.g. Questionnaire, QuestionnaireResponse, ReferralRequest, CarePlan, assertions) will follow the CDS API exactly, so are not re-presented here:
 
-| Name |  |  Flags | Card. | Type | Description & Constraint | UEC DI Guidance Notes |
+| Name |  |  Flags | Card. | Type | Description & Constraint | Card. | Type | Description & Constraint | UEC DI Guidance Notes |
 |--|--|--|--|--|--|--|
 |a|b|c|d|e|f|g|
 
 ### Consent ###
 
-Patient consent of different types can be carried in a [Consent](https://www.hl7.org/fhir/stu3/consent.html) object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
+Patient consent of different types can be carried in a Conseml) object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
 
 Linked to the triage journey by patient and data.
 
-[Common Languages]: http://hl7.org/fhir/stu3/valueset-languages.html
+[Common Languages]:u3/valueset-languages.html
 [ConsentState]: https://www.hl7.org/fhir/stu3/valueset-consent-state-codes.html
 [Consent Category Codes]: https://www.hl7.org/fhir/stu3/valueset-consent-category.html
 
@@ -103,7 +103,7 @@ Linked to the triage journey by patient and data.
 |`id`|`0..1`|id|Logical id of this artifact|Note that this will always be populated except when the resource is being created (initial creation call)|
 |`meta`|`0..1`|Meta|Metadata about the resource||
 |`implicitRules`|`0..1`|uri|A set of rules under which this content was created||
-|`language`|`0..1`|code|Language of the resource content.<br> [Common Languages][] (Extensible but limited to All Languages)||
+|`language`|`0..1`|code|Language of the resource content.<br> [  Common Languages][] (Extensible but limited to All Languages)||
 |`text`|`0..1`|Narrative|Text summary of the resource, for human interpretation||
 |`contained`|`0..*`|Resource|Contained, inline Resources|This should not be populated|
 |`extension`|`0..*`|Extension|Additional Content defined by implementations||
@@ -591,14 +591,14 @@ There will normally (always) be a Task at the end of triage -either for a profes
 
 <!--stackedit_data:
 eyJkaXNjdXNzaW9ucyI6eyJuWnN0WG1EcHVVUEZLUndMIjp7In
-N0YXJ0Ijo0NDAsImVuZCI6ODUzLCJ0ZXh0IjoiVGhlIEVuY291
-bnRlciBoYXMgYSBoaXN0b3J5IG9mIHRoZSB0cmlhZ2Ugam91cm
-5leSBhcyBhICBgQ29tcG9zaXRpb25gL0RvY3VtZW50KOKApiJ9
+RleHQiOiJUaGUgRW5jb3VudGVyIGhhcyBhIGhpc3Rvcnkgb2Yg
+dGhlIHRyaWFnZSBqb3VybmV5IGFzIGEgIGBDb21wb3NpdGlvbm
+AvRG9jdW1lbnQo4oCmIiwic3RhcnQiOjQ0MCwiZW5kIjo4NTN9
 fSwiY29tbWVudHMiOnsiTFJWbFJHWTVhdHhaM1A5QyI6eyJkaX
 NjdXNzaW9uSWQiOiJuWnN0WG1EcHVVUEZLUndMIiwic3ViIjoi
 Z2g6NjA2NTMxMDAiLCJ0ZXh0IjoiTmVlZHMgZGVjaXNpb24gb2
 4gd2hldGhlciBDb21wb3NpdGlvbnMgd2lsbCBiZSBpbmNsdWRl
 ZCIsImNyZWF0ZWQiOjE1ODE2MTE0NTc5NzB9fSwiaGlzdG9yeS
-I6Wy0xMDQ4Nzg2ODYwLDQzMTc4MDk2MiwyOTkyMTUxNTYsLTc0
-ODY4ODg1LC03NDg2ODg4NV19
+I6Wy0xOTE0OTk5MzIwLC0xMDQ4Nzg2ODYwLDQzMTc4MDk2Miwy
+OTkyMTUxNTYsLTc0ODY4ODg1LC03NDg2ODg4NV19
 -->
