@@ -179,128 +179,67 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">physicalType</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>CodeableConcept</td>
-
 <td>Physical form of the location <br /> <a  href="https://www.hl7.org/fhir/STU3/valueset-location-physical-type.html">LocationType (Example)</a></td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">position</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>BackboneElement</td>
-
 <td>The absolute geographic location</td>
-
 <td>This MUST be populated if <code  class="highlighter-rouge">address.postcode</code> is not</td>
-
 </tr>
 
-  
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">position.longitude</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>decimal</td>
-
 <td>Longitude with WGS84 datum</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">position.latitude</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>decimal</td>
-
 <td>Latitude with WGS84 datum</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">position.altitude</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>decimal</td>
-
 <td>Altitude with WGS84 datum</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">managingOrganization</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Reference(Organization)</td>
-
 <td>Organization responsible for provisioning and upkeep</td>
-
 <td></td>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">partOf</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Reference(Location)</td>
-
 <td>Another Location this one is physically part of</td>
-
 <td></td>
-
 </tr>
-
-  
 
 <tr>
-
 <td><code  class="highlighter-rouge">endpoint</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Reference(Endpoint)</td>
-
 <td>Technical endpoints providing access to services operated for the location</td>
-
 <td></td>
-
 </tr>
-
-  
 
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMzMxNDk3N119
+eyJoaXN0b3J5IjpbLTE0MzU0MDY5N119
 -->
