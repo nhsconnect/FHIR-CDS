@@ -34,7 +34,7 @@ The base resource for the Encounter Report is the [Encounter][].
 The `Encounter` has a history of the triage journey as a [Composition][]/Document(s) (linked by `Composition.encounter`). The `Composition`/Document is composed of assertions (normally [Observations][Observation]), [QuestionnaireResponses][QuestionnaireResponse] (which will in turn link to [Questionnaires][Questionnaire]) and [CarePlans][CarePlan] presented during the journey. If the journey concluded with a request for a type of service, this will be part of the `Composition`/Document. The `Encounter` will also link to a [Patient][] (through `Encounter.subject`).
 
 ### Transport ###
-The Encounter Report can be sent on the wire as a single `Bundle` resource. To fetch a complete Encounter report the [Encounter/$uec-report](api_post_uec_report) operation may be used. It can also be composed by the recipient after receiving just the `Encounter`. The server which 'owns' the `Encounter` must also be able to resolve a search request for the `Composition`/Document, `ReferralRequest`, `Observation`, `Condition`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.
+The Encounter Report can be sent on the wire as a single `Bundle` resource. To fetch a complete Encounter report the [Encounter/$uec-report](api_post_uec_report.html) operation may be used. It can also be composed by the recipient after receiving just the `Encounter`. The server which 'owns' the `Encounter` must also be able to resolve a search request for the `Composition`/Document, `ReferralRequest`, `Observation`, `Condition`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.
 
 ### Resources ###
 
