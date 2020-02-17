@@ -9,7 +9,9 @@ summary: Encounter Report implementation guidance
 
 {% include custom/search.warnbanner.html %}
 
-## Structure ##
+position: 
+## Encounter Report: Implementation Guidance
+### Structure ##
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate HealthcareService.
 
 The base resource for the Encounter Report is the `Encounter`.
