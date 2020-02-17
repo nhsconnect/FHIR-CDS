@@ -12,6 +12,8 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 The next version of the CDS API Implemenation Guide will introduce additional guidance and introduce the UEC Encounter Report. It is proposed as a Release Candidate to be published in spring 2020.
 
 ## 1.1.1-alpha ##
+* Evaluate ServiceDefinition interaction page updated, with cardinality of 'inputData' element updated from 0..1 to 0..*.
+* General minor changes to wording and grammar for clarity
 * Added Clinical Safety Case Report and associated Hazard Log
 
 
@@ -122,5 +124,5 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 
 Initial draft of the implementation guide
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgxNzEyNjc3XX0=
+eyJoaXN0b3J5IjpbNDkyMjg4MzgwLDY4MTcxMjY3N119
 -->
