@@ -14,17 +14,17 @@ summary: Encounter Report implementation guidance
 ### Structure
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS
 
-[Encounter]: api_encounter
-[Composition]: api_composition
-[Observation]: api_observation
-[QuestionnaireResponse]: api_questionnaire_response
-[Questionnaire]: api_questionnaire
-[CarePlan]: api_care_plan
-[Patient]: api_patient
-[ReferralRequest]: api_referral_request
-[HealthcareService]: api_healthcare_service
-[Appointment]: api_appointment
-[Task]: api_task
+[Encounter]: api_encounter.html
+[Composition]: api_composition.html
+[Observation]: api_observation.html
+[QuestionnaireResponse]: api_questionnaire_response.html
+[Questionnaire]: api_questionnaire.html
+[CarePlan]: api_care_plan.html
+[Patient]: api_patient.html
+[ReferralRequest]: api_referral_request.html
+[HealthcareService]: api_healthcare_service.html
+[Appointment]: api_appointment.html
+[Task]: api_task.html
 
 The base resource for the Encounter Report is the [Encounter][]. The Encounter has a history of the triage journey as a [Composition][]/Document(s) (linked by Composition.encounter). The Composition/Document is composed of assertions (normally [Observations][Observation]), [QuestionnaireResponses][QuestionnaireResponse] (which will in turn link to [Questionnaires][Questionnaire]) and [CarePlans][CarePlan] presented during the journey. If the journey concluded with a request for a type of service, this will be part of the Composition/Document. The Encounter will also link to a [Patient][] (through Encounter.subject).
 
