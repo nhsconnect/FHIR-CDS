@@ -120,7 +120,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td></td>
 </tr>
 <tr>
-  <td><a href="https://www.hl7.org/fhir/stu3/provenance.html">Provenance</a></td>
+  <td><a href="api_provenance.html">Provenance</a></td>
   <td></td>
   <td></td>
 </tr>
