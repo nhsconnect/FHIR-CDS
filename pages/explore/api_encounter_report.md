@@ -28,7 +28,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 <tr>
 <th>Resource</th>
 <th>Linked by</th>
-<th>Guidance Notes</th>
+<th>Guidance</th>
 </tr>
 </thead>
 <tbody>
@@ -51,9 +51,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><a href="https://hl7.org/fhir/STU3/list.html">List</a></td>
   <td><code>List.<wbr>encounter</code></td>
   <td>
-    <p>
-      Used to represent represent a summary of the triage journey for a patient, including all resources collected during the triage process i.e.:
-    </p>
+    Used to represent represent a summary of the triage journey for a patient, including all resources collected during the triage process i.e.:
     <ul>
     <li>Questionnaire</li>
     <li>QuestionnaireResponse</li>
@@ -63,9 +61,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
     <li>RelatedPerson</li>
     <li>ReferralRequest</li>
     </ul>
-    <p>
-      There may be more than one <code>List</code> per <code>Encounter</code>, for example, where a CDS is managing multiple <code>ServiceDefinition</code> interactions with the EMS for the same patient at the same time.
-    </p>
+    There may be more than one <code>List</code> per <code>Encounter</code>, for example, where a CDS is managing multiple <code>ServiceDefinition</code> interactions with the EMS for the same patient at the same time.
   </td>
 </tr>
 <tr>
@@ -79,12 +75,9 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><a href="api_encounter.html">Encounter</a></td>
   <td></td>
   <td>
-    <p>
-      Used to represent represent a summary of the triage encounter.
-    </p>
-    <p>
-      The patient and practitioner will be CareConnect profiles, and will follow the rules for those profiles
-    </p>
+    Used to represent represent a summary of the triage encounter.
+    <br><br>
+    The patient and practitioner will be CareConnect profiles, and will follow the rules for those profiles
 </td>
 </tr>
 <tr>
@@ -138,12 +131,9 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><a href="api_referral_request.html">ReferralRequest</a></td>
   <td><code>ReferralRequest.<wbr>context</code></td>
   <td>
-  <p>  
     The <code>ReferralRequest</code> at handover contains directions to an actual service to which the patient has been referred.
-  </p>
-  <p>
+    <br><br>
     This will include a specific <code>HealthcareService</code>, and may include an <code>Appointment</code>.
-  </p>
 </td>
 </tr>
 <tr>
@@ -155,12 +145,9 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><a href="https://www.hl7.org/fhir/stu3/task.html">Task</a></td>
   <td><code>Task.<wbr>context</code></td>
   <td>
-    <p> 
       Identifies the next action to be taken, and who is responsible for that action. <code>Tasks</code> belong to the <code>Encounter</code>.
-    </p>
-    <p>
+      <br><br>
       There will normally be a <code>Task</code> at the end of triage - either for a professional, or for the patient, to carry out. The <code>Task</code> will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
-    </p>
   </td>
 </tr>
 </tbody>
