@@ -1,56 +1,30 @@
-
 ---
-
 title: $check-services Implementation Guidance
-
 keywords: checkservices, rest,
-
 tags: [rest,fhir,api]
-
 sidebar: ctp_rest_sidebar
-
 permalink: api_check_services.html
-
-summary: $check-services implementation guidance
-
+summary: $check-services implementation guidance 
 ---
-
-{% include custom/search.warnbanner.html %}
-
-## Check Services Interaction ##
-
   
+{% include custom/search.warnbanner.html %}
+## Check Services Interaction ##
 
 This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by a Directory of Services (DoS). It is performed at a server level at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can deal with the patient.
 
-  
-
 ## Request Headers ##
-
-  
 
 The following HTTP request headers are supported for this interaction:
 
-  
-  
 
-| Header | Value |Conformance |
-
+| Header               | Value |Conformance |
 |----------------------|-------|-------|
-
-| `Accept` | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-
-| `Authorization` | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |
-
-  
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
+| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |  
 
 ## POST Operation
 
-  
-
 The `$check-services` operation is performed by an HTTP POST command as shown:
-
-  
 
   
 
@@ -58,15 +32,9 @@ POST [base]/$check-services
 
   
 
-  
-
 ## Parameters ##
 
-  
-
 The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [Bundle](http://hl7.org/fhir/stu3/bundle.html) of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.
-
-  
 
   
 
@@ -74,38 +42,22 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 
   
 
-  
 
 <table  style="min-width:100%;width:100%">
 
-  
-
 <tr>
-
 <th  style="width:10%;">Name</th>
-
 <th  style="width:5%;">Type</th>
-
 <th  style="width:35%;">Description</th>
-
 <th  style="width:15%;">Conformance</th>
-
 <th  style="width:35%;">Implementation Guidance</th>
-
 </tr>
 
-  
-
 <tr>
-
 <td><code  class="highlighter-rouge">requestId</code></td>
-
 <td>id</td>
-
 <td>An optional client-provided identifier to track the request.</td>
-
 <td>This SHOULD be populated</td>
-
 <td>
 
 Each invocation of the $check-services method MUST use a unique requestId<br/>
@@ -253,109 +205,53 @@ The input parameters for a request, if any. These parameters are defined by the 
   
 
 </table>
-
   
-
   
 
 ### OUT Parameters ###
 
-  
-
 <table  style="min-width:100%;width:100%">
 
-  
-
 <tr>
-
 <th  style="width:25%;">Name</th>
-
 <th  style="width:20%;">Type</th>
-
 <th  style="width:40%;">Documentation</th>
-
-</tr>fdd
-
-  
+</tr>
 
 <tr>
-
 <td><code  class="highlighter-rouge">return</code></td>
-
 <td>Bundle</td>
-
 <td>
-
 The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  class="highlighter-rouge">HealthcareService</code> resources which can deliver the patient's health needs.
-
 </td>
-
 </tr>
-
-  
-
-<tr>
-
-<td><code  class="highlighter-rouge">outputParameters</code></td>
-
-<td>Parameters</td>
-
-<td>The output parameters for a request, if any. These parameters are defined by the target DoS.
-
-</td>
-
-</tr>
-
-  
 
 </table>
 
-  
-  
 
 ## Response from DoS ##
 
   
 
-  
-
 ### Success ###
 
-  
-
 * MUST return a <code  class="highlighter-rouge">200</code> **OK** HTTP status code on successsful execution of the operation.
-
-  
 
 * MUST return a <code  class="highlighter-rouge">Bundle</code> of '0' (zero) or more <code  class="highlighter-rouge">HealthcareService</code> resources.
 
   
 
-* COULD return a <code  class="highlighter-rouge">Parameter</code> of output parameters.
-
-  
-
-  
-
 ### Failure ###
-
-  
 
 The following errors can be triggered when performing this operation:
 
-  
-
 *  [Invalid parameter](api_errorhandling.html#parameters)
-
-  
 
 *  [Timeout](api_errorhandling.html#time-out)
 
-  
-
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NTIzNzE5NiwtMjAwMDUzMDg5MSwxMD
+eyJoaXN0b3J5IjpbLTk0MTUyNDMzNywtMjAwMDUzMDg5MSwxMD
 E4OTY5NjIxLC0xMTI1ODI3MDQ5LC00NjY1MTMxODEsLTIxMjQ1
 NzM4NTIsMzAxMzU3MjA1LC01NTEwMzkzNTcsLTU3MTA1MjQ0My
 wxOTE3NTI0MDIsMTI1NjI1ODA3MCwxMTQ1NDI1ODMsMTAzODU5
