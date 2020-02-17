@@ -9,26 +9,17 @@ summary: Encounter Report implementation guidance
 
 {% include custom/search.warnbanner.html %}
 
-
+position: 
 ## Encounter Report: Implementation Guidance
 ### Structure
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS
 
 [Encounter]: api_encounter.html
-[Composition]: api_composition.html
-[Observation]: api_observation.html
-[QuestionnaireResponse]: api_questionnaire_response.html
-[Questionnaire]: api_questionnaire.html
-[CarePlan]: api_care_plan.html
-[Patient]: api_patient.html
-[ReferralRequest]: api_referral_request.html
-[HealthcareService]: api_healthcare_service.html
-[Appointment]: api_appointment.html
-[Task]: api_task.html
+[Com
 
-The base resource for the Encounter Report is the [Encounter][]. The Encounter has a history of the triage journey as a [Composition][]/Document(s) (linked by Composition.encounter). The Composition/Document is composed of assertions (normally [Observations][Observation]), [QuestionnaireResponses][QuestionnaireResponse] (which will in turn link to [Questionnaires][Questionnaire]) and [CarePlans][CarePlan] presented during the journey. If the journey concluded with a request for a type of service, this will be part of the Composition/Document. The Encounter will also link to a [Patient][] (through Encounter.subject).
+The base resource for the Encounter Report is the [Encounter][]`. The Encounter has a history of the triage journey as a [Composition][]`/Document(s) (linked by Composition.encounter. The Composition/Document is composed of assertions (normally [Observations][Observation]), [QuestionnaireResponses][QuestionnaireResponse] (which will in turn link to [Questionnaires][Questionnaire]) and [CarePlans][CarePlan] presented during the journey. If the journey concluded with a request for a type of service, this will be part of the Composition/Document. The Encounter will also link to a [Patient][] (through Encounter.subject).
 
-The Encounter will also optionally link to [ReferralRequest(s)][ReferralRequest] which models the next service the patient needs. This will include a specific [HealthcareService][], and may include an [Appointment][].
+The Encounter will also optionally link to [ReferralRequest`(s)][ReferralRequest] which models the next service the patient needs. This will include a specific [HealthcareService][], and may include an [Appointment][].
 
 The Encounter will also link to [Task(s)][Task], which identifies the next action to be taken, and who is responsible for that action. Tasks belong to the Encounter. The Task will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
 
@@ -125,12 +116,13 @@ There will normally (always) be a Task at the end of triage -either for a profes
 eyJkaXNjdXNzaW9ucyI6eyJuWnN0WG1EcHVVUEZLUndMIjp7In
 RleHQiOiJUaGUgRW5jb3VudGVyIGhhcyBhIGhpc3Rvcnkgb2Yg
 dGhlIHRyaWFnZSBqb3VybmV5IGFzIGEgIGBDb21wb3NpdGlvbm
-AvRG9jdW1lbnQo4oCmIiwic3RhcnQiOjQ0MCwiZW5kIjo4NTN9
+AvRG9jdW1lbnQo4oCmIiwic3RhcnQiOjQ1MCwiZW5kIjo0ODh9
 fSwiY29tbWVudHMiOnsiTFJWbFJHWTVhdHhaM1A5QyI6eyJkaX
 NjdXNzaW9uSWQiOiJuWnN0WG1EcHVVUEZLUndMIiwic3ViIjoi
 Z2g6NjA2NTMxMDAiLCJ0ZXh0IjoiTmVlZHMgZGVjaXNpb24gb2
 4gd2hldGhlciBDb21wb3NpdGlvbnMgd2lsbCBiZSBpbmNsdWRl
 ZCIsImNyZWF0ZWQiOjE1ODE2MTE0NTc5NzB9fSwiaGlzdG9yeS
-I6Wy0xOTE0OTk5MzIwLC0xMDQ4Nzg2ODYwLDQzMTc4MDk2Miwy
-OTkyMTUxNTYsLTc0ODY4ODg1LC03NDg2ODg4NV19
+I6Wy05MjAzNzc3OTcsLTE5MTQ5OTkzMjAsLTEwNDg3ODY4NjAs
+NDMxNzgwOTYyLDI5OTIxNTE1NiwtNzQ4Njg4ODUsLTc0ODY4OD
+g1XX0=
 -->
