@@ -152,17 +152,14 @@ The input parameters for a request, if any. These parameters are defined by the 
 The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  class="highlighter-rouge">HealthcareService</code> resources which can deliver the patient's health needs.
 </td>
 </tr>
+
 <tr>
-
 <td><code  class="highlighter-rouge">outputParameters</code></td>
-
 <td>Parameters</td>
-
 <td>The output parameters for a request, if any. These parameters are defined by the target DoS.
-
 </td>
-
 </tr>
+
 </table>
 
 
@@ -176,7 +173,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 * MUST return a <code  class="highlighter-rouge">Bundle</code> of '0' (zero) or more <code  class="highlighter-rouge">HealthcareService</code> resources.
 
-  
+* COULD return a <code  class="highlighter-rouge">Parameter</code> of output parameters.
 
 ### Failure ###
 
@@ -188,9 +185,9 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTI5MTEzMzMsLTIwMDA1MzA4OTEsMT
-AxODk2OTYyMSwtMTEyNTgyNzA0OSwtNDY2NTEzMTgxLC0yMTI0
-NTczODUyLDMwMTM1NzIwNSwtNTUxMDM5MzU3LC01NzEwNTI0ND
-MsMTkxNzUyNDAyLDEyNTYyNTgwNzAsMTE0NTQyNTgzLDEwMzg1
-OTMxNzhdfQ==
+eyJoaXN0b3J5IjpbODM0MjY0MDM0LC0yMDAwNTMwODkxLDEwMT
+g5Njk2MjEsLTExMjU4MjcwNDksLTQ2NjUxMzE4MSwtMjEyNDU3
+Mzg1MiwzMDEzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLD
+E5MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkz
+MTc4XX0=
 -->
