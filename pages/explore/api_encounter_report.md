@@ -87,7 +87,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 </tr>
 <tr>
   <td><a href="api_flag.html">Flag</a></td>
-  <td><code>Flag.<wbr>encounter</td>
+  <td><code>Flag.<wbr>encounter</code></td>
   <td></td>
 </tr>
 <tr>
