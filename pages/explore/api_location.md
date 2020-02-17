@@ -3,7 +3,7 @@ title: Location Implementation Guidance
 keywords: location, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_location_service.html
+permalink: api_location.html
 summary: Location resource implementation guidance
 ---
 
@@ -13,7 +13,7 @@ summary: Location resource implementation guidance
 
 ### Usage ###
 
-Within the Clinical Decision Support API implementation, the [Location](http://hl7.org/fhir/stu3/location.html) resource will be used to carry the current location of a patient.
+Within the Clinical Decision Support API implementation, the [Location](http://hl7.org/fhir/stu3/location.html) resource will be used to carry the current location of a patient when calling `$check-services`.
 
 The table below gives implementation guidance in relation to the elements within a `Location`:
 
@@ -241,5 +241,5 @@ The table below gives implementation guidance in relation to the elements within
 
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzU0MDY5N119
+eyJoaXN0b3J5IjpbMTMyNDE0ODcxNCwtMTQzNTQwNjk3XX0=
 -->
