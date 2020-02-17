@@ -42,6 +42,7 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 
   
 
+
 <table  style="min-width:100%;width:100%">
 
 <tr>
@@ -80,7 +81,7 @@ The core of the $check-services operation is based on the outcome ot triage, rep
 There patient for whom the triage took place.<br/>
 There are a number of patient elements which are used by some of the directories such as age and gender.
 </td>
-<td>This MUST be populated</td>
+<td>This MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1">CareConnect-Patient</a></td>
 <td></td>
 </tr>
 
@@ -98,7 +99,7 @@ The location represents the patient's current location.
 <td><code  class="highlighter-rouge">requester</code></td>
 <td>Practitioner | Patient | RelatedPerson</td>
 <td>
-The person initiating the the $check-services request.
+The person initiating the the $check-services request
 </td>
 <td>This COULD be populated</td>
 <td>
@@ -106,8 +107,31 @@ The <code  class="highlighter-rouge">requester</code> is the user of the EMS. Th
 </td>
 </tr>
 
-</table>
+<tr>
+<td><code  class="highlighter-rouge">registeredGP</code></td>
+<td>Organization</td>
+<td>
+The organization representing the registered GP of the patient.
+</td>
+<td>This COULD be populated</td>
+<td>
+Where populated, this MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1">CareConnect-Organization</a> <br />
+Where populated, the Organization MUST specify an <code  class="highlighter-rouge">odsOrganisationCode</code> identifier.
+</td>
+</tr>
 
+<tr>
+<td><code  class="highlighter-rouge">inputParameters</code></td>
+<td>Parameter</td>
+<td>
+The input parameters for a request, if any. These parameters are defined by the target DoS.
+</td>
+<td>This COULD be populated</td>
+<td>
+</td>
+</tr>
+
+</table>
   
   
 
@@ -129,6 +153,13 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 </td>
 </tr>
 
+<tr>
+<td><code  class="highlighter-rouge">outputParameters</code></td>
+<td>Parameters</td>
+<td>The output parameters for a request, if any. These parameters are defined by the target DoS.
+</td>
+</tr>
+
 </table>
 
 
@@ -142,7 +173,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 * MUST return a <code  class="highlighter-rouge">Bundle</code> of '0' (zero) or more <code  class="highlighter-rouge">HealthcareService</code> resources.
 
-  
+* COULD return a <code  class="highlighter-rouge">Parameter</code> of output parameters.
 
 ### Failure ###
 
@@ -154,8 +185,9 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDA1MzA4OTEsMTAxODk2OTYyMSwtMT
-EyNTgyNzA0OSwtNDY2NTEzMTgxLC0yMTI0NTczODUyLDMwMTM1
-NzIwNSwtNTUxMDM5MzU3LC01NzEwNTI0NDMsMTkxNzUyNDAyLD
-EyNTYyNTgwNzAsMTE0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
+eyJoaXN0b3J5IjpbODM0MjY0MDM0LC0yMDAwNTMwODkxLDEwMT
+g5Njk2MjEsLTExMjU4MjcwNDksLTQ2NjUxMzE4MSwtMjEyNDU3
+Mzg1MiwzMDEzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLD
+E5MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkz
+MTc4XX0=
 -->

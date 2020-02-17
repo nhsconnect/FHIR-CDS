@@ -98,17 +98,3 @@ Identifies the next action to be taken, and who is responsible for that action. 
 The [Task](https://www.hl7.org/fhir/stu3/task.html) for the `Encounter` is linked by `Task.context` - the Encounter during which the `Task` originated.
 
 There will normally be a `Task` at the end of triage - either for a professional, or for the patient, to carry out. The `Task` will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
-
-<!--stackedit_data:
-eyJkaXNjdXNzaW9ucyI6eyJuWnN0WG1EcHVVUEZLUndMIjp7In
-RleHQiOiJUaGUgRW5jb3VudGVyIGhhcyBhIGhpc3Rvcnkgb2Yg
-dGhlIHRyaWFnZSBqb3VybmV5IGFzIGEgIGBDb21wb3NpdGlvbm
-AvRG9jdW1lbnQo4oCmIiwic3RhcnQiOjQ0MCwiZW5kIjo4NTN9
-fSwiY29tbWVudHMiOnsiTFJWbFJHWTVhdHhaM1A5QyI6eyJkaX
-NjdXNzaW9uSWQiOiJuWnN0WG1EcHVVUEZLUndMIiwic3ViIjoi
-Z2g6NjA2NTMxMDAiLCJ0ZXh0IjoiTmVlZHMgZGVjaXNpb24gb2
-4gd2hldGhlciBDb21wb3NpdGlvbnMgd2lsbCBiZSBpbmNsdWRl
-ZCIsImNyZWF0ZWQiOjE1ODE2MTE0NTc5NzB9fSwiaGlzdG9yeS
-I6Wy0xOTE0OTk5MzIwLC0xMDQ4Nzg2ODYwLDQzMTc4MDk2Miwy
-OTkyMTUxNTYsLTc0ODY4ODg1LC03NDg2ODg4NV19
--->
