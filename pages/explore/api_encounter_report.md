@@ -94,71 +94,14 @@ Patient consent of different types can be carried in a Conseml) object. This inc
 
 Linked to the triage journey by patient and data.
 
-[Common Languages]:u3/valueset-languages.html
-[ConsentState]: https://www.hl7.org/fhir/stu3/valueset-consent-state-codes.html
-[Consent Category Codes]: https://www.hl7.org/fhir/stu3/valueset-consent-category.html
-
-|Name|Cardinality|Type|FHIR Documentation|CDS Implementation Guidance|
-|--- |--- |--- |--- |--- |
-|`id`|`0..1`|id|Logical id of this artifact|Note that this will always be populated except when the resource is being created (initial creation call)|
-|`meta`|`0..1`|Meta|Metadata about the resource||
-|`implicitRules`|`0..1`|uri|A set of rules under which this content was created||
-|`language`|`0..1`|code|Language of the resource content.<br> [  Common Languages][] (Extensible but limited to All Languages)||
-|`text`|`0..1`|Narrative|Text summary of the resource, for human interpretation||
-|`contained`|`0..*`|Resource|Contained, inline Resources|This should not be populated|
-|`extension`|`0..*`|Extension|Additional Content defined by implementations||
-|`modifierExtension`|`0..*`|Extension|Extensions that cannot be ignored||
-|`identifier`|`0..*`|Identifier|Business Identifier for observation||
-|`status`|`1..1`|code|<span>draft | proposed | active | rejected | inactive | entered-in-error</span><br>    [ConsentState][] (Required)|This will normally be active|
-|`category`|`0..*`|CodeableConcept|Classification of the consent statement - for indexing/retrieval<br>    [Consent Category Codes][] (Example)||
-|`patient`|`1..1`|Reference(Patient)|Who the consent applies to|Patient|
-|`period`|`0..1`|Period|Period that this consent applies||
-|`dateTime`|`0..1`|dateTime|When this Consent was created or indexed||
-|`consentingParty`|`0..*`|Reference(Organization| Patient | Practitioner | RelatedPerson)|Who is agreeing to the policy and exceptions||
-|`actor`|`0..*`|BackboneElement|<span>Who|what controlled by this consent (or group, by role)</span>||
-|`actor.role`|`1..1`|CodeableConcept|How the actor is involved<br>    SecurityRoleType (Extensible)||
-|`actor.reference`|`1..1`|<span>Reference(Device | Group | CareTeam | Organization | Patient | Practitioner | RelatedPerson)</span>|Resource for the actor (or group, by role)||
-|`action`|`0..*`|CodeableConcept|Actions controlled by this consent<br>Consent Action Codes (Example)||
-|`organization`|`0..*`|Custodian of the consent|Provider organisation||
-|`source[x]`|`0..1`||Source from which this consent is taken|Typically from a QuestionnaireResponse ("Are you happy for your GP to see this call?")|
-|`sourceAttachment`||Attachment|||
-|`sourceIdentifier`||Identifier|||
-|`sourceReference`||<span>Reference(Consent | DocumentReference | Contract | QuestionnaireResponse)</span>|||
-|`policy`|`0..*`|BackboneElement|Policies covered by this consent||
-|`policy.authority`|`0..1`|uri|Enforcement source for policy||
-|`policy.uri`|`0..1`|uri|Specific policy covered by this consent||
-|`policyRule`|`0..1`|uri|Policy that this consents to||
-|`securityLabel`|`0..*`|Coding|Security Labels that define affected resources<br>    All Security Labels (Extensible)||
-|`purpose`|`0..*`|Coding|Context of activities for which the agreement is made<br>    PurposeOfUse (Extensible)||
-|`dataPeriod`|`0..1`|Period|Timeframe for data controlled by this consent||
-|`data`|`0..*`|BackboneElement|Data controlled by this consent|The Encounter(s) to which this consent applies|
-|`data.meaning`|`1..1`|code|<span>instance | related | dependents | authoredby</span><br> ConsentDataMeaning (Required)||
-|`data.reference`|`1..1`|Reference(Any)|Encounter||
-|`except`|`0..*`|BackboneElement|Additional rule - addition or removal of permissions||
-|`except.type`|`1..1`|code|deny | permit<br> ConsentExceptType (Required)||
-|`except.period`|`0..1`|Period|Timeframe for this exception||
-|`except.actor`|`0..*`|BackboneElement|<span>Who|what controlled by this exception (or group, by role)</span>||
-|`except.actor.role`|`1..1`|CodeableConcept|How the actor is involved<br>    SecurityRoleType (Extensible)||
-|`except.actor.reference`|`1..1`|<span>Reference(Device | Group | CareTeam | Organization | Patient | Practitioner | RelatedPerson)</span>|Resource for the actor (or group, by role)||
-|`except.action`|`0..*`|CodeableConcept|Actions controlled by this exception<br> Consent Action Codes (Example)||
-|`except.securityLabel`|`0..*`|Coding|Security Labels that define affected resources<br> All Security Labels (Extensible)||
-|`except.purpose`|`0..*`|Coding|Context of activities covered by this exception<br> PurposeOfUse (Extensible)||
-|`except.class`|`0..*`|Coding|e.g. Resource Type, Profile, or CDA etc<br> Consent Content Class (Extensible)||
-|`except.code`|`0..*`|Coding|e.g. LOINC or SNOMED CT code, etc in the content<br> Consent Content Codes (Example)||
-|`except.dataPeriod`|`0..1`|Period|Timeframe for data controlled by this exception||
-|`except.data`|`0..*`|BackboneElement|Data controlled by this exception||
-|`except.data.meaning`|`1..1`|code|<span>instance | related | dependents | authoredby</span><br> ConsentDataMeaning (Required)||
-|`except.data.reference`|`1..1`|Reference(Any)|The actual data reference||
-
-
-<table style="min-width:100%;width:100%">
+<table>
 <thead>
 <tr>
-    <th style="width:10%;">Name</th>
-    <th style="width:5%;">Cardinality</th>
-    <th style="width:10%;">Type</th>
-      <th style="width:38%;">FHIR Documentation</th>
-   <th style="width:37%;">CDS Implementation Guidance</th>
+    <th>Name</th>
+    <th>Cardinality</th>
+    <th>Type</th>
+      <th>FHIR Documentation</th>
+   <th>CDS Implementation Guidance</th>
 </tr>
 </thead>
 <tbody>
