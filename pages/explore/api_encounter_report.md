@@ -23,7 +23,7 @@ The Encounter Report can be sent on the wire as a single `Bundle` resource. To f
 
 The resources presented in the Encounter Report will follow the CDS API exactly, so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:
 
-<table>
+<table style="min-width:100%;width:100%">
 <thead>
 <tr>
 <th>Resource</th>
