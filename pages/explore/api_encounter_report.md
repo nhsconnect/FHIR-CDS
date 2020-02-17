@@ -126,7 +126,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 </tr>
 <tr>
   <td><a href="api_questionnaire.html">Questionnaire</a></td>
-  <td><code>QuestionnaireResponse.<wbr>questionnaire</td>
+  <td><code>QuestionnaireResponse.<wbr>questionnaire</code></td>
   <td></td>
 </tr>
 <tr>
@@ -138,10 +138,12 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><a href="api_referral_request.html">ReferralRequest</a></td>
   <td><code>ReferralRequest.<wbr>context</code></td>
   <td>
-  
-  The <code>ReferralRequest</code> at handover contains directions to an actual service to which the patient has been referred.
-
-  This will include a specific <code>HealthcareService</code>, and may include an <code>Appointment</code>.
+  <p>  
+    The <code>ReferralRequest</code> at handover contains directions to an actual service to which the patient has been referred.
+  </p>
+  <p>
+    This will include a specific <code>HealthcareService</code>, and may include an <code>Appointment</code>.
+  </p>
 </td>
 </tr>
 <tr>
