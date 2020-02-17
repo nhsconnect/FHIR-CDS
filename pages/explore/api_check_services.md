@@ -68,7 +68,7 @@ The requestId MUST be locally unique
 <td><code  class="highlighter-rouge">referralRequest</code></td>
 <td>ReferralRequest</td>
 <td>
-The core of the $check-services operation is based on the outcome ot triage, represented as a chief concern, next activity and acuity. These are all captured in the ReferralRequest, so this resource contains all that is required for the outcome of triage.
+The core of the $check-services operation is based on the outcome of triage, represented as a chief concern, next activity and acuity. These are all captured in the ReferralRequest, so this resource contains all that is required for the outcome of triage.
 </td>
 <td>This MUST be populated with the Referral Request the EMS received from the CDSS</td>
 <td></td>
@@ -78,7 +78,7 @@ The core of the $check-services operation is based on the outcome ot triage, rep
 <td><code  class="highlighter-rouge">patient</code></td>
 <td>Patient</td>
 <td>
-There patient for whom the triage took place.<br/>
+The patient for whom the triage took place.<br/>
 There are a number of patient elements which are used by some of the directories such as age and gender.
 </td>
 <td>This MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1">CareConnect-Patient</a></td>
@@ -185,9 +185,9 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM0MjY0MDM0LC0yMDAwNTMwODkxLDEwMT
-g5Njk2MjEsLTExMjU4MjcwNDksLTQ2NjUxMzE4MSwtMjEyNDU3
-Mzg1MiwzMDEzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLD
-E5MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkz
-MTc4XX0=
+eyJoaXN0b3J5IjpbLTk0MTc3ODM5MywtMjAwMDUzMDg5MSwxMD
+E4OTY5NjIxLC0xMTI1ODI3MDQ5LC00NjY1MTMxODEsLTIxMjQ1
+NzM4NTIsMzAxMzU3MjA1LC01NTEwMzkzNTcsLTU3MTA1MjQ0My
+wxOTE3NTI0MDIsMTI1NjI1ODA3MCwxMTQ1NDI1ODMsMTAzODU5
+MzE3OF19
 -->
