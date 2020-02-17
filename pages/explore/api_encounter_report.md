@@ -51,38 +51,40 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><a href="https://hl7.org/fhir/STU3/list.html">List</a></td>
   <td><code>List.<wbr>encounter</code></td>
   <td>
-
-  Used to represent represent a summary of the triage journey for a patient, including all resources collected during the triage process i.e.:
-
-  - Questionnaire
-  - QuestionnaireResponse
-  - Observation
-  - Condition
-  - Practitioner
-  - RelatedPerson
-  - ReferralRequest
-
-  There may be more than one `List` per `Encounter`, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
+    <p>
+      Used to represent represent a summary of the triage journey for a patient, including all resources collected during the triage process i.e.:
+    </p>
+    <ul>
+    <li>Questionnaire</li>
+    <li>QuestionnaireResponse</li>
+    <li>Observation</li>
+    <li>Condition</li>
+    <li>Practitioner</li>
+    <li>RelatedPerson</li>
+    <li>ReferralRequest</li>
+    </ul>
+    <p>
+      There may be more than one <code>List</code> per <code>Encounter</code>, for example, where a CDS is managing multiple <code>ServiceDefinition</code> interactions with the EMS for the same patient at the same time.
+    </p>
   </td>
 </tr>
 <tr>
   <td><a href="api_consent.html">Consent</a></td>
+  <td>Linked to the triage journey by patient and data.</td>
   <td>
-  Linked to the triage journey by patient and data.</td>
-  <td>
-
-  Patient consent of different types can be carried in a `Consent` object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
-
+   Patient consent of different types can be carried in a <code>Consent</code> object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
   </td>
 </tr>
 <tr>
   <td><a href="api_encounter.html">Encounter</a></td>
   <td></td>
   <td>
-
-  Used to represent represent a summary of the triage encounter.
-
-  The patient and practitioner will be CareConnect profiles, and will follow the rules for those profiles
+    <p>
+      Used to represent represent a summary of the triage encounter.
+    </p>
+    <p>
+      The patient and practitioner will be CareConnect profiles, and will follow the rules for those profiles
+    </p>
 </td>
 </tr>
 <tr>
@@ -93,9 +95,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 <tr>
   <td><a href="https://hl7.org/fhir/STU3/healthcareservice.html">HealthcareService</a></td>
   <td><code>ReferralRequest.<wbr>recipient</code></td>
-  <td>
-  
-  Once a provider organisation is selected from a directory, the instance is populated as a `HealthcareService`</td>
+  <td>Once a provider organisation is selected from a directory, the instance is populated as a <code>HealthcareService</code></td>
 </tr>
 <tr>
   <td><a href="api_observation.html">Observation</a></td>
@@ -139,9 +139,9 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><code>ReferralRequest.<wbr>context</code></td>
   <td>
   
-  The `ReferralRequest` at handover contains directions to an actual service to which the patient has been referred.
+  The <code>ReferralRequest</code> at handover contains directions to an actual service to which the patient has been referred.
 
-  This will include a specific `HealthcareService`, and may include an `Appointment`.
+  This will include a specific <code>HealthcareService</code>, and may include an <code>Appointment</code>.
 </td>
 </tr>
 <tr>
@@ -153,10 +153,13 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td><a href="https://www.hl7.org/fhir/stu3/task.html">Task</a></td>
   <td><code>Task.<wbr>context</code></td>
   <td>
-  
-  Identifies the next action to be taken, and who is responsible for that action. `Tasks` belong to the `Encounter`.
-
-  There will normally be a `Task` at the end of triage - either for a professional, or for the patient, to carry out. The `Task` will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)</td>
+    <p> 
+      Identifies the next action to be taken, and who is responsible for that action. <code>Tasks</code> belong to the <code>Encounter</code>.
+    </p>
+    <p>
+      There will normally be a <code>Task</code> at the end of triage - either for a professional, or for the patient, to carry out. The <code>Task</code> will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
+    </p>
+  </td>
 </tr>
 </tbody>
 </table>
