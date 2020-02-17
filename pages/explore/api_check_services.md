@@ -116,7 +116,7 @@ The organization representing the registered GP of the patient.
 <td>This COULD be populated</td>
 <td>
 Where populated, this MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1">CareConnect-Organization</a> <br />
-Where populated, the Organization MUST specify an <code  class="highlighter-rouge">odsOrganisationCode</code> identifier.
+Where populated, the Organization SHOULD specify an <code  class="highlighter-rouge">odsOrganisationCode</code> identifier.
 </td>
 </tr>
 
@@ -185,9 +185,9 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0MTc3ODM5MywtMjAwMDUzMDg5MSwxMD
-E4OTY5NjIxLC0xMTI1ODI3MDQ5LC00NjY1MTMxODEsLTIxMjQ1
-NzM4NTIsMzAxMzU3MjA1LC01NTEwMzkzNTcsLTU3MTA1MjQ0My
-wxOTE3NTI0MDIsMTI1NjI1ODA3MCwxMTQ1NDI1ODMsMTAzODU5
-MzE3OF19
+eyJoaXN0b3J5IjpbLTE0NTU5MzM4OTEsLTk0MTc3ODM5MywtMj
+AwMDUzMDg5MSwxMDE4OTY5NjIxLC0xMTI1ODI3MDQ5LC00NjY1
+MTMxODEsLTIxMjQ1NzM4NTIsMzAxMzU3MjA1LC01NTEwMzkzNT
+csLTU3MTA1MjQ0MywxOTE3NTI0MDIsMTI1NjI1ODA3MCwxMTQ1
+NDI1ODMsMTAzODU5MzE3OF19
 -->
