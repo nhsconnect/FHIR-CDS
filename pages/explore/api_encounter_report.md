@@ -12,12 +12,14 @@ summary: Encounter Report implementation guidance
 ## Structure ##
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate HealthcareService.
 
-The base resource for the Encounter Report is the `Encounter`.
+The base resource for the Encounter Report is the `Encounter`. The `Encounter` will  link to a `Patient` (through `Encounter.subject`).
 
-The `Encounter` has a history of the triage journey as a `List` (linked by `List.encounter`). The `List` is composed of assertions (normally `Observations`), `QuestionnaireResponses` (which will in turn link to `Questionnaires`) and `CarePlans` presented during the journey. If the journey concluded with a request for a type of service, this will be part of the `List`. The `Encounter` will also link to a `Patient` (through `Encounter.subject`).
+The `Encounter` has a history of the triage journey as a `List` (linked by `List.encounter`). The `List` is composed of assertions (normally `Observations`), `QuestionnaireResponses` (which will in turn link to `Questionnaires`) and `CarePlans` presented during the journey. If the journey concluded with a `ReferralRequest` for a type of service, this will be part of the `List`.
+
+There are a number of supporting resources which are linked from these core resources, or are searchable by encounter ([detailed below](#Resources)). Conceptually, these are all part of the Encounter Report as they may be necessary to interpret the triage journey.
 
 ## Transport ##
-The Encounter Report can be sent on the wire as a single `Bundle` resource. To fetch a complete Encounter Report the [Encounter/$uec-report](api_post_uec_report.html) operation may be used. It can also be composed by the recipient after receiving just the `Encounter`. The server which 'owns' the `Encounter` must also be able to resolve a search request for the `List`, `ReferralRequest`, `Observation`, `Condition`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.
+The Encounter Report can be sent on the wire as a single `Bundle` resource. To fetch a complete Encounter Report the [Encounter/$uec-report](api_post_uec_report.html) operation may be used. It can also be composed by the recipient after receiving just the `Encounter`. The server which 'owns' the `Encounter` must also be able to resolve a search request for the `List`, `ReferralRequest`, `Observation`, `Condition`, `CarPlan`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.
 
 ## Resources ##
 
