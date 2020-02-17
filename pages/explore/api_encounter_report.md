@@ -10,18 +10,18 @@ summary: Encounter Report implementation guidance
 {% include custom/search.warnbanner.html %}
 
 <style>
-table {
+table.spec {
   min-width: 100%;
   max-width: 100%;
 }
 
-td:nth-child(3) {
+table.spec td {
   width: 10%;
   min-width: 10%;
 }
 
-td code {
-  white-space; nowrap;
+table.spec td code {
+  white-space: nowrap;
 }
 
 td.sub{
