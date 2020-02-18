@@ -34,7 +34,7 @@ POST [base]/$isValid
 
 ## Parameters ##
 
-The `$isValid` operation has one IN and one OUT parameter. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [Bundle](http://hl7.org/fhir/stu3/bundle.html) of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.
+The `$isValid` operation has one IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameters to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
   
 
@@ -65,10 +65,10 @@ The requestId MUST be locally unique
 </tr>
 
 <tr>
-<td><code  class="highlighter-rouge">referralRequest</code></td>
-<td>ReferralRequest</td>
+<td><code  class="highlighter-rouge">ODSCode</code></td>
+<td>ODS Code</td>
 <td>
-The core of the $check-services operation is based on the outcome of triage, represented as a chief concern, next activity and acuity. These are all captured in the ReferralRequest, so this resource contains all that is required for the outcome of triage.
+The validity of the CDSS is based on the current patient's registered GP.
 </td>
 <td>This MUST be populated with the Referral Request the EMS received from the CDSS</td>
 <td></td>
@@ -185,5 +185,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc0MDYyMjAxXX0=
+eyJoaXN0b3J5IjpbMTI5NDc3NjQzNV19
 -->
