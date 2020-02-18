@@ -90,23 +90,18 @@ The validity of the CDSS is based on the current patient's registered GP.
 
 <tr>
 <td><code  class="highlighter-rouge">return</code></td>
-<td>Bundle</td>
+<td>boolean</td>
 <td>
-The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  class="highlighter-rouge">HealthcareService</code> resources which can deliver the patient's health needs.
+The output is a boolean - true if the CDSS is valid for this patient at this time, and false if not.
 </td>
 </tr>
 
-<tr>
-<td><code  class="highlighter-rouge">outputParameters</code></td>
-<td>Parameters</td>
-<td>The output parameters for a request, if any. These parameters are defined by the target DoS.
-</td>
-</tr>
+
 
 </table>
 
 
-## Response from DoS ##
+## Response from CDSS##
 
   
 
@@ -114,9 +109,7 @@ The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  c
 
 * MUST return a <code  class="highlighter-rouge">200</code> **OK** HTTP status code on successsful execution of the operation.
 
-* MUST return a <code  class="highlighter-rouge">Bundle</code> of '0' (zero) or more <code  class="highlighter-rouge">HealthcareService</code> resources.
-
-* COULD return a <code  class="highlighter-rouge">Parameter</code> of output parameters.
+* MUST return a <code  class="highlighter-rouge">boolean</code> .
 
 ### Failure ###
 
@@ -128,5 +121,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4NTk4MzQzM119
+eyJoaXN0b3J5IjpbLTk4MjI1NjQ1OV19
 -->
