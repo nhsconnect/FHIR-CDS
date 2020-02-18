@@ -14,7 +14,7 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 ## 1.1.1-alpha ##
 * Evaluate ServiceDefinition interaction page updated, with cardinality of 'inputData' element updated from 0..1 to 0..*.
 * General minor changes to wording and grammar for clarity
-* Added Clinical Safety Case Report and associated Hazard Log
+* Added a release specific addendum to the Clinical Safety Case Report and associated Hazard Log
 
 
 ## 1.1.0-alpha ##
@@ -124,5 +124,6 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 
 Initial draft of the implementation guide
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDkyMjg4MzgwLDY4MTcxMjY3N119
+eyJoaXN0b3J5IjpbMTkxNTI4OTIyMiw0OTIyODgzODAsNjgxNz
+EyNjc3XX0=
 -->
