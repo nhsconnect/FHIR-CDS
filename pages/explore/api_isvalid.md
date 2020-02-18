@@ -10,7 +10,7 @@ summary: $isValid implementation guidance
 {% include custom/search.warnbanner.html %}
 ## isValid Interaction ##
 
-This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at a server level at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can deal with the patient.
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at a server level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
 
 ## Request Headers ##
 
@@ -24,17 +24,17 @@ The following HTTP request headers are supported for this interaction:
 
 ## POST Operation
 
-The `$check-services` operation is performed by an HTTP POST command as shown:
+The `$isValid` operation is performed by an HTTP POST command as shown:
 
   
 
-POST [base]/$check-services
+POST [base]/$isValid
 
   
 
 ## Parameters ##
 
-The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [Bundle](http://hl7.org/fhir/stu3/bundle.html) of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.
+The `$isValid` operation has one IN and one OUT parameter. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [Bundle](http://hl7.org/fhir/stu3/bundle.html) of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.
 
   
 
@@ -185,5 +185,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTYyMjA3MjVdfQ==
+eyJoaXN0b3J5IjpbNDc0MDYyMjAxXX0=
 -->
