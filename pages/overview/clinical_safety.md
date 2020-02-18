@@ -22,4 +22,5 @@ The NHS Digital Clinical Safety Group (CSG) has fully endorsed the clinical safe
 
 You can access the Clinical Safety Case Report and associated Hazard Log below.
 - [CDS API Clinical Safety Case Report](files/Clinical_Safety_Case_Report_-_Clinical_Decision_Support_API_Implementaion_Guide_1.1_v1.0.pdf) 
+- [CDS API Clinical Safety Assessment - Implementation Guide Patch Release 1.1.1](files/Clinical_Safety_Assessment_-_CDS_API_Implementation_Guide_Patch_Release_1.1.1_v1.0.pdf) 
 - [CDS API Clinical Safety Hazard Log](files/CDS_API_Hazard_Log_V1.0.xlsx)

@@ -8,6 +8,8 @@ toc: false
 summary: A brief introduction to the Clinical Decision Support API Implementation Guide
 ---
 
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop to the Clinical Decision Support Implementation Guide. Some areas are being formulated and iterative updates to content will be added on a regular basis." %}
+
 # Introduction #
 
 ## Background ##
