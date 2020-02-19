@@ -200,7 +200,7 @@ This MAY also contain other implementation-specific information about the Health
 
 * MUST return a <code  class="highlighter-rouge">200</code> **OK** HTTP status code on successsful execution of the operation.
 
-* MUST return a <code  class="highlighter-rouge">Parameters</code> of '0' (zero) or more <code  class="highlighter-rouge">HealthcareService</code> resources.
+* MUST return a <code  class="highlighter-rouge">Parameters</code> of '0' (zero) or more parts, where each part represents a <code  class="highlighter-rouge">HealthcareService</code> resource.
 
 * COULD return a <code  class="highlighter-rouge">Parameter</code> of output parameters.
 
@@ -214,9 +214,10 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyNDI3MDQwOCwtMTQ1NTkzMzg5MSwtOT
-QxNzc4MzkzLC0yMDAwNTMwODkxLDEwMTg5Njk2MjEsLTExMjU4
-MjcwNDksLTQ2NjUxMzE4MSwtMjEyNDU3Mzg1MiwzMDEzNTcyMD
-UsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQwMiwxMjU2
-MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbLTIwNzc5MTM5ODgsLTMyNDI3MDQwOCwtMT
+Q1NTkzMzg5MSwtOTQxNzc4MzkzLC0yMDAwNTMwODkxLDEwMTg5
+Njk2MjEsLTExMjU4MjcwNDksLTQ2NjUxMzE4MSwtMjEyNDU3Mz
+g1MiwzMDEzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5
+MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMT
+c4XX0=
 -->
