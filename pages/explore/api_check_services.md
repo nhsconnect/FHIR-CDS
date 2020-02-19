@@ -1,15 +1,16 @@
 ---
-title: heckervicesImntation keywords: checkservices, rest,
+title: $check-services Implementation Guidance
+keywords: checkservices, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_check_services.html
-summary: implementation guidance 
+summary: $check-services implementation guidance 
 ---
   
 {% include custom/search.warnbanner.html %}
 ## Check Services Interaction ##
 
-This is a [FHIR OperatSrturnn](http://hl7.org/fhir/stu3/operations.html) performed by a Directory of Services (DoS). It is performed at a server level at the end of a triage journey with a eureuesthttp:/h.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby serce hic an eal with the patient.
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by a Directory of Services (DoS). It is performed at a server level at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can deal with the patient.
 
 ## Request Headers ##
 
@@ -18,7 +19,7 @@ The following HTTP request headers are supported for this interaction:
 
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
-| `Accept`       Te `Accept` header indicates the format of the response the client is able to understand, this will be one the i inrion/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
 | `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |  
 
 ## POST Operation
@@ -33,7 +34,7 @@ POST [base]/$check-services
 
 ## Parameters ##
 
-The `$check-services` operation ede      aer of parameters. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [ndle](http://hl7.org/3/undle.html) of [HealthcareServitce]hl/hl7.org/fir/rvice.html) resources as the OUT parameter of the operation.
+The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [Bundle](http://hl7.org/fhir/stu3/bundle.html) of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.
 
   
 
@@ -67,7 +68,7 @@ The requestId MUST be locally unique
 <td><code  class="highlighter-rouge">referralRequest</code></td>
 <td>ReferralRequest</td>
 <td>
-The core of the $check-services operation is based on te outcoe rhiae, represented as a chief concern, next activity and acuity. These are all captured  t eeralees so this resource contains all that is required for the outcome of triage.
+The core of the $check-services operation is based on the outcome of triage, represented as a chief concern, next activity and acuity. These are all captured in the ReferralRequest, so this resource contains all that is required for the outcome of triage.
 </td>
 <td>This MUST be populated with the Referral Request the EMS received from the CDSS</td>
 <td></td>
@@ -77,7 +78,7 @@ The core of the $check-services operation is based on te outcoe rhiae, represent
 <td><code  class="highlighter-rouge">patient</code></td>
 <td>Patient</td>
 <td>
-There patient for whom the triage took place.<br/>
+The patient for whom the triage took place.<br/>
 There are a number of patient elements which are used by some of the directories such as age and gender.
 </td>
 <td>This MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1">CareConnect-Patient</a></td>
@@ -140,7 +141,7 @@ The input parameters for a request, if any. These parameters are defined by the 
 <table  style="min-width:100%;width:100%">
 
 <tr>
-<th  style="width:125%;">Name</th>
+<th  style="width:15%;">Name</th>
 <th  style="width:10%;">Cardinality</th>
 <th  style="width:20%;">Type</th>
 <th  style="width:40%;">Documentation</th>
@@ -148,9 +149,9 @@ The input parameters for a request, if any. These parameters are defined by the 
 
 <tr>
 <td><code  class="highlighter-rouge">services</code></td>
-<td><code  class="highlighter-rouge">1..1return</code></td>
+<td><code  class="highlighter-rouge">1..1</code></td>
 
-<td>ParametersBundle</td>
+<td>Parameters</td>
 <td>
 The output is a Parameters of <code  class="highlighter-rouge">HealthcareService</code> resources and related information which can deliver the patient's health needs.
 </td>
@@ -176,7 +177,7 @@ The output is a Parameters of <code  class="highlighter-rouge">HealthcareService
 <td><code  class="highlighter-rouge">1..*</code></td>
 <td>Parameter</td>
 <td>Named parts of this parameter. This MUST contain a parameter named <code  class="highlighter-rouge">service</code> which MUST contain the <code  class="highlighter-rouge">HealthcareService</code> resource. <br />
-This MAY also contain other implementation-specific information about the HealthcareService such as it's distance from the patient's location or capacitybundle of <code  class="highlighter-rouge">0...*</code> <code  class="highlighter-rouge">HealthcareService</code> resources which can deliver the patient's health needs.
+This MAY also contain other implementation-specific information about the HealthcareService such as it's distance from the patient's location or capacity.
 </td>
 </tr>
 
@@ -199,7 +200,7 @@ This MAY also contain other implementation-specific information about the Health
 
 * MUST return a <code  class="highlighter-rouge">200</code> **OK** HTTP status code on successsful execution of the operation.
 
-* MUST return a <code  class="highlighter-rouge">ParametersBundle</code> of '0' (zero) or more parts, where each part represents a <code  class="highlighter-rouge">HealthcareService</code> resources.
+* MUST return a <code  class="highlighter-rouge">Parameters</code> of '0' (zero) or more parts, where each part represents a <code  class="highlighter-rouge">HealthcareService</code> resource.
 
 * COULD return a <code  class="highlighter-rouge">Parameter</code> of output parameters.
 
@@ -213,10 +214,10 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjcwNzEzMjAsLTIwNzc5MTM5ODgsLT
-MyNDI3MDQwOCwtMTQ1NTkzMzg5MSwtOTQxNzc4MzkzLC0yMDAw
-NTMwODkxLDEwMTg5Njk2MjEsLTExMjU4MjcwNDksLTQ2NjUxMz
-E4MSwtMjEyNDU3Mzg1MiwzMDEzNTcyMDUsLTU1MTAzOTM1Nywt
-NTcxMDUyNDQzLDE5MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0Mj
-U4MywxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbLTIwNzc5MTM5ODgsLTMyNDI3MDQwOCwtMT
+Q1NTkzMzg5MSwtOTQxNzc4MzkzLC0yMDAwNTMwODkxLDEwMTg5
+Njk2MjEsLTExMjU4MjcwNDksLTQ2NjUxMzE4MSwtMjEyNDU3Mz
+g1MiwzMDEzNTcyMDUsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5
+MTc1MjQwMiwxMjU2MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMT
+c4XX0=
 -->
