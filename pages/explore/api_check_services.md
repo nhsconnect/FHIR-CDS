@@ -179,26 +179,15 @@ The output is a Parameters of <code  class="highlighter-rouge">HealthcareService
 <td>Named parts of this parameter. This MUST contain a parameter named <code  class="highlighter-rouge">service</code> which MUST contain the <code  class="highlighter-rouge">HealthcareService</code> resource. <br />
 This MAY also contain other implementation-specific information about the HealthcareService such as it's distance from the patient's location or capacity.
 </td>
-
 </tr>
-
-  
 
 <tr>
-
 <td><code  class="highlighter-rouge">outputParameters</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Parameters</td>
-
 <td>The output parameters for a request, if any. These parameters are defined by the target DoS.
-
 </td>
-
 </tr>
-
-  
 
 </table>
 
@@ -211,7 +200,7 @@ This MAY also contain other implementation-specific information about the Health
 
 * MUST return a <code  class="highlighter-rouge">200</code> **OK** HTTP status code on successsful execution of the operation.
 
-* MUST return a <code  class="highlighter-rouge">Bundle</code> of '0' (zero) or more <code  class="highlighter-rouge">HealthcareService</code> resources.
+* MUST return a <code  class="highlighter-rouge">Parameters</code> of '0' (zero) or more <code  class="highlighter-rouge">HealthcareService</code> resources.
 
 * COULD return a <code  class="highlighter-rouge">Parameter</code> of output parameters.
 
@@ -225,9 +214,9 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDU5NzAyNTQsLTE0NTU5MzM4OTEsLT
-k0MTc3ODM5MywtMjAwMDUzMDg5MSwxMDE4OTY5NjIxLC0xMTI1
-ODI3MDQ5LC00NjY1MTMxODEsLTIxMjQ1NzM4NTIsMzAxMzU3Mj
-A1LC01NTEwMzkzNTcsLTU3MTA1MjQ0MywxOTE3NTI0MDIsMTI1
-NjI1ODA3MCwxMTQ1NDI1ODMsMTAzODU5MzE3OF19
+eyJoaXN0b3J5IjpbLTMyNDI3MDQwOCwtMTQ1NTkzMzg5MSwtOT
+QxNzc4MzkzLC0yMDAwNTMwODkxLDEwMTg5Njk2MjEsLTExMjU4
+MjcwNDksLTQ2NjUxMzE4MSwtMjEyNDU3Mzg1MiwzMDEzNTcyMD
+UsLTU1MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQwMiwxMjU2
+MjU4MDcwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
 -->
