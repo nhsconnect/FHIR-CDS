@@ -61,7 +61,7 @@ For further background, refer to principles of [resource identity as described i
 
 
 ### Referenced Resources ###
-Resources will commonly be referred to as part of other resources (e.g. a `GuidanceResponse` may refer to a `Questionnaire`).  FHIR accepts passing of resources either by reference, or by value (by including in a Bundle).  This guide is agnostic about passing references by reference or by value within a Bundle.  FHIR also accepts passing of resource by value as contained resources - this approach is NOT recommended, but is not explicitly excluded.
+Resources will commonly be referred to as part of other resources (e.g. a `GuidanceResponse` may refer to a `Questionnaire`).  FHIR accepts passing of resources either by reference, or by value (by including in a Bundle).  This guide is agnostic about passing resources by reference or by value within a Bundle.  FHIR also accepts passing of resource by value as contained resources - this approach is NOT recommended, but is not explicitly excluded.
 
 The choice of whether to pass resources by reference or by value (as part of Bundle) is left to the provider server.  The consumer MUST be able to accept either.  It will be dependent on the implementation generally as to which option is more appropriate.  In general, passing by value reduces the number of calls between the systems, while passing by reference reduces the size of each communication, and may be more appropriate where resources are referenced in different interactions, but do not change between those interactions (e.g. Questionnaire).
 
@@ -114,3 +114,6 @@ All attributes defined in FHIR have cardinality as part of their definition - a 
 |0:*|Zero to many |Optional|	Repeatable|
 
 Resources created violating the business rules may generate an HTTP 400 Error INVALID_RESOURCE.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTYzNTI2ODYyMV19
+-->

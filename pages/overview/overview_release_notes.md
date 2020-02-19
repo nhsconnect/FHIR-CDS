@@ -11,6 +11,11 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 
 The next version of the CDS API Implemenation Guide will introduce additional guidance and introduce the UEC Encounter Report. It is proposed as a Release Candidate to be published in spring 2020.
 
+## 1.1.1-alpha ##
+* Evaluate ServiceDefinition interaction page updated, with cardinality of 'inputData' element updated from 0..1 to 0..*.
+* General minor changes to wording and grammar for clarity
+* Added a release specific addendum to the Clinical Safety Case Report and associated Hazard Log
+
 
 ## 1.1.0-alpha ##
 *  `ProcedureRequest` Resource has been deprecated
@@ -23,7 +28,6 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 *  Updated valueset text and links on `ReferralRequest` page
 *  Corrected name of `ServiceDefinition.effective` parameter in API general guidance
 *  Updated API general guidance to align errors more closely to an `OperationOutcome`
-*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised SearchParameters
 *  Guidance amended regarding the `ReferralRequest.intent` element
 *  SearchParameters resource page added with examples of `SearchParameter` definitions
 *  `RequestGroup` resouce page added
@@ -119,3 +123,7 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 ## 0.1.0-experimental ##
 
 Initial draft of the implementation guide
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTkxNTI4OTIyMiw0OTIyODgzODAsNjgxNz
+EyNjc3XX0=
+-->
