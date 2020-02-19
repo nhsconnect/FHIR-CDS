@@ -137,28 +137,68 @@ The input parameters for a request, if any. These parameters are defined by the 
 
 ### OUT Parameters ###
 
+
 <table  style="min-width:100%;width:100%">
 
 <tr>
-<th  style="width:25%;">Name</th>
+<th  style="width:15%;">Name</th>
+<th  style="width:10%;">Cardinality</th>
 <th  style="width:20%;">Type</th>
 <th  style="width:40%;">Documentation</th>
 </tr>
 
 <tr>
-<td><code  class="highlighter-rouge">return</code></td>
-<td>Bundle</td>
+<td><code  class="highlighter-rouge">services</code></td>
+<td><code  class="highlighter-rouge">1..1</code></td>
+
+<td>Parameters</td>
 <td>
-The output is a bundle of <code  class="highlighter-rouge">0...*</code> <code  class="highlighter-rouge">HealthcareService</code> resources which can deliver the patient's health needs.
+The output is a Parameters of <code  class="highlighter-rouge">HealthcareService</code> resources and related information which can deliver the patient's health needs.
 </td>
 </tr>
 
 <tr>
-<td><code  class="highlighter-rouge">outputParameters</code></td>
-<td>Parameters</td>
-<td>The output parameters for a request, if any. These parameters are defined by the target DoS.
-</td>
+<td  class="sub"><code  class="highlighter-rouge">services.parameters</code></td>
+<td><code  class="highlighter-rouge">0..*</code></td>
+<td>BackboneElement</td>
+<td>Each healthcare service returned MUST have it's own parameter</td>
 </tr>
+
+<tr>
+<td  class="sub-sub"><code  class="highlighter-rouge">services.parameters.name</code></td>
+<td><code  class="highlighter-rouge">1..1</code></td>
+
+<td>string</td>
+<td>This MUST be populated with the serviceId</td>
+</tr>
+
+<tr>
+<td  class="sub-sub"><code  class="highlighter-rouge">services.parameters.part</code></td>
+<td><code  class="highlighter-rouge">1..*</code></td>
+<td>Parameter</td>
+<td>Named parts of this parameter. This MUST contain a parameter named <code  class="highlighter-rouge">service</code> which MUST contain the <code  class="highlighter-rouge">HealthcareService</code> resource. <br />
+This MAY also contain other implementation-specific information about the HealthcareService such as it's distance from the patient's location or capacity.
+</td>
+
+</tr>
+
+  
+
+<tr>
+
+<td><code  class="highlighter-rouge">outputParameters</code></td>
+
+<td><code  class="highlighter-rouge">0..*</code></td>
+
+<td>Parameters</td>
+
+<td>The output parameters for a request, if any. These parameters are defined by the target DoS.
+
+</td>
+
+</tr>
+
+  
 
 </table>
 
@@ -185,9 +225,9 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTU5MzM4OTEsLTk0MTc3ODM5MywtMj
-AwMDUzMDg5MSwxMDE4OTY5NjIxLC0xMTI1ODI3MDQ5LC00NjY1
-MTMxODEsLTIxMjQ1NzM4NTIsMzAxMzU3MjA1LC01NTEwMzkzNT
-csLTU3MTA1MjQ0MywxOTE3NTI0MDIsMTI1NjI1ODA3MCwxMTQ1
-NDI1ODMsMTAzODU5MzE3OF19
+eyJoaXN0b3J5IjpbLTE3NDU5NzAyNTQsLTE0NTU5MzM4OTEsLT
+k0MTc3ODM5MywtMjAwMDUzMDg5MSwxMDE4OTY5NjIxLC0xMTI1
+ODI3MDQ5LC00NjY1MTMxODEsLTIxMjQ1NzM4NTIsMzAxMzU3Mj
+A1LC01NTEwMzkzNTcsLTU3MTA1MjQ0MywxOTE3NTI0MDIsMTI1
+NjI1ODA3MCwxMTQ1NDI1ODMsMTAzODU5MzE3OF19
 -->
