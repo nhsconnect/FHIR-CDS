@@ -14,9 +14,9 @@ position:
 ### Structure ##
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate HealthcareService.
 
-The base resource for ore thceerice.The `Encounter` will  link to a `Patient` (through `Encounter.subject`).
+e aeourr ore thceerice.The `Encounter` will  link to a `Patient` (through `Encounter.subject`).
 
-[Appointment]: #Appointment
+[Appointment]: Appointment
 [Bundle]: #Bundle
 [CarePlan]: api_care_plan.html
 [Composition]: api_composition.html
@@ -30,16 +30,17 @@ The base resource for ore thceerice.The `Encounter` will  link to a `Patient` (t
 [QuestionnaireResponse]: api_questionnaire_response.html
 [Questionnaire]: api_questionnaire.html
 [ReferralRequest]: api_referral_request.html
-[Task]: #TaskCom  r the Encounter Report is the Encounter][].
+[Task]: #TaskCom  Com
 
-`. The `Encounter` has a history of the triage journey as a `List.encounter`The  is composed of assertions (normally `[Observations`][Observation]), `[QuestionnaireResponses`][QuestionnaireResponse] (which will in turn link to `[Questionnaires`][Questionnaire]) and `[CarePlans`][CarePlan] presented during the journey. If the journey concluded with a `ReferralRrequest` for a type of service, this will be part of the `List`.
+The base resource for the Encounter Report is the Encounter][].
+
+`. The `Encounter` has a history of the triage journey as a `List.encounter`The  is composed of assertions (normally `[Observations`][Observation]), `[QuestionnaireResponses`][QuestionnaireResponse] (which will in turn link to `[Questionnaires`][Questionnaire]) and `[CarePlans`][ent iCarePlan presented during the journey. If the journey concluded with a `ReferralRrequest` for a type of service, this will be part of the `List`.
 
 There are a number of supporting resources which are linked from these core resources, or are searchable by encounter ([detailed below](#Resources)). Conceptually, these are all part of the Encounter Report as they may be necessary to interpret the triage journeyComposition`/Document. The `Encounter` will also link to a [Patient][] (through `Encounter.subject`).
-
 ## Transport `.
 
 #
-The Encounter Report can be sent on the wire as a single `Bundle` resource. To fetch a complete Encounter Report the [Encounter/$uec-report](api_post_uec_report.html) operation may be usedreport. It can also be composed by the recipient after receiving just the `Encounter`. The server which 'owns' the `Encounter` must also be able to resolve a search request for the `List`Composition`/Document, `ReferralRequest`, `Observation`, `Condition`, `CarPlan`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.
+The Encounter Report can be sent on the wire as a single `Bundle` resource. To fetch a complete Encounter Report the [Encounter/$uec-report](api_post_uec_report.html) operation may be usedreport. It can also be composed by the recipient after receiving just the `Encounter`. The server which 'owns' the `Encounter` must also be able to resolve a search request for the `List`Composition`/Document, ReferralRequest`, `Observation`, `Condition`, `CarPlan`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.
 
 ## Resources ##
 
@@ -55,13 +56,13 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 </thead>
 <tbody>
 <tr>
-  <td><a href="https://www.hl7.org/fhir/ST3/ resources collected  the triage process i.e..
+  <td><a /fhir/ST3/ resources collected  the triage process i.e..
   STU3/appointment.html">Appointment</a></td>
   <td><code>Appointment.<wbr>incomingReferral.<wbr>context</code></td>
   <td>Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.</td>
 </tr>
 <tr>
-  <td><a href="api_care_plan.html">CarePlan</a></td>
+  <td><a href="api_care_plan.html)">CarePlan</a></td>
   <td><code>CarePlan.<wbr>context</code></td>
   <td></td>
 </tr>
@@ -72,15 +73,15 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 </tr>
 <tr>
   <td><a href="### Appointment ###
- | UEC DI Guidance Notes |
+ | UEC DI Guidan](http://hition.htmlce Noes |
 |--|--|--|--|--|--|--|
 |
 Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.
 
-This will be carried in an [Appointment](https://www.hl7.org/fhir/STU3/list.html">List</a></td>
+This will be carried in an [Appointmol">List</a></td>
   <td><code>List.<wbr>encounter</code></td>
   <td>
-    Used to represent represent a summary of the triage journey for a patient, including allappointment.html)
+    Used to represent represent a summary of the triage journey for a pati[Composition][]`/Document(s) (linked by Composition.encounter. The Composition/Document, including allappointment.html)
 
 ### Bundle ###
 Used to define a "document" that represents a triage journey, this document holds a bundle of resources that are collected duringthroughout the triage process i.e.:
@@ -107,7 +108,7 @@ Used to define a "document" that represents a triage journey, this document hold
   </td>
 </tr>
 <tr>
-  <td><a href="api_encounter.html">Encounter</a></td>
+  <td><a href="api_encounter">Encounter</a></td>
   <td></td>
   <td>
     Used to represent represent a summary of the triage encounter.
@@ -121,7 +122,7 @@ Used to define a "document" that represents a triage journey, this document hold
   <td></td>
 </tr>
 <tr>
-  <td><a href="https://hl7.org/fhir/STU3/healthcareservice.html">HealthcareService</a></td>
+  <td><a hir/STU3/healthcareservice.html">HealthcareService</a></td>
   <td><code>ReferralRequest.<wbr>recipient</code></td>
   <td>Once a provider organisation is selected from a directory, the instance is populated as a <code>HealthcareService</code></td>
 </tr>
@@ -131,12 +132,12 @@ Used to define a "document" that represents a triage journey, this document hold
   <td></td>
 </tr>
 <tr>
-  <td><a href="https://hl7.org/fhir/stu3/organization.html">Organization</a></td>
+  <td><a href="/stu3/organization.html">Organization</a></td>
   <td><code>Patient.<wbr>generalPractitioner</code></td>
   <td></td>
 </tr>
 <tr>
-  <td><a href="https://hl7.org/fhir/stu3/patient.html">Patient</a></td>
+  <td><a hu3/patient.html">Patient</a></td>
   <td><code>Encounter.<wbr>subject</code></td>
   <td></td>
 </tr>
@@ -177,7 +178,7 @@ Used to define a "document" that represents a triage journey, this document hold
   <td></td>
 </tr>
 <tr>
-  <td><a href="https://www.hl7.org/fhir/stu3/task.html">Task</a></td>
+  <td><alhtml">Task</a></td>
   <td><code>Task.<wbr>context</code></td>
   <td>
       Identifies the next action to be taken, and who is responsible for that action. <code>Tasks</code> belong to the <code>Encounter</code>.
@@ -190,26 +191,28 @@ Used to define a "document" that represents a triage journey, this document hold
 ### Structure ###
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS
 
-The base resource for the Encounter Report is the `Encounter`. The Encounter has a history of the triage journey as a  `Composition`/Document(s) (linked by Composition.encounter). The Composition/Document is composed of assertions (normally Observations), QuestionnaireResponses (which will in turn link to Questionnaires) and CarePlans presented during the journey. If the journey concluded with a request for a type of service, this will be part of the Composition/Document. The Encounter will also link to a Patient (through Encounter.subject).
+The base resource for the Encounter Report is the `Encounter`. The Encounter has a history of the triage journey as a  `Composition`/Document(s) (linked by Composition.encounter). The Composition/Document is composed of assertions (normally Observations), QuestionnaireResponses (which will in turn link to Questionnaires) and s composed of assertions (normally [Observations][Observation]), [QuestionnaireResponses][QuestionnaireResponse] (which will in turn link to [Questionnaires][Questionnaire]) and [CarePlans][CarePlans] presented during the journey. If the journey concluded with a request for a type of service, this will be part of the Composition/Document. The Encounter will also link to a [Patient][] (through Encounter.subject).
 
-The Encounter will also optionally link to `ReferralRequest`(s) which models the next service the patient needs. This will include a specific `HealthcareService`, and may include an `Appointment`.
+The Encounter will also optionally link to `[ReferralRequest`(s)][ReferralRequest] which models the next service the patient needs. This will include a specific `[HealthcareService`][], and may include an `[Appointment`][].
 
-The Encounter will also link to `Task`(s), which identifies the next action to be taken, and who is responsible for that action. Tasks belong to the Encounter. The Task will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
+The Encounter will also link to `[Task`(s)][Task], which identifies the next action to be taken, and who is responsible for that action. Tasks belong to the Encounter. The Task will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)
+
 ### Transport ###
-The Encounter Report can be sent on the wire as a single Message, or as a `Bundle`. It can also be composed by the recipient after receiving just the Encounter. The server which 'owns' the Encounter must also be able to resolve a search request for the Composition/Document, ReferralRequest or Task, based on the Encounter identifier.
+The Encounter Report can be sent on the wire as a single Message, or as a `Bundle`. It can also be composed by the recipient after receiving just the Encounter. The server which 'owns' the Encounter must also be able to resolve a search request for the Composition/Document, ReferralRequest, Flag or Task, based on the Encounter identifier.
 
 ### Appointment ###
 Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.
 
-This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.html](http://hl7.org/fhir/STU3/Appointment.html "http://hl7.org/fhir/stu3/appointment.html"))
-| [Name](https://www.hl7.org/fhir/stu3/formats.html#table) |  |  **[Flags](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Card.](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Type](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Description & Constraint](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | UEC DI Guidance Notes |
+This will be carried in a Appointment ([http://hl7.org/fhir/STU3/Appointment.html](http://hl7.org/fhir/STU3/Appointment.html "http://hl7.org/fhir/stu3/appointment.html")nn [Appointment)
+
+| Name |  |  Flagsfhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Card.](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Type](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Description & Constraint](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | Card. | Type | Description & Constraint | UEC DI Guidance Notes |
 |--|--|--|--|--|--|--|
-||||||||
+|||||||a|b|c|d|e|f|g|
 
 ### Composition ###
 Used to represent represent a summary of the triage journey for a patient.
 
-This will be carried in a Composition ([http://hl7.org/fhir/STU3/Composition.html](http://hl7.org/fhir/STU3/Composition.html "http://hl7.org/fhir/stu3/composition.html")). Note that the actual history is collected in a [Bundle](https://confluence.digital.nhs.uk/display/TOM/Bundle "https://confluence.digital.nhs.uk/display/tom/bundle"), of which the composition is the first element. The composition associated with an encounter is linked through the Composition.encounter. The Encounter resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
+This will be carried in a Composition ([http://hl7.org/fhir/STU3/[Composition.html](http://hl7.org/fhir/STU3/Composition.html "http://hl7.org/fhir/stu3/composition.html")). Note that the actual history is collected in a [Bundle](https://confluence.digital.nhs.uk/display/TOM/Bundle "https://confluence.digital.nhs.uk/display/tom/bundle"), of which the composition is the first element. The composition associated with an encounter is linked through the Composition.encounter. The Encounter resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
 
 The resources presented in the Composition (e.g. Questionnaire, QuestionnaireResponse, ReferralRequest, CarePlan, assertions) will follow the CDS API exactly, so are not re-presented here:
 | [Name](https://www.hl7.org/fhir/stu3/formats.html#table) |  |  **[Flags](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Card.](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Type](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Description & Constraint](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | UEC DI Guidance Notes |
@@ -237,7 +240,7 @@ Used to represent represent a summary of the triage journey for a patient.
 
 This will be carried in a [Composition](http://hl7.org/fhir/STU3/Composition.html).
 
-Note that the actual history is collected in a [Bundle][], of which the composition is the first element. The composition associated with an encounter is linked through the Composition.encounter. The Encounter resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
+Note that the actual history is collected in a [Bundle](#Bundle][]), of which the composition is the first element. The composition associated with an encounter is linked through the Composition.encounter. The Encounter resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
 
 ### Consent ###
 Patient consent of different types can be carried in a [Consent][] object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
@@ -314,10 +317,10 @@ The patient and practitioner will be CareConnect profiles, and will follow the r
 ||||||||a|b|c|d|e|f|g|
 
 ### ReferralRequest ###
-The ReferralRequest ([https://www.hl7.org/fhir/stu3/referralrequest.html](https://www.hl7.org/fhir/stu3/referralrequest.html "https://www.hl7.org/fhir/stu3/referralrequest.html")) at handover contains directions to an actual service to which the patient has been referred.
+The [ReferralRequest ([https://www.hl7.org/fhir/stu3/referralrequest.html](https://www.hl7.org/fhir/stu3/referralrequest.html "https://www.hl7.org/fhir/stu3/referralrequest.html")) at handover contains directions to an actual service to which the patient has been referred.
 | [Name](https://www.hl7.org/fhir/stu3/formats.html#table) |  |  **[Flags](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Card.](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Type](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")** | **[Description & Constraint](https://www.hl7.org/fhir/stu3/formats.html#table "https://www.hl7.org/fhir/stu3/formats.html#table")**[ReferralRequest](so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:
 
-https://wl7.org/fhir/stu3/referralrequest.html) at handover contains directions to an actual service to which the patient has been referred.
+https://w](https://www.hl7.org/fhir/stu3/referralrequest.html) at handover contains directions to an actual service to which the patient has been referred.
 
 | Name |  |  Flags | Card. | Type | Description & Constraint | UEC DI Guidance Notes |
 |--|--|--|--|--|--|--|
@@ -360,6 +363,6 @@ There will normally (always) be a `Task` at the end of triage - either for a pro
 ||||||||a|b|c|d|e|f|g|
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODE2OTkxMTYsMjc5OTI5Mjc4LDIxMz
-kxODgwMjFdfQ==
+eyJoaXN0b3J5IjpbMTc2NTE1MzY2NCwtMTY4MTY5OTExNiwyNz
+k5MjkyNzgsMjEzOTE4ODAyMV19
 -->
