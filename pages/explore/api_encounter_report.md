@@ -3,7 +3,7 @@ title: Encounter Report Implementation Guidance
 keywords: encounterreport, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: a(linked by pi_encounter_report.html
+permalink: api_encounter_report.html
 summary: Encounter Report implementation guidance 
 ---
 
@@ -360,5 +360,6 @@ There will normally (always) be a `Task` at the end of triage - either for a pro
 ||||||||a|b|c|d|e|f|g|
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc5OTI5Mjc4LDIxMzkxODgwMjFdfQ==
+eyJoaXN0b3J5IjpbLTE2ODE2OTkxMTYsMjc5OTI5Mjc4LDIxMz
+kxODgwMjFdfQ==
 -->
