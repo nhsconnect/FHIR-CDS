@@ -3,7 +3,7 @@ title: $isValid Implementation Guidance
 keywords: isvalid, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_check_services.html
+permalink: api_isvalid.html
 summary: $isValid implementation guidance 
 ---
   
@@ -121,5 +121,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MjI1NjQ1OV19
+eyJoaXN0b3J5IjpbMTM0MzY2MjMxNCwtOTgyMjU2NDU5XX0=
 -->
