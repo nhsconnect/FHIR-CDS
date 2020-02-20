@@ -22,7 +22,7 @@ The Encounter Report can be sent on the wire as a single `Parameters` resource. 
 An Encounter Report can also be composed by the recipient after receiving just the `Encounter`. The server which 'owns' the `Encounter` must also be able to resolve a search request for the `List`, `ReferralRequest`, `Observation`, `Condition`, `CarPlan`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.    
     
 ## Resources ##    
- The resources presented in the Encounter Report will follow the CDS API exactly, so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:    
+The resources presented in the Encounter Report will follow the CDS API exactly, so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:    
     
 <table style="min-width:100%;width:100%">    
 <thead>    
@@ -154,7 +154,7 @@ An Encounter Report can also be composed by the recipient after receiving just t
 </tbody>    
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2MTc1NTQxLC0xNzAzMzcwMTYxLC0yND
-YwMTI3NjAsMTc2NTE1MzY2NCwtMTY4MTY5OTExNiwyNzk5Mjky
-NzgsMjEzOTE4ODAyMV19
+eyJoaXN0b3J5IjpbMTQzODEzMDc4OSwtMTcwMzM3MDE2MSwtMj
+Q2MDEyNzYwLDE3NjUxNTM2NjQsLTE2ODE2OTkxMTYsMjc5OTI5
+Mjc4LDIxMzkxODgwMjFdfQ==
 -->
