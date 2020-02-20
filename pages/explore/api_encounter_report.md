@@ -1,6 +1,6 @@
-
-  
---- title: Encounter Report Implementation Guidance    
+ 
+---
+title: Encounter Report Implementation Guidance    
 keywords: encounterreport, rest,    
 tags: [rest,fhir,api] sidebar: ctp_rest_sidebar    
 permalink: api_encounter_report.html    
@@ -154,7 +154,7 @@ An Encounter Report can also be composed by the recipient after receiving just t
 </tbody>    
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDMzNzAxNjEsLTI0NjAxMjc2MCwxNz
-Y1MTUzNjY0LC0xNjgxNjk5MTE2LDI3OTkyOTI3OCwyMTM5MTg4
-MDIxXX0=
+eyJoaXN0b3J5IjpbMzY3NDc5ODAxLC0xNzAzMzcwMTYxLC0yND
+YwMTI3NjAsMTc2NTE1MzY2NCwtMTY4MTY5OTExNiwyNzk5Mjky
+NzgsMjEzOTE4ODAyMV19
 -->
