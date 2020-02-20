@@ -92,7 +92,7 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">active</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>boolean</td>
-<td>Whether this healthcareservice is in active use</td>
+<td>Whether this HealthcareService is in active use</td>
 <td>
 SHOULD always be <code  class="highlighter-rouge">true</code><br />
 When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code>
@@ -176,7 +176,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td><code  class="highlighter-rouge">coverageArea</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Location)</td>
-<td>Location(s) service is inteded for/available to</td>
+<td>Location(s) service is intended for/available to</td>
 <td></td>
 </tr>
 <tr>
@@ -287,7 +287,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td  class="sub"><code  class="highlighter-rouge">notAvailable.during</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Period</td>
-<td>Service not availablefrom this date</td>
+<td>Service not available from this date</td>
 <td></td>
 </tr>
 <tr>
@@ -309,5 +309,6 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU1MDgzNjE0LDUxNTcwNDAzMl19
+eyJoaXN0b3J5IjpbNzYzMDMyNzMwLDU1NTA4MzYxNCw1MTU3MD
+QwMzJdfQ==
 -->
