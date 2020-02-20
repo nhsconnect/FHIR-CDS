@@ -24,7 +24,6 @@ The table below gives implementation guidance in relation to the elements within
 <th  style="width:35%;">FHIR Documentation</th>
 <th  style="width:35%;">CDS Implementation Guidance</th>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">id</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -33,7 +32,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>Note that this will always be populated except when the resource is being created (initial creation call)
 </td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">meta</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -41,7 +39,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>Metadata about the resource</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">implicitRules</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -49,7 +46,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>A set of rules under which this content was created</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">language</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -57,7 +53,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>Language of the resource content. <br/> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">text</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -65,7 +60,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>Text summary of the resource, for human interpretation</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">contained</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -73,7 +67,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>Contained, inline Resources</td>
 <td>This should not be populated</td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">extension</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -81,7 +74,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>Additional Content defined by implementations</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">modifierExtension</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -317,5 +309,5 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTk3MDE4ODYsNTE1NzA0MDMyXX0=
+eyJoaXN0b3J5IjpbNTU1MDgzNjE0LDUxNTcwNDAzMl19
 -->
