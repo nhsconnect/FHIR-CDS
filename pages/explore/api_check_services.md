@@ -38,11 +38,7 @@ The `$check-services` operation has a number of parameters. The EMS will select 
     
   
 ### IN Parameters ##  
-  
-    
-  
 <table  style="min-width:100%;width:100%">  
-  
 <tr>  
 <th  style="width:10%;">Name</th>  
 <th  style="width:5%;">Type</th>  
@@ -50,7 +46,6 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 <th  style="width:15%;">Conformance</th>  
 <th  style="width:35%;">Implementation Guidance</th>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">requestId</code></td>  
 <td>id</td>  
@@ -61,7 +56,6 @@ Each invocation of the $check-services method MUST use a unique requestId<br/>
 The requestId MUST be locally unique  
 </td>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">referralRequest</code></td>  
 <td>ReferralRequest</td>  
@@ -71,7 +65,6 @@ The core of the $check-services operation is based on the outcome of triage, rep
 <td>This MUST be populated with the Referral Request the EMS received from the CDSS</td>  
 <td></td>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">patient</code></td>  
 <td>Patient</td>  
@@ -82,7 +75,6 @@ There are a number of patient elements which are used by some of the directories
 <td>This MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1">CareConnect-Patient</a></td>  
 <td></td>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">location</code></td>  
 <td>Location</td>  
@@ -92,7 +84,6 @@ The location represents the patient's current location.
 <td>This COULD be populated</td>  
 <td></td>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">requester</code></td>  
 <td>Practitioner | Patient | RelatedPerson</td>  
@@ -104,7 +95,6 @@ The person initiating the the $check-services request
 The <code  class="highlighter-rouge">requester</code> is the user of the EMS. This will typically be a <code  class="highlighter-rouge">Patient</code> or <code  class="highlighter-rouge">RelatedPerson</code> if the EMS is being used by a member of the public (e.g. a patient-facting public internet system) or a <code  class="highlighter-rouge">Practitioner</code> where there has been an <code  class="highlighter-rouge">initiatingOrganisation</code> as part of the triage.  
 </td>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">registeredGP</code></td>  
 <td>Organization</td>  
@@ -117,7 +107,6 @@ Where populated, this MUST be populated with a <a  href="https://fhir.hl7.org.uk
 Where populated, the Organization SHOULDMUST specify an <code  class="highlighter-rouge">odsOrganisationCode</code> identifier.  
 </td>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">inputParameters</code></td>  
 <td>Parameter</td>  
@@ -128,48 +117,36 @@ The input parameters for a request, if any. These parameters are defined by the 
 <td>  
 </td>  
 </tr>  
-  
-</table>  
-    
-    
+</table>
   
 ### OUT Parameters ###  
-  
-  
 <table  style="min-width:100%;width:100%">  
-  
 <tr>  
 <th  style="width:15%;">Name</th>  
 <th  style="width:10%;">Cardinality</th>  
 <th  style="width:20%;">Type</th>  
 <th  style="width:40%;">Documentation</th>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">services</code></td>  
 <td><code  class="highlighter-rouge">1..1</code></td>  
-  
 <td>Parameters</td>  
 <td>  
 The output is a Parameters of <code  class="highlighter-rouge">HealthcareService</code> resources and related information which can deliver the patient's health needs.  
 </td>  
 </tr>  
-  
 <tr>  
 <td  class="sub"><code  class="highlighter-rouge">services.parameters</code></td>  
 <td><code  class="highlighter-rouge">0..*</code></td>  
 <td>BackboneElement</td>  
 <td>Each healthcare service returned MUST have it's own parameter</td>  
 </tr>  
-  
 <tr>  
 <td  class="sub-sub"><code  class="highlighter-rouge">services.parameters.name</code></td>  
 <td><code  class="highlighter-rouge">1..1</code></td>  
-  
 <td>string</td>  
 <td>This MUST be populated with the serviceId</td>  
 </tr>  
-  
 <tr>  
 <td  class="sub-sub"><code  class="highlighter-rouge">services.parameters.part</code></td>  
 <td><code  class="highlighter-rouge">1..*</code></td>  
@@ -178,7 +155,6 @@ The output is a Parameters of <code  class="highlighter-rouge">HealthcareService
 This MAY also contain other implementation-specific information about the HealthcareService such as it's distance from the patient's location or capacity.  
 </td>  
 </tr>  
-  
 <tr>  
 <td><code  class="highlighter-rouge">outputParameters</code></td>  
 <td><code  class="highlighter-rouge">0..*</code></td>  
@@ -186,13 +162,10 @@ This MAY also contain other implementation-specific information about the Health
 <td>The output parameters for a request, if any. These parameters are defined by the target DoS.  
 </td>  
 </tr>  
-  
 </table>  
-  
-  
+
 ## Response from DoS ##  
-  
-    
+      
 ### Success ###  
   
 * MUST return a <code  class="highlighter-rouge">200</code> **OK** HTTP status code on successsful execution of the operation.  
@@ -212,10 +185,11 @@ The following errors can be triggered when performing this operation:
 * [Authorization failure](api_errorhandling.html)  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0NTIyMzQ5MywxMTMxMTIwNDgsLTIwNz
-c5MTM5ODgsLTMyNDI3MDQwOCwtMTQ1NTkzMzg5MSwtOTQxNzc4
-MzkzLC0yMDAwNTMwODkxLDEwMTg5Njk2MjEsLTExMjU4MjcwND
-ksLTQ2NjUxMzE4MSwtMjEyNDU3Mzg1MiwzMDEzNTcyMDUsLTU1
-MTAzOTM1NywtNTcxMDUyNDQzLDE5MTc1MjQwMiwxMjU2MjU4MD
-cwLDExNDU0MjU4MywxMDM4NTkzMTc4XX0=
+eyJoaXN0b3J5IjpbMTM4MjQ3MDg0MSwtNTQ1MjIzNDkzLDExMz
+ExMjA0OCwtMjA3NzkxMzk4OCwtMzI0MjcwNDA4LC0xNDU1OTMz
+ODkxLC05NDE3NzgzOTMsLTIwMDA1MzA4OTEsMTAxODk2OTYyMS
+wtMTEyNTgyNzA0OSwtNDY2NTEzMTgxLC0yMTI0NTczODUyLDMw
+MTM1NzIwNSwtNTUxMDM5MzU3LC01NzEwNTI0NDMsMTkxNzUyND
+AyLDEyNTYyNTgwNzAsMTE0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
+
 -->
