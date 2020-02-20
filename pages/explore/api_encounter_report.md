@@ -1,12 +1,12 @@
- 
 ---
-title: Encounter Report Implementation Guidance    
-keywords: encounterreport, rest,    
-tags: [rest,fhir,api] sidebar: ctp_rest_sidebar    
-permalink: api_encounter_report.html    
+title: Encounter Report Implementation Guidance
+keywords: encounterreport, rest,
+tags: [rest,fhir,api] sidebar: ctp_rest_sidebar
+permalink: api_encounter_report.html
 summary: Encounter Report implementation guidance     
----    
- {% include custom/search.warnbanner.html %}    
+---
+
+{% include custom/search.warnbanner.html %}    
     
 ## Structure ## When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate HealthcareService.    
     
@@ -154,7 +154,7 @@ An Encounter Report can also be composed by the recipient after receiving just t
 </tbody>    
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY3NDc5ODAxLC0xNzAzMzcwMTYxLC0yND
+eyJoaXN0b3J5IjpbLTI2MTc1NTQxLC0xNzAzMzcwMTYxLC0yND
 YwMTI3NjAsMTc2NTE1MzY2NCwtMTY4MTY5OTExNiwyNzk5Mjky
 NzgsMjEzOTE4ODAyMV19
 -->
