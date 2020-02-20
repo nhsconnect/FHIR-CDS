@@ -89,7 +89,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>Extensions that cannot be ignored</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">idenfitier</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -97,7 +96,6 @@ The table below gives implementation guidance in relation to the elements within
 <td>External identifiers for this item</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">active</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -108,7 +106,6 @@ SHOULD always be <code  class="highlighter-rouge">true</code><br />
 When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code>
 </td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">providedBy</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -116,7 +113,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Organization that provides this service</td>
 <td>This MUST be populated with a reference to a CareConnectOrganization</td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">category</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -125,7 +121,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <a  href="http://hl7.org/fhir/stu3/valueset-service-category.html">ServiceCategory (Example)</a></td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">type</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -134,7 +129,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <a  href="http://hl7.org/fhir/stu3/valueset-service-type.html">ServiceType (Example)</a></td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">specialty</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -144,7 +138,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 </td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">location</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -152,7 +145,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Location(s) where service may be provided</td>
 <td>This MUST be populated</td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">name</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -160,7 +152,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Description of service as presented to a consumer while searching</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">comment</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -168,7 +159,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Additional description and/or any specific issues not covered elsewhere</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">extraDetails</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -176,7 +166,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Extra details about the service that can't be placed in the other fields</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">photo</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -184,7 +173,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Facilitates quick identification of the service</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">telecom</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -192,7 +180,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Contacts related to the healthcare service</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">coverageArea</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -200,7 +187,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Location(s) service is inteded for/available to</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">serviceProvisionCode</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -210,7 +196,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 </td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">eligibility</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -218,7 +203,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Specific eligibility requirements required to use the service</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">eligibilityNote</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -226,7 +210,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Describes the eligibility conditions for the service</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">programName</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -234,7 +217,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Program Names that categorize the service</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">characteristic</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -242,7 +224,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Collection of characteristics (attributes)</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">referralMethod</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -252,7 +233,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 </td>
 <td>If populated MUST include the current service type</td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">appointmentRequired</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -260,7 +240,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>If an appointment is required for access to this service</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">availableTime</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -268,7 +247,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Times the Service Site is available</td>
 <td></td>
 </tr>
-
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">availableTime.daysOfWeek</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -278,7 +256,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 </td>
 <td></td>
 </tr>
-
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">availableTime.allDay</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -286,7 +263,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Always available? e.g. 24 hour service</td>
 <td></td>
 </tr>
-
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">availableTime.availableStartTime</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -294,7 +270,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Opening time of day (ignored if allDay = true)</td>
 <td></td>
 </tr>
-
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">availableTime.availableEndTime</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -302,7 +277,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Closing time of day (ignored if allDay = true)</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">notAvailable</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -310,7 +284,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Not available during this time due to provided reason</td>
 <td></td>
 </tr>
-
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">notAvailable.description</code></td>
 <td><code  class="highlighter-rouge">1..1</code></td>
@@ -318,7 +291,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Reason presented to the user explaining why time not available</td>
 <td></td>
 </tr>
-
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">notAvailable.during</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -326,7 +298,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Service not availablefrom this date</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">availabilityExceptions</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
@@ -334,7 +305,6 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Description of availability exceptions</td>
 <td></td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">endpoint</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
@@ -344,9 +314,8 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 Ordering of endpoints has meaning and SHOULD be maintained by the end user system when trying to connect
 </td>
 </tr>
-
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE1NzA0MDMyXX0=
+eyJoaXN0b3J5IjpbLTIwNTk3MDE4ODYsNTE1NzA0MDMyXX0=
 -->
