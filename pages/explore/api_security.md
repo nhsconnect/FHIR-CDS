@@ -6,6 +6,7 @@ sidebar: ctp_rest_sidebar
 permalink: api_security.html
 summary: Implementation guidance for developers - focusing on security guidance
 ---
+
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
 
 
@@ -250,5 +251,5 @@ Example 3: Mandatory claim missing – the Authorization header is present and t
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA4NzIyNjVdfQ==
+eyJoaXN0b3J5IjpbMTczODQ0MTgxOSw3MDg3MjI2NV19
 -->
