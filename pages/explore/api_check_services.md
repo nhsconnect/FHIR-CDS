@@ -1,4 +1,3 @@
-
 ---  
 title: $check-services Implementation Guidance  
 keywords: checkservices, rest,  
@@ -7,7 +6,8 @@ sidebar: ctp_rest_sidebar
 permalink: api_check_services.html  
 summary: $check-services implementation guidance   
 ---  
-  {% include custom/search.warnbanner.html %}  
+
+{% include custom/search.warnbanner.html %}  
 ## Check Services Interaction ##  
   
 This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by a Directory of Services (DoS). It is performed at a server level at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can deal with the patient.  
@@ -185,11 +185,11 @@ The following errors can be triggered when performing this operation:
 * [Authorization failure](api_errorhandling.html)  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4MjQ3MDg0MSwtNTQ1MjIzNDkzLDExMz
-ExMjA0OCwtMjA3NzkxMzk4OCwtMzI0MjcwNDA4LC0xNDU1OTMz
-ODkxLC05NDE3NzgzOTMsLTIwMDA1MzA4OTEsMTAxODk2OTYyMS
-wtMTEyNTgyNzA0OSwtNDY2NTEzMTgxLC0yMTI0NTczODUyLDMw
-MTM1NzIwNSwtNTUxMDM5MzU3LC01NzEwNTI0NDMsMTkxNzUyND
-AyLDEyNTYyNTgwNzAsMTE0NTQyNTgzLDEwMzg1OTMxNzhdfQ==
-
+eyJoaXN0b3J5IjpbLTE1NDI4MzU0OTksMTM4MjQ3MDg0MSwtNT
+Q1MjIzNDkzLDExMzExMjA0OCwtMjA3NzkxMzk4OCwtMzI0Mjcw
+NDA4LC0xNDU1OTMzODkxLC05NDE3NzgzOTMsLTIwMDA1MzA4OT
+EsMTAxODk2OTYyMSwtMTEyNTgyNzA0OSwtNDY2NTEzMTgxLC0y
+MTI0NTczODUyLDMwMTM1NzIwNSwtNTUxMDM5MzU3LC01NzEwNT
+I0NDMsMTkxNzUyNDAyLDEyNTYyNTgwNzAsMTE0NTQyNTgzLDEw
+Mzg1OTMxNzhdfQ==
 -->
