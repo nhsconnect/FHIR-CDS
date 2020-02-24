@@ -1,4 +1,3 @@
-
 ---  
 title: $uec-report Implementation Guidance  
 keywords: uec-report, rest,  
@@ -7,7 +6,7 @@ sidebar: ctp_rest_sidebar
 permalink: api_uec_report.html  
 summary: $uec-report implementation guidance   
 ---  
-  
+
 {% include custom/search.warnbanner.html %}  
 ## UEC Report Interaction ##  
   
@@ -169,5 +168,5 @@ The following errors can be triggered when performing this operation:
 *  [Timeout](api_errorhandling.html#time-out)  
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3NjM0OTM1MywxMDQyMDc1MjgyXX0=
+eyJoaXN0b3J5IjpbLTEzNzYzMDU3NTEsMTA0MjA3NTI4Ml19
 -->
