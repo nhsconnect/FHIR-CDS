@@ -9,7 +9,8 @@ summary: Encounter Report implementation guidance
 
 {% include custom/search.warnbanner.html %}    
     
-## Structure ## When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate HealthcareService.    
+## Structure
+When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate HealthcareService.    
     
 The base resource for the Encounter Report is the `Encounter`. The `Encounter` will  link to a `Patient` (through `Encounter.subject`).    
     
@@ -155,7 +156,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 </tbody>    
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE3NjQzNTc1LDE0MzgxMzA3ODksLTE3MD
+eyJoaXN0b3J5IjpbOTAwMDQ2MTQ5LDE0MzgxMzA3ODksLTE3MD
 MzNzAxNjEsLTI0NjAxMjc2MCwxNzY1MTUzNjY0LC0xNjgxNjk5
 MTE2LDI3OTkyOTI3OCwyMTM5MTg4MDIxXX0=
 -->
