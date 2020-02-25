@@ -1,7 +1,8 @@
 ---
 title: Encounter Report Implementation Guidance
 keywords: encounterreport, rest,
-tags: [rest,fhir,api] sidebar: ctp_rest_sidebar
+tags: [rest,fhir,api] 
+sidebar: ctp_rest_sidebar
 permalink: api_encounter_report.html
 summary: Encounter Report implementation guidance     
 ---
@@ -154,7 +155,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 </tbody>    
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzODEzMDc4OSwtMTcwMzM3MDE2MSwtMj
-Q2MDEyNzYwLDE3NjUxNTM2NjQsLTE2ODE2OTkxMTYsMjc5OTI5
-Mjc4LDIxMzkxODgwMjFdfQ==
+eyJoaXN0b3J5IjpbNTE3NjQzNTc1LDE0MzgxMzA3ODksLTE3MD
+MzNzAxNjEsLTI0NjAxMjc2MCwxNzY1MTUzNjY0LC0xNjgxNjk5
+MTE2LDI3OTkyOTI3OCwyMTM5MTg4MDIxXX0=
 -->
