@@ -1,3 +1,4 @@
+
 ---
 title: Composition Implementation Guidance
 keywords: composition, rest,
@@ -41,9 +42,12 @@ td.sub-sub-sub{
 ## Composition: Implementation Guidance ##
 
 ### Usage ###
-The [Composition](http://hl7.org/fhir/stu3/composition.html) resource is used ...
 
-In the CDS context, ...
+Used to represent represent a human-readable summary of the triage journey for a patient.
+
+This will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  Note that the actual history is collected in a Bundle, of which the composition is the first element.  The composition associated with an encounter is linked through the `Composition.encounter`.  The Encounter resource does not contain a reference to the composition.  There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
+
+The resources presented in the Composition (e.g. Questionnaire, QuestionnaireResponse, ReferralRequest, CarePlan, assertions) will follow the CDS API exactly, so are not re-presented here
 
 Detailed implementation guidance for an `Composition` resource in the CDS context is given below:  
 
@@ -117,7 +121,7 @@ Detailed implementation guidance for an `Composition` resource in the CDS contex
     <td><code>0..1</code></td>
     <td>Identifier</td>
     <td>Logical identifier of composition (version-independent)</td>
-    <td></td>
+    <td>To be assigned by the EMS</td>
 </tr>
 <tr>
   <td><code>status</code></td>
@@ -125,7 +129,7 @@ Detailed implementation guidance for an `Composition` resource in the CDS contex
     <td>code</td>
     <td>preliminary | final | amended | entered-in-error<br>
 CompositionStatus (Required)</td>
-    <td>If the triage journey represented by this Composition has been completed, the status will be <code>final</code></td>
+    <td>At the end of encounter, will normally be <code>final</code> - this may be amended after the end of the encounter.</td>
 </tr>
 <tr>
   <td><code>type</code></td>
@@ -148,21 +152,21 @@ FHIR Document Class Codes (Example)</td>
     <td><code>1..1</code></td>
     <td>Reference(Any)</td>
     <td>Who and/or what the composition is about</td>
-    <td>This MUST be a reference to a Patient resource</td>
+    <td>This MUST be a reference to the Patient resource</td>
 </tr>
 <tr>
   <td><code>encounter</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Encounter)</td>
     <td>Context of the Composition</td>
-    <td>This MUST be a reference to an Encounter resource</td>
+    <td>This MUST be a reference to the Encounter resource</td>
 </tr>
 <tr>
   <td><code>date</code></td>
     <td><code>1..1</code></td>
     <td>dateTime</td>
     <td>Composition editing time</td>
-    <td>This will correspond to the date/time at the end of the triage journey</td>
+    <td>This will be the date/time at the end of the triage journey</td>
 </tr>
 <tr>
   <td><code>author</code></td>
@@ -227,7 +231,7 @@ CompositionAttestationMode (Required)</td>
     <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>Relationships to other compositions/documents</td>
-    <td>May be used to identify a resource which this version replaces or extends</td>
+    <td>Typically only a replacement, in case of update</td>
 </tr>
 <tr>
     <td class="sub"><code>code</code></td>
@@ -263,7 +267,7 @@ DocumentRelationshipType (Required)</td>
     <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>The clinical service(s) being documented</td>
-    <td></td>
+    <td>Not to be populated</td>
 </tr>
 <tr>
     <td class="sub"><code>code</code></td>
@@ -294,14 +298,14 @@ v3 Code System ActCode (Example)</td>
     <td>Composition is broken into sections<br>
 + A section must at least one of text, entries, or sub-sections<br>
 + A section can only have an emptyReason if it is empty</td>
-    <td></td>
+    <td>It is recommended that each <code>$evaluate</code> interaction is documented in a separate section.  This will document the Questionnaire & QuestionnaireResponse resources for that interaction, as well as the assertions generated during that interaction, and any CarePlans presented.  In addition, if interim results are presented, these should be included in each interaction. The result of the interaction will also be presented as a separate section.</td>
 </tr>
 <tr>
     <td class="sub"><code>title</code></td>
     <td><code>0..1</code></td>
     <td>string</td>
     <td>Label for section (e.g. for ToC)</td>
-    <td></td>
+    <td>This can be 'Result' or similar for the final section.</td>
 </tr>
 <tr>
     <td class="sub"><code>code</code></td>
@@ -332,7 +336,7 @@ ListMode (Required)</td>
     <td>CodeableConcept</td>
     <td>Order of section entries<br>
 List Order Codes (Preferred)</td>
-    <td></td>
+    <td>The sections should be presented in date/time order of the patient journey</td>
 </tr>
 <tr>
     <td class="sub"><code>entry</code></td>
@@ -359,5 +363,6 @@ List Empty Reasons (Preferred)</td>
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTYwMjgyNDRdfQ==
+eyJoaXN0b3J5IjpbLTE2NTY2NTg4OTEsLTEwMTYwMjgyNDRdfQ
+==
 -->
