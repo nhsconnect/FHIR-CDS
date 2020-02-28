@@ -1,4 +1,5 @@
 
+
 ---
 title: Composition Implementation Guidance
 keywords: composition, rest,
@@ -72,14 +73,14 @@ Detailed implementation guidance for an `Composition` resource in the CDS contex
     <td><code>0..1</code></td>
     <td>Meta</td>
     <td>Metadata about the resource</td>
-		<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code>implicitRules</code></td>
     <td><code>0..1</code></td>
     <td>uri</td>
     <td>A set of rules under which this content was created</td>
-		<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code>language</code></td>
@@ -363,6 +364,6 @@ List Empty Reasons (Preferred)</td>
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTY2NTg4OTEsLTEwMTYwMjgyNDRdfQ
-==
+eyJoaXN0b3J5IjpbMTI5MTIwMjUzMSwtMTY1NjY1ODg5MSwtMT
+AxNjAyODI0NF19
 -->
