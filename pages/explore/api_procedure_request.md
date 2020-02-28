@@ -20,7 +20,6 @@ The `ProcedureRequest` is referenced from `ReferralRequest.basedOn` and will be 
 Detailed implementation guidance for a `ProcedureRequest` resource in the CDS context is given below:  
 
 <table style="min-width:100%;width:100%">
-
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
@@ -225,3 +224,6 @@ Detailed implementation guidance for a `ProcedureRequest` resource in the CDS co
 <td>This SHOULD be populated by the CDSS.</td>
  </tr> 
 </table>  
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTEzNTAzMDQxM119
+-->
