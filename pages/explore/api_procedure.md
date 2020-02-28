@@ -63,8 +63,7 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
   <td><code>language</code></td>
     <td><code>0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> 
-    <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
+    <td>Language of the resource content. <br/>  <a  href="http://hl7.org/fhir/STU3/valueset-languages.html">Common Languages</a> (Extensible but limited to <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">All Languages</a>)</td>
 	<td></td>
 </tr>
 <tr>
@@ -335,5 +334,5 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwOTg0NzgwNl19
+eyJoaXN0b3J5IjpbMzk1NzU2NTY5LDIxMDk4NDc4MDZdfQ==
 -->
