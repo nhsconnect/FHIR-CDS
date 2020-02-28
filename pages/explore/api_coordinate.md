@@ -34,150 +34,78 @@ The table below gives implementation guidance in relation to the elements within
 <td>Note that this will always be populated except when the resource is being created (initial creation call)
 </td>
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">meta</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Meta</td>
-
 <td>Metadata about the resource</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">implicitRules</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>uri</td>
-
 <td>A set of rules under which this content was created</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">language</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>code</td>
-
 <td>Language of the resource content. <br /> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common
-
 Languages</a> (Extensible but limited to All Languages)</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">text</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Narrative</td>
-
 <td>Text summary of the resource, for human interpretation</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">contained</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Resource</td>
-
 <td>Contained, inline Resources</td>
-
 <td>This should not be populated</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Extension</td>
-
 <td>Additional Content defined by implementations</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">modifierExtension</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Extension</td>
-
 <td>Extensions that cannot be ignored</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">xCoordinate</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>int</td>
-
 <td>X-axis value of this co-ordinate</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">yCoordinate</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>int</td>
-
 <td>Y-axis value of this co-ordinate</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">zCoordinate</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>int</td>
-
 <td>Z-axis value of this co-ordinate</td>
-
 <td></td>
-
 </tr>
-
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTk0NDU1MTddfQ==
+eyJoaXN0b3J5IjpbMjgxODU3NTFdfQ==
 -->
