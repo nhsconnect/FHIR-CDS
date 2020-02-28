@@ -9,6 +9,35 @@ summary: Organization resource implementation guidance
 
 {% include custom/search.warnbanner.html %}
 
+<style>
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+td.sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 30px 10px;
+    padding-left: 50px; 
+}
+td.sub-sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 50px 10px;
+    padding-left: 70px;
+}
+</style>
 ## Organization: Implementation Guidance ##
 
 ### Usage ###
@@ -153,7 +182,7 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
     <td></td>
 </tr>
 <tr>
-    <td><code>purpose</code></td>
+    <td class="sub"><code>purpose</code></td>
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of contact<br>
@@ -161,21 +190,21 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
     <td></td>
 </tr>
 <tr>
-    <td><code>name</code></td>
+    <td class="sub"><code>name</code></td>
     <td><code>0..1</code></td>
     <td>HumanName</td>
     <td>A name associated with the contact</td>
     <td></td>
 </tr>
 <tr>
-    <td><code>telecom</code></td>
+    <td class="sub"><code>telecom</code></td>
     <td><code>0..*</code></td>
     <td>ContactPoint</td>
     <td>Contact details (telephone, email, etc.) for a contact</td>
     <td></td>
 </tr>
 <tr>
-    <td><code>address</code></td>
+    <td class="sub"><code>address</code></td>
     <td><code>0..1</code></td>
     <td>Address</td>
     <td>Visiting or postal addresses for the contact</td>
@@ -191,6 +220,6 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNTg2NzQ4MiwxNDQzNzM0NTU4LDIxNj
+eyJoaXN0b3J5IjpbLTI0OTQ3NjU4MiwxNDQzNzM0NTU4LDIxNj
 YxMDU3Nl19
 -->
