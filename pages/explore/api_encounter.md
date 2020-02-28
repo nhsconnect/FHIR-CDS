@@ -56,8 +56,9 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
   <td><code class="highlighter-rouge">language</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
-	<td></td>
+    <td>Language of the resource content. <br /> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common
+Languages</a> (Extensible but limited to All Languages)</td>
+<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">text</code></td>
@@ -398,3 +399,6 @@ Placeholder -->
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTQ4Nzk2Mzk5XX0=
+-->
