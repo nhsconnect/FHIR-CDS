@@ -122,7 +122,7 @@ Languages</a> (Extensible but limited to All Languages)</td>
 <td><code  class="highlighter-rouge">gender</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>code</td>
-<td>male | female | other | unknown</br><a  href="http://hl7.org/fhir/STU3/valueset-administrative-gender.html">AdministrativeGender (Required)</a></td>
+<td>male | female | other | unknown<br /><a  href="http://hl7.org/fhir/STU3/valueset-administrative-gender.html">AdministrativeGender (Required)</a></td>
 <td></td>
 </tr>
 <tr>
@@ -157,7 +157,7 @@ Languages</a> (Extensible but limited to All Languages)</td>
 <td  class="sub"><code  class="highlighter-rouge">qualification.code</code></td>
 <td><code  class="highlighter-rouge">1..1</code></td>
 <td>CodeableConcept</td>
-<td>Coded representation of the qualification</br><a  href="http://hl7.org/fhir/STU3/v2/0360/2.7/index.html">v2 table 0360, Version 2.7 (Example)</a></td>
+<td>Coded representation of the qualification<br /><a  href="http://hl7.org/fhir/STU3/v2/0360/2.7/index.html">v2 table 0360, Version 2.7 (Example)</a></td>
 <td></td>
 </tr>
 <tr>
@@ -183,5 +183,5 @@ Languages</a> (Extensible but limited to All Languages)</td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY2OTk2NjYwXX0=
+eyJoaXN0b3J5IjpbMTE5Njk5Mzk0NCw0NjY5OTY2NjBdfQ==
 -->
