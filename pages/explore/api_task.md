@@ -63,7 +63,9 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
   <td><code>language</code></td>
     <td><code>0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+    <td>Language of the resource content. <br /> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common
+Languages</a> (Extensible but limited to All Languages)</td>
+<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -367,5 +369,5 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1MTE3MzU0OV19
+eyJoaXN0b3J5IjpbLTE5NTEzODM1MzBdfQ==
 -->
