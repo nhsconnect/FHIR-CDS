@@ -5,7 +5,8 @@ tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar  
 permalink: api_uec_report.html  
 summary: $uec-report implementation guidance   
----  
+---
+  
 
 {% include custom/search.warnbanner.html %}  
 ## UEC Report Interaction ##  
@@ -20,6 +21,7 @@ This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) provid
 The following HTTP request headers are supported for this interaction:  
   
   
+
 
 
 | Header               | Value |Conformance |  
@@ -149,6 +151,7 @@ The output is a bundle of <code  class="highlighter-rouge">1..*</code> resources
   
 
 
+
 ## Response from EMS ##  
   
 
@@ -168,5 +171,6 @@ The following errors can be triggered when performing this operation:
 *  [Timeout](api_errorhandling.html#time-out)  
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzYzMDU3NTEsMTA0MjA3NTI4Ml19
+eyJoaXN0b3J5IjpbODU5NTU3NzU1LC0xMzc2MzA1NzUxLDEwND
+IwNzUyODJdfQ==
 -->
