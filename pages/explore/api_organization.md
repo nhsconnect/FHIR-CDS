@@ -54,7 +54,7 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
   <td><code>language</code></td>
     <td><code>0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+    <td>Language of the resource content. <br/> Common Languages (<a href="http://hl7.org/fhir/stu3/valueset-languages.html">Extensible but limited to All Languages</a>)</td>
 	<td></td>
 </tr>
 <tr>
@@ -190,5 +190,6 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0MzczNDU1OCwyMTY2MTA1NzZdfQ==
+eyJoaXN0b3J5IjpbLTE5Nzg2Njc5ODQsMTQ0MzczNDU1OCwyMT
+Y2MTA1NzZdfQ==
 -->
