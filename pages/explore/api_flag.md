@@ -3,7 +3,7 @@ title: Flag Implementation Guidance
 keywords: flag, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_flag_na.html
+permalink: api_flag.html
 summary: Flag resource implementation guidance
 ---
 
@@ -144,5 +144,5 @@ Flag Code (Example)</td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MzY4ODg1MF19
+eyJoaXN0b3J5IjpbLTExMDU4NTg5MDQsMTk4MzY4ODg1MF19
 -->
