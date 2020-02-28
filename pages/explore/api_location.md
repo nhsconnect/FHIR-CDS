@@ -8,7 +8,35 @@ summary: Location resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<style>
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+td.sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 30px 10px;
+    padding-left: 50px; 
+}
+td.sub-sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 50px 10px;
+    padding-left: 70px;
+}
+</style>
 ## Location: Implementation Guidance ##
 
 ### Usage ###
@@ -241,5 +269,6 @@ The table below gives implementation guidance in relation to the elements within
 
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNDE0ODcxNCwtMTQzNTQwNjk3XX0=
+eyJoaXN0b3J5IjpbLTcxMzMwMjc2MCwxMzI0MTQ4NzE0LC0xND
+M1NDA2OTddfQ==
 -->
