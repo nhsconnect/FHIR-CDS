@@ -51,7 +51,6 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
 
 
 <table style="min-width:100%;width:100%">
-
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
@@ -368,3 +367,6 @@ Placeholder -->
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTExMzY0NTEyODFdfQ==
+-->
