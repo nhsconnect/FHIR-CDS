@@ -127,7 +127,7 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>1..1</code></td>
     <td>code</td>
     <td>preparation | in-progress | suspended | aborted | completed | entered-in-error | unknown<br>
-[EventStatus](http://hl7.org/fhir/STU3/valueset-event-status.html) (Required)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-event-status.html">EventStatus</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -334,5 +334,5 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk1NzU2NTY5LDIxMDk4NDc4MDZdfQ==
+eyJoaXN0b3J5IjpbLTIxNzMxNjUxNywyMTA5ODQ3ODA2XX0=
 -->
