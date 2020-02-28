@@ -8,7 +8,35 @@ summary: practitioner resource implementation guidance
 ---
 
 {% include custom/search.warnbanner.html %}
-
+<style>
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+td.sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 30px 10px;
+    padding-left: 50px; 
+}
+td.sub-sub-sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 50px 10px;
+    padding-left: 70px;
+}
+</style>
 ## Practitioner: Implementation Guidance ##
 
 ### Usage ###
@@ -183,5 +211,6 @@ Languages</a> (Extensible but limited to All Languages)</td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5Njk5Mzk0NCw0NjY5OTY2NjBdfQ==
+eyJoaXN0b3J5IjpbLTIxNDkwODk4NiwxMTk2OTkzOTQ0LDQ2Nj
+k5NjY2MF19
 -->
