@@ -1,5 +1,3 @@
-
-
 ---
 title: Composition Implementation Guidance
 keywords: composition, rest,
@@ -364,6 +362,6 @@ List Empty Reasons (Preferred)</td>
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5MTIwMjUzMSwtMTY1NjY1ODg5MSwtMT
+eyJoaXN0b3J5IjpbMTc2MDY0NzQzMSwtMTY1NjY1ODg5MSwtMT
 AxNjAyODI0NF19
 -->
