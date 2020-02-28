@@ -131,66 +131,36 @@ Languages</a> (Extensible but limited to All Languages)</td>
 <td>code</td>
 <td>male | female | other | unknown<br /><a  href="http://hl7.org/fhir/STU3/valueset-administrative-gender.html">AdministrativeGender (Required)</a></td>
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">birthDate</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>date</td>
-
 <td>The date on which the related person was born</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">address</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Address</td>
-
 <td>Address where the related person can be contacted or visited</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">photo</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Attachment</td>
-
 <td>Image of the person</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">period</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Period</td>
-
 <td>Period of time that this relationship is considered valid</td>
-
 <td></td>
-
 </tr>
-
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM0MDM0NDY2XX0=
+eyJoaXN0b3J5IjpbLTQzODgyNjM0XX0=
 -->
