@@ -248,14 +248,14 @@ DocumentRelationshipType (Required)</td>
     <td></td>
 </tr>
 <tr>
-    <td class="sub-sub"><code>targetIdentifier</td>
+    <td class="sub-sub"><code>targetIdentifier</code></td>
     <td></td>
     <td>Identifier</td>
     <td></td>
     <td></td>
 </tr>
 <tr>
-    <td class="sub-sub"><code>targetReference</td>
+    <td class="sub-sub"><code>targetReference</code></td>
     <td></td>
     <td>Reference(Composition)</td>
     <td></td>
@@ -362,6 +362,6 @@ List Empty Reasons (Preferred)</td>
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MDY0NzQzMSwtMTY1NjY1ODg5MSwtMT
-AxNjAyODI0NF19
+eyJoaXN0b3J5IjpbLTEzMzA3MTU4NjksMTc2MDY0NzQzMSwtMT
+Y1NjY1ODg5MSwtMTAxNjAyODI0NF19
 -->
