@@ -44,12 +44,9 @@ td.sub-sub-sub{
 
 Used to represent represent a human-readable summary of the triage journey for a patient.
 
-This will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  Note that the actual history is collected in a Bundle, of which the composition is the first element.  The composition associated with an encounter is linked through the `Composition.encounter`.  The Encounter resource does not contain a reference to the composition.  There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
-
-The resources presented in the Composition (e.g. Questionnaire, QuestionnaireResponse, ReferralRequest, CarePlan, assertions) will follow the CDS API exactly, so are not re-presented here
+This will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The Encounter resource does not contain a reference to the composition.  There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
 
 Detailed implementation guidance for an `Composition` resource in the CDS context is given below:  
-
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -343,7 +340,7 @@ List Order Codes (Preferred)</td>
     <td><code>0..*</code></td>
     <td>Reference(Any)</td>
     <td>A reference to data that supports this section</td>
-    <td></td>
+    <td>Should not be populated</td>
 </tr>
 <tr>
     <td class="sub"><code>emptyReason</code></td>
@@ -363,6 +360,7 @@ List Empty Reasons (Preferred)</td>
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ4OTUyMjczLC0xMzMwNzE1ODY5LDE3Nj
-A2NDc0MzEsLTE2NTY2NTg4OTEsLTEwMTYwMjgyNDRdfQ==
+eyJoaXN0b3J5IjpbLTg2NDMxMzgxMyw4NDg5NTIyNzMsLTEzMz
+A3MTU4NjksMTc2MDY0NzQzMSwtMTY1NjY1ODg5MSwtMTAxNjAy
+ODI0NF19
 -->
