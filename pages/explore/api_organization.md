@@ -125,7 +125,7 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
     <td><code>telecom</code></td>
     <td><code>0..*</code></td>
     <td>ContactPoint</td>
-    <td>A contact detail for the organization
+    <td>A contact detail for the organization<br>
 + The telecom of an organization can never be of use 'home'</td>
     <td></td>
 </tr>
@@ -190,5 +190,5 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE2NjEwNTc2XX0=
+eyJoaXN0b3J5IjpbMTQ0MzczNDU1OCwyMTY2MTA1NzZdfQ==
 -->
