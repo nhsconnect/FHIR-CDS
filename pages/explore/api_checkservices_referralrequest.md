@@ -3,7 +3,7 @@ title: ReferralRequest Implementation Guidance
 keywords: referralrequest, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_referral_request.html
+permalink: api_checkservices_referralrequest.html
 summary: ReferralRequest resource implementation guidance
 ---
 
