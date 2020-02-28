@@ -97,7 +97,7 @@ Detailed implementation guidance for an `Flag` resource in the CDS context is gi
     <td><code>1..1</code></td>
     <td>code</td>
     <td>active | inactive | entered-in-error<br>
-FlagStatus (Required)</td>
+<a href="https://hl7.org/fhir/STU3/valueset-flag-status.html">FlagStatus (Required)</a></td>
 <td></td>
 </tr>
 <tr>
@@ -105,7 +105,7 @@ FlagStatus (Required)</td>
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Clinical, administrative, etc.<br>
-<a href="https://hl7.org/fhir/STU3/valueset-flag-status.html">Flag Category (Example)</td>
+<a href="https://hl7.org/fhir/STU3/valueset-flag-category.html">Flag Category (Example)</a></td>
 <td></td>
 </tr>
 <tr>
@@ -113,7 +113,7 @@ FlagStatus (Required)</td>
     <td><code>1..1</code></td>
     <td>CodeableConcept</td>
     <td>CodeableConcept	Coded or textual message to display to user<br>
-Flag Code (Example)</td>
+<a href="https://hl7.org/fhir/STU3/valueset-flag-code.html">Flag Code (Example)</a></td>
 <td></td>
 </tr>
 <tr>
@@ -146,6 +146,6 @@ Flag Code (Example)</td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMjAwNzgwNSwtMTEwNTg1ODkwNCwxOT
+eyJoaXN0b3J5IjpbMTI5NDAxOTU1NCwtMTEwNTg1ODkwNCwxOT
 gzNjg4ODUwXX0=
 -->
