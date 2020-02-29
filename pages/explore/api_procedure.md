@@ -148,9 +148,15 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
 <tr>
   <td><code>category</code></td>
     <td><code>0..1</code></td>
-    <td>CodeableConcept</td>
-    <td>Classification of the procedure<br>
-[Procedure Category Codes (SNOMED CT)](http://hl7.org/fhir/STU3/valueset-procedure-category.html) (Example)</td>
+    <td>CodeableConcept</td>  
+
+<td>Reason procedure was not performed<br>
+
+<td>Reason procedure was not performed<br>
+
+[Procedure Not Performed Reason (SNOMED-CT)](http://hl7.org/fhir/STU3/valueset-procedure-not-performed-reason.html) (Example)</td>
+
+<a href="http://hl7.org/fhir/STU3/valueset-procedure-not-performed-reason.html">Procedure Not Performed Reason (SNOMED-CT)</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -334,5 +340,6 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNzMxNjUxNywyMTA5ODQ3ODA2XX0=
+eyJoaXN0b3J5IjpbOTU4MDk0MzEzLC0yMTczMTY1MTcsMjEwOT
+g0NzgwNl19
 -->
