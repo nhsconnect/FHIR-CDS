@@ -254,7 +254,8 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The result of procedure<br>
-[Procedure Outcome Codes (SNOMED CT)](http://hl7.org/fhir/STU3/valueset-procedure-outcome.html) (Example)
+  
+<a href="http://hl7.org/fhir/STU3/valueset-procedure-outcome.html">Procedure Outcome Codes (SNOMED CT)</a> (Example)
 </td>
 <td></td>
 </tr>
@@ -334,6 +335,6 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyNjc2MjU5MywtMjE3MzE2NTE3LDIxMD
-k4NDc4MDZdfQ==
+eyJoaXN0b3J5IjpbLTIwMTMwNDE3MDUsLTIxNzMxNjUxNywyMT
+A5ODQ3ODA2XX0=
 -->
