@@ -107,15 +107,15 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td><code>1..1</code></td>
     <td>code</td>
     <td>current | retired | entered-in-error<br>
-[ListStatus](https://www.hl7.org/fhir/STU3/valueset-list-status.html) (Required)</td>
-<td></td>
+<a href="https://www.hl7.org/fhir/STU3/valueset-list-status.html">ListStatus</a> (Required)</td>
+<td>Status MUST carry the value 'current' after the journey is completed.</td>
 </tr>
 <tr>
   <td><code>mode</code></td>
     <td><code>1..1</code></td>
     <td>code</td>
     <td>working | snapshot | changes
-[ListMode](https://www.hl7.org/fhir/STU3/valueset-list-mode.html) (Required)</td>
+<a href="https://www.hl7.org/fhir/STU3/valueset-list-mode.html">ListMode</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -230,5 +230,5 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTkwNTI5MCwxMTc4OTAxNzY0XX0=
+eyJoaXN0b3J5IjpbLTE1NTkzMTU4NDUsMTE3ODkwMTc2NF19
 -->
