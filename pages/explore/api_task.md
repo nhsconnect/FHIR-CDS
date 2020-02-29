@@ -272,7 +272,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Reference(Device | Organization | Patient | Practitioner | RelatedPerson)</td>
     <td>Responsible individual</td>
-<td></td>
+<td>This MUST be populated with the Organisation that is receiving the Task.</td>
 </tr>
 <tr>
   <td><code>reason</code></td>
@@ -367,6 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzM4NzM4MSwtMTE3NzgxMDYzNywxMz
-Q1MDk5NTUwLDU0MzQ2NzExM119
+eyJoaXN0b3J5IjpbNTk3OTg2ODEsLTExNzc4MTA2MzcsMTM0NT
+A5OTU1MCw1NDM0NjcxMTNdfQ==
 -->
