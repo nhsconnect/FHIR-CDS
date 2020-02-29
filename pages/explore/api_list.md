@@ -131,7 +131,6 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td>CodeableConcept</td>
     <td>What the purpose of this list is<br>
 <a href="https://www.hl7.org/fhir/STU3/valueset-list-example-codes.html">Example Use Codes for List</a> (Example)</td>
-<td></td>
 <td>This MUST NOT be populated.</td>
 </tr>
 <tr>
@@ -231,5 +230,5 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0NDMyMDU1LDExNzg5MDE3NjRdfQ==
+eyJoaXN0b3J5IjpbLTMyNDE3MzY5MCwxMTc4OTAxNzY0XX0=
 -->
