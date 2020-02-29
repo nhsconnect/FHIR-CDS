@@ -264,7 +264,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>requester | dispatcher | scheduler | performer | monitor | manager | acquirer | reviewer<br>
-[TaskPerformerType](http://hl7.org/fhir/STU3/valueset-task-performer-type.html) (Preferred)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-task-performer-type.html">TaskPerformerType</a> (Preferred)</td>
 <td></td>
 </tr>
 <tr>
@@ -367,6 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NDI1MTQwOSwtMTE3NzgxMDYzNywxMz
+eyJoaXN0b3J5IjpbLTE2NzM4NzM4MSwtMTE3NzgxMDYzNywxMz
 Q1MDk5NTUwLDU0MzQ2NzExM119
 -->
