@@ -62,7 +62,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
   <td><code>language</code></td>
     <td><code>0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> <A href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
+    <td>Language of the resource content. <br/><a href="http://hl7.org/fhir/STU3/valueset-languages.html">Common Languages</a> (Extensible but limited to <a href="http://hl7.org/fhir/stu3/valueset-languages.html">All Languages</a>)</td>
 	<td></td>
 </tr>
 <tr>
@@ -276,5 +276,5 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc1NTYxMjE4XX0=
+eyJoaXN0b3J5IjpbLTYzMjAwODYzMSw5NzU1NjEyMThdfQ==
 -->
