@@ -127,7 +127,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..*</code></td>
     <td>Reference(Any)</td>
     <td>Request fulfilled by this task</td>
-<td></td>
+<td>This SHOULD be the associated ReferralRequest.</td>
 </tr>
 <tr>
   <td><code>groupIdentifier</code></td>
@@ -149,7 +149,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>1..1</code></td>
     <td>code</td>
     <td>draft | requested | received | accepted | +<br>
-[TaskStatus](http://hl7.org/fhir/STU3/valueset-task-status.html) (Required)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-task-status.html">TaskStatus</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -367,5 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NTA5OTU1MCw1NDM0NjcxMTNdfQ==
+eyJoaXN0b3J5IjpbLTIwNDgxMDc1MDEsMTM0NTA5OTU1MCw1ND
+M0NjcxMTNdfQ==
 -->
