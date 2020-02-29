@@ -175,7 +175,7 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td>CodeableConcept</td>
     <td>What order the list has<br>
 <a href="https://www.hl7.org/fhir/STU3/valueset-list-order.html">List Order Codes</a> (Preferred)</td>
-<td></td>
+<td>This MUST carry the value 'event-date'.</td>
 </tr>
 <tr>
   <td><code>note</code></td>
@@ -230,6 +230,6 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwNDI4NDM0NiwtMzI0MTczNjkwLDExNz
+eyJoaXN0b3J5IjpbMTExMzQ3ODIzNSwtMzI0MTczNjkwLDExNz
 g5MDE3NjRdfQ==
 -->
