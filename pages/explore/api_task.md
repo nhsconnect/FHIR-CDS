@@ -293,7 +293,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..*</code></td>
     <td>Reference(Provenance)</td>
     <td>Key events in history of the Task</td>
-<td></td>
+<td>If populated this MUST be the same as ReferralRequest.relevantHistory.</td>
 </tr>
 <tr>
   <td><code>restriction</code></td>
@@ -340,7 +340,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 <tr>
   <td class="sub"><code>value[x]</code></td>
     <td><code>1..1</code></td>
-    <td>[*](http://hl7.org/fhir/STU3/datatypes.html#open)</td>
+    <td><a href="http://hl7.org/fhir/STU3/datatypes.html#open">*</a></td>
     <td>Content to use in performing the task</td>
 <td></td>
 </tr>
@@ -367,6 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk3OTg2ODEsLTExNzc4MTA2MzcsMTM0NT
-A5OTU1MCw1NDM0NjcxMTNdfQ==
+eyJoaXN0b3J5IjpbLTE2ODY2NzI0MiwtMTE3NzgxMDYzNywxMz
+Q1MDk5NTUwLDU0MzQ2NzExM119
 -->
