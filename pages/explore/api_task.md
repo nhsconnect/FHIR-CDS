@@ -229,7 +229,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>dateTime</td>
     <td>Task Creation Date</td>
-<td></td>
+<td>This MUST be populated.</td>
 </tr>
 <tr>
   <td><code>lastModified</code></td>
@@ -243,7 +243,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>BackboneElement</td>
     <td>Who is asking for task to be done</td>
-<td></td>
+<td>This will be the initiating user of the Encounter.</td>
 </tr>
 <tr>
   <td class="sub"><code>agent</code></td>
@@ -367,6 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0MTcyMjQyMSwtMTE3NzgxMDYzNywxMz
+eyJoaXN0b3J5IjpbLTI1NDI1MTQwOSwtMTE3NzgxMDYzNywxMz
 Q1MDk5NTUwLDU0MzQ2NzExM119
 -->
