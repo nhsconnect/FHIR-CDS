@@ -211,25 +211,25 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>dateTime</td>
     <td>When item was added to list</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td class="sub"><code>item</code></td>
     <td><code>1..1</code></td>
     <td>Reference(Any)</td>
     <td>Actual entry</td>
-<td></td>
+<td>The resource referenced - Questionnaire, Observation etc.</td>
 </tr>
 <tr>
   <td><code>emptyReason</code></td>
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Why list is empty<br>
-[List Empty Reasons](https://www.hl7.org/fhir/STU3/valueset-list-empty-reason.html) (Preferred)</td>
+<a href="https://www.hl7.org/fhir/STU3/valueset-list-empty-reason.html">List Empty Reasons</a> (Preferred)</td>
 <td></td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQyMjQ2NDA4LDExMTM0NzgyMzUsLTMyND
+eyJoaXN0b3J5IjpbMTU3MDg4MTk5LDExMTM0NzgyMzUsLTMyND
 E3MzY5MCwxMTc4OTAxNzY0XX0=
 -->
