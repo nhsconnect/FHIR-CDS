@@ -201,8 +201,8 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
   <td class="sub"><code>role</code></td>
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
-    <td>	The role the actor was in<br>
-[Procedure Performer Role Codes](http://hl7.org/fhir/STU3/valueset-performer-role.html) (Example)</td>
+    <td>The role the actor was in<br>
+<a href="http://hl7.org/fhir/STU3/valueset-performer-role.html">Procedure Performer Role Codes</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -231,7 +231,7 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Coded reason procedure performed<br>
-[Procedure Reason Codes](http://hl7.org/fhir/STU3/valueset-procedure-reason.html) (Example)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-procedure-reason.html">Procedure Reason Codes</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -246,7 +246,7 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Target body sites<br>
-[SNOMED CT Body Structures](http://hl7.org/fhir/STU3/valueset-body-site.html) (Example)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-body-site.html">SNOMED CT Body Structures</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -334,6 +334,6 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NTgwMDYzLC0yMTczMTY1MTcsMjEwOT
-g0NzgwNl19
+eyJoaXN0b3J5IjpbMTUyNjc2MjU5MywtMjE3MzE2NTE3LDIxMD
+k4NDc4MDZdfQ==
 -->
