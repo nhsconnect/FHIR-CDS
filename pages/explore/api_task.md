@@ -349,24 +349,24 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>Information produced as part of task</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td class="sub"><code>type</code></td>
     <td><code>1..1</code></td>
     <td>CodeableConcept</td>
     <td>Label for output</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td class="sub"><code>value[x]</code></td>
     <td><code>1..1</code></td>
-    <td>[*](http://hl7.org/fhir/STU3/datatypes.html#open)</td>
+    <td><a href="http://hl7.org/fhir/STU3/datatypes.html#open">*</a></td>
     <td>Result of output</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODY2NzI0MiwtMTE3NzgxMDYzNywxMz
+eyJoaXN0b3J5IjpbLTYzMjgxNjUyMywtMTE3NzgxMDYzNywxMz
 Q1MDk5NTUwLDU0MzQ2NzExM119
 -->
