@@ -180,14 +180,14 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td>code</td>
     <td>normal | urgent | asap | stat<br>
 <a href="http://hl7.org/fhir/STU3/valueset-request-priority.html">RequestPriority</a> (Required)</td>
-<td></td>
+<td>This MUST carry the value 'normal'.</td>
 </tr>
 <tr>
   <td><code>code</code></td>
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Task Type</td>
-<td></td>
+<td>This MUST be populated.</td>
 </tr>
 <tr>
   <td><code>description</code></td>
@@ -201,7 +201,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Reference(Any)</td>
     <td>What task is acting on</td>
-<td></td>
+<td>This will be the associated ReferralRequest.</td>
 </tr>
 <tr>
   <td><code>for</code></td>
@@ -367,6 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzc4MTA2MzcsMTM0NTA5OTU1MCw1ND
-M0NjcxMTNdfQ==
+eyJoaXN0b3J5IjpbMTY0MDIyMDg1NCwtMTE3NzgxMDYzNywxMz
+Q1MDk5NTUwLDU0MzQ2NzExM119
 -->
