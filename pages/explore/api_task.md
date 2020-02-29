@@ -171,7 +171,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>1..1</code></td>
     <td>code</td>
     <td>proposal | plan | order +<br>
-[RequestIntent](http://hl7.org/fhir/STU3/valueset-request-intent.html) (Required)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-request-intent.html">RequestIntent</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -179,7 +179,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>code</td>
     <td>normal | urgent | asap | stat<br>
-[RequestPriority](http://hl7.org/fhir/STU3/valueset-request-priority.html) (Required)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-request-priority.html">RequestPriority</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -367,6 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDgxMDc1MDEsMTM0NTA5OTU1MCw1ND
+eyJoaXN0b3J5IjpbLTExNzc4MTA2MzcsMTM0NTA5OTU1MCw1ND
 M0NjcxMTNdfQ==
 -->
