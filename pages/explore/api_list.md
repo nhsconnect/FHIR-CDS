@@ -196,8 +196,8 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Status/Workflow information about this item<br>
-[Patient Medicine Change Types](https://www.hl7.org/fhir/STU3/valueset-list-item-flag.html) (Example)</td>
-<td></td>
+<a href="https://www.hl7.org/fhir/STU3/valueset-list-item-flag.html">Patient Medicine Change Types</a> (Example)</td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td class="sub"><code>deleted</code></td>
@@ -230,6 +230,6 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExMzQ3ODIzNSwtMzI0MTczNjkwLDExNz
-g5MDE3NjRdfQ==
+eyJoaXN0b3J5IjpbNzQyMjQ2NDA4LDExMTM0NzgyMzUsLTMyND
+E3MzY5MCwxMTc4OTAxNzY0XX0=
 -->
