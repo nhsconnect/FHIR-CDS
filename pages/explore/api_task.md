@@ -208,21 +208,21 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Reference(Any)</td>
     <td>Beneficiary of the Task</td>
-<td></td>
+<td>This will be the associated Patient.</td>
 </tr>
 <tr>
   <td><code>context</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Encounter | EpisodeOfCare)</td>
     <td>Healthcare event during which this task originated</td>
-<td></td>
+<td>This will be the associated Encounter.</td>
 </tr>
 <tr>
   <td><code>executionPeriod</code></td>
     <td><code>0..1</code></td>
     <td>Period</td>
     <td>Start and end time of execution</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td><code>authoredOn</code></td>
@@ -367,6 +367,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0MDIyMDg1NCwtMTE3NzgxMDYzNywxMz
+eyJoaXN0b3J5IjpbMTY0MTcyMjQyMSwtMTE3NzgxMDYzNywxMz
 Q1MDk5NTUwLDU0MzQ2NzExM119
 -->
