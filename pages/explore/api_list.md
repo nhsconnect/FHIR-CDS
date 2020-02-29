@@ -138,7 +138,7 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td><code>1..1</code></td>
     <td>code</td>
     <td>proposal | plan | order +<br>
-[RequestIntent](http://hl7.org/fhir/STU3/valueset-request-intent.html) (Required)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-request-intent.html">RequestIntent</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -146,21 +146,21 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Reference(Patient | Group | Device | Location)</td>
     <td>If all resources have the same subject</td>
-<td></td>
+<td>This MUST be populated with the Patient of the current Encounter.</td>
 </tr>
 <tr>
   <td><code>encounter</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Encounter)</td>
     <td>Context in which list was created</td>
-<td></td>
+<td>This MUST be populated with the current Encounter.</td>
 </tr>
 <tr>
   <td><code>date</code></td>
     <td><code>0..1</code></td>
     <td>dateTime</td>
     <td>When the list was prepared</td>
-<td></td>
+<td>This MUST be populated with the date/time of the moment the triage ended.</td>
 </tr>
 <tr>
   <td><code>source</code></td>
@@ -230,5 +230,6 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyNDE3MzY5MCwxMTc4OTAxNzY0XX0=
+eyJoaXN0b3J5IjpbMTI1MDYwNzU0NywtMzI0MTczNjkwLDExNz
+g5MDE3NjRdfQ==
 -->
