@@ -254,7 +254,6 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The result of procedure<br>
-  
 <a href="http://hl7.org/fhir/STU3/valueset-procedure-outcome.html">Procedure Outcome Codes (SNOMED CT)</a> (Example)
 </td>
 <td></td>
@@ -271,7 +270,7 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Complication following the procedure<br>
-[Condition/Problem/Diagnosis Codes](http://hl7.org/fhir/STU3/valueset-condition-code.html) (Example)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-condition-code.html">Condition/Problem/Diagnosis Codes</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -286,7 +285,7 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Instructions for follow up<br>
-[Procedure Follow up Codes (SNOMED CT)](http://hl7.org/fhir/STU3/valueset-procedure-followup.html) (Example)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-procedure-followup.html">Procedure Follow up Codes (SNOMED CT)</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -308,7 +307,7 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Kind of change to device<br>
-[Procedure Device Action Codes](http://hl7.org/fhir/STU3/valueset-device-action.html) (Preferred)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-device-action.html">Procedure Device Action Codes</a> (Preferred)</td>
 <td></td>
 </tr>
 <tr>
@@ -330,11 +329,11 @@ Detailed implementation guidance for an `Procedure` resource in the CDS context 
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Coded items used during the procedure<br>
-[FHIR Device Types](http://hl7.org/fhir/STU3/valueset-device-kind.html) (Example)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-device-kind.html">FHIR Device Types</a> (Example)</td>
 <td></td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTMwNDE3MDUsLTIxNzMxNjUxNywyMT
-A5ODQ3ODA2XX0=
+eyJoaXN0b3J5IjpbMTgwMjMzNTAxMSwtMjE3MzE2NTE3LDIxMD
+k4NDc4MDZdfQ==
 -->
