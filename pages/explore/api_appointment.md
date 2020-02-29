@@ -105,7 +105,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>1..1</code></td>
     <td>code</td>
     <td>proposed | pending | booked | arrived | fulfilled | cancelled | noshow | entered-in-error<br>
-[AppointmentStatus](http://hl7.org/fhir/STU3/valueset-appointmentstatus.html) (Required)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-appointmentstatus.html">AppointmentStatus</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -113,7 +113,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>A broad categorisation of the service that is to be performed during this appointment<br>
-[ServiceCategory](http://hl7.org/fhir/STU3/valueset-service-category.html) (Example)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-service-category.html">ServiceCategory</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -121,7 +121,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>The specific service that is to be performed during this appointment<br>
-[ServiceType](http://hl7.org/fhir/STU3/valueset-service-type.html) (Example)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-service-type.html">ServiceType</a> (Example)</td>
 <td></td>
 </tr>
 <tr>
@@ -129,7 +129,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>The specialty of a practitioner that would be required to perform the service requested in this appointment<br>
-[Practice Setting Code Value Set](http://hl7.org/fhir/STU3/valueset-c80-practice-codes.html) (Preferred)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-c80-practice-codes.html">Practice Setting Code Value Set</a> (Preferred)</td>
 <td></td>
 </tr>
 <tr>
@@ -137,7 +137,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The style of appointment or patient that has been booked in the slot (not service type)<br>
-[v2 Appointment reason codes](http://hl7.org/fhir/STU3/v2/0276/index.html) (Preferred)</td>
+<a href="http://hl7.org/fhir/STU3/v2/0276/index.html">v2 Appointment reason codes</a> (Preferred)</td>
 <td></td>
 </tr>
 <tr>
@@ -276,5 +276,5 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMjAwODYzMSw5NzU1NjEyMThdfQ==
+eyJoaXN0b3J5IjpbMzg1MTA4MDkzLDk3NTU2MTIxOF19
 -->
