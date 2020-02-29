@@ -167,14 +167,14 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Reference(Practitioner | Patient | Device)</td>
     <td>Who and/or what defined the list contents (aka Author</td>
-<td></td>
+<td>This MUST be populated with the EMS as a Device.</td>
 </tr>
 <tr>
   <td><code>orderedBy</code></td>
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>What order the list has<br>
-[List Order Codes](https://www.hl7.org/fhir/STU3/valueset-list-order.html) (Preferred)</td>
+<a href="https://www.hl7.org/fhir/STU3/valueset-list-order.html">List Order Codes</a> (Preferred)</td>
 <td></td>
 </tr>
 <tr>
@@ -230,6 +230,6 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MDYwNzU0NywtMzI0MTczNjkwLDExNz
+eyJoaXN0b3J5IjpbMjEwNDI4NDM0NiwtMzI0MTczNjkwLDExNz
 g5MDE3NjRdfQ==
 -->
