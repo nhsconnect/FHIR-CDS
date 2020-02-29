@@ -145,7 +145,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Reason this appointment is scheduled<br>
-[Encounter Reason Codes](http://hl7.org/fhir/STU3/valueset-encounter-reason.html) (Preferred)
+<a href="http://hl7.org/fhir/STU3/valueset-encounter-reason.html">Encounter Reason Codes</a> (Preferred)
 </td>
 <td></td>
 </tr>
@@ -240,7 +240,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Role of participant in the appointment<br>
-[ParticipantType](http://hl7.org/fhir/STU3/valueset-encounter-participant-type.html) (Extensible)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-encounter-participant-type.html">ParticipantType</a> (Extensible)</td>
 <td></td>
 </tr>
 <tr>
@@ -255,7 +255,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>0..1</code></td>
     <td>code</td>
     <td>required | optional | information-only<br>
-[ParticipantRequired](http://hl7.org/fhir/STU3/valueset-participantrequired.html) (Required)</td>
+<a href="http://hl7.org/fhir/STU3/valueset-participantrequired.html">ParticipantRequired</a> (Required)</td>
 <td></td>
 </tr>
 <tr>
@@ -263,7 +263,7 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
     <td><code>1..1</code></td>
     <td>code</td>
     <td>accepted | declined | tentative | needs-action<br>
-[ParticipationStatus](http://hl7.org/fhir/STU3/valueset-participationstatus.html) (Required)
+<a href="http://hl7.org/fhir/STU3/valueset-participationstatus.html">ParticipationStatus</a> (Required)
 </td>
 <td></td>
 </tr>
@@ -276,5 +276,5 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg1MTA4MDkzLDk3NTU2MTIxOF19
+eyJoaXN0b3J5IjpbLTE5MDE1NTAxNDUsOTc1NTYxMjE4XX0=
 -->
