@@ -41,11 +41,8 @@ td.sub-sub-sub{
 ## Organization: Implementation Guidance ##
 
 ### Usage ###
-A grouping of people or organizations with a common purpose
 
-The [Organization](http://hl7.org/fhir/stu3/organization.html) resource is used ...
-
-In the CDS context, ...
+The [Organization](http://hl7.org/fhir/stu3/organization.html) resource is used to represent a grouping of people or organizations with a common purpose.
 
 Detailed implementation guidance for an `Organization` resource in the CDS context is given below:  
 
@@ -220,6 +217,6 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0OTQ3NjU4MiwxNDQzNzM0NTU4LDIxNj
-YxMDU3Nl19
+eyJoaXN0b3J5IjpbMzMxNzY3MDEyLC0yNDk0NzY1ODIsMTQ0Mz
+czNDU1OCwyMTY2MTA1NzZdfQ==
 -->
