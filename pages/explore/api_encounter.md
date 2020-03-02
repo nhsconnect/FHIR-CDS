@@ -18,7 +18,7 @@ The [Encounter](http://hl7.org/fhir/stu3/encounter.html) resource is used to car
 
 In the CDS context, an encounter occurs for the duration of a patient’s interaction with a single service provider.
 
-Detailed implementation guidance for an `Encounter` resource in the CDS context is given below:  
+Detailed implementation guidance for an `Encounter` resource in the context of a CDS `$evaluate` interaction is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -400,5 +400,6 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
+eyJoaXN0b3J5IjpbLTYwMTIyNzE0NSwxMjUwNTY3NDgwLDk0OD
+c5NjM5OV19
 -->
