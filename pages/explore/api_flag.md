@@ -16,7 +16,7 @@ The [Flag](http://hl7.org/fhir/stu3/flag.html) resource is used ...
 
 In the CDS context, ...
 
-Detailed implementation guidance for an `Flag` resource in the CDS context is given below:  
+Detailed implementation guidance for an `Flag` resource in the context of a CDS Encounter Reports is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -146,6 +146,6 @@ Detailed implementation guidance for an `Flag` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5NDAxOTU1NCwtMTEwNTg1ODkwNCwxOT
-gzNjg4ODUwXX0=
+eyJoaXN0b3J5IjpbLTEwMTAzNzA2OCwxMjk0MDE5NTU0LC0xMT
+A1ODU4OTA0LDE5ODM2ODg4NTBdfQ==
 -->
