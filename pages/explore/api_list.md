@@ -23,7 +23,7 @@ td.sub{
 ## List: Implementation Guidance ##
 ​
 ### Usage ###
-The [List](http://hl7.org/fhir/STU3/list.html) resource is used ...
+The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of resources. Resources are commonly included as 
 ​
 In the CDS context, ...
 ​
@@ -230,6 +230,6 @@ Detailed implementation guidance for an `List` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3MDg4MTk5LDExMTM0NzgyMzUsLTMyND
-E3MzY5MCwxMTc4OTAxNzY0XX0=
+eyJoaXN0b3J5IjpbLTIwODg5MTUxMTgsMTU3MDg4MTk5LDExMT
+M0NzgyMzUsLTMyNDE3MzY5MCwxMTc4OTAxNzY0XX0=
 -->
