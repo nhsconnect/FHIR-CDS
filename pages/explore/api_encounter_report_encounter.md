@@ -176,7 +176,7 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(EpisodeOfCare)</td>
     <td>Episode(s) of care that this encounter should be recorded against</td>
-<td>If this is a continuation of a prior episode, this <code class="highlighter-rouge">Encounter</code> should reference that episode. If not a continuation, this should be populated with a new episode.</td>
+<td>If this is a continuation of a prior episode or linked to a prior <code class="highlighter-rouge">Encounter</code>, this <code class="highlighter-rouge">Encounter</code> MUST reference the same episode as that one. If not a continuation, this should be populated with a new episode.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">incomingReferral</code></td>
@@ -399,6 +399,6 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2NzYwMTEzNywxNzM2MTYzNTEzLDEyNT
-A1Njc0ODAsOTQ4Nzk2Mzk5XX0=
+eyJoaXN0b3J5IjpbLTE0NTc4MzY4NTUsMTczNjE2MzUxMywxMj
+UwNTY3NDgwLDk0ODc5NjM5OV19
 -->
