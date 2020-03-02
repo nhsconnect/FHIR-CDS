@@ -127,7 +127,7 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Coding</td>
     <td>inpatient | outpatient | ambulatory | emergency + <a href="https://www.hl7.org/fhir/stu3/v3/ActEncounterCode/vs.html">ActEncounterCode (Extensible)</a></td>
-<td>This SHOULD be populated with the value 'unscheduled'.</td>
+<td>This MUST NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">classHistory</code></td>
@@ -399,6 +399,6 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MzYyNjcxNCwxNzM2MTYzNTEzLDEyNT
+eyJoaXN0b3J5IjpbMTE2NzYwMTEzNywxNzM2MTYzNTEzLDEyNT
 A1Njc0ODAsOTQ4Nzk2Mzk5XX0=
 -->
