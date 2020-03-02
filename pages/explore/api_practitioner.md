@@ -41,7 +41,7 @@ td.sub-sub-sub{
 
 ### Usage ###
 
-Within the Clinical Decision Support API implementation, the [Practitioner](http://hl7.org/fhir/STU3/practitioner.html) resource...
+Within the Clinical Decision Support API implementation, the [Practitioner](http://hl7.org/fhir/STU3/practitioner.html) resource represents a person who is directly involved in the provision of healthcare (*e.g.* physician, dentist, pharmacist, nurse
 
 The table below gives implementation guidance in relation to the elements within a `Practitioner`:
 
@@ -211,6 +211,6 @@ Languages</a> (Extensible but limited to All Languages)</td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDkwODk4NiwxMTk2OTkzOTQ0LDQ2Nj
-k5NjY2MF19
+eyJoaXN0b3J5IjpbMTI0MTYyOTA1NywtMjE0OTA4OTg2LDExOT
+Y5OTM5NDQsNDY2OTk2NjYwXX0=
 -->
