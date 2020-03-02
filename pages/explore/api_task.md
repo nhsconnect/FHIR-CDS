@@ -23,9 +23,7 @@ td.sub{
 ## Task: Implementation Guidance ##
 ​
 ### Usage ###
-The [Task](http://hl7.org/fhir/STU3/task.html) resource is used ...
-​
-In the CDS context, ...
+The [Task](http://hl7.org/fhir/STU3/task.html) resource is used to describe an activity that can be performed and track its state of completion.
 ​
 Detailed implementation guidance for an `Task` resource in the CDS context is given below:  
 ​
@@ -367,6 +365,6 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMjgxNjUyMywtMTE3NzgxMDYzNywxMz
-Q1MDk5NTUwLDU0MzQ2NzExM119
+eyJoaXN0b3J5IjpbMTYwMzc3Mjc3LC02MzI4MTY1MjMsLTExNz
+c4MTA2MzcsMTM0NTA5OTU1MCw1NDM0NjcxMTNdfQ==
 -->
