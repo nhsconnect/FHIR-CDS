@@ -379,14 +379,14 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
   <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>The custodian organization of this Encounter record</td>
-<td>The service provider</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Organization</code> who is responsible for the encounter</td>
 </tr>
 <tr>  
 <td><code class="highlighter-rouge">partOf</code></td>
   <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter)</td>
     <td>Another Encounter this encounter is part of</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>  
 </table>
 
@@ -399,6 +399,6 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjA1Nzc4NjMsMTczNjE2MzUxMywxMj
-UwNTY3NDgwLDk0ODc5NjM5OV19
+eyJoaXN0b3J5IjpbLTQ0ODY4MjkxNSwxNzM2MTYzNTEzLDEyNT
+A1Njc0ODAsOTQ4Nzk2Mzk5XX0=
 -->
