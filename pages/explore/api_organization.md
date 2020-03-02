@@ -44,7 +44,7 @@ td.sub-sub-sub{
 
 The [Organization](http://hl7.org/fhir/stu3/organization.html) resource is used to represent a grouping of people or organizations with a common purpose.
 
-Detailed implementation guidance for an `Organization` resource in the CDS context is given below:  
+Detailed implementation guidance for an `Organization` resource in the CDS context is given below:
 
 
 <table style="min-width:100%;width:100%">
@@ -217,6 +217,6 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMxNzY3MDEyLC0yNDk0NzY1ODIsMTQ0Mz
-czNDU1OCwyMTY2MTA1NzZdfQ==
+eyJoaXN0b3J5IjpbMTcxNTY0MTI1MiwtMjQ5NDc2NTgyLDE0ND
+M3MzQ1NTgsMjE2NjEwNTc2XX0=
 -->
