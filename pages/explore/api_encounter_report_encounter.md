@@ -23,7 +23,6 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
 
 
 <table style="min-width:100%;width:100%">
-
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
@@ -31,7 +30,6 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
       <th style="width:38%;">FHIR Documentation</th>
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
-
 <tr>
   <td><code class="highlighter-rouge">id</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
@@ -101,7 +99,7 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>planned | arrived | triaged | in-progress | onleave | finished | cancelled + <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-status.html">EncounterStatus (Required)</a>.</td>
-<td>During a triage journey this will carry the value 'triaged'. When the <code class="highlighter-rouge">Encounter</code> has a result, this will update to 'finished'.</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">statusHistory</code></td>
@@ -401,6 +399,6 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczNjE2MzUxMywxMjUwNTY3NDgwLDk0OD
-c5NjM5OV19
+eyJoaXN0b3J5IjpbLTY4MzYyNjcxNCwxNzM2MTYzNTEzLDEyNT
+A1Njc0ODAsOTQ4Nzk2Mzk5XX0=
 -->
