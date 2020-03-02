@@ -23,7 +23,7 @@ td.sub{
 ## Appointment: Implementation Guidance ##
 ​
 ### Usage ###
-The [Appointment](http://hl7.org/fhir/STU3/appointment.html) resource is used ...
+The [Appointment](http://hl7.org/fhir/STU3/appointment.html) resource is used to group the details of appointments that are booked or requested for the patient as a result of Referral
 ​
 In the CDS context, ...
 ​
@@ -276,5 +276,6 @@ Detailed implementation guidance for an `Appointment` resource in the CDS contex
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDE1NTAxNDUsOTc1NTYxMjE4XX0=
+eyJoaXN0b3J5IjpbMjAxMTIwNzAwMiwtMTkwMTU1MDE0NSw5Nz
+U1NjEyMThdfQ==
 -->
