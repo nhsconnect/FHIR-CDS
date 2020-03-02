@@ -13,7 +13,7 @@ summary: RelatedPerson resource implementation guidance
 
 ### Usage ###
 
-Within the Clinical Decision Support API implementation, the [RelatedPerson](http://hl7.org/fhir/STU3/relatedperson.html) resource is used to convey information about person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process
+Within the Clinical Decision Support API implementation, the [RelatedPerson](http://hl7.org/fhir/STU3/relatedperson.html) resource is used to convey information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process
 
 The table below gives implementation guidance in relation to the elements within a `RelatedPerson`:
 
@@ -162,5 +162,5 @@ Languages</a> (Extensible but limited to All Languages)</td>
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA0MTY0OTc5LC00Mzg4MjYzNF19
+eyJoaXN0b3J5IjpbLTEyNzAzNzgzNTAsLTQzODgyNjM0XX0=
 -->
