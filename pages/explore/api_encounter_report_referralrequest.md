@@ -47,7 +47,7 @@ Within the Clinical Decision Support API implementation, the [CareConnect-Referr
 A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
 
 `RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
-Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS Encounter \r is given below:  
+Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS Encounter Report is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -295,5 +295,5 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjA5OTk1MTFdfQ==
+eyJoaXN0b3J5IjpbMzk5NTA2NjI1XX0=
 -->
