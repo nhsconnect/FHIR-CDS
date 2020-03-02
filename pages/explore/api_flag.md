@@ -12,7 +12,7 @@ summary: Flag resource implementation guidance
 ## Flag: Implementation Guidance ##
 
 ### Usage ###
-The [Flag](http://hl7.org/fhir/stu3/flag.html) resource is used ...
+The [Flag](http://hl7.org/fhir/stu3/flag.html) resource represents a warning or notification of some sort presented to the user, usually of sufficient importance to warrant a special display of some sort
 
 In the CDS context, ...
 
@@ -146,6 +146,6 @@ Detailed implementation guidance for an `Flag` resource in the context of a CDS 
 </tr>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTAzNzA2OCwxMjk0MDE5NTU0LC0xMT
+eyJoaXN0b3J5IjpbMTA0OTU4MjU4OCwxMjk0MDE5NTU0LC0xMT
 A1ODU4OTA0LDE5ODM2ODg4NTBdfQ==
 -->
