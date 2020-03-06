@@ -264,7 +264,7 @@ DocumentRelationshipType (Required)</td>
     <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>The clinical service(s) being documented</td>
-    <td>MUST NOT be populated</td>
+    <td>This MUST NOT be populated</td>
 </tr>
 <tr>
     <td class="sub"><code>code</code></td>
@@ -361,14 +361,15 @@ List Empty Reasons (Preferred)</td>
 
 <!--stackedit_data:
 eyJkaXNjdXNzaW9ucyI6eyJwdzBYWDFuV2o2WnpkSkZhIjp7In
-N0YXJ0IjoxMDM3MCwiZW5kIjoxMDM3OSwidGV4dCI6Ijx0ZD48
+N0YXJ0IjoxMDM3NSwiZW5kIjoxMDM4NCwidGV4dCI6Ijx0ZD48
 L3RkPiJ9fSwiY29tbWVudHMiOnsiOGZwaUVWajJZVGlxNnpNSS
 I6eyJkaXNjdXNzaW9uSWQiOiJwdzBYWDFuV2o2WnpkSkZhIiwi
 c3ViIjoiZ2g6NjA2NTMxMDAiLCJ0ZXh0IjoiU2hvdWxkIHRoZS
 BDb21wb3NpdGlvbiBsaW5rIHRvIHRoZSBMaXN0IG9yIGluZGl2
 aWR1YWwgcmVzb3VyY2VzIGZvciBhbiBpbnRlcmFjdGlvbj8iLC
-JjcmVhdGVkIjoxNTgyOTAzMjk3OTIxfX0sImhpc3RvcnkiOlst
-NDMyMjM2MTc3LDEzNDI0OTAxOTYsLTEwMjc2ODA2NiwtODY0Mz
-EzODEzLDg0ODk1MjI3MywtMTMzMDcxNTg2OSwxNzYwNjQ3NDMx
-LC0xNjU2NjU4ODkxLC0xMDE2MDI4MjQ0XX0=
+JjcmVhdGVkIjoxNTgyOTAzMjk3OTIxfX0sImhpc3RvcnkiOlsx
+ODEzMjUyNjYwLC00MzIyMzYxNzcsMTM0MjQ5MDE5NiwtMTAyNz
+Y4MDY2LC04NjQzMTM4MTMsODQ4OTUyMjczLC0xMzMwNzE1ODY5
+LDE3NjA2NDc0MzEsLTE2NTY2NTg4OTEsLTEwMTYwMjgyNDRdfQ
+==
 -->
