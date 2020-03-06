@@ -44,7 +44,7 @@ td.sub-sub-sub{
 
 Used to represent represent a human-readable summary of the triage journey for a patient.
 
-This will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The Encounter resource does not contain a reference to the composition.  There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
+This will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The `Encounter` resource does not contain a reference to the composition.  There may be more than one Composition per Encounter, for example, where a CDS is managing multiple ServiceDefinition interactions with the EMS for the same patient at the same time.
 
 Detailed implementation guidance for an `Composition` resource in the CDS context is given below:  
 
@@ -361,14 +361,14 @@ List Empty Reasons (Preferred)</td>
 
 <!--stackedit_data:
 eyJkaXNjdXNzaW9ucyI6eyJwdzBYWDFuV2o2WnpkSkZhIjp7In
-N0YXJ0IjoxMDM2NSwiZW5kIjoxMDM3NCwidGV4dCI6Ijx0ZD48
+N0YXJ0IjoxMDM2NywiZW5kIjoxMDM3NiwidGV4dCI6Ijx0ZD48
 L3RkPiJ9fSwiY29tbWVudHMiOnsiOGZwaUVWajJZVGlxNnpNSS
 I6eyJkaXNjdXNzaW9uSWQiOiJwdzBYWDFuV2o2WnpkSkZhIiwi
 c3ViIjoiZ2g6NjA2NTMxMDAiLCJ0ZXh0IjoiU2hvdWxkIHRoZS
 BDb21wb3NpdGlvbiBsaW5rIHRvIHRoZSBMaXN0IG9yIGluZGl2
 aWR1YWwgcmVzb3VyY2VzIGZvciBhbiBpbnRlcmFjdGlvbj8iLC
-JjcmVhdGVkIjoxNTgyOTAzMjk3OTIxfX0sImhpc3RvcnkiOlst
-MTAyNzY4MDY2LC04NjQzMTM4MTMsODQ4OTUyMjczLC0xMzMwNz
-E1ODY5LDE3NjA2NDc0MzEsLTE2NTY2NTg4OTEsLTEwMTYwMjgy
-NDRdfQ==
+JjcmVhdGVkIjoxNTgyOTAzMjk3OTIxfX0sImhpc3RvcnkiOlsx
+NTg0ODMwNzE2LC0xMDI3NjgwNjYsLTg2NDMxMzgxMyw4NDg5NT
+IyNzMsLTEzMzA3MTU4NjksMTc2MDY0NzQzMSwtMTY1NjY1ODg5
+MSwtMTAxNjAyODI0NF19
 -->
