@@ -32,14 +32,14 @@ POST [base]/ServiceDefinition/$isValid
 
 ## Parameters ##
 
-The `$isValid` operation has one IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameters to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
+The `$isValid` operation has two IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameters to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
+The required ODS cod
 
 ### IN Parameters ##  
 
 
 <table  style="min-width:100%;width:100%">
-
 <tr>
 <th  style="width:10%;">Name</th>
 <th  style="width:5%;">Type</th>
@@ -47,7 +47,6 @@ The `$isValid` operation has one IN and one OUT parameter. The EMS will pass the
 <th  style="width:15%;">Conformance</th>
 <th  style="width:35%;">Implementation Guidance</th>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">requestId</code></td>
 <td>id</td>
@@ -58,7 +57,6 @@ Each invocation of the $check-services method MUST use a unique requestId<br/>
 The requestId MUST be locally unique
 </td>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">ODSCode</code></td>
 <td>ODS Code</td>
@@ -68,21 +66,16 @@ The validity of the CDSS is based on the current patient's registered GP.
 <td>This MUST be populated with the current patient's registered GP</td>
 <td></td>
 </tr>
-
-</table>
-  
-  
+</table> 
 
 ### OUT Parameters ###
 
 <table  style="min-width:100%;width:100%">
-
 <tr>
 <th  style="width:25%;">Name</th>
 <th  style="width:20%;">Type</th>
 <th  style="width:40%;">Documentation</th>
 </tr>
-
 <tr>
 <td><code  class="highlighter-rouge">return</code></td>
 <td>boolean</td>
@@ -90,9 +83,6 @@ The validity of the CDSS is based on the current patient's registered GP.
 The output is a boolean - true if the CDSS is valid for this patient at this time, and false if not.
 </td>
 </tr>
-
-
-
 </table>
 
 
@@ -116,6 +106,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzAxOTUzMzQsLTEzNTE4Mzc0NDUsMT
-M0MzY2MjMxNCwtOTgyMjU2NDU5XX0=
+eyJoaXN0b3J5IjpbLTkzNzMxMzAxMiwtMTM1MTgzNzQ0NSwxMz
+QzNjYyMzE0LC05ODIyNTY0NTldfQ==
 -->
