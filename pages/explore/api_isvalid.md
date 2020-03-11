@@ -10,7 +10,7 @@ summary: $isValid implementation guidance
 {% include custom/search.warnbanner.html %}
 ## isValid Interaction ##
 
-This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at  erviceDefinition resource type level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at the ServiceDefinition resource type level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
 
 ## Request Headers ##
 
@@ -26,18 +26,17 @@ The following HTTP request headers are supported for this interaction:
 
 The `$isValid` operation is performed by an HTTP POST command as shown:
 
-
+```
 POST [base]/ServiceDefinition/$isValid
-  
+```
 
 ## Parameters ##
 
-The `$isValid` operation has two IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameters to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
+The `$isValid` operation has two IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameter to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
 The required ODS code matches the ODS Organization Code of the Patient's General Practitioner in the [CareConnectOrganization FHIR profile](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1#Organization.identifier(odsOrganisationCode)).
 
 ### IN Parameters ##  
-
 
 <table  style="min-width:100%;width:100%">
 <tr>
@@ -106,6 +105,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1MjQ3NzkyNiwxMjA5NjcxMTgwLC0xMz
+eyJoaXN0b3J5IjpbLTk2NTA3OTgwNywxMjA5NjcxMTgwLC0xMz
 UxODM3NDQ1LDEzNDM2NjIzMTQsLTk4MjI1NjQ1OV19
 -->
