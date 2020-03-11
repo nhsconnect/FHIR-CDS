@@ -238,7 +238,6 @@ Detailed implementation guidance for a `Patient` resource in the context of `$ch
 <td  class="sub"><code  class="highlighter-rouge">use</code></td>
 <td><code  class="highlighter-rouge">1..1</code></td>
 <td>Code</td>
-
 <td>usual | official | temp | nickname | anonymous | old | maiden<br/>Fixed Value: official<br/>The use of a human name (<a  href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-NameUse-1">https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-NameUse-1</a>)</td>
 </tr>
 <tr>
@@ -282,141 +281,73 @@ Detailed implementation guidance for a `Patient` resource in the context of `$ch
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>ContactPoint</td>
 <td>A contact detail for the individual</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">gender</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Code</td>
-
 <td>male | female | other | unknown<br/>Binding (required): The gender of a person used for administrative purposes. (<a  href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdministrativeGender-1">https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdministrativeGender-1</a>)</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">birthDate</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Date</td>
-
 <td>The date of birth for the individual</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">deceased[x]</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Boolean | dateTime</td>
-
 <td>Indicates if the individual is deceased or not</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">address</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Address</td>
-
 <td>Addresses for the individual</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">maritalStatus</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>CodeableConcept</td>
-
 <td>Marital (civil) status of a patient<br/>Binding (required): The domestic partnership status of a person. (<a  href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-MaritalStatus-1">https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-MaritalStatus-1</a>)</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">multipleBirth[x]</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Boolean | Integer</td>
-
 <td>Whether patient is part of a multiple birth</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">photo</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Attachment</td>
-
 <td>Image of the patient</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">contact</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>BackboneElement</td>
-
 <td>A contact party (e.g. guardian, partner, friend) for the patient</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">generalPractitioner</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Reference(CareConnectOrganization | CareConnectPractitioner)</td>
-
 <td>Patient's nominated primary care provider</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">managingOrganization</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Reference(CareConnectOrganization)</td>
-
 <td>Organization that is the custodian of the patient record</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">link</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>BackoneElement</td>
-
 <td>Link to another patient resource that concerns the same actual person</td>
-
 </tr>
-
 </table>
 
   
@@ -442,5 +373,5 @@ eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxODgzNTA0Ml19
+eyJoaXN0b3J5IjpbLTIwODI4NzgzNjBdfQ==
 -->
