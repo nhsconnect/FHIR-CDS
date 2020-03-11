@@ -96,97 +96,51 @@ Detailed implementation guidance for a `Patient` resource in the context of `$ch
 <td>Text summary of the resource, for human interpretation</td>
 </tr>
 <tr>
-
 <td><code  class="highlighter-rouge">contained</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Resource</td>
-
 <td>Contained, inline Resources</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (ethnicCategory)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>Ethnic Category<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (religiousAffiliation)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>Religious affiliation<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (patient-cadavericDonor)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>Flag indicating whether the patient authorized the donation of body parts after death<br/>URL: <a  href="http://hl7.org/fhir/stu3/StructureDefinition/patient-cadavericDonor">http://hl7.org/fhir/stu3/StructureDefinition/patient-cadavericDonor</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (residentialStatus)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>The residential status of the patient<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ResidentialStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ResidentialStatus-1</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (treatmentCategory)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>The treatment category for this patient<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-TreatmentCategory-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-TreatmentCategory-1</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (nhsCommunication)</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Extension</td>
-
 <td>NHS communication preferences for a resource<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSCommunication-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSCommunication-1</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (birthPlace)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>Birth Place: The registered place of birth of the patient.<br/>URL: <a  href="http://hl7.org/fhir/stu3/StructureDefinition/birthPlace">http://hl7.org/fhir/stu3/StructureDefinition/birthPlace</a></td>
 
 </tr>
@@ -626,5 +580,5 @@ eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MzkzMTI5MF19
+eyJoaXN0b3J5IjpbMTQ4MDk0MDgxOF19
 -->
