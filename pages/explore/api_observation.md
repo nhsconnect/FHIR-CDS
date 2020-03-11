@@ -190,7 +190,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code>0..1</code></td>
       <td>Quantity | CodeableConcept | string | boolean | Range | Ratio | SampledData | Attachment | time | dateTime | Period</td>
 <td>Actual result</td>
-<td>This MUST be populated with type valueCodableConcept.<br/>
+<td>This MUST be populated with type valueCodableConcept, or left unpopulated. If unpopulated, the value is assumed to take the default value 'present and confirmed'.<br/>
 This is to enable the appropriate definition of DataRequirements.</td>
  </tr>
 <tr>
@@ -362,12 +362,7 @@ Null means no interpretation given.</td>
 
 <!-- ## Example Scenario ##
 Placeholder -->
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjkzODcxOTMsLTExMzY0NTEyODEsOD
-YwMTU1NTg1XX0=
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0ODgyNTIxNywtMTk2OTM4NzE5MywtMT
-EzNjQ1MTI4MSw4NjAxNTU1ODVdfQ==
+eyJoaXN0b3J5IjpbMTA3MDE1NjU4LC0yNDg4MjUyMTcsLTE5Nj
+kzODcxOTMsLTExMzY0NTEyODEsODYwMTU1NTg1XX0=
 -->
