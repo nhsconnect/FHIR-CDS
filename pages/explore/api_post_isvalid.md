@@ -26,9 +26,9 @@ The following HTTP request headers are supported for this interaction:
 
 The `$isValid` operation is performed by an HTTP POST command as shown:
 
-```
+<div markdown="span" class="alert alert-success" role="alert">
 POST [base]/ServiceDefinition/$isValid
-```
+</div>
 
 ## Parameters ##
 
@@ -105,5 +105,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzODcwOTczM119
+eyJoaXN0b3J5IjpbLTEzNTUxNzg2MzYsLTQzODcwOTczM119
 -->
