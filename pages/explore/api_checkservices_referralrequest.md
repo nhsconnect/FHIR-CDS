@@ -262,7 +262,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Condition |<br>Observation)</td>
     <td>Why is service needed?</td>
-<td>This MUST be populated with the chief concern which MUST be a <code class="highlighter-rouge">Condition</code></td>
+<td>This MUST be populated with the chief concern which MUST be a <code class="highlighter-rouge">Condition</code>. <br/><code>Condition.code</code> MUST also be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">description</code></td>
@@ -295,5 +295,5 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM3NjI1ODMzLDQ1MzA0MjA3NV19
+eyJoaXN0b3J5IjpbLTE1NTA3MzU2MTQsNDUzMDQyMDc1XX0=
 -->
