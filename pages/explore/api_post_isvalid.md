@@ -4,13 +4,13 @@ keywords: isvalid, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_post_isvalid.html
-summary: $isValid implementation guidance 
+summary: Determine if a CDSS is able to provide valid ServiceDefinitions for a given context 
 ---
   
 {% include custom/search.warnbanner.html %}
-## isValid Interaction ##
+## Service Validity Interaction ##
 
-This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at the ServiceDefinition resource type level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at the ServiceDefinition resource type level at the start of a triage journey in order to check whether this CDSS is able to provide ServiceDefinitions appropriate for the current journey.
 
 ## Request Headers ##
 
@@ -105,5 +105,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA1MDE3NzA5XX0=
+eyJoaXN0b3J5IjpbMTgwNTExNTEwNl19
 -->
