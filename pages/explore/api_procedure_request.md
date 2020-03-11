@@ -3,7 +3,7 @@ title: Procedure Request Implementation Guidance
 keywords: procedurerequest, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_procedure_request_na.html
+permalink: api_procedure_request.html
 summary: ProcedureRequest resource implementation guidance
 ---
 
@@ -225,6 +225,6 @@ Detailed implementation guidance for a `ProcedureRequest` resource in the CDS co
  </tr> 
 </table>  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNTAzMDQxMywtMTU3NzQ0MjgyMSwxMT
-M1MDMwNDEzXX0=
+eyJoaXN0b3J5IjpbNzA0Njk4ODkxLDExMzUwMzA0MTMsLTE1Nz
+c0NDI4MjFdfQ==
 -->
