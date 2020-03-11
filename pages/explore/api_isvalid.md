@@ -26,21 +26,16 @@ The following HTTP request headers are supported for this interaction:
 
 The `$isValid` operation is performed by an HTTP POST command as shown:
 
-  
-
-POST [base]/$isValid
-
-  
+```
+POST [base]/ServiceDefinition/$isValid
+```  
 
 ## Parameters ##
 
 The `$isValid` operation has one IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameters to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
-  
 
-### IN Parameters ##
-
-  
+### IN Parameters ##  
 
 
 <table  style="min-width:100%;width:100%">
@@ -121,6 +116,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTE4Mzc0NDUsMTM0MzY2MjMxNCwtOT
-gyMjU2NDU5XX0=
+eyJoaXN0b3J5IjpbLTE3NzAxOTUzMzQsLTEzNTE4Mzc0NDUsMT
+M0MzY2MjMxNCwtOTgyMjU2NDU5XX0=
 -->
