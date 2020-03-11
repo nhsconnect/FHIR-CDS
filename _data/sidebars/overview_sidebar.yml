@@ -118,7 +118,7 @@ entries:
   - title: API Interactions
     output: web
     folderitems:
-    - title: Check CDSS Validity
+    - title: Check Validity
       url: /api_post_isvalid.html
       output: web
     - title: Select ServiceDefinition
