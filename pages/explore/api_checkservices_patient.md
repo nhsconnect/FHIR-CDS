@@ -153,7 +153,6 @@ Detailed implementation guidance for a `Patient` resource in the context of `$ch
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Extension</td>
 <td>Representation of a patient’s death notification status (as held on Personal Demographics Service (PDS))<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1</a>
-<td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">modifierExtension</code></td>
@@ -372,5 +371,6 @@ eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NzM5MTk0MiwtMjA4Mjg3ODM2MF19
+eyJoaXN0b3J5IjpbNzA0ODE0NjE0LC0yNTczOTE5NDIsLTIwOD
+I4NzgzNjBdfQ==
 -->
