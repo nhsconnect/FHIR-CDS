@@ -168,7 +168,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>dateTime |<br>Period</td>
     <td>Clinically relevant time/time-period for observation</td>
-<td>This SHOULD be populated where available. If populated it MUST be a Period.</td>
+<td>This MUST be populated with a Period. The end of the period MAY be in the future.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">issued</code></td>
@@ -368,6 +368,6 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzY0NTEyODEsODYwMTU1NTg1LC0xMT
-M2NDUxMjgxXX0=
+eyJoaXN0b3J5IjpbLTE5NjkzODcxOTMsLTExMzY0NTEyODEsOD
+YwMTU1NTg1XX0=
 -->
