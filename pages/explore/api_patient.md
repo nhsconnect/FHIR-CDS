@@ -17,9 +17,7 @@ summary: Patient resource implementation guidance
 The [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) profile will be used to carry details about an individual receiving care or other health-related services.
 Detailed implementation guidance for a `Patient` resource in the CDS context is given below:  
 
-
 <table style="min-width:100%;width:100%">
-
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
@@ -83,7 +81,6 @@ Detailed implementation guidance for a `Patient` resource in the CDS context is 
     <td>Extensions that cannot be ignored</td>
 	<td></td>
 </tr>
-
 </table>
 
 
@@ -99,5 +96,5 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTcwNTM3MDFdfQ==
+eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 -->
