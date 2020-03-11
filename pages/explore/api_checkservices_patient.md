@@ -56,7 +56,6 @@ padding-left: 70px;
 The [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) profile will be used to carry details about an individual receiving care or other health-related services.
 
 Detailed implementation guidance for a `Patient` resource in the context of `$check-services` is given below:
-
   
 <table  style="min-width:100%;width:100%">
 <tr>
@@ -373,5 +372,5 @@ eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODI4NzgzNjBdfQ==
+eyJoaXN0b3J5IjpbLTI1NzM5MTk0MiwtMjA4Mjg3ODM2MF19
 -->
