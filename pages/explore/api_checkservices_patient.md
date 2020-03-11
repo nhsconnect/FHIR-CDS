@@ -142,83 +142,44 @@ Detailed implementation guidance for a `Patient` resource in the context of `$ch
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Extension</td>
 <td>Birth Place: The registered place of birth of the patient.<br/>URL: <a  href="http://hl7.org/fhir/stu3/StructureDefinition/birthPlace">http://hl7.org/fhir/stu3/StructureDefinition/birthPlace</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (nominatedPharmacy)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>A patient's nominated pharmacy<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NominatedPharmacy-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NominatedPharmacy-1</a></td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">extension (deathNotificationStatus)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Extension</td>
-
 <td>Representation of a patient’s death notification status (as held on Personal Demographics Service (PDS))<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1</a>
-
 <td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">modifierExtension</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Extension</td>
-
 <td>Extensions that cannot be ignored</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">identifier</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>Identifier</td>
-
 <td>An identifier for this patient</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">identifier (nhsNumber)</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Identifier</td>
-
 <td>The patient's NHS number</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">extension (nhsNumberVerificationStatus)</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>Extension</td>
-
 <td>NHS number verification status<br />URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1</a></td>
-
 </tr>
-
 <tr>
 
 <td  class="sub"><code  class="highlighter-rouge">use</code></td>
@@ -580,5 +541,5 @@ eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MDk0MDgxOF19
+eyJoaXN0b3J5IjpbMjEzMzA1OTE3Ml19
 -->
