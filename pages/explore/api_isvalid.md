@@ -10,7 +10,7 @@ summary: $isValid implementation guidance
 {% include custom/search.warnbanner.html %}
 ## isValid Interaction ##
 
-This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at a server level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at the ServiceDefinition resource type level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
 
 ## Request Headers ##
 
@@ -121,5 +121,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0MzY2MjMxNCwtOTgyMjU2NDU5XX0=
+eyJoaXN0b3J5IjpbLTEzNTE4Mzc0NDUsMTM0MzY2MjMxNCwtOT
+gyMjU2NDU5XX0=
 -->
