@@ -1,5 +1,5 @@
 ---
-title: $isValid Implementation Guidance
+title: Service Validity Interaction
 keywords: isvalid, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
@@ -105,5 +105,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI0ODYzMjA4XX0=
+eyJoaXN0b3J5IjpbNzA1MDE3NzA5XX0=
 -->
