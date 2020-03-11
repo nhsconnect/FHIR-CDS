@@ -34,7 +34,7 @@ POST [base]/ServiceDefinition/$isValid
 
 The `$isValid` operation has two IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameters to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
-The required ODS code matches the value of Encounter.patient.registeredGp(
+The required ODS code matches the value of Encounter.patient.generalPractitioner.identifier(odsOrganisation)
 
 ### IN Parameters ##  
 
@@ -106,6 +106,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzMDgwNjkzNCwtMTM1MTgzNzQ0NSwxMz
-QzNjYyMzE0LC05ODIyNTY0NTldfQ==
+eyJoaXN0b3J5IjpbLTE3NjI1Nzc4MDksLTEzNTE4Mzc0NDUsMT
+M0MzY2MjMxNCwtOTgyMjU2NDU5XX0=
 -->
