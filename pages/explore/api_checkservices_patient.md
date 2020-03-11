@@ -181,205 +181,106 @@ Detailed implementation guidance for a `Patient` resource in the context of `$ch
 <td>NHS number verification status<br />URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1</a></td>
 </tr>
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">use</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Code</td>
-
 <td>usual | official | temp | secondary (If known)<br />Binding (required): Identifies the purpose for this identifier, if known. (<a  href="http://hl7.org/fhir/stu3/valueset-identifier-use.html">http://hl7.org/fhir/stu3/valueset-identifier-use.html</a>)</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">type</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>CodeableConcept</td>
-
 <td>Description of identifier<br/>Binding (extensible): A coded type for an identifier that can be used to determine which identifier to use for a specific purpose. (<a  href="http://hl7.org/fhir/stu3/valueset-identifier-type.html">http://hl7.org/fhir/stu3/valueset-identifier-type.html</a>)</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">system</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>Uri</td>
-
 <td>The namespace for the identifier value<br/>Fixed Value: https://fhir.nhs.uk/Id/nhs-number</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">value</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>String</td>
-
 <td>The value that is unique</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">period</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Period</td>
-
 <td>Time period when id is/was valid for use</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">assigner</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Reference(CareConnectOrganization)</td>
-
 <td>Organization that issued id (may be just text)</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">active</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Boolean</td>
-
 <td>Whether this patient's record is in active use</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">name</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>HumanName</td>
-
 <td>A name associated with the patient</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">name (official)</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>HumanName</td>
-
 <td>A name associated with the patient</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">use</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>Code</td>
 
 <td>usual | official | temp | nickname | anonymous | old | maiden<br/>Fixed Value: official<br/>The use of a human name (<a  href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-NameUse-1">https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-NameUse-1</a>)</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">text</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>String</td>
-
 <td>Text representation of the full name</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">family</code></td>
-
 <td><code  class="highlighter-rouge">1..1</code></td>
-
 <td>String</td>
-
 <td>TFamily name (often called 'Surname')</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">given</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>String</td>
-
 <td>Given names (not always 'first'). Includes middle names</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">prefix</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>String</td>
-
 <td>Parts that come before the name</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">suffix</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>String</td>
-
 <td>Parts that come after the name</td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code  class="highlighter-rouge">period</code></td>
-
 <td><code  class="highlighter-rouge">0..1</code></td>
-
 <td>Period</td>
-
 <td>Time period when name was/is in use</td>
-
 </tr>
-
 <tr>
-
 <td><code  class="highlighter-rouge">telecom</code></td>
-
 <td><code  class="highlighter-rouge">0..*</code></td>
-
 <td>ContactPoint</td>
-
 <td>A contact detail for the individual</td>
 
 </tr>
@@ -541,5 +442,5 @@ eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMzA1OTE3Ml19
+eyJoaXN0b3J5IjpbLTIxODgzNTA0Ml19
 -->
