@@ -34,7 +34,7 @@ POST [base]/ServiceDefinition/$isValid
 
 The `$isValid` operation has two IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameter to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
-The required ODS code matches the ODS Organization Code of the Patient's General Practitioner in the [CareConnectOrganization FHIR profile](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1#Organization.identifier(odsOrganisationCode)).
+The required ODS code matches the ODS Organization Code of the Patient's General Practitioner ([Patient.generalPractitioner](api_patient.html)) using the [CareConnectOrganization FHIR profile](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1#Organization.identifier(odsOrganisationCode)).
 
 ### IN Parameters ##  
 
@@ -105,5 +105,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNTExNTEwNl19
+eyJoaXN0b3J5IjpbLTExNDU4NzEzNDddfQ==
 -->
