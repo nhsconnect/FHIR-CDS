@@ -10,7 +10,7 @@ summary: $isValid implementation guidance
 {% include custom/search.warnbanner.html %}
 ## isValid Interaction ##
 
-This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at the ServiceDefinition resource type level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at  erviceDefinition resource type level at the start of a triage journey in order to check whether this CDSS is appropriate for the current journey.
 
 ## Request Headers ##
 
@@ -26,15 +26,15 @@ The following HTTP request headers are supported for this interaction:
 
 The `$isValid` operation is performed by an HTTP POST command as shown:
 
-```
+
 POST [base]/ServiceDefinition/$isValid
-```  
+  
 
 ## Parameters ##
 
 The `$isValid` operation has two IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameters to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
-The required ODS code matches the ODS Organisation Code of the Patient's GeneralPractitioner in the [CareConnectOrganization FHIR profile]([https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1#Organization.identifier(odsOrganisationCode)](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1#Organization.identifier(odsOrganisationCode))).
+The required ODS code matches the ODS Organisation Code of the Patient's GeneralPractitioner in the [CareConnectOrganization FHIR profile[]([https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1#Organization.identifier(odsOrganisationCode)](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1#Organization.identifier(odsOrganisationCode))).
 
 ### IN Parameters ##  
 
@@ -66,7 +66,7 @@ The validity of the CDSS is based on the current patient's registered GP.
 <td>This MUST be populated with the current patient's registered GP</td>
 <td></td>
 </tr>
-</table> 
+</table 
 
 ### OUT Parameters ###
 
@@ -106,6 +106,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTc3NjM5NDcsLTEzNTE4Mzc0NDUsMT
-M0MzY2MjMxNCwtOTgyMjU2NDU5XX0=
+eyJoaXN0b3J5IjpbMTIwOTY3MTE4MCwtMTE1Nzc2Mzk0NywtMT
+M1MTgzNzQ0NSwxMzQzNjYyMzE0LC05ODIyNTY0NTldfQ==
 -->
