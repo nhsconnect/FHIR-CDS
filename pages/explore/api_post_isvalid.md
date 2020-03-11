@@ -52,7 +52,7 @@ The required ODS code matches the ODS Organization Code of the Patient's General
 <td>An optional client-provided identifier to track the request.</td>
 <td>This SHOULD be populated</td>
 <td>
-Each invocation of the $check-services method MUST use a unique requestId<br/>
+Each invocation of the $isValid method MUST use a unique requestId<br/>
 The requestId MUST be locally unique
 </td>
 </tr>
@@ -105,5 +105,5 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxMjYzMTE0Nl19
+eyJoaXN0b3J5IjpbLTQzODcwOTczM119
 -->
