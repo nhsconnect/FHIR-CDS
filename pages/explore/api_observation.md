@@ -1,4 +1,3 @@
-
 ---
 title: Observation Implementation Guidance
 keywords: observation, rest,
@@ -363,6 +362,7 @@ Null means no interpretation given.</td>
 <!-- ## Example Scenario ##
 Placeholder -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MDE1NjU4LC0yNDg4MjUyMTcsLTE5Nj
-kzODcxOTMsLTExMzY0NTEyODEsODYwMTU1NTg1XX0=
+eyJoaXN0b3J5IjpbLTEyOTA2NTkyNDAsMTA3MDE1NjU4LC0yND
+g4MjUyMTcsLTE5NjkzODcxOTMsLTExMzY0NTEyODEsODYwMTU1
+NTg1XX0=
 -->
