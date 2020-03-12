@@ -304,7 +304,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>BackboneElement</td>
 <td>Not available during this time due to provided reason</td>
-<td></td>
+<td>This is populated with known times where the service will be unavailable - e.g. overnight</td>
 </tr>
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">notAvailable.description</code></td>
@@ -332,13 +332,12 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Endpoint)</td>
 <td>Technical endpoints providing access to services operated for the location</td>
-<td>This MUST be populated with the invocation details suitable for warm transfer. <br />
-Ordering of endpoints has meaning and SHOULD be maintained by the end user system when trying to connect
+<td>
 </td>
 </tr>
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDE1MTc1MzksLTEwNjg1ODMwNzIsLT
-EyMDAzMzAyOCwtODM1OTAxODY5LC00MjUyMzAyOTldfQ==
+eyJoaXN0b3J5IjpbLTQxODI2OTUyNywtMTA2ODU4MzA3MiwtMT
+IwMDMzMDI4LC04MzU5MDE4NjksLTQyNTIzMDI5OV19
 -->
