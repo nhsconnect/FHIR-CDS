@@ -67,12 +67,12 @@ The validity of the CDSS is based on the current patient's registered GP.
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">evaluateAt</code></td>
-<td>ODS Code</td>
+<td>datetime</td>
 <td>
-The validity of the CDSS is based on the current patient's registered GP.
+The date time for which the evaluation should be carried out
 </td>
-<td>This MUST be populated with the current patient's registered GP</td>
-<td></td>
+<td>This MUST be populated.</td>
+<td>This will normally be *now*, but can be set to future (or past) dates and times to check whether a service is expected to be available in the future</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">ODSCode</code></td>
@@ -122,6 +122,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1OTM3MzMzNywtMTM1NTE3ODYzNiwtND
-M4NzA5NzMzXX0=
+eyJoaXN0b3J5IjpbLTE5MzE3NTE5MjEsLTEzNTUxNzg2MzYsLT
+QzODcwOTczM119
 -->
