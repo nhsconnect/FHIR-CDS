@@ -225,7 +225,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>CodeableConcept</td>
 <td>Specific eligibility requirements required to use the service</td>
-<td>If not populated, then, the service is available to all.  If the service is for Children only, then this MUST be populated with a code of 01.  If the service is for Adults only, the this MUST be populated with a code of 02.</td>
+<td>If not populated, then, the service is available to all.  If the service is for Children only, then this MUST be populated wth a code of 01.  If the service is for Adults only, the this MUST be populated with a code of 02.</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">eligibilityNote</code></td>
@@ -340,6 +340,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNDc1MzY0MSwtMTA2ODU4MzA3MiwtMT
-IwMDMzMDI4LC04MzU5MDE4NjksLTQyNTIzMDI5OV19
+eyJoaXN0b3J5IjpbLTE3MzY5NjE4LDIwMDQ3NTM2NDEsLTEwNj
+g1ODMwNzIsLTEyMDAzMzAyOCwtODM1OTAxODY5LC00MjUyMzAy
+OTldfQ==
 -->
