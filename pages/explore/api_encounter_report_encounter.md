@@ -19,7 +19,7 @@ The [Encounter](http://hl7.org/fhir/stu3/encounter.html) resource is used to car
 
 In the CDS context, an encounter occurs for the duration of a patient’s interaction with a single service provider.
 
-The Encounter resource will use the 
+The Encounter resource will use the CareC
 
 Detailed implementation guidance for an `Encounter` resource in the context of a CDS Encounter Report is given below:  
 
@@ -401,7 +401,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTQ0NTI3OSw1NjQwOTg3MTMsLTQ0OD
+eyJoaXN0b3J5IjpbMTQ0MDIwMTc3NSw1NjQwOTg3MTMsLTQ0OD
 Y4MjkxNSwxNzM2MTYzNTEzLDEyNTA1Njc0ODAsOTQ4Nzk2Mzk5
 XX0=
 -->
