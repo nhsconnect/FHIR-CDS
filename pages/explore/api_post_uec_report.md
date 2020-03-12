@@ -36,9 +36,12 @@ The `$uec-report` operation is performed by an HTTP POST command as shown:
   
 
 <div markdown="span" class="alert alert-success" role="alert">
+
+```
 POST [base]/Encounter/[id]/$uec-report  
 </div>
   
+```
 
 ## Parameters ##  
   
@@ -171,6 +174,6 @@ The following errors can be triggered when performing this operation:
 *  [Timeout](api_errorhandling.html#time-out)  
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODE4NjIxOCw4NTk1NTc3NTUsLTEzNz
-YzMDU3NTEsMTA0MjA3NTI4Ml19
+eyJoaXN0b3J5IjpbLTI3NjQ5NDAyOCwtMTE4MTg2MjE4LDg1OT
+U1Nzc1NSwtMTM3NjMwNTc1MSwxMDQyMDc1MjgyXX0=
 -->
