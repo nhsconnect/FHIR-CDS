@@ -276,8 +276,8 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional information to support referral or transfer of care request</td>
-<td>Secondary concerns MUST be carried in this element.<br/>
-This SHOULD be populated and where populated it MUST be a Condition.</td>
+<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity, Where present, Secondary Concerns MUST be carries in this element.<br/>
+Secondary Concerns MUST be Condition resources.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
@@ -295,6 +295,7 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NzI3NTEzNiwxMDQ3MzAwMTUxLC02ND
-k4OTIyNjksMjEzNTk4ODk4MywzOTk1MDY2MjVdfQ==
+eyJoaXN0b3J5IjpbLTEwMDkyMDgzNTEsLTU1NzI3NTEzNiwxMD
+Q3MzAwMTUxLC02NDk4OTIyNjksMjEzNTk4ODk4MywzOTk1MDY2
+MjVdfQ==
 -->
