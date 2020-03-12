@@ -65,7 +65,24 @@ The validity of the CDSS is based on the current patient's registered GP.
 <td>This MUST be populated with the current patient's registered GP</td>
 <td></td>
 </tr>
-</table>
+<tr>
+<td><code  class="highlighter-rouge">evaluateAt</code></td>
+<td>ODS Code</td>
+<td>
+The validity of the CDSS is based on the current patient's registered GP.
+</td>
+<td>This MUST be populated with the current patient's registered GP</td>
+<td></td>
+</tr>
+<tr>
+<td><code  class="highlighter-rouge">ODSCode</code></td>
+<td>ODS Code</td>
+<td>
+The validity of the CDSS is based on the current patient's registered GP.
+</td>
+<td>This MUST be populated with the current patient's registered GP</td>
+<td></td>
+</tr></table>
 
 ### OUT Parameters ###
 
@@ -105,5 +122,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTUxNzg2MzYsLTQzODcwOTczM119
+eyJoaXN0b3J5IjpbMTc1OTM3MzMzNywtMTM1NTE3ODYzNiwtND
+M4NzA5NzMzXX0=
 -->
