@@ -223,7 +223,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code><br />.  This may f
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>CodeableConcept</td>
 <td>Specific eligibility requirements required to use the service</td>
-<td></td>
+<td>If not populated, then, the service is available to all.  If the service is for Children only, then this should be popualted iwth a code of 01.  If the service is for Adults only, the this shoud be populated iwth a code of 02.</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">eligibilityNote</code></td>
@@ -339,5 +339,6 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNTkwMTg2OSwtNDI1MjMwMjk5XX0=
+eyJoaXN0b3J5IjpbMTgwNzk0MTQyOCwtODM1OTAxODY5LC00Mj
+UyMzAyOTldfQ==
 -->
