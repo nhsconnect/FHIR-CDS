@@ -3,7 +3,7 @@ title: Patient Implementation Guidance
 keywords: patient, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_checkservices_patient.html
+permalink: api_encounter_report_patient.html
 summary: Patient resource implementation guidance
 ---
 
@@ -371,5 +371,5 @@ eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA0ODE0NjE0XX0=
+eyJoaXN0b3J5IjpbLTE1ODgyNjE2MjhdfQ==
 -->
