@@ -133,7 +133,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Reference(Organization)</td>
 <td>Organization that provides this service</td>
-<td>This MUST be populated with a reference to a CareConnectOrganization.   This will be filtered by the EMS to the current patient's registered GP practice</td>
+<td>This MUST be populated with a reference to a CareConnect-Organization.   This will be filtered by the EMS to the current patient's registered GP practice</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">category</code></td>
@@ -223,7 +223,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>CodeableConcept</td>
 <td>Specific eligibility requirements required to use the service</td>
-<td>If not populated, then, the service is available to all.  If the service is for Children only, then this MUSTshould be populalted wiwth a code of 01.  If the service is for Adults only, the this MUSTshoud be populated wiwth a code of 02.</td>
+<td>If not populated, then, the service is available to all.  If the service is for Children only, then this MUST be populated with a code of 01.  If the service is for Adults only, the this MUST be populated with a code of 02.</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">eligibilityNote</code></td>
@@ -339,6 +339,6 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDcxNjAxLC0xMDY4NTgzMDcyLC0xMj
-AwMzMwMjgsLTgzNTkwMTg2OSwtNDI1MjMwMjk5XX0=
+eyJoaXN0b3J5IjpbLTMxNTg4MTUxOCwtMTA2ODU4MzA3MiwtMT
+IwMDMzMDI4LC04MzU5MDE4NjksLTQyNTIzMDI5OV19
 -->
