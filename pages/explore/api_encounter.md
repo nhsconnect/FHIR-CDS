@@ -22,7 +22,6 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
 
 
 <table style="min-width:100%;width:100%">
-
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
@@ -30,7 +29,6 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
       <th style="width:38%;">FHIR Documentation</th>
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
-
 <tr>
   <td><code class="highlighter-rouge">id</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
@@ -400,6 +398,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0NzQxNTIwMyw0OTkxNzgwMSwtNjAxMj
-I3MTQ1LDEyNTA1Njc0ODAsOTQ4Nzk2Mzk5XX0=
+eyJoaXN0b3J5IjpbMTIwMDc2ODk5LDEwNDc0MTUyMDMsNDk5MT
+c4MDEsLTYwMTIyNzE0NSwxMjUwNTY3NDgwLDk0ODc5NjM5OV19
+
 -->
