@@ -56,6 +56,7 @@ Each invocation of the $isValid method MUST use a unique requestId<br/>
 The requestId MUST be locally unique
 </td>
 </tr>
+
 <tr>
 <td><code  class="highlighter-rouge"></code></td>
 <td>e</td>
@@ -125,6 +126,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDU4MDIxMjMsLTIwMTY1MTU1MTAsLT
-EzNTUxNzg2MzYsLTQzODcwOTczM119
+eyJoaXN0b3J5IjpbLTg1MDgwMTY5MywtMTY0NTgwMjEyMywtMj
+AxNjUxNTUxMCwtMTM1NTE3ODYzNiwtNDM4NzA5NzMzXX0=
 -->
