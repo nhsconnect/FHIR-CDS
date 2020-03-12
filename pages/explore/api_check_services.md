@@ -20,7 +20,8 @@ The following HTTP request headers are supported for this interaction:
 | Header               | Value |Conformance |
 |----------------------|-------|-------|
 | `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
-| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MAY ||   
+| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MAY |
+
 ## POST Operation  
   
 The `$check-services` operation is performed by an HTTP POST command as shown:  
@@ -185,11 +186,11 @@ The following errors can be triggered when performing this operation:
 * [Authorization failure](api_errorhandling.html)  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTA4NTk0MTMsLTE1NDI4MzU0OTksMT
-M4MjQ3MDg0MSwtNTQ1MjIzNDkzLDExMzExMjA0OCwtMjA3Nzkx
-Mzk4OCwtMzI0MjcwNDA4LC0xNDU1OTMzODkxLC05NDE3NzgzOT
-MsLTIwMDA1MzA4OTEsMTAxODk2OTYyMSwtMTEyNTgyNzA0OSwt
-NDY2NTEzMTgxLC0yMTI0NTczODUyLDMwMTM1NzIwNSwtNTUxMD
-M5MzU3LC01NzEwNTI0NDMsMTkxNzUyNDAyLDEyNTYyNTgwNzAs
-MTE0NTQyNTgzXX0=
+eyJoaXN0b3J5IjpbLTI1NTAyNTg1OSwtMTcxMDg1OTQxMywtMT
+U0MjgzNTQ5OSwxMzgyNDcwODQxLC01NDUyMjM0OTMsMTEzMTEy
+MDQ4LC0yMDc3OTEzOTg4LC0zMjQyNzA0MDgsLTE0NTU5MzM4OT
+EsLTk0MTc3ODM5MywtMjAwMDUzMDg5MSwxMDE4OTY5NjIxLC0x
+MTI1ODI3MDQ5LC00NjY1MTMxODEsLTIxMjQ1NzM4NTIsMzAxMz
+U3MjA1LC01NTEwMzkzNTcsLTU3MTA1MjQ0MywxOTE3NTI0MDIs
+MTI1NjI1ODA3MF19
 -->
