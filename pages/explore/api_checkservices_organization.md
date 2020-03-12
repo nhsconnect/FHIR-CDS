@@ -3,7 +3,7 @@ title: Organization Implementation Guidance
 keywords: organization, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_organization.html
+permalink: api_checkservices_organization.html
 summary: Organization resource implementation guidance
 ---
 
@@ -229,5 +229,5 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyMTk4MzIwMV19
+eyJoaXN0b3J5IjpbNjcwNjEyNTY4LC01MjE5ODMyMDFdfQ==
 -->
