@@ -116,7 +116,7 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Identifier</td>
 <td>External identifiers for this item</td>
-<td></td>
+<td>There MUST be at least one instance of identifier populated, with a </td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">active</code></td>
@@ -339,5 +339,5 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMjY2ODQ2LC00MjUyMzAyOTldfQ==
+eyJoaXN0b3J5IjpbMzU1ODQ5MzM0LC00MjUyMzAyOTldfQ==
 -->
