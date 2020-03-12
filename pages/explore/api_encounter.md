@@ -1,4 +1,3 @@
-
 ﻿---
 title: Encounter Implementation Guidance
 keywords: encounter, rest,
@@ -405,7 +404,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTc0OTIwMzEsLTM0MzIyMTU0NywxMj
-AwNzY4OTksMTA0NzQxNTIwMyw0OTkxNzgwMSwtNjAxMjI3MTQ1
-LDEyNTA1Njc0ODAsOTQ4Nzk2Mzk5XX0=
+eyJoaXN0b3J5IjpbMTg5MjUxNjUyNywtMTU5NzQ5MjAzMSwtMz
+QzMjIxNTQ3LDEyMDA3Njg5OSwxMDQ3NDE1MjAzLDQ5OTE3ODAx
+LC02MDEyMjcxNDUsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
 -->
