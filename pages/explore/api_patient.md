@@ -1,4 +1,3 @@
-
 ---
 title: Patient Implementation Guidance
 keywords: patient, rest,
@@ -85,5 +84,5 @@ Detailed implementation guidance for a `Patient` resource in the CDS context is 
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MTc3NjkzMCw5MTc0NTg5NTddfQ==
+eyJoaXN0b3J5IjpbMTcyMzgyMTMwMCw5MTc0NTg5NTddfQ==
 -->
