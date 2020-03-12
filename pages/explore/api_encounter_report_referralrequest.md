@@ -234,7 +234,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>Organization agent is acting for</td>
-<td>This SHOULD be populated with the Organisation in the `ServiceDefinition$evaluate`</td>
+<td>This SHOULD be populated with the Organisation in the <code class="highlighter-rouge">ServiceDefinition$evaluate</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specialty</code></td>
@@ -295,5 +295,5 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0MzI4MTU5OSwzOTk1MDY2MjVdfQ==
+eyJoaXN0b3J5IjpbMjEzNTk4ODk4MywzOTk1MDY2MjVdfQ==
 -->
