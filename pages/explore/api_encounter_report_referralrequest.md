@@ -212,7 +212,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>Date of creation/activation</td>
-<td>This U be populated</td>
+<td>This MUST be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">requester</code></td>
@@ -294,7 +294,7 @@ Secondary Concerns MUST be Condition resources.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwNDc5MzM4LC01NTcyNzUxMzYsMTA0Nz
-MwMDE1MSwtNjQ5ODkyMjY5LDIxMzU5ODg5ODMsMzk5NTA2NjI1
-XX0=
+eyJoaXN0b3J5IjpbODgzMzgyMDAwLDgyMDQ3OTMzOCwtNTU3Mj
+c1MTM2LDEwNDczMDAxNTEsLTY0OTg5MjI2OSwyMTM1OTg4OTgz
+LDM5OTUwNjYyNV19
 -->
