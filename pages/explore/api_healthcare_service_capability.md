@@ -253,7 +253,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td>Ways that the service accepts referrals <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-service-referral-method.html">ReferralMethod (Example)</a>
 </td>
-<td>If populated MUST include the current service type</td>
+<td></td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">appointmentRequired</code></td>
@@ -266,8 +266,8 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td><code  class="highlighter-rouge">availableTime</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>BackboneElement</td>
-<td>Times the Service Site is available</td>
-<td></td>
+<td>Times the Service is available</td>
+<td>This is populated with the availability times of the CDSS</td>
 </tr>
 <tr>
 <td  class="sub"><code  class="highlighter-rouge">availableTime.daysOfWeek</code></td>
@@ -339,6 +339,6 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxNTg4MTUxOCwtMTA2ODU4MzA3MiwtMT
-IwMDMzMDI4LC04MzU5MDE4NjksLTQyNTIzMDI5OV19
+eyJoaXN0b3J5IjpbLTIxNDE1MTc1MzksLTEwNjg1ODMwNzIsLT
+EyMDAzMzAyOCwtODM1OTAxODY5LC00MjUyMzAyOTldfQ==
 -->
