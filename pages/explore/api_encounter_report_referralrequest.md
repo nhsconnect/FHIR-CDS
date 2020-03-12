@@ -220,14 +220,14 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>BackboneElement</td>
     <td>Who/what is requesting service - onBehalfOf can only be specified if agent is practitioner or device</td>
-<td></td>
+<td>This SHOULD be populated with the CDS (Device)</td>
  </tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">requester.agent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson |<br>Device)</td>
     <td>Individual making the request</td>
-<td>This SHOULD be populated with the CDS (Device)</td>
+<td></td>
  </tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">requester.onBehalfOf</code></td>
@@ -295,5 +295,5 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk5NTA2NjI1XX0=
+eyJoaXN0b3J5IjpbLTU0MzI4MTU5OSwzOTk1MDY2MjVdfQ==
 -->
