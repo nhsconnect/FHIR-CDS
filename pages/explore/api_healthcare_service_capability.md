@@ -116,7 +116,7 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Identifier</td>
 <td>External identifiers for this item</td>
-<td>There MUST be at least one instance of identifier populated, with a </td>
+<td>There MUST be at least one instance of identifier populated, with a Identifier.value which identifies the CDSS (e.g. eConsult)</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">active</code></td>
@@ -124,8 +124,8 @@ The table below gives implementation guidance in relation to the elements within
 <td>boolean</td>
 <td>Whether this HealthcareService is in active use</td>
 <td>
-SHOULD always be <code  class="highlighter-rouge">true</code><br />
-When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code>
+SHOULD always be <code  class="highlighter-rouge">true</code><br />.  This may form part of hte query string from the EMS
+</code>
 </td>
 </tr>
 <tr>
@@ -133,7 +133,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Reference(Organization)</td>
 <td>Organization that provides this service</td>
-<td>This MUST be populated with a reference to a CareConnectOrganization</td>
+<td>This MUST be populated with a reference to a CareConnectOrganization.   This will be filtered by the EMS to the current patient's registered GP practice</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">category</code></td>
@@ -339,5 +339,5 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU1ODQ5MzM0LC00MjUyMzAyOTldfQ==
+eyJoaXN0b3J5IjpbLTE5NzE0NzYzMDQsLTQyNTIzMDI5OV19
 -->
