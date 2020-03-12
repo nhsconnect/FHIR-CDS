@@ -220,7 +220,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>BackboneElement</td>
     <td>Who/what is requesting service - onBehalfOf can only be specified if agent is practitioner or device</td>
-<td>This SHOULD be populated with the CDS (Device)</td>
+<td>This MUST be populated with the EMS User</td>
  </tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">requester.agent</code></td>
@@ -295,6 +295,6 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0OTg5MjI2OSwyMTM1OTg4OTgzLDM5OT
-UwNjYyNV19
+eyJoaXN0b3J5IjpbMTQzODE2NzA3NiwtNjQ5ODkyMjY5LDIxMz
+U5ODg5ODMsMzk5NTA2NjI1XX0=
 -->
