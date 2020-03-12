@@ -140,7 +140,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ReferralRequest)</td>
     <td>Request(s) replaced by this request</td>
-<td></td>
+<td>If this Encounter Report is replacing a previously sent Encounter Report with a different <code class="highlighter-rouge">ReferralRequest</code> , this MUST be populated with the previous <code class="highlighter-rouge">ReferralRequest</code> .</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">groupIdentifier</code></td>
@@ -295,6 +295,6 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjI3Mjg3OTYsMjEzNTk4ODk4MywzOT
-k1MDY2MjVdfQ==
+eyJoaXN0b3J5IjpbLTY0OTg5MjI2OSwyMTM1OTg4OTgzLDM5OT
+UwNjYyNV19
 -->
