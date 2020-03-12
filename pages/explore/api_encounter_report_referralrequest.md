@@ -255,7 +255,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
         <td>CodeableConcept</td>
     <td>Reason for referral/transfer of care request <a href="https://www.hl7.org/fhir/stu3/valueset-clinical-findings.html">SNOMED CT Clinical Findings (Example)</a></td>
-<td>This MUST be populated.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonReference</code></td>
@@ -295,6 +295,6 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzODE2NzA3NiwtNjQ5ODkyMjY5LDIxMz
+eyJoaXN0b3J5IjpbMTA0NzMwMDE1MSwtNjQ5ODkyMjY5LDIxMz
 U5ODg5ODMsMzk5NTA2NjI1XX0=
 -->
