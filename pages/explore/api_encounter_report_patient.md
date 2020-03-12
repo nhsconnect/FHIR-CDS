@@ -347,29 +347,11 @@ Detailed implementation guidance for a `Patient` resource in the context of the 
 <td>Link to another patient resource that concerns the same actual person</td>
 </tr>
 </table>
-
-  
-  
-  
-  
   
 
 <!-- ## Example Scenario ##
 
 Placeholder -->
-
-  
-  
-  
-  
-  
-  
-
 <!--stackedit_data:
-
-eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
-
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzIyNzkwOV19
+eyJoaXN0b3J5IjpbLTk3ODg2MzI0MiwtMjAzMjI3OTA5XX0=
 -->
