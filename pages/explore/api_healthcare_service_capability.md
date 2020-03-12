@@ -165,7 +165,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code><br />.  This may f
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Location)</td>
 <td>Location(s) where service may be provided</td>
-<td>This MUST be populated</td>
+<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">name</code></td>
@@ -339,5 +339,5 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzE0NzYzMDQsLTQyNTIzMDI5OV19
+eyJoaXN0b3J5IjpbLTgzNTkwMTg2OSwtNDI1MjMwMjk5XX0=
 -->
