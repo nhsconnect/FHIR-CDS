@@ -64,7 +64,7 @@ The requestId MUST be locally unique
 The validity of the CDSS is based on the current patient's registered GP.
 </td>
 <td>This MUST be populated with the current patient's registered GP</td>
-<td></td>
+<td>The validity of the CDSS is based on the current patient's registered GP.</td>
 </tr>
 
 <tr>
@@ -76,17 +76,16 @@ The date time for which the evaluation should be carried out
 <td>This MUST be populated.</td>
 <td>This will normally be *now*, but can be set to future (or past) dates and times to check whether a service is expected to be available in the future
 </td>
-<td>This  be populated with the current patient's </td>
+
 </tr>
 
 <tr>
 <td><code  class="highlighter-rouge">dateOfBirth</code></td>
 <td>datetime</td>
 <td>
-The validity of the CDSS is based on the current patient's registered GP.patient's date of birth
+patient's date of birth
 </td>
-<td>This MUSTSHOULD be populated with the current patient's registered GP</td>
-<td>date of birth</td>
+<td>This MUST be populated with the current patient's date of birth</td>
 <td>Some services may only be valid for adults, or for particular age ranges</td>
 </tr></table>
 
@@ -128,6 +127,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NDg3MDA4MiwtMTY0NTgwMjEyMywtMj
+eyJoaXN0b3J5IjpbLTgwNjAyNjA3OCwtMTY0NTgwMjEyMywtMj
 AxNjUxNTUxMCwtMTM1NTE3ODYzNiwtNDM4NzA5NzMzXX0=
 -->
