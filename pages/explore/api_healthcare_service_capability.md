@@ -42,7 +42,9 @@ td.sub-sub-sub{
 ### Usage ###
 Any CDSS can publish a [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resource which specifies key elements about the CDSS.  In particular, this is used to communicate any opening hours (availability), as well as any eligibility restrictions (such as the age of the patient)
 
-In order to find the appropriate `HealthcareService`, an EMS should query the CDSS for `HealthcareService` resources which match the current Organisation and the CDSS identifier
+In order to find the appropriate `HealthcareService`, an EMS should query the CDSS for `HealthcareService` resources which match the current Organisation and the CDSS identifier.  An example query string is given below:
+
+    GET [base]/HealthcareService?active=true&identifier=*eConsult*&organization.identifier=*ODS1234*
 
 The table below gives implementation guidance in relation to the elements within a `HealthcareService`:
 
@@ -338,6 +340,6 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxODI2OTUyNywtMTA2ODU4MzA3MiwtMT
+eyJoaXN0b3J5IjpbMjAwNDc1MzY0MSwtMTA2ODU4MzA3MiwtMT
 IwMDMzMDI4LC04MzU5MDE4NjksLTQyNTIzMDI5OV19
 -->
