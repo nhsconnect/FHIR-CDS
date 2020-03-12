@@ -1,4 +1,3 @@
-
 ---
 title: Encounter Implementation Guidance
 keywords: encounter, rest,
@@ -398,7 +397,7 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <!-- ## Example Scenario ##
 Placeholder -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNjk0ODgzMiwtNzA0ODMxNTA1LDU2ND
-A5ODcxMywtNDQ4NjgyOTE1LDE3MzYxNjM1MTMsMTI1MDU2NzQ4
-MCw5NDg3OTYzOTldfQ==
+eyJoaXN0b3J5IjpbLTEwODIyMjMxODIsMjAwNjk0ODgzMiwtNz
+A0ODMxNTA1LDU2NDA5ODcxMywtNDQ4NjgyOTE1LDE3MzYxNjM1
+MTMsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
 -->
