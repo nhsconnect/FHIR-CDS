@@ -185,6 +185,12 @@ entries:
         - title: ReferralRequest
           url: /api_checkservices_referralrequest.html
           output: web
+        - title: Patient
+          url: /api_checkservices_patient.html
+          output: web
+        - title: Organization
+          url: /api_checkservices_organization.html
+          output: web
       - title: Encounter Report
         output: web
         subfolderitems:
