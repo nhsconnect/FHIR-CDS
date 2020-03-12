@@ -1,4 +1,5 @@
-﻿---
+
+---
 title: Patient Implementation Guidance
 keywords: patient, rest,
 tags: [rest,fhir,api]
@@ -26,75 +27,63 @@ Detailed implementation guidance for a `Patient` resource in the CDS context is 
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">id</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>id</code></td>
+    <td><code>0..1</code></td>
     <td>id</td>
     <td>Logical id of this artifact</td>
 	<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">meta</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>meta</code></td>
+    <td><code>0..1</code></td>
     <td>Meta</td>
     <td>Metadata about the resource</td>
 		<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">implicitRules</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>implicitRules</code></td>
+    <td><code>0..1</code></td>
     <td>uri</td>
     <td>A set of rules under which this content was created</td>
 		<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">language</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>language</code></td>
+    <td><code>0..1</code></td>
     <td>code</td>
     <td>Language of the resource content. <br/> (Common Languages [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
 	<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">text</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>text</code></td>
+    <td><code>0..1</code></td>
     <td>Narrative</td>
     <td>Text summary of the resource, for human interpretation</td>
 	<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">contained</code></td>
-    <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>contained</code></td>
+    <td><code>0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
 	<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">extension</code></td>
-    <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>extension</code></td>
+    <td><code>0..*</code></td>
     <td>Extension</td>
     <td>Additional Content defined by implementations</td>
 	<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">modifierExtension</code></td>
-    <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>modifierExtension</code></td>
+    <td><code>0..*</code></td>
     <td>Extension</td>
     <td>Extensions that cannot be ignored</td>
 	<td></td>
 </tr>
 </table>
 
-
-
-
-
-<!-- ## Example Scenario ##
-Placeholder -->
-
-
-
-
-
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
+eyJoaXN0b3J5IjpbMTk2MTc3NjkzMCw5MTc0NTg5NTddfQ==
 -->
