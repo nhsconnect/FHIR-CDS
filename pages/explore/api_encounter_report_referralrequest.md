@@ -155,7 +155,7 @@ Where populated it MUST be with the <code class="highlighter-rouge">RequestGroup
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
    <td>draft | active | suspended | completed | entered-in-error | cancelled <a href="https://www.hl7.org/fhir/stu3/valueset-request-status.html">RequestStatus (Required)</a></td>
-<td>This MUST be populated with 'draft', 'active' or cancelled'.</td>
+<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
@@ -248,7 +248,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>HealthcareService)</td>
     <td>Receiver of referral/transfer of care request</td>
-<td>This MUST be populated with the </td>
+<td>This MUST be populated with the <code class="highlighter-rouge">HealthcareService</code> selected from the <code class="highlighter-rouge">$check-services</code> response (or other appropriate override).</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonCode</code></td>
@@ -295,7 +295,7 @@ Secondary Concerns MUST be Condition resources.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMjU1MDIzNSwtNTU3Mjc1MTM2LDEwND
-czMDAxNTEsLTY0OTg5MjI2OSwyMTM1OTg4OTgzLDM5OTUwNjYy
-NV19
+eyJoaXN0b3J5IjpbLTEyMzU5OTYxNDAsLTU1NzI3NTEzNiwxMD
+Q3MzAwMTUxLC02NDk4OTIyNjksMjEzNTk4ODk4MywzOTk1MDY2
+MjVdfQ==
 -->
