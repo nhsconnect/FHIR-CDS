@@ -58,28 +58,30 @@ The requestId MUST be locally unique
 </tr>
 
 <tr>
-<td><code  class="highlighter-rouge"></code></td>
-<td>e</td>
+<td><code  class="highlighter-rouge">ODSCode</code></td>
+<td>ODS Code</td>
 <td>
 The validity of the CDSS is based on the current patient's registered GP.
 </td>
 <td>This MUST be populated with the current patient's registered GP</td>
 <td></td>
 </tr>
+
 <tr>
 <td><code  class="highlighter-rouge">evaluateAt</code></td>
-<td>datetimODS Code</td>
+<td>datetime</td>
 <td>
 The date time for which the evaluation should be carried out
 </td>
 <td>This MUST be populated.</td>
-<td>This will normally be *now*, but can be set to future (or past) dates and times to check whether a service is expected to be available in the futurevalidity of the CDSS is based on the current patient's registered GP.
+<td>This will normally be *now*, but can be set to future (or past) dates and times to check whether a service is expected to be available in the future
 </td>
 <td>This  be populated with the current patient's </td>
 </tr>
+
 <tr>
-<td><code  class="highlighter-rouge">ODSCodedateOfBirth</code></td>
-<td>ODS Coddatetime</td>
+<td><code  class="highlighter-rouge">dateOfBirth</code></td>
+<td>datetime</td>
 <td>
 The validity of the CDSS is based on the current patient's registered GP.patient's date of birth
 </td>
@@ -126,6 +128,6 @@ The following errors can be triggered when performing this operation:
 
 *  [Authorization failure](api_errorhandling.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MDgwMTY5MywtMTY0NTgwMjEyMywtMj
+eyJoaXN0b3J5IjpbMTE4NDg3MDA4MiwtMTY0NTgwMjEyMywtMj
 AxNjUxNTUxMCwtMTM1NTE3ODYzNiwtNDM4NzA5NzMzXX0=
 -->
