@@ -348,29 +348,11 @@ Detailed implementation guidance for a `Patient` resource in the context of `$ch
 </tr>
 </table>
 
-  
-  
-  
-  
-  
 
 <!-- ## Example Scenario ##
 
 Placeholder -->
-
-  
-  
-  
-  
-  
-  
-
 <!--stackedit_data:
-
-eyJoaXN0b3J5IjpbOTE3NDU4OTU3XX0=
-
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA0ODE0NjE0LC0yNTczOTE5NDIsLTIwOD
-I4NzgzNjBdfQ==
+eyJoaXN0b3J5IjpbMTA2MzYyMTc3Nyw3MDQ4MTQ2MTQsLTI1Nz
+M5MTk0MiwtMjA4Mjg3ODM2MF19
 -->
