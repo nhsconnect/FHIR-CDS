@@ -17,10 +17,10 @@ This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) perfor
 The following HTTP request headers are supported for this interaction:  
   
   
-| Header               | Value |Conformance |  
-|----------------------|-------|-------|  
-| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |  
-| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MUST |   
+| Header               | Value |Conformance |
+|----------------------|-------|-------|
+| `Accept`      | The `Accept` header indicates the format of the response the client is able to understand, this will be one of the following `application/fhir+json` or `application/fhir+xml`. See the RESTful API [Content types](api_general_guidance.html#content-types) section. | MAY |
+| `Authorization`      | The `Authorization` header MUST carry a base64url encoded JSON web token. See the RESTful API [Security](api_security.html) section. | MAY ||   
 ## POST Operation  
   
 The `$check-services` operation is performed by an HTTP POST command as shown:  
@@ -185,11 +185,11 @@ The following errors can be triggered when performing this operation:
 * [Authorization failure](api_errorhandling.html)  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDI4MzU0OTksMTM4MjQ3MDg0MSwtNT
-Q1MjIzNDkzLDExMzExMjA0OCwtMjA3NzkxMzk4OCwtMzI0Mjcw
-NDA4LC0xNDU1OTMzODkxLC05NDE3NzgzOTMsLTIwMDA1MzA4OT
-EsMTAxODk2OTYyMSwtMTEyNTgyNzA0OSwtNDY2NTEzMTgxLC0y
-MTI0NTczODUyLDMwMTM1NzIwNSwtNTUxMDM5MzU3LC01NzEwNT
-I0NDMsMTkxNzUyNDAyLDEyNTYyNTgwNzAsMTE0NTQyNTgzLDEw
-Mzg1OTMxNzhdfQ==
+eyJoaXN0b3J5IjpbLTE3MTA4NTk0MTMsLTE1NDI4MzU0OTksMT
+M4MjQ3MDg0MSwtNTQ1MjIzNDkzLDExMzExMjA0OCwtMjA3Nzkx
+Mzk4OCwtMzI0MjcwNDA4LC0xNDU1OTMzODkxLC05NDE3NzgzOT
+MsLTIwMDA1MzA4OTEsMTAxODk2OTYyMSwtMTEyNTgyNzA0OSwt
+NDY2NTEzMTgxLC0yMTI0NTczODUyLDMwMTM1NzIwNSwtNTUxMD
+M5MzU3LC01NzEwNTI0NDMsMTkxNzUyNDAyLDEyNTYyNTgwNzAs
+MTE0NTQyNTgzXX0=
 -->
