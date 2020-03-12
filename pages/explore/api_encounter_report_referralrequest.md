@@ -147,8 +147,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Identifier</td>
     <td>Composite request this is part of</td>
-<td>This SHOULD be populated.<br/>
-Where populated it MUST be with the <code class="highlighter-rouge">RequestGroup.id</code></td>
+<td>This MUST NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
@@ -295,7 +294,7 @@ Secondary Concerns MUST be Condition resources.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzU5OTYxNDAsLTU1NzI3NTEzNiwxMD
-Q3MzAwMTUxLC02NDk4OTIyNjksMjEzNTk4ODk4MywzOTk1MDY2
-MjVdfQ==
+eyJoaXN0b3J5IjpbODIwNDc5MzM4LC01NTcyNzUxMzYsMTA0Nz
+MwMDE1MSwtNjQ5ODkyMjY5LDIxMzU5ODg5ODMsMzk5NTA2NjI1
+XX0=
 -->
