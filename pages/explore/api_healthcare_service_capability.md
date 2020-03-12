@@ -3,7 +3,7 @@ title: Healthcare Service Implementation Guidance
 keywords: healthcareservice, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_healthcare_service_availability.html
+permalink: api_healthcare_service_capability.html
 summary: HealthcareService resource implementation guidance 
 ---
   
@@ -339,5 +339,5 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTM2NzYzMTksLTQyNTIzMDI5OV19
+eyJoaXN0b3J5IjpbMTAwMjY2ODQ2LC00MjUyMzAyOTldfQ==
 -->
