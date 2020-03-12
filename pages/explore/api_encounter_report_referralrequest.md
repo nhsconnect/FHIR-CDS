@@ -133,7 +133,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ReferralRequest |<br>Careplan |<br>ProcedureRequest)</td>
     <td>Request fulfilled by this request</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST be populated with the 'generic' <code class="highlighter-rouge">ReferralRequest</code> received from the CDSS during triage.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">replaces</code></td>
@@ -295,6 +295,6 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5OTI0NjkwNSwyMTM1OTg4OTgzLDM5OT
-UwNjYyNV19
+eyJoaXN0b3J5IjpbLTExNjI3Mjg3OTYsMjEzNTk4ODk4MywzOT
+k1MDY2MjVdfQ==
 -->
