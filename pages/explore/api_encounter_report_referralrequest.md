@@ -248,7 +248,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>HealthcareService)</td>
     <td>Receiver of referral/transfer of care request</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST be populated with the </td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonCode</code></td>
@@ -276,7 +276,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional information to support referral or transfer of care request</td>
-<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity, Where present, Secondary Concerns MUST be carries in this element.<br/>
+<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity.<br /> Where present, Secondary Concerns MUST be carried in this element.<br/>
 Secondary Concerns MUST be Condition resources.</td>
  </tr>
 <tr>
@@ -295,7 +295,7 @@ Secondary Concerns MUST be Condition resources.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDkyMDgzNTEsLTU1NzI3NTEzNiwxMD
-Q3MzAwMTUxLC02NDk4OTIyNjksMjEzNTk4ODk4MywzOTk1MDY2
-MjVdfQ==
+eyJoaXN0b3J5IjpbLTYyMjU1MDIzNSwtNTU3Mjc1MTM2LDEwND
+czMDAxNTEsLTY0OTg5MjI2OSwyMTM1OTg4OTgzLDM5OTUwNjYy
+NV19
 -->
