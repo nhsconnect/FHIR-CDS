@@ -220,21 +220,21 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>BackboneElement</td>
     <td>Who/what is requesting service - onBehalfOf can only be specified if agent is practitioner or device</td>
-<td></td>
+<td>This SHOULD be populated with the CDS (Device)</td>
  </tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">requester.agent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson |<br>Device)</td>
     <td>Individual making the request</td>
-<td>This SHOULD be populated with the CDS (Device)</td>
+<td></td>
  </tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">requester.onBehalfOf</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>Organization agent is acting for</td>
-<td>This SHOULD be populated with the Organisation in the `ServiceDefinition$evaluate`</td>
+<td>This SHOULD be populated with the Organisation in the <code class="highlighter-rouge">ServiceDefinition$evaluate</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specialty</code></td>
@@ -295,5 +295,6 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTA3MzU2MTQsNDUzMDQyMDc1XX0=
+eyJoaXN0b3J5IjpbMTA5NjU2MzkzMiwtMTU1MDczNTYxNCw0NT
+MwNDIwNzVdfQ==
 -->
