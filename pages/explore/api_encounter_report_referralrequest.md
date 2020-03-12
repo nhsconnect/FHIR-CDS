@@ -213,7 +213,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>Date of creation/activation</td>
-<td>This SHOULD be populated</td>
+<td>This U be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">requester</code></td>
@@ -225,7 +225,7 @@ The start of the period must be 'now'.</td>
 <tr>
   <td class="sub"><code class="highlighter-rouge">requester.agent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
-    <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson |<br>Device)</td>
+    <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerS e</td>
     <td>Individual making the request</td>
 <td></td>
  </tr>
@@ -295,6 +295,6 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0NzMwMDE1MSwtNjQ5ODkyMjY5LDIxMz
-U5ODg5ODMsMzk5NTA2NjI1XX0=
+eyJoaXN0b3J5IjpbLTU1NzI3NTEzNiwxMDQ3MzAwMTUxLC02ND
+k4OTIyNjksMjEzNTk4ODk4MywzOTk1MDY2MjVdfQ==
 -->
