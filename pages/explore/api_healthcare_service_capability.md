@@ -42,7 +42,7 @@ td.sub-sub-sub{
 ### Usage ###
 Any CDSS can publish a [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resource which specifies key elements about the CDSS.  In particular, this is used to communicate any opening hours (availability), as well as any eligibility restrictions (such as the age of the patient)
 
-In order to find the appropriate `HealthcareService`, an EMS should query the CDSS for `HealthcareService` resources which match the current Organisation
+In order to find the appropriate `HealthcareService`, an EMS should query the CDSS for `HealthcareService` resources which match the current Organisation and the CDSS identifier
 
 The table below gives implementation guidance in relation to the elements within a `HealthcareService`:
 
@@ -339,5 +339,5 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0ODc1Mjc5LC00MjUyMzAyOTldfQ==
+eyJoaXN0b3J5IjpbLTE3NTM2NzYzMTksLTQyNTIzMDI5OV19
 -->
