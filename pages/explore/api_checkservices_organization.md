@@ -70,181 +70,93 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td><code>0..1</code></td>
 <td>Meta</td>
 <td>Metadata about the resource</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>implicitRules</code></td>
-
 <td><code>0..1</code></td>
-
 <td>uri</td>
-
 <td>A set of rules under which this content was created</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>language</code></td>
-
 <td><code>0..1</code></td>
-
 <td>code</td>
-
 <td>Language of the resource content. <br/>
-
 <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>text</code></td>
-
 <td><code>0..1</code></td>
-
 <td>Narrative</td>
-
 <td>Text summary of the resource, for human interpretation</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>contained</code></td>
-
 <td><code>0..*</code></td>
-
 <td>Resource</td>
-
 <td>Contained, inline Resources</td>
-
 <td>This SHOULD NOT be populated.</td>
-
 </tr>
-
 <tr>
-
 <td><code>extension</code></td>
-
 <td><code>0..*</code></td>
-
 <td>Extension</td>
-
 <td>Additional Content defined by implementations</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>modifierExtension</code></td>
-
 <td><code>0..*</code></td>
-
 <td>Extension</td>
-
 <td>Extensions that cannot be ignored</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>identifier</code></td>
-
 <td><code>0..*</code></td>
-
 <td>Identifier</td>
-
 <td>Identifies this organization across multiple systems</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>active</code></td>
-
 <td><code>0..1</code></td>
-
 <td>boolean</td>
-
 <td>Whether the organization's record is still in active use</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>type</code></td>
-
 <td><code>0..*</code></td>
-
 <td>CodeableConcept</td>
-
 <td>Kind of organization<br>
-
 <a  href="http://hl7.org/fhir/stu3/valueset-organization-type.html">OrganizationType (Example)</a></td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>name</code></td>
-
 <td><code>0..1</code></td>
-
 <td>string</td>
-
 <td>Name used for the organization</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>alias</code></td>
-
 <td><code>0..*</code></td>
-
 <td>string</td>
-
 <td>A list of alternate names that the organization is known as, or was known as in the past</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>telecom</code></td>
-
 <td><code>0..*</code></td>
-
 <td>ContactPoint</td>
-
 <td>A contact detail for the organization<br>
-
 + The telecom of an organization can never be of use 'home'</td>
-
 <td></td>
 
 </tr>
@@ -377,5 +289,5 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzU2MDM5NzNdfQ==
+eyJoaXN0b3J5IjpbNTgwNjUyNjU5XX0=
 -->
