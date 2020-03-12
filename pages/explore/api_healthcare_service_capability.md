@@ -124,7 +124,7 @@ The table below gives implementation guidance in relation to the elements within
 <td>boolean</td>
 <td>Whether this HealthcareService is in active use</td>
 <td>
-SHOULD always be <code  class="highlighter-rouge">true</code><br />.  This may form part of hte query string from the EMS
+SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form part of the query string from the EMS
 </code>
 </td>
 </tr>
@@ -339,6 +339,6 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5OTk0NjI4LC0xMDY4NTgzMDcyLC0xMj
+eyJoaXN0b3J5IjpbLTEwMDcxNjAxLC0xMDY4NTgzMDcyLC0xMj
 AwMzMwMjgsLTgzNTkwMTg2OSwtNDI1MjMwMjk5XX0=
 -->
