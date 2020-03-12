@@ -186,7 +186,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code><br />.  This may f
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>string</td>
 <td>Extra details about the service that can't be placed in the other fields</td>
-<td></td>
+<td>A comma-delimited list of the Service Definition ids which are valid for this `HealthcareService`</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">photo</code></td>
@@ -339,6 +339,6 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjg1ODMwNzIsLTEyMDAzMzAyOCwtOD
-M1OTAxODY5LC00MjUyMzAyOTldfQ==
+eyJoaXN0b3J5IjpbLTU3MDY1OTExMiwtMTA2ODU4MzA3MiwtMT
+IwMDMzMDI4LC04MzU5MDE4NjksLTQyNTIzMDI5OV19
 -->
