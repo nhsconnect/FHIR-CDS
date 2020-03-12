@@ -152,7 +152,7 @@ Detailed implementation guidance for a `Patient` resource in the context of the 
 <td><code  class="highlighter-rouge">extension (deathNotificationStatus)</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Extension</td>
-<td>Representation of a patient’s death notification status (as held on Personal Demographics Service (PDS))<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1</a>
+<td>Representation of a patient’s death notification status (as held on Personal Demographics Service (PDS))<br/>URL: <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DeathNotificationStatus-1</a></td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">modifierExtension</code></td>
@@ -353,6 +353,6 @@ Detailed implementation guidance for a `Patient` resource in the context of the 
 
 Placeholder -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMTY2MTM0LC05Nzg4NjMyNDIsLTIwMz
-IyNzkwOV19
+eyJoaXN0b3J5IjpbLTIwMTk0NjMxMDUsMTAxMTY2MTM0LC05Nz
+g4NjMyNDIsLTIwMzIyNzkwOV19
 -->
