@@ -158,125 +158,65 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td>A contact detail for the organization<br>
 + The telecom of an organization can never be of use 'home'</td>
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>address</code></td>
-
 <td><code>0..*</code></td>
-
 <td>Address</td>
-
 <td>An address for the organization<br>
-
 + An address of an organization can never be of use 'home'</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>partOf</code></td>
-
 <td><code>0..1</code></td>
-
 <td>Reference(Organization)</td>
-
 <td>The organization of which this organization forms a part</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>contact</code></td>
-
 <td><code>0..*</code></td>
-
 <td>BackboneElement</td>
-
 <td>Contact for the organization for a certain purpose</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code>purpose</code></td>
-
 <td><code>0..1</code></td>
-
 <td>CodeableConcept</td>
-
 <td>The type of contact<br>
-
 <a  href="http://hl7.org/fhir/stu3/valueset-contactentity-type.html">ContactEntityType (Extensible)</a></td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code>name</code></td>
-
 <td><code>0..1</code></td>
-
 <td>HumanName</td>
-
 <td>A name associated with the contact</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code>telecom</code></td>
-
 <td><code>0..*</code></td>
-
 <td>ContactPoint</td>
-
 <td>Contact details (telephone, email, etc.) for a contact</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td  class="sub"><code>address</code></td>
-
 <td><code>0..1</code></td>
-
 <td>Address</td>
-
 <td>Visiting or postal addresses for the contact</td>
-
 <td></td>
-
 </tr>
-
 <tr>
-
 <td><code>endpoint</code></td>
-
 <td><code>0..*</code></td>
-
 <td>Reference(Endpoint)</td>
-
 <td>Technical endpoints providing access to services operated for the organization</td>
-
 <td>This SHOULD NOT be populated</td>
-
 </tr>
-
 </table>
 
   
@@ -289,5 +229,5 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgwNjUyNjU5XX0=
+eyJoaXN0b3J5IjpbLTUyMTk4MzIwMV19
 -->
