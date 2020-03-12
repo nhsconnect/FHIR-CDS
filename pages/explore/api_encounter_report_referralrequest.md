@@ -241,7 +241,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
         <td>CodeableConcept</td>
     <td>The clinical specialty (discipline) that the referral is requested for <a href="https://www.hl7.org/fhir/stu3/valueset-practitioner-specialty.html">PractitionerSpecialty (Example)</a></td>
-<td>This MUST NOT be populated.</td>
+<td>This MAY be populated by the EMS</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">recipient</code></td>
@@ -284,7 +284,7 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Annotation</td>
     <td>Comments made about referral request</td>
-<td>This MUST NOT be populated</td>
+<td>This MAY be populated with additional notes entered by the EMS user.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relevantHistory</code></td>
@@ -295,5 +295,6 @@ This SHOULD be populated and where populated it MUST be a Condition.</td>
  </tr> 
 </table> 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNTk4ODk4MywzOTk1MDY2MjVdfQ==
+eyJoaXN0b3J5IjpbMTU5OTI0NjkwNSwyMTM1OTg4OTgzLDM5OT
+UwNjYyNV19
 -->
