@@ -164,6 +164,9 @@ entries:
         - title: ReferralRequest
           url: /api_evaluate_referralrequest.html
           output: web
+        - title: RelatedPerson
+          url: /api_related_person.html
+          output: web
         - title: RequestGroup
           url: /api_requestgroup.html
           output: web
