@@ -343,50 +343,50 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">dischargeDisposition</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>hospitalization.</code><br><code>dischargeDisposition</code></td>
+      <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Category or kind of location after discharge <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-discharge-disposition.html">DischargeDisposition (Example)</a></td>
 <td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">location</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>location</code></td>
+      <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>List of locations where the patient has been</td>
 <td>This SHOULD be populated where the patient has physically attended the provider service.</td>
  </tr>
 <tr>  
-<td><code class="highlighter-rouge">location.location</code></td>
-  <td><code class="highlighter-rouge">1..1</code></td>
+<td><code>location.location</code></td>
+  <td><code>1..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>Location the encounter takes place</td>
 <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">location.status</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>location.status</code></td>
+      <td><code>0..1</code></td>
     <td>code</td>
     <td>planned | active | reserved | completed <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-location-status.html">EncounterLocationStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">location.period</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>location.period</code></td>
+      <td><code>0..1</code></td>
     <td>Period</td>
     <td>Time period during which the patient was present at the location</td>
 <td></td>
  </tr>
 <tr>  
-<td><code class="highlighter-rouge">serviceProvider</code></td>
-  <td><code class="highlighter-rouge">0..1</code></td>
+<td><code>serviceProvider</code></td>
+  <td><code>0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>The custodian organization of this Encounter record</td>
-<td>This MUST be populated with a reference to the Se service Pprovider <code>Organization</code> responsible for the encounter</td>
+<td>This MUST be populated with a reference to the Service Provider <code>Organization</code> responsible for the encounter</td>
 </tr>
 <tr>  
-<td><code class="highlighter-rouge">partOf</code></td>
-  <td><code class="highlighter-rouge">0..1</code></td>
+<td><code>partOf</code></td>
+  <td><code>0..1</code></td>
     <td>Reference<br>(Encounter)</td>
     <td>Another Encounter this encounter is part of</td>
 <td>This MUST NOT be populated</td>
@@ -402,7 +402,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwMDk1MjYxOCwtMTU3ODc0Njc4Miw3Nj
+eyJoaXN0b3J5IjpbLTMyNjMwMDU4NSwtMTU3ODc0Njc4Miw3Nj
 Y5NjM5MjIsMTg5MjUxNjUyNywtMTU5NzQ5MjAzMSwtMzQzMjIx
 NTQ3LDEyMDA3Njg5OSwxMDQ3NDE1MjAzLDQ5OTE3ODAxLC02MD
 EyMjcxNDUsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
