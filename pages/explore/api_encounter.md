@@ -170,26 +170,26 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>Reference<br>(Patient |<br>Group)</td>
     <td>The patient or group present at the encounter</td>
-<td>This MUSTSHOULD be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
+<td>This MUST be populated with a reference to the <code >Patient</code> resource.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">episodeOfCare</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>episodeOfCare</code></td>
+      <td><code>0..*</code></td>
     <td>Reference<br>(EpisodeOfCare)</td>
     <td>Episode(s) of care that this encounter should be recorded against</td>
-<td>If this is a continuation of a prior episode, this <code class="highlighter-rouge">Encounter</code> MUSTshould reference that episode. 
-If not a continuation, this MUSTshould be populated with a new episode.</td>
+<td>If this is a continuation of a prior episode, this <code >Encounter</code> MUST reference that episode. 
+If not a continuation, this MUST be populated with a new episode.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">incomingReferral</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>incomingReferral</code></td>
+      <td><code>0..*</code></td>
     <td>Reference<br>(ReferralRequest)</td>
     <td>The ReferralRequest that initiated this encounter</td>
 <td>This SHOULD be populated where this is a continuation of a patient journey from a different provider.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">participant</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>participant</code></td>
+      <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>List of participants involved in the encounter</td>
 <td>This SHOULD be populated with the details of the EMS system users (<code>Practitioner</code>) during this <code>Encounter</code>, 
@@ -402,8 +402,8 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Nzg3NDY3ODIsNzY2OTYzOTIyLDE4OT
-I1MTY1MjcsLTE1OTc0OTIwMzEsLTM0MzIyMTU0NywxMjAwNzY4
-OTksMTA0NzQxNTIwMyw0OTkxNzgwMSwtNjAxMjI3MTQ1LDEyNT
-A1Njc0ODAsOTQ4Nzk2Mzk5XX0=
+eyJoaXN0b3J5IjpbLTE2MTIzODM5MjcsLTE1Nzg3NDY3ODIsNz
+Y2OTYzOTIyLDE4OTI1MTY1MjcsLTE1OTc0OTIwMzEsLTM0MzIy
+MTU0NywxMjAwNzY4OTksMTA0NzQxNTIwMyw0OTkxNzgwMSwtNj
+AxMjI3MTQ1LDEyNTA1Njc0ODAsOTQ4Nzk2Mzk5XX0=
 -->
