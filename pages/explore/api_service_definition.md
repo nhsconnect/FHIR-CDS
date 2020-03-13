@@ -218,7 +218,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
     <td>CodeableConcept</td>
     <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
 <td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any/all <code class="highlighter-rouge">jurisdictions.</code>
-<br/>Click <a href="#jurisdiction">here</a> for more information.
+<br/>Click <a href="#jurisdiction">here</a> for more information.<br/><a href="">Extended valueset</a> includes England, Scotland, Wales, Northern Ireland and Ireland.
 </td>
  </tr>
 <tr>
@@ -367,6 +367,6 @@ The human readable title, description and usage elements MUST be populated by th
 
 It is the decision of the EMS how and when, if ever to display this information.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM4NDI2MDc3LC0xNjQ0NjQyMjU3LDIzOD
-QyNjA3N119
+eyJoaXN0b3J5IjpbLTE2MjczMjE1MTAsMjM4NDI2MDc3LC0xNj
+Q0NjQyMjU3XX0=
 -->
