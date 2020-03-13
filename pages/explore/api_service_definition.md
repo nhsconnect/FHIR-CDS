@@ -355,6 +355,8 @@ If a CDS decides not to populate the version element, then there is deemed to be
 
 In practice this SHOULD be populated where available although not mandatory.
 
+Where a set of ServiceDefinitions provide a set of unified content, they must share a common version.
+
 ### publisher ###
 
 Population of the publisher element is optional.
@@ -367,6 +369,6 @@ The human readable title, description and usage elements MUST be populated by th
 
 It is the decision of the EMS how and when, if ever to display this information.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjczMjE1MTAsMjM4NDI2MDc3LC0xNj
-Q0NjQyMjU3XX0=
+eyJoaXN0b3J5IjpbMTYyNjI3OTA0LC0xNjI3MzIxNTEwLDIzOD
+QyNjA3NywtMTY0NDY0MjI1N119
 -->
