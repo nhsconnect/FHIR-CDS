@@ -101,18 +101,18 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 	<td></td>
 </tr>
 <tr>
-<td><code>extension (mainLocation)</code></td>
-<td><code>0..1</code></td>
-<td>Extension</td>
-<td>Main location<br/>URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1]">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1</a></td>
-<td></td>
+	<td><code>extension (mainLocation)</code></td>
+	<td><code>0..1</code></td>
+	<td>Extension</td>
+	<td>Main location<br/>URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1]">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1</a></td>
+	<td></td>
 </tr>
 <tr>
-<td><code>extension (organization-period)</code></td>
-<td><code>0..1</code></td>
-<td>Extension</td>
-<td>The date range that this organization should be considered available<br/>URL: <a href="http://hl7.org/fhir/stu3/StructureDefinition/organization-period">http://hl7.org/fhir/stu3/StructureDefinition/organization-period</a></td>
-<td></td>
+	<td><code>extension (organization-period)</code></td>
+	<td><code>0..1</code></td>
+	<td>Extension</td>
+	<td>The date range that this organization should be considered available<br/>URL: <a href="http://hl7.org/fhir/stu3/StructureDefinition/organization-period">http://hl7.org/fhir/stu3/StructureDefinition/organization-period</a></td>
+	<td></td>
 </tr>
 <tr>
   <td><code>modifierExtension</code></td>
@@ -129,17 +129,18 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
     <td></td>
 </tr>
 <tr>
-<td><code>identifier (odsOrganisationCode)</code></td>
-<td><code>0..1</code></td>
-<td>Identifier</td>
-<td>Organisation Data Service code</td>
-<td></td>
+	<td><code>identifier (odsOrganisationCode)</code></td>
+	<td><code>0..1</code></td>
+	<td>Identifier</td>
+	<td>Organisation Data Service code</td>
+	<td></td>
 </tr>
-<td><code>identifier (odsSiteCode)</code></td>
-<td><code>0..1</code></td>
-<td>Identifier</td>
-<td>ODS Site code to identify the organisation at site level</td>
-<td></td>
+<tr>
+	<td><code>identifier (odsSiteCode)</code></td>
+	<td><code>0..1</code></td>
+	<td>Identifier</td>
+	<td>ODS Site code to identify the organisation at site level</td>
+	<td></td>
 </tr>
 <tr>
     <td><code>active</code></td>
@@ -239,6 +240,6 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNzUxMjc1NiwxNzE1NjQxMjUyLC0yND
+eyJoaXN0b3J5IjpbMTk3MDY4NjI4MiwxNzE1NjQxMjUyLC0yND
 k0NzY1ODIsMTQ0MzczNDU1OCwyMTY2MTA1NzZdfQ==
 -->
