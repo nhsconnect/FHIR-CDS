@@ -104,10 +104,10 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td>This SHOULD NOT be populated.</td>
 </tr>
 <tr>
-<td><code>extension</code></td>
+<td><code>extension (mainLocation)</code></td>
 <td><code>0..*</code></td>
 <td>Extension</td>
-<td>Additional Content defined by implementations</td>
+<td>Main location<br /></td>
 <td></td>
 </tr>
 <tr>
@@ -231,6 +231,6 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3Mjk1NTEwMyw2NzA2MTI1NjgsLTUyMT
+eyJoaXN0b3J5IjpbMTAxMTc4MTM2MCw2NzA2MTI1NjgsLTUyMT
 k4MzIwMV19
 -->
