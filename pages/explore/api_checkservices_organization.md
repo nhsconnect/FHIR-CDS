@@ -107,7 +107,7 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td><code>extension (mainLocation)</code></td>
 <td><code>0..1</code></td>
 <td>Extension</td>
-<td>Main location<br/>URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1]">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1</a></td>
+<td>Main location<br/>URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1</a></td>
 <td></td>
 </tr>
 <tr>
@@ -251,6 +251,6 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzNTg4NzgzNiw1MDE2ODI4MTAsNjcwNj
-EyNTY4LC01MjE5ODMyMDFdfQ==
+eyJoaXN0b3J5IjpbLTE2NjkxNTI1NTMsNTAxNjgyODEwLDY3MD
+YxMjU2OCwtNTIxOTgzMjAxXX0=
 -->
