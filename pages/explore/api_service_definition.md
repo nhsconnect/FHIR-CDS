@@ -269,7 +269,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
     <td>DataRequirement</td>
     <td>What data is used by the module</td>
 <td>This element MUST be populated with the set of machine-processable assertions (see <code class="highlighter-rouge">GuidanceResponse.
-outputParameters</code>) which the CDSS requires in order to render the response fully.<br/>The custom value set for <code>dataRequirement.codeFilter.valueCodeableConcept<code> is <a href="">here</a></td>
+outputParameters</code>) which the CDSS requires in order to render the response fully.<br/>The custom value set for <code>dataRequirement.codeFilter.valueCodeableConcept</code> is <a href="">here</a></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">operationDefinition</code></td>
@@ -377,7 +377,7 @@ The custom ValueSet for `trigger.eventData.value` is [here]().
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwOTE2NTY4OSw2Mzk4NzMwMzksMTQ4MD
-E4ODYyMywxNjI2Mjc5MDQsLTE2MjczMjE1MTAsMjM4NDI2MDc3
-LC0xNjQ0NjQyMjU3XX0=
+eyJoaXN0b3J5IjpbMTgwNjQ5ODEzMiwxMjA5MTY1Njg5LDYzOT
+g3MzAzOSwxNDgwMTg4NjIzLDE2MjYyNzkwNCwtMTYyNzMyMTUx
+MCwyMzg0MjYwNzcsLTE2NDQ2NDIyNTddfQ==
 -->
