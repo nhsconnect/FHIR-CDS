@@ -128,11 +128,11 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
       <td><code>0..1</code></td>
     <td>Coding</td>
     <td>inpatient | outpatient | ambulatory | emergency + <a href="https://www.hl7.org/fhir/stu3/v3/ActEncounterCode/vs.html">ActEncounterCode (Extensible)</a></td>
-<td>This MUST NOTSHOULD be populated with the value 'unscheduled'.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">classHistory</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>classHistory</code></td>
+      <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>List of past encounter classes</td>
 <td></td>
@@ -402,7 +402,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwMTYwNjM3NCw3NjY5NjM5MjIsMTg5Mj
+eyJoaXN0b3J5IjpbLTI0ODQ2NjQxOSw3NjY5NjM5MjIsMTg5Mj
 UxNjUyNywtMTU5NzQ5MjAzMSwtMzQzMjIxNTQ3LDEyMDA3Njg5
 OSwxMDQ3NDE1MjAzLDQ5OTE3ODAxLC02MDEyMjcxNDUsMTI1MD
 U2NzQ4MCw5NDg3OTYzOTldfQ==
