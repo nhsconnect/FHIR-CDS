@@ -373,11 +373,11 @@ If populated, this MUST be populated with DataRequirements for the clinical asse
 
 It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.
 
-The ValueSet for `trigger.eventData.value` is [here]().
+The custom ValueSet for `trigger.eventData.value` is [here]().
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk2NTI4Mjc2LDE0ODAxODg2MjMsMTYyNj
+eyJoaXN0b3J5IjpbNjM5ODczMDM5LDE0ODAxODg2MjMsMTYyNj
 I3OTA0LC0xNjI3MzIxNTEwLDIzODQyNjA3NywtMTY0NDY0MjI1
 N119
 -->
