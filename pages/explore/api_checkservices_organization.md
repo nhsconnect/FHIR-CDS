@@ -114,7 +114,7 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td><code>extension (organization-period)</code></td>
 <td><code>0..1</code></td>
 <td>Extension</td>
-<td>The date range that this organization should be considered available<br/>URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1]">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1</a></td>
+<td>The date range that this organization should be considered available<br/>URL: <a href="http://hl7.org/fhir/stu3/StructureDefinition/organization-period">http://hl7.org/fhir/stu3/StructureDefinition/organization-period</a></td>
 <td></td>
 </tr>
 <tr>
@@ -238,6 +238,6 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MzQyOTk3Miw2NzA2MTI1NjgsLTUyMT
+eyJoaXN0b3J5IjpbMTIxNjc3NTMzNSw2NzA2MTI1NjgsLTUyMT
 k4MzIwMV19
 -->
