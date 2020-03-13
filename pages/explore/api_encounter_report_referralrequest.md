@@ -1,4 +1,4 @@
-﻿---
+---
 title: ReferralRequest Implementation Guidance
 keywords: referralrequest, rest,
 tags: [rest,fhir,api]
@@ -133,7 +133,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ReferralRequest |<br>Careplan |<br>ProcedureRequest)</td>
     <td>Request fulfilled by this request</td>
-<td>ith the 'generic' <code class="highlighter-rouge">ReferralRequest</code> received from the CDSS during triage.</td>
+<td>This MUST be populated with the 'generic' <code class="highlighter-rouge">ReferralRequest</code> received from the CDSS during triage.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">replaces</code></td>
@@ -147,14 +147,14 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Identifier</td>
     <td>Composite request this is part of</td>
-<td>This MUST NOTSHOULD be populated</td>
+<td>This MUST NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
    <td>draft | active | suspended | completed | entered-in-error | cancelled <a href="https://www.hl7.org/fhir/stu3/valueset-request-status.html">RequestStatus (Required)</a></td>
-<td>This  be populated w</td>
+<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
@@ -196,7 +196,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This M be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
@@ -212,7 +212,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>Date of creation/activation</td>
-<td>This MUSTU be populated</td>
+<td>This MUST be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">requester</code></td>
@@ -268,15 +268,14 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>A textual description of the referral</td>
-<td> by the CDSS.</td>
+<td>This SHOULD be populated by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">supportingInfo</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional information to support referral or transfer of care request</td>
-<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity.<br />, Where present, Secodary Concerns MUST be carrie in this element.<br/>
-Secondary Concerns MUST be Condition resources.</td>
+<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity.<br /> Where present, Secondary Concerns MUST be carried in this element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
