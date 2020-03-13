@@ -295,49 +295,49 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 </tr>
 <tr>  
 <td><code>hospitalization.origin</code></td>
-  <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>The location from which the patient came before admission</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">admitSource</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>hospitalization.</code><br><code>admitSource</code></td>
+      <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>From where patient was admitted (physician referral, transfer) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-admit-source.html">AdmitSource (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">reAdmission</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>hospitalization.</code><br><code>reAdmission</code></td>
+      <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of hospital re-admission that has occurred (if any). If the value is absent, then this is not identified as a readmission <a href="https://www.hl7.org/fhir/stu3/v2/0092/index.html">v2 Re-Admission Indicator (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">dietPreference</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>hospitalization.</code><br><code>dietPreference</code></td>
+      <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Diet preferences reported by the patient <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-diet.html">Diet (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">specialCourtesy</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>hospitalization.</code><br><code>specialCourtesy</code></td>
+      <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Special courtesies (VIP, board member) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-courtesy.html">SpecialCourtesy (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">specialArrangement</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>hospitalization.</code><br><code>specialArrangement</code></td>
+      <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Wheelchair, translator, stretcher, etc. <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-arrangements.html">SpecialArrangements (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>  
-<td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">destination</code></td>
-  <td><code class="highlighter-rouge">0..1</code></td>
+<td><code>hospitalization.</code><br><code>destination</code></td>
+  <td><code>0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>Location to which the patient is discharged</td>
 <td></td>
@@ -402,7 +402,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NDA2NzQwOSwtMTU3ODc0Njc4Miw3Nj
+eyJoaXN0b3J5IjpbMTMwMDk1MjYxOCwtMTU3ODc0Njc4Miw3Nj
 Y5NjM5MjIsMTg5MjUxNjUyNywtMTU5NzQ5MjAzMSwtMzQzMjIx
 NTQ3LDEyMDA3Njg5OSwxMDQ3NDE1MjAzLDQ5OTE3ODAxLC02MD
 EyMjcxNDUsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
