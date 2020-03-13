@@ -221,6 +221,9 @@ entries:
         - title: ProcedureRequest
           url: /api_procedure_request.html
           output: web
+        - title: Procedure
+          url: /api_procedure.html
+          output: web
         - title: ReferralRequest
           url: /api_encounter_report_referralrequest.html
           output: web
