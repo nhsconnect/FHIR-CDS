@@ -29,7 +29,7 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
-      <th style="width:38%;">FHIR Documentation</th>
+      <th style="width:38%;">FHIR/CareConnect Documentation</th>
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
 <tr>
@@ -80,6 +80,12 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
     <td><code>0..1</code></td>
     <td>Extension</td>
     <td>Encounter transport <br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1</a></td>
+	<td></td>
+</tr>
+  <td><code>extension (outcomeOfAttendance)</code></td>
+    <td><code>0..1</code></td>
+    <td>Extension</td>
+    <td>An extension to the Encounter resource to record the outcome of an Out-Patient attendance.<br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1</a></td>
 	<td></td>
 </tr>
 <tr>
@@ -397,7 +403,7 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <!-- ## Example Scenario ##
 Placeholder -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjEyMTg1NDYsLTEwODIyMjMxODIsMj
+eyJoaXN0b3J5IjpbLTEzNDU4MTEzNjgsLTEwODIyMjMxODIsMj
 AwNjk0ODgzMiwtNzA0ODMxNTA1LDU2NDA5ODcxMywtNDQ4Njgy
 OTE1LDE3MzYxNjM1MTMsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ
 ==
