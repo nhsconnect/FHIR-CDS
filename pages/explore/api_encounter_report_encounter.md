@@ -82,10 +82,18 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
     <td>Encounter transport <br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1</a></td>
 	<td></td>
 </tr>
+<tr>
   <td><code>extension (outcomeOfAttendance)</code></td>
     <td><code>0..1</code></td>
     <td>Extension</td>
     <td>An extension to the Encounter resource to record the outcome of an Out-Patient attendance.<br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1</a></td>
+	<td></td>
+</tr>
+<tr>
+  <td><code>extension (emergencyCareDischargeStatus)</code></td>
+    <td><code>0..1</code></td>
+    <td>Extension</td>
+    <td>An extension to the Encounter resource which is used indicate the status of the Patient on discharge from an Emergency Care Department.<br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EmergencyCareDischargeStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EmergencyCareDischargeStatus-1</a></td>
 	<td></td>
 </tr>
 <tr>
@@ -403,8 +411,8 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <!-- ## Example Scenario ##
 Placeholder -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDU4MTEzNjgsLTEwODIyMjMxODIsMj
-AwNjk0ODgzMiwtNzA0ODMxNTA1LDU2NDA5ODcxMywtNDQ4Njgy
-OTE1LDE3MzYxNjM1MTMsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ
-==
+eyJoaXN0b3J5IjpbMTQ2MDQ4MDU5MywtMTM0NTgxMTM2OCwtMT
+A4MjIyMzE4MiwyMDA2OTQ4ODMyLC03MDQ4MzE1MDUsNTY0MDk4
+NzEzLC00NDg2ODI5MTUsMTczNjE2MzUxMywxMjUwNTY3NDgwLD
+k0ODc5NjM5OV19
 -->
