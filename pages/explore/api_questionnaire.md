@@ -230,7 +230,7 @@ If the content of this element does not match the <code>useContext</code> of the
     <td>CodeableConcept</td>
     <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
 <td>
-The value set of this element is extended to include 'England', 'Wales', 'Scotland' and 'Northern Ireland'
+<a href="">Extended valueset</a> includes England, Scotland, Wales, Northern Ireland and Ireland.
 <br/>
 The contents of this element MUST match the <code>jurisdiction</code> of the current <code>ServiceDefinition</code>.
 <br/>
