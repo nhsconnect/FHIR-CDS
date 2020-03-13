@@ -3,7 +3,7 @@ title: Encounter Implementation Guidance
 keywords: encounter, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_encounter_na.html
+permalink: api_encounter.html
 summary: Encounter resource implementation guidance
 ---
 
@@ -404,8 +404,8 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY2OTYzOTIyLDE4OTI1MTY1MjcsLTE1OT
-c0OTIwMzEsLTM0MzIyMTU0NywxMjAwNzY4OTksMTA0NzQxNTIw
-Myw0OTkxNzgwMSwtNjAxMjI3MTQ1LDEyNTA1Njc0ODAsOTQ4Nz
-k2Mzk5XX0=
+eyJoaXN0b3J5IjpbLTE1Mjk1MDQ1MjYsNzY2OTYzOTIyLDE4OT
+I1MTY1MjcsLTE1OTc0OTIwMzEsLTM0MzIyMTU0NywxMjAwNzY4
+OTksMTA0NzQxNTIwMyw0OTkxNzgwMSwtNjAxMjI3MTQ1LDEyNT
+A1Njc0ODAsOTQ4Nzk2Mzk5XX0=
 -->
