@@ -75,10 +75,24 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
 	<td></td>
 </tr>
 <tr>
-  <td><code>extension</code></td>
-    <td><code>0..*</code></td>
+  <td><code>extension (encounterTransport)</code></td>
+    <td><code>0..1</code></td>
     <td>Extension</td>
-    <td>Additional Content defined by implementations</td>
+    <td>Encounter transport <br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1</a></td>
+	<td></td>
+</tr>
+<tr>
+  <td><code>extension (outcomeOfAttendance)</code></td>
+    <td><code>0..1</code></td>
+    <td>Extension</td>
+    <td>An extension to the Encounter resource to record the outcome of an Out-Patient attendance.<br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1</a></td>
+	<td></td>
+</tr>
+<tr>
+  <td><code>extension (emergencyCareDischargeStatus)</code></td>
+    <td><code>0..1</code></td>
+    <td>Extension</td>
+    <td>An extension to the Encounter resource which is used indicate the status of the Patient on discharge from an Emergency Care Department.<br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EmergencyCareDischargeStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EmergencyCareDischargeStatus-1</a></td>
 	<td></td>
 </tr>
 <tr>
@@ -402,8 +416,9 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyNjMwMDU4NSwtMTU3ODc0Njc4Miw3Nj
-Y5NjM5MjIsMTg5MjUxNjUyNywtMTU5NzQ5MjAzMSwtMzQzMjIx
-NTQ3LDEyMDA3Njg5OSwxMDQ3NDE1MjAzLDQ5OTE3ODAxLC02MD
-EyMjcxNDUsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
+eyJoaXN0b3J5IjpbLTYxMTgxMTEwNCwtMzI2MzAwNTg1LC0xNT
+c4NzQ2NzgyLDc2Njk2MzkyMiwxODkyNTE2NTI3LC0xNTk3NDky
+MDMxLC0zNDMyMjE1NDcsMTIwMDc2ODk5LDEwNDc0MTUyMDMsND
+k5MTc4MDEsLTYwMTIyNzE0NSwxMjUwNTY3NDgwLDk0ODc5NjM5
+OV19
 -->
