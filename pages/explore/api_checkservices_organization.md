@@ -57,7 +57,7 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <th  style="width:10%;">Name</th>
 <th  style="width:5%;">Cardinality</th>
 <th  style="width:10%;">Type</th>
-<th  style="width:38%;">FHIR Documentation</th>
+<th  style="width:38%;">FHIR/CareConnect Documentation</th>
 <th  style="width:37%;">CDS Implementation Guidance</th>
 </tr>
 <tr>
@@ -131,6 +131,20 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td>Identifies this organization across multiple systems</td>
 <td></td>
 </tr>
+<tr>
+<td><code>identifier (odsOrganisationCode)</code></td>
+<td><code>0..1</code></td>
+<td>Identifier</td>
+<td>Organisation Data Service code</td>
+<td></td>
+</tr>
+<td><code>identifier (odsSiteCode)</code></td>
+<td><code>0..1</code></td>
+<td>Identifier</td>
+<td>ODS Site code to identify the organisation at site level</td>
+<td></td>
+</tr>
+<tr>
 <tr>
 <td><code>active</code></td>
 <td><code>0..1</code></td>
@@ -238,6 +252,6 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNjc3NTMzNSw2NzA2MTI1NjgsLTUyMT
-k4MzIwMV19
+eyJoaXN0b3J5IjpbNTAxNjgyODEwLDY3MDYxMjU2OCwtNTIxOT
+gzMjAxXX0=
 -->
