@@ -138,32 +138,32 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">classHistory.class</code></td>
-      <td><code class="highlighter-rouge">1..1</code></td>
+  <td><code>classHistory.class</code></td>
+      <td><code>1..1</code></td>
     <td>coding</td>
     <td>inpatient | outpatient | ambulatory | emergency + <a href="https://www.hl7.org/fhir/stu3/v3/ActEncounterCode/vs.html">ActEncounterCode (Extensible)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">classHistory.period</code></td>
-      <td><code class="highlighter-rouge">1..1</code></td>
+  <td><code>classHistory.period</code></td>
+      <td><code>1..1</code></td>
     <td>Period</td>
     <td>The time that the episode was in the specified class</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">type</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>type</code></td>
+      <td><code>0..*</code></td>
    <td>CodeableConcept</td>
     <td>Specific type of encounter <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-type.html">EncounterType (Example)</a></td>
 <td>This SHOULD be populated.</td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">priority</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>priority</code></td>
+      <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Indicates the urgency of the encounter <a href="https://www.hl7.org/fhir/stu3/v3/ActPriority/vs.html">v3 Code System ActPriority (Example)</a></td>
-<td>This MUST NOTSHOULD be populated.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
@@ -402,8 +402,8 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0ODQ2NjQxOSw3NjY5NjM5MjIsMTg5Mj
-UxNjUyNywtMTU5NzQ5MjAzMSwtMzQzMjIxNTQ3LDEyMDA3Njg5
-OSwxMDQ3NDE1MjAzLDQ5OTE3ODAxLC02MDEyMjcxNDUsMTI1MD
-U2NzQ4MCw5NDg3OTYzOTldfQ==
+eyJoaXN0b3J5IjpbLTE1Nzg3NDY3ODIsNzY2OTYzOTIyLDE4OT
+I1MTY1MjcsLTE1OTc0OTIwMzEsLTM0MzIyMTU0NywxMjAwNzY4
+OTksMTA0NzQxNTIwMyw0OTkxNzgwMSwtNjAxMjI3MTQ1LDEyNT
+A1Njc0ODAsOTQ4Nzk2Mzk5XX0=
 -->
