@@ -138,6 +138,7 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td>Organisation Data Service code</td>
 <td></td>
 </tr>
+<tr>
 <td><code>identifier (odsSiteCode)</code></td>
 <td><code>0..1</code></td>
 <td>Identifier</td>
@@ -251,6 +252,6 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjkxNTI1NTMsNTAxNjgyODEwLDY3MD
-YxMjU2OCwtNTIxOTgzMjAxXX0=
+eyJoaXN0b3J5IjpbMTk3NzA3NjcxNyw1MDE2ODI4MTAsNjcwNj
+EyNTY4LC01MjE5ODMyMDFdfQ==
 -->
