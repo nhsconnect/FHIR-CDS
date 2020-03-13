@@ -261,7 +261,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
-	<td>Click <a </td>
+	<td>Click <a href="#trigger">here</a> for more information.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
@@ -372,7 +372,9 @@ It is the decision of the EMS how and when, if ever to display this information.
 If populated, this MUST be populated with DataRequirements for the clinical assertions required for this ServiceDefinition to be valid.
 
 It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjcyNDAxMzAwLDE2MjYyNzkwNCwtMTYyNz
-MyMTUxMCwyMzg0MjYwNzcsLTE2NDQ2NDIyNTddfQ==
+eyJoaXN0b3J5IjpbMTQ4MDE4ODYyMywxNjI2Mjc5MDQsLTE2Mj
+czMjE1MTAsMjM4NDI2MDc3LC0xNjQ0NjQyMjU3XX0=
 -->
