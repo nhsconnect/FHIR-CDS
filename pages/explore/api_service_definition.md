@@ -27,6 +27,7 @@ CDSS Suppliers MUST ensure that all `ServiceDefinitions` end in the provision of
 Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical Decision Support context is outlined in the table below:
 
 <table style="min-width:100%;width:100%">
+
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
@@ -112,6 +113,7 @@ This absolute URI would be used to locate a <code class="highlighter-rouge">Serv
     <td>Business version of the service definition</td>
 <td>This SHOULD be populated.
 <br/>Click <a href="#version">here</a> for more information.
+
 </td>
  </tr>
 <tr>
@@ -219,7 +221,9 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
     <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
 <td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any/all <code class="highlighter-rouge">jurisdictions.</code>
 <br/>Click <a href="#jurisdiction">here</a> for more information.
+
 </td>
+
  </tr>
 <tr>
   <td><code class="highlighter-rouge">topic</code></td>
@@ -262,6 +266,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
 <td>If populated, this MUST be populated with DataRequirements for the clinical assertions required for this ServiceDefinition to be valid.<br/>
+
 It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.</td>
  </tr>
 <tr>
@@ -367,5 +372,5 @@ The human readable title, description and usage elements MUST be populated by th
 
 It is the decision of the EMS how and when, if ever to display this information.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM4NDI2MDc3XX0=
+eyJoaXN0b3J5IjpbLTE2NDQ2NDIyNTcsMjM4NDI2MDc3XX0=
 -->
