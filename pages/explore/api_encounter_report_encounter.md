@@ -76,8 +76,8 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
 	<td></td>
 </tr>
 <tr>
-  <td><code>extension</code></td>
-    <td><code>0..*</code></td>
+  <td><code>extension (encounterTransport)</code></td>
+    <td><code>0..1</code></td>
     <td>Extension</td>
     <td>Additional Content defined by implementations</td>
 	<td></td>
@@ -397,7 +397,7 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <!-- ## Example Scenario ##
 Placeholder -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODIyMjMxODIsMjAwNjk0ODgzMiwtNz
-A0ODMxNTA1LDU2NDA5ODcxMywtNDQ4NjgyOTE1LDE3MzYxNjM1
-MTMsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
+eyJoaXN0b3J5IjpbNDY0MzU1MzkwLC0xMDgyMjIzMTgyLDIwMD
+Y5NDg4MzIsLTcwNDgzMTUwNSw1NjQwOTg3MTMsLTQ0ODY4Mjkx
+NSwxNzM2MTYzNTEzLDEyNTA1Njc0ODAsOTQ4Nzk2Mzk5XX0=
 -->
