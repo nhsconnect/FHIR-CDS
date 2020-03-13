@@ -261,8 +261,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
-<td>If populated, this MUST be populated with DataRequirements for the clinical assertions required for this ServiceDefinition to be valid.<br/>
-It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.</td>
+	<td>Click <a </td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
@@ -368,7 +367,12 @@ The EMS will always know (and be able to log) exactly which ServiceDefinition wa
 The human readable title, description and usage elements MUST be populated by the CDSS to help mitigate the risks of selecting an inappropriate ServiceDefinition.
 
 It is the decision of the EMS how and when, if ever to display this information.
+
+### trigger ###
+If populated, this MUST be populated with DataRequirements for the clinical assertions required for this ServiceDefinition to be valid.
+
+It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyNjI3OTA0LC0xNjI3MzIxNTEwLDIzOD
-QyNjA3NywtMTY0NDY0MjI1N119
+eyJoaXN0b3J5IjpbNjcyNDAxMzAwLDE2MjYyNzkwNCwtMTYyNz
+MyMTUxMCwyMzg0MjYwNzcsLTE2NDQ2NDIyNTddfQ==
 -->
