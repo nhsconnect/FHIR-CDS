@@ -193,52 +193,52 @@ If not a continuation, this MUST be populated with a new episode.</td>
     <td>BackboneElement</td>
     <td>List of participants involved in the encounter</td>
 <td>This SHOULD be populated with the details of the EMS system users (<code>Practitioner</code>) during this <code>Encounter</code>, 
-and any third parties answering questions on behalf of the patient (<code>RelatedPersonduring this <code class="highlighter-rouge">Encounter</code>).</td>
+and any third parties answering questions on behalf of the patient (<code>RelatedPerson</code>).</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">participant.type</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>participant.type</code></td>
+      <td><code>0..*</code></td>
    <td>CodeableConcept</td>
     <td>Role of participant in encounter <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-participant-type.html">ParticipantType (Extensible)</a></td>
 <td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">participant.period</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>participant.period</code></td>
+      <td><code>0..1</code></td>
     <td>Period</td>
     <td>Period of time during the encounter that the participant participated</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">participant.individual</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>participant.individual</code></td>
+      <td><code>0..1</code></td>
     <td>Reference<br>(Practitioner |<br>RelatedPerson)</td>
     <td>Persons involved in the encounter other than the patient</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">appointment</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>appointment</code></td>
+      <td><code>0..1</code></td>
     <td>Reference<br>(Appointment)</td>
   <td>The appointment that scheduled this encounter</td>
 <td>This MAY be populated, but is not expected to be for unscheduled care</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">period</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>period</code></td>
+      <td><code>0..1</code></td>
     <td>Period</td>
     <td>The start and end time of the encounter</td>
 <td>This SHOULD be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">length</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>length</code></td>
+      <td><code>0..1</code></td>
     <td>Duration</td>
     <td>Quantity of time the encounter lasted (less time absent)</td>
 <td>This SHOULD be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">reason</code></td>
+  <td><code>reason</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>Reason the encounter takes place (code) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-reason.html">Encounter Reason Codes (Preferred)</a></td>
@@ -402,7 +402,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTIzODM5MjcsLTE1Nzg3NDY3ODIsNz
+eyJoaXN0b3J5IjpbLTE3NjMzOTM1MzQsLTE1Nzg3NDY3ODIsNz
 Y2OTYzOTIyLDE4OTI1MTY1MjcsLTE1OTc0OTIwMzEsLTM0MzIy
 MTU0NywxMjAwNzY4OTksMTA0NzQxNTIwMyw0OTkxNzgwMSwtNj
 AxMjI3MTQ1LDEyNTA1Njc0ODAsOTQ4Nzk2Mzk5XX0=
