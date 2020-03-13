@@ -83,49 +83,49 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
 </tr>
 <tr>
   <td><code>modifierExtension</code></td>
-    <td><code class="highlighter-rouge">0..*</code></td>
+    <td><code>0..*</code></td>
     <td>Extension</td>
     <td>Extensions that cannot be ignored</td>
 	<td></td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">identifier</code></td>
-    <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>identifier</code></td>
+    <td><code>0..*</code></td>
     <td>Identifier</td>
     <td>Identifier(s) by which this encounter is known</td>
-<td>Business identifier for the <code class="highlighter-rouge">Encounter</code>, assigned by the EMS.</td>
+<td>Business identifier for the <code>Encounter</code>, assigned by the EMS.</td>
 </tr>
 <tr>
-  <td><code class="highlighter-rouge">status</code></td>
-      <td><code class="highlighter-rouge">1..1</code></td>
+  <td><code>status</code></td>
+      <td><code>1..1</code></td>
     <td>code</td>
     <td>planned | arrived | triaged | in-progress | onleave | finished | cancelled + <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-status.html">EncounterStatus (Required)</a>.</td>
-<td>During a triage journey this will carry the value 'triaged'. When the <code class="highlighter-rouge">Encounter</code> has a result, this will update to 'finished'.</td>
+<td>During a triage journey this will carry the value 'triaged'. When the <code>Encounter</code> has a result, this will update to 'finished'.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">statusHistory</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>statusHistory</code></td>
+      <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>List of past encounter statuses</td>
 <td>To be populated when the status changes</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">statusHistory.status</code></td>
-      <td><code class="highlighter-rouge">1..1</code></td>
+  <td><code>statusHistory.status</code></td>
+      <td><code>1..1</code></td>
     <td>code</td>
     <td>planned | arrived | triaged | in-progress | onleave | finished | cancelled + <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-status.html">EncounterStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">statusHistory.period</code></td>
-      <td><code class="highlighter-rouge">1..1</code></td>
+  <td><code>statusHistory.period</code></td>
+      <td><code>1..1</code></td>
     <td>Period</td>
     <td>The time that the episode was in the specified status</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">class</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>class</code></td>
+      <td><code>0..1</code></td>
     <td>Coding</td>
     <td>inpatient | outpatient | ambulatory | emergency + <a href="https://www.hl7.org/fhir/stu3/v3/ActEncounterCode/vs.html">ActEncounterCode (Extensible)</a></td>
 <td>This MUST NOTSHOULD be populated with the value 'unscheduled'.</td>
@@ -402,7 +402,7 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTEyODY1Myw3NjY5NjM5MjIsMTg5Mj
+eyJoaXN0b3J5IjpbMTQwMTYwNjM3NCw3NjY5NjM5MjIsMTg5Mj
 UxNjUyNywtMTU5NzQ5MjAzMSwtMzQzMjIxNTQ3LDEyMDA3Njg5
 OSwxMDQ3NDE1MjAzLDQ5OTE3ODAxLC02MDEyMjcxNDUsMTI1MD
 U2NzQ4MCw5NDg3OTYzOTldfQ==
