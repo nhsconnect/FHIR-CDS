@@ -239,62 +239,62 @@ and any third parties answering questions on behalf of the patient (<code>Relate
  </tr>
 <tr>
   <td><code>reason</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+      <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Reason the encounter takes place (code) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-reason.html">Encounter Reason Codes (Preferred)</a></td>
 <td>This MAY be populated, but is not expected to be for unscheduled care.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">diagnosis</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>diagnosis</code></td>
+      <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>The list of diagnoses relevant to this encounter</td>
 <td>This MAY be populated, but is not expected to be for unscheduled care.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">diagnosis.condition</code></td>
-      <td><code class="highlighter-rouge">1..1</code></td>
+  <td><code>diagnosis.condition</code></td>
+      <td><code>1..1</code></td>
     <td>Reference<br>(Condition |<br>Procedure)</td>
     <td>Reason the encounter takes place (resource)</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">diagnosis.role</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>diagnosis.role</code></td>
+      <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Role that this diagnosis has within the encounter <br>(e.g. admission, billing, discharge) <a href="https://www.hl7.org/fhir/stu3/valueset-diagnosis-role.html">DiagnosisRole (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">diagnosis.rank</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>diagnosis.rank</code></td>
+      <td><code>0..1</code></td>
     <td>positiveInt</td>
     <td>Ranking of the diagnosis (for each role type)</td>
 <td></td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">account</code></td>
-      <td><code class="highlighter-rouge">0..*</code></td>
+  <td><code>account</code></td>
+      <td><code>0..*</code></td>
     <td>Reference<br>(Account)</td>
     <td>The set of accounts that may be used for billing for this Encounter</td>
 <td>This SHOULD NOT be populated.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>hospitalization</code></td>
+      <td><code>0..1</code></td>
     <td>BackboneElement</td>
     <td>Details about the admission to a healthcare service</td>
 <td>This SHOULD NOT be populated – if the patient is admitted, this will be a separate encounter.</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">hospitalization.</code><br><code class="highlighter-rouge">preAdmissionIdentifier</code></td>
-    <td><code class="highlighter-rouge">0..1</code></td>
+  <td><code>hospitalization.</code><br><code>preAdmissionIdentifier</code></td>
+    <td><code>0..1</code></td>
     <td>Identifier</td>
     <td>Pre-admission identifier</td>
 <td></td>
 </tr>
 <tr>  
-<td><code class="highlighter-rouge">hospitalization.origin</code></td>
+<td><code>hospitalization.origin</code></td>
   <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>The location from which the patient came before admission</td>
@@ -402,8 +402,8 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjMzOTM1MzQsLTE1Nzg3NDY3ODIsNz
-Y2OTYzOTIyLDE4OTI1MTY1MjcsLTE1OTc0OTIwMzEsLTM0MzIy
-MTU0NywxMjAwNzY4OTksMTA0NzQxNTIwMyw0OTkxNzgwMSwtNj
-AxMjI3MTQ1LDEyNTA1Njc0ODAsOTQ4Nzk2Mzk5XX0=
+eyJoaXN0b3J5IjpbMTc3NDA2NzQwOSwtMTU3ODc0Njc4Miw3Nj
+Y5NjM5MjIsMTg5MjUxNjUyNywtMTU5NzQ5MjAzMSwtMzQzMjIx
+NTQ3LDEyMDA3Njg5OSwxMDQ3NDE1MjAzLDQ5OTE3ODAxLC02MD
+EyMjcxNDUsMTI1MDU2NzQ4MCw5NDg3OTYzOTldfQ==
 -->
