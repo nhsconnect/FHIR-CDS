@@ -104,7 +104,7 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 	<td><code>extension (mainLocation)</code></td>
 	<td><code>0..1</code></td>
 	<td>Extension</td>
-	<td>Main location<br/>URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1]">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1</a></td>
+	<td>Main location<br/>URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MainLocation-1</a></td>
 	<td></td>
 </tr>
 <tr>
@@ -240,6 +240,6 @@ Detailed implementation guidance for an `Organization` resource in the CDS conte
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3MDY4NjI4MiwxNzE1NjQxMjUyLC0yND
+eyJoaXN0b3J5IjpbMTQ3OTE5NDIxNSwxNzE1NjQxMjUyLC0yND
 k0NzY1ODIsMTQ0MzczNDU1OCwyMTY2MTA1NzZdfQ==
 -->
