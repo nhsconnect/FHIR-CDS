@@ -145,7 +145,6 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <td></td>
 </tr>
 <tr>
-<tr>
 <td><code>active</code></td>
 <td><code>0..1</code></td>
 <td>boolean</td>
@@ -252,6 +251,6 @@ M3MzQ1NTgsMjE2NjEwNTc2XX0=
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAxNjgyODEwLDY3MDYxMjU2OCwtNTIxOT
-gzMjAxXX0=
+eyJoaXN0b3J5IjpbLTQzNTg4NzgzNiw1MDE2ODI4MTAsNjcwNj
+EyNTY4LC01MjE5ODMyMDFdfQ==
 -->
