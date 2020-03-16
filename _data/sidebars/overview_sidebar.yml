@@ -234,12 +234,12 @@ entries:
           url: /api_task.html
           output: web           
 
-  - title: Conformance
-    output: web
-    folderitems:
-    - title: Overview (uec-tech-standards)
-      url: /
-      output: web
+  # - title: Conformance
+  #   output: web
+  #   folderitems:
+  #   - title: Overview (uec-tech-standards)
+  #     url: /
+  #     output: web
 
   - title: Help & Support
     output: web
