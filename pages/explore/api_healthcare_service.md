@@ -40,7 +40,7 @@ td.sub-sub-sub{
 ## HealthcareService: Implementation Guidance ##
 
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resource will be used to carry a service recommendation given by the DoS that is capable of delivering the patients health needs.
+Within the Clinical Decision Support API implementation, the [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resource will be used to carry a service recommendation given by the DoS that is capable of delivering the patient's health needs.
 
 The table below gives implementation guidance in relation to the elements within a `HealthcareService`:
 
