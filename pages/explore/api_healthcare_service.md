@@ -123,6 +123,7 @@ The table below gives implementation guidance in relation to the elements within
 <td>Whether this HealthcareService is in active use</td>
 <td>
 SHOULD always be <code  class="highlighter-rouge">true</code><br />
+
 When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code>
 </td>
 </tr>
