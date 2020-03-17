@@ -534,6 +534,17 @@ table.request thead tr th {
     background-color: #ED1951;
 }
 
+/*Indent resource table element when adding class="sub" to the table cell (td)*/
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+
 .audienceLabel {
     margin: 10px;
     float: right;
