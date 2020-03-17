@@ -56,8 +56,8 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
   <td><code>language</code></td>
     <td><code>0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br /> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">(Common
- Languages</a> ( [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+    <td>Language of the resource content. <br /> <a href="http://hl7.org/fhir/stu3/valueset-languages.html">(Common
+ Languages (Extensible but limited to All Languages)</a></td>
 	<td></td>
 </tr>
 <tr>
@@ -78,21 +78,21 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
   <td><code>extension (encounterTransport)</code></td>
     <td><code>0..1</code></td>
     <td>Extension</td>
-    <td>Encounter transport <br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1</a></td>
+    <td> An <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EncounterTransport-1">extension</a> to the Encounter resource to include the Transport used by the subject for an encounter.</td>
 	<td></td>
 </tr>
 <tr>
   <td><code>extension (outcomeOfAttendance)</code></td>
     <td><code>0..1</code></td>
     <td>Extension</td>
-    <td>An extension to the Encounter resource to record the outcome of an Out-Patient attendance.<br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1</a></td>
+    <td>An <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-OutcomeOfAttendance-1">extension</a> to the Encounter resource to record the outcome of an Out-Patient attendance.</td>
 	<td></td>
 </tr>
 <tr>
   <td><code>extension (emergencyCareDischargeStatus)</code></td>
     <td><code>0..1</code></td>
     <td>Extension</td>
-    <td>An extension to the Encounter resource which is used indicate the status of the Patient on discharge from an Emergency Care Department.<br />URL: <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EmergencyCareDischargeStatus-1">https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EmergencyCareDischargeStatus-1</a></td>
+    <td>An <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EmergencyCareDischargeStatus-1">extension</a> to the Encounter resource which is used indicate the status of the Patient on discharge from an Emergency Care Department.</td>
 	<td></td>
 </tr>
 <tr>
@@ -124,14 +124,14 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
 <td>To be populated when the status changes</td>
  </tr>
 <tr>
-  <td><code>statusHistory.status</code></td>
+  <td class="sub"><code>statusHistory.status</code></td>
       <td><code>1..1</code></td>
     <td>code</td>
     <td>planned | arrived | triaged | in-progress | onleave | finished | cancelled + <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-status.html">EncounterStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>statusHistory.period</code></td>
+  <td class="sub"><code>statusHistory.period</code></td>
       <td><code>1..1</code></td>
     <td>Period</td>
     <td>The time that the episode was in the specified status</td>
@@ -152,14 +152,14 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
 <td></td>
  </tr>
 <tr>
-  <td><code>classHistory.class</code></td>
+  <td class="sub"><code>classHistory.class</code></td>
       <td><code>1..1</code></td>
     <td>coding</td>
     <td>inpatient | outpatient | ambulatory | emergency + <a href="https://www.hl7.org/fhir/stu3/v3/ActEncounterCode/vs.html">ActEncounterCode (Extensible)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>classHistory.period</code></td>
+  <td class="sub"><code>classHistory.period</code></td>
       <td><code>1..1</code></td>
     <td>Period</td>
     <td>The time that the episode was in the specified class</td>
@@ -210,21 +210,21 @@ If not a continuation, this MUST be populated with a new episode.</td>
 and any third parties answering questions on behalf of the patient (<code>RelatedPerson</code>).</td>
  </tr>
 <tr>
-  <td><code>participant.type</code></td>
+  <td class="sub"><code>participant.type</code></td>
       <td><code>0..*</code></td>
    <td>CodeableConcept</td>
     <td>Role of participant in encounter <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-participant-type.html">ParticipantType (Extensible)</a></td>
 <td></td>
 </tr>
 <tr>
-  <td><code>participant.period</code></td>
+  <td class="sub"><code>participant.period</code></td>
       <td><code>0..1</code></td>
     <td>Period</td>
     <td>Period of time during the encounter that the participant participated</td>
 <td></td>
  </tr>
 <tr>
-  <td><code>participant.individual</code></td>
+  <td class="sub"><code>participant.individual</code></td>
       <td><code>0..1</code></td>
     <td>Reference<br>(Practitioner |<br>RelatedPerson)</td>
     <td>Persons involved in the encounter other than the patient</td>
@@ -266,21 +266,21 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td>This MAY be populated, but is not expected to be for unscheduled care.</td>
  </tr>
 <tr>
-  <td><code>diagnosis.condition</code></td>
+  <td class="sub"><code>diagnosis.condition</code></td>
       <td><code>1..1</code></td>
     <td>Reference<br>(Condition |<br>Procedure)</td>
     <td>Reason the encounter takes place (resource)</td>
 <td></td>
  </tr>
 <tr>
-  <td><code>diagnosis.role</code></td>
+  <td class="sub"><code>diagnosis.role</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Role that this diagnosis has within the encounter <br>(e.g. admission, billing, discharge) <a href="https://www.hl7.org/fhir/stu3/valueset-diagnosis-role.html">DiagnosisRole (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>diagnosis.rank</code></td>
+  <td class="sub"><code>diagnosis.rank</code></td>
       <td><code>0..1</code></td>
     <td>positiveInt</td>
     <td>Ranking of the diagnosis (for each role type)</td>
@@ -301,63 +301,63 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td>This SHOULD NOT be populated – if the patient is admitted, this will be a separate encounter.</td>
  </tr>
 <tr>
-  <td><code>hospitalization.</code><br><code>preAdmissionIdentifier</code></td>
+  <td class="sub"><code>hospitalization.</code><br><code>preAdmissionIdentifier</code></td>
     <td><code>0..1</code></td>
     <td>Identifier</td>
     <td>Pre-admission identifier</td>
 <td></td>
 </tr>
 <tr>  
-<td><code>hospitalization.origin</code></td>
+<td class="sub"><code>hospitalization.origin</code></td>
   <td><code>0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>The location from which the patient came before admission</td>
 <td></td>
  </tr>
 <tr>
-  <td><code>hospitalization.</code><br><code>admitSource</code></td>
+  <td class="sub"><code>hospitalization.</code><br><code>admitSource</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>From where patient was admitted (physician referral, transfer) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-admit-source.html">AdmitSource (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>hospitalization.</code><br><code>reAdmission</code></td>
+  <td class="sub"><code>hospitalization.</code><br><code>reAdmission</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of hospital re-admission that has occurred (if any). If the value is absent, then this is not identified as a readmission <a href="https://www.hl7.org/fhir/stu3/v2/0092/index.html">v2 Re-Admission Indicator (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>hospitalization.</code><br><code>dietPreference</code></td>
+  <td class="sub"><code>hospitalization.</code><br><code>dietPreference</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Diet preferences reported by the patient <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-diet.html">Diet (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>hospitalization.</code><br><code>specialCourtesy</code></td>
+  <td class="sub"><code>hospitalization.</code><br><code>specialCourtesy</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Special courtesies (VIP, board member) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-courtesy.html">SpecialCourtesy (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>hospitalization.</code><br><code>specialArrangement</code></td>
+  <td class="sub"><code>hospitalization.</code><br><code>specialArrangement</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Wheelchair, translator, stretcher, etc. <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-arrangements.html">SpecialArrangements (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>  
-<td><code>hospitalization.</code><br><code>destination</code></td>
+<td class="sub"><code>hospitalization.</code><br><code>destination</code></td>
   <td><code>0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>Location to which the patient is discharged</td>
 <td></td>
  </tr>
 <tr>
-  <td><code>hospitalization.</code><br><code>dischargeDisposition</code></td>
+  <td class="sub"><code>hospitalization.</code><br><code>dischargeDisposition</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Category or kind of location after discharge <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-discharge-disposition.html">DischargeDisposition (Example)</a></td>
@@ -371,21 +371,21 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td>This SHOULD be populated where the patient has physically attended the provider service.</td>
  </tr>
 <tr>  
-<td><code>location.location</code></td>
+<td class="sub"><code>location.location</code></td>
   <td><code>1..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>Location the encounter takes place</td>
 <td></td>
 </tr>
 <tr>
-  <td><code>location.status</code></td>
+  <td class="sub"><code>location.status</code></td>
       <td><code>0..1</code></td>
     <td>code</td>
     <td>planned | active | reserved | completed <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-location-status.html">EncounterLocationStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>location.period</code></td>
+  <td class="sub"><code>location.period</code></td>
       <td><code>0..1</code></td>
     <td>Period</td>
     <td>Time period during which the patient was present at the location</td>
