@@ -277,7 +277,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Why task is needed</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td><code>note</code></td>
