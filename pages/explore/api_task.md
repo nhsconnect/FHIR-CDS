@@ -199,7 +199,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Reference(Any)</td>
     <td>What task is acting on</td>
-<td>This will be the associated ReferralRequest.</td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td><code>for</code></td>
