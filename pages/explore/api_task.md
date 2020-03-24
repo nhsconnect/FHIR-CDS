@@ -241,7 +241,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>BackboneElement</td>
     <td>Who is asking for task to be done</td>
-<td>This will be the initiating user of the Encounter.</td>
+<td>This will be the initiating user of the Encounter, i.e. the user of the EMS.</td>
 </tr>
 <tr>
   <td class="sub"><code>agent</code></td>
