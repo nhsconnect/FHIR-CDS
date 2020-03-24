@@ -319,7 +319,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..*</code></td>
     <td>Reference(Patient | Practitioner | RelatedPerson | Group | Organization)</td>
     <td>For whom is fulfillment sought?</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td><code>input</code></td>
