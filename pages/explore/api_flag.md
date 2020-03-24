@@ -119,7 +119,7 @@ Detailed implementation guidance for an `Flag` resource in the context of a CDS 
     <td><code>1..1</code></td>
     <td>Reference(Patient | Location | Group | Organization | Practitioner | PlanDefinition | Medication | Procedure)</td>
     <td>Who/What is flag about?</td>
-<td></td>
+<td>This MUST be populated with 'Patient'</td>
 </tr>
 <tr>
   <td><code>period</code></td>
