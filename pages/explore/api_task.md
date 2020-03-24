@@ -255,7 +255,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Reference(Organization)</td>
     <td>Organization individual is acting for</td>
-<td></td>
+<td>Only to be populated if requester.agent is a Practitioner.</td>
 </tr>
 <tr>
   <td><code>performerType</code></td>
