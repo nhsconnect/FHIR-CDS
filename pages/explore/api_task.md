@@ -220,7 +220,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Period</td>
     <td>Start and end time of execution</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST be null at the creation of the encounter report.</td>
 </tr>
 <tr>
   <td><code>authoredOn</code></td>
