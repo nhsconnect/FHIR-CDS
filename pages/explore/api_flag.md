@@ -133,7 +133,7 @@ Detailed implementation guidance for an `Flag` resource in the context of a CDS 
     <td><code>0..1</code></td>
     <td>Reference(Encounter)</td>
     <td>Alert relevant during encounter</td>
-<td></td>
+<td>This MUST be populated with the current Encounter reference.</td>
 </tr>
 <tr>
   <td><code>author</code></td>
