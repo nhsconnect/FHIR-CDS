@@ -178,7 +178,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td>code</td>
     <td>normal | urgent | asap | stat<br>
 <a href="http://hl7.org/fhir/STU3/valueset-request-priority.html">RequestPriority</a> (Required)</td>
-<td>This MUST carry the value 'normal'.</td>
+<td>This MUST carry the value 'routine'.</td>
 </tr>
 <tr>
   <td><code>code</code></td>
