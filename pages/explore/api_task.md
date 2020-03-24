@@ -305,7 +305,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>positiveInt</td>
     <td>How many times to repeat</td>
-<td>In practice this will usually be '1'</td>
+<td>In practice this will usually be set to one repetition.</td>
 </tr>
 <tr>
   <td class="sub"><code>period</code></td>
