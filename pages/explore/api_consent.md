@@ -216,7 +216,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..*</code></td>
   <td>Custodian of the consent</td>
   <td>Provider organisation</td>
-  <td></td>
+  <td>This SHOULD be populated with the encounter.serviceProvider</td>
 </tr>
 <tr>
   <td><code>source[x]</code></td>
