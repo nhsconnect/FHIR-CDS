@@ -102,7 +102,7 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Resource</td>
 <td>Contained, inline Resources</td>
-<td>This should not be populated</td>
+<td>This SHOULD NOT be populated</td>
 </tr>
 
 <tr>
@@ -264,7 +264,7 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Endpoint)</td>
 <td>Technical endpoints providing access to services operated for the location</td>
-<td></td>
+<td>This SHOULD NOT be populated.</td>
 </tr>
 
 </table>
