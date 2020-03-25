@@ -164,7 +164,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td><code>1..1</code></td>
     <td>Reference(Patient | Group)</td>
     <td>Who the procedure was performed on</td>
-<td></td>
+<td>This MUST be 'Patient'</td>
 </tr>
 <tr>
   <td><code>performed[x]</code></td>
