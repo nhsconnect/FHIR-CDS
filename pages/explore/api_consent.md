@@ -297,6 +297,20 @@ Linked to the triage journey by patient and data.
   <td>Timeframe for data controlled by this consent</td>
   <td></td>
 </tr>
+	<tr>
+  <td><code>dataPeriod.start</code></td>
+  <td><code>0..1</code></td>
+  <td>Period</td>
+  <td>Timeframe for data controlled by this consent</td>
+  <td>This MUST be populated</td>
+</tr>
+	<tr>
+  <td><code>dataPeriod.end</code></td>
+  <td><code>0..1</code></td>
+  <td>Period</td>
+  <td>Timeframe for data controlled by this consent</td>
+  <td>This MAY be populated, but if 'null' then assume the Period is active and open-ended</td>
+</tr>
 <tr>
   <td><code>data</code></td>
   <td><code>0..*</code></td>
