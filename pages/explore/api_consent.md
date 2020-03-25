@@ -172,7 +172,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..1</code></td>
   <td>dateTime</td>
   <td>When this Consent was created or indexed</td>
-  <td></td>
+  <td>This SHOULD be populated</td>
 </tr>
 <tr>
   <td><code>consentingParty</code></td>
