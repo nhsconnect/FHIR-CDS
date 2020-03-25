@@ -330,6 +330,13 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
 <a href="http://hl7.org/fhir/STU3/valueset-device-kind.html">FHIR Device Types</a> (Example)</td>
 <td></td>
 </tr>
+<tr>
+  <td><code>context</code></td>
+    <td><code>0..1</code></td>
+    <td>Reference (Encounter | EpisodeOfCare)</td>
+    <td>Encounter or episode associated with the procedure<br>
+<td>This SHOULD be the Encounter</td>
+</tr>
 </table>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTEwMzc2MjcyNzUsMTgwMjMzNTAxMSwtMj
