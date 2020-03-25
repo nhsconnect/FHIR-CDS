@@ -133,7 +133,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td><code>0..1</code></td>
     <td>boolean</td>
     <td>True if procedure was not performed as scheduled</td>
-<td></td>
+<td>This MUST NOT be populated</td>
 </tr>
 <tr>
   <td><code>notDoneReason</code></td>
@@ -141,7 +141,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td>CodeableConcept</td>
     <td>Reason procedure was not performed<br>
 <a href="http://hl7.org/fhir/STU3/valueset-procedure-not-performed-reason.html">Procedure Not Performed Reason (SNOMED-CT)</a> (Example)</td>
-<td></td>
+<td>This MUST NOT be populated</td>
 </tr>
 <tr>
   <td><code>category</code></td>
