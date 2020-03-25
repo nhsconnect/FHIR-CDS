@@ -330,8 +330,8 @@ Linked to the triage journey by patient and data.
   <td class="sub"><code>data.reference</code></td>
   <td><code>1..1</code></td>
   <td>Reference(Any)</td>
-  <td>Encounter</td>
-  <td></td>
+  <td>The actual data reference</td>
+  <td>This SHOULD be 'Encounter'</td>
 </tr>
 <tr>
   <td><code>except</code></td>
