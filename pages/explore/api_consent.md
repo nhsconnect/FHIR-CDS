@@ -324,7 +324,7 @@ Linked to the triage journey by patient and data.
   <td>code</td>
   <td>instance | related | dependents | authoredby<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-data-meaning.html">ConsentDataMeaning (Required)</a></td>
-  <td></td>
+  <td>MUST be populated with either 'related' or 'dependents'</td>
 </tr>
 <tr>
   <td class="sub"><code>data.reference</code></td>
