@@ -126,7 +126,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td>code</td>
     <td>preparation | in-progress | suspended | aborted | completed | entered-in-error | unknown<br>
 <a href="http://hl7.org/fhir/STU3/valueset-event-status.html">EventStatus</a> (Required)</td>
-<td></td>
+<td>This MUST be populated with either 'suspended', 'aborted', 'completed' or 'entered-in-error'.</td>
 </tr>
 <tr>
   <td><code>notDone</code></td>
