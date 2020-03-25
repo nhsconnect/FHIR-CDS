@@ -186,7 +186,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..*</code></td>
   <td>BackboneElement</td>
   <td>Who|what controlled by this consent (or group, by role)</td>
-  <td></td>
+  <td>This MUST NOT be populated. </td>
 </tr>
 <tr>
   <td><code>actor.role</code></td>
@@ -194,14 +194,14 @@ Linked to the triage journey by patient and data.
   <td>CodeableConcept</td>
   <td>How the actor is involved<br>
     <a href="https://www.hl7.org/fhir/stu3/valueset-security-role-type.html">SecurityRoleType (Extensible)</a></td>
-  <td>This MUST NOT be populated.</td>
+  <td></td>
 </tr>
 <tr>
   <td><code>actor.reference</code></td>
   <td><code>1..1</code></td>
   <td>Reference(Device | Group | CareTeam | Organization | Patient | Practitioner | RelatedPerson)</td>
   <td>Resource for the actor (or group, by role)</td>
-  <td>This MUST NOT be populated.</td>
+  <td></td>
 </tr>
 <tr>
   <td><code>action</code></td>
