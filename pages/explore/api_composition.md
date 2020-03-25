@@ -142,7 +142,7 @@ FHIR Document Type Codes (Preferred)</td>
     <td>CodeableConcept</td>
     <td>Categorization of Composition<br>
 FHIR Document Class Codes (Example)</td>
-    <td></td>
+    <td>This MUST NOT be populated</td>
 </tr>
 <tr>
   <td><code>subject</code></td>
@@ -176,7 +176,7 @@ FHIR Document Class Codes (Example)</td>
   <td><code>title</code></td>
     <td><code>1..1</code></td>
     <td>string</td>
-    <td>Human Readable name/title</td>
+    <td></td>
     <td></td>
 </tr>
 <tr>
