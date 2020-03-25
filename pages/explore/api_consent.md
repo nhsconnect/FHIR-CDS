@@ -158,7 +158,7 @@ Linked to the triage journey by patient and data.
   <td><code>1..1</code></td>
   <td>Reference(Patient)</td>
   <td>Who the consent applies to</td>
-  <td>Patient</td>
+  <td>This MUST be the Patient in the encounter report.</td>
 </tr>
 <tr>
   <td><code>period</code></td>
