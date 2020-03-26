@@ -155,7 +155,7 @@ Where populated it MUST be with the <code class="highlighter-rouge">RequestGroup
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
    <td>draft | active | suspended | completed | entered-in-error | cancelled <a href="https://www.hl7.org/fhir/stu3/valueset-request-status.html">RequestStatus (Required)</a></td>
-<td>This MUST be populated with 'draft', 'active' or cancelled'.</td>
+<td>This MUST be populated with 'draft', 'active' or 'cancelled'.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
