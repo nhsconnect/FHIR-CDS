@@ -168,6 +168,20 @@ Linked to the triage journey by patient and data.
   <td></td>
 </tr>
 <tr>
+  <td class="sub"><code>period.start</code></td>
+  <td><code>0..1</code></td>
+  <td>Period</td>
+  <td>Starting time with inclusive boundary</td>
+  <td>This MUST be populated</td>
+</tr>
+<tr>
+  <td class="sub"><code>period.end</code></td>
+  <td><code>0..1</code></td>
+  <td>Period</td>
+  <td>End time with inclusive boundary, if not ongoing</td>
+  <td>If not populated, then assumed to be in the future/open-ended</td>
+</tr>
+<tr>
   <td><code>dateTime</code></td>
   <td><code>0..1</code></td>
   <td>dateTime</td>
@@ -189,7 +203,7 @@ Linked to the triage journey by patient and data.
   <td>This MUST NOT be populated. </td>
 </tr>
 <tr>
-  <td><code>actor.role</code></td>
+  <td class="sub"><code>actor.role</code></td>
   <td><code>1..1</code></td>
   <td>CodeableConcept</td>
   <td>How the actor is involved<br>
@@ -197,7 +211,7 @@ Linked to the triage journey by patient and data.
   <td></td>
 </tr>
 <tr>
-  <td><code>actor.reference</code></td>
+  <td class="sub"><code>actor.reference</code></td>
   <td><code>1..1</code></td>
   <td>Reference(Device | Group | CareTeam | Organization | Patient | Practitioner | RelatedPerson)</td>
   <td>Resource for the actor (or group, by role)</td>
@@ -298,14 +312,14 @@ Linked to the triage journey by patient and data.
   <td></td>
 </tr>
 	<tr>
-  <td><code>dataPeriod.start</code></td>
+  <td class="sub"><code>dataPeriod.start</code></td>
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>Timeframe for data controlled by this consent</td>
   <td>This MUST be populated</td>
 </tr>
 	<tr>
-  <td><code>dataPeriod.end</code></td>
+  <td class="sub"><code>dataPeriod.end</code></td>
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>Timeframe for data controlled by this consent</td>
