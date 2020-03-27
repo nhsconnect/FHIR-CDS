@@ -42,7 +42,7 @@ td.sub-sub-sub{
 
 ### Usage ###
 
-Used to represent represent a human-readable summary of the triage journey for a patient.
+Used to represent a human-readable summary of the triage journey for a patient.
 
 This will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The `Encounter` resource does not contain a reference to the composition.  There may be more than one Composition per Encounter, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
 
@@ -126,7 +126,7 @@ Detailed implementation guidance for a `Composition` resource in the CDS context
     <td>code</td>
     <td>preliminary | final | amended | entered-in-error<br>
 CompositionStatus (Required)</td>
-    <td>At the end of encounter, will normally be <code>final</code> - this may be amended after the end of the encounter.</td>
+    <td>At the end of the encounter, this will normally be <code>final</code>. This may be amended after the end of the encounter.</td>
 </tr>
 <tr>
   <td><code>type</code></td>
@@ -156,7 +156,7 @@ FHIR Document Class Codes (Example)</td>
     <td><code>0..1</code></td>
     <td>Reference(Encounter)</td>
     <td>Context of the Composition</td>
-    <td>This MUST be a reference to the Encounter resource</td>
+    <td>This MUST be a reference to the current Encounter resource</td>
 </tr>
 <tr>
   <td><code>date</code></td>
