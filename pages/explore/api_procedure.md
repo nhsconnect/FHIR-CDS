@@ -6,7 +6,7 @@ sidebar: ctp_rest_sidebar
 permalink: api_procedure.html
 summary: Procedure resource implementation guidance
 ---
-​
+
 {% include custom/search.warnbanner.html %}
 <style>
 td.sub{
@@ -19,21 +19,20 @@ td.sub{
     padding-left: 30px; 
 }
 </style>
-​
+
 ## Procedure: Implementation Guidance ##
-​
+
 ### Usage ###
 The [Procedure](http://hl7.org/fhir/STU3/procedure.html) resource represents an action performed on a patient, which can be either an intrusive intervention (*e.g.* operation) or a less invasive one (*e.g.* counselling).
-​
-Detailed implementation guidance for a `Procedure` resource in the CDS context is given below:  
-​
-​
+
+Detailed implementation guidance for a `Procedure` resource in the CDS context is given below:
+
 <table style="min-width:100%;width:100%">
 <tr>
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
-      <th style="width:38%;">FHIR Documentation</th>
+    <th style="width:38%;">FHIR Documentation</th>
    <th style="width:37%;">CDS Implementation Guidance</th>
 </tr>
 <tr>
@@ -41,7 +40,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td><code>0..1</code></td>
     <td>id</td>
     <td>Logical id of this artifact</td>
-	<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code>meta</code></td>
@@ -76,7 +75,8 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td><code>0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td></td>
+	<td>This SHOULD NOT be populated
+</td>
 </tr>
 <tr>
   <td><code>extension</code></td>
@@ -164,7 +164,14 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td><code>1..1</code></td>
     <td>Reference(Patient | Group)</td>
     <td>Who the procedure was performed on</td>
-<td>This MUST be 'Patient'</td>
+<td>This MUST be the Patient</td>
+</tr>
+<tr>
+  <td><code>context</code></td>
+    <td><code>0..1</code></td>
+    <td>Reference (Encounter | EpisodeOfCare)</td>
+    <td>Encounter or episode associated with the procedure<br>
+<td>This SHOULD be the Encounter</td>
 </tr>
 <tr>
   <td><code>performed[x]</code></td>
@@ -330,13 +337,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
 <a href="http://hl7.org/fhir/STU3/valueset-device-kind.html">FHIR Device Types</a> (Example)</td>
 <td></td>
 </tr>
-<tr>
-  <td><code>context</code></td>
-    <td><code>0..1</code></td>
-    <td>Reference (Encounter | EpisodeOfCare)</td>
-    <td>Encounter or episode associated with the procedure<br>
-<td>This SHOULD be the Encounter</td>
-</tr>
+
 </table>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTEwMzc2MjcyNzUsMTgwMjMzNTAxMSwtMj
