@@ -193,7 +193,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..*</code></td>
   <td>Reference(Organization| Patient | Practitioner | RelatedPerson)</td>
   <td>Who is agreeing to the policy and exceptions</td>
-  <td></td>
+  <td>this will normally be Patient, but may be RelatedPerson</td>
 </tr>
 <tr>
   <td><code>actor</code></td>
@@ -309,7 +309,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>Timeframe for data controlled by this consent</td>
-  <td></td>
+  <td>This MUST be populated</td>
 </tr>
 	<tr>
   <td class="sub"><code>dataPeriod.start</code></td>
@@ -323,7 +323,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>Timeframe for data controlled by this consent</td>
-  <td>This MAY be populated, but if 'null' then assume the dataPeriod is active and open-ended</td>
+  <td>This MAY be populated, but if not then assume the dataPeriod is active and open-ended</td>
 </tr>
 <tr>
   <td><code>data</code></td>
@@ -338,14 +338,14 @@ Linked to the triage journey by patient and data.
   <td>code</td>
   <td>instance | related | dependents | authoredby<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-data-meaning.html">ConsentDataMeaning (Required)</a></td>
-  <td>MUST be populated with either 'related' or 'dependents'</td>
+  <td>This MUST be populated with either 'related' or 'dependents'</td>
 </tr>
 <tr>
   <td class="sub"><code>data.reference</code></td>
   <td><code>1..1</code></td>
   <td>Reference(Any)</td>
   <td>The actual data reference</td>
-  <td>This SHOULD be 'Encounter'</td>
+  <td>This SHOULD be the Encounter</td>
 </tr>
 <tr>
   <td><code>except</code></td>
