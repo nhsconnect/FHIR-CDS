@@ -11,8 +11,7 @@ summary: Encounter resource implementation guidance
 <!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Questionnaire" fhirlink="[Questionnaire](http://hl7.org/fhir/stu3/questionnaire.html)" content="User Stories" userlink="" %}
 -->
-## Encounter Report: Encounter ##
-## Encounter: Implementation Guidance ##
+## Encounter: Implementation Guidance within Encounter Report ##
 
 ### Usage ###
 The [Encounter](http://hl7.org/fhir/stu3/encounter.html) resource is used to carry information arising from an interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -125,14 +124,14 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
 <td>To be populated when the status changes</td>
  </tr>
 <tr>
-  <td><code>statusHistory.status</code></td>
+  <td class="sub"><code>statusHistory.status</code></td>
       <td><code>1..1</code></td>
     <td>code</td>
     <td>planned | arrived | triaged | in-progress | onleave | finished | cancelled + <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-status.html">EncounterStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td><code>statusHistory.period</code></td>
+  <td class="sub"><code>statusHistory.period</code></td>
       <td><code>1..1</code></td>
     <td>Period</td>
     <td>The time that the episode was in the specified status</td>
