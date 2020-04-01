@@ -539,7 +539,7 @@ td.sub{
     content: '';
     display: block;
     width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
+    background-image: url(../images/tbl_vjoin_end.png);
     background-repeat: no-repeat;
     background-position: 10px 10px;
     padding-left: 30px; 
