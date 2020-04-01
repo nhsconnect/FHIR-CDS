@@ -12,9 +12,9 @@ entries:
       url: /index.html
       output: web
       type: homepage
-    - title: Overview (uec-tech-standards)
-      url: /
-      output: web
+#    - title: Overview (uec-tech-standards)
+#      url: /
+#      output: web
     - title: Clinical Safety
       url: /clinical_safety.html
       output: web
@@ -37,9 +37,9 @@ entries:
     - title: Interactions
       url: /solution_interactions.html
       output: web 
-    - title: Patient journey (uec-tech-standards)
-      url: /
-      output: web 
+ #   - title: Patient journey (uec-tech-standards)
+ #     url: /
+ #     output: web 
 
   - title: Development Guidance
     output: web
@@ -50,12 +50,12 @@ entries:
     - title: Pre-requisites
       url: /api_prerequisites.html
       output: web
-    - title: Developer guidelines (uec-tech-standards)
-      url: /
-      output: web
-    - title: Demo implementation (uec-tech-standards)
-      url: /
-      output: web
+#    - title: Developer guidelines (uec-tech-standards)
+#      url: /
+#      output: web
+#    - title: Demo implementation (uec-tech-standards)
+#      url: /
+#      output: web
     - title: Error handling
       url: /api_errorhandling.html
       output: web      
