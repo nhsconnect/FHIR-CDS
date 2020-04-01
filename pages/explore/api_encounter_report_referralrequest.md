@@ -11,35 +11,6 @@ summary: ReferralRequest resource implementation guidance
 <!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="ReferralRequest" fhirlink="[ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html)" content="User Stories" userlink="" %}
 -->
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-td.sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 30px 10px;
-    padding-left: 50px; 
-}
-td.sub-sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 50px 10px;
-    padding-left: 70px;
-}
-</style>
 
 ## ReferralRequest: Implementation Guidance ##  
 ### Usage ###
@@ -282,7 +253,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Annotation</td>
     <td>Comments made about referral request</td>
-<td>This MAY be populated with additional notes entered by the EMS user.</td>
+<td>This MAY be populated with additional notes entered by the EMS user. If populated this should be displayed.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relevantHistory</code></td>

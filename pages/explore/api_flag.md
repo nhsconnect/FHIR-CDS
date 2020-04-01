@@ -126,7 +126,21 @@ Detailed implementation guidance for an `Flag` resource in the context of a CDS 
     <td><code>0..1</code></td>
     <td>Period</td>
     <td>Time period when flag is active</td>
-<td></td>
+    <td>This MAY be populated</td>
+</tr>
+<tr>
+  <td class="sub"><code>start</code></td>
+  <td><code>0..1</code></td>
+  <td>Period</td>
+  <td>Starting time with inclusive boundary</td>
+  <td>This MUST be populated. If the start period is not known it SHOULD be set to the start of the encounter.</td>
+</tr>
+<tr>
+  <td class="sub"><code>end</code></td>
+  <td><code>0..1</code></td>
+  <td>Period</td>
+  <td>End time with inclusive boundary, if not ongoing</td>
+  <td>If the end period is known this SHOULD be populated. If not populated, then assumed to be in the future/open-ended</td>
 </tr>
 <tr>
   <td><code>encounter</code></td>

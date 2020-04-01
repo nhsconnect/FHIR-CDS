@@ -168,14 +168,14 @@ Linked to the triage journey by patient and data.
   <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>period.start</code></td>
+  <td class="sub"><code>start</code></td>
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>Starting time with inclusive boundary</td>
   <td>This MUST be populated</td>
 </tr>
 <tr>
-  <td class="sub"><code>period.end</code></td>
+  <td class="sub"><code>end</code></td>
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>End time with inclusive boundary, if not ongoing</td>

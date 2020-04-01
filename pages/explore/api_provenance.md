@@ -9,35 +9,6 @@ summary: Provenance implementation guidance
 
 {% include custom/search.warnbanner.html %}
 
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-td.sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 30px 10px;
-    padding-left: 50px; 
-}
-td.sub-sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 50px 10px;
-    padding-left: 70px;
-}
-</style>
 
 
 ## Provenance: Implementation Guidance ##  

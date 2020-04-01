@@ -8,17 +8,7 @@ summary: Appointment resource implementation guidance
 ---
 ​
 {% include custom/search.warnbanner.html %}
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-</style>
+
 ​
 ## Appointment: Implementation Guidance ##
 ​

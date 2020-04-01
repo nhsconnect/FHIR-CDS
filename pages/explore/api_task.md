@@ -8,17 +8,7 @@ summary: Task resource implementation guidance
 ---
 ​
 {% include custom/search.warnbanner.html %}
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-</style>
+
 ​
 ## Task: Implementation Guidance ##
 ​
@@ -312,7 +302,7 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
     <td><code>0..1</code></td>
     <td>Period</td>
     <td>When fulfillment sought</td>
-<td></td>
+<td>Time period in which the Task must be fulfilled - note that this will normally be different (shorter) than <code>ReferralRequest.occurence</code></td>
 </tr>
 <tr>
   <td class="sub"><code>recipient</code></td>
