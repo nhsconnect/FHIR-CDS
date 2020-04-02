@@ -68,7 +68,7 @@ Languages</a> (Extensible but limited to All Languages)</td>
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Resource</td>
 <td>Contained, inline Resources</td>
-<td>This should not be populated</td>
+<td>This SHOULD NOT be populated.</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">extension</code></td>
@@ -110,7 +110,7 @@ Languages</a> (Extensible but limited to All Languages)</td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td></td>
 <td></td>
-<td>This SHOULD be populated</td>
+<td>This SHOULD be populated.</td>
 </tr>
 </table>
 <!--stackedit_data:
