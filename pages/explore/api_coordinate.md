@@ -105,6 +105,13 @@ Languages</a> (Extensible but limited to All Languages)</td>
 <td>Z-axis value of this co-ordinate</td>
 <td></td>
 </tr>
+<tr>
+<td><code  class="highlighter-rouge">imageUri</code></td>
+<td><code  class="highlighter-rouge">0..1</code></td>
+<td></td>
+<td></td>
+<td>This SHOULD be populated</td>
+</tr>
 </table>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMjgxODU3NTFdfQ==
