@@ -1,9 +1,9 @@
 ---
-title: Consent Implementation Guidance
+title: Consent Validation Implementation Guidance
 keywords: consent, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_consent.html
+permalink: api_consent_validation.html
 summary: Consent resource implementation guidance
 ---
 
@@ -26,7 +26,7 @@ table.spec td code {
 
 </style>
 
-## Consent: Implementation Guidance ##
+## Consent: Validation Implementation Guidance ##
 
 ### Usage ###
 
@@ -50,21 +50,21 @@ Linked to the triage journey by patient and data.
   <td><code>0..1</code></td>
   <td>id</td>
   <td>Logical id of this artifact</td>
-	<td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
+    <td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
 </tr>
 <tr>
   <td><code>meta</code></td>
   <td><code>0..1</code></td>
   <td>Meta</td>
   <td>Metadata about the resource</td>
-		<td></td>
+        <td></td>
 </tr>
 <tr>
   <td><code>implicitRules</code></td>
   <td><code>0..1</code></td>
   <td>uri</td>
   <td>A set of rules under which this content was created</td>
-		<td></td>
+        <td></td>
 </tr>
 <tr>
   <td><code>language</code></td>
@@ -72,35 +72,35 @@ Linked to the triage journey by patient and data.
   <td>code</td>
   <td>Language of the resource content. <br/> 
     <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
-	<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code>text</code></td>
   <td><code>0..1</code></td>
   <td>Narrative</td>
   <td>Text summary of the resource, for human interpretation</td>
-	<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code>contained</code></td>
   <td><code>0..*</code></td>
   <td>Resource</td>
   <td>Contained, inline Resources</td>
-	<td>This SHOULD NOT be populated</td>
+    <td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code>extension</code></td>
   <td><code>0..*</code></td>
   <td>Extension</td>
   <td>Additional Content defined by implementations</td>
-	<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code>modifierExtension</code></td>
   <td><code>0..*</code></td>
   <td>Extension</td>
   <td>Extensions that cannot be ignored</td>
-	<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code>identifier</code></td>
@@ -173,7 +173,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..*</code></td>
   <td>BackboneElement</td>
   <td>Who|what controlled by this consent (or group, by role)</td>
-  <td>This MUST NOT be populated. </td>
+  <td>This SHOULD be populated with the organization (or individual) that is performing the validation</td>
 </tr>
 <tr>
   <td class="sub"><code>role</code></td>
@@ -196,7 +196,7 @@ Linked to the triage journey by patient and data.
   <td>CodeableConcept</td>
   <td>Actions controlled by this consent<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-action.html">Consent Action Codes (Example)</a></td>
-  <td></td>
+  <td>For direct patient care this SHOULD be populated with 'use'.</td>
 </tr>
 <tr>
   <td><code>organization</code></td>
@@ -237,7 +237,7 @@ Linked to the triage journey by patient and data.
   <td><code>policy</code></td>
   <td><code>0..*</code></td>
   <td>BackboneElement</td>
-  <td>Policies covered by this consent</td>
+  <td>This MUST NOT be populated.</td>
   <td></td>
 </tr>
 <tr>
@@ -258,7 +258,7 @@ Linked to the triage journey by patient and data.
   <td><code>policyRule</code></td>
   <td><code>0..1</code></td>
   <td>uri</td>
-  <td>Policy that this consents to</td>
+  <td>This SHOULD be populated with `http://hl7.org/fhir/ConsentPolicy/opt-out` as direct care is an opt-out scenario.</td>
   <td></td>
 </tr>
 <tr>
@@ -284,14 +284,14 @@ Linked to the triage journey by patient and data.
   <td>Timeframe for data controlled by this consent</td>
   <td>This MUST be populated</td>
 </tr>
-	<tr>
+    <tr>
   <td class="sub"><code>start</code></td>
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>Timeframe for data controlled by this consent</td>
   <td>This MUST be populated</td>
 </tr>
-	<tr>
+    <tr>
   <td class="sub"><code>end</code></td>
   <td><code>0..1</code></td>
   <td>Period</td>
@@ -311,7 +311,7 @@ Linked to the triage journey by patient and data.
   <td>code</td>
   <td>instance | related | dependents | authoredby<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-data-meaning.html">ConsentDataMeaning (Required)</a></td>
-  <td>This MUST be populated with either 'related' or 'dependents'</td>
+  <td>This MUST be populated with both 'related' and 'dependents' as separate data elements.</td>
 </tr>
 <tr>
   <td class="sub"><code>reference</code></td>

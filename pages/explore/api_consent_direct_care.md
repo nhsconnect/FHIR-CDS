@@ -1,9 +1,9 @@
 ---
-title: Consent Implementation Guidance
+title: Consent Direct Care Implementation Guidance
 keywords: consent, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_consent.html
+permalink: api_consent_direct_care.html
 summary: Consent resource implementation guidance
 ---
 
@@ -26,7 +26,7 @@ table.spec td code {
 
 </style>
 
-## Consent: Implementation Guidance ##
+## Consent: Direct Care Implementation Guidance ##
 
 ### Usage ###
 
@@ -196,7 +196,7 @@ Linked to the triage journey by patient and data.
   <td>CodeableConcept</td>
   <td>Actions controlled by this consent<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-action.html">Consent Action Codes (Example)</a></td>
-  <td></td>
+  <td>For direct patient care this SHOULD be populated with 'use'.</td>
 </tr>
 <tr>
   <td><code>organization</code></td>
@@ -237,7 +237,7 @@ Linked to the triage journey by patient and data.
   <td><code>policy</code></td>
   <td><code>0..*</code></td>
   <td>BackboneElement</td>
-  <td>Policies covered by this consent</td>
+  <td>This MUST NOT be populated.</td>
   <td></td>
 </tr>
 <tr>
@@ -258,7 +258,7 @@ Linked to the triage journey by patient and data.
   <td><code>policyRule</code></td>
   <td><code>0..1</code></td>
   <td>uri</td>
-  <td>Policy that this consents to</td>
+  <td>This SHOULD be populated with `http://hl7.org/fhir/ConsentPolicy/opt-out` as direct care is an opt-out scenario.</td>
   <td></td>
 </tr>
 <tr>
@@ -311,7 +311,7 @@ Linked to the triage journey by patient and data.
   <td>code</td>
   <td>instance | related | dependents | authoredby<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-data-meaning.html">ConsentDataMeaning (Required)</a></td>
-  <td>This MUST be populated with either 'related' or 'dependents'</td>
+  <td>This MUST be populated with both 'related' and 'dependents' as separate data elements.</td>
 </tr>
 <tr>
   <td class="sub"><code>reference</code></td>

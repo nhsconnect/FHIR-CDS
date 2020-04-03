@@ -207,7 +207,25 @@ entries:
           url: /api_composition.html
           output: web
         - title: Consent
-          url: /api_consent_na.html
+          url: /api_consent.html
+          output: web
+        - title: Consent - Direct Care
+          url: /api_consent_direct_care.html
+          output: web
+        - title: Consent - PEM
+          url: /api_consent_pem.html
+          output: web
+        - title: Consent - RCS
+          url: /api_consent_rcs.html
+          output: web
+        - title: Consent - IDT
+          url: /api_consent_idt.html
+          output: web
+        - title: Consent - Validation
+          url: /api_consent_validation.html
+          output: web
+        - title: Consent - SCR PTV
+          url: /api_consent_scr_ptv.html
           output: web
         - title: Encounter
           url: /api_encounter_report_encounter.html
