@@ -73,8 +73,8 @@ Detailed implementation guidance for an `Flag` resource in the context of a CDS 
   <td><code>extension (basedOn)</code></td>
     <td><code>0..*</code></td>
     <td>Extension</td>
-    <td>An extension to the Flag resource. Where Flags have come from a longitudinal record, this allows a history of the provenance to be carried, and then interrogated by the receiver
-URL: <a href="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-UEC-FlagBasedOn-1">https://fhir.nhs.uk/STU3/StructureDefinition/Extension-UEC-FlagBasedOn-1</a>
+    <td>An Extension to identify what a Flag is based on. This allows a history of the provenance to be carried. <br>
+	URL: <a href="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-UEC-FlagBasedOn-1">https://fhir.nhs.uk/STU3/StructureDefinition/Extension-UEC-FlagBasedOn-1</a>
 </td>
   <td>This MAY be populated.</td>
 </tr>	
