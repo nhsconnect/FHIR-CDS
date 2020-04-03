@@ -207,7 +207,7 @@ If not a continuation, this MUST be populated with a new episode.</td>
     <td>BackboneElement</td>
     <td>List of participants involved in the encounter</td>
 <td>This SHOULD be populated with the details of the EMS system users (<code>Practitioner</code>) during this <code>Encounter</code>, 
-and any third parties answering questions on behalf of the patient (<code>RelatedPerson</code>).</td>
+and any third parties answering questions on behalf of the patient. Note that the patient is NOT a participant. (<code>RelatedPerson</code>).</td>
  </tr>
 <tr>
   <td class="sub"><code>participant.type</code></td>
