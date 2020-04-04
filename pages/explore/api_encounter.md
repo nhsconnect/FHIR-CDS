@@ -114,7 +114,7 @@ Detailed implementation guidance for an `Encounter` resource in the CDS context 
       <td><code>1..1</code></td>
     <td>code</td>
     <td>planned | arrived | triaged | in-progress | onleave | finished | cancelled + <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-status.html">EncounterStatus (Required)</a>.</td>
-<td>During a triage journey this will carry the value 'triaged'. When the <code>Encounter</code> has a result, this will update to 'finished'.</td>
+<td></td>
  </tr>
 <tr>
   <td><code>statusHistory</code></td>
