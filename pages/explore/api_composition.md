@@ -106,7 +106,7 @@ CompositionStatus (Required)</td>
     <td>CodeableConcept</td>
     <td>Kind of composition (LOINC if possible)<br>
 FHIR Document Type Codes (Preferred)</td>
-    <td></td>
+    <td>MUST be populated with Snomed Code 371531000 |Report of clinical encounter (record artifact).</td>
 </tr>
 <tr>
   <td><code>class</code></td>
