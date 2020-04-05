@@ -119,7 +119,7 @@ Detailed implementation guidance for an `List` resource in the context of a CDS 
     <td>CodeableConcept</td>
     <td>What the purpose of this list is<br>
 <a href="https://www.hl7.org/fhir/STU3/valueset-list-example-codes.html">Example Use Codes for List</a> (Example)</td>
-<td>This MUST NOT be populated.</td>
+<td>MUST be populated with <a href="https://www.snomed.org/snomed-ct/five-step-briefing">SNOMED</a> code 225390008 | Triage (procedure) as per CareConnect ValueSet | <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListCode-1">CareConnect-ListCode-1</a></td>
 </tr>
 <tr>
   <td><code>intent</code></td>
