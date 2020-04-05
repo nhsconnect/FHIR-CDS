@@ -90,7 +90,7 @@ Detailed implementation guidance for a `Composition` resource in the CDS context
     <td><code>0..1</code></td>
     <td>Identifier</td>
     <td>Logical identifier of composition (version-independent)</td>
-    <td>To be assigned by the EMS</td>
+    <td></td>
 </tr>
 <tr>
   <td><code>status</code></td>
