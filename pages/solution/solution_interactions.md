@@ -4,7 +4,7 @@ keywords: engage, about
 tags: [overview]
 sidebar: overview_sidebar
 permalink: solution_interactions.html
-toc: false
+toc: true
 summary: Solution interactions
 ---
 
@@ -14,6 +14,23 @@ summary: Solution interactions
 ## Interactions ##
 
 The key interactions for the Clinical Decision Support API are represented in the diagrams below.
+
+
+## Service Validity Interaction
+
+This is a custom FHIR Operation performed by an EMS at the start of a triage journey. The `$isValid` operation is intended to check whether the CDSS is able to provide ServiceDefinitions appropriate for the current journey.
+
+This is an optional interaction, expected to be used where a CDSS may not be appropriate to all patients. An example is where an online consultation system is only relevant to patients whos registered GP has a contractual relationship with the system supplier.
+
+The `$isValid` operation is performed by the EMS passing the patient's registered GP (as an ODS code) to the CDSS.
+
+The CDSS will output a boolean - true if the CDSS is valid for this patient at this time, and false if not.
+
+![Diagram showing $isvalid interaction](images/solution/isvalid.png "Diagram showing $isvalid interaction")
+
+View the [Service Validity interaction page](api_post_isvalid.html) for detailed guidance.
+
+
 
 ## Invoke ServiceDefinition.$evaluate and GuidanceResponse ##
 
@@ -68,3 +85,21 @@ The result is sent to the EMS within the `GuidanceResponse` and the EMS displays
 View the [Result](api_return_guidance_response.html) section for more information.
 
 
+## Check Services Interaction ##
+
+At the end of the triage journey the EMS invokes a `$check-services` operation on a Directory referencing appropriate IN parameters and the generic `ReferralRequest` obtained as part of the triage outcome (chief concern, next activity and acuity). 
+
+The Directory uses the appropriate IN parameters and `ReferralRequest` to find a specific set of nearby services which can meet the need identified in the triage outcome.
+
+The Directory returns a bundle of `HealthcareService` resources.
+
+![Diagram showing interaction between the EMS and the Directory](images/solution/check-services.png "Diagram showing interaction between the EMS and the Directory")
+
+View the [Check-Services](api_check_services.html) section for more information.
+
+<!-- ## Encounter Report Interaction ##
+
+When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate HealthcareService.
+
+The EncounterReport 
+On completion of a  patent’s triage encounter the EMS builds a report that contains all the resources collected during the $evaluate interactions plus additional data required by a downstream service provider to provide safe clinical care to that patient. This provides conformant Encounter Report Receiving Systems (ERRs) with structured Triage Information to drive business processes -->

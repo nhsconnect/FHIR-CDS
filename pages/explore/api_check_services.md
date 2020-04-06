@@ -26,12 +26,10 @@ The following HTTP request headers are supported for this interaction:
   
 The `$check-services` operation is performed by an HTTP POST command as shown:  
   
-    
-  
+<div markdown="span" class="alert alert-success" role="alert">
 POST [base]/$check-services  
-  
+</div>
     
-  
 ## Parameters ##  
   
 The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [Bundle](http://hl7.org/fhir/stu3/bundle.html) of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.  
