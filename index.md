@@ -46,10 +46,6 @@ All published guidance in this version of the Implementation Guide is in referen
 ### Sourcing of medical records ###
 Methods for sourcing medical records are out of scope of the Implementation Guide.
 
-### note element ###
-The note element appears in several resources in scope of the CDS API. A general view has been taken that notes made by EMS users are not taken into consideration by the CDSS. If there is information to be communicated, it MUST be communicated in a structured form. This is to reduce the risk of inappropriate triage due to end users assuming notes will be considered. Accordingly, the note element where it occurs MUST NOT be populated. 
-
-
 ### De-scoped resources ###
 - ProcedureRequest has been removed as of V1.1.0-alpha and will therefore follow [HL7 FHIR STU3](https://www.hl7.org/fhir/stu3/index.html) guidance.
 - CareConnect guidance will be used for [Encounter](https://nhsconnect.github.io/CareConnectAPI/api_workflow_encounter.html) and [Patient](https://nhsconnect.github.io/CareConnectAPI/api_entity_patient.html) resources, and therefore our guidance pages on these resources have been unpublished as of V1.1.0-alpha.
