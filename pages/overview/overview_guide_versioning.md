@@ -39,7 +39,18 @@ The labels documented in the GDS development process stages are:
 - <b>Live:</b> Release live APIs
 - <b>Discontinued:</b> APIs which have been discontinued and should not be used for new development.
 
+
+- <b>Discovery:</b> a Feasibility study. A ‘No code’ development. Designed to find out what users are trying to achieve, any constraints, improvement opportunities
+- <b>Alpha:</b> Develop prototypes and test with users. Could be minimal functionality and potentially prototypes for any options to determine which is best
+- <b>Private Beta:</b> Working version and test with invited users. Handle real transactions and work at scale. ‘Invite only’ or regional. Must Pass assessment by business and technical SME’s
+- <b>Public Beta:</b> All users can participate. Version unlikely to change substantially, but still needs further testing by a wider group of implementors before becoming live
+- <b>Live:</b> The live phase is about supporting the service in a sustainable way, and continuing to iterate and make improvements
+-	<b>Retiring:</b> Implementors notified that the service is discontinued and not to be used for new developments
+
 <!--
 ### 1.3.0 GDS Stage - Experimental ###
 This implementation guide is in currently in the “Experimental” stage. This means it is undergoing significant changes and will have regular releases.
 -->
+
+
+
