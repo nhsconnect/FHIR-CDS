@@ -66,7 +66,22 @@ Authorisation to view the SCR is known as ‘permission to view’, and there ar
 
 This Implementation Guide features an Alpha-level profile of the Consent resource structured to capture [SCR permission to view within and Encounter Report]( https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_pem.md).
 
+#### Consent for the ‘Repeat Caller Service’ ####
+[The Repeat Caller Service]( https://developer.nhs.uk/apis/uec-tech-standards/repeat_caller_service.html) is a national service operated by NHS Digital and is a core part of the Integrated Urgent Care national architecture.
+The Repeat Caller Service exists to ensure that NHS 111 professionals assessing a patient’s need will have access to the encounter records of calls made within the previous 96 hours, where the patient has called three or more times.
 
 
-</tbody>
-</table>
+This Implementation Guide features an Alpha-level profile of the Consent resource structured to capture [ TBC ]
+
+[ Will link to https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_rcs.md ]
+
+#### Consent for IDT ####
+[Unclear what IDT is/does – all searches lead to ‘Inter Deanery Transfer’ which appears to be an employment thing? – Will require some content to be drafted or notes to allow content to be drafted]
+
+[Will link to https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_idt.md
+
+#### Consent for Validation ####
+[Unclear whether validation is a specific or generic process – Will require some content to be drafted or notes to allow content to be drafted]
+[Will link to https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_validation.md ]
+
+
