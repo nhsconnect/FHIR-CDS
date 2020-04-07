@@ -33,13 +33,6 @@ When FHIR API implementation guides are published, they MUST have an associated 
 
 The labels documented in the GDS development process stages are:
 
-- <b>Experimental:</b> Early development/POC version of an API for early sight during discovery
-- <b>Alpha:</b> Initial test APIs, likely to change substantially, or be discontinued as the project develops
-- <b>Release Candidate:</b> APIs that are largely complete, unlikely to change substantially, but still need further testing before becoming live
-- <b>Live:</b> Release live APIs
-- <b>Discontinued:</b> APIs which have been discontinued and should not be used for new development.
-
-
 - <b>Discovery:</b> a Feasibility study. A ‘No code’ development. Designed to find out what users are trying to achieve, any constraints, improvement opportunities
 - <b>Alpha:</b> Develop prototypes and test with users. Could be minimal functionality and potentially prototypes for any options to determine which is best
 - <b>Private Beta:</b> Working version and test with invited users. Handle real transactions and work at scale. ‘Invite only’ or regional. Must Pass assessment by business and technical SME’s
