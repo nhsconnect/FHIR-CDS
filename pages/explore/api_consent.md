@@ -30,7 +30,7 @@ table.spec td code {
 
 There is no single model for handling consent within UK healthcare, as different care settings will be affected by factors such as the type of information captured and the criticality of the care that must be administered. 
 
-Given the range of consent models used with the health space, this API guide does not provide a single universal profile of the [‘Consent’] (http://hl7.org/fhir/stu3/consent.html)
+Given the range of consent models used with the health space, this API guide does not provide a single universal profile of the [‘Consent’](http://hl7.org/fhir/stu3/consent.html)
  resource. Instead the guide contains six different configurations adapted to the consent models of pre-existing systems and scenarios, as listed below.
 
 
