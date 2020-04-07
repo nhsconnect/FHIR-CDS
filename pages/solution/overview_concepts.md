@@ -40,3 +40,19 @@ The Clinical Decision Support System MUST be able to:
 * Read appropriate resources from the EMS (e.g. `QuestionnaireResponse`)
 * Write appropriate resources (e.g. `Questionnaire`, `Observation`)
 
+
+<!-- 
+## Directory of Services (DOS) ##
+
+
+## Encounter Report Receiving System (ERR)##
+
+On completion of a patent’s triage encounter the EMS builds a report that contains all the resources collected during the $evaluate interactions plus additional data required by a downstream service provider to provide safe clinical care to that patient. This provides conformant Encounter Report Receiving Systems (ERRs) with structured Triage Information to drive business processes e.g.
+* Posting to specific queues e.g. based on chief concern, acuity, skillset required
+* Avoiding unnecessary duplication of  triage questions already asked, where clinically appropriate,  to provide continuity of triage
+* Display of customised human readable Encounter Report that supports the receiving Service Providers processes
+
+The aim is for the Encounter Report to be suitable for communicating Triage information between any Care Setting. 
+
+
+-->
