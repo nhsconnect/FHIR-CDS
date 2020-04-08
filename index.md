@@ -24,9 +24,20 @@ The Implementation Guide is based on initial discovery work, which informs the 1
 
 As of V1.1.0-alpha the solution has been amended so that all assertions must be observations.
 
+- The specification within this guide covers multiple different triage scenarios:
+  - self-triage – for example, individuals using automated online triage tools
+  - triage of patients by non-clinical staff – for example, non-clinical call handlers performing telephone triage supported by an automated triage tool
+  - triage of patients by clinicians
+
+- As of V2.0 the scope has been expanded to support the creation and sharing of ‘Encounter Reports’ – reports containing details of an individual’s triage, either for informational purposes or to support subsequent care.
+- The intended users of this guide are primarily developers who are making systems compliant with the guide. The scope of the guide is therefore assets and information intended for a technical audience.
+- This version 2.0.0-alpha of the Implementation Guide is based on initial discovery work, which informs the 2.0.0- alpha version of the Guide. As an alpha-level product, further discovery and development work will increase and modify the scope of the guide in future iterations as use cases are developed.
+- Any resources not specifically mentioned in this Guide will follow the HL7 FHIR STU3 guidance. 
+- As of V2.0.0 a number of custom value sets have been created to support the implementation guide
+
+
+
 ## Out of Scope ##
-### Profiles and Value Sets ###
-Profiles for the resources in this Implementation Guide are not included in the scope of 1.1.0-alpha. These are being developed and will be added to the Guide as they become available. As a result, value sets are also not part of the Guide in this version.
 
 ### Examples ###
 Normative example messages and resources are not included in this version of the Implementation Guide but will be added when available.
@@ -45,10 +56,6 @@ All published guidance in this version of the Implementation Guide is in referen
 
 ### Sourcing of medical records ###
 Methods for sourcing medical records are out of scope of the Implementation Guide.
-
-### De-scoped resources ###
-- ProcedureRequest has been removed as of V1.1.0-alpha and will therefore follow [HL7 FHIR STU3](https://www.hl7.org/fhir/stu3/index.html) guidance.
-- CareConnect guidance will be used for [Encounter](https://nhsconnect.github.io/CareConnectAPI/api_workflow_encounter.html) and [Patient](https://nhsconnect.github.io/CareConnectAPI/api_entity_patient.html) resources, and therefore our guidance pages on these resources have been unpublished as of V1.1.0-alpha.
 
 
 ## Note for Implementers ##
