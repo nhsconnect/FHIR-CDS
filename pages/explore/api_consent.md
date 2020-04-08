@@ -30,7 +30,7 @@ table.spec td code {
 
 There is no universal model for handling consent within UK healthcare settings, as different care settings will be affected by factors such as the type of information captured and the criticality of the care that must be administered. 
 
-Given the range of consent models used with the health space, this API guide does not provide a single universal profile of the [‘Consent’](http://hl7.org/fhir/stu3/consent.html)
+Given the range of consent models used with the health space, this API guide does not provide a single set of implementation guidance for the [‘Consent’](http://hl7.org/fhir/stu3/consent.html)
  resource. Instead the guide contains six different configurations adapted to the consent models of pre-existing systems and scenarios, as listed below.
 
 
@@ -39,12 +39,15 @@ Given the range of consent models used with the health space, this API guide doe
 PLEASE NOTE
 The transfer of any Encounter Report between systems and organisations should be supported by appropriate controls for establishing, recording and validating consent to share data. 
 
-The scope of this API Implementation Guide only covers the model for structuring consent messages, not the wider Information Governance approach that should be applied to any given implementation. Implementing organisations remain responsible for establishing consent around viewing and sharing of information and the Information Governance approach for their products.
+This Implementation Guide only covers the model for structuring consent, not the wider Information Governance approach that should be applied to any given implementation. Implementing organisations remain responsible for establishing consent around viewing and sharing of information and the Information Governance approach for their products.
 
-### Consent models profiled ###
+### Consent models ###
 
 #### Consent for Direct Care ####
->[*Not sure of any use case or information that can be added to clarify this use case – please draft and add, with any links to any relevant official sources*]
+
+Where an encounter cannot be fulfil the patient's health need, the patient will contact another service, which may want to use the information gathered in the first encounter.  
+
+Consent to share the encounter report with other services to facilitate direct care of the patient MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_???.md) of a patient
 
 
 
@@ -52,7 +55,27 @@ The scope of this API Implementation Guide only covers the model for structuring
 
 All encounters with the Integrated Urgent Care service must be followed up with a message back to the patient’s registered GP surgery upon completion. This message is referred to as a [Post Event Message]( https://developer.nhs.uk/apis/uec-tech-standards/post_event_messaging.html) (PEM). 
 
-This Implementation Guide features an Alpha-level profile of the Consent resource to support the use of an [Encounter Report functioning as a PEM](../blob/release_2.0/pages/explore/api_consent_pem.md)
+Consent for the encounter report to be shared with the patient's registered GP MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_pem.md)
+
+#### Consent for Validation ####
+>*Unclear whether validation is a specific or generic process – Will require some content to be drafted or notes to allow content to be drafted. Will link to  *
+
+Some encounters may be validated before action - for example, some ambulance requests are validated by clinicians before the ambulance is sent.  
+
+Consent for the encounter report to be shared to support the validation process MUST follow the implementation guidance [here] (../blob/release_2.0/pages/explore/api_consent_validation.md)
+
+#### Consent for the ‘Repeat Caller Service’ ####
+[The Repeat Caller Service]( https://developer.nhs.uk/apis/uec-tech-standards/repeat_caller_service.html) is a national service operated by NHS Digital and is a core part of the Integrated Urgent Care national architecture.
+The Repeat Caller Service exists to ensure that NHS 111 professionals assessing a patient’s need will have access to the encounter records of calls made within the previous 96 hours, where the patient has called three or more times.
+
+
+Consent for the encounter report to be shared with the Repeat Caller Service MUST follow the implementation guidance [here] (https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_rcs.md)
+
+
+#### Consent for IDT ####
+Pathways Intelligent Data Tool (IDT) supports continuous quality improvement of the triage process through collection of triage information, which can be captured in an Encounter Report.
+
+Consent for the encounter report to be shared with the Intelligent Data Tool MUST follow the implementation guidance [here] (https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_idt.md)
 
 
 
@@ -62,21 +85,5 @@ This Implementation Guide features an Alpha-level profile of the Consent resourc
 
 Authorisation to view the SCR is known as ‘permission to view’, and there are [varying conditions](https://digital.nhs.uk/services/summary-care-records-scr/viewing-summary-care-records-scr#viewing-the-scr) that must be met to allow the SCR to be viewed. It is suggested that you consult [NHS Digital’s SCR usage guidance]( https://digital.nhs.uk/services/summary-care-records-scr#using-scr) to understand the context for using SCR permission to view via.
 
-This Implementation Guide features an Alpha-level profile of the Consent resource structured to capture [SCR permission to view within and Encounter Report]( https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_pem.md).
-
-#### Consent for the ‘Repeat Caller Service’ ####
-[The Repeat Caller Service]( https://developer.nhs.uk/apis/uec-tech-standards/repeat_caller_service.html) is a national service operated by NHS Digital and is a core part of the Integrated Urgent Care national architecture.
-The Repeat Caller Service exists to ensure that NHS 111 professionals assessing a patient’s need will have access to the encounter records of calls made within the previous 96 hours, where the patient has called three or more times.
-
-
-This Implementation Guide features an Alpha-level profile of the Consent resource structured to capture [ TBC ]
-
->*Unclear what specific use case(s) around the repeat caller service we support, please confirrm, and if possible draft a brief statement Will link to https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_rcs.md *
-
-#### Consent for IDT ####
->*Unclear what IDT is/does – all searches lead to ‘Inter Deanery Transfer’ which appears to be an employment thing? – Will require some content to be drafted or notes to allow content to be drafted Will link to https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_idt.md *
-
-#### Consent for Validation ####
->*Unclear whether validation is a specific or generic process – Will require some content to be drafted or notes to allow content to be drafted. Will link to https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_validation.md *
-
+This Implementation Guide features an Alpha-level profile of the Consent resource structured to share [SCR permission to view within an Encounter Report]( https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_???.md).
 
