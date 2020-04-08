@@ -44,17 +44,17 @@ The Clinical Decision Support System is responsible for making clinical decision
 
 The Clinical Decision Support System MUST be able to:
 
-* Respond to filtered searches for 'ServiceDefinition'
-* Respond to evaluation of a 'ServiceDefinition'
-* Read appropriate resources from the EMS (e.g. 'QuestionnaireResponse')
-* Write appropriate resources (e.g. 'Questionnaire', 'Observation')
+* Respond to filtered searches for `ServiceDefinition`
+* Respond to evaluation of a `ServiceDefinition`
+* Read appropriate resources from the EMS (e.g. `QuestionnaireResponse`)
+* Write appropriate resources (e.g. `Questionnaire`, `Observation`)
 
 The Clinical Decision Support System MAY:
 
-* Respond to '$IsValid'
+* Respond to `$IsValid`
 
 ## Encounter Report ##
-The Encounter Report is the aggregation of resources which contain all the information collected in a UEC Encounter.  These resources exist independently, but are all linked to the 'Encounter'.  The definition for retrieving the full set of resources which represent the UEC Encounter is captured as a query.
+The Encounter Report is the aggregation of resources which contain all the information collected in a UEC Encounter.  These resources exist independently, but are all linked to the `Encounter`.  The definition for retrieving the full set of resources which represent the UEC Encounter is captured as a query.
 
 ## Encounter Report Receiving System (ERR) ##
 A system that receives the Encounter Report from the originating EMS, consumes it and renders it for users. Most ERRs are likely to also be EMSs but some may be services (e.g. Repeat Caller Service)
