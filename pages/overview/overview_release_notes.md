@@ -13,13 +13,13 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 * The API guide has been expanded in scope to introduce the use of ‘[$Check-Services](../blob/release_2.0/pages/explore/api_check_services.md)’ interaction. Several resources have been introduced and profiled to support the interaction.
 *	For the ‘[$Evaluate’ interaction](../blob/release_2.0/pages/explore/api_post_evaluate.md), implementation guidance has been changed for a number of elements to support use of the Encounter Report and reflect maturation of the solution.
 *	Several valuesets have been revised or introduced within the resources used in the ‘$Evaluate’ interaction.
-*	Site navigation has been restructured around ‘interactions’ rather than ‘resources’; interactions are ‘[Service validity](../blob/release_2.0/pages/explore/api_post_isvalid.md)’ ‘[Select ServiceDefinition](../blob/release_2.0/pages/explore/api_get_service_definition.md)’, ‘[Evaluate](../blob/release_2.0/pages/explore/api_post_evaluate.md)’, ‘[Check-Services](../blob/release_2.0/pages/explore/api_check_services.md)' and ‘[Encounter Report](.. /blob/release_2.0/pages/explore/api_encounter_report.md)’.
+*	Site navigation has been restructured around ‘interactions’ rather than ‘resources’; interactions are ‘[Service validity](../blob/release_2.0/pages/explore/api_post_isvalid.md)’ ‘[Select ServiceDefinition](../blob/release_2.0/pages/explore/api_get_service_definition.md)’, ‘[Evaluate](../blob/release_2.0/pages/explore/api_post_evaluate.md)’, ‘[Check-Services](../blob/release_2.0/pages/explore/api_check_services.md)' and ‘[Encounter Report](../blob/release_2.0/pages/explore/api_encounter_report.md)’.
 *	The ‘In scope’ and ‘Out of scope’ sections of the ‘[Introduction](../blob/release_2.0/index.md)’ page have been updated
 *	Updates have been made to the [Clinical Safety assets](../blob/release_2.0/pages/overview/clinical_safety.md), to support V2.0 scope and use cases, including the Clinical Safety Case Report, Clinical Safety Assessment and Clinical Safety Hazard Log.
 *	Additional usage guidance has been issued across the guide to support the use of the specification
-*	The ‘[Concepts]’(../blob/release_2.0/pages/solution/overview_concepts.md) page has been updated to provide an explanation of the ‘Encounter Report’ 
-*	The ‘[Interactions]’(../blob/release_2.0/pages/solution/solution_interactions.md) page has been updated to include details of the ‘Check-Services’ and ‘Encounter Report’ interactions
-*	The [Guide Versioning](../blob/release_2.0/pages/overview/overview_guide_versioning.md) page has been updated to use the current approved Pre-release Labels
+*	The ‘[Concepts](../blob/release_2.0/pages/solution/overview_concepts.md)' page has been updated to provide an explanation of the ‘Encounter Report’ 
+*	The ‘[Interactions](../blob/release_2.0/pages/solution/solution_interactions.md)' page has been updated to include details of the ‘Check-Services’ and ‘Encounter Report’ interactions
+*	The '[Guide Versioning](../blob/release_2.0/pages/overview/overview_guide_versioning.md)' page has been updated to use the current approved Pre-release Labels
 *	Minor amendments have been made to the text and layout to correct spelling and grammar and to add clarity
 
 ## 1.1.0-alpha ##
