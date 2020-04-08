@@ -176,7 +176,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
     <td>When the service(s) requested in the referral should occur</td>
 <td>This MUST be populated.<br/>
 This MUST use the datatype 'Period'<br/>
-The start of the period must be 'now'.</td>
+The start of the period MUST be 'now'.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">authoredOn</code></td>
