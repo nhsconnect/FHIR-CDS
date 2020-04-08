@@ -16,7 +16,7 @@ The responsibility for managing clinical risk in the implementation of the CDS A
 
 The responsibility for managing clinical risk in the deployment and use of the CDS API lies with the deploying Healthcare Organization in accordance with DCB0160 Clinical Risk Management: its Application in the Deployment and Use of Health IT Systems. This report is intended to inform those activities.
 
-The NHS Digital Clinical Safety Group (CSG) has fully endorsed the clinical safety management approach followed by the Urgent and Emergency Care Digital Integration Programme in support of the development and planned publication of the Clinical Decision Support (CDS) API Implementation Guide Release 1.1.  The endorsement does not result in a transfer of risk to the NHS Digital CSG in respect of any part of the Clinical Decision Support (CDS) API Implementation Guide Release 1.1. The element of clinical risk management remains the responsibility of the manufacturer and deploying organisation.
+The NHS Digital Clinical Safety Group (CSG) has fully endorsed the clinical safety management approach followed by the Urgent and Emergency Care Digital Integration Programme in support of the development and planned publication of the Clinical Decision Support (CDS) API Implementation Guide Release 2.0.  The endorsement does not result in a transfer of risk to the NHS Digital CSG in respect of any part of the Clinical Decision Support (CDS) API Implementation Guide Release 2.0. The element of clinical risk management remains the responsibility of the manufacturer and deploying organisation.
 
 ## Downloads ##
 
