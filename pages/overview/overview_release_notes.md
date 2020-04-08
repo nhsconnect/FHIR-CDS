@@ -7,10 +7,20 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
-## 2.0-Release Candidate (proposed) ##
-
-The next version of the CDS API Implemenation Guide will introduce additional guidance and introduce the UEC Encounter Report. It is proposed as a Release Candidate to be published in spring 2020.
-
+## 2.0.0-alpha ##
+* The API guide has been expanded in scope to introduce the use of ‘[Encounter Report](.. /blob/release_2.0/pages/explore/api_encounter_report.md)’ functionality.
+* Several resources have been introduced and profiled to support the use of the Encounter Report and related interactions; see the ‘[Resources’ section](../blob/release_2.0/pages/explore/api_encounter_report.md#resources) of the Encounter Report Overview.
+* The API guide has been expanded in scope to introduce the use of ‘[$Check-Services](../blob/release_2.0/pages/explore/api_check_services.md)’ interaction. Several resources have been introduced and profiled to support the interaction.
+*	For the ‘[$Evaluate’ interaction](../blob/release_2.0/pages/explore/api_post_evaluate.md), implementation guidance has been changed for a number of elements to support use of the Encounter Report and reflect maturation of the solution.
+*	Several valuesets have been revised or introduced within the resources used in the ‘$Evaluate’ interaction.
+*	Site navigation has been restructured around ‘interactions’ rather than ‘resources’; interactions are ‘[Service validity](../blob/release_2.0/pages/explore/api_post_isvalid.md)’ ‘[Select ServiceDefinition](../blob/release_2.0/pages/explore/api_get_service_definition.md)’, ‘[Evaluate](../blob/release_2.0/pages/explore/api_post_evaluate.md)’, ‘[Check-Services]’(../blob/release_2.0/pages/explore/api_check_services.md) and ‘[Encounter Report](.. /blob/release_2.0/pages/explore/api_encounter_report.md)’.
+*	The ‘In scope’ and ‘Out of scope’ sections of the ‘[Introduction]( https://cds-api-v2.netlify.com/index.html)’ page have been updated
+*	Updates have been made to the [Clinical Safety assets](../blob/release_2.0/pages/overview/clinical_safety.md), to support V2.0 scope and use cases, including the Clinical Safety Case Report, Clinical Safety Assessment and Clinical Safety Hazard Log.
+*	Additional usage guidance has been issued across the guide to support the use of the specification
+*	The ‘[Concepts]’(../blob/release_2.0/pages/solution/overview_concepts.md) page has been updated to provide an explanation of the ‘Encounter Report’ 
+*	The ‘[Interactions]’(../blob/release_2.0/pages/solution/solution_interactions.md) page has been updated to include details of the ‘Check-Services’ and ‘Encounter Report’ interactions
+*	The [Guide Versioning](../blob/release_2.0/pages/overview/overview_guide_versioning.md) page has been updated to use the current approved Pre-release Labels
+*	Minor amendments have been made to the text and layout to correct spelling and grammar and to add clarity
 
 ## 1.1.0-alpha ##
 *  `ProcedureRequest` Resource has been deprecated
@@ -26,7 +36,6 @@ The next version of the CDS API Implemenation Guide will introduce additional gu
 *  Guidance amended regarding the `ReferralRequest.intent` element
 *  SearchParameters resource page added with examples of `SearchParameter` definitions
 *  `RequestGroup` resouce page added
-
 
 ## 1.0.0-alpha ##
 *  Updated COULD to MAY in guidance
