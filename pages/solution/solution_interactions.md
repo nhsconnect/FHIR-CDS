@@ -87,7 +87,7 @@ View the [Result](api_return_guidance_response.html) section for more informatio
 
 ## Check Services Interaction ##
 
-At the end of the triage journey the EMS invokes a `$check-services` operation on a Directory of Services (DOS) referencing the generic `ReferralRequest` obtained as part of the triage outcome (chief concern, next activity and acuity). 
+If at the end of the triage journey an onward referral is required, the EMS invokes a `$check-services` operation on a Directory of Services (DOS). The `$check-services` operation references the generic `ReferralRequest` obtained as part of the triage outcome (chief concern, next activity and acuity). 
 
 The DOS uses the `ReferralRequest` and other IN parameters to find a specific set of nearby services which can meet the need identified in the triage outcome.
 
