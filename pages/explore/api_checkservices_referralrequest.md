@@ -133,7 +133,7 @@ Where populated it MUST be with the <code class="highlighter-rouge">RequestGroup
   <td><code class="highlighter-rouge">intent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
-   <td>proposal | plan | order <a href="https://www.hl7.org/fhir/stu3/valueset-request-intent.html">RequestIntent (Required)</a></td>
+   <td>proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option <a href="https://www.hl7.org/fhir/stu3/valueset-request-intent.html">RequestIntent (Required)</a></td>
 <td>This MUST be populated with 'plan'</td>
 </tr>
 <tr>
