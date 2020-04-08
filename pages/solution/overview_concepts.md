@@ -63,6 +63,7 @@ The Encounter Report Receiving System MUST be able to:
 
 * Receive the Encounter Report url from the EMS
 * Get the Encounter Report from the EMS
+
 The Encounter Report Receiving System MAY:
 
 * Render the Encounter Report from the 'Composition' resource
@@ -77,5 +78,3 @@ Directory Services MUST be able to:
 
 * Receive a '$check-services' query
 * Return a bundle of 'HealthcareServices' that meet the needs expressed in the ReferralRequest
-
--->
