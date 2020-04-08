@@ -101,9 +101,9 @@ View the [Check-Services](api_check_services.html) page for detailed guidance.
 
 On completion of a patent’s triage encounter the EMS can hand over the journey to a different EMS or appropriate Healthcare Service.
 
-The Encounter Report contains all the resources collected during the `$evaluate` interactions plus additional data required by a downstream service provider to provide safe clinical care to that patient. This provides conformant Encounter Report Receiving Systems (ERRs) with structured triage Information to drive business processes.
+The Encounter Report contains all the resources collected during the `$evaluate` interactions plus additional data required by a downstream service provider to provide safe clinical care to that patient. This provides conformant Encounter Report Receiving systems (ERRs) with structured triage information to drive business processes.
 
-The aim is for the Encounter Report to be suitable for communicating Triage information between any Care Setting.
+The aim is for the Encounter Report to be suitable for communicating triage information between any Care Setting.
 
 The Encounter Report interaction begins after the `$check-services` interaction is complete and a HealthcareService has been identified to handover to.
 
