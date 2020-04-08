@@ -6,18 +6,18 @@ sidebar: ctp_rest_sidebar
 permalink: api_list.html
 summary: List resource implementation guidance
 ---
-​
+
 {% include custom/search.warnbanner.html %}
 
-​
+
 ## List: Implementation Guidance ##
-​
+
 ### Usage ###
-The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of resources. Lists will typically include references to the resources that make up the list.
-​
+The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of ALL resources populated during the triage journey. Lists will include references to the resources that make up the list. 
+
 Detailed implementation guidance for an `List` resource in the context of a CDS Encounter Report is given below:  
-​
-​
+
+
 <table style="min-width:100%;width:100%">
 <tr>
     <th style="width:10%;">Name</th>
