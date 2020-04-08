@@ -19,21 +19,21 @@ The EMS is responsible for invoking the decision support process on the CDSS, po
 
 The Encounter Management System MUST be able to:
 
-* Initiate the selection of a 'ServiceDefinition'
-* Initiate the evaluation of a 'ServiceDefinition'
-* Read appropriate resources from the CDSS (e.g. 'Questionnaire')
-* Write appropriate resources (e.g. 'QuestionnaireResponse', 'Task', 'Consent', 'Procedure', 'Flag')
-* Initiate the checking of Directory Services for service instances that meet the needs expressed in the ReferralRequest (Create a '$check-services' query)
+* Initiate the selection of a `ServiceDefinition`
+* Initiate the evaluation of a `ServiceDefinition`
+* Read appropriate resources from the CDSS (e.g. `Questionnaire`)
+* Write appropriate resources (e.g. `QuestionnaireResponse`, `Task`, `Consent`, `Procedure`, `Flag`)
+* Initiate the checking of Directory Services for service instances that meet the needs expressed in the ReferralRequest (Create a `$check-services` query)
 * Populate the Encounter Report
 * Notify the intended ERR of the Encounter Report url
-* Render the Encounter Report from the 'Composition' resource
+* Render the Encounter Report from the `Composition` resource
 * Respond to Encounter Report searches
 
 The Encounter Management System MAY:
 
-* Write resources which are not core (e.g. 'Condition')
-* Invoke '$IsValid' to identify if a CDSS has a contractural relationship with the patient's Clinical Commisioning Group (CCG)
-* Render the Encounter Report from the 'List' resource
+* Write resources which are not core (e.g. `Condition`)
+* Invoke `$IsValid` to identify if a CDSS has a contractural relationship with the patient's Clinical Commisioning Group (CCG)
+* Render the Encounter Report from the `List` resource
 * Search for existing Encounter Reports
 
 
@@ -66,8 +66,8 @@ The Encounter Report Receiving System MUST be able to:
 
 The Encounter Report Receiving System MAY:
 
-* Render the Encounter Report from the 'Composition' resource
-* Render the Encounter Report from the 'List' resource
+* Render the Encounter Report from the `Composition` resource
+* Render the Encounter Report from the `List` resource
 
 
 ## Directory Services ##
@@ -76,5 +76,5 @@ A service that provides information about healthcare service instances and can r
 
 Directory Services MUST be able to:
 
-* Receive a '$check-services' query
-* Return a bundle of 'HealthcareServices' that meet the needs expressed in the ReferralRequest
+* Receive a `$check-services` query
+* Return a bundle of `HealthcareServices` that meet the needs expressed in the ReferralRequest
