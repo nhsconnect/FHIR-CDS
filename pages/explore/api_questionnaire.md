@@ -93,7 +93,8 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Logical URI to reference this questionnaire (globally unique)</td>
-<td>This will be used to link a <code class="highlighter-rouge">QuestionnaireResponse</code> to the <code class="highlighter-rouge">Questionnaire</code> the response is for.</td>
+<td>This will be used to link a <code class="highlighter-rouge">QuestionnaireResponse</code> to the <code class="highlighter-rouge">Questionnaire</code> the response is for. A new url is to be created each time any element of a Questionnaire is changed.
+</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
