@@ -28,11 +28,8 @@ table.spec td code {
 
 ## Consent: Overview ##
 
-There is no universal model for handling consent within UK healthcare settings, as different care settings will be affected by factors such as the type of information captured and the criticality of the care that must be administered. 
-
-Given the range of consent models used with the health space, this API guide does not provide a single set of implementation guidance for the [‘Consent’](http://hl7.org/fhir/stu3/consent.html)
+The Encounter Report may be shared with many different services, to support different interactions.  Consent should be modelled separately for each interaction where the consent exists.  This includes where the consent has been withdrawn.  Given the range of interactions that may use the Encounter Report, this API guide does not provide a single set of implementation guidance for the [‘Consent’](http://hl7.org/fhir/stu3/consent.html)
  resource. Instead the guide contains six different configurations adapted to the consent models of pre-existing systems and scenarios, as listed below.
-
 
 ### Scope of consent model ###
 
