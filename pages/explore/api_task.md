@@ -15,7 +15,7 @@ summary: Task resource implementation guidance
 ### Usage ###
 The [Task](http://hl7.org/fhir/STU3/task.html) resource is used to describe an activity that can be performed and track its state of completion. 
 ​
-Detailed implementation guidance for an `Task` resource in the CDS context is given below:  
+ Detailed implementation guidance for an `Task` resource in the CDS context is given below:  
 ​
 ​
 <table style="min-width:100%;width:100%">
