@@ -47,33 +47,31 @@ Where an encounter cannot be fulfil the patient's health need, the patient will 
 Consent to share the encounter report with other services to facilitate direct care of the patient MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_???.md) of a patient
 
 
-
 #### Consent for ‘Post Event Messaging’ ####
 
 All encounters with the Integrated Urgent Care service must be followed up with a message back to the patient’s registered GP surgery upon completion. This message is referred to as a [Post Event Message]( https://developer.nhs.uk/apis/uec-tech-standards/post_event_messaging.html) (PEM). 
 
 Consent for the encounter report to be shared with the patient's registered GP MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_pem.md)
 
-#### Consent for Validation ####
->*Unclear whether validation is a specific or generic process – Will require some content to be drafted or notes to allow content to be drafted. Will link to  *
 
+#### Consent for Validation ####
 Some encounters may be validated before action - for example, some ambulance requests are validated by clinicians before the ambulance is sent.  
 
-Consent for the encounter report to be shared to support the validation process MUST follow the implementation guidance [here] (../blob/release_2.0/pages/explore/api_consent_validation.md)
+Consent for the encounter report to be shared to support the validation process MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_validation.md)
+
 
 #### Consent for the ‘Repeat Caller Service’ ####
-[The Repeat Caller Service]( https://developer.nhs.uk/apis/uec-tech-standards/repeat_caller_service.html) is a national service operated by NHS Digital and is a core part of the Integrated Urgent Care national architecture.
+[The Repeat Caller Service](https://developer.nhs.uk/apis/uec-tech-standards/repeat_caller_service.html) is a national service operated by NHS Digital and is a core part of the Integrated Urgent Care national architecture.
 The Repeat Caller Service exists to ensure that NHS 111 professionals assessing a patient’s need will have access to the encounter records of calls made within the previous 96 hours, where the patient has called three or more times.
 
 
-Consent for the encounter report to be shared with the Repeat Caller Service MUST follow the implementation guidance [here] (https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_rcs.md)
+Consent for the encounter report to be shared with the Repeat Caller Service MUST follow the implementation guidance [here](https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_rcs.md).
 
 
 #### Consent for IDT ####
 Pathways Intelligent Data Tool (IDT) supports continuous quality improvement of the triage process through collection of triage information, which can be captured in an Encounter Report.
 
-Consent for the encounter report to be shared with the Intelligent Data Tool MUST follow the implementation guidance [here] (https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_idt.md)
-
+Consent for the encounter report to be shared with the Intelligent Data Tool MUST follow the implementation guidance [here](https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_idt.md).
 
 
 #### Consent for ‘Summary Care Record – Permission to view’ ####
@@ -82,5 +80,5 @@ Consent for the encounter report to be shared with the Intelligent Data Tool MUS
 
 Authorisation to view the SCR is known as ‘permission to view’, and there are [varying conditions](https://digital.nhs.uk/services/summary-care-records-scr/viewing-summary-care-records-scr#viewing-the-scr) that must be met to allow the SCR to be viewed. It is suggested that you consult [NHS Digital’s SCR usage guidance]( https://digital.nhs.uk/services/summary-care-records-scr#using-scr) to understand the context for using SCR permission to view via.
 
-This Implementation Guide features an Alpha-level profile of the Consent resource structured to share [SCR permission to view within an Encounter Report]( https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_???.md).
+This Implementation Guide features an Alpha-level profile of the Consent resource structured to share [SCR permission to view within an Encounter Report](../blob/release_2.0/pages/explore/api_consent_scr_ptv.md).
 
