@@ -22,7 +22,7 @@ The Composition resource should only be used by ERRs that cannot build a custom 
 
 The human-readable summary will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The `Encounter` resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
 
-PLEASE NOTE that resources referenced by the Composition resource must not be used to drive business processes as they may not be the complete list of resources for the triage journey. 
+PLEASE NOTE that resources referenced by the Composition resource MUST NOT be used to drive business processes as they may not be the complete list of resources for the triage journey. 
 
 Detailed implementation guidance for a `Composition` resource in the CDS context is given below:  
 
