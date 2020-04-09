@@ -185,6 +185,9 @@ entries:
         - title: HealthcareService
           url: /api_healthcare_service.html
           output: web
+        - title: Location
+          url: /api_location.html
+          output: web          
         - title: ReferralRequest
           url: /api_checkservices_referralrequest.html
           output: web
