@@ -20,7 +20,7 @@ The key interactions for the Clinical Decision Support API are represented in th
 
 The Service Validity interaction is a custom FHIR Operation performed by an EMS at the start of a triage journey. The `$isValid` operation is intended to check whether the CDSS is able to provide ServiceDefinitions appropriate for the current journey.
 
-This is an optional interaction, expected to be used where a CDSS may not be appropriate to all patients. For example where an online consultation system is only relevant to patients whos registered GP has a contractual relationship with the system supplier.
+This is an optional interaction, expected to be used where a CDSS may not be appropriate to all patients. For example where an online consultation system is only relevant to patients whose registered GP has a contractual relationship with the system supplier.
 
 The `$isValid` operation is performed by the EMS passing the patient's registered GP (as an ODS code) to the CDSS.
 
@@ -44,10 +44,10 @@ The `GuidanceResponse` carries or references all information relating to the CDS
 
 ![Diagram showing invoke decision support and ServiceDefinition.$evaluate interactions](images/solution/invoke-decision-support.png "Diagram showing invoke decision support and ServiceDefinition.$evaluate interactions")
 
-View the [Evaluate ServiceDefinition](api_post_service_definition.html) and [GuidanceResponse](api_guidance_response.html) pages for detailed guidance.
+View the [Evaluate ServiceDefinition](api_post_evaluate.html) and [GuidanceResponse](api_guidance_response.html) pages for detailed guidance.
 
 
-## Questionnaire / QuestionnaireResponse interaction ##
+### Questionnaire / QuestionnaireResponse ###
 
 The CDSS determines the next question to ask and populates a `Questionnaire` resource accordingly.
 A reference to this `Questionnaire` is included within the returned `GuidanceResponse`.
@@ -60,8 +60,6 @@ This interaction is expected to be repeated multiple times during the triage jou
 
 ![Diagram showing Questionnaire/Response interaction](images/solution/questionnaire-interaction.png "Diagram showing Questionnaire/Response interaction")
 
-View the [Get Questionnaire](api_get_questionnaire.html) page for detailed guidance.
-
 The CDSS evaluates the returned `QuestionnaireResponse` and uses its content to create an assertion which is carried within an `Observation` resource.
 
 The CDSS determines whether there is enough information to arrive at a result. If not, another `Questionnaire` is populated with the next question to be answered.
@@ -70,10 +68,10 @@ The `GuidanceResponse` returned to the EMS now contains references to both an `O
 
 ![Diagram showing response from ServiceDefinition.$evaluate interaction](images/solution/assertion-interaction.png "Diagram showing response from ServiceDefinition.$evaluate interaction")
 
-View the [ServiceDefinition](api_post_service_definition.html) and [GuidanceResponse](api_guidance_response.html) pages for detailed guidance.
+View the [Evaluate](api_post_evaluate.html) and [GuidanceResponse](api_guidance_response.html) pages for detailed guidance.
 
 
-## Arriving at a result ##
+### Arriving at a result ###
 The EMS invokes a `ServiceDefinition.$evaluate` operation referencing a `QuestionnaireResponse` and any previous assertions (`Observation` resources) for the CDSS to evaluate.
 
 The CDSS creates another assertion from the `QuestionnaireResponse` and determines whether a result can be provided.
@@ -87,11 +85,11 @@ View the [Result](api_return_guidance_response.html) section for more informatio
 
 ## Check Services Interaction ##
 
-If at the end of the triage journey an onward referral is required, the EMS invokes a `$check-services` operation on a Directory of Services (DOS). The `$check-services` operation references the generic `ReferralRequest` obtained as part of the triage outcome (chief concern, next activity and acuity). 
+If at the end of the triage journey an onward referral is required, the EMS invokes a `$check-services` operation on a Directory Service. The `$check-services` operation references the generic `ReferralRequest` obtained as part of the triage outcome (chief concern, next activity and acuity). 
 
-The DOS uses the `ReferralRequest` and other IN parameters to find a specific set of nearby services which can meet the need identified in the triage outcome.
+The Directory Service uses the `ReferralRequest` and other IN parameters to find a specific set of  services which can meet the need identified in the triage outcome.
 
-The DOS returns a bundle of `HealthcareService` resources.
+The Directory Service returns a bundle of `HealthcareService` resources.
 
 ![Diagram showing interaction between the EMS and the Directory of Services](images/solution/check-services-interaction.png "Diagram showing interaction between the EMS and the Directory of Services")
 
@@ -103,7 +101,7 @@ On completion of a patent’s triage encounter the EMS can hand over the journey
 
 The Encounter Report contains all the resources collected during the `$evaluate` interactions plus additional data required by a downstream service provider to provide safe clinical care to that patient. This provides conformant Encounter Report Receiving systems (ERRs) with structured triage information to drive business processes.
 
-The aim is for the Encounter Report to be suitable for communicating triage information between any Care Setting.
+The aim is for the Encounter Report to be suitable for communicating triage information between any two Care Settings.
 
 The Encounter Report interaction begins after the `$check-services` interaction is complete and a HealthcareService has been identified to handover to.
 

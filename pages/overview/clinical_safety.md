@@ -5,7 +5,7 @@ tags: [clinical,safety]
 sidebar: overview_sidebar
 permalink: clinical_safety.html
 toc: false
-summary: An overview of the CDS API Clinical Safety Case Report and Hazard Log
+summary: An overview of the CDS API Implementation Guide Clinical Safety Case Report and Hazard Log
 ---
 
 Clinical Safety activities were undertaken during the development of the CDS API Implementation Guide in accordance with [DCB0129 Clinical Risk Management: its Application in the Manufacture of Health IT Systems](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems) to ensure safety by design. These activities have informed the development of the implementation guide, the associated usage guidance and the conformance approach. 
@@ -21,6 +21,6 @@ The NHS Digital Clinical Safety Group (CSG) has fully endorsed the clinical safe
 ## Downloads ##
 
 You can access the Clinical Safety Case Report and associated Hazard Log below.
-- [CDS API Clinical Safety Case Report](files/Clinical_Safety_Case_Report_-_Clinical_Decision_Support_API_Implementaion_Guide_1.1_v1.0.pdf) 
-- [CDS API Clinical Safety Assessment - Implementation Guide Patch Release 1.1.1](files/Clinical_Safety_Assessment_-_CDS_API_Implementation_Guide_Patch_Release_1.1.1_v1.0.pdf) 
-- [CDS API Clinical Safety Hazard Log](files/CDS_API_Hazard_Log_V1.0.xlsx)
+- [CDS API Implementation Guide Clinical Safety Case Report](files/Clinical_Safety_Case_Report_-_Clinical_Decision_Support_API_Implementaion_Guide_1.1_v1.0.pdf) 
+- [CDS API Implementation Guide Clinical Safety Assessment - Implementation Guide Patch Release 1.1.1](files/Clinical_Safety_Assessment_-_CDS_API_Implementation_Guide_Patch_Release_1.1.1_v1.0.pdf) 
+- [CDS API Implementation Guide Clinical Safety Hazard Log](files/CDS_API_Hazard_Log_V1.0.xlsx)

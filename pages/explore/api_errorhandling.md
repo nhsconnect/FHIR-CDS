@@ -70,14 +70,14 @@ The table below summarises the HTTP response code, along with the value to expec
 |---|---|---|
 |400	|error	|invalid|	INVALID_RESOURCE|
 
+<br>
+
 Examples of business rules which may cause this error to be thrown when violated are given below:
 
-#### mandatory fields ####
-
+* mandatory fields
 If one or more mandatory fields are missing then this error will be thrown.
 
-#### mandatory field values ####
-
+* mandatory field values
 If one or more mandatory fields are missing values then this error will be thrown.
 
 

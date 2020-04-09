@@ -212,28 +212,28 @@ The table below gives implementation guidance in relation to the elements within
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub"><code>activity.outcomeCodeableConcept</code></td>
+            <td class="sub"><code>outcomeCodeableConcept</code></td>
             <td><code>0..*</code></td>
             <td>CodeableConcept</td>
             <td>Results of the activity <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-activity-outcome.html">Care Plan Activity Outcome (Example)</a></td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub"><code>activity.outcomeReference</code></td>
+            <td class="sub"><code>outcomeReference</code></td>
             <td><code>0..*</code></td>
             <td>Reference (Any)</td>
             <td>Appointment, Encounter, Procedure, etc.</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub"><code>activity.progress</code></td>
+            <td class="sub"><code>progress</code></td>
             <td><code>0..*</code></td>
             <td>Annotation</td>
             <td>Comments about the activity status/progress</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub"><code>activity.reference</code></td>
+            <td class="sub"><code>reference</code></td>
             <td><code>0..1</code></td>
             <td>Reference
                 <br>(Appointment |
@@ -250,70 +250,77 @@ The table below gives implementation guidance in relation to the elements within
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.category</code></td>
+            <td class="sub"><code>detail</code></td>
+            <td><code>0..1</code></td>
+            <td>BackboneElement</td>
+            <td>In-line definition of activity</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="sub-sub"><code>category</code></td>
             <td><code>0..1</code></td>
             <td>CodeableConcept</td>
             <td>diet | drug | encounter | observation | procedure | supply | other <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-activity-category.html">CarePlanActivityCategory (Example)</a></td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.definition</code></td>
+            <td class="sub-sub"><code>definition</code></td>
             <td><code>0..1</code></td>
             <td>Reference (PlanDefinition |ActivityDefinition |Questionnaire)</td>
             <td>Protocol or definition</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.code</code></td>
+            <td class="sub-sub"><code>code</code></td>
             <td><code>0..1</code></td>
             <td>CodeableConcept</td>
             <td>Detail type of activity <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-activity.html">Care Plan Activity (Example)</a></td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.reasonCode</code></td>
+            <td class="sub-sub"><code>reasonCode</code></td>
             <td><code>0..*</code></td>
             <td>CodeableConcept</td>
             <td>Why activity should be done or why activity was prohibited <a href="https://www.hl7.org/fhir/stu3/valueset-activity-reason.html">Activity Reason (Example)</a></td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.reasonReference</code></td>
+            <td class="sub-sub"><code>reasonReference</code></td>
             <td><code>0..*</code></td>
             <td>Reference (Condition)</td>
             <td>Condition triggering need for activity</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.goal</code></td>
+            <td class="sub-sub"><code>goal</code></td>
             <td><code>0..*</code></td>
             <td>Reference (Goal)</td>
             <td>Goals this activity relates to</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.status</code></td>
+            <td class="sub-sub"><code>status</code></td>
             <td><code>1..1</code></td>
             <td>code</td>
             <td>not-started | scheduled | in-progress | on-hold | completed | cancelled | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-activity-status.html">CarePlanActivityStatus (Required)</a></td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.statusReason</code></td>
+            <td class="sub-sub"><code>statusReason</code></td>
             <td><code>0..1</code></td>
             <td>string</td>
             <td>Reason for current status</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.prohibited</code></td>
+            <td class="sub-sub"><code>prohibited</code></td>
             <td><code>0..1</code></td>
             <td>boolean</td>
             <td>Do NOT do</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.scheduled[x]</code></td>
+            <td class="sub-sub"><code>scheduled[x]</code></td>
             <td><code>0..1</code></td>
             <td>Timing
                 <br/>Period
@@ -322,42 +329,42 @@ The table below gives implementation guidance in relation to the elements within
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.location</code></td>
+            <td class="sub-sub"><code>location</code></td>
             <td><code>0..1</code></td>
             <td>Reference (Location)</td>
             <td>Where it should happen</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.performer</code></td>
+            <td class="sub-sub"><code>performer</code></td>
             <td><code>0..*</code></td>
             <td>Reference (Practitioner |Organization |RelatedPerson |RelatedPerson |Patient |CareTeam)</td>
             <td>Who will be responsible?</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.product[x]</code></td>
+            <td class="sub-sub"><code>product[x]</code></td>
             <td><code>0..1</code></td>
             <td>CodeableConcept Reference (Medication | Substance)</td>
             <td>What is to be administered/supplied <a href="https://www.hl7.org/fhir/stu3/valueset-medication-codes.html">SNOMED CT Medication Codes (Example)</a></td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.dailyAmount</code></td>
+            <td class="sub-sub"><code>dailyAmount</code></td>
             <td><code>0..1</code></td>
             <td>SimpleQuantity</td>
             <td>How to consume/day?</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.quantity</code></td>
+            <td class="sub-sub"><code>quantity</code></td>
             <td><code>0..1</code></td>
             <td>SimpleQuantity</td>
             <td>How much to administer/supply/consume</td>
             <td>This MUST NOT be populated.</td>
         </tr>
         <tr>
-            <td class="sub-sub"><code>activity.detail.description</code></td>
+            <td class="sub-sub"><code>description</code></td>
             <td><code>0..1</code></td>
             <td>string</td>
             <td>Extra info describing activity to perform</td>

@@ -111,6 +111,6 @@ The table below gives implementation guidance in relation to the elements within
         <td>uri</td>
         <td>The image for which the coordinates relate.</td>
         <td>This SHOULD be populated. <br>
-        Where populated this MUST match the image link within <code  class="highlighter-rouge">Questionnaire.text</code>.</td>
+        Where populated this MUST match the image link within <code  class="highlighter-rouge">Questionnaire.item.text</code>.</td>
     </tr>
 </table>

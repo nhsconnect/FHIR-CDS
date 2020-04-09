@@ -32,73 +32,80 @@ POST [base]/ServiceDefinition/$isValid
 
 ## Parameters ##
 
-The `$isValid` operation has two IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameter to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
+The `$isValid` operation has four IN and one OUT parameter. The EMS will pass the patient CCG (as an ODS code) as an IN parameter to include in the operation. The CDSS will return a boolean as the OUT parameter of the operation.
 
 The required ODS code matches the ODS Organization Code of the Patient's General Practitioner ([Patient.generalPractitioner](api_patient.html)).
 
 ### IN Parameters ##  
 
+
 <table  style="min-width:100%;width:100%">
-<tr>
-<th  style="width:10%;">Name</th>
-<th  style="width:5%;">Type</th>
-<th  style="width:35%;">Description</th>
-<th  style="width:15%;">Conformance</th>
-<th  style="width:35%;">Implementation Guidance</th>
-</tr>
-<tr>
-<td><code  class="highlighter-rouge">requestId</code></td>
-<td>id</td>
-<td>An optional client-provided identifier to track the request.</td>
-<td>This SHOULD be populated</td>
-<td>
-Each invocation of the $isValid method MUST use a unique requestId<br/>
-The requestId MUST be locally unique
-</td>
-</tr>
+    <tr>
+        <th  style="width:10%;">Name</th>
+        <th style="width:5%;">Cardinality</th>
+        <th  style="width:5%;">Type</th>
+        <th  style="width:35%;">Description</th>
+        <th  style="width:10%;">Conformance</th>
+        <th  style="width:35%;">Implementation Guidance</th>
+    </tr>
+    <tr>
+        <td><code  class="highlighter-rouge">requestId</code></td>
+        <td>id</td>
+        <td>0..1</td>
+        <td>An optional client-provided identifier to track the request.</td>
+        <td>This SHOULD be populated</td>
+        <td>
+            If populated then each invocation of the $isValid method MUST use a unique requestId
+        </td>
+    </tr>
 
-<tr>
-<td><code  class="highlighter-rouge">ODSCode</code></td>
-<td>ODS Code</td>
-<td>
-The validity of the CDSS is based on the current patient's registered GP.
-</td>
-<td>This MUST be populated with the current patient's registered GP</td>
-<td>The validity of the CDSS is based on the current patient's registered GP.</td>
-</tr>
+    <tr>
+        <td><code  class="highlighter-rouge">ODSCode</code></td>
+        <td>Identifier</td>
+        <td>1..1</td>
+        <td>
+            The validity of the CDSS is based on the current patient's registered GP.
+        </td>
+        <td>This MUST be populated with the current patient's registered GP</td>
+        <td>The validity of the CDSS is based on the current patient's registered GP.</td>
+    </tr>
 
-<tr>
-<td><code  class="highlighter-rouge">evaluateAt</code></td>
-<td>datetime</td>
-<td>
-The date time for which the evaluation should be carried out
-</td>
-<td>This MUST be populated.</td>
-<td>This will normally be *now*, but can be set to future (or past) dates and times to check whether a service is expected to be available in the future
-</td>
+    <tr>
+        <td><code  class="highlighter-rouge">evaluateAtDateTime</code></td>
+        <td>datetime</td>
+        <td>0..1</td>
+        <td>
+            The date time for which the evaluation should be carried out
+        </td>
+        <td>This SHOULD be populated.</td>
+        <td>This will normally be <strong>now</strong>, but can be set to future (or past) dates and times to check whether a service is expected to be available in the future
+        </td>
 
-</tr>
+    </tr>
 
-<tr>
-<td><code  class="highlighter-rouge">dateOfBirth</code></td>
-<td>datetime</td>
-<td>
-patient's date of birth
-</td>
-<td>This MUST be populated with the current patient's date of birth</td>
-<td>Some services may only be valid for adults, or for particular age ranges</td>
-</tr></table>
+    <tr>
+        <td><code  class="highlighter-rouge">dateOfBirth</code></td>
+        <td>datetime</td>
+        <td>0..1</td>
+        <td>
+            Patient's date of birth
+        </td>
+        <td>This SHOULD be populated with the current patient's date of birth</td>
+        <td>Some services may only be valid for adults, or for particular age ranges</td>
+    </tr></table>
 
 ### OUT Parameters ###
 
 <table  style="min-width:100%;width:100%">
 <tr>
 <th  style="width:25%;">Name</th>
+<th style="width:10%;">Cardinality</th>
 <th  style="width:20%;">Type</th>
 <th  style="width:40%;">Documentation</th>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">return</code></td>
+<td>1..1</td>
 <td>boolean</td>
 <td>
 The output is a boolean - true if the CDSS is valid for this patient at this time, and false if not.

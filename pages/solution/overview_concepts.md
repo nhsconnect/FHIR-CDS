@@ -10,7 +10,7 @@ summary: Solution Concepts
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API. No updates will be made between published versions." %}
 
 
-This guide uses the terms Encounter Management System, Clinical Decision Support System, Encounter Report Receving System and Directory Services as set out below. Note that a particular system may act as more than one of these in different implementations.
+This guide uses the terms Encounter Management System, Clinical Decision Support System, Encounter Report Receiving System and Directory Services as set out below. Note that a particular system may act as more than one of these in different implementations.
 
 ## Encounter Management System (EMS) ##
 A system used for workflow management and to record, manage and track a patient’s episode of care through UEC settings. The EMS enables the triage and clinical assessment of patients to determine their health needs and signpost them to the appropriate care settings or support the provision of clinical consultation and treatment; this is expected to be achieved through integration with one or more supporting systems and services. Examples of an EMS include a GP system, an NHS 111 telephony system, or an Emergency Department (ED) system.
@@ -26,13 +26,12 @@ The Encounter Management System MUST be able to:
 * Initiate the checking of Directory Services for service instances that meet the needs expressed in the ReferralRequest (Create a `$check-services` query)
 * Populate the Encounter Report
 * Notify the intended ERR of the Encounter Report url
-* Render the Encounter Report from the `Composition` resource
 * Respond to Encounter Report searches
 
 The Encounter Management System MAY:
 
 * Write resources which are not core (e.g. `Condition`)
-* Invoke `$IsValid` to identify if a CDSS has a contractural relationship with the patient's Clinical Commisioning Group (CCG)
+* Invoke `$isValid` to identify if a CDSS has a contractural relationship with the patient's Clinical Commisioning Group (CCG)
 * Render the Encounter Report from the `List` resource
 * Search for existing Encounter Reports
 
@@ -40,7 +39,7 @@ The Encounter Management System MAY:
 ## Clinical Decision Support System (CDSS) ##
 A health information technology system that is designed to provide clinical and non-clinical UEC personnel undertaking triage or consultation, with clinical decision support (CDS); that is, assistance with clinical decision-making tasks.
 
-The Clinical Decision Support System is responsible for making clinical decisions, and communicating these to the EMS.
+The Clinical Decision Support System is responsible for supporting clinical decisions, and communicating these to the EMS.
 
 The Clinical Decision Support System MUST be able to:
 
@@ -51,7 +50,7 @@ The Clinical Decision Support System MUST be able to:
 
 The Clinical Decision Support System MAY:
 
-* Respond to `$IsValid`
+* Respond to `$isValid`
 
 ## Encounter Report ##
 The Encounter Report is the aggregation of resources which contain all the information collected in a UEC Encounter.  These resources exist independently, but are all linked to the `Encounter`.  The definition for retrieving the full set of resources which represent the UEC Encounter is captured as a query.
@@ -70,7 +69,7 @@ The Encounter Report Receiving System MAY:
 * Render the Encounter Report from the `List` resource
 
 
-## Directory Services ##
+## Directory Service ##
 
 A service that provides information about healthcare service instances and can return a filtered list based on query criteria. Examples of Directory Services include The Directory of Services (DoS) and MiDos.
 

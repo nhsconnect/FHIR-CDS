@@ -126,7 +126,8 @@ The EMS MUST NOT send duplicate items.</li>
     <td><code class="highlighter-rouge">userType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
-    <td>The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.).</td>
+    <td>The type of user initiating the request, e.g. Professional, Patient, Responsible person. <br>
+Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
 	<td>The <a href="/api_post_service_definition.html#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns.</td>
  </tr>
 <tr>

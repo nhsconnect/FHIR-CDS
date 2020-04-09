@@ -9,9 +9,9 @@ summary: An overview of how this Implementation Guide is versioned
 
 
 
-## 1. Product Versioning ##
+## Product Versioning ##
 
-### 1.1.0 Semantic Versioning ###
+### Semantic Versioning ###
 Versioning of each technical “Product” or asset (i.e. API, Design Principle(s), Data Library) is managed using [Semantic Versioning 2.0.0](https://semver.org/).
 
 
@@ -27,7 +27,7 @@ A pre-release version MAY be denoted by appending a hyphen and a series of dot s
 
 For example: 1.0.0-alpha.1 is a valid pre-release version.
 
-### 1.2.0 Pre-release Labels ###
+### Pre-release Labels ###
 
 When FHIR API implementation guides are published, they MUST have an associated maturity label. These labels are based on the GDS development process stages and MUST conform to one of the labels defined in the [FHIR-PUB-04: FHIR API Maturity](https://nhsconnect.github.io/fhir-policy/publication.html#FHIR-PUB-04) ‘Publication Requirements’ section of the [NHS FHIR Policy](https://nhsconnect.github.io/fhir-policy/index.html).
 
