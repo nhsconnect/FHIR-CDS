@@ -309,7 +309,19 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 </tr>
 </table>
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzYzNDI0MjAsNzYzMDMyNzMwLDU1NT
-A4MzYxNCw1MTU3MDQwMzJdfQ==
--->
+## HealthcareService Elements of note ##
+
+### endpoint ###
+
+This element contains details of the server endpoint to be invoked following the selection of a HealthcareService that has been returned in the <a href="api_check_services.html">`$check-services`</a> interaction.
+
+#### Get operation ####
+
+The HealthcareService is notified of an Encounter Report by the EMS calling the HealthcareService.endpoint and passing the Encounter ID.
+
+<div markdown="span" class="alert alert-success" role="alert">
+GET [base]?encounterId=<encounter id>
+</div>
+    
+It is up to the Encounter Report Receiver (ERR) to then fetch the <a href="api_encounter_report.html">Encounter Report</a>.
+
