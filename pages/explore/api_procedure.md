@@ -19,7 +19,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
 
 <table style="min-width:100%;width:100%">
 <tr>
-    <th style="width:10%;">Name</th>
+    <th style="width:10%;">Name</t>
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
     <th style="width:38%;">FHIR Documentation</th>
@@ -150,33 +150,32 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
 <td></td>
 </tr>
 <tr>
-  <td><code>subject</code></td>
+    <td><code>subject</code></td>
     <td><code>1..1</code></td>
-    <td>Reference(Patient | Group)</td>
+    <td>Reference (Patient | Group)</td>
     <td>Who the procedure was performed on</td>
-<td>This MUST be the Patient</td>
+    <td>This MUST be the Patient</td>
 </tr>
 <tr>
-  <td><code>context</code></td>
+    <td><code>context</code></td>
     <td><code>0..1</code></td>
     <td>Reference (Encounter | EpisodeOfCare)</td>
-    <td>Encounter or episode associated with the procedure<br>
-<td>This SHOULD be the Encounter</td>
+    <td>Encounter or episode associated with the procedure</td>
+    <td>This SHOULD be the Encounter</td>
 </tr>
 <tr>
-  <td><code>performed[x]</code></td>
+    <td><code>performed[x]</code></td>
     <td><code>0..1</code></td>
     <td></td>
-    <td>Date/Period the procedure was performed
-</td>
-<td></td>
+    <td>Date/Period the procedure was performed</td>
+    <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>performedDateTime</code></td>
+    <td class="sub"><code>performedDateTime</code></td>
     <td></td>
     <td>dateTime</td>
     <td></td>
-<td></td>
+    <td></td>
 </tr>
 <tr>
   <td class="sub"><code>performedPeriod</code></td>
