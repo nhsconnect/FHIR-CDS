@@ -41,12 +41,14 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 <table  style="min-width:100%;width:100%">  
 <tr>  
 <th  style="width:15%;">Name</th>  
+<th  style="width:10%;">Cardinality</th>
 <th  style="width:15%;">Type</th>  
-<th  style="width:35%;">Description</th>  
-<th  style="width:35%;">CDS Implementation Guidance</th>  
+<th  style="width:30%;">Description</th>  
+<th  style="width:30%;">CDS Implementation Guidance</th>  
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">requestId 0..1</code></td>  
+<td>0..1</td>
 <td>id</td>  
 <td>An optional client-provided identifier to track the request.</td>  
 <td>  
@@ -57,6 +59,7 @@ The requestId MUST be locally unique
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">referralRequest 1..1</code></td>  
+<td>1..1</td>
 <td>ReferralRequest</td>  
 <td>  
 The core of the $check-services operation is based on the outcome of triage, represented as a chief concern, next activity and acuity. These are all captured in the ReferralRequest, so this resource contains all that is required for the outcome of triage.  
@@ -65,6 +68,7 @@ The core of the $check-services operation is based on the outcome of triage, rep
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">patient 1..1</code></td>  
+<td>1..1</td>
 <td>Patient</td>  
 <td>  
 The patient for whom the triage took place.<br/>  
@@ -74,6 +78,7 @@ There are a number of patient elements which are used by some of the directories
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">location 1..1</code></td>  
+<td>1..1</td>
 <td>Location</td>  
 <td>  
 The location represents the patient's current location.  
@@ -82,6 +87,7 @@ The location represents the patient's current location.
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">requester 0..1</code></td>  
+  <td>0..1</td>
 <td>Practitioner | Patient | RelatedPerson</td>  
 <td>  
 The person initiating the $check-services request  
@@ -93,6 +99,7 @@ The person initiating the $check-services request
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">registeredGP 0..1</code></td>  
+  <td>0..1</td>
 <td>Organization</td>  
 <td>  
 The organization representing the registered GP of the Patient.  
@@ -105,6 +112,7 @@ Where populated, the Organization MUST specify an <code  class="highlighter-roug
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">inputParameters 0..*</code></td>   
+  <td>0..*</td>
 <td>Parameter</td>  
 <td>  
 The input parameters for a request, if any. These parameters are defined by the target Service Directory.  
@@ -114,6 +122,7 @@ The input parameters for a request, if any. These parameters are defined by the 
 </tr>  
 <tr>  
     <td><code  class="highlighter-rouge">searchDistance 0..*</code></td>
+  <td>0..*</td>
     <td>Quantity (Distance | Duration)</td>  
     <td>The distance/duration to search within.</td>  
     <td>This MAY be populated.  <br>
