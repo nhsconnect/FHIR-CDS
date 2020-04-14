@@ -16,9 +16,9 @@ summary: RequestGroup resource implementation guidance
 ## RequestGroup: Implementation Guidance ##
 
 ### Usage ###
-The [RequestGroup](http://hl7.org/fhir/stu3/requestgroup.html) resource will be used to group related requests that can be used to capture intended activities that have inter-dependencies.
+The [RequestGroup](http://hl7.org/fhir/stu3/requestgroup.html) resource is a container for 0..1 referral requests and 0..* care plans.
 
-Detailed implementation guidance for a `RequestGroup` resource in the CDS context is given below:  
+Detailed implementation guidance for a `RequestGroup` resource in the scope of this implementation guide is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -70,7 +70,7 @@ Detailed implementation guidance for a `RequestGroup` resource in the CDS contex
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated</td>
+	<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -92,8 +92,7 @@ Detailed implementation guidance for a `RequestGroup` resource in the CDS contex
  <tr><td><code class="highlighter-rouge">basedOn</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference(Any)</td><td>Fulfills plan, proposal, or order</td><td>This MUST NOT be populated.</td></tr>
  <tr><td><code class="highlighter-rouge">replaces</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference(Any)</td><td>Request(s) replaced by this request</td><td>This MUST NOT be populated.</td></tr>
  <tr><td><code class="highlighter-rouge">groupIdentifier</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Identifier</td><td>Composite request this is part of</td><td>This MUST NOT be populated.</td></tr>
- <tr><td><code class="highlighter-rouge">status</code></td><td><code class="highlighter-rouge">1..1</code></td><td>code</td><td>draft | active | suspended | cancelled | completed | entered-in-error | unknown <a href="http://hl7.org/fhir/stu3/valueset-request-status.html">RequestStatus  (Required)</a></td><td>This MUST be populated with either 'active', 'completed' or 'cancelled'.  Other statuses are not valid.<br/>
- The status MUST match the CarePlan.status, where the CarePlan is populated. . If the status does not match the CarePlan.status the Encounter Management System MUST throw an error.</td></tr>
+ <tr><td><code class="highlighter-rouge">status</code></td><td><code class="highlighter-rouge">1..1</code></td><td>code</td><td>draft | active | suspended | cancelled | completed | entered-in-error | unknown <a href="http://hl7.org/fhir/stu3/valueset-request-status.html">RequestStatus  (Required)</a></td><td>This MUST be populated with either 'active', 'completed' or 'cancelled'.  Other statuses are not valid.</td></tr>
 <tr><td><code class="highlighter-rouge">intent</code></td><td><code class="highlighter-rouge">1..1</code></td><td>code</td><td>proposal | plan | order <a href="http://hl7.org/fhir/stu3/terminologies.html#required">RequestIntent  (Required)</a></td><td>This MUST be populated with 'plan'.</td></tr>
  <tr><td><code class="highlighter-rouge">priority</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>routine | urgent | asap | stat <a href="http://hl7.org/fhir/stu3/valueset-request-intent.html">RequestPriority  (Required)</a></td><td>This MUST be populated with 'routine'.</td></tr>
  <tr><td><code class="highlighter-rouge">subject</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Patient/Group)</td><td>Who the request group is about</td><td>This MUST be populated with the Patient.</td></tr>
@@ -104,7 +103,7 @@ Detailed implementation guidance for a `RequestGroup` resource in the CDS contex
  <tr><td class="sub"><code class="highlighter-rouge">reason.reasonCodeableConcept</code></td><td>&nbsp;</td><td>CodeableConcept</td><td>&nbsp;</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">reason.reasonReference</code></td><td>&nbsp;</td><td>Reference(Any)</td><td>&nbsp;</td><td>This MUST NOT be populated.</td></tr>
  <tr><td><code class="highlighter-rouge">note</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Annotation</td><td>Additional notes about the response</td><td>This MUST NOT be populated.</td></tr>
- <tr><td><code class="highlighter-rouge">action</code></td><td><code class="highlighter-rouge">0..*</code></td><td>BackboneElement</td><td>Proposed actions, if any <br/>+ Must have resource or action but not both</td><td>Where, populated, tThis MUST onlyNOT be populated with a resource.</td></tr>
+ <tr><td><code class="highlighter-rouge">action</code></td><td><code class="highlighter-rouge">0..*</code></td><td>BackboneElement</td><td>Proposed actions, if any <br/>+ Must have resource or action but not both</td><td>Where, populated, this MUST only be populated with a resource.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.label</code></td><td><code class="highlighter-rouge">0..1</code></td><td>String</td><td>User-visible label for the action (e.g. 1. or A.)</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.title</code></td><td><code class="highlighter-rouge">0..1</code></td><td>String</td><td>User-visible title</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.description</code></td><td><code class="highlighter-rouge">0..1</code></td><td>String</td><td>Short description of the action</td><td>This MUST NOT be populated.</td></tr>
@@ -122,7 +121,7 @@ Detailed implementation guidance for a `RequestGroup` resource in the CDS contex
  <tr><td class="sub"><code class="highlighter-rouge">action.requiredBehavior</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>must | could | must-unless-documented ActionRequiredBehavior  (Required)</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.precheckBehavior</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>yes | no ActionPrecheckBehavior  (Required)</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">action.cardinalityBehavior</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>single | multiple ActionCardinalityBehavior  (Required)</td><td>This MUST NOT be populated.</td></tr>
- <tr><td class="sub"><code class="highlighter-rouge">action.resource</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Any)</td><td>The target of the action</td><td>This MUST NOT be populated.</td></tr>
+ <tr><td class="sub"><code class="highlighter-rouge">action.resource</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Any)</td><td>The target of the action</td><td>This MAY be populated.</td></tr>
  <tr><td><code class="highlighter-rouge">action</code></td><td><code class="highlighter-rouge">0..*</code></td><td>action</td><td>Sub action</td><td>This MUST NOT be populated.</td></tr>
 </table>
 

@@ -10,7 +10,8 @@ summary: $check-services implementation guidance
 {% include custom/search.warnbanner.html %}  
 ## Check Services Interaction ##  
   
-This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by a Directory of Services (DoS). It is performed at a server level at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can deal with the patient.  
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS and defined at the server level. The `$check-services` operation is performed at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can meet the needs of the patient in the `ReferralRequest`.
+
   
 ## Request Headers ##  
   
@@ -32,7 +33,7 @@ POST [base]/$check-services
     
 ## Parameters ##  
   
-The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The DoS will return a [Bundle](http://hl7.org/fhir/stu3/bundle.html) of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.  
+The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The Service Directory will return a set of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.  
   
     
   
@@ -45,7 +46,7 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 <th  style="width:35%;">CDS Implementation Guidance</th>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">requestId</code></td>  
+<td><code  class="highlighter-rouge">requestId 0..1</code></td>  
 <td>id</td>  
 <td>An optional client-provided identifier to track the request.</td>  
 <td>  
@@ -55,7 +56,7 @@ The requestId MUST be locally unique
 </td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">referralRequest</code></td>  
+<td><code  class="highlighter-rouge">referralRequest 1..1</code></td>  
 <td>ReferralRequest</td>  
 <td>  
 The core of the $check-services operation is based on the outcome of triage, represented as a chief concern, next activity and acuity. These are all captured in the ReferralRequest, so this resource contains all that is required for the outcome of triage.  
@@ -63,7 +64,7 @@ The core of the $check-services operation is based on the outcome of triage, rep
 <td>This MUST be populated with the Referral Request the EMS received from the CDSS</td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">patient</code></td>  
+<td><code  class="highlighter-rouge">patient 1..1</code></td>  
 <td>Patient</td>  
 <td>  
 The patient for whom the triage took place.<br/>  
@@ -72,7 +73,7 @@ There are a number of patient elements which are used by some of the directories
 <td>This MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1">CareConnect-Patient</a></td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">location</code></td>  
+<td><code  class="highlighter-rouge">location 1..1</code></td>  
 <td>Location</td>  
 <td>  
 The location represents the patient's current location.  
@@ -80,21 +81,21 @@ The location represents the patient's current location.
 <td>This MAY be populated</td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">requester</code></td>  
+<td><code  class="highlighter-rouge">requester 0..1</code></td>  
 <td>Practitioner | Patient | RelatedPerson</td>  
 <td>  
 The person initiating the $check-services request  
 </td>  
 <td>  
     This MAY be populated. <br>
-    The <code  class="highlighter-rouge">requester</code> is the user of the EMS. This will typically be a <code  class="highlighter-rouge">Patient</code> or <code  class="highlighter-rouge">RelatedPerson</code> if the EMS is being used by a member of the public (e.g. a patient-facting public internet system) or a <code  class="highlighter-rouge">Practitioner</code> where there has been an <code  class="highlighter-rouge">initiatingOrganisation</code> as part of the triage.  
+    The <code  class="highlighter-rouge">requester</code> is the user of the EMS. This will typically be a <code  class="highlighter-rouge">Patient</code> or <code  class="highlighter-rouge">RelatedPerson</code> if the EMS is being used by a member of the public (e.g. a patient-facing public internet system) or a <code  class="highlighter-rouge">Practitioner</code> where there has been an <code  class="highlighter-rouge">initiatingOrganisation</code> as part of the triage.  
 </td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">registeredGP</code></td>  
+<td><code  class="highlighter-rouge">registeredGP 0..1</code></td>  
 <td>Organization</td>  
 <td>  
-The organization representing the registered GP of the atient.  
+The organization representing the registered GP of the Patient.  
 </td>  
 <td>  
 This MAY be populated. <br> 
@@ -103,16 +104,16 @@ Where populated, the Organization MUST specify an <code  class="highlighter-roug
 </td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">inputParameters</code></td>  
+<td><code  class="highlighter-rouge">inputParameters 0..*</code></td>   
 <td>Parameter</td>  
 <td>  
-The input parameters for a request, if any. These parameters are defined by the target DoS.  
+The input parameters for a request, if any. These parameters are defined by the target Service Directory.  
 </td>  
 <td>This MAY be populated.  
 </td>  
 </tr>  
 <tr>  
-    <td><code  class="highlighter-rouge">searchDistance</code></td>  
+    <td><code  class="highlighter-rouge">searchDistance 0..*</code></td>
     <td>Quantity (Distance | Duration)</td>  
     <td>The distance/duration to search within.</td>  
     <td>This MAY be populated.  <br>
@@ -161,12 +162,12 @@ This MAY also contain other implementation-specific information about the Health
 <td><code  class="highlighter-rouge">outputParameters</code></td>  
 <td><code  class="highlighter-rouge">0..*</code></td>  
 <td>Parameters</td>  
-<td>The output parameters for a request, if any. These parameters are defined by the target DoS.  
+<td>The output parameters for a request, if any. These parameters are defined by the target Service Directory.  
 </td>  
 </tr>  
 </table>  
 
-## Response from DoS ##  
+## Response from Service Directory ##  
       
 ### Success ###  
   

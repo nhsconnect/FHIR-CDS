@@ -172,7 +172,7 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Address</td>
 <td>Physical location</td>
-<td>This MUST be populated if <code  class="highlighter-rouge">position</code> is not. <br />Where populated <code  class="highlighter-rouge">address.postcode</code> must be populated</td>
+<td>This MUST be populated if <code  class="highlighter-rouge">position</code> is not. <br />Where populated <code  class="highlighter-rouge">address.postcode</code> MUST be populated</td>
 </tr>
 
 <tr>

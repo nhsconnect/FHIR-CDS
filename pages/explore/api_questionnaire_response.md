@@ -19,7 +19,7 @@ summary: QuestionnaireResponse resource implementation guidance
 
 The responses to a `Questionnaire` sent by the CDSS are communicated back by the EMS using the [`QuestionnaireResponse`](http://hl7.org/fhir/stu3/questionnaireresponse.html) resource. The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process and any answers from the user will be used to populate a `QuestionnaireResponse`.
 
-Detailed implementation guidance for a `QuestionnaireResponse` resource in the CDS context is given below:  
+Detailed implementation guidance for a `QuestionnaireResponse` resource in the scope of this implementation guide is given below:  
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -69,7 +69,7 @@ Detailed implementation guidance for a `QuestionnaireResponse` resource in the C
     <td><code>0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated</td>
+	<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code>extension</code></td>

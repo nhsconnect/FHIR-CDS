@@ -15,7 +15,7 @@ summary: ServiceDefinition implementation guidance
 ## ServiceDefinition: Implementation Guidance ##  
 
 ### Usage ###
-The [ServiceDefinition](http://hl7.org/fhir/stu3/servicedefinition.html) resource is published by the CDSS, describing what decisions the CDSS is able to provide support for. The resource describes in what circumstances the CDSS is valid, and what information is needed to render the decision.
+The [ServiceDefinition](http://hl7.org/fhir/stu3/servicedefinition.html) resource is published by the CDSS, describing what decisions the CDSS is able to provide support for. The resource describes in what circumstances the CDSS is valid, and what information is needed to render a decision.
 A CDSS can publish one or many `ServiceDefinition` resources. The resources SHOULD form a logically complete set. All CDSS MUST publish at least one `ServiceDefinition`.
 
 A `ServiceDefinition` can encapsulate any amount of information – some CDSS may find it simpler to have a single `ServiceDefinition`, and routing of patients through the CDSS is managed entirely within that single `ServiceDefinition`. Other CDSS may publish a different `ServiceDefinition` for different areas – for example, a `ServiceDefinition` for each presenting complaint. It is also possible to be even more granular, with a CDSS having a different `ServiceDefinition` for different complaints, and also for different types of user (e.g. headache for adult females, and a separate `ServiceDefinition` for headache for male children).
@@ -24,7 +24,7 @@ In general, more granular `ServiceDefinitions` will make change management simpl
 
 CDSS Suppliers MUST ensure that all `ServiceDefinitions` end in the provision of `CareAdvice`, a `ReferralRequest` or redirection to another `ServiceDefinition` to reduce the risk of triage failing to complete. `ServiceDefinitions` that end with a redirection to another `ServiceDefinition` MUST NOT redirect to the initiating `ServiceDefinition` either directly or indirectly.
   
-Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical Decision Support context is outlined in the table below:
+Details of how a `ServiceDefinition` SHOULD be implemented within in the scope of this implementation guide is outlined in the table below:
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -95,38 +95,35 @@ Details of how a `ServiceDefinition` SHOULD be implemented within the Clinical D
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Logical URI to reference this service definition (globally unique)</td>
-<td>This MUST be populated except when the ServiceDefinition is being CREATED.<br/>
-This absolute URI would be used to locate a <code class="highlighter-rouge">ServiceDefinition</code> when it is referenced in a specification, model, design or instance. It MUST be a URL, SHOULD be globally unique and SHOULD be an address at which the <code class="highlighter-rouge">ServiceDefinition</code> is published. <br/>This is generally used by FHIR servers.</td>
+<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Identifier</td>
     <td>Additional identifier for the service definition</td>
-<td>This is a business identifier and MAY be used to identify a <code class="highlighter-rouge">ServiceDefinition</code> where it is not possible to use the logical URI. This is generally used by FHIR servers.</td>
+<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">version</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Business version of the service definition</td>
-<td>This SHOULD be populated.
-<br/>Click <a href="#version">here</a> for more information.
-</td>
+<td>This SHOULD be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">name</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (computer friendly)</td>
-	<td>The name is not expected to be globally unique. The name SHOULD be a simple alpha-numeric type name. This is generally used by FHIR servers.</td>
+	<td>The name is not expected to be globally unique. The name SHOULD be a simple alpha-numeric type name.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">title</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (human friendly)</td>
-	<td>This MUST be populated. <br/>Click <a href="#title-description-usage">here</a> for more information.</td>
+	<td>This MUST be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
@@ -156,15 +153,14 @@ Where not populated, this means the ServiceDefinition is appropriate for both ex
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name of the publisher (organization or individual)</td>
-	<td><br/>Click <a href="#publisher">here</a> for more information.
-</td>
+	<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">description</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>markdown</td>
     <td>Natural language description of the service definition</td>
-	<td>This MUST be populated. <br/>Click <a href="#title-description-usage">here</a> for more information.
+	<td>This MUST be populated.
 </td>
  </tr>
 <tr>
@@ -179,7 +175,7 @@ Where not populated, this means the ServiceDefinition is appropriate for both ex
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Describes the clinical usage of the module</td>
-	<td>This MUST be populated. <br/>Click <a href="#title-description-usage">here</a> for more information.</td>
+	<td>This MUST be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">approvalDate</code></td>
@@ -209,7 +205,6 @@ Where not populated, this means the ServiceDefinition is appropriate for both ex
     <td>Context the content is intended to support</td>
 <td>This element SHOULD be populated with the appropriate expected usage of the <code class="highlighter-rouge">ServiceDefinition</code>. This will be determined by the EMS and CDSS specific to each implementation.<br/>
 If no useContext is specified, this means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any useContext.
-<br/>Click <a href="#usecontext">here</a> for more information.
 </td>
  </tr>
 <tr>
@@ -269,7 +264,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
     <td>DataRequirement</td>
     <td>What data is used by the module</td>
 <td>This element MUST be populated with the set of machine-processable assertions (see <code class="highlighter-rouge">GuidanceResponse.
-outputParameters</code>) which the CDSS requires in order to render the response fully.<br/>The custom value set for <code>dataRequirement.codeFilter.valueCodeableConcept</code> is <a href="">here</a></td>
+outputParameters</code>) which the CDSS requires in order to render the response fully.<br/>The custom value set for <code>dataRequirement.codeFilter.valueCodeableConcept</code> is http://need.link.here</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">operationDefinition</code></td>
@@ -373,7 +368,7 @@ If populated, this MUST be populated with DataRequirements for the clinical asse
 
 It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.
 
-The custom ValueSet for `trigger.eventData.value` is [here]().
+The custom ValueSet for `trigger.eventData.value` is [http://link.needed.here]().
 
 
 <!--stackedit_data:

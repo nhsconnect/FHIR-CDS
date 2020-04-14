@@ -12,7 +12,7 @@ summary: HealthcareService resource implementation guidance
 ## HealthcareService: Implementation Guidance ##
 
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resource will be used to carry a service recommendation given by the DoS that is capable of delivering the patient's health needs.
+Within the Clinical Decision Support API implementation, the [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resource will be used to carry a service recommendation given by the Service Directory that is capable of delivering the patient's health needs.
 
 The table below gives implementation guidance in relation to the elements within a `HealthcareService`:
 
@@ -65,7 +65,7 @@ The table below gives implementation guidance in relation to the elements within
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Resource</td>
 <td>Contained, inline Resources</td>
-<td>This should not be populated</td>
+<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">extension</code></td>
@@ -96,7 +96,7 @@ The table below gives implementation guidance in relation to the elements within
 <td>
 SHOULD always be <code  class="highlighter-rouge">true</code><br />
 
-When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code>
+<!-- When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code> -->
 </td>
 </tr>
 <tr>
@@ -224,7 +224,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td>Ways that the service accepts referrals <br />
 <a  href="http://hl7.org/fhir/stu3/valueset-service-referral-method.html">ReferralMethod (Example)</a>
 </td>
-<td>If populated MUST include the current service type</td>
+<td>If populated MUST include the service type of the current EMS</td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">appointmentRequired</code></td>
@@ -303,7 +303,7 @@ When in the Encounter Report MUST be <code  class="highlighter-rouge">true</code
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Reference(Endpoint)</td>
 <td>Technical endpoints providing access to services operated for the location</td>
-<td>This MUST be populated with the invocation details suitable for warm transfer. <br />
+<td>This MUST be populated with the invocation details suitable notification. <br />
 Ordering of endpoints has meaning and SHOULD be maintained by the end user system when trying to connect
 </td>
 </tr>
@@ -315,7 +315,7 @@ Ordering of endpoints has meaning and SHOULD be maintained by the end user syste
 
 This element contains details of the server endpoint to be invoked following the selection of a HealthcareService that has been returned in the <a href="api_check_services.html">`$check-services`</a> interaction.
 
-#### Get operation ####
+#### Notification ####
 
 The HealthcareService is notified of an Encounter Report by the EMS calling the HealthcareService.endpoint and passing the Encounter ID.
 

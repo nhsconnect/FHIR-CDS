@@ -13,10 +13,10 @@ summary: Observation resource implementation guidance
 ## Observation: Implementation Guidance ##
 
 ### Usage ###
-The [Observation](http://hl7.org/fhir/stu3/observation.html) resource is used to carry a clinical assertion in a CDS context and is created and populated by a CDSS, which will work from clinical assertions to reach decisions.
-Due to the nature of triage in unscheduled care, these assertions are often time-bounded and limited, so are appropriate to capture as Observations. The assertions are normally based on input from the patient, captured as QuestionnaireResponses.
+The [Observation](http://hl7.org/fhir/stu3/observation.html) resource is used to carry a clinical assertion in the scope of this implementation guide and is created and populated by a CDSS, which will work from clinical assertions to reach decisions.
+Due to the nature of triage in unscheduled care, these assertions are often time-bounded and limited, so are appropriate to capture as `Observations`. The assertions are normally based on input from the patient, captured as `QuestionnaireResponses`.
 A single `QuestionnaireResponse` can drive a single assertion, or multiple assertions.
-Similarly, an assertion may need multiple QuestionnaireResponses to be validated.
+Similarly, an assertion may need multiple `QuestionnaireResponses` to be validated.
 
 Detailed implementation guidance for an `Observation` resource in the CDS context is given below:  
 
@@ -69,7 +69,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
     <td><code>0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated</td>
+	<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code>extension</code></td>
@@ -224,42 +224,42 @@ Null means no interpretation given.</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>referenceRange.low</code></td>
+  <td class="sub"><code>low</code></td>
       <td><code>0..1</code></td>
  <td>SimpleQuantity</td>
     <td>Low Range, if relevant</td>
     <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>referenceRange.high</code></td>
+  <td class="sub"><code>high</code></td>
       <td><code>0..1</code></td>
  <td>SimpleQuantity</td>
     <td>High Range, if relevant</td>
     <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>referenceRange.type</code></td>
+  <td class="sub"><code>type</code></td>
       <td><code>0..1</code></td>
  <td>CodeableConcept</td>
     <td>Reference range qualifier <a href="https://www.hl7.org/fhir/stu3/valueset-referencerange-meaning.html">Observation Reference Range Meaning Codes (Extensible)</a></td>
     <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>referenceRange.appliesTo</code></td>
+  <td class="sub"><code>appliesTo</code></td>
       <td><code>0..*</code></td>
  <td>CodeableConcept</td>
     <td>Reference range population <a href="https://www.hl7.org/fhir/stu3/valueset-referencerange-appliesto.html">Observation Reference Range Applies To Codes (Example)</a></td>
     <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>referenceRange.age</code></td>
+  <td class="sub"><code>age</code></td>
       <td><code>0..1</code></td>
  <td>Range</td>
     <td>Applicable age range, if relevant</td>
     <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>referenceRange.text</code></td>
+  <td class="sub"><code>text</code></td>
       <td><code>0..1</code></td>
  <td>string</td>
     <td>Text based reference range in an observation</td>
@@ -273,14 +273,14 @@ Null means no interpretation given.</td>
 <td>This SHOULD be populated with the <code>QuestionnaireResponse</code> resources which affected the population of this <code>Observation</code>.</td>
  </tr>
 <tr>
-  <td class="sub"><code>related.type</code></td>
+  <td class="sub"><code>type</code></td>
       <td><code>0..1</code></td>
  <td>code</td>
     <td>has-member | derived-from | sequel-to | replaces | qualified-by | interfered-by <a href="https://www.hl7.org/fhir/stu3/valueset-observation-relationshiptypes.html">ObservationRelationshipType (Required)</a></td>
     <td>This should be populated with the value 'derived-from'.</td>
 </tr>
 <tr>
-  <td class="sub"><code>related.target</code></td>
+  <td class="sub"><code>target</code></td>
       <td><code>1..1</code></td>
  <td>Reference<br>(Observation |<br>Questionnaire<br>Response |<br>Sequence)</td>
     <td>Resource that is related to this one</td>
@@ -294,35 +294,35 @@ Null means no interpretation given.</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code>component.code</code></td>
+  <td class="sub"><code>code</code></td>
       <td><code>1..1</code></td>
  <td>CodeableConcept</td>
     <td>Type of component observation (code/type) <a href="https://www.hl7.org/fhir/stu3/valueset-observation-codes.html">LOINC Codes (Example)</a></td>
     <td>This MUST NOT be populated.</td>
 </tr>
 <tr>
-  <td class="sub"><code>component.value[x]</code></td>
+  <td class="sub"><code>value[x]</code></td>
       <td><code>0..1</code></td>
       <td>Quantity | CodeableConcept | string | Range | Ratio | SampledData | Attachment | time | dateTime | Period</td>
 <td>Actual component result</td>
 <td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code>component.dataAbsentReason</code></td>
+  <td class="sub"><code>dataAbsentReason</code></td>
       <td><code>0..1</code></td>
    <td>CodeableConcept</td>
     <td>Why the component result is missing <a href="https://www.hl7.org/fhir/stu3/valueset-observation-valueabsentreason.html">Observation Value Absent Reason (Extensible)</a></td>
 <td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code>component.interpretation</code></td>
+  <td class="sub"><code>interpretation</code></td>
       <td><code>0..1</code></td>
    <td>CodeableConcept</td>
     <td>High, low, normal, etc. <a href="https://www.hl7.org/fhir/stu3/valueset-observation-interpretation.html">Observation Interpretation Codes (Extensible)</a></td>
 <td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code>component.referenceRange</code></td>
+  <td class="sub"><code>referenceRange</code></td>
       <td><code>0..*</code></td>
    <td>see referenceRange</td>
     <td>Provides guide for interpretation of component result</td>

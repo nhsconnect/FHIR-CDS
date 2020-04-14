@@ -18,7 +18,10 @@ summary: Questionnaire resource implementation guidance
 ### Usage ###
 
 The [Questionnaire](http://hl7.org/fhir/stu3/questionnaire.html) resource is used to send one or more questions from the CDSS to the EMS. The EMS will present the question and the set of possible responses received from the CDSS to the user during an ongoing clinical evaluation process.
+
 The responses to a Questionnaire sent by the CDSS are communicated back by the EMS using the QuestionnaireResponse resource.
+
+A new Questionnaire resource is to be created each time any element of a Questionnaire is changed.
 
 Detailed implementation guidance for a `Questionnaire` resource in the CDS context is given below:  
 
@@ -93,8 +96,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>Logical URI to reference this questionnaire (globally unique)</td>
-<td>This will be used to link a <code class="highlighter-rouge">QuestionnaireResponse</code> to the <code class="highlighter-rouge">Questionnaire</code> the response is for. A new url is to be created each time any element of a Questionnaire is changed.
-</td>
+<td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
@@ -250,98 +252,98 @@ If the content of this element does not match the jurisdiction of the current <c
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.linkId</code></td>
+  <td class="sub"><code class="highlighter-rouge">linkId</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
  <td>string</td>
     <td>Unique id for item in questionnaire</td>
     <td>This MUST be populated with an identifier that is unique within the <code class="highlighter-rouge">Questionnaire </code>allowing linkage to the equivalent item in a <code class="highlighter-rouge">QuestionnaireResponse</code> resource.</td>
 </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.definition</code></td>
+  <td class="sub"><code class="highlighter-rouge">definition</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
  <td>uri</td>
     <td>ElementDefinition - details for the item</td>
     <td>This MUST NOT be populated by the CDSS.</td>
 </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.code</code></td>
+  <td class="sub"><code class="highlighter-rouge">code</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Coding</td>
     <td>Corresponding concept for this item in a terminology <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-questions.html">Questionnaire Question Codes (Example)</a></td>
 <td>This MUST NOT be populated by the CDSS.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.prefix</code></td>
+  <td class="sub"><code class="highlighter-rouge">prefix</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>E.g. "1(a)", "2.5.3"</td>
 <td>A short label for a particular group, question or set of display text which is part of the <code class="highlighter-rouge">Questionnaire</code>. This could be used as a reference by the individual completing it.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.text</code></td>
+  <td class="sub"><code class="highlighter-rouge">text</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Primary text for the item</td>
 <td>This could be the name of a section, the text of a question or text content for a display item.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.type</code></td>
+  <td class="sub"><code class="highlighter-rouge">type</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>group | display | boolean | decimal | integer | date | dateTime + <a href="https://www.hl7.org/fhir/stu3/valueset-item-type.html">QuestionnaireItemType (Required)</a></td>
 <td>The type of questionnaire item this is. If this is set to 'group', the EMS User interface MUST present all sub-items together to the user, with the group item description as the header.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.enableWhen</code></td>
+  <td class="sub"><code class="highlighter-rouge">enableWhen</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
      <td>BackboneElement</td>
     <td>Only allow data when</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub-sub"><code class="highlighter-rouge">item.enableWhen.question</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">question</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>string</td>
     <td>Question that determines whether item is enabled</td>
 <td>This is populated with the item.linkid of the question which determines whether or not this item is enabled</td>
  </tr>
 <tr>
-  <td class="sub-sub"><code class="highlighter-rouge">item.enableWhen.hasAnswer</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">hasAnswer</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
     <td>Enable when answered or not</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub-sub"><code class="highlighter-rouge">item.enableWhen.answer[x]</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">answer[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean | decimal |<br>integer | date |<br>dateTime | time |<br>string | uri |<br>Attachment |<br> Coding |<br>Quantity | Reference(Any)</td>
     <td>Value question MUST have <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.required</code></td>
+  <td class="sub"><code class="highlighter-rouge">required</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
   <td>Whether the item must be included in data results</td>
 <td>If this element is true, then the EMS User interface MUST ensure the user provides an answer. If false, the User interface MUST allow the user to skip the question.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.repeats</code></td>
+  <td class="sub"><code class="highlighter-rouge">repeats</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
   <td>Whether the item may repeat</td>
 <td>If this option is false, then the EMS User interface MUST only allow a single response to be selected. If the option is true, then multiple responses can be selected.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.readOnly</code></td>
+  <td class="sub"><code class="highlighter-rouge">readOnly</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
   <td>Don't allow human editing</td>
 <td>If this option is false, the EMS User interface will present the data as read only.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.maxLength</code></td>
+  <td class="sub"><code class="highlighter-rouge">maxLength</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>integer</td>
   <td>No more than this many characters</td>
