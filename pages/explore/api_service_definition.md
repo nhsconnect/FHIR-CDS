@@ -116,7 +116,7 @@ Details of how a `ServiceDefinition` SHOULD be implemented within in the scope o
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>string</td>
     <td>Name for this service definition (computer friendly)</td>
-	<td>The name is not expected to be globally unique. The name SHOULD be a simple alpha-numeric type name.</td>
+	<td>The name used is not expected to be globally unique. The name SHOULD be a simple alpha-numeric type name.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">title</code></td>
