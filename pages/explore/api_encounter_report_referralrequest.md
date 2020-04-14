@@ -253,7 +253,7 @@ The start of the period MUST be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Annotation</td>
     <td>Comments made about referral request</td>
-<td>This MAY be populated with additional notes entered by the EMS user. If populated this should be displayed.</td>
+<td>This MAY be populated with additional notes entered by the EMS user. If populated this SHOULD be displayed.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relevantHistory</code></td>
