@@ -192,7 +192,7 @@ The table below gives implementation guidance in relation to the elements within
 </tr>
 
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">position.longitude</code></td>
+<td  class="sub"><code  class="highlighter-rouge">longitude</code></td>
 <td><code  class="highlighter-rouge">1..1</code></td>
 <td>decimal</td>
 <td>Longitude with WGS84 datum</td>
@@ -200,7 +200,7 @@ The table below gives implementation guidance in relation to the elements within
 </tr>
 
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">position.latitude</code></td>
+<td  class="sub"><code  class="highlighter-rouge">latitude</code></td>
 <td><code  class="highlighter-rouge">1..1</code></td>
 <td>decimal</td>
 <td>Latitude with WGS84 datum</td>
@@ -208,7 +208,7 @@ The table below gives implementation guidance in relation to the elements within
 </tr>
 
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">position.altitude</code></td>
+<td  class="sub"><code  class="highlighter-rouge">altitude</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>decimal</td>
 <td>Altitude with WGS84 datum</td>
