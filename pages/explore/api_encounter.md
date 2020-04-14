@@ -308,7 +308,7 @@ and any third parties answering questions on behalf of the patient. (<code>Relat
 <td></td>
 </tr>
 <tr>  
-<td class="sub"><code>hospitalization.origin</code></td>
+<td class="sub"><code>origin</code></td>
   <td><code>0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>The location from which the patient came before admission</td>
