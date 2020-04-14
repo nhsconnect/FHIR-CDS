@@ -241,7 +241,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code><br />
 <td></td>
 </tr>
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">availableTime.daysOfWeek</code></td>
+<td  class="sub"><code  class="highlighter-rouge">daysOfWeek</code></td>
 <td><code  class="highlighter-rouge">0..*</code></td>
 <td>code</td>
 <td>mon | tue | wed | thu | fri | sat | sun <br/>
@@ -250,21 +250,21 @@ SHOULD always be <code  class="highlighter-rouge">true</code><br />
 <td></td>
 </tr>
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">availableTime.allDay</code></td>
+<td  class="sub"><code  class="highlighter-rouge">allDay</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>boolean</td>
 <td>Always available? e.g. 24 hour service</td>
 <td></td>
 </tr>
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">availableTime.availableStartTime</code></td>
+<td  class="sub"><code  class="highlighter-rouge">availableStartTime</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>time</td>
 <td>Opening time of day (ignored if allDay = true)</td>
 <td></td>
 </tr>
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">availableTime.availableEndTime</code></td>
+<td  class="sub"><code  class="highlighter-rouge">availableEndTime</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>time</td>
 <td>Closing time of day (ignored if allDay = true)</td>
@@ -278,14 +278,14 @@ SHOULD always be <code  class="highlighter-rouge">true</code><br />
 <td></td>
 </tr>
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">notAvailable.description</code></td>
+<td  class="sub"><code  class="highlighter-rouge">description</code></td>
 <td><code  class="highlighter-rouge">1..1</code></td>
 <td>string</td>
 <td>Reason presented to the user explaining why time not available</td>
 <td></td>
 </tr>
 <tr>
-<td  class="sub"><code  class="highlighter-rouge">notAvailable.during</code></td>
+<td  class="sub"><code  class="highlighter-rouge">during</code></td>
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Period</td>
 <td>Service not available from this date</td>
