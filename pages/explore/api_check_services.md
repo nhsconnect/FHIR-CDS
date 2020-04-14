@@ -43,7 +43,7 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 <th  style="width:15%;">Name</th>  
 <th  style="width:10%;">Cardinality</th>
 <th  style="width:15%;">Type</th>  
-<th  style="width:30%;">Description</th>  
+<th  style="width:30%;">FHIR Documentation</th>  
 <th  style="width:30%;">CDS Implementation Guidance</th>  
 </tr>  
 <tr>  
