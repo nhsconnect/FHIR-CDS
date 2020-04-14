@@ -371,21 +371,21 @@ and any third parties answering questions on behalf of the patient. (<code>Relat
 <td>This SHOULD be populated where the patient has physically attended the provider service.</td>
  </tr>
 <tr>  
-<td class="sub"><code>location.location</code></td>
+<td class="sub"><code>location</code></td>
   <td><code>1..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>Location the encounter takes place</td>
 <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>location.status</code></td>
+  <td class="sub"><code>status</code></td>
       <td><code>0..1</code></td>
     <td>code</td>
     <td>planned | active | reserved | completed <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-location-status.html">EncounterLocationStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>location.period</code></td>
+  <td class="sub"><code>period</code></td>
       <td><code>0..1</code></td>
     <td>Period</td>
     <td>Time period during which the patient was present at the location</td>
