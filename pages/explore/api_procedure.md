@@ -19,7 +19,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
 
 <table style="min-width:100%;width:100%">
 <tr>
-    <th style="width:10%;">Name</t>
+    <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
     <th style="width:38%;">FHIR Documentation</th>
