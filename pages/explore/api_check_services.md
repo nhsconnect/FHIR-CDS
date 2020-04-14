@@ -47,7 +47,7 @@ The `$check-services` operation has a number of parameters. The EMS will select 
 <th  style="width:30%;">CDS Implementation Guidance</th>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">requestId 0..1</code></td>  
+<td><code  class="highlighter-rouge">requestId</code></td>  
   <td><code  class="highlighter-rouge">0..1</code></td>
 <td>id</td>  
 <td>An optional client-provided identifier to track the request.</td>  
@@ -58,7 +58,7 @@ The requestId MUST be locally unique
 </td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">referralRequest 1..1</code></td>  
+<td><code  class="highlighter-rouge">referralRequest</code></td>  
   <td><code  class="highlighter-rouge">1..1</code></td>
 <td>ReferralRequest</td>  
 <td>  
@@ -67,7 +67,7 @@ The core of the $check-services operation is based on the outcome of triage, rep
 <td>This MUST be populated with the Referral Request the EMS received from the CDSS</td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">patient 1..1</code></td>  
+<td><code  class="highlighter-rouge">patient</code></td>  
   <td><code  class="highlighter-rouge">1..1</code></td>
 <td>Patient</td>  
 <td>  
@@ -77,7 +77,7 @@ There are a number of patient elements which are used by some of the directories
 <td>This MUST be populated with a <a  href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1">CareConnect-Patient</a></td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">location 1..1</code></td>  
+<td><code  class="highlighter-rouge">location</code></td>  
   <td><code  class="highlighter-rouge">1..1</code></td>
 <td>Location</td>  
 <td>  
@@ -86,7 +86,7 @@ The location represents the patient's current location.
 <td>This MAY be populated</td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">requester 0..1</code></td>  
+<td><code  class="highlighter-rouge">requester</code></td>  
   <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Practitioner | Patient | RelatedPerson</td>  
 <td>  
@@ -98,7 +98,7 @@ The person initiating the $check-services request
 </td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">registeredGP 0..1</code></td>  
+<td><code  class="highlighter-rouge">registeredGP</code></td>  
   <td><code  class="highlighter-rouge">0..1</code></td>
 <td>Organization</td>  
 <td>  
@@ -111,7 +111,7 @@ Where populated, the Organization MUST specify an <code  class="highlighter-roug
 </td>  
 </tr>  
 <tr>  
-<td><code  class="highlighter-rouge">inputParameters 0..*</code></td>   
+<td><code  class="highlighter-rouge">inputParameters</code></td>   
   <td><code  class="highlighter-rouge">0..*</code></td>
 <td>Parameter</td>  
 <td>  
@@ -121,7 +121,7 @@ The input parameters for a request, if any. These parameters are defined by the 
 </td>  
 </tr>  
 <tr>  
-    <td><code  class="highlighter-rouge">searchDistance 0..*</code></td>
+    <td><code  class="highlighter-rouge">searchDistance</code></td>
   <td><code  class="highlighter-rouge">0..*</code></td>
     <td>Quantity (Distance | Duration)</td>  
     <td>The distance/duration to search within.</td>  
