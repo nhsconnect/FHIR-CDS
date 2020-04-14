@@ -76,4 +76,4 @@ A service that provides information about healthcare service instances and can r
 Directory Services MUST be able to:
 
 * Receive a `$check-services` query
-* Return a bundle of `HealthcareServices` that meet the needs expressed in the ReferralRequest
+* Return a bundle of `HealthcareServices` that meet the needs expressed in the `ReferralRequest`

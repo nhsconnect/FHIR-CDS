@@ -69,14 +69,17 @@ The choice of whether to pass resources by reference or by value (as part of Bun
 ### Content types for consumer and provider systems ###
 
 
-Each of the EMS and CDSS act as both provider and consumer in different interactions:
-
+Each of the systems in scope of the CDS API act as both provider and consumer in different interactions:
 
 | Interaction                 | Provider | Consumer |
 | -----------------------     | -------  | ------- |
+| Service Validity            | EMS | CDSS |
 | ServiceDefinition.$evaluate | EMS | CDSS |
 | Select ServiceDefinition query response | CDSS | EMS |
 | GuidanceResponse            | CDSS | EMS |
+| Check Services              | EMS | Directory |
+| Encounter Report query      | ERR | EMS |
+| Encounter Report query response   | EMS | ERR |
 
 
 ### Consuming systems ###
@@ -113,7 +116,4 @@ All attributes defined in FHIR have cardinality as part of their definition - a 
 |1:*|One to many |Mandatory|	Repeatable|
 |0:*|Zero to many |Optional|	Repeatable|
 
-Resources created violating the business rules may generate an HTTP 400 Error INVALID_RESOURCE.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMTIxNTMwNywxNjM1MjY4NjIxXX0=
--->
+Resources created violating the business rules may generate an [HTTP 400 Error INVALID_RESOURCE](api_errorhandling.html#invalid-resource).
