@@ -69,14 +69,14 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | suspended | completed | entered-in-error | cancelled <a href="https://www.hl7.org/fhir/stu3/valueset-request-status.html">RequestStatus (Required)</a></td>
-<td>This MUST be the same as the value within <code class="highlighter-rouge">ReferralRequest.status</code> </td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.status</code> </td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>proposal | plan | order + <a href="https://www.hl7.org/fhir/stu3/valueset-request-intent.html">RequestIntent (Required)</a></td>
-<td>The value carried in this element shows whether the request is a proposal, plan, an original order or a reflex order. It SHOULD carry the value 'proposal'.</td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.intent</code></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">priority</code></td>
@@ -89,7 +89,7 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
   <td><code class="highlighter-rouge">doNotPerform</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
-    <td>True if procedure should not be performed</td>
+    <td>This MUST be 'false'</td>
 <td></td>
 </tr>
 <tr>
@@ -97,7 +97,7 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..*</code></td>
         <td>CodeableConcept</td>
     <td>Classification of procedure <a href="https://www.hl7.org/fhir/stu3/valueset-procedure-category.html">Procedure Category Codes (SNOMED CT) (Example)</a></td>
-<td>This MAY be populated by the CDSS with a code that classifies the procedure for searching, sorting and display purposes.</td>
+<td>This SHOULD NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">code</code></td>
@@ -125,28 +125,28 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime |<br>Period |<br>Timing</td>
     <td>When procedure should occur</td>
-<td></td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.occurrence</code></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">asNeeded[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean |<br>CodeableConcept</td>
     <td>Preconditions for procedure or diagnostic <a href="https://www.hl7.org/fhir/stu3/valueset-medication-as-needed-reason.html">SNOMED CT Medication As Needed Reason Codes (Example)</a></td>
-<td></td>
+<td>This MUST NOT be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">authoredOn</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>Date request signed</td>
-<td></td>
+<td>This MUST NOT be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">requester</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>BackboneElement</td>
     <td>Who/what is requesting procedure or diagnostic</td>
-<td>This element SHOULD NOT be populated.</td>
+<td>This MUST NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">requester.agent</code></td>
@@ -167,7 +167,7 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..1</code></td>
         <td>CodeableConcept</td>
     <td>Performer role <a href="https://www.hl7.org/fhir/stu3/valueset-participant-role.html">Participant Roles (Example)</a></td>
-<td></td>
+<td>This MAY be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">performer</code></td>
