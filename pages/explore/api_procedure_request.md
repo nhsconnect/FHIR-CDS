@@ -34,21 +34,21 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
     <td><code class="highlighter-rouge">0..1</code></td>
 <td>Identifier</td>
     <td>Identifiers assigned to this order</td>
-    <td>Business identifier</td>
+    <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">definition</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ActivityDefinition |<br>PlanDefinition)</td>
     <td>Protocol or definition</td>
-<td>This MAY be populated with an <code class="highlighter-rouge">ActivityDefinition</code>, if a standard template for the <code class="highlighter-rouge">ProcedureRequest</code> has been defined in the local implementation.</td>
+<td></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">basedOn</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>What request fulfils</td>
-<td>This MAY be populated with a reference to a <code class="highlighter-rouge">CarePlan</code>, where the <code class="highlighter-rouge">ProcedureRequest</code> is based on recommendations in a relevant <code class="highlighter-rouge">CarePlan</code>.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">replaces</code></td>
@@ -62,14 +62,14 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Identifier</td>
     <td>Composite Request ID</td>
-<td></td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>draft | active | suspended | completed | entered-in-error | cancelled <a href="https://www.hl7.org/fhir/stu3/valueset-request-status.html">RequestStatus (Required)</a></td>
-<td>This SHOULD carry the value 'active'.</td>
+<td>This MUST be the same as the value within <code class="highlighter-rouge">ReferralRequest.status</code> </td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">intent</code></td>
