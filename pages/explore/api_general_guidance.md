@@ -73,14 +73,11 @@ Each of the systems in scope of the CDS API act as both provider and consumer in
 
 | Interaction                 | Provider | Consumer |
 | -----------------------     | -------  | ------- |
-| Service Validity            | EMS | CDSS |
-| ServiceDefinition.$evaluate | EMS | CDSS |
+| Service Validity            | CDSS | EMS |
+| ServiceDefinition.$evaluate | CDSS | EMS |
 | Select ServiceDefinition query response | CDSS | EMS |
-| GuidanceResponse            | CDSS | EMS |
-| Check Services              | EMS | Directory |
-| Encounter Report query      | ERR | EMS |
-| Encounter Report query response   | EMS | ERR |
-
+| Check Services              | Directory | EMS |
+| Encounter Report query      | EMS | ERR |
 
 ### Consuming systems ###
 
