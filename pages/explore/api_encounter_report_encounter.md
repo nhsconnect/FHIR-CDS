@@ -57,7 +57,7 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
     <td><code>0..1</code></td>
     <td>code</td>
     <td>Language of the resource content. <br /> <a  href="http://hl7.org/fhir/stu3/valueset-languages.html">(Common
- Languages</a> ( [Extensible but limited to All Languages)](http://hl7.org/fhir/stu3/valueset-languages.html)</td>
+ Languages</a> (Extensible but limited to All Languages) <a href="http://hl7.org/fhir/stu3/valueset-languages.html">http://hl7.org/fhir/stu3/valueset-languages.html</a>)</td>
 	<td></td>
 </tr>
 <tr>
@@ -149,7 +149,7 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
       <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>List of past encounter classes</td>
-<td></td>
+<td>This MUST NOT be populated</td>
  </tr>
 <tr>
   <td class="sub"><code>classHistory.class</code></td>

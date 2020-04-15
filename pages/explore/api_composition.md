@@ -16,13 +16,13 @@ summary: Composition resource implementation guidance
 
 Used to represent a human-readable summary of the triage journey for a patient.
 
-The sending EMS is responsible for building the Composition resource and referencing all triage history resources that may be used by a downstream Service Provider,
+The sending EMS is responsible for making sure that all resources which inform the `composition` are referenced in the `composition`.
 
 The Composition resource should only be used by ERRs that cannot build a custom Encounter Report from the resources referenced in the List resource.
 
 The human-readable summary will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The `Encounter` resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
 
-PLEASE NOTE that resources referenced by the Composition resource MUST NOT be used to drive business processes as they may not be the complete list of resources for the triage journey. 
+PLEASE NOTE that resources referenced by the `Composition` resource MUST NOT be used to drive business processes as they may not be the complete list of resources for the triage journey. The complete list for the triage journey will be contained in the `List` resource.
 
 Detailed implementation guidance for a `Composition` resource in the CDS context is given below:  
 
@@ -75,7 +75,7 @@ Detailed implementation guidance for a `Composition` resource in the CDS context
     <td><code>0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td></td>
+	<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code>extension</code></td>
@@ -112,7 +112,7 @@ CompositionStatus (Required)</td>
     <td>CodeableConcept</td>
     <td>Kind of composition (LOINC if possible)<br>
 FHIR Document Type Codes (Preferred)</td>
-    <td></td>
+    <td>This MUST be populated with Snomed Code 371531000 |Report of clinical encounter (record artifact).</td>
 </tr>
 <tr>
   <td><code>class</code></td>
@@ -245,35 +245,13 @@ DocumentRelationshipType (Required)</td>
     <td>This MUST NOT be populated</td>
 </tr>
 <tr>
-    <td class="sub"><code>code</code></td>
-    <td><code>0..*</code></td>
-    <td>CodeableConcept</td>
-    <td>Code(s) that apply to the event being documented<br>
-v3 Code System ActCode (Example)</td>
-    <td></td>
-</tr>
-<tr>
-    <td class="sub"><code>period</code></td>
-    <td><code>0..1</code></td>
-    <td>Period</td>
-    <td>The period covered by the documentation</td>
-    <td></td>
-</tr>
-<tr>
-    <td class="sub"><code>detail</code></td>
-    <td><code>0..*</code></td>
-    <td>Reference(Any)</td>
-    <td>The event(s) being documented</td>
-    <td></td>
-</tr>
-<tr>
     <td><code>section</code></td>
     <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>Composition is broken into sections<br>
 + A section must at least one of text, entries, or sub-sections<br>
 + A section can only have an emptyReason if it is empty</td>
-    <td>It is recommended that each <code>$evaluate</code> interaction is documented in a separate section.  This will document the Questionnaire & QuestionnaireResponse resources for that interaction, as well as the assertions generated during that interaction, and any CarePlans presented.  In addition, if interim results are presented, these should be included in each interaction. The result of the interaction will also be presented as a separate section.</td>
+    <td>It is recommended that each <code>$evaluate</code> interaction is documented in a separate section.  This will document the <code>Questionnaire</code> & <code>QuestionnaireResponse</code> resources for that interaction, as well as the assertions generated during that interaction, and any CarePlans presented.  In addition, if interim results are presented, these should be included in each interaction. The result of the interaction will also be presented as a separate section.</td>
 </tr>
 <tr>
     <td class="sub"><code>title</code></td>

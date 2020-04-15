@@ -13,13 +13,13 @@ summary: List resource implementation guidance
 ## List: Implementation Guidance ##
 
 ### Usage ###
-The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of ALL resources populated during the triage journey. Lists will include references to the resources that make up the list. 
+The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of ALL resources populated during the triage journey. [Link to evaluate section] Lists will include references to the resources that make up the list. 
 
 The resources referenced by the `List`resource SHOULD be used by the ERR to build a human readable Encounter Report that meets the needs of the Service Provider.
 
 The resources referenced by the `List`resource MAY be used to drive workflow at the receiving Service Provider (e.g. queue management)
 
-Detailed implementation guidance for an `List` resource in the context of a CDS Encounter Report is given below:  
+Detailed implementation guidance for a `List` resource in the context of a CDS Encounter Report is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -123,7 +123,7 @@ Detailed implementation guidance for an `List` resource in the context of a CDS 
     <td>CodeableConcept</td>
     <td>What the purpose of this list is<br>
 <a href="https://www.hl7.org/fhir/STU3/valueset-list-example-codes.html">Example Use Codes for List</a> (Example)</td>
-<td>MUST be populated with <a href="https://www.snomed.org/snomed-ct/five-step-briefing">SNOMED</a> code 225390008 | Triage (procedure) as per CareConnect ValueSet | <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListCode-1">CareConnect-ListCode-1</a></td>
+<td>This MUST be populated with <a href="https://www.snomed.org/snomed-ct/five-step-briefing">SNOMED</a> code 225390008 | Triage (procedure) as per CareConnect ValueSet | <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListCode-1">CareConnect-ListCode-1</a></td>
 </tr>
 <tr>
   <td><code>intent</code></td>
@@ -159,7 +159,7 @@ Detailed implementation guidance for an `List` resource in the context of a CDS 
     <td><code>0..1</code></td>
     <td>Reference(Practitioner | Patient | Device)</td>
     <td>Who and/or what defined the list contents (aka Author</td>
-<td>This MUST be populated with the EMS as a Device.</td>
+<td>When populated this MUST be populated with the EMS as a Device.</td>
 </tr>
 <tr>
   <td><code>orderedBy</code></td>

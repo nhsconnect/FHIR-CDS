@@ -15,8 +15,10 @@ summary: ProcedureRequest resource implementation guidance
 
 ## ProcedureRequest: Implementation Guidance ##  
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [ProcedureRequest](http://hl7.org/fhir/stu3/procedurerequest.html) resource will be used to carry details of a request for a procedure to be planned, proposed or performed with or on a patient.  
-The `ProcedureRequest` is referenced from `ReferralRequest.basedOn` and will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which SHOULD be carried out in the referee service to validate or eliminate the chief concern.   
+Within the Clinical Decision Support API implementation, the [ProcedureRequest](http://hl7.org/fhir/stu3/procedurerequest.html) resource will be used to carry the next activity as part of the triage outcome model.
+
+The `ProcedureRequest` is referenced from `ReferralRequest.supportingInfo` and will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which SHOULD be carried out in the referee service to validate or eliminate the chief concern.  
+
 Detailed implementation guidance for a `ProcedureRequest` resource in the CDS context is given below:  
 
 <table style="min-width:100%;width:100%">
@@ -81,7 +83,7 @@ Detailed implementation guidance for a `ProcedureRequest` resource in the CDS co
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
     <td>routine | <s>urgent</s> | <s>asap</s> | <s>stat</s> <a href="http://hl7.org/fhir/stu3/valueset-request-priority.html">RequestPriority (Required)</a></td>
-<td>This SHOULD be populated by the CDSS. In most cases, this will be populated with the code 'routine', indicating that the request is of normal priority.</td>
+<td>This MUST be populated with 'routine'.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">doNotPerform</code></td>

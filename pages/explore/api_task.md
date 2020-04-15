@@ -13,9 +13,9 @@ summary: Task resource implementation guidance
 ## Task: Implementation Guidance ##
 ​
 ### Usage ###
-The [Task](http://hl7.org/fhir/STU3/task.html) resource is used to describe an activity that can be performed and track its state of completion. 
-​
- Detailed implementation guidance for an `Task` resource in the CDS context is given below:  
+The [Task](http://hl7.org/fhir/STU3/task.html) resource will be populated where there is a specific action for the intended recipient of the encounter report.
+
+Detailed implementation guidance for an `Task` resource in the CDS context is given below:  
 ​
 ​
 <table style="min-width:100%;width:100%">
@@ -166,7 +166,7 @@ The [Task](http://hl7.org/fhir/STU3/task.html) resource is used to describe an a
   <td><code>priority</code></td>
     <td><code>0..1</code></td>
     <td>code</td>
-    <td>normal | urgent | asap | stat<br>
+    <td>routine | urgent | asap | stat<br>
 <a href="http://hl7.org/fhir/STU3/valueset-request-priority.html">RequestPriority</a> (Required)</td>
 <td>This MUST carry the value 'routine'.</td>
 </tr>
@@ -196,14 +196,14 @@ The [Task](http://hl7.org/fhir/STU3/task.html) resource is used to describe an a
     <td><code>0..1</code></td>
     <td>Reference(Any)</td>
     <td>Beneficiary of the Task</td>
-<td>This will be the associated Patient.</td>
+<td>This MUST be the associated Patient.</td>
 </tr>
 <tr>
   <td><code>context</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Encounter | EpisodeOfCare)</td>
     <td>Healthcare event during which this task originated</td>
-<td>This will be the associated Encounter.</td>
+<td>This MUST be the associated Encounter.</td>
 </tr>
 <tr>
   <td><code>executionPeriod</code></td>
@@ -231,7 +231,7 @@ The [Task](http://hl7.org/fhir/STU3/task.html) resource is used to describe an a
     <td><code>0..1</code></td>
     <td>BackboneElement</td>
     <td>Who is asking for task to be done</td>
-<td>This will be the initiating user of the Encounter, i.e. the user of the EMS.</td>
+<td>This SHOULD be the initiating user of the Encounter, i.e. the user of the EMS.</td>
 </tr>
 <tr>
   <td class="sub"><code>agent</code></td>

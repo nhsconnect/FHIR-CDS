@@ -196,7 +196,7 @@ Linked to the triage journey by patient and data.
   <td>CodeableConcept</td>
   <td>Actions controlled by this consent<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-action.html">Consent Action Codes (Example)</a></td>
-  <td>For direct patient care this SHOULD be populated with 'use'.</td>
+  <td>For validation this SHOULD be populated with 'use'.</td>
 </tr>
 <tr>
   <td><code>organization</code></td>

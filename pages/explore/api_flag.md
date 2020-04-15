@@ -12,7 +12,7 @@ summary: Flag resource implementation guidance
 ## Flag: Implementation Guidance ##
 
 ### Usage ###
-The [Flag](http://hl7.org/fhir/stu3/flag.html) resource represents a warning or notification presented to the user, usually of sufficient importance to warrant a special display rather than just a note in the resource.
+The [Flag](http://hl7.org/fhir/stu3/flag.html) resource is used to carry information about a patient that is not a clinical assertion e.g. Scene Safety, transport requirements, accessibility requirements, patient preferences and reasonable adjustments.
 
 Detailed implementation guidance for an `Flag` resource in the context of a CDS Encounter Reports is given below:  
 
@@ -166,7 +166,3 @@ Detailed implementation guidance for an `Flag` resource in the context of a CDS 
 <td></td>
 </tr>
 </table>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbODE0NDU0MDI3LDEyOTQwMTk1NTQsLTExMD
-U4NTg5MDQsMTk4MzY4ODg1MF19
--->

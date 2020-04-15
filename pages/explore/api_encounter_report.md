@@ -13,7 +13,7 @@ summary: Encounter Report implementation guidance
 
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate Healthcare Service.
 
-### Get operation
+### Notify
 
 The `HealthcareService` is notified of an Encounter Report by the EMS calling the `HealthcareService.endpoint` and passing the Encounter ID.
 
@@ -30,16 +30,15 @@ The base resource for the Encounter Report is the `Encounter`. The `Encounter` w
     
 The `Encounter` has a history of the triage journey as a `List` (linked by `List.encounter`). The `List` is composed of assertions (normally `Observations`), `QuestionnaireResponses` (which will in turn link to `Questionnaires`) and `CarePlans` presented during the journey. If the journey concluded with a `ReferralRequest` for a type of service, this will be part of the `List`.    
     
-There are a number of supporting resources which are linked from these core resources, or are searchable by encounter ([detailed below](#Resources)). Conceptually, these are all part of the Encounter Report as they may be necessary to interpret the triage journey.    
+There are a number of supporting resources which are linked from these core resources, or are searchable by encounter ([detailed below](#Resources)). Conceptually, these are all part of the Encounter Report as they may be necessary to interpret the patient journey through UEC.    
     
-## Transport ##
+## Retrieving the Encounter Report ##
 
-An Encounter Report can be composed by the ERR after receiving just the `Encounter`. The server which 'owns' the `Encounter` must be able to resolve a search request for the `List`, `ReferralRequest`, `Observation`, `Condition`, `CarPlan`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.    
+An Encounter Report can be composed by the ERR after receiving just the `Encounter`. The server which 'owns' the `Encounter` must be able to resolve a search request for the `List`, `ReferralRequest`, `Observation`, `Condition`, `CarePlan`, `Flag`, `Appointment`, or `Task` resources, based on the `Encounter` identifier.    
 
-The Encounter Report can also be sent on the wire as a single `Parameters` resource. 
 
 ## Resources ##    
-The resources presented in the Encounter Report will follow the CDS API exactly, so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:    
+The resources presented in the List will follow the guidance in the [Evaluate interaction](http://link) exactly, so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:    
     
 <table style="min-width:100%;width:100%">    
 <thead>    
@@ -53,7 +52,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
 <tr>    
   <td><a href="https://www.hl7.org/fhir/STU3/appointment.html">Appointment</a></td>    
   <td><code>Appointment.<wbr>incomingReferral.<wbr>context</code></td>    
-  <td>Used to represent represent an appointment that has been generated via the EMS as a result of the triage process.</td>    
+  <td>Used to represent an appointment for the UEC patient.</td>    
 </tr>    
 <tr>    
   <td><a href="api_care_plan.html">CarePlan</a></td>    
@@ -165,7 +164,7 @@ The resources presented in the Encounter Report will follow the CDS API exactly,
   <td>    
       Identifies the next action to be taken, and who is responsible for that action. <code>Tasks</code> belong to the <code>Encounter</code>.    
       <br><br>    
-      There will normally be a <code>Task</code> at the end of triage - either for a professional, or for the patient, to carry out. The <code>Task</code> will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)    
+      There may be a <code>Task</code> at the end of triage for a professional to carry out. The <code>Task</code> will not be populated where the Encounter Report is for information only (e.g. report to registered GP, or to RCS)    
   </td>    
 </tr>    
 </tbody>    

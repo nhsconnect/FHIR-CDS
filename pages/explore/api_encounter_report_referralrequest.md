@@ -15,11 +15,8 @@ summary: ReferralRequest resource implementation guidance
 ## ReferralRequest: Implementation Guidance ##  
 ### Usage ###
 Within the Clinical Decision Support API implementation, the [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1) profile will be used to carry the triage outcome of recommendation to another service for a patient.  
-A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
 
-`RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
 Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS Encounter Report is given below:  
-
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -167,7 +164,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This MUST be populated with a reference to <code class="highlighter-rouge">Encounter</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
@@ -176,7 +173,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
     <td>When the service(s) requested in the referral should occur</td>
 <td>This MUST be populated.<br/>
 This MUST use the datatype 'Period'<br/>
-The start of the period MUST be 'now'.</td>
+This MUST match the occurrence returned in the $evaluate.referralrequest.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">authoredOn</code></td>
@@ -260,7 +257,7 @@ The start of the period MUST be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
      <td>Reference<br>(Provenance)</td>
     <td>Key events in history of request</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>Where populated in the $evalate.referral this must be populated with a reference.</td>
  </tr> 
 </table> 
 <!--stackedit_data:

@@ -196,7 +196,7 @@ Linked to the triage journey by patient and data.
   <td>CodeableConcept</td>
   <td>Actions controlled by this consent<br>
 <a href="https://www.hl7.org/fhir/stu3/valueset-consent-action.html">Consent Action Codes (Example)</a></td>
-  <td>For direct patient care this SHOULD be populated with 'use'.</td>
+  <td>For permission to view this SHOULD be populated with 'use'.</td>
 </tr>
 <tr>
   <td><code>organization</code></td>
@@ -258,8 +258,8 @@ Linked to the triage journey by patient and data.
   <td><code>policyRule</code></td>
   <td><code>0..1</code></td>
   <td>uri</td>
-  <td>This SHOULD be populated with `http://hl7.org/fhir/ConsentPolicy/opt-out` as direct care is an opt-out scenario.</td>
   <td></td>
+  <td>This SHOULD be populated with `http://hl7.org/fhir/ConsentPolicy/opt-in` as direct care is an opt-in scenario.</td>
 </tr>
 <tr>
   <td><code>securityLabel</code></td>

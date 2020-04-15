@@ -9,26 +9,9 @@ summary: Consent resource implementation guidance
 
 {% include custom/search.warnbanner.html %}
 
-<style>
-table.spec {
-  min-width: 100%;
-  max-width: 100%;
-}
-
-table.spec td {
-  width: 10%;
-  min-width: 10%;
-}
-
-table.spec td code {
-  white-space: nowrap;
-}
-
-</style>
-
 ## Consent: Overview ##
 
-The Encounter Report may be shared with many different services, to support different interactions.  Consent should be modelled separately for each interaction where the consent exists.  This includes where the consent has been withdrawn.  Given the range of interactions that may use the Encounter Report, this API guide does not provide a single set of implementation guidance for the [‘Consent’](http://hl7.org/fhir/stu3/consent.html)
+The Encounter Report may be shared with many different services, to support different interactions.  Consent should be modelled separately for each interaction where the consent exists.  This includes where the consent has been withdrawn.  Given the range of interactions that may use the Encounter Report, this API guide does not provide a single set of implementation guidance for the [`Consent`](http://hl7.org/fhir/stu3/consent.html)
  resource. Instead the guide contains six different configurations adapted to the consent models of pre-existing systems and scenarios, as listed below.
 
 ### Scope of consent model ###
@@ -42,9 +25,9 @@ This Implementation Guide only covers the model for structuring consent, not the
 
 #### Consent for Direct Care ####
 
-Where an encounter cannot be fulfil the patient's health need, the patient will contact another service, which may want to use the information gathered in the first encounter.  
+Where an encounter cannot fulfil the patient's health need, the patient will contact another service, which may want to use the information gathered in the first encounter.  
 
-Consent to share the encounter report with other services to facilitate direct care of the patient MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_???.md) of a patient
+Consent to share the encounter report with other services to facilitate direct care of the patient MUST follow the implementation guidance in [Consent - Direct Care](api_consent_direct_care.html).
 
 
 #### Consent for ‘Post Event Messaging’ ####
@@ -64,14 +47,12 @@ Consent for the encounter report to be shared to support the validation process 
 [The Repeat Caller Service](https://developer.nhs.uk/apis/uec-tech-standards/repeat_caller_service.html) is a national service operated by NHS Digital and is a core part of the Integrated Urgent Care national architecture.
 The Repeat Caller Service exists to ensure that NHS 111 professionals assessing a patient’s need will have access to the encounter records of calls made within the previous 96 hours, where the patient has called three or more times.
 
-
-Consent for the encounter report to be shared with the Repeat Caller Service MUST follow the implementation guidance [here](https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_rcs.md).
-
+Consent for the encounter report to be shared with the Repeat Caller Service MUST follow the implementation guidance in [Consent - RCS](api_consent_rcs.html).
 
 #### Consent for IDT ####
 Pathways Intelligent Data Tool (IDT) supports continuous quality improvement of the triage process through collection of triage information, which can be captured in an Encounter Report.
 
-Consent for the encounter report to be shared with the Intelligent Data Tool MUST follow the implementation guidance [here](https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_consent_idt.md).
+Consent for the encounter report to be shared with the Intelligent Data Tool MUST follow the implementation guidance in [Consent - IDT](api_consent_idt.html).
 
 
 #### Consent for ‘Summary Care Record – Permission to view’ ####
@@ -80,5 +61,5 @@ Consent for the encounter report to be shared with the Intelligent Data Tool MUS
 
 Authorisation to view the SCR is known as ‘permission to view’, and there are [varying conditions](https://digital.nhs.uk/services/summary-care-records-scr/viewing-summary-care-records-scr#viewing-the-scr) that must be met to allow the SCR to be viewed. It is suggested that you consult [NHS Digital’s SCR usage guidance]( https://digital.nhs.uk/services/summary-care-records-scr#using-scr) to understand the context for using SCR permission to view via.
 
-This Implementation Guide features an Alpha-level profile of the Consent resource structured to share [SCR permission to view within an Encounter Report](../blob/release_2.0/pages/explore/api_consent_scr_ptv.md).
+This Implementation Guide features an Alpha-level profile of the Consent resource structured to share [SCR permission to view within an Encounter Report](api_consent_scr_ptv.html).
 

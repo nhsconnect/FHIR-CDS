@@ -161,7 +161,7 @@ Detailed implementation guidance for a `Procedure` resource in the CDS context i
     <td><code>0..1</code></td>
     <td>Reference (Encounter | EpisodeOfCare)</td>
     <td>Encounter or episode associated with the procedure</td>
-    <td>This SHOULD be the Encounter</td>
+    <td>This MUST be the Encounter</td>
 </tr>
 <tr>
     <td><code>performed[x]</code></td>

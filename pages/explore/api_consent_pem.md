@@ -166,7 +166,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..*</code></td>
   <td>Reference(Organization| Patient | Practitioner | RelatedPerson)</td>
   <td>Who is agreeing to the policy and exceptions</td>
-  <td>this will normally be Patient, but may be RelatedPerson</td>
+  <td>This will normally be the Patient, but may be RelatedPerson</td>
 </tr>
 <tr>
   <td><code>actor</code></td>
@@ -203,7 +203,7 @@ Linked to the triage journey by patient and data.
   <td><code>0..*</code></td>
   <td>Custodian of the consent</td>
   <td>Provider organisation</td>
-  <td>This SHOULD be populated with the encounter.serviceProvider</td>
+  <td>This SHOULD be populated with the Encounter.serviceProvider</td>
 </tr>
 <tr>
   <td><code>source[x]</code></td>
