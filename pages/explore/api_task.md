@@ -15,7 +15,7 @@ summary: Task resource implementation guidance
 ### Usage ###
 The [Task](http://hl7.org/fhir/STU3/task.html) resource will be populated where there is a specific action for the intended recipient of the encounter report.
 
-Detailed implementation guidance for an `Task` resource in the CDS context is given below:  
+Detailed implementation guidance for a `Task` resource within the scope of this implementation guide is given below:  
 ​
 ​
 <table style="min-width:100%;width:100%">
@@ -174,8 +174,9 @@ Detailed implementation guidance for an `Task` resource in the CDS context is gi
   <td><code>code</code></td>
     <td><code>0..1</code></td>
     <td>CodeableConcept</td>
-    <td>Task Type</td>
-<td>This MUST be populated.</td>
+    <td>Task Type: ambulance | cpcs | validation <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-TaskCode-1">UEC-TaskCode-1</a> (Extensible)</td>
+<td>This MUST be populated.
+</td>
 </tr>
 <tr>
   <td><code>description</code></td>

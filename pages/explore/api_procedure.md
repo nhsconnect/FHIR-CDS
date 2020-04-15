@@ -15,7 +15,7 @@ summary: Procedure resource implementation guidance
 ### Usage ###
 The [Procedure](http://hl7.org/fhir/STU3/procedure.html) resource represents an action performed on a patient, which can be either an intrusive intervention (*e.g.* operation) or a less invasive one (*e.g.* counselling).
 
-Detailed implementation guidance for a `Procedure` resource in the CDS context is given below:
+Detailed implementation guidance for a `Procedure` within the scope of this implementation guide is given below:
 
 <table style="min-width:100%;width:100%">
 <tr>

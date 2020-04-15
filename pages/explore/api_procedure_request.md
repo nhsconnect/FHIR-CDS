@@ -19,7 +19,7 @@ Within the Clinical Decision Support API implementation, the [ProcedureRequest](
 
 The `ProcedureRequest` is referenced from `ReferralRequest.supportingInfo` and will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which SHOULD be carried out in the referee service to validate or eliminate the chief concern.  
 
-Detailed implementation guidance for a `ProcedureRequest` resource in the CDS context is given below:  
+Detailed implementation guidance for a `ProcedureRequest` within the scope of this implementation guide is given below:  
 
 <table style="min-width:100%;width:100%">
 <tr>

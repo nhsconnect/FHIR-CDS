@@ -14,7 +14,7 @@ summary: ReferralRequest resource implementation guidance
 
 ## ReferralRequest: Implementation Guidance ##  
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1) profile will be used to carry the triage outcome of recommendation to another service for a patient.  
+Within the Clinical Decision Support API implementation, the [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1) profile will be used to carry the outcome of triage recommendation to another service for a patient.  
 
 Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS Encounter Report is given below:  
 
@@ -164,7 +164,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with a reference to <code class="highlighter-rouge">Encounter</code>.</td>
+<td>This MUST be populated with a reference to the<code class="highlighter-rouge">Encounter</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
@@ -190,14 +190,14 @@ This MUST match the occurrence returned in the $evaluate.referralrequest.</td>
 <td>This MUST be populated with the EMS User</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">requester.agent</code></td>
+  <td class="sub"><code class="highlighter-rouge">agent</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerS e</td>
     <td>Individual making the request</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">requester.onBehalfOf</code></td>
+  <td class="sub"><code class="highlighter-rouge">onBehalfOf</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>Organization agent is acting for</td>
@@ -257,7 +257,7 @@ This MUST match the occurrence returned in the $evaluate.referralrequest.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
      <td>Reference<br>(Provenance)</td>
     <td>Key events in history of request</td>
-<td>Where populated in the $evalate.referral this must be populated with a reference.</td>
+<td>Where populated in the $evaluate.referralrequest this must be populated with a reference to the same.</td>
  </tr> 
 </table> 
 <!--stackedit_data:

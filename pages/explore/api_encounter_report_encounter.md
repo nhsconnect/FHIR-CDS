@@ -16,12 +16,11 @@ summary: Encounter resource implementation guidance
 ### Usage ###
 The [Encounter](http://hl7.org/fhir/stu3/encounter.html) resource is used to carry information arising from an interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
 
-In the CDS context, an encounter occurs for the duration of a patient’s interaction with a single service provider.
+Within the scope of this implementation guide, an encounter occurs for the duration of a patient’s interaction with a single service provider.
 
 The Encounter resource uses the [CareConnect Encounter profile](https://nhsconnect.github.io/CareConnectAPI/api_workflow_encounter.html).
 
 Detailed implementation guidance for an `Encounter` resource in the context of a CDS Encounter Report is given below:  
-
 
 <table style="min-width:100%;width:100%">
 <tr>
