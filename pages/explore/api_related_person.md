@@ -102,7 +102,7 @@ Languages</a> (Extensible but limited to All Languages)</td>
 <td><code  class="highlighter-rouge">1..1</code></td>
 <td>Reference(Patient)</td>
 <td>The patient this person is related to</td>
-  <td>This SHOULD be populated with the <code  class="highlighter-rouge">subject</code> of the <code  class="highlighter-rouge">Encounter</code></td>
+  <td></td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">relationship</code></td>
