@@ -30,7 +30,11 @@ table.spec td code {
 
 ### Usage ###
 
-Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
+Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object. 
+
+[Summary Care Records](https://digital.nhs.uk/services/summary-care-records-scr) (SCRs) are an electronic record of important patient information, created from GP medical records. They can be seen and used by authorised staff in other areas of the health and care system involved in the patient's direct care.
+
+Authorisation to view the SCR is known as ‘permission to view’, and there are [varying conditions](https://digital.nhs.uk/services/summary-care-records-scr/viewing-summary-care-records-scr#viewing-the-scr) that must be met to allow the SCR to be viewed. It is suggested that you consult [NHS Digital’s SCR usage guidance]( https://digital.nhs.uk/services/summary-care-records-scr#using-scr) to understand the context for using SCR permission to view via.
 
 Linked to the triage journey by patient and data.
 
@@ -237,8 +241,8 @@ Linked to the triage journey by patient and data.
   <td><code>policy</code></td>
   <td><code>0..*</code></td>
   <td>BackboneElement</td>
-  <td>This MUST NOT be populated.</td>
   <td></td>
+  <td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td class="sub"><code>authority</code></td>

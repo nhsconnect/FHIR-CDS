@@ -13,13 +13,13 @@ summary: List resource implementation guidance
 ## List: Implementation Guidance ##
 
 ### Usage ###
-The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of ALL resources populated during the triage journey. [Link to evaluate section] Lists will include references to the resources that make up the list. 
+The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of ALL resources populated during the triage journey as part of the [`$evaluate` interaction](api_return_guidance_response.html). Lists will include references to the resources that make up the list. 
 
 The resources referenced by the `List`resource SHOULD be used by the ERR to build a human readable Encounter Report that meets the needs of the Service Provider.
 
 The resources referenced by the `List`resource MAY be used to drive workflow at the receiving Service Provider (e.g. queue management)
 
-Detailed implementation guidance for a `List` resource in the context of a CDS Encounter Report is given below:  
+Detailed implementation guidance for a `List` resource within the scope of this implementation guide is given below:  
 
 
 <table style="min-width:100%;width:100%">

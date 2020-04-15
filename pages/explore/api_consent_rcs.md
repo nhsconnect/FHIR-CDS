@@ -30,7 +30,11 @@ table.spec td code {
 
 ### Usage ###
 
-Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
+Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object. 
+
+[The Repeat Caller Service](https://developer.nhs.uk/apis/uec-tech-standards/repeat_caller_service.html) is a national service operated by NHS Digital and is a core part of the Integrated Urgent Care national architecture.
+
+The Repeat Caller Service exists to ensure that NHS 111 professionals assessing a patient’s need will have access to the encounter records of calls made within the previous 96 hours, where the patient has called three or more times.
 
 Linked to the triage journey by patient and data.
 
@@ -237,8 +241,8 @@ Linked to the triage journey by patient and data.
   <td><code>policy</code></td>
   <td><code>0..*</code></td>
   <td>BackboneElement</td>
-  <td>This MUST NOT be populated.</td>
   <td></td>
+  <td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td class="sub"><code>authority</code></td>
@@ -258,8 +262,8 @@ Linked to the triage journey by patient and data.
   <td><code>policyRule</code></td>
   <td><code>0..1</code></td>
   <td>uri</td>
-  <td>This SHOULD be populated with `http://hl7.org/fhir/ConsentPolicy/opt-out` as RCS is an opt-out scenario.</td>
   <td></td>
+  <td>This SHOULD be populated with `http://hl7.org/fhir/ConsentPolicy/opt-out` as RCS is an opt-out scenario.</td>
 </tr>
 <tr>
   <td><code>securityLabel</code></td>

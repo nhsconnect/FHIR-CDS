@@ -34,13 +34,13 @@ Consent to share the encounter report with other services to facilitate direct c
 
 All encounters with the Integrated Urgent Care service must be followed up with a message back to the patient’s registered GP surgery upon completion. This message is referred to as a [Post Event Message]( https://developer.nhs.uk/apis/uec-tech-standards/post_event_messaging.html) (PEM). 
 
-Consent for the encounter report to be shared with the patient's registered GP MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_pem.md)
+Consent for the encounter report to be shared with the patient's registered GP MUST follow the implementation guidance [here](api_consent_pem.html)
 
 
 #### Consent for Validation ####
 Some encounters may be validated before action - for example, some ambulance requests are validated by clinicians before the ambulance is sent.  
 
-Consent for the encounter report to be shared to support the validation process MUST follow the implementation guidance [here](../blob/release_2.0/pages/explore/api_consent_validation.md)
+Consent for the encounter report to be shared to support the validation process MUST follow the implementation guidance [here](api_consent_validation.html)
 
 
 #### Consent for the ‘Repeat Caller Service’ ####

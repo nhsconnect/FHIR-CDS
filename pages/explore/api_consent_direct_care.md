@@ -30,7 +30,9 @@ table.spec td code {
 
 ### Usage ###
 
-Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object. This includes Permission To View (PTV) and authorisation as per the 111 Report, but can be extended to any type of consent granted (or withheld) by the patient.
+Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object.
+
+Where an encounter cannot fulfil the patient's health need, the patient will contact another service, which may want to use the information gathered in the first encounter.  
 
 Linked to the triage journey by patient and data.
 
@@ -237,8 +239,8 @@ Linked to the triage journey by patient and data.
   <td><code>policy</code></td>
   <td><code>0..*</code></td>
   <td>BackboneElement</td>
-  <td>This MUST NOT be populated.</td>
   <td></td>
+  <td>This MUST NOT be populated.</td>
 </tr>
 <tr>
   <td class="sub"><code>authority</code></td>
@@ -258,8 +260,8 @@ Linked to the triage journey by patient and data.
   <td><code>policyRule</code></td>
   <td><code>0..1</code></td>
   <td>uri</td>
-  <td>This SHOULD be populated with `http://hl7.org/fhir/ConsentPolicy/opt-out` as direct care is an opt-out scenario.</td>
   <td></td>
+  <td>This SHOULD be populated with <code>http://hl7.org/fhir/ConsentPolicy/opt-out</code> as direct care is an opt-out scenario.</td>
 </tr>
 <tr>
   <td><code>securityLabel</code></td>
