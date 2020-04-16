@@ -30,11 +30,10 @@ table.spec td code {
 
 ### Usage ###
 
-Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object.
-
 Where an encounter cannot fulfil the patient's health need, the patient will contact another service, which may want to use the information gathered in the first encounter.  
 
-Linked to the triage journey by patient and data.
+Consent to share the encounter report with other services to facilitate direct care of the patient MUST be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object and follow the implementation guidance below.
+
 
 <table class="spec">
 <thead>
