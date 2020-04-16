@@ -202,7 +202,7 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Annotation</td>
     <td>Comments</td>
-<td>This MUST NOT be populated by the CDSS.</td>
+<td>This MUST NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relevantHistory</code></td>
