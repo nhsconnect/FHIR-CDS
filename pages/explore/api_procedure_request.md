@@ -89,8 +89,8 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
   <td><code class="highlighter-rouge">doNotPerform</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean</td>
-    <td>This MUST be 'false'</td>
-<td></td>
+    <td>True if procedure should not be performed</td>
+<td>This MUST be 'false'</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">category</code></td>
@@ -149,20 +149,6 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
 <td>This MUST NOT be populated</td>
  </tr>
 <tr>
-  <td><code class="highlighter-rouge">requester.agent</code></td>
-      <td><code class="highlighter-rouge">1..1</code></td>
-    <td>Reference<br>(Device |<br>Practitioner |<br>Organization)</td>
-    <td>Individual making the request</td>
-<td></td>
- </tr>
-<tr>
-  <td><code class="highlighter-rouge">requester.onBehalfOf</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
-    <td>Reference<br>(Organization)</td>
-    <td>Organization agent is acting for</td>
-<td></td>
- </tr>
-<tr>
   <td><code class="highlighter-rouge">performerType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
         <td>CodeableConcept</td>
@@ -174,56 +160,56 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>Device |<br>RelatedPerson |<br>HealthcareService)</td>
     <td>Requested perfomer</td>
-<td></td>
+<td>This MAY be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonCode</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
         <td>CodeableConcept</td>
     <td>Explanation/Justification for test <a href="https://www.hl7.org/fhir/stu3/valueset-procedure-reason.html">Procedure Reason Codes (Example)</a></td>
-<td>This SHOULD NOT be populated as the <code class="highlighter-rouge">reasonReference</code> element will carry the chief concern.</td>
+<td>This MUST not be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonReference</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Condition |<br>Observation)</td>
     <td>Explanation/Justification for test</td>
-<td>This SHOULD be populated by the CDSS. The chief concern SHOULD be carried in this element.</td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.reasonReference</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">supportingInfo</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional clinical information</td>
-<td>This SHOULD be populated by the CDSS. Secondary concerns SHOULD be be carried in this element.</td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.supportinInfo</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specimen</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Specimen)</td>
     <td>Procedure Samples</td>
-<td></td>
+<td>This MUST NOT be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">bodySite</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
         <td>CodeableConcept</td>
     <td>Location on Body <a href="https://www.hl7.org/fhir/stu3/valueset-body-site.html">SNOMED CT Body Structures (Example)</a></td>
-<td></td>
+<td>This MAY be populated</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Annotation</td>
     <td>Comments</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This MUST NOT be populated by the CDSS.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">relevantHistory</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
      <td>Reference<br>(Provenance)</td>
     <td>Request provenance</td>
-<td>This SHOULD be populated by the CDSS.</td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.relevantHistory</code></td>
  </tr> 
 </table>  
 <!--stackedit_data:
