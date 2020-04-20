@@ -16,9 +16,9 @@ summary: Composition resource implementation guidance
 
 Used to represent a human-readable summary of the triage journey for a patient.
 
-The sending EMS is responsible for making sure that all resources which inform the `composition` are referenced in the `composition`.
+The sending EMS is responsible for making sure that all resources which inform the <code class="highlighter-rouge">`Composition`</code> are referenced in the <code class="highlighter-rouge">`Composition`</code>.
 
-The Composition resource should only be used by ERRs that cannot build a custom Encounter Report from the resources referenced in the List resource.
+The <code class="highlighter-rouge">'Composition'</code> resource should only be used by ERRs that cannot build a custom Encounter Report from the resources referenced in the <code class="highlighter-rouge">List</code> resource.
 
 The human-readable summary will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The <code class="highlighter-rouge">Encounter</code> resource does not contain a reference to the composition. There may be more than one <code class="highlighter-rouge">Composition</code> per <code class="highlighter-rouge">Encounter</code>, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
 
