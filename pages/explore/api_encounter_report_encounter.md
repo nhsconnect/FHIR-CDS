@@ -313,49 +313,49 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code></code><br><code>admitSource</code></td>
+  <td class="sub"><code>admitSource</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>From where patient was admitted (physician referral, transfer) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-admit-source.html">AdmitSource (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code></code><br><code>reAdmission</code></td>
+  <td class="sub"><code>reAdmission</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of hospital re-admission that has occurred (if any). If the value is absent, then this is not identified as a readmission <a href="https://www.hl7.org/fhir/stu3/v2/0092/index.html">v2 Re-Admission Indicator (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code></code><br><code>dietPreference</code></td>
+  <td class="sub"><code>dietPreference</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Diet preferences reported by the patient <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-diet.html">Diet (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code></code><br><code>specialCourtesy</code></td>
+  <td class="sub"><code>specialCourtesy</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Special courtesies (VIP, board member) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-courtesy.html">SpecialCourtesy (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code></code><br><code>specialArrangement</code></td>
+  <td class="sub"><code>specialArrangement</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Wheelchair, translator, stretcher, etc. <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-arrangements.html">SpecialArrangements (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>  
-<td class="sub"><code>hospitalization.</code><br><code>destination</code></td>
+<td class="sub"><code>destination</code></td>
   <td><code>0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>Location to which the patient is discharged</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>hospitalization.</code><br><code>dischargeDisposition</code></td>
+  <td class="sub"><code>dischargeDisposition</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Category or kind of location after discharge <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-discharge-disposition.html">DischargeDisposition (Example)</a></td>
@@ -369,21 +369,21 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td>This SHOULD be populated where the patient has physically attended the provider service.</td>
  </tr>
 <tr>  
-<td class="sub"><code>location.location</code></td>
+<td class="sub"><code>location</code></td>
   <td><code>1..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>Location the encounter takes place</td>
 <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>location.status</code></td>
+  <td class="sub"><code>status</code></td>
       <td><code>0..1</code></td>
     <td>code</td>
     <td>planned | active | reserved | completed <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-location-status.html">EncounterLocationStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>location.period</code></td>
+  <td class="sub"><code>period</code></td>
       <td><code>0..1</code></td>
     <td>Period</td>
     <td>Time period during which the patient was present at the location</td>
