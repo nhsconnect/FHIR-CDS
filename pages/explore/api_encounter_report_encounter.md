@@ -150,20 +150,6 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
 <td>This MUST NOT be populated</td>
  </tr>
 <tr>
-  <td class="sub"><code>class</code></td>
-      <td><code>1..1</code></td>
-    <td>coding</td>
-    <td>inpatient | outpatient | ambulatory | emergency + <a href="https://www.hl7.org/fhir/stu3/v3/ActEncounterCode/vs.html">ActEncounterCode (Extensible)</a></td>
-<td></td>
- </tr>
-<tr>
-  <td class="sub"><code>period</code></td>
-      <td><code>1..1</code></td>
-    <td>Period</td>
-    <td>The time that the episode was in the specified class</td>
-<td></td>
- </tr>
-<tr>
   <td><code>type</code></td>
       <td><code>0..*</code></td>
    <td>CodeableConcept</td>
