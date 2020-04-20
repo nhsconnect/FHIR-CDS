@@ -15,7 +15,7 @@ summary: Appointment resource implementation guidance
 ### Usage ###
 The [Appointment](http://hl7.org/fhir/STU3/appointment.html) resource is used to group the details of appointments that are booked or requested for the patient as a result of `ReferralRequests` and can be found in `ReferralRequest.supportingInfo`.
 
-For the CDS API, we are using the [UECDI Appointment Booking Specification]().
+For the CDS API, we are using the [UECDI Appointment Booking Specification](https://developer.nhs.uk/apis/uec-appointments/).
 
 Detailed implementation guidance for an `Appointment` resource in the context of a CDS Encounter Report is given below: 
 ​
