@@ -104,7 +104,7 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">1..1</code></td>
         <td>CodeableConcept</td>
     <td>What is being requested/ordered <a href="https://www.hl7.org/fhir/stu3/valueset-procedure-code.html">Procedure Codes (SNOMED CT) (Example)</a></td>
-<td>This SHOULD be populated by the CDSS with a code that identifies the particular procedure which has been requested.</td>
+<td>This MUST be populated by the CDSS with a code that identifies the particular procedure which has been requested.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
