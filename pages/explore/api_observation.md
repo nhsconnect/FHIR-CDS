@@ -117,7 +117,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
   <td><code>code</code></td>
       <td><code>1..1</code></td>
     <td>CodeableConcept</td>
-    <td>~~Type of observation (code/type) <a href="https://www.hl7.org/fhir/stu3/valueset-observation-codes.html">LOINC Codes (Example)</a>~~.</td>
+    <td><s>Type of observation (code/type) <a href="https://www.hl7.org/fhir/stu3/valueset-observation-codes.html">LOINC Codes (Example)</a></s>.</td>
 <td>Identifies the concept represented in the <code>Observation</code>. This may be a Snomed code for clinical observations, or use another system for non-clinical observations if appropriate.</td>
  </tr>
 <tr>
