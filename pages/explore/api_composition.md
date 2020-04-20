@@ -199,7 +199,7 @@ CompositionAttestationMode (Required)</td>
     <td><code>0..1</code></td>
     <td>Reference(Organization)</td>
     <td>Organization which maintains the composition</td>
-    <td>A reference to the Organisation that is responsible for the EMS</td>
+	<td>A reference to the <code class="highlighter-rouge">Organisation</code> that is responsible for the EMS</td>
 </tr>
 <tr>
     <td><code>relatesTo</code></td>
