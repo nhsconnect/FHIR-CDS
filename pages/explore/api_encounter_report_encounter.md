@@ -122,14 +122,14 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
 <td>To be populated when the status changes</td>
  </tr>
 <tr>
-  <td class="sub"><code>statusHistory.status</code></td>
+  <td class="sub"><code>status</code></td>
       <td><code>1..1</code></td>
     <td>code</td>
     <td>planned | arrived | triaged | in-progress | onleave | finished | cancelled + <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-status.html">EncounterStatus (Required)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>statusHistory.period</code></td>
+  <td class="sub"><code>period</code></td>
       <td><code>1..1</code></td>
     <td>Period</td>
     <td>The time that the episode was in the specified status</td>
@@ -150,14 +150,14 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
 <td>This MUST NOT be populated</td>
  </tr>
 <tr>
-  <td class="sub"><code>classHistory.class</code></td>
+  <td class="sub"><code>class</code></td>
       <td><code>1..1</code></td>
     <td>coding</td>
     <td>inpatient | outpatient | ambulatory | emergency + <a href="https://www.hl7.org/fhir/stu3/v3/ActEncounterCode/vs.html">ActEncounterCode (Extensible)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>classHistory.period</code></td>
+  <td class="sub"><code>period</code></td>
       <td><code>1..1</code></td>
     <td>Period</td>
     <td>The time that the episode was in the specified class</td>
@@ -208,21 +208,21 @@ If not a continuation, this MUST be populated with a new episode.</td>
 and any third parties answering questions on behalf of the patient (<code>RelatedPerson</code>).</td>
  </tr>
 <tr>
-  <td class="sub"><code>participant.type</code></td>
+  <td class="sub"><code>type</code></td>
       <td><code>0..*</code></td>
    <td>CodeableConcept</td>
     <td>Role of participant in encounter <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-participant-type.html">ParticipantType (Extensible)</a></td>
 <td></td>
 </tr>
 <tr>
-  <td class="sub"><code>participant.period</code></td>
+  <td class="sub"><code>period</code></td>
       <td><code>0..1</code></td>
     <td>Period</td>
     <td>Period of time during the encounter that the participant participated</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>participant.individual</code></td>
+  <td class="sub"><code>individual</code></td>
       <td><code>0..1</code></td>
     <td>Reference<br>(Practitioner |<br>RelatedPerson)</td>
     <td>Persons involved in the encounter other than the patient</td>
@@ -264,21 +264,21 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td>This MAY be populated, but is not expected to be for unscheduled care.</td>
  </tr>
 <tr>
-  <td class="sub"><code>diagnosis.condition</code></td>
+  <td class="sub"><code>condition</code></td>
       <td><code>1..1</code></td>
     <td>Reference<br>(Condition |<br>Procedure)</td>
     <td>Reason the encounter takes place (resource)</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>diagnosis.role</code></td>
+  <td class="sub"><code>role</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>Role that this diagnosis has within the encounter <br>(e.g. admission, billing, discharge) <a href="https://www.hl7.org/fhir/stu3/valueset-diagnosis-role.html">DiagnosisRole (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>diagnosis.rank</code></td>
+  <td class="sub"><code>rank</code></td>
       <td><code>0..1</code></td>
     <td>positiveInt</td>
     <td>Ranking of the diagnosis (for each role type)</td>
@@ -299,49 +299,49 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <td>This SHOULD NOT be populated – if the patient is admitted, this will be a separate encounter.</td>
  </tr>
 <tr>
-  <td class="sub"><code>hospitalization.</code><br><code>preAdmissionIdentifier</code></td>
+  <td class="sub"><code>preAdmissionIdentifier</code></td>
     <td><code>0..1</code></td>
     <td>Identifier</td>
     <td>Pre-admission identifier</td>
 <td></td>
 </tr>
 <tr>  
-<td class="sub"><code>hospitalization.origin</code></td>
+<td class="sub"><code>origin</code></td>
   <td><code>0..1</code></td>
     <td>Reference<br>(Location)</td>
     <td>The location from which the patient came before admission</td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>hospitalization.</code><br><code>admitSource</code></td>
+  <td class="sub"><code></code><br><code>admitSource</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>From where patient was admitted (physician referral, transfer) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-admit-source.html">AdmitSource (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>hospitalization.</code><br><code>reAdmission</code></td>
+  <td class="sub"><code></code><br><code>reAdmission</code></td>
       <td><code>0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of hospital re-admission that has occurred (if any). If the value is absent, then this is not identified as a readmission <a href="https://www.hl7.org/fhir/stu3/v2/0092/index.html">v2 Re-Admission Indicator (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>hospitalization.</code><br><code>dietPreference</code></td>
+  <td class="sub"><code></code><br><code>dietPreference</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Diet preferences reported by the patient <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-diet.html">Diet (Example)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>hospitalization.</code><br><code>specialCourtesy</code></td>
+  <td class="sub"><code></code><br><code>specialCourtesy</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Special courtesies (VIP, board member) <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-courtesy.html">SpecialCourtesy (Preferred)</a></td>
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code>hospitalization.</code><br><code>specialArrangement</code></td>
+  <td class="sub"><code></code><br><code>specialArrangement</code></td>
       <td><code>0..*</code></td>
     <td>CodeableConcept</td>
     <td>Wheelchair, translator, stretcher, etc. <a href="https://www.hl7.org/fhir/stu3/valueset-encounter-special-arrangements.html">SpecialArrangements (Preferred)</a></td>
