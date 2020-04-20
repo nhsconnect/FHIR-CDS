@@ -160,7 +160,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code>0..1</code></td>
       <td>Quantity | CodeableConcept | string | boolean | Range | Ratio | SampledData | Attachment | time | dateTime | Period</td>
 <td>Actual result</td>
-<td>This MUST be populated with type valueCodableConcept, or left unpopulated. If unpopulated, the value is assumed to take the default value 'present and confirmed'.<br/>
+<td>This MUST be populated with values from the [valueCodableConcept](https://fhir.nhs.uk/STU3/ValueSet/UEC-ObservationValue-1) ValueSet, or left unpopulated. If unpopulated, the value is assumed to take the default value 'present and confirmed'.<br/>
 This is to enable the appropriate definition of DataRequirements.</td>
  </tr>
 <tr>
