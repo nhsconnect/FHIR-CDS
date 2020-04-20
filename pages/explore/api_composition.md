@@ -20,11 +20,11 @@ The sending EMS is responsible for making sure that all resources which inform t
 
 The Composition resource should only be used by ERRs that cannot build a custom Encounter Report from the resources referenced in the List resource.
 
-The human-readable summary will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The `Encounter` resource does not contain a reference to the composition. There may be more than one Composition per Encounter, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
+The human-readable summary will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The <code class="highlighter-rouge">Encounter</code> resource does not contain a reference to the composition. There may be more than one <code class="highlighter-rouge">Composition</code> per <code class="highlighter-rouge">Encounter</code>, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
 
-PLEASE NOTE that resources referenced by the `Composition` resource MUST NOT be used to drive business processes as they may not be the complete list of resources for the triage journey. The complete list for the triage journey will be contained in the `List` resource.
+PLEASE NOTE that resources referenced by the <code class="highlighter-rouge">Composition</code> resource MUST NOT be used to drive business processes as they may not be the complete list of resources for the triage journey. The complete list for the triage journey will be contained in the <code class="highlighter-rouge">List</code> resource.
 
-Detailed implementation guidance for a `Composition` resource in the CDS context is given below:  
+Detailed implementation guidance for a <code class="highlighter-rouge">Composition</code> resource in the CDS context is given below:  
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -127,14 +127,14 @@ FHIR Document Class Codes (Example)</td>
     <td><code>1..1</code></td>
     <td>Reference(Any)</td>
     <td>Who and/or what the composition is about</td>
-    <td>This MUST be a reference to the Patient resource</td>
+	<td>This MUST be a reference to the <code class="highlighter-rouge">Patient</code> resource</td>
 </tr>
 <tr>
   <td><code>encounter</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Encounter)</td>
     <td>Context of the Composition</td>
-    <td>This MUST be a reference to the current Encounter resource</td>
+	<td>This MUST be a reference to the current <code class="highlighter-rouge">Encounter</code> resource</td>
 </tr>
 <tr>
   <td><code>date</code></td>
@@ -148,7 +148,7 @@ FHIR Document Class Codes (Example)</td>
     <td><code>1..*</code></td>
     <td>Reference(Practitioner | Device | Patient | RelatedPerson)</td>
     <td>Who and/or what authored the composition</td>
-    <td>This MUST be a reference to a Device resource, representing the EMS which is responsible for the encounter</td>
+	<td>This MUST be a reference to a <code class="highlighter-rouge">Device</code> resource, representing the EMS which is responsible for the encounter</td>
 </tr>
 <tr>
   <td><code>title</code></td>
@@ -251,7 +251,7 @@ DocumentRelationshipType (Required)</td>
     <td>Composition is broken into sections<br>
 + A section must at least one of text, entries, or sub-sections<br>
 + A section can only have an emptyReason if it is empty</td>
-    <td>It is recommended that each <code>$evaluate</code> interaction is documented in a separate section.  This will document the <code>Questionnaire</code> & <code>QuestionnaireResponse</code> resources for that interaction, as well as the assertions generated during that interaction, and any CarePlans presented.  In addition, if interim results are presented, these should be included in each interaction. The result of the interaction will also be presented as a separate section.</td>
+    <td>It is recommended that each <code>$evaluate</code> interaction is documented in a separate section.  This will document the <code class="highlighter-rouge">Questionnaire</code> & <code class="highlighter-rouge">QuestionnaireResponse</code> resources for that interaction, as well as the assertions generated during that interaction, and any CarePlans presented.  In addition, if interim results are presented, these should be included in each interaction. The result of the interaction will also be presented as a separate section.</td>
 </tr>
 <tr>
     <td class="sub"><code>title</code></td>
