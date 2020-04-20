@@ -118,7 +118,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
       <td><code>1..1</code></td>
     <td>CodeableConcept</td>
     <td><s>Type of observation (code/type) <a href="https://www.hl7.org/fhir/stu3/valueset-observation-codes.html">LOINC Codes (Example)</a></s>.</td>
-<td>Identifies the concept represented in the <code>Observation</code>. This may be a Snomed code for clinical observations, or use another system for non-clinical observations if appropriate.</td>
+<td>Identifies the concept represented in the <code>Observation</code>. This may be a Snomed code for clinical observations, or use another system for non-clinical observations if appropriate. A custom ValueSet has been created to provide SNOMED clinical coding for a number of Urgent and Emergency Care observations, <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-ObservationCode-1">UEC Observation Code</a>. The ValueSet is not exhaustive, and the element has a binding of Example.</td>
  </tr>
 <tr>
   <td><code>subject</code></td>
