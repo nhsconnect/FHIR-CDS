@@ -350,21 +350,21 @@ If the content of this element does not match the jurisdiction of the current <c
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.options</code></td>
+  <td class="sub"><code class="highlighter-rouge">options</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference(ValueSet)</td>
   <td>Valueset containing permitted answers</td>
 <td>This MUST NOT be populated by the CDSS.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.option</code></td>
+  <td class="sub"><code class="highlighter-rouge">option</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
   <td>Permitted answer</td>
 <td>Where the question has multiple options, only one of which SHOULD be selected, these options can be enumerated in this element.</td>
  </tr>
 <tr>
-  <td class="sub-sub"><code class="highlighter-rouge">item.option.value[x]</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">value[x]</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
      <td>integer | date |<br>time | string |<br> Coding</td>
     <td>Answer value<br/>
@@ -372,7 +372,7 @@ If the content of this element does not match the jurisdiction of the current <c
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.initial[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">initial[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>boolean | decimal |<br>integer | date |<br>dateTime | time |<br>string | uri |<br>Attachment |<br> Coding |<br>Quantity | Reference(Any)</td>
     <td>Default value when item is first rendered
@@ -380,7 +380,7 @@ If the content of this element does not match the jurisdiction of the current <c
 <td>This MUST NOT be populated by the CDSS.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">item.item</code></td>
+  <td class="sub"><code class="highlighter-rouge">item</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>BackboneElement</td>
     <td>Nested questionnaire items</td>
