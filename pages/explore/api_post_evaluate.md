@@ -128,7 +128,7 @@ The EMS MUST NOT send duplicate items.</li>
     <td>CodeableConcept</td>
     <td>The type of user initiating the request, e.g. Professional, Patient, Responsible person. <br>
 Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
-	<td>This MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns. See the <a href="https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_post_evaluate.md#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details</td>
+	<td>This MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns. See the <a href="https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_post_evaluate.md#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">userLanguage</code></td>
