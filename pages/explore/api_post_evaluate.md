@@ -246,7 +246,7 @@ The userType element carries the type of user initiating the request to the CDSS
 
 <a href="api_return_guidance_response.html">View further information about the result of the triage journey</a>.  
 
-## Failure ##  
+### Failure ###
 
 Failure scenarios and error codes are detailed within the <a href=
 "api_errorhandling.html">Error Handling</a> page.
