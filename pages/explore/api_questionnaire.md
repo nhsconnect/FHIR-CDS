@@ -233,9 +233,9 @@ If the content of this element does not match the <code class="highlighter-rouge
   <td><code class="highlighter-rouge">jurisdiction</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
-    <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
+    <td>Intended jurisdiction for service definition (if applicable) <s><a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></s></td>
 <td>
-<a href="">Extended valueset</a> includes England, Scotland, Wales, Northern Ireland and Ireland.
+<a href="https://fhir.nhs.uk/STU3/ValueSet/GreatBritainSubdivision-1">Extended valueset</a> includes England, Scotland, Wales, Northern Ireland and Ireland.
 <br/>
 The contents of this element MUST match the <code class="highlighter-rouge">jurisdiction</code> of the current <code class="highlighter-rouge">ServiceDefinition</code>.
 <br/>
