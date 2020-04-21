@@ -1,13 +1,13 @@
 ---
-title: Prerequisites
+title: Pre requisites
 keywords: CDS, Clinical Decision Suppport, rest, FHIR rest, FHIR resource, prerequisites
 tags: [rest,fhir,api]
 sidebar: foundations_sidebar
 permalink: api_prerequisites.html
-summary: "Development prerequisites"
+summary: "Development pre-requisites"
 ---
 
-## Prerequisites for the CDS API ##
+## Prer-Requisites for the CDS API ##
 
 Consumer / Provider Server API Conformance
 
@@ -28,3 +28,6 @@ Consumer / Provider Server API Conformance
 
 - MUST support bundled or referenced resources
 - MAY support contained resources, but this is not a preferred option
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE0OTk5NTMxMzFdfQ==
+-->
