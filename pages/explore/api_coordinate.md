@@ -13,7 +13,7 @@ summary: Coordinate resource implementation guidance
 
 ### Usage ###
 
-Within the Clinical Decision Support API implementation, the [`Coordinate`](https://fhir.nhs.uk/STU3/StructureDefinition/UEC-ImageCoordinates-Basic-1) resource is a Custom Resource Structure for the CDS API. It is used to carry details of answers to `image-map` question types within the `QuestionnaireResponse.item.answer.value` field during an `$evaluate` request.
+Within the Clinical Decision Support API implementation, the [`Coordinate`](https://fhir.nhs.uk/STU3/StructureDefinition/UEC-ImageCoordinates-Basic-1) resource is a Custom Resource Structure for the CDS API. It iswill be used to carry details of answers to `image-map` question types within the `QuestionnaireResponse.item.answer.value` field during an `$evaluate` request.
 
 The table below gives implementation guidance in relation to the elements within a `Coordinate`:
 
@@ -68,7 +68,7 @@ The table below gives implementation guidance in relation to the elements within
         <td><code  class="highlighter-rouge">0..*</code></td>
         <td>Resource</td>
         <td>Contained, inline Resources</td>
-        <td>This SHOULD NOT be populated.</td>
+        <td>This SHOULD NOTshould not be populated.</td>
     </tr>
     <tr>
         <td><code  class="highlighter-rouge">extension</code></td>
@@ -89,14 +89,14 @@ The table below gives implementation guidance in relation to the elements within
         <td><code  class="highlighter-rouge">1..1</code></td>
         <td>int</td>
         <td>X-axis value of this co-ordinate</td>
-        <td>This is populated with a count of pixels from the origin (left) of the image as a rectangle - scaled to the original size of the image.</td>
+        <td>This is populated with a count of pixels from the origin (left) of the image as a rectangle - scaled to the original size of the image.<td></td>
     </tr>
     <tr>
         <td><code  class="highlighter-rouge">yCoordinate</code></td>
         <td><code  class="highlighter-rouge">1..1</code></td>
         <td>int</td>
         <td>Y-axis value of this co-ordinate</td>
-        <td>This is populated with a count of pixels from the origin (top) of the image as a rectangle - scaled to the original size of the image</td>
+        <td>This is populated with a count of pixels from the origin (top) of the image as a rectangle - scaled to the original size of the image<td></td>
     </tr>
     <tr>
         <td><code  class="highlighter-rouge">zCoordinate</code></td>
@@ -112,5 +112,9 @@ The table below gives implementation guidance in relation to the elements within
         <td>The image for which the coordinates relate.</td>
         <td>This SHOULD be populated. <br>
         Where populated this MUST match the image link within <code  class="highlighter-rouge">Questionnaire.item.text</code>.</td>
-    </tr>
+    <td></td>
+</tr>
 </table>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTUxNjY4ODg0OV19
+-->
