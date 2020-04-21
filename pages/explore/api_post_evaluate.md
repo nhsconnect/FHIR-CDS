@@ -184,7 +184,7 @@ Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>Additional detail about the setting of the request, if any.</td>
-	<td>This MUST NOT be populated.</td>
+	<td>This MAY be populated with a value representing the communication channel. Common Ergent and Emergency Care channels are captured in the custom ValueSet <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-CommunicationChannel-1">UEC Communication Channel</a>.</td>
 </tr>
 </table>
 
