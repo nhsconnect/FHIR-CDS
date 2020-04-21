@@ -16,7 +16,7 @@ summary: GuidanceResponse implementation guidance
 ## GuidanceResponse: Implementation Guidance ##  
 ### Usage ###
 
-The table below details implementation guidance for the [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource in the scope of this implementation guide:
+The table below details implementation guidance for the [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource in the scope of this implementation guideCDS context:
 <table style="min-width:100%;width:100%">
 
 <tr>
@@ -66,7 +66,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This SHOULD NOT be populated</td>
+	<td>This SHOULD NOTshould not be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -101,7 +101,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(ServiceDefinition)</td>
     <td>A reference to a knowledge module.</td>
-<td>This MUST be populated with a reference to the <code class="highlighter-rouge">ServiceDefinition</code> posted to the CDSS in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This MUST be populated with the <a hreference to="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">ServiceDefinition</code> posted to the CDSS in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
@@ -115,7 +115,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient |<br>Group)</td>
     <td>Patient the request was performed for.</td>
-<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Patient</code>`Patient` resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
@@ -232,3 +232,6 @@ The `dataRequirement.type` element will be 'TriggerDefinition' and the CDSS will
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODA5MTM5NTYzXX0=
+-->
