@@ -204,7 +204,7 @@ Consent to share the encounter report with other services to facilitate direct c
   <td><code>0..*</code></td>
   <td>Custodian of the consent</td>
   <td>Provider organisation</td>
-  <td>This SHOULD be populated with the encounter.serviceProvider</td>
+  <td>This SHOULD be populated with the Encounter.serviceProvider</td>
 </tr>
 <tr>
   <td><code>source[x]</code></td>
