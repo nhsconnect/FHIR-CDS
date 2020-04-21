@@ -59,7 +59,7 @@ Consent for the encounter report to be shared with the Intelligent Data Tool MUS
 
 [Summary Care Records](https://digital.nhs.uk/services/summary-care-records-scr) (SCRs) are an electronic record of important patient information, created from GP medical records. They can be seen and used by authorised staff in other areas of the health and care system involved in the patient's direct care.
 
-Authorisation to view the SCR is known as ‘permission to view’, and there are [varying conditions](https://digital.nhs.uk/services/summary-care-records-scr/viewing-summary-care-records-scr#viewing-the-scr) that must be met to allow the SCR to be viewed. It is suggested that you consult [NHS Digital’s SCR usage guidance]( https://digital.nhs.uk/services/summary-care-records-scr#using-scr) to understand the context for using SCR permission to view via.
+Authorisation to view the SCR is known as ‘permission to view’, and there are [varying conditions](https://digital.nhs.uk/services/summary-care-records-scr/viewing-summary-care-records-scr#viewing-the-scr) that must be met to allow the SCR to be viewed. It is suggested that you consult <a href="https://digital.nhs.uk/services/summary-care-records-scr#using-scr">NHS Digital’s SCR usage guidance</a> to understand the context for using SCR permission to view via.
 
 This Implementation Guide features an Alpha-level profile of the Consent resource structured to share [SCR permission to view within an Encounter Report](api_consent_scr_ptv.html).
 
