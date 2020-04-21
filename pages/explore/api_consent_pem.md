@@ -32,7 +32,7 @@ table.spec td code {
 
 Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object.
 
-All encounters with the Integrated Urgent Care service must be followed up with a message back to the patient’s registered GP surgery upon completion. This message is referred to as a [Post Event Message]( https://developer.nhs.uk/apis/uec-tech-standards/post_event_messaging.html) (PEM). 
+All encounters with the Integrated Urgent Care service must be followed up with a message back to the patient’s registered GP surgery upon completion. This message is referred to as a [Post Event Message]( https://developer.nhs.uk/apis/uec-tech-standards/post_event_messaging.html) (PEM). Other consent models are discussed on the [Consent Overview page](api_consent.md).
 
 Linked to the triage journey by patient and data.
 
