@@ -246,10 +246,10 @@ The userType element carries the type of user initiating the request to the CDSS
 
 <a href="api_return_guidance_response.html">View further information about the result of the triage journey</a>.  
 
-## Time out ##  
-It is recommended that the EMS sets a time out limit on the response back from the CDSS, appropriate to an interactive process (e.g. around 1000 milliseconds).  
-If the CDSS does not respond within the time out period, then it is recommended that the EMS retry the `$evaluate` operation. This is to allow for intermittent network errors.  
-After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is unavailable and should respond appropriately to the user.
+## Failure ##  
+
+Failure scenarios and error codes are detailed within the <a href=
+"api_errorhandling.html">Error Handling</a> page.
 
 
 
