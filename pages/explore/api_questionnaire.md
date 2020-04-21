@@ -392,7 +392,7 @@ If the content of this element does not match the jurisdiction of the current <c
 <td>Where the question has multiple options, only one of which SHOULD be selected, these options can be enumerated in this element.</td>
  </tr>
 <tr>
-  <td class="sub-sub"><code class="highlighter-rouge">option.value[x]</code></td>
+  <td class="sub-sub"><code class="highlighter-rouge">value[x]</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
      <td>integer | date |<br>time | string |<br> Coding</td>
     <td>Answer value<br/>
