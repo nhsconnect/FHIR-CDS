@@ -143,7 +143,7 @@ d reiredhttpsrTypeaeeoo> MUST be provided by the EMS. If the <code class="highli
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The task the system user is performing, e.g. laboratory results review, medication list review, etc. This information can be used to tailor decision support outputs, such as recommended information resources.</td>
-	<td>This SHOULD be provided by the EMS, as it may be used to tailor decision support outputs.</td>
+	<td>This SHOULD be provided by the EMS, as it may be used to tailor decision support outputs. It SHOULD use values from the <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-TaskContext-1">UEC Task Context</a> custom ValueSet.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingOrganization</code></td>
