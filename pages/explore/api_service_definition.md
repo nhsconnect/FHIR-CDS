@@ -213,7 +213,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
     <td>CodeableConcept</td>
     <td>Intended jurisdiction for service definition (if applicable) <a href="https://www.hl7.org/fhir/stu3/valueset-jurisdiction.html">Jurisdiction ValueSet (Extensible)</a></td>
 <td>A null value means the <code class="highlighter-rouge">ServiceDefinition</code> is appropriate for any/all <code class="highlighter-rouge">jurisdictions.</code>
-<br/>Click <a href="#jurisdiction">here</a> for more information.<br/><a href="">Extended valueset</a> includes England, Scotland, Wales, Northern Ireland and Ireland.
+<br/>Click <a href="#jurisdiction">here</a> for more information.<br/><a href="https://fhir.nhs.uk/STU3/ValueSet/GreatBritainSubdivision-1">Extended valueset</a> includes England, Scotland, Wales, Northern Ireland and Ireland.
 </td>
  </tr>
 <tr>
