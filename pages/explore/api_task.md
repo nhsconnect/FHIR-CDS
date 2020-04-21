@@ -275,7 +275,7 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
     <td><code>0..*</code></td>
     <td>Annotation</td>
     <td>Comments made about the task</td>
-<td></td>
+<td>See <a href="#note">additional guidance</a> below.</td>
 </tr>
 <tr>
   <td><code>relevantHistory</code></td>
@@ -303,7 +303,7 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
     <td><code>0..1</code></td>
     <td>Period</td>
     <td>When fulfillment sought</td>
-<td>Time period in which the Task must be fulfilled - note that this will normally be different (shorter) than <code>ReferralRequest.occurence</code></td>
+<td>Time period in which the Task must be fulfilled - note that this will normally be different (shorter) than <code>ReferralRequest.occurrence</code></td>
 </tr>
 <tr>
   <td class="sub"><code>recipient</code></td>
@@ -355,7 +355,10 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
 <td>This MUST NOT be populated.</td>
 </tr>
 </table>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwMzc3Mjc3LC02MzI4MTY1MjMsLTExNz
-c4MTA2MzcsMTM0NTA5OTU1MCw1NDM0NjcxMTNdfQ==
--->
+
+
+## Task: Element Guidance ##
+
+### note ###
+
+If notes are made about a Task they MUST be displayed by the Encounter Report Receiving System (ERR).
