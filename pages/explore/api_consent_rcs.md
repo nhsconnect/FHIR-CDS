@@ -38,6 +38,8 @@ The Repeat Caller Service exists to ensure that NHS 111 professionals assessing 
 
 Linked to the triage journey by patient and data.
 
+Other consent models are discussed on the [Consent Overview page](api_consent.md).
+
 <table class="spec">
 <thead>
 <tr>
