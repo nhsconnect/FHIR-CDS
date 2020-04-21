@@ -145,14 +145,14 @@ The table below details implementation guidance for this resource in the scope o
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.role</code></td>
+  <td class="sub"><code class="highlighter-rouge">role</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>What the agent's role was <a href="https://www.hl7.org/fhir/stu3/valueset-security-role-type.html">SecurityRoleType (Extensible)</a></td>
 <td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.who[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">who[x]</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whoUri</code> uri <br><code class="highlighter-rouge">whoReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
@@ -161,14 +161,14 @@ The table below details implementation guidance for this resource in the scope o
 The device MUST be the CDSS.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.onBehalfOf[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">onBehalfOf[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td><code class="highlighter-rouge">onBehalfOfUri</code> uri <br><code class="highlighter-rouge">onBehalfOfReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
 <td>MUST be populated with Organization of ServiceProvider</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.relatedAgentType</code></td>
+  <td class="sub"><code class="highlighter-rouge">relatedAgentType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
      <td>Type of relationship between agents <a href="https://www.hl7.org/fhir/stu3/v3/RoleLinkType/vs.html">v3 Code System RoleLinkType (Example)</a></td>
@@ -182,21 +182,21 @@ The device MUST be the CDSS.</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">entity.role</code></td>
+  <td class="sub"><code class="highlighter-rouge">role</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>derivation | revision | quotation | source | removal <a href="https://www.hl7.org/fhir/stu3/valueset-provenance-entity-role.html">ProvenanceEntityRole (Required)</a></td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">entity.what[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">what[x]</code></td>
      <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whatUri</code> uri <br><code class="highlighter-rouge">whatReference</code> <br> Reference(Any)<br><code class="highlighter-rouge">whatIdentifier</code> <br> Identifier</td>
     <td>Identity of entity</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">entity.agent</code></td>
+  <td class="sub"><code class="highlighter-rouge">agent</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
 	   <td>BackboneElement</td>
     <td>Entity is attributed to this agent</td>
