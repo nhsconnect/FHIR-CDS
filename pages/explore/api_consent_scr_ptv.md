@@ -38,6 +38,8 @@ Authorisation to view the SCR is known as ‘permission to view’, and there ar
 
 Linked to the triage journey by patient and data.
 
+Other consent models are discussed on the [Consent Overview page](api_consent.md).
+
 <table class="spec">
 <thead>
 <tr>
