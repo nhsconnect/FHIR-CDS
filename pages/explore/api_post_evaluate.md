@@ -128,7 +128,8 @@ The EMS MUST NOT send duplicate items.</li>
     <td>CodeableConcept</td>
     <td>The type of user initiating the request, e.g. Professional, Patient, Responsible person. <br>
 Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
-	<td>This MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns. See the <a href="https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_post_evaluate.md#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
+	<td>Thise <a href="/api_post_service_definition.html#usertype-element">usesile persn.<>
+d reiredhttpsrTypeaeeoo> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns. See the <a href="https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_post_evaluate.md#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">userLanguage</code></td>
@@ -162,7 +163,7 @@ Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
     <td><code class="highlighter-rouge">recipientType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
-    <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient). E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.).</td>
+    <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient). E.g. in, atie o healthcare provider (physician, nurse, etc.).</td>
 	<td>This will be the patient (or a related person, if telephoning on behalf of the patient).</td>
  </tr>
 <tr>
@@ -265,5 +266,5 @@ After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTQ1NjY3MDhdfQ==
+eyJoaXN0b3J5IjpbMTIwNTcyMTQ5LC0xOTk0NTY2NzA4XX0=
 -->
