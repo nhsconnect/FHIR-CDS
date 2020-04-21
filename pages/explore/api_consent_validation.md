@@ -207,7 +207,7 @@ Other consent models are discussed on the [Consent Overview page](api_consent.md
   <td><code>0..*</code></td>
   <td>Custodian of the consent</td>
   <td>Provider organisation</td>
-  <td>This SHOULD be populated with the encounter.serviceProvider</td>
+  <td>This SHOULD be populated with the Encounter.serviceProvider</td>
 </tr>
 <tr>
   <td><code>source[x]</code></td>
