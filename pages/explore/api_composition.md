@@ -103,7 +103,7 @@ Detailed implementation guidance for a <code class="highlighter-rouge">Compositi
     <td><code>1..1</code></td>
     <td>code</td>
     <td>preliminary | final | amended | entered-in-error<br>
-CompositionStatus (Required)</td>
+<a href="http://hl7.org/fhir/stu3/valueset-composition-status.html">CompositionStatus</a> (<a href="http://hl7.org/fhir/stu3/terminologies.html#required">Required</a>)</td>
     <td>At the end of the encounter, this will normally be <code>final</code>. This may be amended after the end of the encounter.</td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ FHIR Document Class Codes (Example)</td>
   <td><code>title</code></td>
     <td><code>1..1</code></td>
     <td>string</td>
-    <td></td>
+    <td>Human Readable name/title</td>
     <td></td>
 </tr>
 <tr>

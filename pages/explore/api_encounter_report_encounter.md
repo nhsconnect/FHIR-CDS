@@ -217,7 +217,7 @@ and any third parties answering questions on behalf of the patient (<code>Relate
 <tr>
   <td><code>appointment</code></td>
       <td><code>0..1</code></td>
-    <td>Reference<br>(Appointment)</td>
+    <td>Reference<br><a href="https://developer.nhs.uk/apis/uec-appointments/">(UEC Appointment)</a></td>
   <td>The appointment that scheduled this encounter</td>
 <td>This MAY be populated, but is not expected to be for unscheduled care</td>
  </tr>
