@@ -152,6 +152,9 @@ entries:
         - title: Observation
           url: /api_observation.html
           output: web
+        - title: Practitioner
+          url: /api_practitioner.html
+          output: web
         - title: ProcedureRequest
           url: /api_procedure_request.html
           output: web
