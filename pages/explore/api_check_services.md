@@ -136,13 +136,15 @@ The input parameters for a request, if any. These parameters are defined by the 
 <tr>  
 <th  style="width:15%;">Name</th>  
 <th  style="width:10%;">Cardinality</th>  
-<th  style="width:20%;">Type</th>  
-<th  style="width:40%;">Documentation</th>  
+<th  style="width:15%;">Type</th>  
+<th  style="width:30%;">FHIR Documentation</th>  
+<th  style="width:30%;">CDS Implementation Guidance</th>  
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">services</code></td>  
 <td><code  class="highlighter-rouge">1..1</code></td>  
 <td>Parameters</td>  
+<td></td>
 <td>  
 The output is a Parameters of <code  class="highlighter-rouge">HealthcareService</code> resources and related information which can deliver the patient's health needs.  
 </td>  
@@ -151,18 +153,21 @@ The output is a Parameters of <code  class="highlighter-rouge">HealthcareService
 <td  class="sub"><code  class="highlighter-rouge">parameters</code></td>  
 <td><code  class="highlighter-rouge">0..*</code></td>  
 <td>BackboneElement</td>  
+<td></td>
 <td>Each healthcare service returned MUST have it's own parameter</td>  
 </tr>  
 <tr>  
 <td  class="sub-sub"><code  class="highlighter-rouge">name</code></td>  
 <td><code  class="highlighter-rouge">1..1</code></td>  
 <td>string</td>  
+<td></td>
 <td>This MUST be populated with the serviceId</td>  
 </tr>  
 <tr>  
 <td  class="sub-sub"><code  class="highlighter-rouge">part</code></td>  
 <td><code  class="highlighter-rouge">1..*</code></td>  
 <td>Parameter</td>  
+<td></td>
 <td>Named parts of this parameter. This MUST contain a parameter named <code  class="highlighter-rouge">service</code> which MUST contain the <code  class="highlighter-rouge">HealthcareService</code> resource. <br />  
 This MAY also contain other implementation-specific information about the HealthcareService such as it's distance from the patient's location or capacity.  
 </td>  
@@ -171,6 +176,7 @@ This MAY also contain other implementation-specific information about the Health
 <td><code  class="highlighter-rouge">outputParameters</code></td>  
 <td><code  class="highlighter-rouge">0..*</code></td>  
 <td>Parameters</td>  
+<td></td>
 <td>The output parameters for a request, if any. These parameters are defined by the target Service Directory.  
 </td>  
 </tr>  
@@ -196,12 +202,3 @@ The following errors can be triggered when performing this operation:
   
 * [Authorization failure](api_errorhandling.html)  
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NTAyNTg1OSwtMTcxMDg1OTQxMywtMT
-U0MjgzNTQ5OSwxMzgyNDcwODQxLC01NDUyMjM0OTMsMTEzMTEy
-MDQ4LC0yMDc3OTEzOTg4LC0zMjQyNzA0MDgsLTE0NTU5MzM4OT
-EsLTk0MTc3ODM5MywtMjAwMDUzMDg5MSwxMDE4OTY5NjIxLC0x
-MTI1ODI3MDQ5LC00NjY1MTMxODEsLTIxMjQ1NzM4NTIsMzAxMz
-U3MjA1LC01NTEwMzkzNTcsLTU3MTA1MjQ0MywxOTE3NTI0MDIs
-MTI1NjI1ODA3MF19
--->

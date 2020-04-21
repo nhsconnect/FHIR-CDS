@@ -18,7 +18,7 @@ When an EMS reaches the end of operations, it can hand over the journey to a dif
 The `HealthcareService` is notified of an Encounter Report by the EMS calling the `HealthcareService.endpoint` and passing the Encounter ID.
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET {endpoint}?encounterId={id}
+GET [endpoint]?encounterId=[id]
 </div>
 
 The Encounter Report Receiver (ERR) can also query known endpoints based on patient details such as the NHS Number to find a relevant `Encounter`. The ERR can then fetch the Encounter Report based on the `Encounter`.
@@ -37,7 +37,7 @@ There are a number of supporting resources which are linked from these core reso
 An Encounter Report can be composed by the ERR after receiving just the `Encounter`. 
 
 <div class="alert alert-success" role="alert">
-  ${origin}Encounter?_id=${id}&_include=*&_revinclude=*
+  $[origin]Encounter?_id=$[id]&_include=*&_revinclude=*
 </div>
 
 The server which 'owns' the `Encounter` must be able to resolve a search request for the `List`, `ReferralRequest`, `Observation`, `Condition`, `CarePlan`, `Flag`, `Appointment`, `Composition` or `Task` resources, based on the `Encounter` identifier.    
@@ -86,7 +86,7 @@ The resources presented in the List will follow the guidance in the [Evaluate in
     <li><a href="api_questionnaire.html">Questionnaire</a></li>    
     <li><a href="api_questionnaire_response.html">QuestionnaireResponse</a></li>    
     <li><a href="api_observation.html">Observation</a></li>    
-    <li><a href="api_checkservices_organization.html">Organization</a></li>
+    <li><a href="api_organization.html">Organization</a></li>
     <li><a href="api_practitioner.html">Practitioner</a></li>   
     <li><a href="api_provenance.html">Provenance</a></li>
     <li><a href="api_encounter_report_referralrequest.html">ReferralRequest</a></li>    

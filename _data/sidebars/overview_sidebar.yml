@@ -114,6 +114,7 @@ entries:
     #     - title: ServiceDefinition
     #       url: /api_service_definition.html
     #       output: web  
+    # api_post_evaluate
 
   - title: API Interactions
     output: web
@@ -121,10 +122,16 @@ entries:
     - title: Service Validity
       url: /api_post_isvalid.html
       output: web
-    - title: Select ServiceDefinition
-      url: /api_get_service_definition.html
-      output: web
       subfolders:
+      - title: Select ServiceDefinition
+        output: web
+        subfolderitems:
+        - title: Overview
+          url: /api_get_service_definition.html
+          output: web
+        - title: ServiceDefinition
+          url: /api_service_definition.html
+          output: web
       - title: Evaluate
         output: web
         subfolderitems:
@@ -179,9 +186,6 @@ entries:
         - title: SearchParameter
           url: /api_searchparameter.html
           output: web
-        - title: ServiceDefinition
-          url: /api_service_definition.html
-          output: web
       - title: Check-Services
         output: web
         subfolderitems:
@@ -201,7 +205,7 @@ entries:
           url: /api_checkservices_patient.html
           output: web
         - title: Organization
-          url: /api_checkservices_organization.html
+          url: /api_organization.html
           output: web
       - title: Encounter Report
         output: web
