@@ -135,7 +135,7 @@ Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>Preferred language of the person using the system.</td>
-	<td>This SHOULD be provided by the EMS, based on the user requirements. It SHOULD be populated using the <a href="http://hl7.org/fhir/stu3/valueset-languages.html>FHIR Language ValueSet</a>.</td>
+	<td>This SHOULD be provided by the EMS, based on the user requirements. It SHOULD be populated using the <a href="http://hl7.org/fhir/stu3/valueset-languages.html">FHIR Language ValueSet</a>.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">userTaskContext</code></td>
