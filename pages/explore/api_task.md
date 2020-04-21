@@ -8,14 +8,24 @@ summary: Task resource implementation guidance
 ---
 ​
 {% include custom/search.warnbanner.html %}
-
+<style>
+td.sub{
+    content: '';
+    display: block;
+    width: 285px;
+    background-image: url(images/tbl_vjoin_end.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding-left: 30px; 
+}
+</style>
 ​
 ## Task: Implementation Guidance ##
 ​
 ### Usage ###
-The [Task](http://hl7.org/fhir/STU3/task.html) resource will be populated where there is a specific action for the intended recipient of the encounter report.
-
-Detailed implementation guidance for a `Task` resource within the scope of this implementation guide is given below:  
+The [Task](http://hl7.org/fhir/STU3/task.html) resource will be populated where there is a specific action for the intended recipient of the encounter reportis used to describe an activity that can be performed and track its state of completion.
+​
+Detailed implementation guidance for an `Task` resource within the scope of this implementation guideCDS context is given below:  
 ​
 ​
 <table style="min-width:100%;width:100%">
@@ -166,9 +176,9 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
   <td><code>priority</code></td>
     <td><code>0..1</code></td>
     <td>code</td>
-    <td>routine | urgent | asap | stat<br>
+    <td>routinenormal | urgent | asap | stat<br>
 <a href="http://hl7.org/fhir/STU3/valueset-request-priority.html">RequestPriority</a> (Required)</td>
-<td>This MUST carry the value 'routine'.</td>
+<td>This MUST carry the value 'routinenormal'.</td>
 </tr>
 <tr>
   <td><code>code</code></td>
@@ -190,28 +200,28 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
     <td><code>0..1</code></td>
     <td>Reference(Any)</td>
     <td>What task is acting on</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST NOT be populatedwill be the associated ReferralRequest.</td>
 </tr>
 <tr>
   <td><code>for</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Any)</td>
     <td>Beneficiary of the Task</td>
-<td>This MUST be the associated Patient.</td>
+<td>This MUSTwill be the associated Patient.</td>
 </tr>
 <tr>
   <td><code>context</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Encounter | EpisodeOfCare)</td>
     <td>Healthcare event during which this task originated</td>
-<td>This MUST be the associated Encounter.</td>
+<td>This MUSTwill be the associated Encounter.</td>
 </tr>
 <tr>
   <td><code>executionPeriod</code></td>
     <td><code>0..1</code></td>
     <td>Period</td>
     <td>Start and end time of execution</td>
-<td>This MUST be null at the creation of the encounter report.</td>
+<td>This MUST be null at the creation of the encounter reportNOT be populated.</td>
 </tr>
 <tr>
   <td><code>authoredOn</code></td>
@@ -232,7 +242,7 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
     <td><code>0..1</code></td>
     <td>BackboneElement</td>
     <td>Who is asking for task to be done</td>
-<td>This SHOULD be the initiating user of the Encounter, i.e. the user of the EMS.</td>
+<td>This SHOULDwill be the initiating user of the Encounter, i.e. the user of the EMS.</td>
 </tr>
 <tr>
   <td class="sub"><code>agent</code></td>
@@ -362,3 +372,6 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
 ### note ###
 
 If notes are made about a Task they MUST be displayed by the Encounter Report Receiving System (ERR).
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjMzNjYzMTcyXX0=
+-->
