@@ -160,7 +160,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 <td><code  class="highlighter-rouge">0..1</code></td>
 <td>string</td>
 <td>Extra details about the service that can't be placed in the other fields</td>
-<td>A comma-delimited list of the `ServiceDefinition` ids which are valid for this `HealthcareService`</td>
+<td></td>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">photo</code></td>
@@ -312,7 +312,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzY5NjE4LDIwMDQ3NTM2NDEsLTEwNj
-g1ODMwNzIsLTEyMDAzMzAyOCwtODM1OTAxODY5LC00MjUyMzAy
-OTldfQ==
+eyJoaXN0b3J5IjpbLTQxODIxNDY4LC0xNzM2OTYxOCwyMDA0Nz
+UzNjQxLC0xMDY4NTgzMDcyLC0xMjAwMzMwMjgsLTgzNTkwMTg2
+OSwtNDI1MjMwMjk5XX0=
 -->
