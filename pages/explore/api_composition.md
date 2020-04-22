@@ -206,7 +206,7 @@ CompositionAttestationMode (Required)</td>
     <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>Relationships to other compositions/documents</td>
-    <td>Typically only a replacement, in case of update</td>
+    <td>This should be populated when an encounter is modified after completion.  In this case, new information will be linked to the Encounter, so a new Composition will be needed, which will replace the previous Composition.  The relationship of replacement is captured here</td>
 </tr>
 <tr>
     <td class="sub"><code>code</code></td>
@@ -214,14 +214,14 @@ CompositionAttestationMode (Required)</td>
     <td>code</td>
     <td>replaces | transforms | signs | appends<br>
 DocumentRelationshipType (Required)</td>
-    <td></td>
+    <td>Where populated, this MUST be replaces</td>
 </tr>
 <tr>
     <td class="sub"><code>target[x]</code></td>
     <td><code>1..1</code></td>
     <td></td>
     <td>Target of the relationship</td>
-    <td></td>
+    <td>The Composition generated as a result of the encounter information before modification</td>
 </tr>
 <tr>
     <td class="sub-sub"><code>targetIdentifier</code></td>
