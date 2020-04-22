@@ -35,7 +35,7 @@ POST [base]/$check-services
     
 ## Parameters ##  
   
-The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The Service Directory will return a set of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources as the OUT parameter of the operation.  
+The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The Service Directory will return a set of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources.  
   
     
   
