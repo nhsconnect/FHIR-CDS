@@ -27,7 +27,7 @@ The following HTTP request headers are supported for this interaction:
 
 ## POST Operation  
   
-The [`$check-services`](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1) operation is performed by an HTTP POST command as shown:  
+The `$check-services` operation is performed by an HTTP POST command as shown:  
   
 <div markdown="span" class="alert alert-success" role="alert">
 POST [base]/$check-services  
@@ -35,7 +35,7 @@ POST [base]/$check-services
     
 ## Parameters ##  
   
-The `$check-services` operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The Service Directory will return a set of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources.  
+The [`$check-services`](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1) operation has a number of parameters. The EMS will select appropriate IN parameters to include in the operation. The Service Directory will return a set of [HealthcareService](http://hl7.org/fhir/stu3/healthcareservice.html) resources.  
   
     
   
