@@ -216,7 +216,8 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
     <td>Period</td>
     <td>When the questionnaire is expected to be used</td>
 <td>A null value for  effectivePeriod.start means the start of time.<br/>
-A null value for effectivePeriod.end means the end of time</td>
+A null value for effectivePeriod.end If not populated, then assumed to be open-ended.
+</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">useContext</code></td>
