@@ -16,6 +16,8 @@ summary: Evaluate ServiceDefinition interaction
 This is a [FHIR operation](https://www.hl7.org/fhir/stu3/operations.html) performed by the Encounter Management System (EMS). 
 It is an [evaluate operation](https://www.hl7.org/fhir/stu3/servicedefinition-operations.html#evaluate) performed against the [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).
 
+The `$evaluate` operation in the context of the CDS API Implementation Guide is modelled as [UEC-Evaluate-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-Evaluate-Operation-1).
+
 ### Trigger for Evaluate ServiceDefinition Interaction ###  
 The `ServiceDefinition.trigger` element is of datatype [TriggerDefinition](https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition) and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
 Within the CDS implementation, the Data Event trigger type has been chosen. This means that the EMS's evaluation of a `ServiceDefinition` will be triggered in response to a data-related activity within an implementation, for example by an addition or an update of a record such as a `QuestionnaireResponse` resource.  

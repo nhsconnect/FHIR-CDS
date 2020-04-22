@@ -10,7 +10,9 @@ summary: $check-services implementation guidance
 {% include custom/search.warnbanner.html %}  
 ## Check Services Interaction ##  
   
-This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS and defined at the server level. The `$check-services` operation is performed at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can meet the needs of the patient in the `ReferralRequest`.
+This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS and defined at the server level. The [$check-services](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1) operation is performed at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can meet the needs of the patient in the `ReferralRequest`.
+
+The `$check-services` operation in the context of the CDS API Implementation Guide is modelled as [UEC-CheckServices-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1).
 
   
 ## Request Headers ##  
@@ -25,7 +27,7 @@ The following HTTP request headers are supported for this interaction:
 
 ## POST Operation  
   
-The `$check-services` operation is performed by an HTTP POST command as shown:  
+The [`$check-services`](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1) operation is performed by an HTTP POST command as shown:  
   
 <div markdown="span" class="alert alert-success" role="alert">
 POST [base]/$check-services  

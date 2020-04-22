@@ -53,7 +53,6 @@ Detailed implementation guidance for an `Flag` resource within the scope of this
     <td>Language of the resource content. <br/> 
     <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 	<td></td>
-	<td></td>
 </tr>
 <tr>
   <td><code>text</code></td>
@@ -149,7 +148,7 @@ Detailed implementation guidance for an `Flag` resource within the scope of this
   <td><code>0..1</code></td>
   <td>Period</td>
   <td>End time with inclusive boundary, if not ongoing</td>
-  <td>If the end period is known this SHOULD be populated. If not populated, then assumed to be in the future/open-ended<td></td>
+  <td>If the end period is known this SHOULD be populated. If not populated, then assumed to be in the future/open-ended</td>
 </tr>
 <tr>
   <td><code>encounter</code></td>
