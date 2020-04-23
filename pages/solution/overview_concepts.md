@@ -10,12 +10,10 @@ summary: Solution Concepts
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API. No updates will be made between published versions." %}
 
 
-This guide uses the terms Encounter Management System, and Clinical Decision Support System, Encounter Report Receiving System and Directory Services as set out below. Note that a particular system may act as more than one of theseboth in different implementations.
+This guide uses the terms Encounter Management System, Clinical Decision Support System, Encounter Report Receiving System and Directory Services as set out below. Note that a particular system may act as more than one of these in different implementations.
 
 ## Encounter Management System (EMS) ##
-
-A system used for workflow management and to record, manage and track a patient’'s episode of care through UEC settings. The EMS enables the triage and clinical assessment of patients to determine their health needs and signpost them to the appropriate care settings or support the provision of clinical consultation and treatment; this is expected to be achieved through integration with one or more supporting systems and services. Examples of an EMS include a GP system, an NHS 111 telephony system, or an Emergency Department (ED) system.
-
+A system used for workflow management and to record, manage and track a patient’s episode of care through UEC settings. The EMS enables the triage and clinical assessment of patients to determine their health needs and signpost them to the appropriate care settings or support the provision of clinical consultation and treatment; this is expected to be achieved through integration with one or more supporting systems and services. Examples of an EMS include a GP system, an NHS 111 telephony system, or an Emergency Department (ED) system.
 
 The EMS is responsible for invoking the decision support process on the CDSS, populating the Encounter Report and pushing an Encounter Report notification to the intended ERR.  It is also responsible for posting the ReferralRequest to Directory Services and for receiving the bundle of HealthcareService resources returned. The EMS will typically also manage elements like user authentication, workflow and user interactions.
 
@@ -28,7 +26,7 @@ The Encounter Management System MUST be able to:
 * Initiate the checking of Directory Services for service instances that meet the needs expressed in the ReferralRequest (Create a `$check-services` query)
 * Populate the Encounter Report
 * Notify the intended ERR of the Encounter Report url
-* Respond to Encounter Report searches)
+* Respond to Encounter Report searches
 
 The Encounter Management System MAY:
 
@@ -39,10 +37,9 @@ The Encounter Management System MAY:
 
 
 ## Clinical Decision Support System (CDSS) ##
-
 A health information technology system that is designed to provide clinical and non-clinical UEC personnel undertaking triage or consultation, with clinical decision support (CDS); that is, assistance with clinical decision-making tasks.
 
-The Clinical Decision Support System is responsible for supportmaking clinical decisions, and communicating these to the EMS.
+The Clinical Decision Support System is responsible for supporting clinical decisions, and communicating these to the EMS.
 
 The Clinical Decision Support System MUST be able to:
 
@@ -80,6 +77,3 @@ Directory Services MUST be able to:
 
 * Receive a `$check-services` query
 * Return a bundle of `HealthcareServices` that meet the needs expressed in the `ReferralRequest`
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTc1MzU1MTBdfQ==
--->
