@@ -74,7 +74,7 @@ Each of the systems in scope of the CDS API act as both provider and consumer in
 | Interaction                 | Provider | Consumer |
 | -----------------------     | -------  | ------- |
 | Service Validity            | CDSS | EMS |
-| ServiceDefinition.$evaluate | CDSS | S |
+| ServiceDefinition.$evaluate | CDSS | EMS |
 | Select ServiceDefinition query response | CDSS | EMS |
 | Check Services              | Directory | EMS |
 | Encounter Report query      | EMS | ERR |
@@ -114,6 +114,3 @@ All attributes defined in FHIR have cardinality as part of their definition - a 
 |0:*|Zero to many |Optional|	Repeatable|
 
 Resources created violating the business rules may generate an [HTTP 400 Error INVALID_RESOURCE](api_errorhandling.html#invalid-resource).
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTMwNjY1OTVdfQ==
--->
