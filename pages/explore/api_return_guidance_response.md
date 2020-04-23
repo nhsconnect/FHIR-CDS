@@ -24,7 +24,7 @@ Any triage interaction undertaken by a user needs to end by providing an appropr
 
 - Care advice,
 - A referral to a service, or
-- Redirection to a more appropriate `ServicieDefinition` based on the responses entered by the user
+- Redirection to a more appropriate `ServiceDefinition` based on the responses entered by the user
 
 For example, a user might initially answer questions related to a `ServiceDefinition` for a rash. If their responses suggested potential meningitis, the system should have the ability to switch to a `ServiceDefinition` relating to meningitis so that an appropriate triage can be completed.
 
@@ -66,13 +66,13 @@ The details of the referral carried in the `ReferralRequest` may be displayed to
 This referral may be also used to drive a directory search within the EMS to locate a specific provider, location or service for a patient. 
 <!-- Please note that guidance on how to perform this type of directory search is out of scope of this Implementation Guide. -->
 
-View [CDS implementation guidance for a ReferralRequest](api_evaluate_referral_request.html)  
+View [CDS implementation guidance for a ReferralRequest](api_evaluate_referralrequest.html)  
 
 #### 2. Care Advice ####
 
 Care advice for the patient (or third party) on actions that can be performed now to either assist the patient, or to assist the triage process.
 
-- More than one piece of care advicecare plan may be appropriate for a given triage, for example in a scenario where a patient has multiple injuries requiring care
+- More than one piece of care advice may be appropriate for a given triage, for example in a scenario where a patient has multiple injuries requiring care
 - The result element in `GuidanceResponse` MUST be populated with a RequestGroup resource which will reference at least one CarePlan, and may optionally reference a ReferralRequest
 - Any care advice carried in the one or more CarePlan resources MUST be displayed to the user by the EMS.
 	
@@ -245,10 +245,3 @@ The table below gives additional information relating to outcome scenarios when 
 As users input answers to triage questions, the EMS will relay them to the CDSS within the `QuestionnaireResponse` element.
 
 In response the CDSS will generate assertions, which will be captured in the `GuidanceResponse.outputParameters` element. Within this element, the CDSS MUST also return the `QuestionnaireResponse` resources originally populated by the EMS.  Not all `QuestionnaireResponses` will generate assertions, but any `QuestionnaireResponse` which can generate an assertion MUST generate an assertion.
-
-
-## GuidanceResponse: Implementation Guidance ##
-View [CDS implementation guidance for a GuidanceResponse](api_guidance_response.html).
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3MTExMjk3MV19
--->
