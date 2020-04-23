@@ -35,7 +35,9 @@ The FHIR RESTful API style guide defines the following URL conventions which are
 
 The [Resource URL](http://www.hl7.org/implement/standards/fhir/STU3/http.html) will be in the following format:
 
+<div markdown="span" class="alert alert-success" role="alert">
 	VERB [base]/[type]/[id] {?_format=[mime-type]}
+</div>
 
 Clients and servers constructing URLs MUST conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A) which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
 
@@ -104,7 +106,9 @@ Each of the systems in scope of the CDS API act as both provider and consumer in
 
 ### Cardinality ###
 
-All attributes defined in FHIR have cardinality as part of their definition - a minimum number of required appearances and a maximum number. These numbers specify the number of times the attribute may appear in any instance of the resource type. This specification only defines the following cardinalities: 0..1, 0..*, 1..1, and 1..*. The following table illustrates the cardinality rules:
+{% raw %}
+All attributes defined in FHIR have cardinality as part of their definition - a minimum number of required appearances and a maximum number. These numbers specify the number of times the attribute may appear in any instance of the resource type. This specification only defines the following cardinalities: 1..1, 0..1, 1..* and 0..*. The following table illustrates the cardinality rules:
+{% endraw %}
 
 |Syntax of cardinality|
 |------|

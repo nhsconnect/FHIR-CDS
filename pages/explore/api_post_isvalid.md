@@ -52,8 +52,8 @@ The required ODS code matches the ODS Organization Code of the Patient's General
     </tr>
     <tr>
         <td><code  class="highlighter-rouge">requestId</code></td>
-        <td>id</td>
         <td>0..1</td>
+        <td>id</td>
         <td>An optional client-provided identifier to track the request.</td>
         <td>This SHOULD be populated</td>
         <td>
@@ -63,8 +63,8 @@ The required ODS code matches the ODS Organization Code of the Patient's General
 
     <tr>
         <td><code  class="highlighter-rouge">ODSCode</code></td>
-        <td>Identifier</td>
         <td>1..1</td>
+        <td>Identifier</td>
         <td>
             The validity of the CDSS is based on the current patient's registered GP.
         </td>
@@ -74,8 +74,8 @@ The required ODS code matches the ODS Organization Code of the Patient's General
 
     <tr>
         <td><code  class="highlighter-rouge">evaluateAtDateTime</code></td>
-        <td>datetime</td>
         <td>0..1</td>
+        <td>datetime</td>
         <td>
             The date time for which the evaluation should be carried out
         </td>
@@ -87,8 +87,8 @@ The required ODS code matches the ODS Organization Code of the Patient's General
 
     <tr>
         <td><code  class="highlighter-rouge">dateOfBirth</code></td>
-        <td>datetime</td>
         <td>0..1</td>
+        <td>datetime</td>
         <td>
             Patient's date of birth
         </td>
