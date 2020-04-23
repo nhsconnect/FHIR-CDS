@@ -256,7 +256,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>TriggerDefinition</td>
     <td>"when" the module should be invoked</td>
-	<td>Click <a href="#trigger">here</a> for more information.</td>
+	<td>See below for more information.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">dataRequirement</code></td>
@@ -264,7 +264,7 @@ If no useContext is specified, this means the <code class="highlighter-rouge">Se
     <td>DataRequirement</td>
     <td>What data is used by the module</td>
 <td>This element MUST be populated with the set of machine-processable assertions (see <code class="highlighter-rouge">GuidanceResponse.
-outputParameters</code>) which the CDSS requires in order to render the response fully.<br/>The custom value set for <code>dataRequirement.codeFilter.valueCodeableConcept</code> is http://need.link.here</td>
+outputParameters</code>) which the CDSS requires in order to render the response fully.<br/>The custom value set for <code>dataRequirement.codeFilter.valueCodeableConcept</code> is <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-ObservationCode-1">UEC-ObservationCode-1</a></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">operationDefinition</code></td>
@@ -368,7 +368,7 @@ If populated, this MUST be populated with DataRequirements for the clinical asse
 
 It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.
 
-The custom ValueSet for `trigger.eventData.value` is [http://link.needed.here]().
+The custom ValueSet for `trigger.eventData.value` is [UEC-ObservationValue-1](https://fhir.nhs.uk/STU3/ValueSet/UEC-ObservationValue-1).
 
 
 <!--stackedit_data:
