@@ -23,7 +23,7 @@ The responses to a Questionnaire sent by the CDSS are communicated back by the E
 
 A new Questionnaire resource is to be created each time any element of a Questionnaire is changed.
 
-Detailed implementation guidance for a `Questionnaire` resource in the CDS context is given below:  
+Detailed implementation guidance for a `Questionnaire` resource within the CDS API implementation guide is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -75,7 +75,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated</td>
+	<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -251,6 +251,20 @@ If the content of this element does not match the jurisdiction of the current <c
     <td>Questions and sections within the questionnaire</td>
 <td></td>
  </tr>
+<tr>
+  <td class="sub"><code class="highlighter-rouge">extension (<a href="http://hl7.org/fhir/STU3/extension-questionnaire-supportlink.html">supportlink</a>)</code></td>
+      <td><code class="highlighter-rouge">0..*</code></td>
+ <td>uri</td>
+    <td>A URL that resolves to additional supporting information or guidance related to the question.</td>
+    <td>Information or documents to support the Questionnaire e.g. images for image map questions.</td>
+</tr>
+<tr>
+  <td class="sub"><code class="highlighter-rouge">extension (<a href="http://hl7.org/fhir/STU3/extension-rendering-markdown.html">rendering-markdown</a>)</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+ <td>markdown</td>
+    <td>This is an equivalent of the string on which the extension is sent, but includes additional markdown.</td>
+    <td>Used for question formatting and links to other pages/sites.</td>
+</tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">linkId</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
