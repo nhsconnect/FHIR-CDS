@@ -75,12 +75,10 @@ The table below summarises the HTTP response code, along with the value to expec
 
 Examples of business rules which may cause this error to be thrown when violated are given below:
 
-*#### mandatory fields ####
-
+* mandatory fields
 If one or more mandatory fields are missing then this error will be thrown.
 
-*#### mandatory field values ####
-
+* mandatory field values
 If one or more mandatory fields are missing values then this error will be thrown.
 
 
@@ -134,7 +132,3 @@ It is recommended for any synchronous patterns that the client sets a time out l
 
 If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors. After a limited number of retries (e.g. 3-5) the client MAY assume that the server is unavailable and SHOULD respond appropriately by making it clear to the user that a triage cannot be currently performed. If the EMS is acting as the client (for example, in the `$evaluate` operation), it should present the message or interaction to the user. If the CDSS is acting as the client, then the response will be to the EMS.
 
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NjQ0NzE5N119
--->
