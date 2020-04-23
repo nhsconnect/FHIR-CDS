@@ -11,35 +11,7 @@ summary: Questionnaire resource implementation guidance
 <!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="Questionnaire" fhirlink="[Questionnaire](http://hl7.org/fhir/stu3/questionnaire.html)" content="User Stories" userlink="" %}
 -->
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-td.sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 30px 10px;
-    padding-left: 50px; 
-}
-td.sub-sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 50px 10px;
-    padding-left: 70px;
-}
-</style>
+
 
 ## Questionnaire: Implementation Guidance ##
 
@@ -216,8 +188,7 @@ Detailed implementation guidance for a `Questionnaire` resource in the CDS conte
     <td>Period</td>
     <td>When the questionnaire is expected to be used</td>
 <td>A null value for  effectivePeriod.start means the start of time.<br/>
-A null value for effectivePeriod.end If not populated, then assumed to be open-ended.
-</td>
+A null value for effectivePeriod.end means the end of time</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">useContext</code></td>
@@ -482,6 +453,6 @@ Placeholder -->
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg5NDg4NzI2LC0xMTc5MzA5ODY5LDExMD
-E5MjM0MywtMTEwNzU2Mzc3NywyMDAwNjM5MzA5XX0=
+eyJoaXN0b3J5IjpbLTExNzkzMDk4NjksMTEwMTkyMzQzLC0xMT
+A3NTYzNzc3LDIwMDA2MzkzMDldfQ==
 -->
