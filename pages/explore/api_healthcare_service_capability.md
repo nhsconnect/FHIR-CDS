@@ -99,7 +99,7 @@ The table below gives implementation guidance in relation to the elements within
 <td>Whether this HealthcareService is in active use</td>
 <td>
 SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form part of the query string from the EMS
-
+</code>
 </td>
 </tr>
 <tr>
@@ -312,7 +312,7 @@ SHOULD always be <code  class="highlighter-rouge">true</code>.  This may form pa
 </table>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzY5NjE4LDIwMDQ3NTM2NDEsLTEwNj
-g1ODMwNzIsLTEyMDAzMzAyOCwtODM1OTAxODY5LC00MjUyMzAy
-OTldfQ==
+eyJoaXN0b3J5IjpbLTQxODIxNDY4LC0xNzM2OTYxOCwyMDA0Nz
+UzNjQxLC0xMDY4NTgzMDcyLC0xMjAwMzMwMjgsLTgzNTkwMTg2
+OSwtNDI1MjMwMjk5XX0=
 -->
