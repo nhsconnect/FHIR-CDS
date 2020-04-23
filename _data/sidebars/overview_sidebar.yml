@@ -62,60 +62,6 @@ entries:
     - title: Security
       url: /api_security.html
       output: web
-    #   subfolders:
-    #   - title: Interactions
-    #     output: web
-    #     subfolderitems:
-    #     - title: Select ServiceDefinition
-    #       url: /api_get_service_definition.html
-    #       output: web
-    #     - title: Evaluate ServiceDefinition
-    #       url: /api_post_service_definition.html
-    #       output: web
-    #     - title: Evaluate Response
-    #       url: /api_return_guidance_response.html
-    #       output: web  
-    #   - title: Resources
-    #     output: web
-    #     subfolderitems:
-    # #    - title: ActivityDefinition
-    # #      url: /api_activity_definition.html
-    # #      output: web
-    #     - title: CarePlan
-    #       url: /api_care_plan.html
-    #       output: web
-    #     - title: Condition
-    #       url: /api_condition.html
-    #       output: web          
-    #     - title: GuidanceResponse
-    #       url: /api_guidance_response.html
-    #       output: web
-    #     - title: Observation
-    #       url: /api_observation.html
-    #       output: web
-    #     - title: Provenance
-    #       url: /api_provenance.html
-    #       output: web
-    #     - title: Questionnaire
-    #       url: /api_questionnaire.html
-    #       output: web
-    #     - title: QuestionnaireResponse
-    #       url: /api_questionnaire_response.html
-    #       output: web
-    #     - title: ReferralRequest
-    #       url: /api_referral_request.html
-    #       output: web
-    #     - title: RequestGroup
-    #       url: /api_requestgroup.html
-    #       output: web    
-    #     - title: SearchParameter
-    #       url: /api_searchparameter.html
-    #       output: web
-    #     - title: ServiceDefinition
-    #       url: /api_service_definition.html
-    #       output: web  
-    # api_post_evaluate
-
   - title: API Interactions
     output: web
     folderitems:
@@ -182,9 +128,6 @@ entries:
           output: web
         - title: RequestGroup
           url: /api_requestgroup.html
-          output: web
-        - title: SearchParameter
-          url: /api_searchparameter.html
           output: web
       - title: Check-Services
         output: web
