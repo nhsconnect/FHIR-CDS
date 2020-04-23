@@ -103,11 +103,21 @@ The Encounter Report contains all the resources collected during the `$evaluate`
 
 The aim is for the Encounter Report to be suitable for communicating triage information between any two Care Settings.
 
-The Encounter Report interaction begins after the `$check-services` interaction is complete and a HealthcareService has been identified to handover to.
+### Notifying an ERR ###
+
+The interaction notifying an encounter report is available begins after the `$check-services` interaction is complete and a Healthcare Service has been identified to handover to.
 
 The EMS calls the `HealthcareService.endpoint` with the reference to the `Encounter`.
 
-The ERR requests the Encounter Report from the EMS and the EMS returns it.
+### Retrieving an Encounter Report after being notified ###
+
+The ERR having received the notification, now has the `Encounter.id`. The ERR 
+requests the Encounter Report from the EMS specifying the `Encounter.id` and the EMS returns it.
+
+### Searching for an Encounter Report ###
+
+The ERR can also query known endpoints based on patient details such as the NHS Number to find a relevant Encounter. The ERR can then fetch the Encounter Report based on the `Encounter.id`.
+
 
 ![Diagram showing the Encounter Report interaction](images/solution/encounter-report-interaction.png "Diagram showing the Encounter Report interaction")
 
