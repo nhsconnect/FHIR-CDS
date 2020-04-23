@@ -225,7 +225,7 @@ This MUST NOT be the practitioner.</td>
 
 ## Example Scenario ##
 
-### Answer to Yes, No or Unsure question ###
+### Answer to Yes, No or Don't know question ###
 
 This answer corresponds to the [example for the Questionnaire resource](api_questionnaire.html).
 

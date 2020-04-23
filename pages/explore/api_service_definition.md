@@ -368,7 +368,7 @@ If populated, this MUST be populated with DataRequirements for the clinical asse
 
 It is valid for this not to be populated - a NULL trigger means that the ServiceDefinition does not require any preconditions to be valid.
 
-The custom ValueSet for `trigger.eventData.value` is [UEC-ObservationValue-1](https://fhir.nhs.uk/STU3/ValueSet/UEC-ObservationValue-1).
+The custom ValueSet for `trigger.eventData.value` is [UEC-ObservationCode-1](https://fhir.nhs.uk/STU3/ValueSet/UEC-ObservationCode-1).
 
 
 <!--stackedit_data:
