@@ -4,7 +4,7 @@ keywords: engage, about
 tags: [overview]
 sidebar: overview_sidebar
 permalink: solution_interactions.html
-toc: trufalse
+toc: true
 summary: Solution interactions
 ---
 
@@ -44,10 +44,10 @@ The `GuidanceResponse` carries or references all information relating to the CDS
 
 ![Diagram showing invoke decision support and ServiceDefinition.$evaluate interactions](images/solution/invoke-decision-support.png "Diagram showing invoke decision support and ServiceDefinition.$evaluate interactions")
 
-View the [Evaluate ServiceDefinition](api_post_evaluateservice_definition.html) and [GuidanceResponse](api_guidance_response.html) pagesections for detailed guidance.
+View the [Evaluate ServiceDefinition](api_post_evaluate.html) and [GuidanceResponse](api_guidance_response.html) pages for detailed guidance.
 
 
-### Questionnaire / QuestionnaireResponse #interaction ##
+### Questionnaire / QuestionnaireResponse ###
 
 The CDSS determines the next question to ask and populates a `Questionnaire` resource accordingly.
 A reference to this `Questionnaire` is included within the returned `GuidanceResponse`.
@@ -60,8 +60,6 @@ This interaction is expected to be repeated multiple times during the triage jou
 
 ![Diagram showing Questionnaire/Response interaction](images/solution/questionnaire-interaction.png "Diagram showing Questionnaire/Response interaction")
 
-View the [Get Questionnaire](api_get_questionnaire.html) section for more information.
-
 The CDSS evaluates the returned `QuestionnaireResponse` and uses its content to create an assertion which is carried within an `Observation` resource.
 
 The CDSS determines whether there is enough information to arrive at a result. If not, another `Questionnaire` is populated with the next question to be answered.
@@ -70,7 +68,7 @@ The `GuidanceResponse` returned to the EMS now contains references to both an `O
 
 ![Diagram showing response from ServiceDefinition.$evaluate interaction](images/solution/assertion-interaction.png "Diagram showing response from ServiceDefinition.$evaluate interaction")
 
-View the [Evaluate](api_post_evaluateServiceDefinition](api_post_service_definition.html) and [GuidanceResponse](api_guidance_response.html) pages for detailed guidancesections for more information.
+View the [Evaluate](api_post_evaluate.html) and [GuidanceResponse](api_guidance_response.html) pages for detailed guidance.
 
 
 ### Arriving at a result ###
@@ -114,6 +112,3 @@ The ERR requests the Encounter Report from the EMS and the EMS returns it.
 ![Diagram showing the Encounter Report interaction](images/solution/encounter-report-interaction.png "Diagram showing the Encounter Report interaction")
 
 View the [Encounter Report](api_encounter_report.html) page for detailed guidance.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTIyNzM2NTldfQ==
--->
