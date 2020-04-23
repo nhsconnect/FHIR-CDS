@@ -166,7 +166,7 @@ Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
     <td>CodeableConcept</td>
     <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient).E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.). <br>
 Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td></td>
-	<td>This will be the patient (or a related person, if telephoning on behalf of the patient). See the <a href="https://github.com/uec-triage-journey/FHIR-CDS/blob/release_2.0/pages/explore/api_post_evaluate.md#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
+	<td>This will be the patient (or a related person, if telephoning on behalf of the patient). See the <a href="api_post_evaluate.html#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">recipientLanguage</code></td>
@@ -268,5 +268,5 @@ Failure scenarios and error codes are detailed within the <a href=
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNTcyMTQ5LC0xOTk0NTY2NzA4XX0=
+eyJoaXN0b3J5IjpbLTE5OTQ1NjY3MDhdfQ==
 -->
