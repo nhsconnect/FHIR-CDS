@@ -404,7 +404,7 @@ If the content of this element does not match the jurisdiction of the current <c
 
 ## Example Scenario ##
 
-### Question with Yes, No, Unsure answer options ###
+### Question with Yes, No, Don't know answer options ###
 
 The following answer options are based on the ['yesnodontknow'](https://www.hl7.org/fhir/stu3/valueset-example-yesnodontknow.html) value set.
 
@@ -449,7 +449,7 @@ The following answer options are based on the ['yesnodontknow'](https://www.hl7.
             <valueCoding>
                 <system value="http://hl7.org/fhir/data-absent-reason"></system>
                 <code value="asked"></code>
-                <display value="Unsure"></display>
+                <display value="Don't know"></display>
             </valueCoding>
         </option>
     </item>

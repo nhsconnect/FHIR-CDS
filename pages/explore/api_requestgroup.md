@@ -122,19 +122,6 @@ Detailed implementation guidance for a `RequestGroup` resource in the scope of t
  <tr><td class="sub"><code class="highlighter-rouge">precheckBehavior</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>yes | no ActionPrecheckBehavior  (Required)</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">cardinalityBehavior</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>single | multiple ActionCardinalityBehavior  (Required)</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">resource</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Any)</td><td>The target of the action</td><td>This MAY be populated.</td></tr>
- <tr><td><code class="highlighter-rouge">action</code></td><td><code class="highlighter-rouge">0..*</code></td><td>action</td><td>Sub action</td><td>This MUST NOT be populated.</td></tr>
+ <tr><td class="sub"><code class="highlighter-rouge">action</code></td><td><code class="highlighter-rouge">0..*</code></td><td>action</td><td>Sub action</td><td>This MUST NOT be populated.</td></tr>
 </table>
 
-
-<!-- ## Example Scenario ##
-Placeholder -->
-
-
-
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1MzAzMTg4NCwxNjE2NDM3MTcxLC0xMz
-QzNjU5NTkwXX0=
--->
