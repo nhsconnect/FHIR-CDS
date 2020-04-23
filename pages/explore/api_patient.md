@@ -14,4 +14,4 @@ summary: Patient resource implementation guidance
 ## Patient: Implementation Guidance ##
 
 ### Usage ###
-Within the Clinical Decision Support API implementation, the [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) profile will be used to carry details about an individual receiving care or other health-related services.
+The [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1) profile will be used to carry details about an individual receiving care or other health-related services.
