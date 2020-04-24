@@ -32,7 +32,7 @@ table.spec td code {
 
 Where an encounter cannot fulfil the patient's health need, the patient will contact another service, which may want to use the information gathered in the first encounter.  
 
-Consent to share the encounter report with other services to facilitate direct care of the patient MUST be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object and follow the implementation guidance below. Other consent models are discussed on the [Consent Overview page](api_consent.md).
+Consent to share the encounter report with other services to facilitate direct care of the patient MUST be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object and follow the implementation guidance below. Other consent models are discussed on the [Consent Overview page](api_consent.html).
 
 
 <table class="spec">

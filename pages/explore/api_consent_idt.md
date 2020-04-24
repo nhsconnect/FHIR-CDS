@@ -32,7 +32,7 @@ table.spec td code {
 
 Patient consent of different types can be carried in a [`Consent`](http://hl7.org/fhir/stu3/consent.html) object. 
 
-Pathways Intelligent Data Tool (IDT) supports continuous quality improvement of the triage process through collection of triage information, which can be captured in an Encounter Report. Other consent models are discussed on the [Consent Overview page](api_consent.md).
+Pathways Intelligent Data Tool (IDT) supports continuous quality improvement of the triage process through collection of triage information, which can be captured in an Encounter Report. Other consent models are discussed on the [Consent Overview page](api_consent.html).
 
 Linked to the triage journey by patient and data.
 

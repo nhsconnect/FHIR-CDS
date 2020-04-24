@@ -36,7 +36,7 @@ Some encounters may be validated before action - for example, some ambulance req
 
 Linked to the triage journey by patient and data.
 
-Other consent models are discussed on the [Consent Overview page](api_consent.md).
+Other consent models are discussed on the [Consent Overview page](api_consent.html).
 
 <table class="spec">
 <thead>

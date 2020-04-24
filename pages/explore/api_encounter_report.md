@@ -30,7 +30,7 @@ The base resource for the Encounter Report is the `Encounter`. The `Encounter` w
     
 The `Encounter` has a history of the triage journey as a `List` (linked by `List.encounter`). The `List` is composed of assertions (normally `Observations`), `QuestionnaireResponses` (which will in turn link to `Questionnaires`) and `CarePlans` presented during the journey. If the journey concluded with a `ReferralRequest` for a type of service, this will be part of the `List`.    
     
-There are a number of supporting resources which are linked from these core resources, or are searchable by encounter ([detailed below](#Resources)). Conceptually, these are all part of the Encounter Report as they may be necessary to interpret the patient journey through UEC.    
+There are a number of supporting resources which are linked from these core resources, or are searchable by encounter ([detailed below](#resources-in-the-encounter-report)). Conceptually, these are all part of the Encounter Report as they may be necessary to interpret the patient journey through UEC.    
     
 ## Retrieving the Encounter Report ##
 
@@ -44,7 +44,7 @@ The server which 'owns' the `Encounter` must be able to resolve a search request
 
 
 ## Resources in the Encounter Report ##    
-The resources presented in the List will follow the guidance in the [Evaluate interaction](http://link) exactly, so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:    
+The resources presented in the List will follow the guidance in the [Evaluate interaction](api_post_evaluate.html) exactly, so full details are not re-presented here. Each resource which is expected to be part of a report is identified below:    
     
 <table style="min-width:100%;width:100%">    
 <thead>    

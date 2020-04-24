@@ -86,7 +86,7 @@ The requestId MUST be locally unique</td>
      <td><code class="highlighter-rouge">0..*</code></td>
     <td>Any</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
-   <td>The <a href="api_post_service_definition.html#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
+   <td>The <a href="#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
 <ul>  
 <li>All assertions current for this Encounter (typically Observation resources). This includes all GuidanceResponse outputParameters supplied by any CDSS. Any relevant information taken from other (external) systems SHOULD be included.</li> 
 

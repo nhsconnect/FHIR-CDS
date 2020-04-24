@@ -26,7 +26,7 @@ the [Urgent and Emergency Care Review](https://www.england.nhs.uk/wp-content/upl
 
 - As of V2.0 the scope has been expanded to support 
     - Directory Service lookup for suitable onward referral using the [$check-services interaction](api_check_services.html). 
-    - The creation and sharing of `[Encounter Reports](api_encounter.html) – reports containing details of an individual's triage, either for informational purposes or to support subsequent care.
+    - The creation and sharing of [Encounter Reports](api_encounter.html) – reports containing details of an individual's triage, either for informational purposes or to support subsequent care.
 - The intended users of this guide are primarily developers who are making systems compliant with the guide. The scope of the guide is therefore assets and information intended for a technical audience.
 - This version 2.0.0-alpha of the Implementation Guide is based on initial discovery work, which informs the 2.0.0- alpha version of the Guide. As an alpha-level product, further discovery and development work will increase and modify the scope of the guide in future iterations as use cases are developed.
 - Any resources not specifically mentioned in this Guide will follow the HL7 FHIR STU3 guidance. 

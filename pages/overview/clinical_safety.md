@@ -1,7 +1,7 @@
 ---
 title: Clinical Safety
 keywords: clinical, safety, safety case, hazard, log
-tags: [clinical,safety]
+tags: [clinical, safety]
 sidebar: overview_sidebar
 permalink: clinical_safety.html
 toc: false
