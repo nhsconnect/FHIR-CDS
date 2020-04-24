@@ -9,40 +9,11 @@ summary: Condition resource implementation guidance
 
 {% include custom/search.warnbanner.html %}
 
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-td.sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 30px 10px;
-    padding-left: 50px; 
-}
-td.sub-sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 50px 10px;
-    padding-left: 70px;
-}
-</style>
 
 ## Condition: Implementation Guidance ##
 
 ### Usage ###
-The [Condition](http://hl7.org/fhir/stu3/condition.html) resource will be used to carry details about a clinical condition.
+The [Condition](http://hl7.org/fhir/stu3/condition.html) resource will be used to carry the chief concern and any secondary concerns which reflect the outcome of triage.
 
 Detailed implementation guidance for a `Condition` resource in the CDS context is given below:  
 
@@ -81,7 +52,7 @@ Detailed implementation guidance for a `Condition` resource in the CDS context i
   <td><code class="highlighter-rouge">language</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
-    <td>Language of the resource content. <br/> <A href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a>(Extensible but limited to All Languages)</td>
+    <td>Language of the resource content. <br/> <A href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
 	<td></td>
 </tr>
 <tr>
@@ -96,7 +67,7 @@ Detailed implementation guidance for a `Condition` resource in the CDS context i
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated.</td>
+	<td>This SHOULD NOT be populated.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -115,26 +86,27 @@ Detailed implementation guidance for a `Condition` resource in the CDS context i
 
 
  <tr><td><code class="highlighter-rouge">identifier</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Identifier</td><td>External Ids for this condition</td><td>&nbsp;</td></tr>
- <tr><td><code class="highlighter-rouge">clinicalStatus</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>active | recurrence | inactive | remission | resolved <a href="https://www.hl7.org/fhir/STU3/valueset-condition-clinical.html">Condition Clinical Status Codes (Required)</a></td><td>This MUST be populated with either 'active' or 'recurrence'. No other values are valid.</td></tr>
- <tr><td><code class="highlighter-rouge">verificationStatus</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>provisional | differential | confirmed | refuted | entered-in-error | unknown</td><td>This MUST be populated with either 'provisional', 'differential', 'confirmed' or 'unknown'. No other values are valid.</td></tr>
- <tr><td><code class="highlighter-rouge">category</code></td><td><code class="highlighter-rouge">0..*</code></td><td>CodeableConcept</td><td>problem-list-item | encounter-diagnosis <a href="https://www.hl7.org/fhir/STU3/valueset-condition-category.html">Condition Category Codes (Example)</a></td><td>This MUST NOT be populated.</td></tr>
+ <tr><td><code class="highlighter-rouge">clinicalStatus</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>active | recurrence | inactive | remission | resolved <a href="https://www.hl7.org/fhir/STU3/valueset-condition-clinical.html">Condition Clinical Status Codes  (Required)</a></td><td>This MUST be populated with 'active'. No other values are valid.</td></tr>
+ <tr><td><code class="highlighter-rouge">verificationStatus</code></td><td><code class="highlighter-rouge">0..1</code></td><td>code</td><td>provisional | differential | confirmed | refuted | entered-in-error | unknown</td><td>All values are valid. In practice this is likely to be 'provisional' most of the time.</td></tr>
+ <tr><td><code class="highlighter-rouge">category</code></td><td><code class="highlighter-rouge">0..*</code></td><td>CodeableConcept</td><td>problem-list-item | encounter-diagnosis <a href="https://www.hl7.org/fhir/STU3/valueset-condition-category.html">Condition Category Codes  (Example)</a></td><td>This MUST be populated with the value 'concern' as per the ValueSet | <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-ConditionCategory-1">UEC-ConditionCategory-1</a> (Required)</td></tr>
+
  <tr><td><code class="highlighter-rouge">severity</code></td><td><code class="highlighter-rouge">0..1</code></td><td>CodeableConcept</td><td>Subjective severity of condition <a href="https://www.hl7.org/fhir/STU3/valueset-condition-severity.html">Condition/Diagnosis Severity (Preferred)</a></td><td>This SHOULD be populated where available.</td></tr>
- <tr><td><code class="highlighter-rouge">code</code></td><td><code class="highlighter-rouge">0..1</code></td><td>CodeableConcept</td><td>Identification of the condition, problem or diagnosis <a href="https://www.hl7.org/fhir/STU3/valueset-condition-code.html">Condition/Problem/Diagnosis Codes (Example)</a></td><td>This MUST be populated.</td></tr>
+ <tr><td><code class="highlighter-rouge">code</code></td><td><code class="highlighter-rouge">0..1</code></td><td>CodeableConcept</td><td>Identification of the condition, problem or diagnosis <s><a href="https://www.hl7.org/fhir/STU3/valueset-condition-code.html">Condition/Problem/Diagnosis Codes (Example)</a></s></td><td>This MUST be populated with a relevant SNOMED code. Common Urgent and Emergency Care conditons can be found in the relevant custom ValueSet <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-ConditionCode-1">UEC Condition Code</a>(Example).</td></tr>
  <tr><td><code class="highlighter-rouge">bodySite</code></td><td><code class="highlighter-rouge">0..*</code></td><td>CodeableConcept</td><td>Anatomical location, if relevant <a href="https://www.hl7.org/fhir/STU3/valueset-body-site.html">SNOMED CT Body Structures (Example)</a></td><td>This SHOULD be populated where available.</td></tr>
  <tr><td><code class="highlighter-rouge">subject</code></td><td><code class="highlighter-rouge">1..1</code></td><td>Reference(Patient | Group)</td><td>Who has the condition?</td><td>This MUST be the Patient.</td></tr>
  <tr><td><code class="highlighter-rouge">context</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Encounter | EpisodeOfCare)</td><td>Encounter or episode when condition first asserted</td><td>This MUST be populated with the Encounter.</td></tr>
- <tr><td><code class="highlighter-rouge">onset[x]</code></td><td><code class="highlighter-rouge">0..1</code></td><td>&nbsp;</td><td>Estimated or actual date, date-time, or age</td><td>This SHOULD be populated where available.</td></tr>
- <tr><td><code class="highlighter-rouge">abatement[x]</code></td><td><code class="highlighter-rouge">0..1</code></td><td>&nbsp;</td><td>If/when in resolution/remission</td><td>This SHOULD be populated where available.</td></tr>
- <tr><td><code class="highlighter-rouge">assertedDate</code></td><td><code class="highlighter-rouge">0..1</code></td><td>dateTime</td><td>Date record was believed accurate</td><td>This MUST NOT be populated.</td></tr>
- <tr><td><code class="highlighter-rouge">asserter</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Practitioner | Patient | RelatedPerson)</td><td>Person who asserts this condition</td><td>This MUST NOT be populated.</td></tr>
+ <tr><td><code class="highlighter-rouge">onset[x]</code></td><td><code class="highlighter-rouge">0..1</code></td><td>&nbsp;</td><td>Estimated or actual date, date-time, or age</td><td>This MUST NOT be populated.</td></tr>
+ <tr><td><code class="highlighter-rouge">abatement[x]</code></td><td><code class="highlighter-rouge">0..1</code></td><td>&nbsp;</td><td>If/when in resolution/remission</td><td>This MUST NOT be populated.</td></tr>
+ <tr><td><code class="highlighter-rouge">assertedDate</code></td><td><code class="highlighter-rouge">0..1</code></td><td>dateTime</td><td>Date record was believed accurate</td><td>If populated, SHOULD be the Date of triage result </td></tr>
+ <tr><td><code class="highlighter-rouge">asserter</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Practitioner |  | Patient |  | RelatedPerson)</td><td>Person who asserts this condition</td><td>This MUST NOT be populated.</td></tr>
  <tr><td><code class="highlighter-rouge">stage</code></td><td><code class="highlighter-rouge">0..1</code></td><td>BackboneElement</td><td>Stage/grade, usually assessed formally <br/>
  + Stage SHALL have summary or assessment</td><td></td></tr>
- <tr><td class="sub"><code class="highlighter-rouge">stage.summary</code></td><td><code class="highlighter-rouge">0..1</code></td><td>CodeableConcept</td><td>Simple summary (disease specific) <a href="https://www.hl7.org/fhir/STU3/valueset-condition-stage.html">Condition Stage (Example)</a></td><td>This SHOULD be populated where available.</td></tr>
- <tr><td class="sub"><code class="highlighter-rouge">stage.assessment</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference(ClinicalImpression | DiagnosticReport |
-  Observation)</td><td>Formal record of assessment</td><td>This SHOULD be populated where available.</td></tr>
+ <tr><td class="sub"><code class="highlighter-rouge">summary</code></td><td><code class="highlighter-rouge">0..1</code></td><td>CodeableConcept</td><td>Simple summary (disease specific) <a href="https://www.hl7.org/fhir/STU3/valueset-condition-stage.html">Condition Stage (Example)</a></td><td>This SHOULD be populated where available.</td></tr>
+ <tr><td class="sub"><code class="highlighter-rouge">assessment</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference(ClinicalImpression |  | DiagnosticReport  |
+   Observation)</td><td>Formal record of assessment</td><td>This SHOULD be populated where available.</td></tr>
  <tr><td><code class="highlighter-rouge">evidence</code></td><td><code class="highlighter-rouge">0..*</code></td><td>BackboneElement</td><td>Supporting evidence <br/>+ evidence SHALL have code or details</td><td></td></tr>
- <tr><td class="sub"><code class="highlighter-rouge">evidence.code</code></td><td><code class="highlighter-rouge">0..*</code></td><td>CodeableConcept</td><td>Manifestation/symptom <a href="https://www.hl7.org/fhir/STU3/valueset-manifestation-or-symptom.html">Manifestation and Symptom Codes (Example)</a></td><td>This MUST NOT be populated.</td></tr>
- <tr><td class="sub"><code class="highlighter-rouge">evidence.detail</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference(Any)</td><td>Supporting information found elsewhere</td><td>This MUST be populated with reference to the Observations or QuestionnaireResponses where available.</td></tr>
+ <tr><td class="sub"><code class="highlighter-rouge">code</code></td><td><code class="highlighter-rouge">0..*</code></td><td>CodeableConcept</td><td>Manifestation/symptom <a href="https://www.hl7.org/fhir/STU3/valueset-manifestation-or-symptom.html">Manifestation and Symptom Codes  (Example)</a></td><td>This MUST NOT be populated.</td></tr>
+ <tr><td class="sub"><code class="highlighter-rouge">detail</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Reference(Any)</td><td>Supporting information found elsewhere</td><td>This MUST be populated with reference to the Observations or QuestionnaireResponses where available.</td></tr>
  <tr><td><code class="highlighter-rouge">note</code></td><td><code class="highlighter-rouge">0..*</code></td><td>Annotation</td><td>Additional information about the Condition</td><td>This MUST NOT be populated.</td></tr>
 
 </table>
@@ -148,3 +120,6 @@ Placeholder -->
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQ5MTI5NjM2NiwtMTQ4MTA0NjI2MF19
+-->

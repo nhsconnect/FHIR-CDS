@@ -9,48 +9,19 @@ summary: Provenance implementation guidance
 
 {% include custom/search.warnbanner.html %}
 
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-td.sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 30px 10px;
-    padding-left: 50px; 
-}
-td.sub-sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 50px 10px;
-    padding-left: 70px;
-}
-</style>
 
 
 ## Provenance: Implementation Guidance ##  
 
 ### Usage ###
 
-The [Provenance](http://hl7.org/fhir/stu3/provenance.html) resource is used to carry the relevant history of the triage journey. The full history of the journey will be available in the `GuidanceResponse.outputParameters` and the `ServiceDefinition.$evaluate.inputData`, but the key steps in the journey will be carried as the relevant history. It will be the decision of the CDSS which assertions are most relevant, and only these will be added to the `Provenance` resource. In general, it is expected that positive statements driving the result will be captured as the relevant history. The CDSS should consider whether a particular assertion has value for another clinical user - only if it does, should it be added to the relevant history (and so to the `Provenance` resource).
+The [Provenance](http://hl7.org/fhir/stu3/provenance.html) resource is used to carry the relevant history of the triage journey. The full history of the journey will be available in the `GuidanceResponse.outputParameters` and the `ServiceDefinition.$evaluate.inputData`, but the key steps in the journey will be carried as the `referralRequest.relevantHistory`. It will be the decision of the CDSS which assertions are most relevant, and only these will be added to the `Provenance` resource. In general, it is expected that positive statements driving the result will be captured as the `referralRequest.relevantHistory`. The CDSS should consider whether a particular assertion has value for another clinical user - only if it does, should it be added to the relevant history (and so to the `Provenance` resource).
 
 Each assertion which is relevant to the history of the `ReferralRequest` will be carried as an independent `Provenance` resource, so the relevantHistory may have multiple `Provenance` resources, each identifying a key step.
 
 The target of the `Provenance` will be the assertion. The agent will always be the CDSS, and the entity will be whichever `QuestionnaireResponses` drove the assertion.
 
-The table below details implementation guidance for this resource in the CDS context:
+The table below details implementation guidance for this resource in the scope of this implementation guide:
 
 <table style="min-width:100%;width:100%">
 
@@ -101,7 +72,7 @@ The table below details implementation guidance for this resource in the CDS con
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated</td>
+	<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -174,14 +145,14 @@ The table below details implementation guidance for this resource in the CDS con
 <td></td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.role</code></td>
+  <td class="sub"><code class="highlighter-rouge">role</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>CodeableConcept</td>
     <td>What the agent's role was <a href="https://www.hl7.org/fhir/stu3/valueset-security-role-type.html">SecurityRoleType (Extensible)</a></td>
 <td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.who[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">who[x]</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whoUri</code> uri <br><code class="highlighter-rouge">whoReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
@@ -190,14 +161,14 @@ The table below details implementation guidance for this resource in the CDS con
 The device MUST be the CDSS.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.onBehalfOf[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">onBehalfOf[x]</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td><code class="highlighter-rouge">onBehalfOfUri</code> uri <br><code class="highlighter-rouge">onBehalfOfReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
 <td>MUST be populated with Organization of ServiceProvider</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">agent.relatedAgentType</code></td>
+  <td class="sub"><code class="highlighter-rouge">relatedAgentType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
    <td>CodeableConcept</td>
      <td>Type of relationship between agents <a href="https://www.hl7.org/fhir/stu3/v3/RoleLinkType/vs.html">v3 Code System RoleLinkType (Example)</a></td>
@@ -211,21 +182,21 @@ The device MUST be the CDSS.</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">entity.role</code></td>
+  <td class="sub"><code class="highlighter-rouge">role</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>derivation | revision | quotation | source | removal <a href="https://www.hl7.org/fhir/stu3/valueset-provenance-entity-role.html">ProvenanceEntityRole (Required)</a></td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">entity.what[x]</code></td>
+  <td class="sub"><code class="highlighter-rouge">what[x]</code></td>
      <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whatUri</code> uri <br><code class="highlighter-rouge">whatReference</code> <br> Reference(Any)<br><code class="highlighter-rouge">whatIdentifier</code> <br> Identifier</td>
     <td>Identity of entity</td>
 	<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
-  <td class="sub"><code class="highlighter-rouge">entity.agent</code></td>
+  <td class="sub"><code class="highlighter-rouge">agent</code></td>
       <td><code class="highlighter-rouge">0..*</code></td>
 	   <td>BackboneElement</td>
     <td>Entity is attributed to this agent</td>

@@ -45,8 +45,6 @@ GET [baseUrl]/ServiceDefinition?[searchParameters]</div>
 
 ## Search Parameters and Responses ##
 Detailed guidance relating to [searching for FHIR resources](https://www.hl7.org/fhir/stu3/search.html) can be viewed.
-Two scenarios which may be used to search for a `ServiceDefinition` in the CDS context are outlined below:
-
 
 ### Searching for a ServiceDefinition using a named query ###  
 
@@ -54,21 +52,21 @@ A second scenario would occur when an EMS needs to search for a ServiceDefinitio
 
 The `_query` parameter is used as follows:
 <div markdown="span" class="alert alert-success" role="alert">
-GET [base]/ServiceDefinition?_query=triage&parameters…</div>
+GET [base]/ServiceDefinition?_query=triage&amp;parameters…</div>
 
 The `_query` parameter will define additional named parameters to be used with the named query (*triage*) and these will be used in combination where criteria for all of them must be satisfied.
 
-A CDS MUST implement the additional parameters for a `ServiceDefinition triage query` as outlined below:
+A CDS MUST implement the additional parameters for a `ServiceDefinition` triage query as outlined below:
 
 | Name | Type | Description | Conformance | Path | Matching | Guidance |
 | --- | --- | --- | --- | --- | --- | --- |
 | status	|token|	The status of this service definition	|SHOULD	|ServiceDefinition.status|	Exact|	This will normally be active in live operation.  If not supplied, this will be taken as a NULL value and match to any value.|
 | experimental|	token|	For testing purposes, not real usage	|SHOULD	|ServiceDefinition.experimental	|Exact	|This will normally be false in live operation.  If not supplied, this will be taken as a NULL value and match to any value.|
 |jurisdiction	|token	|Intended jurisdiction for service definition (if applicable)|	SHOULD	|ServiceDefinition.jurisdiction|	Exact|	The geographical jurisdiction for the current triage journey.  If not supplied, this will be taken as a NULL value and match to any value.|
-|searchDateTime|	date|	Point in time at which the search is being executed	|SHOULD	|ServiceDefinition.effectivePeriod	|Exact|	The current date time.  This will match all ServiceDefinitions where the supplied date time falls within the effectivePeriod.|
-|trigger-type-code-value-effective|	token	|A combination token for identifying the trigger where the value of the DataRequirement is a coded value|SHOULD	|ServiceDefinition.trigger.eventData.type ServiceDefinition.trigger.eventData.codeFilter.Path ServiceDefinition.trigger.eventData.codeFilter.value ServiceDefinition.trigger.eventData.dateFilter.path ServiceDefinition.trigger.eventData.dateFilter.value|Partial	|A trigger (expressed as a DataRequirement).  This combination token will specify the type of the target resource (normally Observation), the code of the Observation, and the value of the Observation. This is used where the targeted value is a codeable item. The .value can be of type code, or Coding, or CodeableConcept. The dateFilter path will always be .effective|
-|trigger-type-date|token	|A combination token for identifying the trigger where the value of the DataRequirement is a date value|	COULD|ServiceDefinition.trigger.eventData.type ServiceDefinition.trigger.eventData.dateFilter.path ServiceDefinition.trigger.eventData.dateFilter.value	|Partial|A trigger (expressed as a DataRequirement).  This combination token will specify the type of the target resource (normally Observation), the code of the Observation, and the value of the Observation. This is used where the targeted value is of type dateTime. The value must be a point in time (cannot be a period)|
-|useContext-code-value	|token	|A combination token for identifying the useContext	|SHOULD	|ServiceDefinition.useContext.code ServiceDefinition.useContext.value|Exact	| A useContext code-value pair.  This combination token will specify the type of context (the code) and the value of the context.|
+|searchDateTime|	date|	Point in time at which the search is being executed	|SHOULD	|ServiceDefinition.effectivePeriod	|Exact|	The date and time at the start of the Encounter.periodcurrent date time.  This will match all ServiceDefinitions where the supplied date time falls within the effectivePeriod.|
+|trigger-type-code-value-effective|	token	|A combination token for identifying the trigger where the value of the DataRequirement is a coded value|SHOULD	|ServiceDefinition.trigger.eventData.type <br>ServiceDefinition.trigger.eventData.codeFilter.Path <br>ServiceDefinition.trigger.eventData.codeFilter.value <br>ServiceDefinition.trigger.eventData.dateFilter.path <br>ServiceDefinition.trigger.eventData.dateFilter.value|Partial	|A trigger (expressed as a DataRequirement).  This combination token will specify the type of the target resource (normally Observation), the code of the Observation, and the value of the Observation. This is used where the targeted value is a codeable item. The .value can be of type code, or Coding, or CodeableConcept. The dateFilter path will always be .effective|
+|trigger-type-date|token	|A combination token for identifying the trigger where the value of the DataRequirement is a date value|	COULD|ServiceDefinition.trigger.eventData.type <br>ServiceDefinition.trigger.eventData.dateFilter.path <br>ServiceDefinition.trigger.eventData.dateFilter.value	|Partial|A trigger (expressed as a DataRequirement).  This combination token will specify the type of the target resource (normally Observation), the code of the Observation, and the value of the Observation. This is used where the targeted value is of type dateTime. The value must be a point in time (cannot be a period)|
+|useContext-code-value	|token	|A combination token for identifying the useContext	|SHOULD	|ServiceDefinition.useContext.code <br>ServiceDefinition.useContext.value|Exact	| A useContext code-value pair.  This combination token will specify the type of context (the code) and the value of the context.|
 
 
 
@@ -84,11 +82,8 @@ GET [base]/ServiceDefinition?_query=triage&status=active&experimental=false&juri
 
 The behaviour of the CDS search response differs slightly depending on the parameter.  For most parameters, an exact match is required.  However, for triggers, it is possible that the currently known set of triggers is not an exact match for any single ServiceDefinition.  In this case, the search 
 
-
-
-
-
 ### Search Response ###
+
 
 ### Success ###
 
@@ -107,3 +102,7 @@ The following errors can be triggered when performing this operation:
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTIxOTI0NTgyNiwtMTM2MjY3NzE0OCwxNT
+cyNTA1MjA1LDk0NjYzNjk2NV19
+-->

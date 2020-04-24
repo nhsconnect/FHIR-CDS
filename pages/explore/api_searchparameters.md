@@ -17,14 +17,14 @@ summary: SearchParameter
 
 ### Usage ###
 
-A SearchParameter resource specifies a search parameter that may be used on the RESTful API to search or filter on a resource. 
-The SearchParameter resource declares:
+A `SearchParameter` resource specifies a search parameter that may be used on the RESTful API to search or filter on a resource. 
+The `SearchParameter` resource declares:
 
 - How to refer to the search parameter from a client
 - How the search parameter is to be understood by the server
 - Where in the source resource the parameter matches
 
-Search Parameters are referred to by CapabilityStatement resources via the canonical URL for a search parameter (CapabilityStatement.rest.resource.searchParam.definition)
+Search Parameters are referred to by `CapabilityStatement` resources via the canonical URL for a search parameter (CapabilityStatement.rest.resource.searchParam.definition)
 
 ### Search using *experimental* element ###
 

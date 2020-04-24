@@ -5,7 +5,9 @@ tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_errorhandling.html
 summary: Error handling
+toc: true
 ---
+
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
 
 
@@ -69,14 +71,14 @@ The table below summarises the HTTP response code, along with the value to expec
 |---|---|---|
 |400	|error	|invalid|	INVALID_RESOURCE|
 
+<br>
+
 Examples of business rules which may cause this error to be thrown when violated are given below:
 
-#### mandatory fields ####
-
+* mandatory fields
 If one or more mandatory fields are missing then this error will be thrown.
 
-#### mandatory field values ####
-
+* mandatory field values
 If one or more mandatory fields are missing values then this error will be thrown.
 
 
@@ -129,5 +131,4 @@ Where the request cannot be processed, but the fault is with the receiving syste
 It is recommended for any synchronous patterns that the client sets a time out limit on the response back from the server, appropriate to an interactive process (e.g. around 1000 milliseconds). This timing should take into account any processing or interactions that will be performed, such as the retrieval of externally-held data by the EMS.
 
 If the server does not respond within the time out period, then it is recommended that the client retry the operation. This is to allow for intermittent network errors. After a limited number of retries (e.g. 3-5) the client MAY assume that the server is unavailable and SHOULD respond appropriately by making it clear to the user that a triage cannot be currently performed. If the EMS is acting as the client (for example, in the `$evaluate` operation), it should present the message or interaction to the user. If the CDSS is acting as the client, then the response will be to the EMS.
-
 

@@ -16,7 +16,7 @@ summary: GuidanceResponse implementation guidance
 ## GuidanceResponse: Implementation Guidance ##  
 ### Usage ###
 
-The table below details implementation guidance for the [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource in the CDS context:
+The table below details implementation guidance for the [GuidanceResponse](http://hl7.org/fhir/stu3/guidanceresponse.html) resource in the scope of this implementation guide:
 <table style="min-width:100%;width:100%">
 
 <tr>
@@ -66,7 +66,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated</td>
+	<td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
@@ -101,7 +101,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(ServiceDefinition)</td>
     <td>A reference to a knowledge module.</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical Id</a> of the <code class="highlighter-rouge">ServiceDefinition</code> posted to the CDSS in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">ServiceDefinition</code> posted to the CDSS in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">status</code></td>
@@ -115,14 +115,14 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Patient |<br>Group)</td>
     <td>Patient the request was performed for.</td>
-<td>This MUST be populated with a reference to the `Patient` resource.</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Patient</code> resource.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">context</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Encounter or Episode during which the response was returned.</td>
-<td>This MUST be populated with the Encounter for this journey, from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
+<td>This MUST be populated with the <code class="highlighter-rouge">Encounter</code> for this journey, from the <code class="highlighter-rouge">ServiceDefinition.$evaluate.encounter</code>
 </td>
  </tr>
 <tr>
@@ -199,7 +199,7 @@ This MUST ONLY be populated with a <code class="highlighter-rouge">Questionnaire
 
 This MUST ONLY be populated with a Trigger Definition if the <code class="highlighter-rouge">GuidanceResponse.status</code> is  set to 'Success' and the <code class="highlighter-rouge">GuidanceResponse.result</code> is NOT set to 'Final Result'
 
-This MUST NOT be populated if <code class="highlighter-rouge">GuidanceResponse.status</code> is set to Success and GuidanceResponse.result is set to 'Final Result'
+This MUST NOT be populated if <code class="highlighter-rouge">GuidanceResponse.status</code> is set to Success and <code class="highlighter-rouge">GuidanceResponse.result</code> is set to 'Final Result'
 </td>
  </tr>
 

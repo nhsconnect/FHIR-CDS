@@ -3,7 +3,7 @@ title: Evaluate ServiceDefinition Interaction
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_post_service_definition.html
+permalink: api_post_evaluate.html
 summary: Evaluate ServiceDefinition interaction
 ---
 
@@ -15,6 +15,8 @@ summary: Evaluate ServiceDefinition interaction
 ## Evaluate ServiceDefinition Interaction ##
 This is a [FHIR operation](https://www.hl7.org/fhir/stu3/operations.html) performed by the Encounter Management System (EMS). 
 It is an [evaluate operation](https://www.hl7.org/fhir/stu3/servicedefinition-operations.html#evaluate) performed against the [Service Definition](http://hl7.org/fhir/stu3/servicedefinition.html) resource to request clinical decision support guidance from a selected Clinical Decision Support System (CDSS).
+
+The `$evaluate` operation in the context of the CDS API Implementation Guide is modelled as [UEC-Evaluate-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-Evaluate-Operation-1).
 
 ### Trigger for Evaluate ServiceDefinition Interaction ###  
 The `ServiceDefinition.trigger` element is of datatype [TriggerDefinition](https://www.hl7.org/fhir/stu3/metadatatypes.html#TriggerDefinition) and this structure defines when a knowledge artifact, in this case a `ServiceDefinition`, is expected to be evaluated.  
@@ -81,10 +83,10 @@ The requestId MUST be locally unique</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">inputData</code></td>
-     <td><code class="highlighter-rouge">0..1</code></td>
+     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Any</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
-   <td>The <a href="api_post_service_definition.html#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
+   <td>The <a href="#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
 <ul>  
 <li>All assertions current for this Encounter (typically Observation resources). This includes all GuidanceResponse outputParameters supplied by any CDSS. Any relevant information taken from other (external) systems SHOULD be included.</li> 
 
@@ -126,22 +128,23 @@ The EMS MUST NOT send duplicate items.</li>
     <td><code class="highlighter-rouge">userType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
-    <td>The type of user initiating the request, e.g. patient, healthcare provider, or specific type of healthcare provider (physician, nurse, etc.).</td>
-	<td>The <a href="https://developer.nhs.uk/apis/cds-api-1-0-0/api_post_service_definition.html#usertype-element">userType parameter of note</a> MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns.</td>
+    <td>The type of user initiating the request, e.g. Professional, Patient, Responsible person. <br>
+Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
+	<td>This MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns. See the <a href="#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
     <td><code class="highlighter-rouge">userLanguage</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>Preferred language of the person using the system.</td>
-	<td>This SHOULD be provided by the EMS, based on the user requirements.</td>
+	<td>This SHOULD be provided by the EMS, based on the user requirements. It SHOULD be populated using the <a href="http://hl7.org/fhir/stu3/valueset-languages.html">FHIR Language ValueSet</a>.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">userTaskContext</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The task the system user is performing, e.g. laboratory results review, medication list review, etc. This information can be used to tailor decision support outputs, such as recommended information resources.</td>
-	<td>This SHOULD be provided by the EMS, as it may be used to tailor decision support outputs.</td>
+	<td>This SHOULD be provided by the EMS, as it may be used to tailor decision support outputs. It SHOULD use values from the <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-TaskContext-1">UEC Task Context</a> custom ValueSet.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">receivingOrganization</code></td>
@@ -161,29 +164,30 @@ The EMS MUST NOT send duplicate items.</li>
     <td><code class="highlighter-rouge">recipientType</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
-    <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient). E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.).</td>
-	<td>This will be the patient (or a related person, if telephoning on behalf of the patient).</td>
+    <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient).E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.). <br>
+Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td></td>
+	<td>This will be the patient (or a related person, if telephoning on behalf of the patient). See the <a href="api_post_evaluate.html#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
    <td><code class="highlighter-rouge">recipientLanguage</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
-    <td>Preferred language of the person that will consume the content.</td>
-	<td>This SHOULD be populated by the EMS where known for the recipient and will be populated with the same value as contained in the <code class="highlighter-rouge">userLanguage</code> parameter.</td>
+    <td>Preferred language of the person that will consume the content. </td>
+	<td>This SHOULD be populated by the EMS where known for the recipient and will be populated with the same value as contained in the <code class="highlighter-rouge">userLanguage</code> parameter. It SHOULD be populated using the <a href="http://hl7.org/fhir/stu3/valueset-languages.html>FHIR Language ValueSet"</a>.</td>
   </tr>
 <tr>
    <td><code class="highlighter-rouge">setting</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>The current setting of the request (inpatient, outpatient, etc).</td>
-	<td>This MUST be provided by the EMS to give context for decision support.</td>
+	<td>This MUST be provided by the EMS to give context for decision support. This SHOULD be populated with a value representing the communication channel. Common Urgent and Emergency Care communication channels are captured in the custom ValueSet <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-CommunicationChannel-1">UEC Communication Channel</a>.</td>
   </tr>
 <tr>
     <td><code class="highlighter-rouge">settingContext</code></td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>Additional detail about the setting of the request, if any.</td>
-	<td>This MUST NOT be populated.</td>
+	<td>This MAY be populated.</td>
 </tr>
 </table>
 
@@ -245,10 +249,10 @@ The userType element carries the type of user initiating the request to the CDSS
 
 <a href="api_return_guidance_response.html">View further information about the result of the triage journey</a>.  
 
-## Time out ##  
-It is recommended that the EMS sets a time out limit on the response back from the CDSS, appropriate to an interactive process (e.g. around 1000 milliseconds).  
-If the CDSS does not respond within the time out period, then it is recommended that the EMS retry the `$evaluate` operation. This is to allow for intermittent network errors.  
-After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is unavailable and should respond appropriately to the user.
+### Failure ###
+
+Failure scenarios and error codes are detailed within the <a href=
+"api_errorhandling.html">Error Handling</a> page.
 
 
 
@@ -263,3 +267,6 @@ After a limited number of retries (e.g. 3-5) the EMS may assume that the CDSS is
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE5OTQ1NjY3MDhdfQ==
+-->

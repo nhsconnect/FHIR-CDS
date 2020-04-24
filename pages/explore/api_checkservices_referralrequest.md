@@ -3,7 +3,7 @@ title: ReferralRequest Implementation Guidance
 keywords: referralrequest, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
-permalink: api_referral_request.html
+permalink: api_checkservices_referralrequest.html
 summary: ReferralRequest resource implementation guidance
 ---
 
@@ -11,43 +11,17 @@ summary: ReferralRequest resource implementation guidance
 <!--
 {% include custom/fhir.referencemin.html resource="" userlink="" page="" fhirname="ReferralRequest" fhirlink="[ReferralRequest](http://hl7.org/fhir/stu3/referralrequest.html)" content="User Stories" userlink="" %}
 -->
-<style>
-td.sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    padding-left: 30px; 
-}
-td.sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 30px 10px;
-    padding-left: 50px; 
-}
-td.sub-sub-sub{
-    content: '';
-    display: block;
-    width: 285px;
-    background-image: url(images/tbl_vjoin_end.png);
-    background-repeat: no-repeat;
-    background-position: 50px 10px;
-    padding-left: 70px;
-}
-</style>
+
 
 ## ReferralRequest: Implementation Guidance ##  
 ### Usage ###
 Within the Clinical Decision Support API implementation, the [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1) profile will be used to carry the triage outcome of recommendation to another service for a patient.  
+
 A reference to the relevant `ReferralRequest` will be carried in the `action.resource` element of the `RequestGroup` resource in the form of the [logical id](http://hl7.org/fhir/STU3/resource.html#id) of the `ReferralRequest`.  
 
-`RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) (not self-care) for the patient.  
-Detailed implementation guidance for a `ReferralRequest` resource in the CDS context is given below:  
+
+`RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) for the patient.  
+Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS `$evaluate` interaction is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -63,56 +37,56 @@ Detailed implementation guidance for a `ReferralRequest` resource in the CDS con
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>Logical id of this artifact</td>
-	<td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
+  <td>Note that this will always be populated except when the resource is being created (initial creation call)</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">meta</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Meta</td>
     <td>Metadata about the resource</td>
-		<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">implicitRules</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>uri</td>
     <td>A set of rules under which this content was created</td>
-		<td></td>
+    <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">language</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>code</td>
     <td>Language of the resource content. <br/> <a href="http://hl7.org/fhir/stu3/valueset-languages.html">Common Languages</a> (Extensible but limited to All Languages)</td>
-	<td></td>
+  <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">text</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>Narrative</td>
     <td>Text summary of the resource, for human interpretation</td>
-	<td></td>
+  <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">contained</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Resource</td>
     <td>Contained, inline Resources</td>
-	<td>This should not be populated</td>
+  <td>This SHOULD NOT be populated</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">extension</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Extension</td>
     <td>Additional Content defined by implementations</td>
-	<td></td>
+  <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">modifierExtension</code></td>
     <td><code class="highlighter-rouge">0..*</code></td>
     <td>Extension</td>
     <td>Extensions that cannot be ignored</td>
-	<td></td>
+  <td></td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">identifier</code></td>
@@ -197,7 +171,7 @@ Where populated it MUST be with the <code class="highlighter-rouge">RequestGroup
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with the <a href="http://hl7.org/fhir/STU3/resource.html#id">logical id</a> of the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
@@ -255,7 +229,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
         <td>CodeableConcept</td>
     <td>Reason for referral/transfer of care request <a href="https://www.hl7.org/fhir/stu3/valueset-clinical-findings.html">SNOMED CT Clinical Findings (Example)</a></td>
-<td>This MUST be populated.</td>
+<td>This MUST NOT be populated.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonReference</code></td>
@@ -276,8 +250,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional information to support referral or transfer of care request</td>
-<td>Secondary concerns MUST be carried in this element.<br/>
-This SHOULD be populated and where populated it MUST be a Condition.</td>
+<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity.<br /> Where present, Secondary Concerns MUST be carried in this element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>

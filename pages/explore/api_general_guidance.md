@@ -35,7 +35,9 @@ The FHIR RESTful API style guide defines the following URL conventions which are
 
 The [Resource URL](http://www.hl7.org/implement/standards/fhir/STU3/http.html) will be in the following format:
 
+<div markdown="span" class="alert alert-success" role="alert">
 	VERB [base]/[type]/[id] {?_format=[mime-type]}
+</div>
 
 Clients and servers constructing URLs MUST conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A) which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
 
@@ -61,7 +63,7 @@ For further background, refer to principles of [resource identity as described i
 
 
 ### Referenced Resources ###
-Resources will commonly be referred to as part of other resources (e.g. a `GuidanceResponse` may refer to a `Questionnaire`).  FHIR accepts passing of resources either by reference, or by value (by including in a Bundle).  This guide is agnostic about passing references by reference or by value within a Bundle.  FHIR also accepts passing of resource by value as contained resources - this approach is NOT recommended, but is not explicitly excluded.
+Resources will commonly be referred to as part of other resources (e.g. a `GuidanceResponse` may refer to a `Questionnaire`).  FHIR accepts passing of resources either by reference, or by value (by including in a Bundle).  This guide is agnostic about passing resourferences by reference or by value within a Bundle.  FHIR also accepts passing of resource by value as contained resources - this approach is NOT recommended, but is not explicitly excluded.
 
 The choice of whether to pass resources by reference or by value (as part of Bundle) is left to the provider server.  The consumer MUST be able to accept either.  It will be dependent on the implementation generally as to which option is more appropriate.  In general, passing by value reduces the number of calls between the systems, while passing by reference reduces the size of each communication, and may be more appropriate where resources are referenced in different interactions, but do not change between those interactions (e.g. Questionnaire).
 
@@ -69,15 +71,15 @@ The choice of whether to pass resources by reference or by value (as part of Bun
 ### Content types for consumer and provider systems ###
 
 
-Each of the EMS and CDSS act as both provider and consumer in different interactions:
-
+Each of the systems in scope of the CDS API act as both provider and consumer in different interactions:
 
 | Interaction                 | Provider | Consumer |
 | -----------------------     | -------  | ------- |
-| ServiceDefinition.$evaluate | EMS | CDSS |
+| Service Validity            | CDSS | EMS |
+| ServiceDefinition.$evaluate | CDSS | EMS |
 | Select ServiceDefinition query response | CDSS | EMS |
-| GuidanceResponse            | CDSS | EMS |
-
+| Check Services              | Directory | EMS |
+| Encounter Report query      | EMS | ERR |
 
 ### Consuming systems ###
 
@@ -104,7 +106,9 @@ Each of the EMS and CDSS act as both provider and consumer in different interact
 
 ### Cardinality ###
 
-All attributes defined in FHIR have cardinality as part of their definition - a minimum number of required appearances and a maximum number. These numbers specify the number of times the attribute may appear in any instance of the resource type. This specification only defines the following cardinalities: 0..1, 0..*, 1..1, and 1..*. The following table illustrates the cardinality rules:
+{% raw %}
+All attributes defined in FHIR have cardinality as part of their definition - a minimum number of required appearances and a maximum number. These numbers specify the number of times the attribute may appear in any instance of the resource type. This specification only defines the following cardinalities: 1..1, 0..1, 1..* and 0..*. The following table illustrates the cardinality rules:
+{% endraw %}
 
 |Syntax of cardinality|
 |------|
@@ -113,4 +117,4 @@ All attributes defined in FHIR have cardinality as part of their definition - a 
 |1:*|One to many |Mandatory|	Repeatable|
 |0:*|Zero to many |Optional|	Repeatable|
 
-Resources created violating the business rules may generate an HTTP 400 Error INVALID_RESOURCE.
+Resources created violating the business rules may generate an [HTTP 400 Error INVALID_RESOURCE](api_errorhandling.html#invalid-resource).

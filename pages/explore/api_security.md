@@ -6,6 +6,7 @@ sidebar: ctp_rest_sidebar
 permalink: api_security.html
 summary: Implementation guidance for developers - focusing on security guidance
 ---
+
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
 
 
@@ -25,7 +26,7 @@ This allows the receiving system to verify the details of the sending system and
 
 ### Process ###
 
-- NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory     NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory acting as the NHS Digital Authorisation server.
+- NHS Digital authorised CDSS provider and consumer systems will be created as objects in the directory of the Health and Social Care Directory acting as the NHS Digital Authorisation server.
 - After passing an appropriate NHS Digital assurance process, a consuming system would be placed in an appropriate group created on the Authorisation server in order to be trusted by providers.
 - The Authorisation server will issue a JWT on receiving a consumer system request and the JWT will contain attributes of the consuming system, including the groups it is a member of.
 - The consuming system can then include the JWT in the HTTP authorization header when a request is made to the provider.
@@ -249,3 +250,6 @@ Example 3: Mandatory claim missing – the Authorization header is present and t
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTczODQ0MTgxOSw3MDg3MjI2NV19
+-->

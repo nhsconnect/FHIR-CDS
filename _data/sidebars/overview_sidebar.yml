@@ -1,7 +1,7 @@
 entries:
 - title: Clinical Decision Support API
   product: Clinical Decision Support API
-  version: 1.1.0-alpha
+  version: 2.0-alpha
   levels: one
   folders:
 
@@ -10,8 +10,14 @@ entries:
     folderitems:
     - title: Introduction
       url: /index.html
-      output: web, pdf
+      output: web
       type: homepage
+#    - title: Overview (uec-tech-standards)
+#      url: /
+#      output: web
+    - title: Clinical Safety
+      url: /clinical_safety.html
+      output: web
     - title: Guide Versioning
       url: /overview_guide_versioning.html
       output: web
@@ -31,73 +37,79 @@ entries:
     - title: Interactions
       url: /solution_interactions.html
       output: web 
- # - title: Case Studies
-  #  output: web
-   # folderitems:
+ #   - title: Patient journey (uec-tech-standards)
+ #     url: /
+ #     output: web 
 
-   # - title: Overview
-   #   url: /engage_case_studies.html
-   #   output: web, pdf
-   #   type: homepage
-
-   #   subfolders:
-   #   - title: Case Studies
-   #     output: web
-    #    subfolderitems:
-    #    - title: "Placeholder for case study"
-    #      url: /engage_case_studies.html
-    #      output: web
-  # - title: Use Cases
-  #   output: web
-  #   folderitems:
-  #   - title: Context
-  #     url: /overview_context.html
-  #     output: web
   - title: Development Guidance
     output: web
     folderitems:
     - title: General API Guidance
       url: /api_general_guidance.html
       output: web
-    - title: Pre-requisites
+    - title: Prerequisites
       url: /api_prerequisites.html
       output: web
+#    - title: Developer guidelines (uec-tech-standards)
+#      url: /
+#      output: web
+#    - title: Demo implementation (uec-tech-standards)
+#      url: /
+#      output: web
     - title: Error handling
       url: /api_errorhandling.html
       output: web      
     - title: Security
       url: /api_security.html
       output: web
+  - title: API Interactions
+    output: web
+    folderitems:
+    - title: Service Validity
+      url: /api_post_isvalid.html
+      output: web
       subfolders:
-      - title: Interactions
+      - title: Select ServiceDefinition
         output: web
         subfolderitems:
-        - title: Select ServiceDefinition
+        - title: Overview
           url: /api_get_service_definition.html
           output: web
+        - title: ServiceDefinition
+          url: /api_service_definition.html
+          output: web
+      - title: Evaluate
+        output: web
+        subfolderitems:
         - title: Evaluate ServiceDefinition
-          url: /api_post_service_definition.html
+          url: /api_post_evaluate.html
           output: web
         - title: Evaluate Response
           url: /api_return_guidance_response.html
           output: web  
-      - title: Resources
-        output: web
-        subfolderitems:
-    #    - title: ActivityDefinition
-    #      url: /api_activity_definition.html
-   #       output: web
         - title: CarePlan
           url: /api_care_plan.html
           output: web
         - title: Condition
           url: /api_condition.html
-          output: web          
+          output: web
+        - title: Coordinate
+          url: /api_coordinate.html
+          output: web
+        - title: Encounter
+          url: /api_encounter.html
+          output: web
         - title: GuidanceResponse
           url: /api_guidance_response.html
           output: web
         - title: Observation
           url: /api_observation.html
+          output: web
+        - title: Practitioner
+          url: /api_practitioner.html
+          output: web
+        - title: ProcedureRequest
+          url: /api_procedure_request.html
           output: web
         - title: Provenance
           url: /api_provenance.html
@@ -109,96 +121,103 @@ entries:
           url: /api_questionnaire_response.html
           output: web
         - title: ReferralRequest
-          url: /api_referral_request.html
+          url: /api_evaluate_referralrequest.html
+          output: web
+        - title: RelatedPerson
+          url: /api_related_person.html
           output: web
         - title: RequestGroup
           url: /api_requestgroup.html
-          output: web    
-        - title: SearchParameter
-          url: /api_searchparameter.html
           output: web
-        - title: ServiceDefinition
-          url: /api_service_definition.html
-          output: web  
-     # - title: API Guidance | FHIR&reg;
-      #  output: web
-      #  subfolderitems:
-       # - title: HTTP Response Codes
-       #   url: /resources_api_codes.html
-      #    output: web 
-     #  - title: Reference
-      #    url: /resources_reference.html
-      #    output: web
- # - title: Integrate With Spine
-  #  output: web
-   # folderitems:
-   # - title: Authentication & Authorisation
-    #  url: /integration_authentication_authorisation.html
-    #  output: web
-    #- title: Access Tokens and Audit (JWT)
-    # url: /integration_access_tokens_and_audit_JWT.html
-    #  output: web
-   #- title: Personal Demographic Service
-   #   url: /integration_personal_demographics_service.html
-   #   output: web
-   # - title: Spine Security Proxy
-   #   url: /integration_spine_security_proxy.html
-   #   output: web
+      - title: Check-Services
+        output: web
+        subfolderitems:
+        - title: Overview
+          url: /api_check_services.html
+          output: web
+        - title: HealthcareService
+          url: /api_healthcare_service.html
+          output: web
+        - title: Location
+          url: /api_location.html
+          output: web          
+        - title: ReferralRequest
+          url: /api_checkservices_referralrequest.html
+          output: web
+        - title: Patient
+          url: /api_checkservices_patient.html
+          output: web
+        - title: Organization
+          url: /api_organization.html
+          output: web
+      - title: Encounter Report
+        output: web
+        subfolderitems:
+        - title: Overview
+          url: /api_encounter_report.html
+          output: web
+        - title: Appointment
+          url: /api_appointment.html
+          output: web
+        - title: Composition
+          url: /api_composition.html
+          output: web
+        - title: Consent
+          url: /api_consent.html
+          output: web
+        - title: Consent - Direct Care
+          url: /api_consent_direct_care.html
+          output: web
+        - title: Consent - IDT
+          url: /api_consent_idt.html
+          output: web
+        - title: Consent - PEM
+          url: /api_consent_pem.html
+          output: web
+        - title: Consent - RCS
+          url: /api_consent_rcs.html
+          output: web
+        - title: Consent - SCR PTV
+          url: /api_consent_scr_ptv.html
+          output: web
+        - title: Consent - Validation
+          url: /api_consent_validation.html
+          output: web
+        - title: Encounter
+          url: /api_encounter_report_encounter.html
+          output: web
+        - title: Flag
+          url: /api_flag.html
+          output: web
+        - title: List
+          url: /api_list.html
+          output: web
+        - title: Patient
+          url: /api_patient.html
+          output: web
+        - title: Procedure
+          url: /api_procedure.html
+          output: web
+        - title: ReferralRequest
+          url: /api_encounter_report_referralrequest.html
+          output: web
+        - title: Task
+          url: /api_task.html
+          output: web           
 
-  #- title: Design & Build
-  #  output: web
-  #  folderitems:
-  #  - title: Overview
-  #    url: /design.html
-  #    output: web
-  #  - title: Open Source
-  #    url: /design_open_source.html
-   #   output: web
-   #   subfolders:
-   #   - title: Build
-   #     output: web
-   #     subfolderitems:
-   #       - title: Organization Search
-   #         url: /build_organization_search.html
-   #        output: web
-
-  #- title: Test
-  #  output: web
-  #  folderitems:
-  #  - title: Overview
-  #    url: /test.html
-  #    output: web
- 
-  # - title: Assure
+  # - title: Conformance
   #   output: web
   #   folderitems:
-  #   - title: Overview
-  #     url: /assure.html
+  #   - title: Overview (uec-tech-standards)
+  #     url: /
   #     output: web
-
- # - title: Deploy
- #   output: web
- #   folderitems:
- #   - title: Overview
- #     url: /deploy.html
- #     output: web
 
   - title: Help & Support
     output: web
     folderitems:
- #  - title: Frequently Asked Questions (FAQ)
- #    url: /support_faq.html
- #    output: web
     - title: Communication Channels
       url: /support_communications.html
       output: web
-   #   subfolders:
-   #   - title: Where Else Can I Look?
-   #     output: web
-   #     subfolderitems:
-   #     - title: Additional Information
-   #       url: /support_other.html
-   #       output: web
 
 
 #  - title: Tags
