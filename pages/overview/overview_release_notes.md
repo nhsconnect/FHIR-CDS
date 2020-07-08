@@ -7,19 +7,40 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the versions released in the UEC Digital Integration Programme Implementation Guide
 ---
 
+## 2.0.0-alpha ##
+* The API guide has been expanded in scope to introduce the use of [`Encounter Report`](api_encounter_report.html) functionality.
+* Several resources have been introduced and profiled to support the use of the Encounter Report and related interactions; see the [Resources section](api_encounter_report.html#resources) of the Encounter Report Overview.
+* The API guide has been expanded in scope to introduce the use of [`$Check-Services`](api_check_services.html) interaction. Several resources have been introduced and profiled to support the interaction.
+*	For the [`$evaluate` interaction](api_post_evaluate.html), implementation guidance has been changed for a number of elements to support use of the Encounter Report and reflect maturation of the solution.
+*	Several valuesets have been revised or introduced within the resources used in the `$evaluate` interaction.
+*	Site navigation has been restructured around 'interactions' rather than 'resources'; interactions are ‘[Service validity](api_post_isvalid.html)’ ‘[Select ServiceDefinition](api_get_service_definition.html)’, ‘[Evaluate](api_post_evaluate.html)’, ‘[Check-Services](api_check_services.html)' and ‘[Encounter Report](api_encounter_report.html)’.
+*	The ‘In scope’ and ‘Out of scope’ sections of the ‘[Introduction](index.html)’ page have been updated
+*	Updates have been made to the [Clinical Safety assets](clinical_safety.html), to support V2.0 scope and use cases, including the Clinical Safety Case Report, Clinical Safety Assessment and Clinical Safety Hazard Log.
+*	Additional usage guidance has been issued across the guide to support the use of the specification
+*	The ‘[Concepts](overview_concepts.html)' page has been updated to provide an explanation of the ‘Encounter Report’ 
+*	The ‘[Interactions](solution_interactions.html)' page has been updated to include details of the ‘Check-Services’ and ‘Encounter Report’ interactions
+*	The '[Guide Versioning](overview_guide_versioning.html)' page has been updated to use the current approved Pre-release Labels
+*	Minor amendments have been made to the text and layout to correct spelling and grammar and to add clarity
+
+## 1.1.1-alpha ##
+* Evaluate ServiceDefinition interaction page updated, with cardinality of ‘inputData’ element updated from 0..1 to 0..*.
+* General minor changes to wording and grammar for clarity
+* Added a release specific addendum to the Clinical Safety Case Report and associated Hazard Log
+
 ## 1.1.0-alpha ##
-*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters` 
-*  Added guidance on usage to the `GuidanceResponse` page
-*  Added implementation guidance on a `ProcedureRequest`
+*  `ProcedureRequest` Resource has been deprecated
+*  Added guidance to state that all Assertions are to be `Observation` resources
+*  Removed guidance pages regarding `Encounter` and `Patient` resources as they now follow CareConnect guidance
+*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters`
+*  Added guidance on usage to the GuidanceResponse page
 *  Updated HTTP 500 error with a more descriptive error message
-*  `GuidanceResponse` page updated to show `occurrenceDateTime` represents date/time at which a `GuidanceResponse` is returned to an EMS
+*  GuidanceResponse page updated to show occurrenceDateTime represents date/time at which a `GuidanceResponse` is returned to an EMS
 *  Updated valueset text and links on `ReferralRequest` page
 *  Corrected name of `ServiceDefinition.effective` parameter in API general guidance
 *  Updated API general guidance to align errors more closely to an `OperationOutcome`
-*  Further guidance and updates added on searching for a `ServiceDefinition` using additional customised `SearchParameters` 
-*  Guidance amended regarding the ReferralRequest.intent element
-*  SearchParameters resource page added with examples of SearchParameter definitions
-
+*  Guidance amended regarding the `ReferralRequest.intent` element
+*  SearchParameters resource page added with examples of `SearchParameter` definitions
+*  `RequestGroup` resouce page added
 
 ## 1.0.0-alpha ##
 *  Updated COULD to MAY in guidance
@@ -111,3 +132,7 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 ## 0.1.0-experimental ##
 
 Initial draft of the implementation guide
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjgxNzEyNjc3LC00NTM0NzkzNzUsLTI2MD
+k5Nzc1OF19
+-->
