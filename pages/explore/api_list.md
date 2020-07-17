@@ -15,9 +15,9 @@ summary: List resource implementation guidance
 ### Usage ###
 The [List](http://hl7.org/fhir/STU3/list.html) resource represents a flat, possibly ordered collection of ALL resources populated during the triage journey as part of the [`$evaluate`](api_return_guidance_response.html) interaction. Lists will include references to the resources that make up the list. 
 
-The resources referenced by the `List`resource SHOULD be used by the ERR to build a human readable Encounter Report that meets the needs of the Service Provider.
+The resources referenced by the `List` resource SHOULD be used by the ERR to build a human readable Encounter Report that meets the needs of the Service Provider.
 
-The resources referenced by the `List`resource MAY be used to drive workflow at the receiving Service Provider (e.g. queue management)
+The resources referenced by the `List` resource MAY be used to drive workflow at the receiving Service Provider (e.g. queue management)
 
 Detailed implementation guidance for a `List` resource within the scope of this implementation guide is given below:  
 
@@ -124,14 +124,6 @@ Detailed implementation guidance for a `List` resource within the scope of this 
     <td>What the purpose of this list is<br>
 <a href="https://www.hl7.org/fhir/STU3/valueset-list-example-codes.html">Example Use Codes for List</a> (Example)</td>
 <td>This MUST be populated with <a href="https://www.snomed.org/snomed-ct/five-step-briefing">SNOMED</a> code 225390008 | Triage (procedure) as per CareConnect ValueSet | <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListCode-1">CareConnect-ListCode-1</a></td>
-</tr>
-<tr>
-  <td><code>intent</code></td>
-    <td><code>1..1</code></td>
-    <td>code</td>
-    <td>proposal | plan | order +<br>
-<a href="http://hl7.org/fhir/STU3/valueset-request-intent.html">RequestIntent</a> (Required)</td>
-<td></td>
 </tr>
 <tr>
   <td><code>subject</code></td>

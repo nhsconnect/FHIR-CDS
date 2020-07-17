@@ -1,4 +1,4 @@
-﻿---
+---
 title: Procedure Request Implementation Guidance
 keywords: procedurerequest, rest,
 tags: [rest,fhir,api]
@@ -17,7 +17,7 @@ summary: ProcedureRequest resource implementation guidance
 ### Usage ###
 Within the Clinical Decision Support API implementation, the [ProcedureRequest](http://hl7.org/fhir/stu3/procedurerequest.html) resource will be used to carry the next activity as part of the triage outcome model.
 
-The `ProcedureRequest` is referenced from `ReferralRequest.supportingInfo` and will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which SHOULD be carried out in the referee service to validate or eliminate the chief concern.  
+The `ProcedureRequest` is referenced from `ReferralRequest.supportingInfo` and will be the diagnostic discriminator, or service requirement; diagnostic discriminator is a description of the next procedure which SHOULD be carried out in the referenced service to validate or eliminate the chief concern.  
 
 Detailed implementation guidance for a `ProcedureRequest` within the scope of this implementation guide is given below:  
 
@@ -181,7 +181,7 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional clinical information</td>
-<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.supportinInfo</code></td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.supportingInfo</code></td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specimen</code></td>

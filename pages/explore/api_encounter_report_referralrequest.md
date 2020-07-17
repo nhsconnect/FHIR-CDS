@@ -108,7 +108,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(ReferralRequest)</td>
     <td>Request(s) replaced by this request</td>
-<td>If this Encounter Report is replacing a previously sent Encounter Report with a different <code class="highlighter-rouge">ReferralRequest</code> , this MUST be populated with the previous <code class="highlighter-rouge">ReferralRequest</code> .</td>
+<td>If this Encounter Report is replacing a previously sent Encounter Report with a different <code class="highlighter-rouge">ReferralRequest</code>, this MUST be populated with the previous <code class="highlighter-rouge">ReferralRequest</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">groupIdentifier</code></td>
@@ -164,7 +164,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with a reference to the<code class="highlighter-rouge">Encounter</code>.</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Encounter</code>.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>

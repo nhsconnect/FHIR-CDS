@@ -1,4 +1,4 @@
-﻿---
+---
 title: Evaluate ServiceDefinition Interaction
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
@@ -165,7 +165,7 @@ Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient).E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.). <br>
-Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td></td>
+Binding (required): <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1">UEC Role Code</a></td></td>
 	<td>This will be the patient (or a related person, if telephoning on behalf of the patient). See the <a href="api_post_evaluate.html#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
@@ -173,7 +173,7 @@ Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td></td>
       <td><code class="highlighter-rouge">0..1</code></td>
      <td>CodeableConcept</td>
     <td>Preferred language of the person that will consume the content. </td>
-	<td>This SHOULD be populated by the EMS where known for the recipient and will be populated with the same value as contained in the <code class="highlighter-rouge">userLanguage</code> parameter. It SHOULD be populated using the <a href="http://hl7.org/fhir/stu3/valueset-languages.html>FHIR Language ValueSet"</a>.</td>
+	<td>This SHOULD be populated by the EMS where known for the recipient and will be populated with the same value as contained in the <code class="highlighter-rouge">userLanguage</code> parameter. It SHOULD be populated using the <a href="http://hl7.org/fhir/stu3/valueset-languages.html">FHIR Language ValueSet</a>.</td>
   </tr>
 <tr>
    <td><code class="highlighter-rouge">setting</code></td>
