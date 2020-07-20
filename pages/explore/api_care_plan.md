@@ -109,7 +109,7 @@ The table below gives implementation guidance in relation to the elements within
         <tr>
             <td><code>replaces</code></td>
             <td><code>0..*</code></td>
-            <td>Reference CarePlan)</td>
+            <td>Reference (CarePlan)</td>
             <td>CarePlan replaced by this CarePlan</td>
             <td>&nbsp;</td>
         </tr>
