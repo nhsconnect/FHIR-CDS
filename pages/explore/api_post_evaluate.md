@@ -52,27 +52,26 @@ The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the o
     <th style="width:10%;">Name</th>
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
-      <th style="width:40%;">FHIR Documentation</th>
-   <th style="width:35%;">CDS Implementation Guidance</th>
+    <th style="width:40%;">FHIR Documentation</th>
+    <th style="width:35%;">CDS Implementation Guidance</th>
 </tr>
-
 <tr>
-  <td><code class="highlighter-rouge">requestId</code></td>
+  	<td><code class="highlighter-rouge">requestId</code></td>
     <td><code class="highlighter-rouge">0..1</code></td>
     <td>id</td>
     <td>An optional client-provided identifier to track the request.</td>
-<td>This MUST be populated.<br/>
-Each invocation of the $evaluate method MUST use a unique requestId<br/>
-The requestId MUST be locally unique</td>
+	<td>This MUST be populated.<br/>
+	Each invocation of the $evaluate method MUST use a unique requestId<br/>
+	The requestId MUST be locally unique</td>
 </tr>
 <tr>
    <td><code class="highlighter-rouge">evaluateAtDateTime</code></td>
-   <td><code class="highlighter-rouge">0..1</code></td>
+   	<td><code class="highlighter-rouge">0..1</code></td>
     <td>dateTime</td>
     <td>
 	An optional date and time specifying that the evaluation should be performed as though it was the given date and time. The most direct implication of this is that references to "Now" within the evaluation logic of the module should result in this value. In addition, wherever possible, the data accessed by the module should appear as though it was accessed at this time. The evaluateAtDateTime value may be any time in the past or future, enabling both retrospective and prospective scenarios. If no value is provided, the date and time of the request is assumed.
 	</td>
- <td>This SHOULD NOT be populated.</td>
+    <td>This SHOULD NOT be populated.</td>
 </tr>
 <tr>
     <td><code class="highlighter-rouge">inputParameters</code></td>
@@ -86,15 +85,12 @@ The requestId MUST be locally unique</td>
      <td><code class="highlighter-rouge">0..*</code></td>
     <td>Any</td>
     <td>The input data for the request. These data are defined by the data requirements of the module and typically provide patient-dependent information.</td>
-   <td>The <a href="#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
-<ul>  
-<li>All assertions current for this Encounter (typically Observation resources). This includes all GuidanceResponse outputParameters supplied by any CDSS. Any relevant information taken from other (external) systems SHOULD be included.</li> 
-
-<li>Any QuestionnaireResponse(s) available from the user. Note that this MAY include QuestionnaireResponse(s) which have been amended. These MUST be addressed by the CDSS and the assertions updated.
-The CDSS MUST filter the supplied inputData and disregard any information not relevant for the ServiceDefinition.
-The EMS MUST NOT send duplicate items.</li>
-</ul>
-</td>
+    <td>The <a href="#inputdata-element">inputData element</a> MUST be populated with FHIR resources detailing the current state of the triage journey as follows:  
+	<ul>  
+	<li>All assertions current for this Encounter (typically Observation resources). This includes all GuidanceResponse outputParameters supplied by any CDSS. Any relevant information taken from other (external) systems SHOULD be included.</li> 
+	<li>Any QuestionnaireResponse(s) available from the user. Note that this MAY include QuestionnaireResponse(s) which have been amended. These MUST be addressed by the CDSS and the assertions updated. The CDSS MUST filter the supplied inputData and disregard any information not relevant for the ServiceDefinition. The EMS MUST NOT send duplicate items.</li>
+	</ul>
+	</td>
 </tr> 
 <tr>
   <td><code class="highlighter-rouge">patient</code></td>
@@ -129,7 +125,7 @@ The EMS MUST NOT send duplicate items.</li>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of user initiating the request, e.g. Professional, Patient, Responsible person. <br>
-Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
+	Binding (required): <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1">UEC-RoleCode-1</a></td>
 	<td>This MUST be provided by the EMS. If the <code class="highlighter-rouge">userType</code> is patient, then the CDSS SHOULD use first person pronouns. See the <a href="#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
@@ -165,7 +161,7 @@ Binding (required): https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient).E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.). <br>
-Binding (required): <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1">UEC Role Code</a></td></td>
+	Binding (required): <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1">UEC Role Code</a></td>
 	<td>This will be the patient (or a related person, if telephoning on behalf of the patient). See the <a href="api_post_evaluate.html#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
