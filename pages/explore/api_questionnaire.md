@@ -1,4 +1,4 @@
-﻿---
+---
 title: Questionnaire Implementation Guidance
 keywords: questionnaire, rest,
 tags: [rest,fhir,api]
@@ -258,13 +258,7 @@ If the content of this element does not match the jurisdiction of the current <c
     <td>A URL that resolves to additional supporting information or guidance related to the question.</td>
     <td>Information or documents to support the Questionnaire e.g. images for image map questions.</td>
 </tr>
-<tr>
-  <td class="sub"><code class="highlighter-rouge">extension (<a href="http://hl7.org/fhir/STU3/extension-rendering-markdown.html">rendering-markdown</a>)</code></td>
-      <td><code class="highlighter-rouge">0..1</code></td>
- <td>markdown</td>
-    <td>This is an equivalent of the string on which the extension is sent, but includes additional markdown.</td>
-    <td>Used for question formatting and links to other pages/sites.</td>
-</tr>
+
 <tr>
   <td class="sub"><code class="highlighter-rouge">linkId</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
@@ -300,6 +294,13 @@ If the content of this element does not match the jurisdiction of the current <c
     <td>Primary text for the item</td>
 <td>This could be the name of a section, the text of a question or text content for a display item.</td>
  </tr>
+<tr>
+  <td class="sub-sub"><code class="highlighter-rouge">extension (<a href="http://hl7.org/fhir/STU3/extension-rendering-markdown.html">rendering-markdown</a>)</code></td>
+      <td><code class="highlighter-rouge">0..1</code></td>
+ <td>markdown</td>
+    <td>This is an equivalent of the string on which the extension is sent, but includes additional markdown.</td>
+    <td>Used for question formatting and links to other pages/sites.</td>
+</tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">type</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>

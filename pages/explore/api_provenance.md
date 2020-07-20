@@ -1,4 +1,4 @@
-﻿---
+---
 title: Provenance Implementation Guidance
 keywords: provenance, rest,
 tags: [rest,fhir,api]
@@ -156,7 +156,7 @@ The table below details implementation guidance for this resource in the scope o
       <td><code class="highlighter-rouge">1..1</code></td>
     <td><code class="highlighter-rouge">whoUri</code> uri <br><code class="highlighter-rouge">whoReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
-<td>This MUST be  if reference type <code class="highlighter-rouge">device</code>.
+<td>This MUST be of reference type <code class="highlighter-rouge">Device</code>.
 <br/>
 The device MUST be the CDSS.</td>
  </tr>
@@ -165,7 +165,7 @@ The device MUST be the CDSS.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td><code class="highlighter-rouge">onBehalfOfUri</code> uri <br><code class="highlighter-rouge">onBehalfOfReference</code> <br> Reference<br>(Practitioner |<br>RelatedPerson |<br>Patient |<br>Device |<br>Organization)</td>
     <td>Who participated</td>
-<td>MUST be populated with Organization of ServiceProvider</td>
+<td>This MUST be populated with Organization of ServiceProvider</td>
  </tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">relatedAgentType</code></td>
