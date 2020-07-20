@@ -138,7 +138,7 @@ The table below gives implementation guidance in relation to the elements within
             <td><code>category</code></td>
             <td><code>0..*</code></td>
             <td>CodeableConcept</td>
-            <td>Type of plan <a href="http://hl7.org/fhir/STU3/valueset-care-plan-category.html">Care Plan Category (Example)</td>
+            <td>Type of plan <a href="http://hl7.org/fhir/STU3/valueset-care-plan-category.html">Care Plan Category (Example)</a></td>
 			<td>&nbsp;</td>
         </tr>
         <tr>
