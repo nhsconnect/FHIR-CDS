@@ -161,7 +161,7 @@ The CDSS will return a `GuidanceResponse` resource as the OUT parameter of the o
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>CodeableConcept</td>
     <td>The type of individual that will consume the response content. This may be different from the requesting user type (e.g. if a clinician is getting disease management guidance for provision to a patient).E.g. patient, healthcare provider or specific type of healthcare provider (physician, nurse, etc.). <br>
-	Binding (required): <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1">UEC Role Code</a></td>
+	Binding (required): <a href="https://fhir.nhs.uk/STU3/ValueSet/UEC-RoleCode-1">UEC-RoleCode-1</a></td>
 	<td>This will be the patient (or a related person, if telephoning on behalf of the patient). See the <a href="api_post_evaluate.html#servicedefinition-evaluate-parameters-of-note">element of note</a> section for more details.</td>
  </tr>
 <tr>
