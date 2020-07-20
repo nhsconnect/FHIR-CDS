@@ -1,4 +1,4 @@
-﻿---
+---
 title: ServiceDefinition Implementation Guidance
 keywords: servicedefinition, rest, implementation guidance
 tags: [rest,fhir,api]
@@ -311,7 +311,7 @@ The following json code block shows how to define the useContext in a ServiceDef
     "valueCodeableConcept": {
       "coding": [
         {
-          "system": "http://hl7.org/fhir/valueset-provider-taxonomy.html",
+          "system": "http://nucc.org/provider-taxonomy",
           "code": "103GC0700X",
           "display": "Clinical"
         }

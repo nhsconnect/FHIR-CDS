@@ -1,4 +1,4 @@
-﻿---
+---
 title: Select ServiceDefinition Interaction
 keywords: servicedefinition, rest,
 tags: [rest,fhir,api]
@@ -75,7 +75,7 @@ A CDS MUST implement the additional parameters for a `ServiceDefinition` triage 
 An example of the triage named query is shown below:
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET [base]/ServiceDefinition?_query=triage&status=active&experimental=false&jurisdiction=GB&searchDateTime=2020-01-09&trigger-type-code-value-effective=Observation$code$http://snomed.info/sct|162397003$value$present$effective$2020-01-09T13:13:32&trigger-type-code-value-effective=Observation$code$http://snomed.info/sct|442452003$value$absent$effective$2020-01-09T13:13:32&trigger-type-date=CareConnectPatient$birthDate$2011-09-07&useContext-code-value=user$http://hl7.org/fhir/valueset-provider-taxonomy.html|103GC0700X&useContext-code-value=setting$online
+GET [base]/ServiceDefinition?_query=triage&status=active&experimental=false&jurisdiction=GB&searchDateTime=2020-01-09&trigger-type-code-value-effective=Observation$code$http://snomed.info/sct|162397003$value$present$effective$2020-01-09T13:13:32&trigger-type-code-value-effective=Observation$code$http://snomed.info/sct|442452003$value$absent$effective$2020-01-09T13:13:32&trigger-type-date=CareConnectPatient$birthDate$2011-09-07&useContext-code-value=user$http://nucc.org/provider-taxonomy|103GC0700X&useContext-code-value=setting$online
 </div>
 
 ### Filtering and Partial matches ###
