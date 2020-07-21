@@ -382,7 +382,7 @@ If the content of this element does not match the jurisdiction of the current <c
   <td class="sub-sub"><code class="highlighter-rouge">value[x]</code></td>
       <td><code class="highlighter-rouge">1..1</code></td>
      <td>integer | date |<br>time | string |<br> Coding</td>
-    <td>Value question must have <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
+    <td>Value question must have<br/> <a href="https://www.hl7.org/fhir/stu3/valueset-questionnaire-answers.html">Questionnaire Answer Codes (Example)</a></td>
 <td></td>
  </tr>
 <tr>
