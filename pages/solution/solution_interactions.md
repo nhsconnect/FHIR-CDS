@@ -16,9 +16,9 @@ summary: Solution interactions
 The key interactions for the Clinical Decision Support API are represented in the diagrams below.
 
 
-## Service Validity Interaction
+## Basic Service Validity Interaction
 
-The Service Validity interaction is a custom FHIR Operation performed by an EMS at the start of a triage journey. The `$isValid` operation is intended to check whether the CDSS is able to provide ServiceDefinitions appropriate for the current journey.
+The basic Service Validity interaction is a custom FHIR Operation performed by an EMS at the start of a triage journey. The `$isValid` operation is intended to check whether the CDSS is able to provide ServiceDefinitions appropriate for the current journey.
 
 This is an optional interaction, expected to be used where a CDSS may not be appropriate to all patients. For example where an online consultation system is only relevant to patients whose registered GP has a contractual relationship with the system supplier.
 
@@ -30,6 +30,15 @@ The CDSS will output a boolean - true if the CDSS is valid for this patient at t
 
 View the [Service Validity interaction page](api_post_isvalid.html) for detailed guidance.
 
+## Advanced Service Validity Interaction
+
+As well as the basic Service Validity interaction as above, a CDSS can also publish a more advanced validity statement to cover hours of service, and patient eligibility criteria.  The CDSS does this by publishing a `HealthcareService` resource which details the hours of service for the CDSS and any eligibility criteria of the CDSS.  The `HealthcareService` resource is published with an identifier that specifies the system supplier, and a linked `Organization` identifier that specifies the care provider (commissioner of the service).
+
+This interaction is intended to support use cases where the care provider only wants a given CDSS to be used during particular hours of service (for example, during practice opening hours) or for particular patients (e.g. paediatric care)
+
+The Advanced Service Validity interaction is implemented as a standard FHIR `query` operation performed by an EMS at the start of a triage journey. This is an optional interaction, expected to be used where a CDSS may not be appropriate in all circumstances. 
+
+View the [HealthcareService resource page](api_healthcare_service_capability.html) for detailed guidance.
 
 
 ## Invoke ServiceDefinition.$evaluate and GuidanceResponse ##
