@@ -190,7 +190,7 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
     <td><code>0..1</code></td>
     <td>Reference(Any)</td>
     <td>What task is acting on</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST NOT be populated.  **May need to be allowed for reference to Encounter Report Bundle (could use input instead**</td>
 </tr>
 <tr>
   <td><code>for</code></td>
@@ -338,21 +338,21 @@ Detailed implementation guidance for a `Task` resource within the scope of this 
     <td><code>0..*</code></td>
     <td>BackboneElement</td>
     <td>Information produced as part of task</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST NOT be populated. **Will need to be allowed for response to validation**</td>
 </tr>
 <tr>
   <td class="sub"><code>type</code></td>
     <td><code>1..1</code></td>
     <td>CodeableConcept</td>
     <td>Label for output</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST NOT be populated. **Will need to be allowed for response to validation**</td>
 </tr>
 <tr>
   <td class="sub"><code>value[x]</code></td>
     <td><code>1..1</code></td>
     <td><a href="http://hl7.org/fhir/STU3/datatypes.html#open">*</a></td>
     <td>Result of output</td>
-<td>This MUST NOT be populated.</td>
+<td>This MUST NOT be populated. **Will need to be allowed for response to validation**</td>
 </tr>
 </table>
 
