@@ -1207,4 +1207,79 @@ div.box.box1 {
 .s_link:hover { 
     fill: #4F81BD;
     fill-opacity: 0.2;
-} 
+}
+
+
+.tabHeading {
+	background-color: #4b9ff1;
+	padding: 5px 10px 5px 10px;
+	color: white;
+}
+
+.tabHeading.tabActive {
+    background-color: #005eb8;
+    padding: 5px 10px 5px 10px;
+    color: white;
+}
+
+.tabBodies {
+    border: 2px solid #005eb8;
+    padding: 20px;
+	margin-top: 2px;
+}
+
+.tabBodies code {
+	font-size: 0.8em;
+    display: contents;
+    white-space: pre-wrap;
+	background-color: white;
+}
+
+.tabPanel {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#subImageContainer {
+	width: 100%;
+	height: 440px;
+}
+
+img#sub-background {
+    height: 430px;
+    position: absolute;
+    z-index: 1;
+    padding: 0px;
+    margin: 0px;
+}
+
+img.overlay {
+	display: none;
+    position: absolute;
+    height: 430px;
+    z-index: 2;
+    padding: 0px;
+    margin: 0px;
+}
+
+#subscriptionRuleTable {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	width: 100%;
+}
+
+.subTableHeading th {
+	width: 200px;
+}
+
+.pc-ccg-head { background-color: #75e375; }
+.gp-ccg-head { background-color: #ff9c9c; }
+.gp-gp-head { background-color: #598ceb; }
+.pc-la-head { background-color: #e16ce1; }
+.hss-head { background-color: #eaea95; }
+
+.subTableHeading button {
+    font-size: small;
+    margin-bottom: 5px;
+}
