@@ -23,21 +23,16 @@ The `MessageHeader` resource contains the `messageEventType` extension which rep
 ## Examples
 
 <div class="tabPanel">
-
 	<div class="tabHeadings">
-		<span class="tabHeading" id="new">New</span>
+		<span class="tabHeading tabActive" id="new">New</span>
 		<span class="tabHeading" id="update">Update</span>
 	</div>
-	
 	<div class="tabBodies">
-	
 		<div class="tabBody" id="newBody" markdown="span">
 			```{% include_relative examples/999-to-111-validation-new.xml %}```
 		</div>
-		
 		<div class="tabBody" id="updateBody" markdown="span">
 			```{% include_relative examples/999-to-111-validation-update.xml %}```
 		</div>
-		
 	</div>
 </div>
