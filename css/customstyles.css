@@ -1209,6 +1209,10 @@ div.box.box1 {
     fill-opacity: 0.2;
 }
 
+.tabPanel {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
 .tabHeading {
 	background-color: #4b9ff1;
@@ -1233,11 +1237,6 @@ div.box.box1 {
     display: contents;
     white-space: pre-wrap;
 	background-color: white;
-}
-
-.tabPanel {
-	margin-top: 20px;
-	margin-bottom: 20px;
 }
 
 #subImageContainer {
