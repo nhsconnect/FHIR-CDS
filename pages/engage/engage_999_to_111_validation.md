@@ -11,6 +11,10 @@ summary: "An example of a 999 service sending a validation request to a 111 serv
 
 The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references an `Encounter` resource as the focus of the event message.
 
+<div style="text-align:center; margin-bottom:20px" >
+	<a href="images/engage/999-to-111/uec-flow-999-to-111.png" target="_blank"><img src="images/engage/999-to-111/uec-flow-999-to-111.png"></a>
+</div>
+
 ## Event Life Cycle ##
 
 The `MessageHeader` resource contains the `messageEventType` extension which represents the action the event message represents at a resource level, The `messageEventType` extension shall contain values as per the table below:
