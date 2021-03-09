@@ -24,6 +24,30 @@ The `MessageHeader` resource contains the `messageEventType` extension which rep
 | new |  The `new` value must be used when the Validation request is being shared for the first time. |
 | update | The `update` value must be used when the Validation request and supporting resources have previously been shared, but have been updated and the updated resources are being shared. |
 
+### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
+
+The Bundle resource is the container for the event message and SHALL conform to the [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle) FHIR profile.
+
+| Resource Cardinality | 1..1 |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| type | 1..1 | Fixed value: `message` |
+
+
+### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
+
+The MessageHeader resource included as part of the event message SHALL conform to the [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1) constrained FHIR profile and the additional population guidance as per the table below:
+
+| Resource Cardinality | 1..1 |
+
+| Element | Cardinality | Additional Guidance |
+| --- | --- | --- |
+| meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. |
+| extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. |
+| event | 1..1 | Fixed Value: referral-1 (Referral) |
+| focus | 1..1 | This will reference the `CareConnect-Encounter-1` resource. |
+
 ## Examples
 
 <div class="tabPanel">
