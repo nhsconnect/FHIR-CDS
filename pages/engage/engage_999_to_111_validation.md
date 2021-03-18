@@ -129,6 +129,8 @@ The Location resources included as part of the event message SHALL conform to th
 
 ### [CareConnect-Flag-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1)
 
+### [CareConnect-ProcedureRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ProcedureRequest-1)
+
 ## Examples
 
 <div class="tabPanel">
