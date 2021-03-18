@@ -1,10 +1,10 @@
 ---
-title: "999 sends validation request to 111 service"
+title: "111 sends validation response to 999 service"
 keywords: user stories, epics, scenarios, nhsnumber
 tags: [foundations,userstories, epics, scenarios]
 sidebar: engage_sidebar
-permalink: engage_999_to_111_validation.html
-summary: "An example of a 999 service sending a validation request to a 111 service"
+permalink: engage_111_to_999_validation_response.html
+summary: "An example of a 111 service sending a validation response to a 999 service"
 ---
 
 ## Bundle structure
@@ -12,7 +12,7 @@ summary: "An example of a 999 service sending a validation request to a 111 serv
 The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references an `Encounter` resource as the focus of the event message.
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/engage/999-to-111/uec-flows-999-to-111-validation.png" target="_blank"><img src="images/engage/999-to-111/uec-flows-999-to-111-validation.png"></a>
+	<a href="images/engage/999-to-111/uec-flows-111-to-999-val-resp.png" target="_blank"><img src="images/engage/999-to-111/uec-flows-111-to-999-val-resp.png"></a>
 </div>
 
 ## Event Life Cycle ##
@@ -70,25 +70,6 @@ The patient resource included in the event message SHALL conform to the [CareCon
 | name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice |
 | birthDate | 1..1 | The patients date of birth |
 
-### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
-
-The Practitioner resources included as part of the event message SHALL conform to the [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1) constrained FHIR profile.
-
-| Resource Cardinality | 0..* |
-
-### [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1)
-
-The PractitionerRole resources included as part of the event message SHALL conform to the [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1) constrained FHIR profile.
-
-| Resource Cardinality | 0..* |
-
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| organization | 1..1 | Reference to the Organization where the practitioner performs this role |
-| practitioner | 1..1 | Reference to the Practitioner who this role relates to |
-| code | 1..* | The practitioner role SHALL included a value from the [ProfessionalType-1](https://fhir.nhs.uk/STU3/ValueSet/ProfessionalType-1) value set. The PractitionerRole.code should also include the SDS Job Role name where available. |
-| specialty | 1..1 | PractitionerRole.specialty SHALL use a value from [Specialty-1](https://fhir.nhs.uk/STU3/ValueSet/Specialty-1) value set |
-
 ### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
 
 The Encounter resource included as part of the event message SHALL conform to the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) constrained FHIR profile and the additional population guidance as per the table below:
@@ -117,17 +98,11 @@ The Location resources included as part of the event message SHALL conform to th
 
 ### [HL7 Parameters](http://hl7.org/fhir/stu3/parameters.html)
 
-### [CareConnect-List-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-List-1)
-
-### [CareConnect-RelatedPerson-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1)
-
-### [CareConnect-Questionnaire-1](http://hl7.org/fhir/stu3/questionnaire.html)
-
-### [CareConnect-QuestionnaireResponse-1](http://hl7.org/fhir/stu3/questionnaireresponse.html)
-
 ### [CareConnect-Observation-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1)
 
-### [CareConnect-Flag-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1)
+### [CareConnect-Condition-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1)
+
+
 
 ## Examples
 
@@ -140,7 +115,7 @@ The Location resources included as part of the event message SHALL conform to th
 	<div class="tabBodies">
 	
 		<div class="tabBody" id="newBody" markdown="span">
-			```{% include_relative examples/999-to-111-validation-new.xml %}```
+			```{% include_relative examples/111-to-999-validation-response-new.xml %}```
 		</div>
 		
 	</div>
