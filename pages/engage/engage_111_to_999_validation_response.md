@@ -115,6 +115,8 @@ The Location resources included as part of the event message SHALL conform to th
 
 ### [CareConnect-Task-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1)
 
+https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value added for Validation Completed Response
+
 ### [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1)
 
 ### [HL7 Parameters](http://hl7.org/fhir/stu3/parameters.html)
