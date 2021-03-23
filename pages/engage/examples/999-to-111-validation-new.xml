@@ -10,6 +10,7 @@
 			<MessageHeader>
 				<id value="9d2e2cd9-ffe1-49c7-be43-f36e30564d3f"/>
 				<meta>
+					<versionId value="v2"/>
 					<lastUpdated value="2021-02-19T15:00:33+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
@@ -28,6 +29,10 @@
 					<display value="Referral"/>
 				</event>
 				<timestamp value="2021-02-19T11:00:00+00:00"/>
+				<sender><!-- 999 service -->
+					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ggb4hj"/>
+					<display value="999 Service"/>
+				</sender>
 				<source><!-- 999 service -->
 					<name value="999 Call centre"/>
 					<contact>
