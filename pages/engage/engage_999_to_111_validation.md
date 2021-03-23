@@ -47,6 +47,9 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | event | 1..1 | Fixed Value: referral-1 (Referral) |
 | focus | 1..1 | This will reference the `CareConnect-Encounter-1` resource. |
 
+Intended service name
+Intended service code
+
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
 All Organization resources included in the bundle SHALL conform to the [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1) constrained FHIR profile and the additional population guidance as per the table below:
@@ -101,6 +104,8 @@ The Encounter resource included as part of the event message SHALL conform to th
 | location | 0..1 | Reference to the location at which the encounter took place |
 | subject | 1..1 | A reference to the patient resource representing the subject of this event |
 
+Encounter.identifier (journeyID)
+
 ### [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
 
 The Location resources included as part of the event message SHALL conform to the [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1) constrained FHIR profile and the additional population guidance as per the table below:
@@ -113,9 +118,15 @@ The Location resources included as part of the event message SHALL conform to th
 
 ### [CareConnect-Task-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1)
 
+Task.Status
+
+Next activity
 https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value added for Validation Completed Response
 
 ### [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1)
+
+ReferralRequest.reasoncode - record the primary reason of patients condition
+ReferralRequest.supportingInfo
 
 ### [CareConnect-ProcedureRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ProcedureRequest-1)
 

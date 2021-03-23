@@ -53,7 +53,6 @@
 				<id value="2d920d4a-1434-445d-a8a0-8ol6688768de"/>
 				<!-- <meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1"/>
-May need to publish a custom task resource for UEC
 				</meta> -->
 				<status value="requested"/>
 				<intent value="order"/> 
@@ -62,7 +61,7 @@ May need to publish a custom task resource for UEC
 					<text value="Validation"/> <!-- Potentially make it a code system, current profile does not support this -->
 				</code>
 				<description value="Referred for validation"/>
-			    <for> 
+			    <for>
 					<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/>
 			    </for>
 		        <context> 
@@ -113,8 +112,11 @@ May need to publish a custom task resource for UEC
 				</occurrencePeriod> 
 				<authoredOn value="2021-02-19T11:25:00+00:00"/>
 				<description value="In the past 2 years has had 6 instances of r) sided Otitis media."/>
-				<supportingInfo>
+				<supportingInfo><!-- Parameters -->
 					<reference value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18ssc3"/>				
+				</supportingInfo>
+				<supportingInfo><!-- ProcedureRequest -->
+					<reference value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>				
 				</supportingInfo>
 			</ReferralRequest> 
 		</resource>
@@ -125,16 +127,60 @@ May need to publish a custom task resource for UEC
 			<Parameters>
 			<id value="e3177167-40fc-4f1a-80f2-a2f17f18ssc3"/> 
 				<parameter> 
-					<name value="SG"/> 
-					<valueString value="SG1000:Abdominal or Flank Injury, Blunt"/>
+					<name value="SG"/>
+					<part> 
+						<name value="SG1000"/>
+						<valueString value="Abdominal or Flank Injury, Blunt"/>
+					</part> 
 				</parameter>
 				<parameter> 
-					<name value="SD"/> 
-					<valueString value="SD4033:AMB new/worsening breathlessness"/> 
+					<name value="SD"/> 					
+					<part> 
+						<name value="SD4033"/>
+						<valueString value="AMB new/worsening breathlessness"/> 
+					</part>
+				</parameter>
+				<parameter> 
+					<name value="DX"/> 					
+					<part> 
+						<name value="Dx012"/>
+						<valueString value="Emergency Ambulance Response (Category 3)"/> 
+					</part>
 				</parameter> 
 			</Parameters>
 		</resource>
-	</entry> 
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>
+		<resource>
+			<ProcedureRequest>
+			<id value="e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>
+			<status value="active"/> 
+			<intent value="instance-order"/> 
+			<priority value="routine"/> 
+			<code> 
+				<coding> 
+					<system value="http://snomed.info/sct"/> 
+					<code value="2318008"/> 
+				</coding> 
+				<text value="Anesthesia for cast procedure on forearm, wrist or hand"/> 
+		    </code> 
+		    <subject> 
+				<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/> 
+			</subject> 
+			<occurrenceDateTime value="2021-02-19T11:25:00+00:00"/>
+			<reasonCode> 
+				<text value="Check for arm problems"/> 
+			</reasonCode> 
+			<bodySite> 
+				<coding> 
+					<display value="Right arm"/> 
+				</coding> 
+				<text value="Right arm"/> 
+			</bodySite>
+			</ProcedureRequest> 
+		</resource>
+	</entry>
 	<entry>
 		<fullUrl value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/>
 		<resource>
