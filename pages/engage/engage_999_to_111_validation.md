@@ -40,19 +40,19 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 | Resource Cardinality | 1..1 |
 
-| Element | Cardinality | Additional Guidance | Mandatory/Required/Optional | FHIR Target |
+| Element | Cardinality | Additional Guidance | FHIR Target |
 | --- | --- | --- | --- | --- | --- |
-| meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. | M | meta.lastUpdated |
-| meta.versionId | 0..1 | The version id of the message being sent | O | meta.versionId |
-| extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. | M | extension.valueCodeableConcept.coding.code |
-| event | 1..1 | Fixed Value: referral-1 (Referral) | M | event.code |
-| focus | 1..1 | This will reference the `CareConnect-Encounter-1` resource. | M | focus.reference |
-| 999 Service Requesting the validation | 1..1 | | M | sender.reference |
-| 999 Service endpoint details | 1..1 | | M | source.endpoint |
-| 999 Service CAD system | 1..1 | | M | sender.reference |
-| 999 CAD version | 1..1 | | M | sender.reference |
-| 999 Service CDSS system | 1..1 | | M | sender.reference |
-| 999 CDSS version | 1..1 | | M | sender.reference |
+| meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. | meta.lastUpdated |
+| meta.versionId | 0..1 | The version id of the message being sent | meta.versionId |
+| extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. | extension.valueCodeableConcept.coding.code |
+| event | 1..1 | Fixed Value: referral-1 (Referral) | event.code |
+| focus | 1..1 | This will reference the `CareConnect-Encounter-1` resource. | focus.reference |
+| 999 Service Requesting the validation | 1..1 | | sender.reference |
+| 999 Service endpoint details | 1..1 | | source.endpoint |
+| 999 Service CAD system | 1..1 | | sender.reference |
+| 999 CAD version | 1..1 | | sender.reference |
+| 999 Service CDSS system | 1..1 | | sender.reference |
+| 999 CDSS version | 1..1 | | sender.reference |
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
@@ -71,25 +71,25 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 | Resource Cardinality | 1..1 |
 
-| Element | Cardinality | Additional Guidance | | | |
+| Element | Cardinality | Additional Guidance | | |
 | --- | --- | --- |
-| identifier | 1..1 | Patient NHS Number identifier SHALL be included within the nhsNumber identifier slice | | | |
-| name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice | | | 
-| birthDate | 1..1 | The patients date of birth | | | 
-| Patient name | | | | name |
-| Patient NHS Number | | | | identifier.extension.value |
-| Patient identifier (other) | | | | identifier.extension.value |
-| NHS number verification status | | | | identifier.extension.valueCodeableConcept.coding.code |
-| Patient telecom or RelatedPerson.telecom | | | | telecom.value |
-| Patient gender | | | | gender |
-| Patient date of birth | | | | birthDate |
-| Approximate Age | | derived from the birthDate | | birthDate |
-| Patient Address Postcode | | | | address.postalCode |
-| Patient Address | | | | address |
-| Patient Ethnicity | 0..1 | | O | extension.ethnicCategory |
-| Patient communication preferences | 0..1 | | O | extension.NHSCommunication |
-| Patient's Registered General Practitioner (GP) | 0..1 | | O | generalPractitioner |
-| Patient's Registered General Practice (GP) | 0..1 | | O | generalPractitioner |
+| identifier | 1..1 | Patient NHS Number identifier SHALL be included within the nhsNumber identifier slice | | |
+| name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice | | 
+| birthDate | 1..1 | The patients date of birth | | 
+| Patient name | | | name |
+| Patient NHS Number | | | identifier.extension.value |
+| Patient identifier (other) | | | identifier.extension.value |
+| NHS number verification status | | | identifier.extension.valueCodeableConcept.coding.code |
+| Patient telecom or RelatedPerson.telecom | | | telecom.value |
+| Patient gender | | | gender |
+| Patient date of birth | | | birthDate |
+| Approximate Age | | derived from the birthDate | birthDate |
+| Patient Address Postcode | | | address.postalCode |
+| Patient Address | | | address |
+| Patient Ethnicity | 0..1 | | extension.ethnicCategory |
+| Patient communication preferences | 0..1 | | extension.NHSCommunication |
+| Patient's Registered General Practitioner (GP) | 0..1 | | generalPractitioner |
+| Patient's Registered General Practice (GP) | 0..1 | | generalPractitioner |
 
 ### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
 
@@ -120,17 +120,17 @@ The Encounter resource included as part of the event message SHALL conform to th
 
 | Resource Cardinality | 0..1 |
 
-| Element | Cardinality | Additional Guidance | | |
+| Element | Cardinality | Additional Guidance | |
 | --- | --- | --- |
-| location | 0..1 | Reference to the location at which the encounter took place | M | location.location.reference |
-| subject | 1..1 | A reference to the patient resource representing the subject of this event | M | subject.reference |
-| CASE ID | 1..1 | | M | identifier |
-| CASE ID (local) | 1..1| | M | identifier |
-| Start time of Encounter | 1..1 | | M | statusHistory.period |
-| Time of validation request | 1..1 | | M | statusHistory.period |
-| 999 Case status | 1..1 | | M | status |
-| Episode of care status | 1..1 | | M | status |
-| Episode of Care ID | 1..1 | | M | identifier |
+| location | 0..1 | Reference to the location at which the encounter took place | location.location.reference |
+| subject | 1..1 | A reference to the patient resource representing the subject of this event | subject.reference |
+| CASE ID | 1..1 | | identifier |
+| CASE ID (local) | 1..1| | identifier |
+| Start time of Encounter | 1..1 | | statusHistory.period |
+| Time of validation request | 1..1 | | statusHistory.period |
+| 999 Case status | 1..1 | | status |
+| Episode of care status | 1..1 | | status |
+| Episode of Care ID | 1..1 | | identifier |
 
 ### [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
 
