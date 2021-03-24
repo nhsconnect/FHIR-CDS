@@ -40,19 +40,19 @@ The MessageHeader resource included as part of the event message SHALL conform t
 
 | Resource Cardinality | 1..1 |
 
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
-| meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. |
-| meta.versionId | 0..1 | The version id of the message being sent |
-| extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. |
-| event | 1..1 | Fixed Value: referral-1 (Referral) |
-| focus | 1..1 | This will reference the `CareConnect-Encounter-1` resource. |
-| 999 Service Requesting the validation | |
-| 999 Service endpoint details | |
-| 999 Service CAD system | |
-| 999 CAD version | |
-| 999 Service CDSS system | |
-| 999 CDSS version | |
+| Element | Cardinality | Additional Guidance | Mandatory/Required/Optional | FHIR Target |
+| --- | --- | --- | --- | --- | --- |
+| meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. | M | meta.lastUpdated |
+| meta.versionId | 0..1 | The version id of the message being sent | O | meta.versionId |
+| extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. | M | extension.valueCodeableConcept.coding.code |
+| event | 1..1 | Fixed Value: referral-1 (Referral) | M | event.code |
+| focus | 1..1 | This will reference the `CareConnect-Encounter-1` resource. | M | focus.reference |
+| 999 Service Requesting the validation | 1..1 | | M | sender.reference |
+| 999 Service endpoint details | 1..1 | | M | source.endpoint |
+| 999 Service CAD system | 1..1 | | M | sender.reference |
+| 999 CAD version | 1..1 | | M | sender.reference |
+| 999 Service CDSS system | 1..1 | | M | sender.reference |
+| 999 CDSS version | 1..1 | | M | sender.reference |
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
@@ -71,25 +71,25 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 | Resource Cardinality | 1..1 |
 
-| Element | Cardinality | Additional Guidance |
+| Element | Cardinality | Additional Guidance | | | |
 | --- | --- | --- |
-| identifier | 1..1 | Patient NHS Number identifier SHALL be included within the nhsNumber identifier slice |
-| name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice |
-| birthDate | 1..1 | The patients date of birth |
-| Patient name | |
-| Patient NHS Number | |
-| Patient identifier (other) | |
-| NHS number verification status | |
-| Patient telecom or RelatedPerson.telecom | |
-| Patient gender | |
-| Patient date of birth | |
-| Approximate Age | |
-| Patient Address Postcode | |
-| Patient address | |
-| Patient Ethnicity | |
-| Patient communication preferences | |
-| Patient's Registered General Practitioner (GP) | |
-| Patient's Registered General Practice (GP) | |
+| identifier | 1..1 | Patient NHS Number identifier SHALL be included within the nhsNumber identifier slice | | | |
+| name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice | | | 
+| birthDate | 1..1 | The patients date of birth | | | 
+| Patient name | | | | name |
+| Patient NHS Number | | | | identifier.extension.value |
+| Patient identifier (other) | | | | identifier.extension.value |
+| NHS number verification status | | | | identifier.extension.valueCodeableConcept.coding.code |
+| Patient telecom or RelatedPerson.telecom | | | | telecom.value |
+| Patient gender | | | | gender |
+| Patient date of birth | | | | birthDate |
+| Approximate Age | | derived from the birthDate | | birthDate |
+| Patient Address Postcode | | | | address.postalCode |
+| Patient Address | | | | address |
+| Patient Ethnicity | 0..1 | | O | extension.ethnicCategory |
+| Patient communication preferences | 0..1 | | O | extension.NHSCommunication |
+| Patient's Registered General Practitioner (GP) | 0..1 | | O | generalPractitioner |
+| Patient's Registered General Practice (GP) | 0..1 | | O | generalPractitioner |
 
 ### [CareConnect-Practitioner-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1)
 
@@ -120,18 +120,17 @@ The Encounter resource included as part of the event message SHALL conform to th
 
 | Resource Cardinality | 0..1 |
 
-| Element | Cardinality | Additional Guidance |
+| Element | Cardinality | Additional Guidance | | |
 | --- | --- | --- |
-| Encounter.type | 1..* | The encounter type SHOULD include a value from the [EncounterType-1](https://fhir.nhs.uk/STU3/ValueSet/EncounterType-1) value set. This value set is extensible so additional values and code systems may be added where required. |
-| location | 0..1 | Reference to the location at which the encounter took place |
-| subject | 1..1 | A reference to the patient resource representing the subject of this event |
-| CASE ID | |
-| CASE ID (local) | |
-| Start time of Encounter | |
-| Time of validation request | |
-| 999 Case status | |
-| Episode of care status | |
-| Episode of Care ID | |
+| location | 0..1 | Reference to the location at which the encounter took place | M | location.location.reference |
+| subject | 1..1 | A reference to the patient resource representing the subject of this event | M | subject.reference |
+| CASE ID | 1..1 | | M | identifier |
+| CASE ID (local) | 1..1| | M | identifier |
+| Start time of Encounter | 1..1 | | M | statusHistory.period |
+| Time of validation request | 1..1 | | M | statusHistory.period |
+| 999 Case status | 1..1 | | M | status |
+| Episode of care status | 1..1 | | M | status |
+| Episode of Care ID | 1..1 | | M | identifier |
 
 ### [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1)
 
