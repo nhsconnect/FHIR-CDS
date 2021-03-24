@@ -41,7 +41,7 @@ The MessageHeader resource included as part of the event message SHALL conform t
 | Resource Cardinality | 1..1 |
 
 | Element | Cardinality | Additional Guidance | FHIR Target |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. | meta.lastUpdated |
 | meta.versionId | 0..1 | The version id of the message being sent | meta.versionId |
 | extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. | extension.valueCodeableConcept.coding.code |
@@ -71,18 +71,15 @@ The patient resource included in the event message SHALL conform to the [CareCon
 
 | Resource Cardinality | 1..1 |
 
-| Element | Cardinality | Additional Guidance | | |
-| --- | --- | --- |
-| identifier | 1..1 | Patient NHS Number identifier SHALL be included within the nhsNumber identifier slice | | |
-| name (official) | 1..1 | Patients name as registered on PDS, included within the resource as the official name element slice | | 
-| birthDate | 1..1 | The patients date of birth | | 
+| Element | Cardinality | Additional Guidance | FHIR Target |
+| --- | --- | --- | --- | --- |
 | Patient name | | | name |
 | Patient NHS Number | | | identifier.extension.value |
 | Patient identifier (other) | | | identifier.extension.value |
 | NHS number verification status | | | identifier.extension.valueCodeableConcept.coding.code |
 | Patient telecom or RelatedPerson.telecom | | | telecom.value |
 | Patient gender | | | gender |
-| Patient date of birth | | | birthDate |
+| Patient date of birth | | The patients date of birth | birthDate |
 | Approximate Age | | derived from the birthDate | birthDate |
 | Patient Address Postcode | | | address.postalCode |
 | Patient Address | | | address |
@@ -120,8 +117,8 @@ The Encounter resource included as part of the event message SHALL conform to th
 
 | Resource Cardinality | 0..1 |
 
-| Element | Cardinality | Additional Guidance | |
-| --- | --- | --- |
+| Element | Cardinality | Additional Guidance | FHIR Target |
+| --- | --- | --- | --- | --- |
 | location | 0..1 | Reference to the location at which the encounter took place | location.location.reference |
 | subject | 1..1 | A reference to the patient resource representing the subject of this event | subject.reference |
 | CASE ID | 1..1 | | identifier |
@@ -138,8 +135,8 @@ The Location resources included as part of the event message SHALL conform to th
 
 | Resource Cardinality | 0..* |
 
-| Element | Cardinality | Additional Guidance |
-| --- | --- | --- |
+| Element | Cardinality | Additional Guidance | FHIR Target |
+| --- | --- | --- | --- | --- |
 | identifier | 0..* | Where available the ODS Site Code slice should be populated |
 | Incident location | |
 | Incident Location ID (Property) | |
