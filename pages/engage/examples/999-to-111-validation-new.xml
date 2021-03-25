@@ -562,6 +562,11 @@
 					<family value="BLAKE"/>
 					<given value="Marcy"/>
 				</name>
+				<telecom> 
+					<system value="phone"/> 
+					<value value="0205568263"/> 
+					<use value="work"/> 
+				</telecom> 
 			</Practitioner>
 		</resource>
 	</entry>
