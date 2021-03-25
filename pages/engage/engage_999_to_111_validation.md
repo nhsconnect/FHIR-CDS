@@ -7,6 +7,15 @@ permalink: engage_999_to_111_validation.html
 summary: "An example of a 999 service sending a validation request to a 111 service"
 ---
 
+## Scenario Name/ID
+
+PW to PW CAT3 for Validation (third party call)/999-111-01
+
+## Scenario Overview
+
+A woman calls 999 on behalf of her husband, an adult male who is suffering from palpitations and a mild but worsening shortness of breath. He is triaged by the 999 Call Handler using NHS Pathways clinical content hosted by the CAD. The 999 triage outcome was an emergency ambulance within 2 hours (ARP Cat 3). Local business rules identified this case for clinical validation by an external Clinical Assessment Service (CAS) and the case was transferred to the CAS for validation.
+The CAS Clinican accepts the request for validation, calls the patient and uses the standard Pathways Clinical Content hosted by the 111 System. He does not change any of the responses and the original triage outcome is upheld.
+
 ## Bundle structure
 
 The event message will contain a mandatory `MessageHeader` resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references an `Encounter` resource as the focus of the event message.
@@ -185,7 +194,7 @@ Used to link the Questionnaire and QuestionnaireResponses together
 | First or third party call | | | relationship.coding.code |
 | Third party caller's name | | | name |
 | Third party caller's telecom details | | | telecom |
-| Third party caller's relationship with the patient | | | relationship.coding.code |
+| Third party caller's relationship with the patient | | <a href="http://hl7.org/fhir/STU3/valueset-relatedperson-relationshiptype.html"> PatientRelationshipType (Preferred)</a> | relationship.coding.code |
 | Third party's communication preferences | | | telecom.system |
 
 ### [CareConnect-Questionnaire-1](http://hl7.org/fhir/stu3/questionnaire.html)
