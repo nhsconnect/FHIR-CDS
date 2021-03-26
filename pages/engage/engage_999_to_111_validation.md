@@ -52,7 +52,7 @@ The `MessageHeader` resource contains the `messageEventType` extension which rep
 | meta.lastUpdated | 1..1 | The dateTime when the information was changed within the publishing system, for the use of event sequencing. | meta.lastUpdated |
 | meta.versionId | 0..1 | The version id of the message being sent | meta.versionId |
 | extension(messageEventType) | 1..1 | See the "Event Life Cycle" section above. | extension.valueCodeableConcept.coding.code |
-| event | 1..1 | Fixed Value: referral-1 (Referral) | event.code |
+| event | 1..1 | Fixed Value: referral-1 (Referral) [EventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EventType-1) | event.code |
 | focus | 1..1 | This will reference the `CareConnect-Encounter-1` resource. | focus.reference |
 | 999 Service Requesting the validation | 1..1 | | sender.reference |
 | 999 Service endpoint details | 1..1 | | source.endpoint |
@@ -136,9 +136,9 @@ The `MessageHeader` resource contains the `messageEventType` extension which rep
 | Element | Cardinality | Additional Guidance | FHIR Target |
 | --- | --- | --- | --- |
 | identifier | 0..* | Where available the ODS Site Code slice should be populated | identifier |
-| Incident location | | | address |
-| Incident Location ID (Property) | | | address |
-| Incident Location co-ordinates | | | position |
+| Incident location | 1..1 | | address |
+| Incident Location ID (Property) | 1..1 | | address |
+| Incident Location co-ordinates | 1..1 | | position |
 
 ### [CareConnect-Task-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1)
 
@@ -148,8 +148,8 @@ https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value a
 
 | Element | Cardinality | Additional Guidance | FHIR Target |
 | --- | --- | --- | --- |
-| Validation breach time | | | |
-| Ambulance dispatch Breach Time | | | |
+| Validation breach time | 1..1 | | executionPeriod |
+| Ambulance dispatch Breach Time | 1..1 | | executionPeriod |
 
 ### [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1)
 
@@ -157,7 +157,11 @@ https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value a
 
 | Element | Cardinality | Additional Guidance | FHIR Target |
 | --- | --- | --- | --- |
-| | | | |
+| | 1..1 | draft - active - suspended - completed - entered-in-error - cancelled [RequestStatus](https://www.hl7.org/fhir/stu3/valueset-request-status.html) | status |
+| | 1..1 | proposal - plan - order [RequestIntent](https://www.hl7.org/fhir/stu3/valueset-request-intent.html) | intent |
+| | 1..1 | | subject |
+| Parameters | 1..* | | supportingInfo |
+| ProcedureRequest | 1..1 | | supportingInfo |
 
 ### [HL7 Parameters](http://hl7.org/fhir/stu3/parameters.html)
 
@@ -177,13 +181,21 @@ https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value a
 
 | Element | Cardinality | Additional Guidance | FHIR Target |
 | --- | --- | --- | --- |
-| | | | |
+| | 1..1 | draft - active - suspended - completed - entered-in-error - cancelled [RequestStatus](http://hl7.org/fhir/STU3/valueset-request-status.html) | status |
+| | 1..1 | proposal - plan - order + [RequestIntent](http://hl7.org/fhir/STU3/valueset-request-intent.html)| intent |
+| | 1..1 | [ProcedureCode](http://hl7.org/fhir/STU3/valueset-procedure-code.html) | code |
+| | 1..1 | | subject |
 
 ### [CareConnect-List-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-List-1)
 
 Used to link the Questionnaire and QuestionnaireResponses together
 
 | Resource Cardinality | 1..1 |
+
+| Element | Cardinality | Additional Guidance | FHIR Target |
+| --- | --- | --- | --- |
+| | 1..1 | current - retired - entered-in-error [ListStatus](http://hl7.org/fhir/STU3/valueset-list-status.html) | status |
+| | 1..1 | working - snapshot - changes [ListMode](http://hl7.org/fhir/STU3/valueset-list-mode.html) | mode |
 
 ### [CareConnect-RelatedPerson-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1)
 
@@ -194,7 +206,7 @@ Used to link the Questionnaire and QuestionnaireResponses together
 | First or third party call | | | relationship.coding.code |
 | Third party caller's name | | | name |
 | Third party caller's telecom details | | | telecom |
-| Third party caller's relationship with the patient | | <a href="http://hl7.org/fhir/STU3/valueset-relatedperson-relationshiptype.html"> PatientRelationshipType (Preferred)</a> | relationship.coding.code |
+| Third party caller's relationship with the patient | | [PatientRelationshipType](http://hl7.org/fhir/STU3/valueset-relatedperson-relationshiptype.html) | relationship.coding.code |
 | Third party's communication preferences | | | telecom.system |
 
 ### [CareConnect-Questionnaire-1](http://hl7.org/fhir/stu3/questionnaire.html)
@@ -219,11 +231,12 @@ Used to link the Questionnaire and QuestionnaireResponses together
 
 | Element | Cardinality | Additional Guidance | FHIR Target |
 | --- | --- | --- | --- |
-| Pathways Triage assertions | | | |
-| Image files related to triage | | | |
-| Video files related to triage | | | |
-| Audio files related to triage | | | |
-| Observations from devices related to triage | | | |
+| | 1..1 | registered - preliminary - final - amended + | status |
+| Pathways Triage assertions | | | value.valueString |
+| Image files related to triage | | | value.valueAttachment |
+| Video files related to triage | | | value.valueAttachment |
+| Audio files related to triage | | | value.valueAttachment |
+| Observations from devices related to triage | | | device |
 
 ### [CareConnect-Flag-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1)
 
@@ -231,12 +244,15 @@ Used to link the Questionnaire and QuestionnaireResponses together
 
 | Element | Cardinality | Additional Guidance | FHIR Target |
 | --- | --- | --- | --- |
-| Frequent caller flag | | | |
-| Repeat caller flag | | | |
-| Patient consent for direct care | | | |
-| Patient consent for validation | | | |
-| Patient consent for SCR access | | | |
-| Patient consent for secondary use of data | | | |
+| | 1..1 | active - inactive - entered-in-error [FlagStatus](http://hl7.org/fhir/STU3/valueset-flag-status.html) | status |
+| | 1..1 | [FlagCode](http://hl7.org/fhir/STU3/valueset-flag-code.html) | code |
+| | 1..1 | | subject |
+| Frequent caller flag | 0..1 | | category |
+| Repeat caller flag | 0..1 | | category |
+| Patient consent for direct care | 0..1 | | category |
+| Patient consent for validation | 0..1 | | category |
+| Patient consent for SCR access | 0..1 | | category |
+| Patient consent for secondary use of data | 0..1 | | category |
 
 ## Examples
 
