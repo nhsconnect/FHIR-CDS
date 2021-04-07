@@ -591,6 +591,13 @@
 						<display value="Call Operator"/>
 					</coding>
 				</code>
+				<specialty> 
+					<coding> 
+						<system value="http://snomed.info/sct"/> 
+						<code value="408443003"/> 
+						<display value="General medical practice"/> 
+					</coding> 
+				</specialty> 
 			</PractitionerRole>
 		</resource>
 	</entry>
@@ -647,6 +654,16 @@
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1"/>
 				</meta>
 				<name value="On the corner of Sports direct off Briggate"/>
+				<address> 
+					<line value="20 The Headrow"/> 
+					<city value="Leeds"/>
+					<postalCode value="LS1 6PT"/> 
+					<country value="UK"/> 
+				</address>
+				<position> 
+					<longitude value="53.79957987629337"/> 
+					<latitude value="-1.5417544014466307"/> 
+				</position>
 			</Location>
 		</resource>
 	</entry>
