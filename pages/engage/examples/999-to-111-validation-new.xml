@@ -648,12 +648,13 @@
 	<entry>
 		<fullUrl value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18ddd5"/>
 		<resource>
-			<Location><!-- How to add UPRN? -->
+			<Location>
 				<id value="e3177167-40fc-4f1a-80f2-a2f17f18ddd5"/>
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1"/>
 				</meta>
 				<name value="On the corner of Sports direct off Briggate"/>
+				<alias value="72572445"/><!-- UPRN Number -->
 				<address> 
 					<line value="20 The Headrow"/> 
 					<city value="Leeds"/>
