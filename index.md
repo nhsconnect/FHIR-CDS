@@ -1,11 +1,11 @@
 ﻿---
-title: Introduction to the Clinical Decision Support API
+title: Introduction to the UEC Connect API
 keywords: homepage
 tags: [overview]
 sidebar: overview_sidebar
 permalink: index.html
 toc: false
-summary: A brief introduction to the Clinical Decision Support API Implementation Guide
+summary: A brief introduction to the UEC Connect API Implementation Guide
 ---
 
 # Introduction #
