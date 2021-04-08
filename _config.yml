@@ -4,11 +4,11 @@ output: web
 
 
 #topnav_title: Clinical Decision Support API | FHIR&reg;
-topnav_title: Clinical Decision Support API | FHIR&reg;
+topnav_title: UEC Connect API | FHIR&reg;
 # this appears on the top navigation bar next to the home button
 
 #site_title: Clinical Decision Support API
-site_title: Clinical Decision Support API
+site_title: UEC Connect API
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: NHS Digital
