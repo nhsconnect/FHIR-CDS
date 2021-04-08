@@ -1,7 +1,7 @@
 entries:
-- title: Clinical Decision Support API
-  product: Clinical Decision Support API
-  version: 2.0-alpha
+- title: UEC Connect API
+  product: UEC Connect API
+  version: 2.1.0-alpha
   levels: one
   folders:
 
