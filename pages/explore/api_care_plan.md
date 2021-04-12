@@ -195,7 +195,8 @@ The table below gives implementation guidance in relation to the elements within
             <td><code>0..*</code></td>
             <td>Reference (Any)</td>
             <td>&nbsp;</td>
-            <td>This MUST be populated with assertions or QuestionnaireResponses that are driving this care plan.</td>
+            <td>This MUST be populated with assertions (Observations) or QuestionnaireResponses that are driving this care plan.
+This MAY be populated with any other relevant resource references (e.g. Questionnaires).</td>
         </tr>
         <tr>
             <td><code>goal</code></td>
