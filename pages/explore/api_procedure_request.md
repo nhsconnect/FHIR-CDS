@@ -181,7 +181,7 @@ Detailed implementation guidance for a `ProcedureRequest` within the scope of th
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional clinical information</td>
-<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.supportinInfo</code></td>
+<td>This MUST be populated with the same value as <code class="highlighter-rouge">ReferralRequest.supportingInfo</code> except details of the procedure request.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specimen</code></td>

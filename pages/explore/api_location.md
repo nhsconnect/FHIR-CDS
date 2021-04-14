@@ -13,7 +13,7 @@ summary: Location resource implementation guidance
 
 ### Usage ###
 
-Within the Clinical Decision Support API implementation, the [Location](http://hl7.org/fhir/stu3/location.html) resource will be used to carry the current location of a patient when calling `$check-services`.
+Within the Clinical Decision Support API implementation, the [CareConnect-Location-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1) resource will be used to carry the current location of a patient when calling `$check-services`.
 
 The table below gives implementation guidance in relation to the elements within a `Location`:
 
