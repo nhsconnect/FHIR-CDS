@@ -21,7 +21,7 @@ A reference to the relevant `ReferralRequest` will be carried in the `action.res
 
 
 `RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) for the patient.  
-Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS `$evaluate` interaction is given below:  
+Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS `$check-services` interaction is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -171,7 +171,7 @@ Where populated it MUST be with the <code class="highlighter-rouge">RequestGroup
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Encounter |<br>EpisodeOfCare)</td>
     <td>Originating encounter</td>
-<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$evaluate</code> operation.</td>
+<td>This MUST be populated with a reference to the <code class="highlighter-rouge">Encounter</code> supplied in the <code class="highlighter-rouge">ServiceDefinition.$check-services </code> operation.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">occurrence[x]</code></td>
@@ -208,7 +208,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">0..1</code></td>
     <td>Reference<br>(Organization)</td>
     <td>Organization agent is acting for</td>
-<td>This SHOULD be populated with the Organisation in the `ServiceDefinition$evaluate`</td>
+<td>This SHOULD be populated with the Organisation in the `ServiceDefinition$check-services `</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">specialty</code></td>
