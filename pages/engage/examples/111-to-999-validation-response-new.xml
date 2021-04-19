@@ -10,6 +10,7 @@
 			<MessageHeader>
 				<id value="9d2e2cd9-ffe1-49c7-be43-f36e30564d3f"/>
 				<meta>
+					<versionId value="v2"/>
 					<lastUpdated value="2021-02-19T15:00:33+00:00"/>
 					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1"/>
 				</meta>
@@ -28,6 +29,10 @@
 					<display value="Referral"/>
 				</event>
 				<timestamp value="2021-02-19T11:00:00+00:00"/>
+				<sender><!-- 999 service -->
+					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ggb4hj"/>
+					<display value="999 Service"/>
+				</sender>
 				<source><!-- 999 service -->
 					<name value="999 Call centre"/>
 					<contact>
@@ -53,7 +58,6 @@
 				<id value="2d920d4a-1434-445d-a8a0-8ol6688768de"/>
 				<!-- <meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1"/>
-May need to publish a custom task resource for UEC
 				</meta> -->
 				<status value="requested"/>
 				<intent value="order"/> 
@@ -62,7 +66,7 @@ May need to publish a custom task resource for UEC
 					<text value="Validation"/> <!-- Potentially make it a code system, current profile does not support this -->
 				</code>
 				<description value="Referred for validation"/>
-			    <for> 
+			    <for>
 					<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/>
 			    </for>
 		        <context> 
@@ -113,8 +117,11 @@ May need to publish a custom task resource for UEC
 				</occurrencePeriod> 
 				<authoredOn value="2021-02-19T11:25:00+00:00"/>
 				<description value="In the past 2 years has had 6 instances of r) sided Otitis media."/>
-				<supportingInfo>
+				<supportingInfo><!-- Parameters -->
 					<reference value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18ssc3"/>				
+				</supportingInfo>
+				<supportingInfo><!-- ProcedureRequest -->
+					<reference value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>				
 				</supportingInfo>
 			</ReferralRequest> 
 		</resource>
@@ -125,16 +132,60 @@ May need to publish a custom task resource for UEC
 			<Parameters>
 			<id value="e3177167-40fc-4f1a-80f2-a2f17f18ssc3"/> 
 				<parameter> 
-					<name value="SG"/> 
-					<valueString value="SG1000:Abdominal or Flank Injury, Blunt"/>
+					<name value="SG"/>
+					<part> 
+						<name value="SG1000"/>
+						<valueString value="Abdominal or Flank Injury, Blunt"/>
+					</part> 
 				</parameter>
 				<parameter> 
-					<name value="SD"/> 
-					<valueString value="SD4033:AMB new/worsening breathlessness"/> 
+					<name value="SD"/> 					
+					<part> 
+						<name value="SD4033"/>
+						<valueString value="AMB new/worsening breathlessness"/> 
+					</part>
+				</parameter>
+				<parameter> 
+					<name value="DX"/> 					
+					<part> 
+						<name value="Dx012"/>
+						<valueString value="Emergency Ambulance Response (Category 3)"/> 
+					</part>
 				</parameter> 
 			</Parameters>
 		</resource>
-	</entry> 
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>
+		<resource>
+			<ProcedureRequest>
+			<id value="e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>
+			<status value="active"/> 
+			<intent value="instance-order"/> 
+			<priority value="routine"/> 
+			<code> 
+				<coding> 
+					<system value="http://snomed.info/sct"/> 
+					<code value="2318008"/> 
+				</coding> 
+				<text value="Anesthesia for cast procedure on forearm, wrist or hand"/> 
+		    </code> 
+		    <subject> 
+				<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/> 
+			</subject> 
+			<occurrenceDateTime value="2021-02-19T11:25:00+00:00"/>
+			<reasonCode> 
+				<text value="Check for arm problems"/> 
+			</reasonCode> 
+			<bodySite> 
+				<coding> 
+					<display value="Right arm"/> 
+				</coding> 
+				<text value="Right arm"/> 
+			</bodySite>
+			</ProcedureRequest> 
+		</resource>
+	</entry>
 	<entry>
 		<fullUrl value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/>
 		<resource>
@@ -511,6 +562,11 @@ May need to publish a custom task resource for UEC
 					<family value="BLAKE"/>
 					<given value="Marcy"/>
 				</name>
+				<telecom> 
+					<system value="phone"/> 
+					<value value="0205568263"/> 
+					<use value="work"/> 
+				</telecom> 
 			</Practitioner>
 		</resource>
 	</entry>
@@ -535,6 +591,13 @@ May need to publish a custom task resource for UEC
 						<display value="Call Operator"/>
 					</coding>
 				</code>
+				<specialty> 
+					<coding> 
+						<system value="http://snomed.info/sct"/> 
+						<code value="408443003"/> 
+						<display value="General medical practice"/> 
+					</coding> 
+				</specialty> 
 			</PractitionerRole>
 		</resource>
 	</entry>
@@ -585,12 +648,23 @@ May need to publish a custom task resource for UEC
 	<entry>
 		<fullUrl value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18ddd5"/>
 		<resource>
-			<Location><!-- How to add UPRN? -->
+			<Location>
 				<id value="e3177167-40fc-4f1a-80f2-a2f17f18ddd5"/>
 				<meta>
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1"/>
 				</meta>
 				<name value="On the corner of Sports direct off Briggate"/>
+				<alias value="72572445"/><!-- UPRN Number -->
+				<address> 
+					<line value="20 The Headrow"/> 
+					<city value="Leeds"/>
+					<postalCode value="LS1 6PT"/> 
+					<country value="UK"/> 
+				</address>
+				<position> 
+					<longitude value="53.79957987629337"/> 
+					<latitude value="-1.5417544014466307"/> 
+				</position>
 			</Location>
 		</resource>
 	</entry>
