@@ -4,7 +4,7 @@ keywords: questionnaire, rest,
 tags: [rest,fhir,api]
 sidebar: ctp_rest_sidebar
 permalink: api_questionnaire.html
-summary: Questionnaire resource implementation guidance
+summary: Questionnaire resource implementation guidance 
 ---
 
 {% include custom/search.warnbanner.html %}
