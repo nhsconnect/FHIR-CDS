@@ -215,7 +215,7 @@ This MUST match the occurrence returned in the $evaluate.referralrequest.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>HealthcareService)</td>
     <td>Receiver of referral/transfer of care request</td>
-<td>This MUST be populated with the <code class="highlighter-rouge">HealthcareService</code> selected from the <code class="highlighter-rouge">$check-services</code> response (or other appropriate override).</td>
+    <td>One instance of this MUST be populated with the <code class="highlighter-rouge">HealthcareService</code> selected from the <code class="highlighter-rouge">$check-services</code> response (or other appropriate override). Other instances MAY be populated with appropriate Organisation or Practictioner resources</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">reasonCode</code></td>
