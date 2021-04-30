@@ -108,7 +108,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>code</td>
     <td>Code datatype with Required binding to <a href="http://hl7.org/fhir/valueset-guidance-response-status.html">GuidanceResponseStatus</a></td>
-<td>This MUST be populated with either `success`, `data-requested`, `data-required` or `failure`. Other statuses are not valid. If the status is failure then you MUST populate an OperationOutcome and provide this in the 'EvaluationMessage' element.</td>
+<td>This MUST be populated with either `success`, `data-requested`, `data-required` or `failure`. Other statuses are not valid. If the status is 'failure' then you MUST populate an OperationOutcome and provide this in the 'evaluationMessage' element.</td>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">subject</code></td>
