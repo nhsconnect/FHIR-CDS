@@ -243,7 +243,7 @@ This MUST match the occurrence returned in the $evaluate.referralrequest.</td>
       <td><code class="highlighter-rouge">0..*</code></td>
     <td>Reference<br>(Any)</td>
     <td>Additional information to support referral or transfer of care request</td>
-<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity.<br /> Where present, Secondary Concerns MUST be carried in this element.</td>
+<td>This MUST be populated with a <code class="highlighter-rouge">ProcedureRequest</code> as the next activity.<br /> Where present, Secondary Concerns MUST be carried in this element. If present the Appointment resource relevant to this Referral MUST be carried in this element.</td>
  </tr>
 <tr>
   <td><code class="highlighter-rouge">note</code></td>
