@@ -13,6 +13,11 @@ summary: Encounter Report implementation guidance
 
 When an EMS reaches the end of operations, it can hand over the journey to a different EMS or appropriate Healthcare Service.
 
+An Encounter report can be used over the Messaging or RESTful paradigm. 
+
+* If using the RESTful you can use standard FHIR functionality.
+* If using the Messaging paradigm you can create a MessageHeader using the guidance below and compose all the resources into a Bundle.
+
 ### Notify
 
 The `HealthcareService` is notified of an Encounter Report by the EMS calling the `HealthcareService.endpoint` and passing the Encounter ID.
