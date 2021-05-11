@@ -28,7 +28,7 @@ Detailed implementation guidance for a `RequestGroup` resource in the scope of t
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:38%;">FHIR Documentation</th>
-   <th style="width:37%;">CDS Implementation Guidance</th>
+   <th style="width:37%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>
@@ -98,7 +98,7 @@ Detailed implementation guidance for a `RequestGroup` resource in the scope of t
  <tr><td><code class="highlighter-rouge">subject</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Patient/Group)</td><td>Who the request group is about</td><td>This MUST be populated with the Patient.</td></tr>
  <tr><td><code class="highlighter-rouge">context</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Encounter |  | EpisodeOfCare)</td><td>Encounter or Episode for the request group</td><td>This MUST be populated with the Encounter.</td></tr>
  <tr><td><code class="highlighter-rouge">authoredOn</code></td><td><code class="highlighter-rouge">0..1</code></td><td>dateTime</td><td>When the request group was authored</td><td>This SHOULD be populated.</td></tr>
- <tr><td><code class="highlighter-rouge">author</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Device/Practitioner)</td><td>Device or practitioner that authored the request group</td><td>This MUST be populated with the CDS (Device).</td></tr>
+ <tr><td><code class="highlighter-rouge">author</code></td><td><code class="highlighter-rouge">0..1</code></td><td>Reference(Device/Practitioner)</td><td>Device or practitioner that authored the request group</td><td>This MUST be populated with the UEC Connect (Device).</td></tr>
  <tr><td><code class="highlighter-rouge">reason[x]</code></td><td><code class="highlighter-rouge">0..1</code></td><td>&nbsp;</td><td>Reason for the request group</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">reasonCodeableConcept</code></td><td>&nbsp;</td><td>CodeableConcept</td><td>&nbsp;</td><td>This MUST NOT be populated.</td></tr>
  <tr><td class="sub"><code class="highlighter-rouge">reasonReference</code></td><td>&nbsp;</td><td>Reference(Any)</td><td>&nbsp;</td><td>This MUST NOT be populated.</td></tr>

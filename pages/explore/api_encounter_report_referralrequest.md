@@ -16,7 +16,7 @@ summary: ReferralRequest resource implementation guidance
 ### Usage ###
 Within the Clinical Decision Support API implementation, the [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1) profile will be used to carry the outcome of triage recommendation to another service for a patient.  
 
-Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS Encounter Report is given below:  
+Detailed implementation guidance for a `ReferralRequest` resource in the context of a UEC Connect Encounter Report is given below:  
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -24,7 +24,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:40%;">FHIR Documentation</th>
-   <th style="width:35%;">CDS Implementation Guidance</th>
+   <th style="width:35%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>

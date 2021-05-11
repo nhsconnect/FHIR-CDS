@@ -18,7 +18,7 @@ Due to the nature of triage in unscheduled care, these assertions are often time
 A single `QuestionnaireResponse` can drive a single assertion, or multiple assertions.
 Similarly, an assertion may need multiple `QuestionnaireResponses` to be validated.
 
-Detailed implementation guidance for an `Observation` resource in the CDS context is given below:  
+Detailed implementation guidance for an `Observation` resource in the UEC Connect context is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -27,7 +27,7 @@ Detailed implementation guidance for an `Observation` resource in the CDS contex
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:38%;">FHIR Documentation</th>
-   <th style="width:37%;">CDS Implementation Guidance</th>
+   <th style="width:37%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code>id</code></td>

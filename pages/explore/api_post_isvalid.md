@@ -12,7 +12,7 @@ summary: Determine if a CDSS is able to provide valid ServiceDefinitions for a g
 
 This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS. It is performed at the `ServiceDefinition` resource type level at the start of a triage journey in order to check whether this CDSS is able to provide `ServiceDefinitions` appropriate for the current journey.
 
-The `$isValid` operation in the context of the CDS API Implementation Guide is modelled as [UEC-IsValid-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-IsValid-Operation-1).
+The `$isValid` operation in the context of the UEC Connect API Implementation Guide is modelled as [UEC-IsValid-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-IsValid-Operation-1).
 
 ## Request Headers ##
 

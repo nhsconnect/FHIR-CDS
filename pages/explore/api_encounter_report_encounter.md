@@ -20,7 +20,7 @@ Within the scope of this implementation guide, an encounter occurs for the durat
 
 The Encounter resource uses the [CareConnect Encounter profile](https://nhsconnect.github.io/CareConnectAPI/api_workflow_encounter.html).
 
-Detailed implementation guidance for an `Encounter` resource in the context of a CDS Encounter Report is given below:  
+Detailed implementation guidance for an `Encounter` resource in the context of a UEC Connect Encounter Report is given below:  
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -28,7 +28,7 @@ Detailed implementation guidance for an `Encounter` resource in the context of a
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:38%;">FHIR/CareConnect Documentation</th>
-   <th style="width:37%;">CDS Implementation Guidance</th>
+   <th style="width:37%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code>id</code></td>

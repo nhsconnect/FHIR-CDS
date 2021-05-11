@@ -1,13 +1,13 @@
 ---
 title: Prerequisites
-keywords: CDS, Clinical Decision Suppport, rest, FHIR rest, FHIR resource, prerequisites
+keywords: UEC Connect, Clinical Decision Suppport, rest, FHIR rest, FHIR resource, prerequisites
 tags: [rest,fhir,api]
 sidebar: foundations_sidebar
 permalink: api_prerequisites.html
 summary: "Development prerequisites"
 ---
 
-## Prerequisites for the CDS API ##
+## Prerequisites for the UEC Connect API ##
 
 Consumer / Provider Server API Conformance
 
@@ -17,7 +17,7 @@ Consumer / Provider Server API Conformance
 
 * MUST support XML **or** JSON formats for all API interactions.
 
-* SHOULD expose a valid CDS FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
+* SHOULD expose a valid UEC Connect FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) identifying the list of resources, operations and search parameters supported. 
 
 ### Consumer Conformance ###
 

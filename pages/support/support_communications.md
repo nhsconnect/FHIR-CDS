@@ -32,6 +32,6 @@ Learn about the different technical systems and standards used in Urgent and Eme
 
 ### UECDI Technology Supplier Group (TSG) ###
 
-The TSG is a forum for the UECDI Programme to talk to technology suppliers in the urgent and emergency care space and strengthen our working relationships. The TSG hosts regular online broadcasts and interactive workshop events relating to our projects and products, including the CDS API Implementation Guide.
+The TSG is a forum for the UECDI Programme to talk to technology suppliers in the urgent and emergency care space and strengthen our working relationships. The TSG hosts regular online broadcasts and interactive workshop events relating to our projects and products, including the UEC Connect API Implementation Guide.
 
 By joining the TSG you can get the latest updates on the API Guide and hear about potential opportunities to attend workshop sessions. To register your interest please contact us via <a href="mailto:uecdi@nhs.net">uecdi@nhs.net</a>.

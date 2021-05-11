@@ -13,7 +13,7 @@ summary: Coordinate resource implementation guidance
 
 ### Usage ###
 
-Within the Clinical Decision Support API implementation, the [`Coordinate`](https://fhir.nhs.uk/STU3/StructureDefinition/UEC-ImageCoordinates-Basic-1) resource is a Custom Resource Structure for the CDS API. It is used to carry details of answers to `image-map` question types within the `QuestionnaireResponse.item.answer.value` field during an `$evaluate` request.
+Within the Clinical Decision Support API implementation, the [`Coordinate`](https://fhir.nhs.uk/STU3/StructureDefinition/UEC-ImageCoordinates-Basic-1) resource is a Custom Resource Structure for the UEC Connect API. It is used to carry details of answers to `image-map` question types within the `QuestionnaireResponse.item.answer.value` field during an `$evaluate` request.
 
 The table below gives implementation guidance in relation to the elements within a `Coordinate`:
 
@@ -24,7 +24,7 @@ The table below gives implementation guidance in relation to the elements within
         <th  style="width:10%;">Cardinality</th>
         <th  style="width:10%;">Type</th>
         <th  style="width:35%;">FHIR Documentation</th>
-        <th  style="width:35%;">CDS Implementation Guidance</th>
+        <th  style="width:35%;">UEC Connect Implementation Guidance</th>
     </tr>
     <tr>
         <td><code  class="highlighter-rouge">id</code></td>

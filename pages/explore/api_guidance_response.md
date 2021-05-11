@@ -24,7 +24,7 @@ The table below details implementation guidance for the [GuidanceResponse](http:
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:40%;">FHIR Documentation</th>
-   <th style="width:35%;">CDS Implementation Guidance</th>
+   <th style="width:35%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>
@@ -185,7 +185,7 @@ Where an <code class="highlighter-rouge">outputParameter</code> can be interpret
     <td>Proposed actions, if any.</td>
 <td>This MUST only be populated by a <code class="highlighter-rouge">RequestGroup</code> resource, and MUST NOT be populated with a <code class="highlighter-rouge">CarePlan</code>.
 <br/>
-This MUST ONLY be populated if the CDS has either a recommendation for next service, or care advice for the patient.
+This MUST ONLY be populated if the UEC Connect has either a recommendation for next service, or care advice for the patient.
 <br/>
 This SHOULD NOT be populated with a final result or care advice when recommending transfer to another <code class="highlighter-rouge">ServiceDefinition</code>, but can be populated with an interim result.</td>
  </tr>

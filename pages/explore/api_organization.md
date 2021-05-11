@@ -27,7 +27,7 @@ Detailed implementation guidance for an `Organization` resource in the `$check-s
 <th  style="width:5%;">Cardinality</th>
 <th  style="width:10%;">Type</th>
 <th  style="width:38%;">FHIR/CareConnect Documentation</th>
-<th  style="width:37%;">CDS Implementation Guidance</th>
+<th  style="width:37%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
 <td><code>id</code></td>

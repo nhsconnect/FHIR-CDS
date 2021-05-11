@@ -25,7 +25,7 @@ The table below gives implementation guidance in relation to the elements within
             <th>Cardinality</th>
             <th>Type</th>
             <th>FHIR Documentation</th>
-            <th>CDS Implementation Guidance</th>
+            <th>UEC Connect Implementation Guidance</th>
         </tr>
     </thead>
     <tbody>
@@ -125,7 +125,7 @@ The table below gives implementation guidance in relation to the elements within
             <td><code>1..1</code></td>
             <td>code</td>
             <td>draft | active | suspended | completed | entered-in-error | cancelled | unknown <a href="https://www.hl7.org/fhir/stu3/valueset-care-plan-status.html">CarePlanStatus (Required)</a></td>
-            <td>This MUST be populated with either 'draft', 'active', 'completed' or 'cancelled'. Other statuses are not valid. The status of the `CarePlan` MUST match the status of the `RequestGroup` which references this `CarePlan` When created by the CDS and 'sent' to the EMS, the plan has a status of 'draft' (interim) or 'active' (final). After acknowledgement by the user, the status of the plan is 'completed'. If a plan is displayed to the user, but not acknowledged, and the user goes back in the process (answers a question differently) so that the plan is no longer on screen, this should be 'cancelled'.</td>
+            <td>This MUST be populated with either 'draft', 'active', 'completed' or 'cancelled'. Other statuses are not valid. The status of the `CarePlan` MUST match the status of the `RequestGroup` which references this `CarePlan` When created by the CDSS and 'sent' to the EMS, the plan has a status of 'draft' (interim) or 'active' (final). After acknowledgement by the user, the status of the plan is 'completed'. If a plan is displayed to the user, but not acknowledged, and the user goes back in the process (answers a question differently) so that the plan is no longer on screen, this should be 'cancelled'.</td>
         </tr>
         <tr>
             <td><code>intent</code></td>

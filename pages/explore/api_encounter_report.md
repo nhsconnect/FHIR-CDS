@@ -97,7 +97,7 @@ The resources presented in the List will follow the guidance in the [Evaluate in
     <li><a href="api_encounter_report_referralrequest.html">ReferralRequest</a></li>    
     <li><a href="api_related_person.html">RelatedPerson</a></li>    
     </ul>    
-    There may be more than one <code>List</code> per <code>Encounter</code>, for example, where a CDS is managing multiple <code>ServiceDefinition</code> interactions with the EMS for the same patient at the same time.    
+    There may be more than one <code>List</code> per <code>Encounter</code>, for example, where a CDSS is managing multiple <code>ServiceDefinition</code> interactions with the EMS for the same patient at the same time.    
   </td>    
 </tr>    
 <tr>    

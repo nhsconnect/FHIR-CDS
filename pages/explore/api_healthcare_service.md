@@ -22,7 +22,7 @@ The table below gives implementation guidance in relation to the elements within
 <th  style="width:10%;">Cardinality</th>
 <th  style="width:10%;">Type</th>
 <th  style="width:35%;">FHIR Documentation</th>
-<th  style="width:35%;">CDS Implementation Guidance</th>
+<th  style="width:35%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
 <td><code  class="highlighter-rouge">id</code></td>

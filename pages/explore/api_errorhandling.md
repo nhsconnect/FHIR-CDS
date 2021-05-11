@@ -8,12 +8,12 @@ summary: Error handling
 toc: true
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the API." %}
 
 
 ## Error handling ##
 
-The CDS API defines numerous categories of error, each of which encapsulates a specific part of the request that is sent to the CDSS. Each type of error will be discussed in its own section below with the relevant response code:
+The API defines numerous categories of error, each of which encapsulates a specific part of the request that is sent to the CDSS. Each type of error will be discussed in its own section below with the relevant response code:
 
 - [Resource Not found](#resource-not-found) - this behaviour is supported when a request references a resource that cannot be resolved.
 - [Headers](#headers) - The HTTP Authorization header MUST be supplied with any request and an error will be generated in the event of this header not being present.

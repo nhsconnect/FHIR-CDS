@@ -21,7 +21,7 @@ A reference to the relevant `ReferralRequest` will be carried in the `action.res
 
 
 `RequestGroup.action.resource` MAY also carry a reference to one or more `CarePlans` to carry accompanying [care advice](api_care_plan.html) for the patient.  
-Detailed implementation guidance for a `ReferralRequest` resource in the context of a CDS `$evaluate` interaction is given below:  
+Detailed implementation guidance for a `ReferralRequest` resource in the context of a UEC Connect `$evaluate` interaction is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -30,7 +30,7 @@ Detailed implementation guidance for a `ReferralRequest` resource in the context
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:40%;">FHIR Documentation</th>
-   <th style="width:35%;">CDS Implementation Guidance</th>
+   <th style="width:35%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>
@@ -201,7 +201,7 @@ The start of the period must be 'now'.</td>
       <td><code class="highlighter-rouge">1..1</code></td>
     <td>Reference<br>(Practitioner |<br>Organization |<br>Patient |<br>RelatedPerson |<br>Device)</td>
     <td>Individual making the request</td>
-<td>This SHOULD be populated with the CDS (Device)</td>
+<td>This SHOULD be populated with the UEC Connect (Device)</td>
  </tr>
 <tr>
   <td class="sub"><code class="highlighter-rouge">requester.onBehalfOf</code></td>

@@ -15,7 +15,7 @@ summary: Condition resource implementation guidance
 ### Usage ###
 The [Condition](http://hl7.org/fhir/stu3/condition.html) resource will be used to carry the chief concern and any secondary concerns which reflect the outcome of triage.
 
-Detailed implementation guidance for a `Condition` resource in the CDS context is given below:  
+Detailed implementation guidance for a `Condition` resource in the UEC Connect context is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -25,7 +25,7 @@ Detailed implementation guidance for a `Condition` resource in the CDS context i
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:38%;">FHIR Documentation</th>
-   <th style="width:37%;">CDS Implementation Guidance</th>
+   <th style="width:37%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>

@@ -12,6 +12,8 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 * api_get_service_definition.html updated
 * api_procedure_request.html updated
 
+Re-branded from CDS API to UEC Connect
+
 ## 2.0.0-alpha ##
 * The API guide has been expanded in scope to introduce the use of [`Encounter Report`](api_encounter_report.html) functionality.
 * Several resources have been introduced and profiled to support the use of the Encounter Report and related interactions; see the [Resources section](api_encounter_report.html#resources) of the Encounter Report Overview.

@@ -20,11 +20,11 @@ The sending EMS is responsible for making sure that all resources which inform t
 
 The <code class="highlighter-rouge">'Composition'</code> resource should only be used by ERRs that cannot build a custom Encounter Report from the resources referenced in the <code class="highlighter-rouge">List</code> resource.
 
-The human-readable summary will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The <code class="highlighter-rouge">Encounter</code> resource does not contain a reference to the composition. There may be more than one <code class="highlighter-rouge">Composition</code> per <code class="highlighter-rouge">Encounter</code>, for example, where a CDS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
+The human-readable summary will be carried in a [Composition](http://hl7.org/fhir/stu3/composition.html).  The composition associated with an encounter is linked through the `Composition.encounter`.  The <code class="highlighter-rouge">Encounter</code> resource does not contain a reference to the composition. There may be more than one <code class="highlighter-rouge">Composition</code> per <code class="highlighter-rouge">Encounter</code>, for example, where a SS is managing multiple `ServiceDefinition` interactions with the EMS for the same patient at the same time.
 
 PLEASE NOTE that resources referenced by the <code class="highlighter-rouge">Composition</code> resource MUST NOT be used to drive business processes as they may not be the complete list of resources for the triage journey. The complete list for the triage journey will be contained in the <code class="highlighter-rouge">List</code> resource.
 
-Detailed implementation guidance for a <code class="highlighter-rouge">Composition</code> resource in the CDS context is given below:  
+Detailed implementation guidance for a <code class="highlighter-rouge">Composition</code> resource in the UEC Connect context is given below:  
 
 <table style="min-width:100%;width:100%">
 <tr>
@@ -32,7 +32,7 @@ Detailed implementation guidance for a <code class="highlighter-rouge">Compositi
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:38%;">FHIR Documentation</th>
-   <th style="width:37%;">CDS Implementation Guidance</th>
+   <th style="width:37%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code>id</code></td>

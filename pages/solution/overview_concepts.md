@@ -7,7 +7,7 @@ permalink: overview_concepts.html
 summary: Solution Concepts
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API. No updates will be made between published versions." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the API. No updates will be made between published versions." %}
 
 
 This guide uses the terms Encounter Management System, Clinical Decision Support System, Encounter Report Receiving System and Directory Services as set out below. Note that a particular system may act as more than one of these in different implementations.

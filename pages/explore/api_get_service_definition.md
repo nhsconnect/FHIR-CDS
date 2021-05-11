@@ -56,7 +56,7 @@ GET [base]/ServiceDefinition?_query=triage&amp;parameters…</div>
 
 The `_query` parameter will define additional named parameters to be used with the named query (*triage*) and these will be used in combination where criteria for all of them must be satisfied.
 
-A CDS MUST implement the additional parameters for a `ServiceDefinition` triage query as outlined below:
+A UEC Connect MUST implement the additional parameters for a `ServiceDefinition` triage query as outlined below:
 
 | Name | Type | Description | Conformance | Path | Matching | Guidance |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -80,7 +80,7 @@ GET [base]/ServiceDefinition?_query=triage&status=active&experimental=false&juri
 
 ### Filtering and Partial matches ###
 
-The behaviour of the CDS search response differs slightly depending on the parameter.  For most parameters, an exact match is required.  However, for triggers, it is possible that the currently known set of triggers is not an exact match for any single ServiceDefinition.  In this case, the search 
+The behaviour of the UEC Connect search response differs slightly depending on the parameter.  For most parameters, an exact match is required.  However, for triggers, it is possible that the currently known set of triggers is not an exact match for any single ServiceDefinition.  In this case, the search 
 
 ### Search Response ###
 

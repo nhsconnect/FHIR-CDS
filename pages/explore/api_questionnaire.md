@@ -23,7 +23,7 @@ The responses to a Questionnaire sent by the CDSS are communicated back by the E
 
 A new Questionnaire resource is to be created each time any element of a Questionnaire is changed.
 
-Detailed implementation guidance for a `Questionnaire` resource within the CDS API implementation guide is given below:  
+Detailed implementation guidance for a `Questionnaire` resource within the UEC Connect API implementation guide is given below:  
 
 
 <table style="min-width:100%;width:100%">
@@ -33,7 +33,7 @@ Detailed implementation guidance for a `Questionnaire` resource within the CDS A
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:38%;">FHIR Documentation</th>
-   <th style="width:37%;">CDS Implementation Guidance</th>
+   <th style="width:37%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>

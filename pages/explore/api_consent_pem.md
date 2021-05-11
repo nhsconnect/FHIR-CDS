@@ -43,7 +43,7 @@ Linked to the triage journey by patient and data.
    <th>Cardinality</th>
    <th>Type</th>
    <th>FHIR Documentation</th>
-   <th>CDS Implementation Guidance</th>
+   <th>UEC Connect Implementation Guidance</th>
 </tr>
 </thead>
 <tbody>

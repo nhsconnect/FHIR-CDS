@@ -30,7 +30,7 @@ The table below details implementation guidance for this resource in the scope o
     <th style="width:5%;">Cardinality</th>
     <th style="width:10%;">Type</th>
       <th style="width:40%;">FHIR Documentation</th>
-   <th style="width:35%;">CDS Implementation Guidance</th>
+   <th style="width:35%;">UEC Connect Implementation Guidance</th>
 </tr>
 <tr>
   <td><code class="highlighter-rouge">id</code></td>

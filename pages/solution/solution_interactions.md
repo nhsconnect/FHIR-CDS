@@ -8,12 +8,12 @@ toc: true
 summary: Solution interactions
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the API." %}
 
 
 ## Interactions ##
 
-The key interactions for the Clinical Decision Support API are represented in the diagrams below.
+The key interactions for the UEC Connect API are represented in the diagrams below.
 
 
 ## Service Validity Interaction

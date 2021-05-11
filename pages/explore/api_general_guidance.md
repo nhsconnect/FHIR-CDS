@@ -6,12 +6,12 @@ sidebar: ctp_rest_sidebar
 permalink: api_general_guidance.html
 summary: Implementation guidance for developers - focusing on general API implementation guidance
 ---
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the CDS API." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the API." %}
 
 
 ## Purpose ##
 
-This implementation guide is intended for use by software developers looking to build a conformant CDS API interface using the FHIR&reg; standard with a focus on general API implementation guidance.
+This implementation guide is intended for use by software developers looking to build a conformant API interface using the FHIR&reg; standard with a focus on general API implementation guidance.
 
 ### Notational conventions ###
 
@@ -71,7 +71,7 @@ The choice of whether to pass resources by reference or by value (as part of Bun
 ### Content types for consumer and provider systems ###
 
 
-Each of the systems in scope of the CDS API act as both provider and consumer in different interactions:
+Each of the systems in scope of the API act as both provider and consumer in different interactions:
 
 | Interaction                 | Provider | Consumer |
 | -----------------------     | -------  | ------- |

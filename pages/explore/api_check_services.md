@@ -12,7 +12,7 @@ summary: $check-services implementation guidance
   
 This is a [FHIR Operation](https://www.hl7.org/fhir/stu3/operations.html) performed by an EMS and defined at the server level. The [$check-services](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1) operation is performed at the end of a triage journey with a generic [Referral Request](http://hl7.org/fhir/stu3/referralrequest.html) defined in order to find a specific set of nearby services which can meet the needs of the patient in the `ReferralRequest`.
 
-The `$check-services` operation in the context of the CDS API Implementation Guide is modelled as [UEC-CheckServices-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1).
+The `$check-services` operation in the context of the UEC Connect API Implementation Guide is modelled as [UEC-CheckServices-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckServices-Operation-1).
 
   
 ## Request Headers ##  
@@ -46,7 +46,7 @@ The [`$check-services`](https://fhir.nhs.uk/STU3/OperationDefinition/UEC-CheckSe
 <th  style="width:10%;">Cardinality</th>
 <th  style="width:15%;">Type</th>  
 <th  style="width:30%;">FHIR Documentation</th>  
-<th  style="width:30%;">CDS Implementation Guidance</th>  
+<th  style="width:30%;">UEC Connect Implementation Guidance</th>  
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">requestId</code></td>  
@@ -140,7 +140,7 @@ The input parameters for a request, if any. These parameters are defined by the 
 <th  style="width:10%;">Cardinality</th>  
 <th  style="width:15%;">Type</th>  
 <th  style="width:30%;">FHIR Documentation</th>  
-<th  style="width:30%;">CDS Implementation Guidance</th>  
+<th  style="width:30%;">UEC Connect Implementation Guidance</th>  
 </tr>  
 <tr>  
 <td><code  class="highlighter-rouge">services</code></td>  
