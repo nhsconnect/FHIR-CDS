@@ -238,27 +238,71 @@ The ReferralRequest resource is used to communicate the Requester’s triage out
 | Proprietary Triage Outcome code              | 0..*         | When you are passing an SG code this should be populated with the SG code    When you are passing an SD code this should be populated with the SG code    When you are passing an Dx code this should be populated with the Dx code    When you are passing an ARP code this should be populated with the ARP code    When you are passing an AMPDSdispatch code this should be populated with the AMPDS dispatch code                                                                           | reasonCode.code                   |
 | Proprietary Triage Outcome code description  | 0..*         | When you are passing an SG code this should be populated the SG code description    When you are passing an SD code this should be populated the SD code description    When you are passing an Dx code this should be populated the Dx code description    When you are passing an ARP code this should be populated the ARP code description    When you are passing an AMPDS dispatch code this should be populated the AMPDS dispatch code description                                       | reasonCode.description            |
 
-### [CareConnect-ProcedureRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ProcedureRequest-1)
+### [CareConnect-CarePlan-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-CarePlan-1)
 
 | Resource Cardinality | 1..1 |
 
-| Element | Cardinality | Additional Guidance | FHIR Target |
-| --- | --- | --- | --- |
-| | 1..1 | draft - active - suspended - completed - entered-in-error - cancelled [RequestStatus](http://hl7.org/fhir/STU3/valueset-request-status.html) | status |
-| | 1..1 | proposal - plan - order + [RequestIntent](http://hl7.org/fhir/STU3/valueset-request-intent.html)| intent |
-| | 1..1 | [ProcedureCode](http://hl7.org/fhir/STU3/valueset-procedure-code.html) | code |
-| | 1..1 | | subject |
+This resource is used to communicate proprietary triage outcome information and the encounter outcome.
+
+| BusinessElement                              | Cardinality  | Additional Guidance                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | FHIR Target                              |
+|----------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
+| status                                       | 1..1         | This MUST be populated with the value ‘active’                                                                                                                                                                                                                                                                                                                                                                                                                                                   | status                                   |
+| intent                                       | 1..1         | This MUST be populated with the value 'plan'                                                                                                                                                                                                                                                                                                                                                                                                                                                     | intent                                   |
+| Patient                                      | 1..1         | This MUST be populated with a reference to the Patient                                                                                                                                                                                                                                                                                                                                                                                                                                           | subject                                  |
+| Care plan encounter                          | 1..1         | This MUST be populated with a reference to the Validator’s Encounter                                                                                                                                                                                                                                                                                                                                                                                                                             | context                                  |
+| Care plan type                               | 1..1         | This MUST be populated with UEC Encounter Outcome                                                                                                                                                                                                                                                                                                                                                                                                                                                | category                                 |
+| Associated referral                          | 0..1         | When the validation results in an onward referral i.e Related encounter outcome is Referral, ambulance request, or NUMSAS this MUST be a reference to theReferralRequest for the next activity.    If there is no onward referralI.e. Related encounter outcome is ’treated’ or ‘signposted’, this will not be populated.                                                                                                                                                                        | activity.Reference                       |
+| Related encounter outcome                    | 1..1         | Valueset: (extendable)    Patient treated  Ambulance Requested  Patient referred  Patient signposted (no referral)  NUMSAS  Sent for validation                                                                                                                                                                                                                                                                                                                                                  | Activity.outcomeCodeableConcept          |
+| Proprietary Triage Outcome code system       |  0..*        | When you are passing a Pathways Symptom Group (SG) code use ‘x’ value in the system element.    When you are passing a Pathways Symptom Discriminator (SD) code use ‘y’ value in the system element.    When you are passing a Pathways Disposition (DX) code use ‘z’ value in the system element.    When you are passing an Ambulance Response Programme (ARP) code use ‘p’ value in the system element.    When you are passing an AMPDS Dispatch Code use ‘m’ value in the system element    | Activity.outcomeCodeableConcept.system   |
+| Proprietary Triage Outcome code              | 0..*         | When you are passing an SG code this should be populated with the SG code    When you are passing an SD code this should be populated with the SG code    When you are passing an Dx code this should be populated with the Dx code    When you are passing an ARP code this should be populated with the ARP code    When you are passing an AMPDS dispatch code this should be populated with theAMPDS dispatch code                                                                           | Activity.outcomeCodeableConcept.code     |
+| Proprietary Triage Outcome code description  | 0..*         | When you are passing an SG code this should be populated the SG code description    When you are passing an SD code this should be populated the SD code description    When you are passing an Dx code this should be populated the Dx code description    When you are passing an ARP code this should be populated the ARP code description    When you are passing an AMPDS dispatch code this should be populated theAMPDS dispatch code description                                        | Activity.outcomeCodeableConcept.display  |
+| Care plan summary                            | 0..1         | When populated  this MUST be populated with the human readable care plan.     This MUST include any care advice given to the patient.                                                                                                                                                                                                                                                                                                                                                            | Activity.outcomeCodeableConcept.text     |
+
+### [CareConnect-ProcedureRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ProcedureRequest-1)
+
+| Resource Cardinality | 0..1 |
+
+This resource is used to communicate the next activity identified by the Requester’s initial triage.
+
+| Business Element   | Cardinality  | Additional Guidance                                                                   | FHIR Target  |
+|--------------------|--------------|---------------------------------------------------------------------------------------|--------------|
+| Status            | 1..1         | This MUST be populated with ‘’active’’                                                | status       |
+| Intent            | 1..1         | This MUST be populated with ‘’plan’’                                                  | intent       |
+| code               | 1..1         | For an Ambulance Validation request this MUST be populated with ‘Ambulance Dispatch’  | code         |
+| Subject           | 1..1         | This will link to the Patient resource                                                | subject      |
+| Encounter context  | 0..1         | This MUST be populated with a reference to the Encounter                              | context      |
 
 ### [CareConnect-List-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-List-1)
 
-Used to link the Questionnaire and QuestionnaireResponses together
+| Resource Cardinality | 0..1 |
 
-| Resource Cardinality | 1..1 |
+This resource is used to link the Questionnaire and QuestionnaireResponses together.
 
-| Element | Cardinality | Additional Guidance | FHIR Target |
-| --- | --- | --- | --- |
-| | 1..1 | current - retired - entered-in-error [ListStatus](http://hl7.org/fhir/STU3/valueset-list-status.html) | status |
-| | 1..1 | working - snapshot - changes [ListMode](http://hl7.org/fhir/STU3/valueset-list-mode.html) | mode |
+The List resource represents a flat, possibly ordered collection of ALL resources populated during the triage journey. Lists will include references to the resources that make up the list. 
+
+The resources referenced by the List resource SHOULD be used by the ERR to build a human readable Encounter Report that meets the needs of the Service Provider. 
+
+The resources referenced by the Listresource MAY be used to drive workflow at the receiving Service Provider (e.g. queue management) 
+
+Detailed implementation guidance for a List resource within the scope of this implementation guide is given below: 
+
+| Business Element  | Cardinality  | Additional Guidance                                                                                                           | FHIR Target  |
+|-------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------|--------------|
+| Status           | 1..1         | This MUST be populated with ‘’current’                                                                                        | status       |
+| Mode             | 1..1         | This MUST be populated with ‘’working’’                                                                                       | mode         |
+| Entry             | 0..*         | To include references to the resources that make up the list  e.g.Questionnaires,QuestionnaireResponse, Flags, Observations.  | entry        |
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### [CareConnect-RelatedPerson-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-RelatedPerson-1)
 
