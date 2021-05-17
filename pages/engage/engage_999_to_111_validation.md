@@ -18,7 +18,9 @@ The service provider requesting the validation of triage outcome will be called 
 
 The service provider validating triage outcome will be called “Validator” in this use case it will usually be a 111/CAS service provider. However, it could also be a 999 Clinical Hub, either within the Requester organisation (on a different system), or external to the Requester organisation. This could also, in the future, be any other suitably registered healthcareservice. 
 
-#INSERT FLOW DIAGRAM HERE
+<div style="text-align:center; margin-bottom:20px" >
+	<a href="images/engage/999-to-111/ValidationFlow_V0.2.png" target="_blank"><img src="images/engage/999-to-111/ValidationFlow_V0.2.png"></a>
+</div>
 
 ## Out of Scope
 
@@ -80,7 +82,7 @@ The MessageHeader resource contains the messageEventType extension which represe
 | Modify Date Time                                        | 1..1         | The dateTime when the information was changed within the publishing system, for the use of event sequencing.  | meta.lastUpdated                            |
 | Message Version ID                                      | 0..1         | The version id of the message being sent                                                                      | meta.versionId                              |
 | Message Event Type                                      | 1..1         | See the “Event Life Cycle” section above.                                                                     | extension.valueCodeableConcept.coding.code  |
-| Event                                                   | 1..1         | Fixed Value: referral-1 (Referral) EventType-1                                                                | event.code                                  |
+| Event                                                   | 1..1         | Fixed Value: referral-1 (Referral) [EventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EventType-1)                                                 | event.code                                  |
 | Focus                                                   | 1..1         | This MUST reference the CareConnect-Encounter-1 resource.    /api_encounter_report_encounter.html             | focus.reference                             |
 | Requester organisation                                  | 1..1         |   Reference to the Requester Organisation                                                                    | sender                                      |
 | Requester  endpoint details                             | 1..1         | The uri of the Requester’s endpoint                                                                          | source.endpoint                             |
@@ -302,7 +304,7 @@ The RelatedPerson resource is used to communicate the patient’s contact detail
 |-----------------------------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
 | Caller’s name                           | 0..1        |                                                                                                                                                                            | name                      |
 | Caller’s telecom details                | 1..1        | To include details of how to contact the caller. Includes, telephone, Skype ID etc                                                                                         | telecom                   |
-| Caller’s relationship with the patient  | 1..1        | If the caller is the Patient then arelationship of “Self” should be used.  In all other cases a relevant value can be selected from the ValueSetPatientRelationshipType  .  | relationship.coding.code  |
+| Caller’s relationship with the patient  | 1..1        | If the caller is the Patient then arelationship of “Self” should be used.  In all other cases a relevant value can be selected from the [ValueSetPatientRelationshipType](http://hl7.org/fhir/STU3/valueset-relatedperson-relationshiptype.html)  .  | relationship.coding.code  |
 | Caller’scommunication preferences       | 0..1        |                                                                                                                                                                            | telecom.system            |
 
 ### [CareConnect-Questionnaire-1](http://hl7.org/fhir/stu3/questionnaire.html)
