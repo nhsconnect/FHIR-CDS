@@ -100,7 +100,7 @@ The MessageHeader resource contains the messageEventType extension which represe
 
 This resource is used to communicate details about the Requester organisation to the Validator Organisation. 
 
-This should follow the UEC Connect Implementation Guidance for Organisation. 
+This should follow the [UEC Connect Implementation Guidance for Organisation](https://developer.nhs.uk/apis/cds-api/api_observation.html). 
 
 ### [CareConnect-Patient-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1)
 
