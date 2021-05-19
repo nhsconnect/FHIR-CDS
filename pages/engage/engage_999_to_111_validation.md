@@ -47,8 +47,6 @@ This page focusses on the Validation Request interaction
 
 The event message will contain a mandatory MessageHeader resource as the first element within the event message bundle as per FHIR messaging requirements. The MessageHeader resource references an Encounter resource as the focus of the event message.
 
-## UPDATE DIAGRAM!!!!!!!!!!!!
-
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/engage/999-to-111/uec-flows-999-to-111-validation.png" target="_blank"><img src="images/engage/999-to-111/uec-flows-999-to-111-validation.png"></a>
 </div>
