@@ -19,7 +19,7 @@ The service provider requesting the validation of triage outcome will be called 
 The service provider validating triage outcome will be called “Validator” in this use case it will usually be a 111/CAS service provider. However, it could also be a 999 Clinical Hub, either within the Requester organisation (on a different system), or external to the Requester organisation. This could also, in the future, be any other suitably registered healthcareservice. 
 
 <div style="text-align:center; margin-bottom:20px" >
-	<a href="images/engage/999-to-111/ValidationFlow_V0.2.png" target="_blank"><img src="images/engage/999-to-111/ValidationFlow_V0.2.png"></a>
+	<a href="images/engage/999-to-111/ValidationFlow_V0.3.png" target="_blank"><img src="images/engage/999-to-111/ValidationFlow_V0.3.png"></a>
 </div>
 
 ## Out of Scope
