@@ -216,7 +216,7 @@ entries:
     url: /engage_scenario_999_to_111.html
     output: web
     folderitems:
-    - title: 999 sends Validation to 111 service
+    - title: 999 (Requester) sends validation request to 111/CAS (Validator)
       url: /engage_999_to_111_validation.html
       output: web, pdf
       type: homepage

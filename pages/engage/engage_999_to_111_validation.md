@@ -1,5 +1,5 @@
 ---
-title: "999 sends validation request to 111 service"
+title: "999 (Requester) sends validation request to 111/CAS (Validator)"
 keywords: user stories, epics, scenarios, nhsnumber
 tags: [foundations,userstories, epics, scenarios]
 sidebar: engage_sidebar
@@ -8,15 +8,15 @@ summary: "An example of a 999 service sending a validation request to a 111 serv
 ---
 ## Introduction
 
-The Validation Request interaction is used when a service provider requires the validation of a triage outcome to be carried out on another system, potentially by another organisation, before the next activity is carried out.  
+The Validation Request interaction is used when a service provider requires the validation of a triage outcome to be carried out on another system, potentially by another organisation, before the next activity is carried out. This may include treating the patient, providing care advice, requesting an ambulance or an onward referral.
 
-This specification has been developed for the validation of triage outcomes with low acuity ambulance dispositions e.g. Ambulance Response Priority (ARP) CAT3 and CAT4. 
+This FHIR based specification has been developed for the validation of triage outcomes with low acuity ambulance dispositions e.g. Ambulance Response Priority (ARP) CAT3 and CAT4. 
 
  The 999-111 Case Transfer Validation Request payload specification is based on the UEC Connect Encounter Report bundle. Where implementation guidance for a resource is unchanged from the UEC Connect baseline, no additional guidance is provided in this specification. Where implementation guidance is changed for at least one Element within a Resource, implementation guidance is provided for all Elements relevant to this specification. 
 
 The service provider requesting the validation of triage outcome will be called “Requester”. In this use case it will be a 999 Ambulance Service Trust. 
 
-The service provider validating triage outcome will be called “Validator” in this use case it will usually be a 111/CAS service provider. However, it could also be a 999 Clinical Hub, either within the Requester organisation (on a different system), or external to the Requester organisation. This could also, in the future, be any other suitably registered healthcareservice. 
+The service provider validating triage outcome will be called “Validator” in this use case it will usually be a 111/CAS service provider. However, it could also be a 999 Clinical Hub, either within the Requester organisation (on a different system), or external to the Requester organisation. This could also, in the future, be any other suitably registered healthcare service. 
 
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/engage/999-to-111/ValidationFlow_V0.3.png" target="_blank"><img src="images/engage/999-to-111/ValidationFlow_V0.3.png"></a>
@@ -28,13 +28,21 @@ The Next Activity following validation is not in scope for this specification. E
 
 The business rules that determine a case is suitable for validation is also out of scope. 
 
+Rehydration of triage.
+
+Specification for Validation Service Discovery.
+
+## Assumptions
+
+Auto acceptance of validation request. 999 Service will only send cases that meet the contractually agreed criteria.
+
 ## Example scenario 
 
 ARP CAT3 for Validation – original triage outcome upheld. 
 
 ## Scenario Overview
 
-A woman calls 999 on behalf of her husband, an adult male who is suffering from palpitations and a mild but worsening shortness of breath. He is triaged by the 999 Call Handler using NHS Pathways clinical content hosted by the 999 Computer Aided Dispatch system (CAD). The 999-triage outcome is an emergency ambulance within 2 hours (ARP Cat 3). Local business rules identify this case for clinical validation by an external Clinical Assessment Service (CAS) and the case is transferred to the CAS for validation. The CAS Clinician accepts the request for validation, calls the patient and uses the standard Pathways Clinical Content hosted by the 111 System. She does not change any of the responses and the original triage outcome is upheld. 
+A woman calls 999 on behalf of her husband, an adult male who is suffering from palpitations and a mild but worsening shortness of breath. He is triaged by the 999 Call Handler using NHS Pathways clinical content hosted by the 999 Computer Aided Dispatch system (CAD). The 999-triage outcome is an emergency ambulance within 2 hours (ARP Cat 3). Local business rules identify this case for clinical validation by an external Clinical Assessment Service (CAS) and the case is transferred to the CAS for validation. The CAS Clinician initiates the validation, calls the patient and uses the standard Pathways Clinical Content hosted by the 111 System. She does not change any of the responses and the original triage outcome is upheld. 
 
 Interactions supporting this scenario will be: 
 
@@ -68,7 +76,7 @@ The MessageHeader resource contains the messageEventType extension which represe
 |  Value  | Description                                                                                                                                                                                                                                        |
 |:-------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | new     | The new value must be used when the Validation request is being shared for the first time.                                                                                                                                                         |
-| update  | The update value must be used when the Validation request and supporting resources have previously been shared, but have been updated and the updated resources are being shared. This will include updating the status of the task to cancelled.  |
+| update  | The update value must be used when the Validation request and supporting resources have previously been shared, but have been updated and the updated resources are being shared. When cancelling a validation request, the task status MUST be updated to ‘cancelled’.  |
 | delete  | The delete value must only be used when the Validation request was sent in error.                                                                                                                                                                  |
 
 ### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
@@ -81,7 +89,7 @@ The MessageHeader resource contains the messageEventType extension which represe
 | Message Version ID                                      | 0..1         | The version id of the message being sent                                                                      | meta.versionId                              |
 | Message Event Type                                      | 1..1         | See the “Event Life Cycle” section above.                                                                     | extension.valueCodeableConcept.coding.code  |
 | Event                                                   | 1..1         | Fixed Value: referral-1 (Referral) [EventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EventType-1)                                                 | event.code                                  |
-| Focus                                                   | 1..1         | This MUST reference the CareConnect-Encounter-1 resource.    /api_encounter_report_encounter.html             | focus.reference                             |
+| Focus                                                   | 1..1         | This MUST reference the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) resource.           | focus.reference                             |
 | Requester organisation                                  | 1..1         |   Reference to the Requester Organisation                                                                    | sender                                      |
 | Requester  endpoint details                             | 1..1         | The uri of the Requester’s endpoint                                                                          | source.endpoint                             |
 | Requester Encounter Management system name              | 0..1         | EMS Supplier company/ product name                                                                           | source.name                                 |
@@ -89,14 +97,14 @@ The MessageHeader resource contains the messageEventType extension which represe
 | Requester Encounter Management System software version  | 1..1         | EMS software version                                                                                         | source.version                              |
 | Requester CDSS software                                 | 1..1         | CDSS software name                                                                                            | source.modifierExtension (CDSS software)    |
 | Requester CDSS version                                  | 1..1         | CDSS software version                                                                                        | source.modifierExtension (CDSS version)     |
-| Validator organisation                                  | 1..1         | The Validator ODS code                                                                                        | receiver                                    |
-| Validator’s endpoint details                            |              | The uri of the Validator’s endpoint                                                                           | destination.endpoint                        |
+| Validator organisation                                  | 1..1         | The Validator ODS code                                                                                        | responsible                                    |
+| Validator’s endpoint details                            | 1..1         | The uri of the Validator’s endpoint                                                                           | destination.endpoint                        |
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
 | Resource Cardinality | 1..* |
 
-This resource is used to communicate details about the Requester organisation to the Validator Organisation. 
+This resource is used to communicate details about the Requester and Validator organisations. 
 
 This should follow the [UEC Connect Implementation Guidance for Organisation](https://developer.nhs.uk/apis/cds-api/api_observation.html). 
 
@@ -113,8 +121,8 @@ This resource is used to communicate details about the patient who is the subjec
 | Patient identifier (Local)                  | 0..*        |                                                                                                                                                       | identifier.extension.value                             |
 | NHS number verification status              | 0..1        | The SHOULD be populated                                                                                                                               | identifier.extension.valueCodeableConcept.coding.code  |
 | Patient telecom                             | 0..1        | The patient’s contact details.  Note: This may not be the same as the contact details for the encounter which are held in Encounter.participant        | telecom                                                |
-| Patient gender                              | 1..1         | This is the patient’s administrative gender.  This may not be the same as the patient’s phenotypic gender, which SHOULD be recorded as an Observation  | gender                                                 |
-| Patient date of birth                       | 0..1        | Where appropriate to clinical decision making, the patient’s age SHOULD be recorded as an Observation                                                  | birthDate                                              |
+| Patient gender                              | 0..1         | This is the patient’s administrative gender. This may not be the same as the patient’s phenotypic gender, which MUST be recorded as an Observation where needed for clinical decision making.  | gender                                                 |
+| Patient date of birth                       | 0..1        | Where appropriate to clinical decision making, the patient’s age MUST be recorded as an Observation                                                  | birthDate                                              |
 | Patient Address                             | 0..*        | The patient’s current address (this may not be the incident location)                                                                                 | address                                                |
 | Patient Ethnicity                           | 0..1         |                                                                                                                                                       | extension.ethnicCategory                               |
 | Patient communication preferences           | 0..1         |                                                                                                                                                       | extension.NHSCommunication                             |
@@ -124,10 +132,7 @@ This resource is used to communicate details about the patient who is the subjec
 
 | Resource Cardinality | 0..* |
 
-| Business Element                        | Cardinality | Additional Guidance                                                      | FHIR Target  |
-|-----------------------------------------|-------------|--------------------------------------------------------------------------|--------------|
-| Requester practitioner                  | 0..1        | The Practitioner who made the validation request                         | name         |
-| Requester practitioner contact details  | 0..1        | The telecom details of the Practitioner who made the validation request  | telecom      |
+This is used to carry details of the practitioner making the validation request.
 
 ### [CareConnect-PractitionerRole-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-PractitionerRole-1)
 
@@ -166,9 +171,9 @@ For an incident with multiple patients, each patient would have its own encounte
 | Business Element          | Cardinality  | Additional Guidance                                                         | FHIR Target        |
 |---------------------------|--------------|-----------------------------------------------------------------------------|--------------------|
 | Incident location         | 0..1         | Reference to the location at which the encounter took place                 | location.location  |
-| subject                   | 1..1         | A reference to the patient resource representing the subject of this event  | subject            |
+| Patient                   | 1..1         | A reference to the patient resource representing the subject of this event  | subject            |
 | Case ID                   | 1..1         | The Requester’s Case ID                                                     | identifier         |
-| Participant               | 1..1         | This is a Reference to the RelatedPerson resource                           | participant        |
+| Participant               | 1..*         | This SHOULD be populated with a reference to the Requester’s Practitioner and the RelatedPerson. In this use case the RelatedPerson resource is also used to communicate the patient’s contact details for that encounter, or those of their representative, so that they can be contacted by the Validator. | participant        |
 | Encounter start datetime  | 1..1         | Call Connect time                                                           | period.start       |
 | Encounter end datetime    | 0..1         | The end time of the encounter                                               | period.end         |
 | Requester Case status     | 1..1         | This MUST be populated with Triaged                                         | status             |
