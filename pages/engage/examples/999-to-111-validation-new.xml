@@ -28,13 +28,24 @@
 					<code value="referral-1"/>
 					<display value="Referral"/>
 				</event>
+				<destination>
+					<endpoint value="urn:nhs:addressing:asid:300000000161"/>
+				</destination>
 				<timestamp value="2021-02-19T11:00:00+00:00"/>
 				<sender><!-- 999 service -->
 					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ggb4hj"/>
 					<display value="999 Service"/>
 				</sender>
 				<source><!-- 999 service -->
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RequesterCDSSsoftwarename-1">
+        			<valueString value="RequesterCDSSsoftwarename"/>
+    			</extension>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-RequesterCDSSsoftwareversion-1">
+        			<valueString value="RequesterCDSSsoftwareversion"/>
+    			</extension>
 					<name value="999 Call centre"/>
+					<software value="999 Software"/>
+					<version value="1.0"/>
 					<contact>
 						<system value="phone"/>
 						<value value="0191 1231234"/>
@@ -63,9 +74,12 @@
 				<intent value="order"/> 
 				<priority value="routine"/>
 				<code>
-					<text value="Validation"/> <!-- Potentially make it a code system, current profile does not support this -->
+					<text value="Validation of triage outcome"/> <!-- Potentially make it a code system, current profile does not support this -->
 				</code>
-				<description value="Referred for validation"/>
+				<description value="validation of triage outcome"/>
+				<focus> <!-- ReferralRequest -->
+					<reference value="urn:uuid:6687fb37-87a2-77d8-968f-b123429299k8"/>
+				</focus>
 			    <for>
 					<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/>
 			    </for>
@@ -117,42 +131,56 @@
 				</occurrencePeriod> 
 				<authoredOn value="2021-02-19T11:25:00+00:00"/>
 				<description value="In the past 2 years has had 6 instances of r) sided Otitis media."/>
-				<supportingInfo><!-- Parameters -->
-					<reference value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18ssc3"/>				
-				</supportingInfo>
 				<supportingInfo><!-- ProcedureRequest -->
 					<reference value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>				
 				</supportingInfo>
+				<context>
+					<reference value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
+				</context>
+				<reasonCode> <!-- NEED TO UPDATE TO THE ACTUAL CODES####################################################################### -->
+						<coding> 
+							<system value="https://fhir.nhs.uk/"/> 
+							<code value="103696004"/> 
+							<display value="Patient referral to specialist"/> 
+						</coding>
+				</reasonCode>
 			</ReferralRequest> 
 		</resource>
 	</entry>
 	<entry>
-		<fullUrl value="urn:uuid:e3177167-40fc-4f1a-80f2-a2f17f18ssc3"/>
+		<fullUrl value="urn:uuid:6687fb37-87a2-77d8-968f-n667829678j9"/>
 		<resource>
-			<Parameters>
-			<id value="e3177167-40fc-4f1a-80f2-a2f17f18ssc3"/> 
-				<parameter> 
-					<name value="SG"/>
-					<part> 
-						<name value="SG1000"/>
-						<valueString value="Abdominal or Flank Injury, Blunt"/>
-					</part> 
-				</parameter>
-				<parameter> 
-					<name value="SD"/> 					
-					<part> 
-						<name value="SD4033"/>
-						<valueString value="AMB new/worsening breathlessness"/> 
-					</part>
-				</parameter>
-				<parameter> 
-					<name value="DX"/> 					
-					<part> 
-						<name value="Dx012"/>
-						<valueString value="Emergency Ambulance Response (Category 3)"/> 
-					</part>
-				</parameter> 
-			</Parameters>
+			<CarePlan>
+				<id value="6687fb37-87a2-77d8-968f-n667829678j9"/> 
+					<identifier> 
+						<value value="12345"/> 
+					</identifier> 
+					<status value="active"/> 
+					<intent value="plan"/> 
+					<subject> 
+						<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/>
+					</subject> 
+					<context> <!-- Encounter -->
+						<reference value="urn:uuid:6687fb37-87a2-77d8-968f-b123429203c0"/> 
+					</context> 
+					<category> 
+						<text value="UEC Encounter Outcome"/> 
+					</category>
+					<activity>
+						<outcomeCodeableConcept> <!-- Related Encounter Outcome -->
+								<text value="Ambulance disposition for validation"/>
+						</outcomeCodeableConcept>
+						<outcomeCodeableConcept> <!-- NEED TO UPDATE WITH CODES ############################################### -->
+							<coding> 
+								<system value="http://fhir.nhs.uk"/> 
+								<code value="1111"/> 
+								<display value="TEST"/> 
+							</coding>
+							<text value="TEST"/>
+						</outcomeCodeableConcept>
+						<reference reference="urn:uuid:6687fb37-87a2-77d8-968f-b123429299k8"/>
+					</activity>
+			</CarePlan> 		
 		</resource>
 	</entry>
 	<entry>
@@ -161,14 +189,10 @@
 			<ProcedureRequest>
 			<id value="e3177167-40fc-4f1a-80f2-a2f17f69hhj8"/>
 			<status value="active"/> 
-			<intent value="instance-order"/> 
+			<intent value="plan"/> 
 			<priority value="routine"/> 
-			<code> 
-				<coding> 
-					<system value="http://snomed.info/sct"/> 
-					<code value="2318008"/> 
-				</coding> 
-				<text value="Anesthesia for cast procedure on forearm, wrist or hand"/> 
+			<code>
+				<text value="Ambulance Dispatch"/> 
 		    </code> 
 		    <subject> 
 				<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/> 
@@ -183,6 +207,9 @@
 				</coding> 
 				<text value="Right arm"/> 
 			</bodySite>
+			<context>
+					<reference value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
+			</context>
 			</ProcedureRequest> 
 		</resource>
 	</entry>
@@ -242,27 +269,10 @@
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"/>
 				</meta>				
 				<status value="in-progress"/> 
-				<statusHistory> 
-					<status value="arrived"/> <!-- The call is received by 999 -->
-					<period> 
-						<start value="2021-02-19T11:15:00+00:00"/> 
-						<end value="2021-02-19T11:35:00+00:00"/> 
-					</period> 
-				</statusHistory> 
-				<statusHistory> 
-					<status value="triaged"/> <!-- The call is triaged by 999 -->
-					<period> 
-						<start value="2021-02-19T11:35:00+10:00"/> 
-						<end value="2021-02-19T11:45:00+10:00"/> 
-					</period> 
-				</statusHistory> 
-				<statusHistory> 
-					<status value="in-progress"/> <!-- The call is allocated a Category 3 or 4, passed to 111 -->
-					<period> 
-						<start value="2021-02-19T11:45:00+10:00"/> 
-						<end value="2021-02-19T12:15:00+10:00"/> 
-					</period> 
-				</statusHistory>
+				<identifier> <!-- Requester's CASE ID -->
+					<system value="https://fhir.nhs.uk/Id/case-id"/>
+					<value value="6687fb37-87a2-77d8-968f-b123429203c0"/> 
+				</identifier> 
 				<period> 
 					<start value="2021-02-19T07:15:00+10:00"/>
 				</period> 
@@ -294,6 +304,9 @@
 						<start value="2021-02-19T11:05:00+10:00"/>
 					</period> 
 				</location>
+				<episodeOfCare> 
+					<reference value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/> 
+				</episodeOfCare> 
 			</Encounter>
 		</resource>
 	</entry>
@@ -306,17 +319,18 @@
 					<profile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"/>
 				</meta>	
 				<status value="active"/>
-				<code> 
-					<coding> 
-						<system value="http://hl7.org/fhir/ValueSet/flag-code"/> 
-						<code value="409002"/> 
-						<display value="Food allergy diet"/> 
-					</coding> 
-					<text value="Patient has a food allergy diet."/> 
+				<category>
+					<text value="Scene Safety"/>   
+				</category>
+				<code>
+					<text value="Patient has some scene safety issues."/> 
 				</code> 
 			    <subject> 
 					<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/>
 			    </subject>
+			    <encounter> 
+					<reference value="urn:uuid:6687fb37-87a2-77d8-968f-b123429203c0"/> 
+				</encounter> 
 			</Flag> 
 		</resource>
 	</entry>
@@ -599,6 +613,22 @@
 					</coding> 
 				</specialty> 
 			</PractitionerRole>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
+		<resource>
+		<EpisodeOfCare>
+				<id value="b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
+				<identifier><!-- Journey ID -->
+					<system value="https://fhir.nhs.uk/Id/journey-id"/> 
+					<value value="1234567890"/> 
+				</identifier> 
+				<status value="active"/> 
+				<patient> 
+					<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/> 
+				</patient>
+			</EpisodeOfCare>
 		</resource>
 	</entry>
 	<entry>

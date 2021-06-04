@@ -137,7 +137,7 @@
 				<context>
 					<reference value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
 				</context>
-				<reasonCode>
+				<reasonCode> <!-- NEED TO UPDATE TO THE ACTUAL CODES####################################################################### -->
 						<coding> 
 							<system value="https://fhir.nhs.uk/"/> 
 							<code value="103696004"/> 
@@ -167,12 +167,12 @@
 						<text value="UEC Encounter Outcome"/> 
 					</category>
 					<activity>
-						<outcomeCodeableConcept>
+						<outcomeCodeableConcept> <!-- Related Encounter Outcome -->
 								<text value="Ambulance disposition for validation"/>
 						</outcomeCodeableConcept>
-						<outcomeCodeableConcept> 
+						<outcomeCodeableConcept> <!-- NEED TO UPDATE WITH CODES ############################################### -->
 							<coding> 
-								<system value="http://snomed.info/sct"/> 
+								<system value="http://fhir.nhs.uk"/> 
 								<code value="1111"/> 
 								<display value="TEST"/> 
 							</coding>
