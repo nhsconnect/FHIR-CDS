@@ -220,7 +220,7 @@ entries:
       url: /engage_999_to_111_validation.html
       output: web, pdf
       type: homepage
-    - title: 111 sends Validation response to 999 service
+    - title: 111/CAS (Validator) sends a response to the validation request
       url: /engage_111_to_999_validation_response.html
       output: web, pdf
       type: homepage

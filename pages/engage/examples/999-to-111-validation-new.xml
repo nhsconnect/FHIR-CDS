@@ -23,7 +23,7 @@
 						</coding>
 					</valueCodeableConcept>
 				</extension>
-				<event><!-- Is it a Referral or should say Validation????? -->
+				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
 					<code value="referral-1"/>
 					<display value="Referral"/>
