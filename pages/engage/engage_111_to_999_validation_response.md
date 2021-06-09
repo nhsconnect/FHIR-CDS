@@ -16,38 +16,20 @@ The Validation Request Response interaction is used when a service provider want
 
 The Next Activity following validation is not in scope for this specification. Existing specifications should be used at this time e.g. Ambulance Request, 111 Report.
 
-
-
-
-
-## Out of Scope
-
-The Next Activity following validation is not in scope for this specification. Existing specifications should be used at this time i.e. Ambulance Request, 111 Report. 
-
-The business rules that determine a case is suitable for validation is also out of scope. 
-
-Rehydration of triage.
-
-Specification for Validation Service Discovery.
-
-## Assumptions
-
-Auto acceptance of validation request. 999 Service will only send cases that meet the contractually agreed criteria.
-
 ## Example scenario 
 
-ARP CAT3 for Validation – original triage outcome upheld. 
+ARP CAT3 for Validation – original triage outcome upheld.
 
 ## Scenario Overview
 
-A woman calls 999 on behalf of her husband, an adult male who is suffering from palpitations and a mild but worsening shortness of breath. He is triaged by the 999 Call Handler using NHS Pathways clinical content hosted by the 999 Computer Aided Dispatch system (CAD). The 999-triage outcome is an emergency ambulance within 2 hours (ARP Cat 3). Local business rules identify this case for clinical validation by an external Clinical Assessment Service (CAS) and the case is transferred to the CAS for validation. The CAS Clinician initiates the validation, calls the patient and uses the standard Pathways Clinical Content hosted by the 111 System. She does not change any of the responses and the original triage outcome is upheld. 
+A woman calls 999 on behalf of her husband, an adult male who is suffering from palpitations and a mild but worsening shortness of breath. He is triaged by the 999 Call Handler using NHS Pathways clinical content hosted by the CAD. The 999-triage outcome was an emergency ambulance within 2 hours (ARP Cat 3). Local business rules identified this case for clinical validation by an external Clinical Assessment Service (CAS) and the case was transferred to the CAS for validation. The CAS Clinician accepts the request for validation, calls the patient and uses the standard Pathways Clinical Content hosted by the 111 System. She does not change any of the responses and the original triage outcome is upheld. 
 
 Interactions supporting this scenario will be: 
 
-* Validation Request 
-* Validation Response 
+*Validation Request 
+*Validation Response 
 
-This page focusses on the Validation Request interaction 
+This page focusses on the Validation Response interaction.
 
 ## Bundle structure
 
@@ -56,6 +38,10 @@ The event message will contain a mandatory MessageHeader resource as the first e
 <div style="text-align:center; margin-bottom:20px" >
 	<a href="images/engage/999-to-111/uec-flows-999-to-111-validation.png" target="_blank"><img src="images/engage/999-to-111/uec-flows-999-to-111-validation.png"></a>
 </div>
+
+### Option 1
+
+Send Validation outcome in Task resource only.
 
 ### [Bundle](http://hl7.org/fhir/STU3/StructureDefinition/Bundle)
 
