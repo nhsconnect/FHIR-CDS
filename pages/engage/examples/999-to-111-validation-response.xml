@@ -23,7 +23,7 @@
 						</coding>
 					</valueCodeableConcept>
 				</extension>
-				<event><!-- Is it a Referral or should say Validation????? -->
+				<event>
 					<system value="https://fhir.nhs.uk/STU3/CodeSystem/EventType-1"/>
 					<code value="referral-1"/>
 					<display value="Referral"/>
@@ -56,8 +56,8 @@
 					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
 					<display value="111 Service"/>
 				</responsible>
-				<focus><!-- Encounter -->
-					<reference value="urn:uuid:6687fb37-87a2-77d8-968f-b123429203c0"/>
+				<focus><!-- Task -->
+					<reference value="urn:uuid:2d920d4a-1434-445d-a8a0-8ol6688768de"/>
 				</focus>
 			</MessageHeader>
 		</resource>
@@ -137,11 +137,11 @@
 				<context>
 					<reference value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
 				</context>
-				<reasonCode> <!-- NEED TO UPDATE TO THE ACTUAL CODES####################################################################### -->
+				<reasonCode>
 						<coding> 
-							<system value="https://fhir.nhs.uk/"/> 
-							<code value="103696004"/> 
-							<display value="Patient referral to specialist"/> 
+							<system value="https://fhir.nhs.uk/Id/pathways-sd-code"/> 
+							<code value="1122334455"/> 
+							<display value="Pathways SD Code"/>
 						</coding>
 				</reasonCode>
 			</ReferralRequest> 
@@ -170,13 +170,12 @@
 						<outcomeCodeableConcept> <!-- Related Encounter Outcome -->
 								<text value="Ambulance disposition for validation"/>
 						</outcomeCodeableConcept>
-						<outcomeCodeableConcept> <!-- NEED TO UPDATE WITH CODES ############################################### -->
+						<outcomeCodeableConcept>
 							<coding> 
-								<system value="http://fhir.nhs.uk"/> 
-								<code value="1111"/> 
-								<display value="TEST"/> 
+								<system value="https://fhir.nhs.uk/Id/pathways-sd-code"/> 
+								<code value="1122334455"/> 
+								<display value="Pathways SD Code"/> 
 							</coding>
-							<text value="TEST"/>
 						</outcomeCodeableConcept>
 						<reference reference="urn:uuid:6687fb37-87a2-77d8-968f-b123429299k8"/>
 					</activity>
@@ -616,14 +615,10 @@
 		</resource>
 	</entry>
 	<entry>
-		<fullUrl value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
+		<fullUrl value="urn:uuid:b923aa53-2376-4015-a07d-ddl8bf2310ff"/><!-- Journey ID -->
 		<resource>
 		<EpisodeOfCare>
 				<id value="b923aa53-2376-4015-a07d-ddl8bf2310ff"/>
-				<identifier><!-- Journey ID -->
-					<system value="https://fhir.nhs.uk/Id/journey-id"/> 
-					<value value="1234567890"/> 
-				</identifier> 
 				<status value="active"/> 
 				<patient> 
 					<reference value="urn:uuid:9589fb37-87a2-48d8-968f-b371429208a8"/> 
@@ -695,6 +690,12 @@
 					<longitude value="53.79957987629337"/> 
 					<latitude value="-1.5417544014466307"/> 
 				</position>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-Eastings-1">
+        			<valueDecimal value="55.44555454545"/>
+    			</extension>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-Northings-1">
+        			<valueDecimal value="50.9934793274"/>
+    			</extension>
 			</Location>
 		</resource>
 	</entry>

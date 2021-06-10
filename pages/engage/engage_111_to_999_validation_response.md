@@ -57,15 +57,19 @@ The Bundle resource is the container for the event message and SHALL conform to 
 
 The MessageHeader resource contains the messageEventType extension which represents the action the event message represents at a resource level, The messageEventType extension shall contain values as per the table below: 
 
-|  Value  | Description                                                                                                                                                                                                                                        |
-|:-------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| new     | The new value must be used when the Validation request is being shared for the first time.                                                                                                                                                         |
-| update  | The update value must be used when the Validation request and supporting resources have previously been shared, but have been updated and the updated resources are being shared. When cancelling a validation request, the task status MUST be updated to ‘cancelled’.  |
+| Value   | Description                                                                                                                                                                                                                                        |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| new     | The new value must be used when the Validation response is being shared for the first time .                                                                                                                                                       |
+| update  | The update value must be used when the Validation request and supporting resources have previously been shared, but have been updated and the updated resources are being shared. This will include updating the status of the task to cancelled.  |
 | delete  | The delete value must only be used when the Validation request was sent in error.                                                                                                                                                                  |
 
 ### [Event-MessageHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/Event-MessageHeader-1)
 
 | Resource Cardinality | 1..1 |
+
+When the interim Validation Response is sent with a task status of ‘in progress’ the minimum payload is the Task resource. 
+
+When the final Validation Response is sent with a task status of ‘completed’ the minimum payload is the  Task and Encounter resources, plus a Care Plan resource with a ‘category’ of ‘UEC Encounter Outcome’.
 
 | Business Element                                        | Cardinality  | Additional Guidance                                                                                           | FHIR Target                                 |
 |---------------------------------------------------------|--------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------|
@@ -73,7 +77,7 @@ The MessageHeader resource contains the messageEventType extension which represe
 | Message Version ID                                      | 0..1         | The version id of the message being sent                                                                      | meta.versionId                              |
 | Message Event Type                                      | 1..1         | See the “Event Life Cycle” section above.                                                                     | extension.valueCodeableConcept.coding.code  |
 | Event                                                   | 1..1         | Fixed Value: referral-1 (Referral) [EventType-1](https://fhir.nhs.uk/STU3/CodeSystem/EventType-1)                                                 | event.code                                  |
-| Focus                                                   | 1..1         | This MUST reference the [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1) resource.           | focus.reference                             |
+| Focus                                                   | 1..1         | This MUST reference the [CareConnect-Task-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1) resource.           | focus.reference                             |
 | Requester organisation                                  | 1..1         |   Reference to the Requester Organisation                                                                    | sender                                      |
 | Requester  endpoint details                             | 1..1         | The uri of the Requester’s endpoint                                                                          | source.endpoint                             |
 | Requester Encounter Management system name              | 0..1         | EMS Supplier company/ product name                                                                           | source.name                                 |
@@ -81,8 +85,49 @@ The MessageHeader resource contains the messageEventType extension which represe
 | Requester Encounter Management System software version  | 1..1         | EMS software version                                                                                         | source.version                              |
 | Requester CDSS software                                 | 1..1         | CDSS software name                                                                                            | source.modifierExtension (RequesterCDSSsoftwarename)    |
 | Requester CDSS version                                  | 1..1         | CDSS software version                                                                                        | source.modifierExtension (RequesterCDSSsoftwareversion)     |
-| Validator organisation                                  | 1..1         | The Validator ODS code                                                                                        | responsible                                    |
+| Validator organisation                                  | 1..1         | The Validator ODS code                                                                                        | receiver                                    |
 | Validator’s endpoint details                            | 1..1         | The uri of the Validator’s endpoint                                                                           | destination.endpoint                        |
+
+### [CareConnect-Task-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1)
+
+| Resource Cardinality | 1..1 |
+
+The Task resource is used by the validator to update the received Task Resource with the Validation  
+Outcome.  
+
+The elements that are expected to change from the incoming Task Resource are: 
+
+* Status
+* Status reason
+* Task last modified date
+* Output 
+
+https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value added for Validation Completed Response
+
+| Business Element        | Cardinality  | Additional Guidance                                                                                                                              | FHIR Target         |
+|-------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| Identifier               | 1..1         | This is the business identifier of the original task sent by the Requestor                                                                                                               | identifier                |
+| Task type               | 1..1         | MUST be populated with 'Validation'                 | code                |
+| Task description        | 0..1         | To be populated with ‘validation of triage outcome’                                                                                              | description         |
+| Update date/time         | 0..1         | Update date/time                                                                         | lastModified          |
+| Validation breach time  | 1..1         | The time by which the validation must be complete                                                                                               | restriction.period  |
+| Status                  | 1..1         | This will be populated with ‘In progress’ when the task is commenced by the Validator. This will be populated with ‘completed’ when the task is completed by the Validator.                                                                        | status              |
+| Reason                  | 0..1         | Reason for the task                                                                                                                              | reason              |
+| Intent                 | 1..1         | This MUST be populated with Order                                                                                                                | intent              |
+| Priority                | 1..1         | This MUST be populated with 'Routine'. Prioritisation to be carried out using the Validation Breach time carried in Task.restrictionPeriod  | priority            |
+| Beneficiary             | 0..1         | This is a reference to the Patient                                                                                                               | for                 |
+| Context                 | 0..1         | This is a reference to the Encounter                                                                                                             | context             |
+| Owner                   | 1..1         | This is the Validator Organisation’s ODS code                              | owner               |
+| Validated triage outcome  | 0..1         | This SHOULD  be populated with References to the following resources populated following completion of validation of triage. <br/>
+* Care Plan<br/>
+* Encounter (validator’s)<br/>
+* Referral Request <br/>
+* Procedure Request <br/>
+* Condition <br/>
+* List <br/>
+* Composition <br/>
+* Observations <br/>
+* Flags                               | owner               |
 
 ### [CareConnect-Organization-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1)
 
@@ -141,7 +186,7 @@ This resource is used to carry the JourneyID which links all encounters within t
 |------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | Status                 | 1..1         | This MUST be populated with Active                                                                                                                     | status                |
 | Patient                | 1..1         | The patient who is the focus of this episode of care                                                                                                   | patient               |
-| Journey ID             | 1..1         | A GUID specifically generated by the Requester’s EMS that is used throughout the patient’s journey. This can be the same as the Requester’s Case ID.  | identifier            |
+| Journey ID             | 1..1         | A GUID specifically generated by the Requester’s EMS that is used throughout the patient’s journey. This can be the same as the Requester’s Case ID.  | id            |
 | Managing Organisation  | 0..1         | Do not populate as the organisation that assumes care for the patient will be held within each encounter in the patient’s journey through UEC.         | managingOrganisation  |
 
 ### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
@@ -174,37 +219,15 @@ Whilst the cardinality of each element is 0..1 at least one property or non-prop
 | Business Element                             | Cardinality  | Additional Guidance                                                                                                                                        | FHIR Target                               |
 |----------------------------------------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
 | Incident location                            | 0..1         | The address of the incident location (including postcode)                                                                                                 | address                                   |
-| Incident Location ID (Property)              | 0..1         | This is the UPRN of the incident location                                                                                                                 | address.extension-addressKey (UPRN)       |
-| Incident Location ID (Property)              | 0..1         | This is the PAF key of the incident location                                                                                                              | address.extension-addressKey (PAF)        |
+| Incident Location ID (Property)              | 0..1         | This is the UPRN of the incident location                                                                                                                 | address.extension-UPRN       |
+| Incident Location ID (Property)              | 0..1         | This is the PAF key of the incident location                                                                                                              | address.extension-PAF        |
 | Incident Location Latitude                   | 0..1         | This is the Latitude, with WGS84 datum, of the incident location.                                                                                         | position.latitude                         |
 | Incident Location Longitude                  | 0..1         | This is the Longitude, with WGS84 datum, of the incident location.                                                                                         | position.longitude                        |
-| Incident Location Eastings                   | 0..1         | This is the Eastings co-ordinate of the incident location                                                                                                  | address.extension-addressKey  (Eastings)  |
-| Incident Location Northings                  | 0..1         | This is the Northings co-ordinate of the incident location                                                                                                 | address.extension-addressKey (Northings)  |
-| Incident Location What3Words                 | 0..1         | This is the what3words address for a 3 metre square location                                                                                               | Address.extension-addressKey(what3words)  |
+| Incident Location Eastings                   | 0..1         | This is the Eastings co-ordinate of the incident location                                                                                                  | address.extension-eastings  |
+| Incident Location Northings                  | 0..1         | This is the Northings co-ordinate of the incident location                                                                                                 | address.extension-northings  |
+| Incident Location What3Words                 | 0..1         | This is the what3words address for a 3 metre square location                                                                                               | Address.extension-what3words  |
 | Incident location type                       | 0..1         |                                                                                                                                                            | physicalType                              |
 | Incident location supplementary information  | 0..1         | Additional details about the location that could be displayed as further information to identify the location e.g. Outside the garage behind the property  | description                               |
-
-### [CareConnect-Task-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Task-1)
-
-| Resource Cardinality | 1..1 |
-
-The Task resource is used to communicate the activity required to be undertaken by the Validator. 
-
-https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value added for Validation Completed Response
-
-| Business Element        | Cardinality  | Additional Guidance                                                                                                                              | FHIR Target         |
-|-------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| Task type               | 1..1         | MUST be populated with 'Validation of triage outcome'                                                                                                              | Code                |
-| Task description        | 0..1         | To be populated with ‘validation of triage outcome’                                                                                              | description         |
-| Validation breach time  | 1..1         | The time by which the validation must be complete                                                                                               | restriction.period  |
-| Status                  | 1..1         | This MUST be populated with ‘Requested’                                                                                                             | status              |
-| Reason                  | 0..1         | Reason for the task                                                                                                                              | reason              |
-| Task focus              | 0..1         | This SHOULD be populated with a reference to theReferalRequest from the Requester                                                                | focus               |
-| Intent                 | 1..1         | This MUST be populated with Order                                                                                                                | intent              |
-| Priority                | 1..1         | This MUST be populated with 'Routine'. Prioritisation to be carried out using the Validation Breach time carried in Task.restrictionPeriod  | priority            |
-| Beneficiary             | 0..1         | This is a reference to the Patient                                                                                                               | for                 |
-| Context                 | 0..1         | This is a reference to the Encounter                                                                                                             | context             |
-| Owner                   | 1..1         | This must be populated with a reference to the Validator Organisation                                                                            | owner               |
 
 ### [CareConnect-ReferralRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ReferralRequest-1)
 
@@ -222,7 +245,7 @@ The ReferralRequest resource is used to communicate the Referral Request based o
 | Next activity                                | 1..1         | This is the next activity required in theRequestor’s triage outcome. E.g.Emergency Ambulance Dispatch                                                                                                                                                                                                                                                                                                                                                                                           | supportingInfo(procedureRequest)  |
 | Chief concern                                | 0..1         | When available this is populated with the chief concern which MUST be a Condition                                                                                                                                                                                                                                                                                                                                                                                                                | reasonReference                   |
 | Episode of care                              |  1..1            | A reference to the Episode of Care of the originating (Requester’s) encounter                                                                                                                                                                                                                                                                                                                                                                                                                    | context                           |
-| Proprietary Triage Outcome code system       | 0..*        | When you are passing a Pathways Symptom Group (SG) code use ‘x’ value in the system element.    When you are passing a Pathways Symptom Discriminator (SD) code use ‘y’ value in the system element.    When you are passing a Pathways Disposition (DX) code use ‘z’ value in the system element.    When you are passing an Ambulance Response Programme (ARP) code use ‘p’ value in the system element.    When you are passing an AMPDS Dispatch Code use ‘m’ value in the system element    | reasonCode.system                 |
+| Proprietary Triage Outcome code system       | 0..*        | * Pathways Symptom Group (SG) code use ‘https://fhir.nhs.uk/Id/pathways-sg-code’ value <br/>* Pathways Symptom Discriminator (SD) code use ‘https://fhir.nhs.uk/Id/pathways-sd-code’ value <br/>* Pathways Disposition (DX) code use ‘https://fhir.nhs.uk/Id/pathways-dx-code’ value <br/>* Ambulance Response Programme (ARP) code use ‘https://fhir.nhs.uk/Id/pathways-arp-code’ value <br/>* AMPDS Dispatch Code use ‘https://fhir.nhs.uk/Id/ampds-code’ value    | reasonCode.system                 |
 | Proprietary Triage Outcome code              | 0..*         | When you are passing an SG code this should be populated with the SG code    When you are passing an SD code this should be populated with the SG code    When you are passing an Dx code this should be populated with the Dx code    When you are passing an ARP code this should be populated with the ARP code    When you are passing an AMPDS dispatch code this should be populated with the AMPDS dispatch code                                                                           | reasonCode.code                   |
 | Proprietary Triage Outcome code description  | 0..*         | When you are passing an SG code this should be populated the SG code description    When you are passing an SD code this should be populated the SD code description    When you are passing an Dx code this should be populated the Dx code description    When you are passing an ARP code this should be populated the ARP code description    When you are passing an AMPDS dispatch code this should be populated the AMPDS dispatch code description                                       | reasonCode.display            |
 
@@ -241,9 +264,9 @@ This resource is used to communicate proprietary triage outcome information and 
 | Care plan type                               | 1..1         | This MUST be populated with UEC Encounter Outcome                                                                                                                                                                                                                                                                                                                                                                                                                                                | category                                 |
 | Associated referral                          | 0..1         | When the validation results in an onward referral i.e Related encounter outcome is Referral, ambulance request, or NUMSAS this MUST be a reference to the ReferralRequest for the next activity. If there is no onward referral i.e. Related encounter outcome is ’treated’ or ‘signposted’, this will not be populated. This MUST reference the Referral Request carrying the original triage outcome.                                                                                                                                                                        | activity.Reference                       |
 | Related encounter outcome                    | 1..1         | Valueset: (extendable)    Patient treated  Ambulance Requested  Patient referred  Patient signposted (no referral)  NUMSAS  Sent for validation. This SHOULD be populated with ‘Ambulance disposition for validation’                                                                                                                                                                                                                                                                                                                                                  | Activity.outcomeCodeableConcept          |
-| Proprietary Triage Outcome code system       | 0..*        | When you are passing a Pathways Symptom Group (SG) code use ‘x’ value in the system element.    When you are passing a Pathways Symptom Discriminator (SD) code use ‘y’ value in the system element.    When you are passing a Pathways Disposition (DX) code use ‘z’ value in the system element.    When you are passing an Ambulance Response Programme (ARP) code use ‘p’ value in the system element.    When you are passing an AMPDS Dispatch Code use ‘m’ value in the system element    | Activity.outcomeCodeableConcept.system   |
-| Proprietary Triage Outcome code              | 0..*         | When you are passing an SG code this should be populated with the SG code    When you are passing an SD code this should be populated with the SG code    When you are passing an Dx code this should be populated with the Dx code    When you are passing an ARP code this should be populated with the ARP code    When you are passing an AMPDS dispatch code this should be populated with theAMPDS dispatch code                                                                           | Activity.outcomeCodeableConcept.code     |
-| Proprietary Triage Outcome code description  | 0..*         | When you are passing an SG code this should be populated the SG code description    When you are passing an SD code this should be populated the SD code description    When you are passing an Dx code this should be populated the Dx code description    When you are passing an ARP code this should be populated the ARP code description    When you are passing an AMPDS dispatch code this should be populated theAMPDS dispatch code description                                        | Activity.outcomeCodeableConcept.display  |
+| Proprietary Triage Outcome code system       | 0..*        | * Pathways Symptom Group (SG) code use ‘https://fhir.nhs.uk/Id/pathways-sg-code’ value <br/>* Pathways Symptom Discriminator (SD) code use ‘https://fhir.nhs.uk/Id/pathways-sd-code’ value <br/>* Pathways Disposition (DX) code use ‘https://fhir.nhs.uk/Id/pathways-dx-code’ value <br/>* Ambulance Response Programme (ARP) code use ‘https://fhir.nhs.uk/Id/pathways-arp-code’ value <br/>* AMPDS Dispatch Code use ‘https://fhir.nhs.uk/Id/ampds-code’ value    | Activity.outcomeCodeableConcept.system   |
+| Proprietary Triage Outcome code              | 0..*         | When you are passing an SG code this should be populated with the SG code    When you are passing an SD code this should be populated with the SG code    When you are passing an Dx code this should be populated with the Dx code    When you are passing an ARP code this should be populated with the ARP code    When you are passing an AMPDS dispatch code this should be populated with the AMPDS dispatch code                                                                           | Activity.outcomeCodeableConcept.code     |
+| Proprietary Triage Outcome code description  | 0..*         | When you are passing an SG code this should be populated the SG code description    When you are passing an SD code this should be populated the SD code description    When you are passing an Dx code this should be populated the Dx code description    When you are passing an ARP code this should be populated the ARP code description    When you are passing an AMPDS dispatch code this should be populated the AMPDS dispatch code description                                        | Activity.outcomeCodeableConcept.display  |
 | Care plan summary                            | 0..1         | When populated  this MUST be populated with the human readable care plan.     This MUST include any care advice given to the patient.                                                                                                                                                                                                                                                                                                                                                            | Activity.outcomeCodeableConcept.text     |
 
 ### [CareConnect-ProcedureRequest-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-ProcedureRequest-1)
