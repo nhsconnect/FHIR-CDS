@@ -388,7 +388,7 @@ This should follow the [UEC Connect Implementation Guidance for Condition](https
 	<div class="tabBodies">
 	
 		<div class="tabBody" id="newBody" markdown="span">
-			```{% include_relative examples/999-to-111-validation-new.xml %}```
+			```{% include_relative examples/999-to-111-validation-response.xml %}```
 		</div>
 		
 	</div>
