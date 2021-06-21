@@ -18,10 +18,6 @@ The service provider requesting the case transfer will be called ‘’the Consu
 
 The service provider accepting the case transfer will be called  the “Provider” in this use case it will usually be a 111/CAS service provider. However, it could also be could also be a 999 Clinical Hub, either within the Consumer organisation (on a different system), or external to the Consumer organisation.
 
-<div style="text-align:center; margin-bottom:20px" >
-	<a href="images/engage/999-to-111/ValidationFlow-response.png" target="_blank"><img src="images/engage/999-to-111/ValidationFlow-response.png"></a>
-</div>
-
 The Next Activity following case transfer is not in scope for this specification. Existing specifications should be used at this time e.g. Ambulance Request, 111 Report. 
 
 ## Example scenario 

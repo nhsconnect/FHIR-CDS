@@ -53,7 +53,7 @@
 					<endpoint value="urn:nhs:addressing:asid:300000000161"/>
 				</source>
 				<responsible><!-- 111 service -->
-					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ebc6ea"/>
+					<reference value="urn:uuid:33a33b58-648a-4453-b981-e21ea9ssf7op"/>
 					<display value="111 Service"/>
 				</responsible>
 				<focus><!-- Task -->
@@ -109,7 +109,23 @@
 					<period> 
 						<end value="2021-02-19T11:45:00+00:00"/> 
 					</period>
-				</restriction> 
+				</restriction>	
+				<output>
+					<type> 
+						<text value="Encounter"/> 
+					</type> 
+					<valueReference><!-- Encounter -->
+						<reference value="urn:uuid:6687fb37-87a2-77d8-968f-b123429203c0"/> 
+					</valueReference>
+				</output>
+				<output>
+					<type> 
+						<text value="Care Plan"/> 
+					</type> 
+					<valueReference><!-- Care Plan -->
+						<reference value="urn:uuid:6687fb37-87a2-77d8-968f-n667829678j9"/> 
+					</valueReference>
+				</output>
 			</Task> 
 		</resource>
 	</entry>
