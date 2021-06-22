@@ -190,7 +190,6 @@ https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value a
 
 | Business Element        | Cardinality  | Additional Guidance                                                                                                                              | FHIR Target         |
 |-------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| Identifier               | 1..1         | This is the business identifier of the original task sent by the Requestor                                                                                                               | identifier                |
 | Task type               | 1..1         | MUST be populated with ‘Clinical call back’                  | code                |
 | Task description        | 0..1         | To be populated with ‘clinical call back’                                                                       | description         |
 | Call back breach time   | 1..1         | The time by which the call back must be undertaken. This MUST use the datatype 'Period' The start of the period must be 'now'.                                                                                            | restriction.period  |

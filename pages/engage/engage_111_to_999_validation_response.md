@@ -106,7 +106,6 @@ https://fhir.nhs.uk/STU3/CodeSystem/UEC-TaskCode-1 - Needs to have a new value a
 
 | Business Element        | Cardinality  | Additional Guidance                                                                                                                              | FHIR Target         |
 |-------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| Identifier               | 1..1         | This is the business identifier of the original task sent by the Requestor                                                                                                               | identifier                |
 | Task type               | 1..1         | MUST be populated with 'Validation'                 | code                |
 | Task description        | 0..1         | To be populated with ‘validation of triage outcome’                                                                                              | description         |
 | Update date/time         | 0..1         | Update date/time                                                                         | lastModified          |
@@ -136,25 +135,6 @@ For an incident with multiple patients, each patient would have its own encounte
 | Case ID                   | 1..1         | The Validator’s Case ID                                                     | identifier         |
 | Encounter start datetime  | 1..1         | Time of Validation Request acknowledgement                                  | period.start       |
 | Encounter end datetime    | 0..1         | This will not be populated as the encounter will not have ended at the time of sending the Validation Response when the MessageEventType is New or Update.                                              | period.end         |
-| Requester Case status     | 1..1         | This MUST be populated with Triaged                                         | status             |
-| Episode of care           |              | A reference to the Episode of Care that this encounter is recorded against  | episodeOfCare      |
-
-### [CareConnect-Encounter-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1)
-
-| Resource Cardinality | 1..1 |
-
-In this interaction this resource represents the Requester’s encounter. Each Organisation within the patient’s UEC journey will create a new encounter. These Encounters are linked through the Episode of Care which is unchanged throughout the patient's UEC Journey. 
-
-For an incident with multiple patients, each patient would have its own encounter
-
-| Business Element          | Cardinality  | Additional Guidance                                                         | FHIR Target        |
-|---------------------------|--------------|-----------------------------------------------------------------------------|--------------------|
-| Incident location         | 0..1         | Reference to the location at which the encounter took place                 | location.location  |
-| Patient                   | 1..1         | A reference to the patient resource representing the subject of this event  | subject            |
-| Case ID                   | 1..1         | The Requester’s Case ID                                                     | identifier         |
-| Participant               | 1..*         | This SHOULD be populated with a reference to the Requester’s Practitioner and the RelatedPerson. In this use case the RelatedPerson resource is also used to communicate the patient’s contact details for that encounter, or those of their representative, so that they can be contacted by the Validator. | participant        |
-| Encounter start datetime  | 1..1         | Call Connect time                                                           | period.start       |
-| Encounter end datetime    | 0..1         | The end time of the encounter                                               | period.end         |
 | Requester Case status     | 1..1         | This MUST be populated with Triaged                                         | status             |
 | Episode of care           |              | A reference to the Episode of Care that this encounter is recorded against  | episodeOfCare      |
 
