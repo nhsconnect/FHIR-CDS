@@ -112,7 +112,7 @@ Detailed implementation guidance for a <code class="highlighter-rouge">Compositi
     <td>CodeableConcept</td>
     <td>Kind of composition (LOINC if possible)<br>
 FHIR Document Type Codes (Preferred)</td>
-    <td>This MUST be populated with Snomed Code 371531000 |Report of clinical encounter (record artifact).</td>
+    <td>This MUST be populated with Snomed Code 819551000000100 |Report of clinical encounter (record artifact).</td>
 </tr>
 <tr>
   <td><code>class</code></td>
