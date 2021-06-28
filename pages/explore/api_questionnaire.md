@@ -453,18 +453,25 @@ The following answer options are based on the ['yesnodontknow'](https://www.hl7.
             </valueCoding>
         </option>
     </item>
+	<item> 
+    <linkId value="rr"/>
+	<code> 
+		<system value="http://snomed.info/sct"/> 
+		<code value="259018001"/> 
+		<display value="Millimeter of mercury (qualifier value)"/> 
+	</code>
+    <text value="What is your heart rate?"/> 
+    <type value="Quantity"/>
+	<enableWhen> 
+		<question value="0"/> 
+		<operator value=">"/> 
+    <answerBoolean value="true"/> 
+  </enableWhen> 
+  </item>
 </Questionnaire>
 ```
-
-
-
 <!-- ## Example Scenario ##
 Placeholder -->
-
-
-
-
-
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTExNzkzMDk4NjksMTEwMTkyMzQzLC0xMT
