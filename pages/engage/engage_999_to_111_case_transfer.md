@@ -20,6 +20,10 @@ The service provider accepting the case transfer will be called  the “Provider
 
 The Next Activity following case transfer is not in scope for this specification. Existing specifications should be used at this time e.g. Ambulance Request, 111 Report. 
 
+<div style="text-align:center; margin-bottom:20px" >
+	<a href="images/engage/999-to-111/ValidationFlow_case_transfer.png" target="_blank"><img src="images/engage/999-to-111/ValidationFlow_V0.3.png"></a>
+</div>
+
 ## Example scenario 
 
 ARP CAT5 for Referral.
