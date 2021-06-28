@@ -457,8 +457,8 @@ The following answer options are based on the ['yesnodontknow'](https://www.hl7.
     <linkId value="rr"/>
 	<code> 
 		<system value="http://snomed.info/sct"/> 
-		<code value="259018001"/> 
-		<display value="Millimeter of mercury (qualifier value)"/> 
+		<code value="258983007"/> 
+		<display value="Beats/minute (qualifier value)"/> 
 	</code>
     <text value="What is your heart rate?"/> 
     <type value="Quantity"/>
