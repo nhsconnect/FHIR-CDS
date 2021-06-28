@@ -126,14 +126,6 @@ Detailed implementation guidance for a `List` resource within the scope of this 
 <td>This MUST be populated with <a href="https://www.snomed.org/snomed-ct/five-step-briefing">SNOMED</a> code 225390008 | Triage (procedure) as per CareConnect ValueSet | <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListCode-1">CareConnect-ListCode-1</a></td>
 </tr>
 <tr>
-  <td><code>intent</code></td>
-    <td><code>1..1</code></td>
-    <td>code</td>
-    <td>proposal | plan | order +<br>
-<a href="http://hl7.org/fhir/STU3/valueset-request-intent.html">RequestIntent</a> (Required)</td>
-<td></td>
-</tr>
-<tr>
   <td><code>subject</code></td>
     <td><code>0..1</code></td>
     <td>Reference(Patient | Group | Device | Location)</td>

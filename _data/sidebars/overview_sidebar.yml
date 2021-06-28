@@ -108,9 +108,6 @@ entries:
         - title: Practitioner
           url: /api_practitioner.html
           output: web
-        - title: Practitioner Role
-          url: /api_practitioner_role.html
-          output: web
         - title: ProcedureRequest
           url: /api_procedure_request.html
           output: web
@@ -200,6 +197,9 @@ entries:
           output: web
         - title: Procedure
           url: /api_procedure.html
+          output: web
+        - title: Practitioner Role
+          url: /api_practitioner_role.html
           output: web
         - title: ReferralRequest
           url: /api_encounter_report_referralrequest.html
