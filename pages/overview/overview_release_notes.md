@@ -12,7 +12,23 @@ summary: Summary release notes of the versions released in the UEC Digital Integ
 * api_get_service_definition.html updated
 * api_procedure_request.html updated
 
-Re-branded from CDS API to UEC Connect
+•	[CDSAPI-67] – Change Encounter.location.location to use the CareConnect.Location profile
+•	[CDSAPI-68] - Remove usage guidance of CareConnect.ReferralRequest profile
+•	[CDSAPI-92] – Update new example for Quantity - BPM
+•	[CDSAPI-98] – Update error response guidance when a failure status is used and what must be supplied with it
+•	[CDSAPI-107] – Updated guidance on the Encounter Report Referral request as the Appointment resource references ReferralRequest.supportingInfo, but not other way round
+•	[CDSAPI-120] – Guidance for CarePlan.supportingInfo has been updated. 
+•	[CDSAPI-122] - Select Service Definition Example Error
+•	[CDSAPI-124] - ServiceDefinition - Representing Age
+•	[CDSAPI-147] - ValueSets - Composition.type valueset has been updated to use the same Snomed code as CDA document type
+•	[CDSAPI-181] - API CheckServices – ReferralRequest has been updated and the evaluate has been replaced with check-services wording
+•	[CDSAPI-225] - Add Practitioner Role Resource has been added in as it is referenced in the specification.
+•	[CDSAPI-226] - List.intent has been removed from List resource. 
+•	[CDSAPI-39] – Update guidance on the use of Message for Encounter Report
+•	[CDSAPI-126] - Rebrand Usage Guide to reflect name change from CDS API to UEC Connect
+•	[CDSAPI-127] - Author Clinical Safety Case Report
+•	[CDSAPI-248] – Update guidance on the use of Organisation and Practitioner in the Encounter Report
+•	[CDSAPI-163] - Find and rename all mentions of CDS API in the current specification and rename to UEC Connect.
 
 ## 2.0.0-alpha ##
 * The API guide has been expanded in scope to introduce the use of [`Encounter Report`](api_encounter_report.html) functionality.
